@@ -3,169 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uni Daily Check - Sonntag 12. April 2026</title>
+    <title>Uni Daily Check — Sonntag 12. April 2026</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background: #0f0f0f; color: #e0e0e0; font-family: system-ui, -apple-system, sans-serif; line-height: 1.5; padding: 16px; }
         .container { max-width: 600px; margin: 0 auto; }
         header { text-align: center; margin-bottom: 20px; }
         header h1 { font-size: 1.4rem; color: #fff; margin-bottom: 4px; }
-        header .date { color: #888; font-size: 0.9rem; }
-        .badge { display: inline-block; background: #166534; color: #4ade80; font-size: 0.7rem; padding: 2px 10px; border-radius: 12px; margin-top: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        header .date { color: #999; font-size: 0.9rem; }
+        .badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; margin-top: 6px; }
+        .badge-green { background: #4ade8033; color: #4ade80; }
+        .badge-blue { background: #60a5fa33; color: #60a5fa; }
+        .badge-yellow { background: #fbbf2433; color: #fbbf24; }
+        .badge-red { background: #f8717133; color: #f87171; }
         .card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 16px; margin-bottom: 14px; }
         .card h2 { font-size: 1rem; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-        .card h3 { font-size: 0.85rem; color: #ccc; margin: 10px 0 6px; }
-        .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+        .card h3 { font-size: 0.9rem; color: #ccc; margin: 10px 0 6px; }
+        .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
         .dot-green { background: #4ade80; }
         .dot-blue { background: #60a5fa; }
         .dot-yellow { background: #fbbf24; }
         .dot-red { background: #f87171; }
-        .green { color: #4ade80; }
+        ul { list-style: none; padding: 0; }
+        li { padding: 4px 0; padding-left: 16px; position: relative; font-size: 0.88rem; }
+        li::before { content: "→"; position: absolute; left: 0; color: #666; }
+        .highlight { color: #4ade80; font-weight: 600; }
         .blue { color: #60a5fa; }
         .yellow { color: #fbbf24; }
         .red { color: #f87171; }
-        ul { list-style: none; padding: 0; }
-        li { padding: 4px 0; font-size: 0.85rem; color: #ccc; }
-        li::before { content: ""; }
-        .course-tag { display: inline-block; font-size: 0.65rem; padding: 1px 6px; border-radius: 4px; font-weight: 600; margin-right: 4px; vertical-align: middle; }
-        .tag-mopd { background: #1e3a5f; color: #60a5fa; }
-        .tag-esbm { background: #3b1f0b; color: #fb923c; }
-        .prep-item { background: #111; border-left: 3px solid #60a5fa; padding: 8px 12px; margin: 6px 0; border-radius: 0 6px 6px 0; font-size: 0.83rem; }
-        .deadline-item { background: #1a1111; border-left: 3px solid #fbbf24; padding: 8px 12px; margin: 6px 0; border-radius: 0 6px 6px 0; font-size: 0.83rem; }
-        .no-events { color: #666; font-style: italic; font-size: 0.85rem; padding: 8px 0; }
-        footer { text-align: center; color: #555; font-size: 0.7rem; margin-top: 24px; padding-top: 12px; border-top: 1px solid #1a1a1a; }
-        .week-overview { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; margin: 8px 0; }
-        .week-day { background: #111; border-radius: 6px; padding: 6px 4px; text-align: center; font-size: 0.7rem; }
-        .week-day .day-name { color: #666; font-weight: 600; }
-        .week-day .day-num { color: #888; font-size: 0.65rem; }
-        .week-day.active { border: 1px solid #4ade80; }
-        .week-day.has-event { background: #1a1a2e; }
-        .event-dot { width: 5px; height: 5px; border-radius: 50%; display: inline-block; margin: 2px 1px 0; }
+        .muted { color: #888; font-size: 0.82rem; }
+        .deadline { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #222; font-size: 0.85rem; }
+        .deadline:last-child { border-bottom: none; }
+        .deadline .dl-date { color: #fbbf24; font-weight: 600; white-space: nowrap; margin-left: 12px; }
+        footer { text-align: center; color: #555; font-size: 0.75rem; margin-top: 24px; padding-bottom: 20px; }
+        .course-tag { font-size: 0.72rem; padding: 1px 7px; border-radius: 8px; background: #ffffff10; color: #aaa; margin-left: 4px; }
     </style>
 </head>
 <body>
 <div class="container">
+
     <header>
         <h1>Uni Daily Check</h1>
         <div class="date">Sonntag, 12. April 2026</div>
-        <span class="badge">Tages-Check</span>
+        <span class="badge badge-green">Tages-Check</span>
     </header>
-
-    <!-- WOCHENÜBERSICHT -->
-    <div class="card">
-        <h2><span class="dot dot-green"></span> Wochenvorschau</h2>
-        <div class="week-overview">
-            <div class="week-day active">
-                <div class="day-name">So</div>
-                <div class="day-num">12</div>
-            </div>
-            <div class="week-day">
-                <div class="day-name">Mo</div>
-                <div class="day-num">13</div>
-            </div>
-            <div class="week-day has-event">
-                <div class="day-name">Di</div>
-                <div class="day-num">14</div>
-                <div><span class="event-dot" style="background:#60a5fa;"></span><span class="event-dot" style="background:#fb923c;"></span></div>
-            </div>
-            <div class="week-day">
-                <div class="day-name">Mi</div>
-                <div class="day-num">15</div>
-            </div>
-            <div class="week-day has-event">
-                <div class="day-name">Do</div>
-                <div class="day-num">16</div>
-                <div><span class="event-dot" style="background:#60a5fa;"></span></div>
-            </div>
-        </div>
-        <div style="font-size:0.7rem; color:#555; margin-top:4px;">
-            <span class="event-dot" style="background:#60a5fa; vertical-align:middle;"></span> MOPD &nbsp;
-            <span class="event-dot" style="background:#fb923c; vertical-align:middle;"></span> ESBM
-        </div>
-    </div>
 
     <!-- HEUTE -->
     <div class="card">
-        <h2><span class="dot dot-green"></span> <span class="green">Heute</span> — Sonntag</h2>
-        <p class="no-events">Keine Veranstaltungen. Periode 5 startet Dienstag.</p>
-        <h3>Vorbereitung fur Dienstag</h3>
-        <div class="prep-item">
-            <span class="course-tag tag-mopd">MOPD</span>
-            <strong>Session 2: Linear Programming & Sensitivity Report</strong><br>
-            Lesen: <em>Reader 1 - Linear Programming.pdf</em> und <em>Reader 2 - Sensitivity Report.pdf</em><br>
-            Herunterladen: <em>Reader Implementation - Production Planning.xlsx</em> + <em>Exercise Templates Meeting 2.xlsx</em>
-        </div>
-        <div class="prep-item" style="border-left-color: #fb923c;">
-            <span class="course-tag tag-esbm">ESBM</span>
-            <strong>Opening Lecture: Einfuhrung Entrepreneurship</strong><br>
-            Keine spezifische Vorbereitung noetig. Kurs-Syllabus lesen empfohlen.
-        </div>
+        <h2><span class="dot dot-green"></span> Heute — Sonntag</h2>
+        <p class="muted" style="margin-bottom: 10px;">Keine Veranstaltungen heute. Nutze den Tag zur Vorbereitung auf Dienstag.</p>
+
+        <h3 class="highlight">Was du heute tun kannst:</h3>
+        <ul>
+            <li><strong>Reader 1 — Linear Programming</strong> lesen <span class="course-tag">EBC2022</span><br>
+                <span class="muted">Vorbereitung auf Operations Management, Session 2 (Di 14.04.)</span></li>
+            <li><strong>Reader 2 — Sensitivity Report</strong> lesen <span class="course-tag">EBC2022</span><br>
+                <span class="muted">Ebenfalls für Session 2 am Dienstag</span></li>
+            <li><strong>Exercise Templates Meeting 2</strong> anschauen <span class="course-tag">EBC2022</span><br>
+                <span class="muted">Excel-Übungen zu Linear Programming & Solver</span></li>
+            <li><strong>Kurs-Syllabus Entrepreneurship</strong> lesen <span class="course-tag">EBC2158</span><br>
+                <span class="muted">Vorbereitung für Tutorial 1 (Fr 17.04.) — Syllabus lesen + Fragen vorbereiten</span></li>
+        </ul>
     </div>
 
     <!-- MORGEN -->
     <div class="card">
-        <h2><span class="dot dot-blue"></span> <span class="blue">Morgen</span> — Montag 13. April</h2>
-        <p class="no-events">Keine Veranstaltungen. Freier Tag vor Semesterstart.</p>
-        <p style="font-size:0.83rem; color:#888; margin-top:6px;">Nutze den Tag fuer die Vorbereitung auf Dienstag (siehe oben).</p>
+        <h2><span class="dot dot-blue"></span> Morgen — Montag 13. April</h2>
+        <p class="muted">Keine Veranstaltungen. Vorlesungsfreier Tag.</p>
     </div>
 
-    <!-- DIENSTAG VORSCHAU -->
+    <!-- DIENSTAG -->
     <div class="card">
-        <h2><span class="dot dot-blue"></span> <span class="blue">Dienstag</span> — 14. April (Periode 5 Start)</h2>
-        <h3><span class="course-tag tag-mopd">MOPD</span> Session 2: Basics Linear Programming</h3>
+        <h2><span class="dot dot-blue"></span> Dienstag 14. April — Erster Vorlesungstag</h2>
+
+        <h3 class="blue">Operations Management — Session 2</h3>
         <ul>
-            <li>Thema: Lineare Programmierung, Excel Solver, Sensitivity Report</li>
-            <li>Vorbereitung: Reader 1 + Reader 2 lesen, Excel-Dateien bereithalten</li>
-            <li>Bewertung: Participation (Pass/Fail, mind. 9 von 12 noetig)</li>
+            <li><strong>Thema:</strong> Basics Linear Programming, Excel Solver & Sensitivity Report</li>
+            <li><strong>Vorbereitung:</strong> Reader 1 (Linear Programming) + Reader 2 (Sensitivity Report)</li>
+            <li><strong>Mitbringen:</strong> Laptop mit Excel/Solver für Übungen</li>
         </ul>
-        <h3 style="margin-top:12px;"><span class="course-tag tag-esbm">ESBM</span> Opening Lecture</h3>
+
+        <h3 class="blue">Entrepreneurship — Opening Lecture</h3>
         <ul>
-            <li>Einfuhrung in Entrepreneurship & Small Business Management</li>
-            <li>Kursstruktur, Teams, Business-Idee-Entwicklung</li>
-            <li>Keine Vorbereitung noetig, aber Syllabus lesen ist hilfreich</li>
+            <li><strong>Format:</strong> Aufgezeichnete Vorlesung auf Canvas</li>
+            <li><strong>Inhalt:</strong> Kurseinführung, Überblick Entrepreneurship & SME Management</li>
+            <li><strong>Keine spezifische Vorbereitung nötig</strong></li>
+        </ul>
+    </div>
+
+    <!-- WOCHE IM BLICK -->
+    <div class="card">
+        <h2><span class="dot dot-yellow"></span> Diese Woche</h2>
+        <ul>
+            <li><strong>Do 16.04.</strong> — Operations Management Session 3: Integer Linear Programming <span class="course-tag">EBC2022</span><br>
+                <span class="muted">Vorbereitung: Reader 3 (Integer Linear Programming)</span></li>
+            <li><strong>Fr 17.04.</strong> — Entrepreneurship Tutorial 1: Team Allocation <span class="course-tag">EBC2158</span><br>
+                <span class="muted">Anwesenheit kritisch! Teamzuteilung für Projekte & Facilitations. Syllabus vorher lesen.</span></li>
         </ul>
     </div>
 
     <!-- DEADLINES -->
     <div class="card">
-        <h2><span class="dot dot-yellow"></span> <span class="yellow">Kommende Deadlines</span></h2>
-        <div class="deadline-item">
-            <span class="course-tag tag-esbm">ESBM</span>
-            <strong>Announce the Interviewee</strong><br>
-            <span class="yellow">Deadline: Di, 21. April 23:59</span>
+        <h2><span class="dot dot-red"></span> Anstehende Deadlines</h2>
+        <div class="deadline">
+            <span>Announce the Interviewee <span class="course-tag">EBC2158</span></span>
+            <span class="dl-date">21. Apr</span>
         </div>
-        <div class="deadline-item">
-            <span class="course-tag tag-esbm">ESBM</span>
-            <strong>Team Contract hochladen</strong><br>
-            <span class="yellow">Deadline: Fr, 24. April 23:59</span>
+        <div class="deadline">
+            <span>Team Contract hochladen <span class="course-tag">EBC2158</span></span>
+            <span class="dl-date">24. Apr</span>
         </div>
-        <div class="deadline-item">
-            <span class="course-tag tag-mopd">MOPD</span>
-            <strong>Case Sports Inc.</strong><br>
-            <span style="color:#888;">Deadline: Di, 26. Mai 23:59</span>
+        <div class="deadline">
+            <span>Entrepreneur Interview Presentation <span class="course-tag">EBC2158</span></span>
+            <span class="dl-date">11. Mai</span>
+        </div>
+        <div class="deadline">
+            <span>Case Sports Inc. <span class="course-tag">EBC2022</span></span>
+            <span class="dl-date">26. Mai</span>
         </div>
     </div>
 
-    <!-- KURSÜBERSICHT -->
+    <!-- ANKÜNDIGUNG -->
     <div class="card">
-        <h2><span class="dot dot-green"></span> Kurse Periode 5</h2>
-        <h3><span class="course-tag tag-mopd">MOPD</span> Management of Operations & Product Development</h3>
-        <ul>
-            <li>EBC2022 — 12 Sessions + Case + Exam (MECC)</li>
-            <li>Bewertung: Case 20% + Exam 80% + Participation</li>
-            <li>Erlaubt bei Exam: Casio FX82/FX85</li>
-        </ul>
-        <h3 style="margin-top:10px;"><span class="course-tag tag-esbm">ESBM</span> Entrepreneurship & Small Business Management</h3>
-        <ul>
-            <li>EBC2158 — 8 Wochen, Tutorials + Lectures</li>
-            <li>Bewertung: Facilitation + Interview-Praesentation + Video Pitch + Proposal</li>
-            <li>Team-basiert: Interview + Business Project</li>
-        </ul>
+        <h2><span class="dot dot-yellow"></span> Ankündigungen</h2>
+        <h3>Willkommensnachricht — Entrepreneurship</h3>
+        <p class="muted" style="font-size: 0.85rem;">Das Teaching-Team begrüßt euch zum Kurs. Opening Lecture wird als Aufzeichnung am Dienstag auf Canvas verfügbar sein. Erstes Tutorial am Freitag — bitte Syllabus vorher lesen und Tutorial-Gruppe/Raum prüfen.</p>
     </div>
 
     <footer>
-        Aktualisiert: Sonntag, 12. April 2026 &mdash; Daten aus Canvas API
+        Aktualisiert: Sonntag, 12. April 2026<br>
+        Daten aus Canvas API — Maastricht University
     </footer>
+
 </div>
 </body>
 </html>
