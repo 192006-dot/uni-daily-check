@@ -8,126 +8,199 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background: #0f0f0f; color: #e0e0e0; font-family: system-ui, -apple-system, sans-serif; padding: 16px; }
         .container { max-width: 600px; margin: 0 auto; }
-        .header { text-align: center; margin-bottom: 24px; }
-        .header h1 { font-size: 1.5rem; color: #fff; margin-bottom: 4px; }
-        .header .date { color: #9ca3af; font-size: 0.9rem; }
-        .badge { display: inline-block; background: #1e3a2f; color: #4ade80; font-size: 0.75rem; padding: 2px 10px; border-radius: 12px; margin-top: 6px; }
-        .card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 16px; margin-bottom: 16px; }
-        .card-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+        .header { text-align: center; padding: 24px 0 16px; }
+        .header h1 { font-size: 1.5rem; color: #fff; }
+        .header .date { color: #9ca3af; margin-top: 4px; font-size: 0.95rem; }
+        .badge { display: inline-block; background: #1e3a2f; color: #4ade80; padding: 4px 12px; border-radius: 99px; font-size: 0.75rem; font-weight: 600; margin-top: 8px; }
+        .card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+        .card h2 { font-size: 1.05rem; margin-bottom: 10px; }
+        .card h3 { font-size: 0.9rem; color: #9ca3af; margin-bottom: 6px; }
         .green { color: #4ade80; }
         .blue { color: #60a5fa; }
         .yellow { color: #fbbf24; }
         .red { color: #f87171; }
-        .info-row { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 6px; font-size: 0.9rem; color: #d1d5db; }
-        .info-row .icon { flex-shrink: 0; width: 20px; text-align: center; }
-        .divider { border: none; border-top: 1px solid #2a2a2a; margin: 12px 0; }
-        .prep-list { list-style: none; padding: 0; }
-        .prep-list li { padding: 4px 0 4px 20px; position: relative; font-size: 0.88rem; color: #d1d5db; }
-        .prep-list li::before { content: "->"; position: absolute; left: 0; color: #4ade80; }
-        .deadline-item { padding: 10px 0; border-bottom: 1px solid #2a2a2a; }
+        .tag { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 0.7rem; font-weight: 600; margin-bottom: 8px; }
+        .tag-green { background: #1e3a2f; color: #4ade80; }
+        .tag-blue { background: #1e2d3a; color: #60a5fa; }
+        .tag-red { background: #3a1e1e; color: #f87171; }
+        .tag-yellow { background: #3a351e; color: #fbbf24; }
+        .info-row { display: flex; gap: 8px; align-items: center; margin-bottom: 4px; font-size: 0.85rem; color: #b0b0b0; }
+        .info-row span.icon { width: 20px; text-align: center; }
+        .prep { background: #141414; border-radius: 8px; padding: 10px 12px; margin-top: 10px; font-size: 0.85rem; }
+        .prep strong { color: #fbbf24; }
+        .prep ul { margin-top: 6px; padding-left: 18px; }
+        .prep li { margin-bottom: 4px; }
+        .summary { font-size: 0.85rem; color: #c0c0c0; line-height: 1.5; margin: 8px 0; }
+        .deadline-item { display: flex; justify-content: space-between; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid #222; font-size: 0.85rem; }
         .deadline-item:last-child { border-bottom: none; }
-        .deadline-date { font-size: 0.8rem; font-weight: 600; }
-        .deadline-desc { font-size: 0.85rem; color: #d1d5db; margin-top: 2px; }
-        .warning-box { background: #1e1a0f; border: 1px solid #fbbf24; border-radius: 8px; padding: 12px; margin-bottom: 16px; }
-        .footer { text-align: center; color: #6b7280; font-size: 0.75rem; margin-top: 24px; }
+        .deadline-name { flex: 1; }
+        .deadline-date { color: #9ca3af; font-size: 0.8rem; white-space: nowrap; margin-left: 8px; }
+        .deadline-course { font-size: 0.75rem; color: #6b7280; }
+        .warning-box { background: #2a2517; border: 1px solid #fbbf2440; border-radius: 8px; padding: 10px 12px; margin-top: 8px; font-size: 0.85rem; }
+        .critical-box { background: #2a1717; border: 1px solid #f8717140; border-radius: 8px; padding: 10px 12px; margin-top: 8px; font-size: 0.85rem; }
+        .footer { text-align: center; padding: 20px 0; color: #555; font-size: 0.75rem; }
+        a { color: #60a5fa; text-decoration: none; }
     </style>
 </head>
 <body>
 <div class="container">
+
     <div class="header">
         <h1>Uni Daily Check</h1>
         <div class="date">Mittwoch, 15. April 2026</div>
-        <span class="badge">Tages-Check</span>
+        <div class="badge">Tages-Check</div>
     </div>
 
+    <!-- HEUTE -->
     <div class="card">
-        <div class="card-title green">Heute — Mittwoch</div>
-        <div style="margin-bottom: 14px;">
-            <div style="font-weight:600; color:#fff; margin-bottom:6px;">Management of Operations &amp; Product Development</div>
-            <div class="info-row"><span class="icon">&#128338;</span> 13:30 – 15:30 Uhr</div>
-            <div class="info-row"><span class="icon">&#128205;</span> TS53 G1.03 (Tongersestraat 53)</div>
-            <div class="info-row"><span class="icon">&#128104;&#8205;&#127891;</span> van Hoesel, Constantinus</div>
-            <div class="info-row"><span class="icon">&#128218;</span> Meeting 2 — Tutorial</div>
-        </div>
-        <hr class="divider">
-        <div style="margin-bottom:8px; font-weight:600; color:#fff; font-size:0.95rem;">Thema: Linear Programming &amp; Sensitivity Analysis</div>
-        <p style="font-size:0.88rem; color:#d1d5db; margin-bottom:10px;">
-            Heute geht es um die Formulierung und Loesung von linearen Optimierungsproblemen (LP). Ihr lernt, wie man Entscheidungsvariablen, Zielfunktionen und Nebenbedingungen aufstellt und diese mit dem Excel Solver loest. Ausserdem wird die Interpretation von Sensitivity Reports behandelt — wie aendern sich optimale Loesungen bei Parameteraenderungen?
-        </p>
-        <div style="font-weight:600; color:#fff; font-size:0.9rem; margin-bottom:6px;">Vorbereitung:</div>
-        <ul class="prep-list">
-            <li>Reader 1 — Linear Programming (PDF auf Canvas, Meeting 2 Modul)</li>
-            <li>Reader 2 — Sensitivity Report (PDF auf Canvas, Meeting 2 Modul)</li>
-            <li>Video: Linear Programming anschauen (Canvas, Meeting 1 Modul)</li>
-            <li>Video: Excel Implementation Part 1 &amp; 2 anschauen</li>
-            <li>Exercise Templates Meeting 2.xlsx herunterladen</li>
-        </ul>
-        <div class="warning-box" style="margin-top: 12px;">
-            <div style="font-size:0.88rem;">&#128187; <strong>Laptop mitbringen!</strong> Excel mit Solver-Add-in wird benoetigt. Reader Implementation — Production Planning.xlsx fuer die praktische Uebung herunterladen.</div>
-        </div>
-    </div>
+        <span class="tag tag-green">HEUTE</span>
+        <h2 class="green">Management of Operations & Product Development</h2>
+        <div class="info-row"><span class="icon">&#128337;</span> 16:00 – 18:00</div>
+        <div class="info-row"><span class="icon">&#128205;</span> TAP23 (X) 1.001</div>
+        <div class="info-row"><span class="icon">&#128104;&#8205;&#127979;</span> Rouhani, Arman</div>
+        <div class="info-row"><span class="icon">&#128218;</span> Meeting 2 — Tutorial</div>
 
-    <div class="card">
-        <div class="card-title" style="color:#9ca3af;">Morgen — Donnerstag</div>
-        <p style="font-size:0.9rem; color:#9ca3af;">Kein Tutorial morgen.</p>
-    </div>
+        <div class="summary">
+            <strong>Thema: Linear Programming & Sensitivity Analysis.</strong>
+            Aufbauend auf der Opening Lecture und den LP-Videos wird heute die Formulierung und L&ouml;sung von linearen Optimierungsproblemen ge&uuml;bt. Der Fokus liegt auf dem Sensitivity Report: Wie ver&auml;ndern sich optimale L&ouml;sungen bei ge&auml;nderten Parametern? Praktische Anwendung in Excel mit dem Production Planning-Szenario.
+        </div>
 
-    <div class="card">
-        <div class="card-title blue">Freitag — Vorschau</div>
-        <div style="margin-bottom: 14px;">
-            <div style="font-weight:600; color:#fff; margin-bottom:6px;">Entrepreneurship &amp; Small Business Management</div>
-            <div class="info-row"><span class="icon">&#128338;</span> 11:00 – 13:00 Uhr</div>
-            <div class="info-row"><span class="icon">&#128205;</span> TAP23 (X) 1.001 (Tapijnkazerne 23)</div>
-            <div class="info-row"><span class="icon">&#128104;&#8205;&#127891;</span> Ghasemian, Zahra</div>
-            <div class="info-row"><span class="icon">&#128218;</span> Tutorial 1 — Einfuehrung + Teamzuteilung</div>
+        <div class="prep">
+            <strong>&#128218; Vorbereitung:</strong>
+            <ul>
+                <li><strong>Reader 1</strong> — Linear Programming (PDF auf Canvas)</li>
+                <li><strong>Reader 2</strong> — Sensitivity Report (PDF auf Canvas)</li>
+                <li><strong>Reader Implementation</strong> — Production Planning (Excel-Datei)</li>
+                <li><strong>Exercise Templates Meeting 2</strong> (Excel-Datei herunterladen)</li>
+                <li>Falls noch nicht gesehen: <strong>Video: Linear Programming</strong> + <strong>Excel Implementation Part 1 & 2</strong> aus Meeting 1</li>
+            </ul>
         </div>
-        <hr class="divider">
-        <div style="margin-bottom:8px; font-weight:600; color:#fff; font-size:0.95rem;">Thema: Kursvorstellung &amp; Team Allocation</div>
-        <p style="font-size:0.88rem; color:#d1d5db; margin-bottom:10px;">
-            In diesem ersten Tutorial werden Teams fuer die Facilitations und das Entrepreneur Interview + Business Project zugeteilt. Die Anwesenheit ist zwingend erforderlich — wer fehlt, wird keinem Team zugewiesen. Falls du nicht kannst, kontaktiere deine Tutorin vorher!
-        </p>
-        <div style="font-weight:600; color:#fff; font-size:0.9rem; margin-bottom:6px;">Vorbereitung:</div>
-        <ul class="prep-list">
-            <li>Kurs-Syllabus lesen (PDF auf Canvas verlinkt)</li>
-            <li>Opening Lecture Video anschauen (Canvas, Week 1 Modul — hochgeladen am 14. April)</li>
-            <li>Fragen zum Kurs vorbereiten</li>
-        </ul>
-    </div>
 
-    <div class="card">
-        <div class="card-title yellow">Deadlines</div>
-        <div class="deadline-item">
-            <div class="deadline-date yellow">So, 19. April — Skill Registration</div>
-            <div class="deadline-desc">SBE Skill Registration Period 6 schliesst am 19. April (23:59). Falls du dich noch fuer Period 6 Skills anmelden musst, jetzt erledigen!</div>
-        </div>
-        <div class="deadline-item">
-            <div class="deadline-date yellow">Di, 21. April — Announce Interviewee</div>
-            <div class="deadline-desc">EBC2158: Text-Entry auf Canvas mit: (1) Name des Entrepreneurs, (2) Unternehmen, (3) Standort, (4) Branche, (5) Kontaktdaten (Email/LinkedIn/Telefon). Teamarbeit — ihr braucht erst ein Team (Freitag) und dann einen Interviewpartner.</div>
-        </div>
-        <div class="deadline-item">
-            <div class="deadline-date" style="color:#9ca3af;">Fr, 24. April — Team Contract</div>
-            <div class="deadline-desc">EBC2158: Team Contract hochladen. Details werden vermutlich am Freitag im Tutorial besprochen.</div>
-        </div>
-        <div class="deadline-item">
-            <div class="deadline-date" style="color:#9ca3af;">Mo, 11. Mai — Interview Presentation + Consent Form</div>
-            <div class="deadline-desc">EBC2158: Entrepreneur Interview Presentation (Slides + AI Statement, 100 Punkte) und unterschriebenes Consent Form hochladen.</div>
-        </div>
-        <div class="deadline-item">
-            <div class="deadline-date" style="color:#9ca3af;">Di, 26. Mai — Case Sports Inc.</div>
-            <div class="deadline-desc">EBC2022: Case-Abgabe Management of Operations (100 Punkte).</div>
+        <div class="warning-box">
+            &#128187; <strong>Laptop mit Excel mitbringen!</strong> Die &Uuml;bungen werden direkt in Excel bearbeitet.
         </div>
     </div>
 
+    <!-- MORGEN -->
     <div class="card">
-        <div class="card-title" style="color:#a78bfa;">Ankuendigungen</div>
-        <div style="font-size:0.88rem; color:#d1d5db;">
-            <strong>EBC2158 — Willkommensnachricht</strong> (Dr. Sergio Paramo-Ortiz &amp; Kim van Cruchten): Kurs startet mit einer aufgezeichneten Opening Lecture (verfuegbar auf Canvas seit Dienstag). Erstes Tutorial am Freitag. Syllabus lesen und Tutorial-Gruppe pruefen.
+        <span class="tag tag-blue">MORGEN — Donnerstag</span>
+        <h2 class="blue">Kein Tutorial</h2>
+        <div class="summary">
+            Keine Vorlesungen oder Tutorials morgen. Nutze den Tag zur Vorbereitung auf Freitag:<br><br>
+            &#10148; <strong>Course Syllabus</strong> f&uuml;r Entrepreneurship lesen<br>
+            &#10148; <strong>Opening Lecture Video</strong> auf Canvas anschauen (seit 14. April verf&uuml;gbar)<br>
+            &#10148; Fragen zum Kurs vorbereiten
+        </div>
+    </div>
+
+    <!-- FREITAG VORSCHAU -->
+    <div class="card">
+        <span class="tag tag-blue">FREITAG 17. APRIL</span>
+        <h2 class="blue">Entrepreneurship & Small Business Management</h2>
+        <div class="info-row"><span class="icon">&#128337;</span> 11:00 – 13:00</div>
+        <div class="info-row"><span class="icon">&#128205;</span> TAP23 (X) 1.001</div>
+        <div class="info-row"><span class="icon">&#128104;&#8205;&#127979;</span> Ghasemian, Zahra</div>
+        <div class="info-row"><span class="icon">&#128218;</span> Tutorial 1 — Einf&uuml;hrung + Teamzuteilung</div>
+
+        <div class="summary">
+            <strong>Thema: Kursvorstellung & Team Allocation.</strong>
+            In diesem ersten Tutorial werden Fragen zum Kurs besprochen. Vor allem werden die <strong>Teams eingeteilt</strong> — sowohl f&uuml;r die Facilitations als auch f&uuml;r das Entrepreneur-Interview und das Business Project (gleiche Gruppe f&uuml;r beides). Facilitation-Slots werden zugewiesen.
+        </div>
+
+        <div class="critical-box">
+            &#9888;&#65039; <strong>Anwesenheit PFLICHT!</strong> Wer nicht da ist, wird keinem Team zugeordnet. Bei triftigem Grund vorher den Tutor kontaktieren.
+        </div>
+
+        <div class="prep">
+            <strong>&#128218; Vorbereitung:</strong>
+            <ul>
+                <li><strong>Course Syllabus</strong> vollst&auml;ndig lesen</li>
+                <li><strong>Opening Lecture Video</strong> auf Canvas ansehen</li>
+                <li>Fragen zum Kursablauf, Bewertung und Projekten vorbereiten</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- DEADLINES -->
+    <div class="card">
+        <span class="tag tag-red">DEADLINES</span>
+        <h2>&#128197; Anstehende Abgaben</h2>
+
+        <div class="deadline-item">
+            <div class="deadline-name">
+                <span class="yellow">&#9888;&#65039;</span> <strong>Skill Registration Period 6</strong>
+                <div class="deadline-course">SBE Timetable</div>
+            </div>
+            <div class="deadline-date red">So 19. Apr</div>
+        </div>
+
+        <div class="deadline-item">
+            <div class="deadline-name">
+                <strong>Announce the Interviewee</strong>
+                <div class="deadline-course">Entrepreneurship (EBC2158)</div>
+                <div style="font-size:0.78rem; color:#9ca3af; margin-top:2px;">Text-Entry: Name des Entrepreneurs, Firma, Standort, Branche, Kontaktdaten</div>
+            </div>
+            <div class="deadline-date yellow">Di 21. Apr</div>
+        </div>
+
+        <div class="deadline-item">
+            <div class="deadline-name">
+                <strong>Team Contract</strong>
+                <div class="deadline-course">Entrepreneurship (EBC2158)</div>
+                <div style="font-size:0.78rem; color:#9ca3af; margin-top:2px;">Upload — wird erst ab 17. Apr freigeschaltet</div>
+            </div>
+            <div class="deadline-date yellow">Do 24. Apr</div>
+        </div>
+
+        <div class="deadline-item">
+            <div class="deadline-name">
+                <strong>Entrepreneur Interview Presentation</strong>
+                <div class="deadline-course">Entrepreneurship (EBC2158) — 100 Pkt</div>
+                <div style="font-size:0.78rem; color:#9ca3af; margin-top:2px;">Slides + AI Statement hochladen</div>
+            </div>
+            <div class="deadline-date">Mo 11. Mai</div>
+        </div>
+
+        <div class="deadline-item">
+            <div class="deadline-name">
+                <strong>Case Sports Inc.</strong>
+                <div class="deadline-course">Operations & PD (EBC2022) — 100 Pkt</div>
+            </div>
+            <div class="deadline-date">Di 26. Mai</div>
+        </div>
+
+        <div class="deadline-item">
+            <div class="deadline-name">
+                <strong>Written Project Proposal (20%) + Video Pitch</strong>
+                <div class="deadline-course">Entrepreneurship (EBC2158) — je 100 Pkt</div>
+            </div>
+            <div class="deadline-date">Do 4. Jun</div>
+        </div>
+    </div>
+
+    <!-- NAECHSTE WOCHE -->
+    <div class="card">
+        <h2>&#128064; N&auml;chste Woche Vorschau</h2>
+        <div class="summary">
+            <strong>Mi 22. Apr — EBC2022 Meeting 3:</strong> Integer Linear Programming. Vorbereitung: Reader 3 (Integer LP), Reader Implementation (Car Manufacturing Excel), Exercises Template Ex 1.<br><br>
+            <strong>EBC2158 Tutorial 2 (Facilitation 1):</strong> Entrepreneurship definieren, Rolle kleiner Unternehmen, Vor-/Nachteile, ethische Standards.<br>
+            &#128214; <em>Scarborough & Cornwall (2025) Kap. 1+2</em><br>
+            &#128214; <em>Jensen et al. (2021) "Entrepreneurs and the Truth", Harvard Business Review 99(4), S. 124–131</em>
+        </div>
+    </div>
+
+    <!-- ANNOUNCEMENTS -->
+    <div class="card">
+        <h2>&#128227; Ank&uuml;ndigungen</h2>
+        <div class="summary">
+            <strong>Entrepreneurship (EBC2158):</strong> Willkommensnachricht von Dr. Sergio P&aacute;ramo-Ortiz & Kim van Cruchten. Opening Lecture als aufgezeichnetes Video auf Canvas verf&uuml;gbar. Syllabus pr&uuml;fen, Tutorialgruppe und Raum best&auml;tigen. Erstes Tutorial am Freitag.
         </div>
     </div>
 
     <div class="footer">
-        Aktualisiert: Mittwoch, 15. April 2026, 09:00 Uhr
+        Aktualisiert: 15. April 2026 &middot; <a href="https://canvas.maastrichtuniversity.nl">Canvas</a>
     </div>
+
 </div>
 </body>
 </html>
