@@ -3,238 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uni Daily Check - Wochenplan KW 16</title>
+    <title>Uni Daily Check</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #0f0f0f; color: #e0e0e0; font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; padding: 16px; }
+        body { background: #0f0f0f; color: #e0e0e0; font-family: system-ui, -apple-system, sans-serif; padding: 16px; }
         .container { max-width: 600px; margin: 0 auto; }
-        header { text-align: center; margin-bottom: 20px; }
-        header h1 { font-size: 1.4rem; color: #fff; margin-bottom: 4px; }
-        header .date { color: #888; font-size: 0.9rem; }
-        .badge { display: inline-block; background: #1e3a5f; color: #60a5fa; font-size: 0.7rem; padding: 2px 10px; border-radius: 12px; margin-top: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
-        .card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 16px; margin-bottom: 14px; }
-        .card h2 { font-size: 1rem; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-        .card h3 { font-size: 0.85rem; color: #ccc; margin: 12px 0 6px; }
-        .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
-        .dot-green { background: #4ade80; }
-        .dot-blue { background: #60a5fa; }
-        .dot-yellow { background: #fbbf24; }
-        .dot-red { background: #f87171; }
+        .header { text-align: center; padding: 24px 0 16px; }
+        .header h1 { font-size: 1.5rem; color: #fff; }
+        .header .date { color: #999; font-size: 0.9rem; margin-top: 4px; }
+        .badge { display: inline-block; background: #4ade80; color: #0f0f0f; font-size: 0.7rem; font-weight: 700; padding: 3px 10px; border-radius: 12px; margin-top: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+        .card-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; font-weight: 700; }
         .green { color: #4ade80; }
         .blue { color: #60a5fa; }
         .yellow { color: #fbbf24; }
         .red { color: #f87171; }
-        .orange { color: #fb923c; }
-        ul { list-style: none; padding: 0; }
-        li { padding: 3px 0; font-size: 0.85rem; color: #ccc; }
-        .course-tag { display: inline-block; font-size: 0.65rem; padding: 1px 6px; border-radius: 4px; font-weight: 600; margin-right: 4px; }
-        .tag-mopd { background: #1e3a5f; color: #60a5fa; }
-        .tag-esbm { background: #3b1f0b; color: #fb923c; }
-        .day-card { background: #111; border-left: 3px solid #60a5fa; padding: 10px 14px; margin: 8px 0; border-radius: 0 8px 8px 0; }
-        .day-card.today { border-left-color: #4ade80; background: #0f1a0f; }
-        .day-card .day-header { font-weight: 700; font-size: 0.9rem; margin-bottom: 4px; }
-        .day-card .no-events { color: #555; font-style: italic; font-size: 0.83rem; }
-        .event { margin: 6px 0; font-size: 0.83rem; }
-        .event .time { color: #888; font-size: 0.78rem; }
-        .event .location { color: #666; font-size: 0.75rem; }
-        .prep-item { background: #111; border-left: 3px solid #fbbf24; padding: 8px 12px; margin: 6px 0; border-radius: 0 6px 6px 0; font-size: 0.83rem; }
-        .deadline-item { background: #1a1111; border-left: 3px solid #f87171; padding: 8px 12px; margin: 6px 0; border-radius: 0 6px 6px 0; font-size: 0.83rem; }
-        .deadline-item.later { border-left-color: #fbbf24; }
-        .tip { background: #0f1a0f; border-left: 3px solid #4ade80; padding: 8px 12px; margin: 6px 0; border-radius: 0 6px 6px 0; font-size: 0.83rem; }
-        .warn { background: #1a1a0f; border-left: 3px solid #fbbf24; padding: 8px 12px; margin: 6px 0; border-radius: 0 6px 6px 0; font-size: 0.83rem; }
-        footer { text-align: center; color: #555; font-size: 0.7rem; margin-top: 24px; padding-top: 12px; border-top: 1px solid #1a1a1a; }
+        .course-name { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+        .meta { font-size: 0.85rem; color: #999; margin-bottom: 4px; }
+        .meta span { margin-right: 12px; }
+        .section { margin-top: 12px; }
+        .section-label { font-size: 0.8rem; font-weight: 600; color: #bbb; margin-bottom: 4px; }
+        .section p, .section li { font-size: 0.85rem; line-height: 1.5; color: #ccc; }
+        .section ul { padding-left: 18px; }
+        .section li { margin-bottom: 3px; }
+        .deadline-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid #2a2a2a; }
+        .deadline-item:last-child { border-bottom: none; }
+        .deadline-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+        .deadline-info { flex: 1; }
+        .deadline-date { font-size: 0.75rem; color: #999; }
+        .deadline-title { font-size: 0.85rem; color: #e0e0e0; font-weight: 600; }
+        .deadline-desc { font-size: 0.8rem; color: #999; margin-top: 2px; }
+        .warning-box { background: #1a1a1a; border: 1px solid #fbbf24; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+        .warning-box p { font-size: 0.85rem; color: #fbbf24; }
+        .footer { text-align: center; padding: 20px 0; color: #555; font-size: 0.75rem; }
+        .divider { border: none; border-top: 1px solid #2a2a2a; margin: 6px 0; }
+        .highlight { background: #4ade8015; border-left: 3px solid #4ade80; padding: 8px 12px; border-radius: 0 8px 8px 0; margin-top: 8px; }
+        .highlight p { font-size: 0.85rem; color: #4ade80; }
     </style>
 </head>
 <body>
-<div class="container">
-    <header>
-        <h1>Uni Daily Check</h1>
-        <div class="date">Montag, 13. April 2026 — Periode 5, Woche 1</div>
-        <span class="badge">Wochenplan KW 16</span>
-    </header>
+    <div class="container">
+        <div class="header">
+            <h1>Uni Daily Check</h1>
+            <div class="date">Mittwoch, 15. April 2026</div>
+            <div class="badge">Tages-Check</div>
+        </div>
 
-    <div class="card">
-        <h2><span class="dot dot-blue"></span> Woche 13.–17. April</h2>
-
-        <div class="day-card today">
-            <div class="day-header"><span class="green">Montag 13.</span> — Opening Lecture</div>
-            <div class="event">
-                <span class="course-tag tag-mopd">MOPD</span>
-                <strong>Opening Lecture</strong><br>
-                <span class="time">08:30–10:00</span> · <span class="location">TS53 A-1.01 (Franz Palm Lecture Hall)</span><br>
-                Dozentin: Timmermans, VM (Veerle)
+        <!-- HEUTE -->
+        <div class="card">
+            <div class="card-title green">Heute</div>
+            <div class="course-name">Management of Operations & Product Development</div>
+            <div class="meta">
+                <span>13:30 – 15:30</span>
+                <span>TS53 G1.03</span>
+            </div>
+            <div class="meta">
+                <span>Tutorial B/27</span>
+                <span>Dozent: C. van Hoesel</span>
+            </div>
+            <div class="section">
+                <div class="section-label">Thema: Meeting 2 — Linear Programming & Sensitivity Analysis</div>
+                <p>Heute lernt ihr, wie man Optimierungsprobleme als lineare Programme formuliert und loest. Ihr arbeitet mit Sensitivity Reports, um zu verstehen, wie sich Aenderungen in den Parametern auf die optimale Loesung auswirken. Die Uebungen werden in Excel durchgefuehrt.</p>
+            </div>
+            <div class="section">
+                <div class="section-label">Vorbereitung</div>
+                <ul>
+                    <li><strong>Reader 1</strong> — Linear Programming (PDF auf Canvas, Modul "Meeting 2")</li>
+                    <li><strong>Reader 2</strong> — Sensitivity Report (PDF auf Canvas)</li>
+                    <li><strong>Reader Implementation</strong> — Production Planning (Excel-Datei)</li>
+                    <li><strong>Exercise Templates Meeting 2</strong> (Excel-Datei herunterladen)</li>
+                </ul>
+            </div>
+            <div class="highlight">
+                <p>Laptop mit Excel mitbringen!</p>
             </div>
         </div>
 
-        <div class="day-card">
-            <div class="day-header"><span class="blue">Dienstag 14.</span></div>
-            <div class="no-events">Keine Veranstaltungen im Stundenplan.</div>
-            <div style="font-size:0.8rem; color:#888; margin-top:4px;">ESBM Opening Lecture als aufgezeichnetes Video auf Canvas verfuegbar.</div>
-        </div>
-
-        <div class="day-card">
-            <div class="day-header"><span class="blue">Mittwoch 15.</span></div>
-            <div class="event">
-                <span class="course-tag tag-mopd">MOPD</span>
-                <strong>Tutorial B: Session 2 — Linear Programming</strong><br>
-                <span class="time">16:00–18:00</span> · <span class="location">TAP23 (X) 1.001</span><br>
-                Dozent: Rouhani, A (Arman)
+        <!-- MORGEN -->
+        <div class="card">
+            <div class="card-title blue">Morgen — Donnerstag</div>
+            <p style="font-size:0.9rem; color:#999;">Keine Vorlesungen oder Tutorials.</p>
+            <div class="section" style="margin-top:10px;">
+                <div class="section-label">Freitag vorbereiten</div>
+                <p><strong>EBC2158 Tutorial 1</strong> — 11:00–13:00, TAP23 (X) 1.001, Dozentin: Z. Ghasemian</p>
+                <p style="margin-top:6px;">Kursintroduction und <strong>Team-Zuteilung</strong> fuer Facilitations und das Entrepreneur Interview Projekt. Anwesenheit ist entscheidend!</p>
+                <ul style="margin-top:6px;">
+                    <li>Course Syllabus lesen (PDF auf Canvas unter Ankuendigung verlinkt)</li>
+                    <li>Fragen zum Kursaufbau vorbereiten</li>
+                </ul>
             </div>
         </div>
 
-        <div class="day-card">
-            <div class="day-header"><span class="blue">Donnerstag 16.</span></div>
-            <div class="no-events">Keine Veranstaltungen.</div>
-        </div>
-
-        <div class="day-card">
-            <div class="day-header"><span class="blue">Freitag 17.</span> — <span class="red">Wichtig!</span></div>
-            <div class="event">
-                <span class="course-tag tag-esbm">ESBM</span>
-                <strong>Tutorial 1: Einfuehrung + Teamzuteilung</strong><br>
-                <span class="time">11:00–13:00</span> · <span class="location">TAP23 (X) 1.001</span><br>
-                Dozentin: Ghasemian, Z (Zahra)<br>
-                <span class="red"><strong>Anwesenheit kritisch!</strong> Teams fuer Facilitations und Interview-Projekt werden zugeteilt.</span>
+        <!-- VORSCHAU NAECHSTE WOCHE -->
+        <div class="card">
+            <div class="card-title" style="color:#a78bfa;">Naechste Woche — Di 21. April</div>
+            <div class="course-name" style="font-size:0.95rem;">EBC2158 Tutorial 2 — Facilitation 1</div>
+            <div class="section">
+                <div class="section-label">Lernziele</div>
+                <ul>
+                    <li>Definition von Entrepreneurship, Rolle von KMU in der Wirtschaft</li>
+                    <li>Vorteile und Nachteile des Unternehmertums</li>
+                    <li>Ethische Standards und gesellschaftliche Verantwortung</li>
+                </ul>
+            </div>
+            <div class="section">
+                <div class="section-label">Literatur</div>
+                <ul>
+                    <li><strong>Scarborough & Cornwall (2025)</strong> — Kapitel 1 + 2</li>
+                    <li><strong>Jensen, Byers, Dunham & Fjeld (2021)</strong> — "Entrepreneurs and the Truth", Harvard Business Review, 99(4), S. 124–131 (Link auf Canvas)</li>
+                </ul>
             </div>
         </div>
-    </div>
 
-    <div class="card">
-        <h2><span class="dot dot-yellow"></span> <span class="yellow">Literatur & Vorbereitung</span></h2>
+        <!-- DEADLINES -->
+        <div class="card">
+            <div class="card-title yellow">Deadlines</div>
 
-        <h3>Fuer Mittwoch — MOPD Tutorial (Session 2)</h3>
-        <div class="prep-item">
-            <span class="course-tag tag-mopd">MOPD</span>
-            <strong>Pflichtlektuere:</strong><br>
-            - Reader 1 — Linear Programming.pdf<br>
-            - Reader 2 — Sensitivity Report.pdf<br>
-            <strong>Herunterladen & vorbereiten:</strong><br>
-            - Reader Implementation — Production Planning.xlsx<br>
-            - Exercise Templates Meeting 2.xlsx<br>
-            <span style="color:#888;">Thema: Lineare Programmierung, Excel Solver, Sensitivity Report. Laptop mit Excel mitbringen!</span>
-        </div>
+            <div class="deadline-item">
+                <div class="deadline-dot" style="background:#fbbf24;"></div>
+                <div class="deadline-info">
+                    <div class="deadline-date">So, 19. April</div>
+                    <div class="deadline-title">Skill Registration Periode 6 schliesst</div>
+                    <div class="deadline-desc">SBE-Registrierung — pruefe ob du alle Skills registriert hast</div>
+                </div>
+            </div>
 
-        <h3>Fuer Freitag — ESBM Tutorial 1</h3>
-        <div class="prep-item">
-            <span class="course-tag tag-esbm">ESBM</span>
-            <strong>Vorbereitung:</strong><br>
-            - Kurs-Syllabus lesen<br>
-            - Opening Lecture Video auf Canvas anschauen<br>
-            - Fragen zum Kurs vorbereiten<br>
-            <span style="color:#888;">Keine Pflichtlektuere, aber Syllabus ist wichtig fuer Kursverstaendnis.</span>
-        </div>
+            <div class="deadline-item">
+                <div class="deadline-dot" style="background:#fbbf24;"></div>
+                <div class="deadline-info">
+                    <div class="deadline-date">Di, 21. April — 23:59</div>
+                    <div class="deadline-title">Announce the Interviewee (EBC2158)</div>
+                    <div class="deadline-desc">Text Entry: Name des Entrepreneurs, Firmenname, Standort, Branche, Kontaktdaten (E-Mail/LinkedIn/Telefon). Als Team einreichen.</div>
+                </div>
+            </div>
 
-        <h3>Vorschau: Naechste Woche (KW 17)</h3>
-        <div class="prep-item">
-            <span class="course-tag tag-esbm">ESBM</span>
-            <strong>Tutorial 2 (Di 21.04.) — Facilitation 1:</strong><br>
-            - Scarborough & Cornwall (2025) Kapitel 1 + 2<br>
-            - Jensen et al. (2021) — "Entrepreneurs and the Truth", Harvard Business Review<br>
-            <span style="color:#888;">Lernziele: Entrepreneurship definieren, Rolle von Small Business, ethische Standards.</span>
-        </div>
-        <div class="prep-item">
-            <span class="course-tag tag-mopd">MOPD</span>
-            <strong>Meeting 3:</strong><br>
-            - Reader 3 — Integer Linear Programming.pdf<br>
-            - Reader Implementation — Car Manufacturing.xlsx<br>
-            - Exercises — Template Ex 1.xlsx
-        </div>
-    </div>
+            <div class="deadline-item">
+                <div class="deadline-dot" style="background:#fbbf24;"></div>
+                <div class="deadline-info">
+                    <div class="deadline-date">Fr, 24. April — 23:59</div>
+                    <div class="deadline-title">Team Contract (EBC2158)</div>
+                    <div class="deadline-desc">Team-Vertrag hochladen</div>
+                </div>
+            </div>
 
-    <div class="card">
-        <h2><span class="dot dot-red"></span> <span class="red">Deadlines</span></h2>
+            <div class="deadline-item">
+                <div class="deadline-dot" style="background:#60a5fa;"></div>
+                <div class="deadline-info">
+                    <div class="deadline-date">Mo, 11. Mai — 23:59</div>
+                    <div class="deadline-title">Entrepreneur Interview Presentation (EBC2158, 100 Pkt)</div>
+                    <div class="deadline-desc">Slides + AI Statement hochladen. Consent Form separat einreichen.</div>
+                </div>
+            </div>
 
-        <div class="deadline-item">
-            <span class="course-tag tag-esbm">ESBM</span>
-            <strong>Announce the Interviewee</strong><br>
-            <span class="red">Deadline: Di, 21. April 23:59</span><br>
-            <span style="color:#888;">Du brauchst einen Interviewpartner (Unternehmer/in). Fang JETZT an zu suchen!</span>
-        </div>
-        <div class="deadline-item">
-            <span class="course-tag tag-esbm">ESBM</span>
-            <strong>Team Contract hochladen</strong><br>
-            <span class="yellow">Deadline: Fr, 24. April 23:59</span><br>
-            <span style="color:#888;">Wird nach Teamzuteilung am Freitag erstellt.</span>
-        </div>
-        <div class="deadline-item later">
-            <span class="course-tag tag-esbm">ESBM</span>
-            <strong>Entrepreneur Interview Presentation + Consent Form</strong><br>
-            <span style="color:#888;">Deadline: Mo, 11. Mai 23:59 · 100 Punkte</span>
-        </div>
-        <div class="deadline-item later">
-            <span class="course-tag tag-mopd">MOPD</span>
-            <strong>Case Sports Inc.</strong><br>
-            <span style="color:#888;">Deadline: Di, 26. Mai 23:59 · 100 Punkte (20% der Note)</span>
-        </div>
-        <div class="deadline-item later">
-            <span class="course-tag tag-esbm">ESBM</span>
-            <strong>Written Project Proposal (20%) + Video Pitch</strong><br>
-            <span style="color:#888;">Deadline: Do, 4. Juni 23:59 · je 100 Punkte</span>
+            <div class="deadline-item">
+                <div class="deadline-dot" style="background:#60a5fa;"></div>
+                <div class="deadline-info">
+                    <div class="deadline-date">Di, 26. Mai — 23:59</div>
+                    <div class="deadline-title">Case Sports Inc. (EBC2022, 100 Pkt)</div>
+                    <div class="deadline-desc">Praesentation (Slides) + Excel-Datei hochladen</div>
+                </div>
+            </div>
+
+            <div class="deadline-item">
+                <div class="deadline-dot" style="background:#60a5fa;"></div>
+                <div class="deadline-info">
+                    <div class="deadline-date">Do, 4. Juni — 23:59</div>
+                    <div class="deadline-title">Written Project Proposal + Video Pitch (EBC2158, je 100 Pkt)</div>
+                    <div class="deadline-desc">Dokument + AI Statement, sowie Link zum Video Pitch einreichen</div>
+                </div>
+            </div>
         </div>
 
-        <div class="warn">
-            <strong>Skill Registration Periode 6</strong> schliesst am <strong>Sonntag 19. April 23:59</strong>. Falls du Skills fuer P6 brauchst — jetzt anmelden!
+        <!-- ANKUENDIGUNGEN -->
+        <div class="card">
+            <div class="card-title" style="color:#c084fc;">Ankuendigungen</div>
+            <div class="section">
+                <div class="section-label">EBC2158 — Willkommensnachricht (9. April)</div>
+                <p>Dr. Sergio Paramo-Ortiz & Kim van Cruchten begruessen zum Kurs. Die Opening Lecture ist als aufgezeichnetes Video auf Canvas verfuegbar (ab Dienstag). Erstes Tutorial am Freitag. Syllabus lesen und Tutorial-Gruppe pruefen.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            Aktualisiert: Mittwoch, 15. April 2026 um 09:00 Uhr
         </div>
     </div>
-
-    <div class="card">
-        <h2><span class="dot dot-green"></span> Ankuendigungen</h2>
-        <div style="font-size:0.85rem;">
-            <span class="course-tag tag-esbm">ESBM</span>
-            <strong>Willkommen zum Kurs</strong> <span style="color:#666;">(09.04.)</span><br>
-            <span style="color:#ccc;">Kurskoordinatoren Dr. Sergio Paramo-Ortiz & Kim van Cruchten begruessen euch. Opening Lecture ab Dienstag als Video auf Canvas. Erstes Tutorial am Freitag. Syllabus lesen und Tutorial-Gruppe/Raum pruefen.</span>
-        </div>
-    </div>
-
-    <div class="card">
-        <h2><span class="dot dot-green"></span> <span class="green">Empfehlungen</span></h2>
-
-        <div class="tip">
-            <strong>Heute (Montag):</strong><br>
-            1. MOPD Opening Lecture besuchen (08:30, TS53)<br>
-            2. Reader 1 + 2 fuer Mittwoch anfangen<br>
-            3. Excel-Dateien fuer MOPD herunterladen
-        </div>
-        <div class="tip">
-            <strong>Dienstag/Mittwoch:</strong><br>
-            1. ESBM Opening Lecture Video anschauen<br>
-            2. Reader 1 + 2 fertig lesen, Exercises anschauen<br>
-            3. Mi 16:00 MOPD Tutorial — Laptop mit Excel!
-        </div>
-        <div class="tip">
-            <strong>Donnerstag/Freitag:</strong><br>
-            1. ESBM Syllabus gruendlich lesen<br>
-            2. Fr 11:00 ESBM Tutorial — UNBEDINGT da sein!<br>
-            3. Interviewpartner suchen (Deadline naechsten Dienstag!)
-        </div>
-
-        <h3 style="color:#f87171;">Risiken</h3>
-        <ul>
-            <li><span class="red">Interviewee-Suche:</span> Nur bis 21.04. — sofort Unternehmer/innen kontaktieren!</li>
-            <li><span class="yellow">MOPD Participation:</span> Pass/Fail, mind. 9/12 Sessions. Jede zaehlt.</li>
-            <li><span class="yellow">Skill Registration P6:</span> Schliesst So 19.04.</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h2><span class="dot dot-blue"></span> Kurse Periode 5</h2>
-        <h3><span class="course-tag tag-mopd">MOPD</span> Management of Operations & Product Development</h3>
-        <ul>
-            <li>EBC2022 · 12 Sessions + Case + Exam</li>
-            <li>Bewertung: Case 20% + Exam 80% + Participation (Pass/Fail)</li>
-            <li>Erlaubt bei Exam: Casio FX82/FX85 · Ort: MECC</li>
-        </ul>
-        <h3 style="margin-top:10px;"><span class="course-tag tag-esbm">ESBM</span> Entrepreneurship & Small Business Management</h3>
-        <ul>
-            <li>EBC2158 · 8 Wochen · Tutorials + Lectures</li>
-            <li>Bewertung: Facilitation + Interview-Praesentation + Video Pitch + Proposal</li>
-            <li>Team-basiert: Interview + Business Project</li>
-        </ul>
-    </div>
-
-    <footer>
-        Aktualisiert: Montag, 13. April 2026 — Daten aus Stundenplan + Canvas API
-    </footer>
-</div>
 </body>
 </html>
