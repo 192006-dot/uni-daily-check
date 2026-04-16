@@ -1,143 +1,205 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Uni Daily Check — Do 16.04.</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uni Daily Check - 16. April 2026</title>
 <style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{background:#0f0f0f;color:#e0e0e0;font-family:system-ui,-apple-system,sans-serif;line-height:1.5;padding:20px 16px 60px;font-size:15px}
-  .wrap{max-width:600px;margin:0 auto}
-  header{text-align:center;margin-bottom:24px}
-  h1{font-size:22px;font-weight:700;margin-bottom:6px}
-  .date{color:#888;font-size:14px;margin-bottom:10px}
-  .badge{display:inline-block;background:#4ade80;color:#000;font-weight:700;font-size:11px;padding:4px 10px;border-radius:20px;letter-spacing:.5px}
-  .card{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:16px;margin-bottom:14px}
-  .card h2{font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;font-weight:700}
-  .green h2{color:#4ade80}
-  .blue h2{color:#60a5fa}
-  .yellow{border-color:#4a3a10;background:#1d1810}
-  .yellow h2{color:#fbbf24}
-  .red{border-color:#4a1515;background:#1d1010}
-  .red h2{color:#f87171}
-  .course{font-weight:700;font-size:16px;margin-bottom:4px}
-  .meta{color:#9a9a9a;font-size:13px;margin-bottom:10px}
-  .meta span{margin-right:10px}
-  .topic{background:#11151d;border-left:3px solid #60a5fa;padding:10px 12px;border-radius:6px;margin:10px 0;font-size:14px;color:#c8d4e5}
-  .label{color:#888;font-size:12px;text-transform:uppercase;letter-spacing:.5px;margin-top:10px;margin-bottom:4px}
-  ul{list-style:none;padding:0}
-  li{padding:6px 0;border-bottom:1px solid #222;font-size:14px}
-  li:last-child{border:0}
-  .deadline{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid #222}
-  .deadline:last-child{border:0}
-  .deadline .name{flex:1}
-  .deadline .when{font-size:12px;font-weight:700;white-space:nowrap}
-  .when.urgent{color:#f87171}
-  .when.soon{color:#fbbf24}
-  .when.later{color:#888}
-  .prep-hint{background:#0d1a0d;border-left:3px solid #4ade80;padding:10px 12px;border-radius:6px;margin-top:10px;font-size:13px;color:#a8d4a8}
-  footer{text-align:center;color:#555;font-size:11px;margin-top:30px}
-  .warn{color:#fbbf24;font-size:13px;margin-top:8px}
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0f0f0f;
+    color: #e0e0e0;
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.55;
+    padding: 16px;
+  }
+  .container { max-width: 600px; margin: 0 auto; }
+  header { text-align: center; padding: 20px 0 24px; }
+  header h1 { font-size: 24px; color: #fff; margin-bottom: 6px; }
+  header .date { color: #888; font-size: 14px; }
+  .badge {
+    display: inline-block;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    color: #4ade80;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    margin-top: 8px;
+  }
+  .card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 14px;
+  }
+  .card h2 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #888;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .today h2 { color: #4ade80; }
+  .tomorrow h2 { color: #60a5fa; }
+  .deadlines h2 { color: #fbbf24; }
+  .announce h2 { color: #a78bfa; }
+  .event-title {
+    font-size: 17px;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .event-meta { font-size: 14px; color: #aaa; margin-bottom: 8px; }
+  .event-meta span { margin-right: 10px; }
+  .section-label {
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-top: 12px;
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+  p { margin-bottom: 8px; font-size: 15px; }
+  ul { padding-left: 18px; margin-bottom: 8px; }
+  li { margin-bottom: 4px; font-size: 14px; }
+  .rest { color: #888; font-style: italic; }
+  .tip {
+    background: #16281a;
+    border-left: 3px solid #4ade80;
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .deadline-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #222;
+  }
+  .deadline-item:last-child { border-bottom: none; }
+  .deadline-urgent { color: #f87171; font-weight: 600; font-size: 14px; }
+  .deadline-warn { color: #fbbf24; font-weight: 600; font-size: 14px; }
+  .deadline-soon { color: #60a5fa; font-weight: 600; font-size: 14px; }
+  .deadline-date { color: #999; font-size: 12px; margin-bottom: 3px; }
+  .deadline-desc { color: #ccc; font-size: 13px; }
+  footer {
+    text-align: center;
+    color: #555;
+    font-size: 11px;
+    padding: 18px 0 8px;
+  }
+  strong { color: #fff; }
+  .warn-box {
+    background: #2a1a0a;
+    border: 1px solid #5a3a10;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 10px;
+    font-size: 13px;
+  }
+  .warn-box strong { color: #fbbf24; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <h1>Uni Daily Check</h1>
-    <div class="date">Donnerstag, 16. April 2026</div>
-    <div class="badge">Tages-Check</div>
-  </header>
+  <div class="container">
+    <header>
+      <h1>Uni Daily Check</h1>
+      <div class="date">Donnerstag, 16. April 2026</div>
+      <div class="badge">Tages-Check</div>
+    </header>
 
-  <div class="card green">
-    <h2>Heute · Do 16.04.</h2>
-    <div class="course">Kein Tutorial heute</div>
-    <div class="meta">Erster Kurstag war gestern (Opening Lecture EBC2158)</div>
-
-    <div class="prep-hint">
-      <strong>Nutze den Tag gezielt fuer morgen:</strong><br>
-      1. Course-Syllabus EBC2158 lesen — morgen wird direkt zugeteilt<br>
-      2. Fragen zum Kurs notieren (Bewertung, Facilitations, Interview-Projekt)<br>
-      3. <strong>Schon heute ueberlegen:</strong> Welche Entrepreneurs im Umfeld koennten interviewt werden? (Familie, Netzwerk, LinkedIn) — Deadline Di 21.04.
-    </div>
-
-    <div class="warn">⚠ Skill Registration Periode 6 schliesst Sonntag 19.04. 23:59h — falls noch nicht registriert: heute/morgen erledigen.</div>
-  </div>
-
-  <div class="card blue">
-    <h2>Morgen · Fr 17.04.</h2>
-    <div class="course">EBC2158 · Tutorial 1</div>
-    <div class="meta">
-      <span>⏰ 11:00–13:00</span>
-      <span>📍 TAP23 (X) 1.001</span><br>
-      <span>👨‍🏫 Zahra Ghasemian</span>
-    </div>
-
-    <div class="topic">
-      <strong>Thema:</strong> Tutorial Introduction + <strong>Team Allocation</strong>. Studierende werden in Teams eingeteilt fuer (i) Facilitations und (ii) Entrepreneur-Interview + Business-Projekt. Facilitation-Slots werden zugewiesen.
-    </div>
-
-    <div class="label">Vorbereitung</div>
-    <ul>
-      <li>📖 Course-Syllabus EBC2158 lesen</li>
-      <li>📝 Eigene Fragen zu Kursstruktur / Ablauf vorbereiten</li>
-    </ul>
-
-    <div class="label">⚠ Wichtig</div>
-    <ul>
-      <li>Anwesenheit kritisch — Teams + Facilitation-Slots werden hier fix zugeteilt. Bei Abwesenheit vorher Tutorin kontaktieren.</li>
-    </ul>
-  </div>
-
-  <div class="card red">
-    <h2>🔴 Deadlines naechste 7 Tage</h2>
-
-    <div class="deadline">
-      <div class="name">
-        <strong>Announce the interviewee</strong> (EBC2158)<br>
-        <span style="color:#aaa;font-size:13px">Team-Abgabe: Name des Entrepreneurs, Firma, Standort, Branche, Kontakt (Email/LinkedIn/Telefon)</span>
+    <div class="card today">
+      <h2>Heute</h2>
+      <p class="rest">Kein Tutorial heute &mdash; Period 5 Tutorials starten erst morgen.</p>
+      <div class="tip">
+        <strong>Produktiv-Tipp fuer heute:</strong>
+        <ul style="margin-top:6px;">
+          <li>Syllabus EBC2158 lesen (Vorbereitung morgen)</li>
+          <li>Moegliche Entrepreneur-Kandidaten sammeln (Interview-Deadline Di 21.04.)</li>
+          <li>Scarborough &amp; Cornwall (2025) Ch. 1+2 anfangen (fuer Tutorial 2 am Di)</li>
+          <li>Skill Registration Period 6 pruefen (Deadline So 23:59h)</li>
+        </ul>
       </div>
-      <div class="when urgent">Di 21.04.<br>23:59</div>
     </div>
 
-    <div class="deadline">
-      <div class="name">
-        <strong>Team contract</strong> (EBC2158)<br>
-        <span style="color:#aaa;font-size:13px">Upload Team-Vertrag — abhaengig von Team-Allocation morgen</span>
+    <div class="card tomorrow">
+      <h2>Morgen: Freitag 17. April</h2>
+      <div class="event-title">EBC2158 Entrepreneurship &amp; Small Business Management</div>
+      <div class="event-meta">
+        <span>&#128337; 11:00&ndash;13:00</span>
+        <span>&#128205; TAP23 (X) 1.001</span>
       </div>
-      <div class="when soon">Fr 24.04.<br>23:59</div>
-    </div>
-  </div>
+      <div class="event-meta">
+        <span>&#128104;&zwj;&#127979; Zahra Ghasemian</span>
+        <span>Tutorial 1</span>
+      </div>
 
-  <div class="card yellow">
-    <h2>💡 Strategie-Tipp</h2>
-    <div style="font-size:14px;line-height:1.6">
-      Zwischen Team-Allocation (morgen Fr) und Interviewee-Deadline (Di 21.04) liegen nur <strong>4 Tage</strong>. Nach dem Tutorial sofort mit Team absprechen + Entrepreneur suchen. <strong>Heute schon</strong> eine Shortlist an moeglichen Interviewpartnern im eigenen Netzwerk erstellen spart viel Zeit.
-    </div>
-  </div>
+      <div class="section-label">Thema</div>
+      <p>Einfuehrung ins Tutorial plus <strong>Team Allocation</strong>. Teams werden gebildet fuer (i) Facilitations und (ii) Entrepreneur Interview &amp; Business Project. Facilitation-Slots werden zugeteilt.</p>
 
-  <div class="card blue">
-    <h2>📅 Mo 20.04. · Vorausschau</h2>
-    <div class="course">EBC2022 · Tutorial A · Meeting 2</div>
-    <div class="meta">
-      <span>⏰ 16:00–18:00</span>
-      <span>📍 TAP23 (X) 1.001</span><br>
-      <span>👨‍🏫 Arman Rouhani</span>
-    </div>
-    <div class="topic">
-      <strong>Thema:</strong> Linear Programming — Anwendung. Basierend auf Reader 1 (Linear Programming), Reader 2 (Sensitivity Report) und Excel-Implementation (Production Planning). Laptop mit Excel erforderlich.
-    </div>
-    <div class="label">Vorbereitung (ueber WE)</div>
-    <ul>
-      <li>📖 Reader 1: Linear Programming</li>
-      <li>📖 Reader 2: Sensitivity Report</li>
-      <li>💻 Excel-Template "Exercise Templates Meeting 2" oeffnen</li>
-      <li>🎥 Videos aus Opening Lecture (LP + Excel Part 1/2) schauen</li>
-    </ul>
-  </div>
+      <div class="warn-box">
+        <strong>&#9888; Anwesenheit kritisch:</strong> Teams &amp; Slots werden morgen vergeben. Wer fehlt, muss vorher mit dem Tutor schreiben &mdash; sonst raus.
+      </div>
 
-  <footer>
-    Aktualisiert: 16.04.2026 · Kurse: EBC2158, EBC2022
-  </footer>
-</div>
+      <div class="section-label">Vorbereitung</div>
+      <ul>
+        <li><strong>Course Syllabus</strong> durchlesen</li>
+        <li>Fragen zum Kurs / zur Struktur notieren</li>
+      </ul>
+
+      <div class="section-label">Heute Abend noch</div>
+      <ul>
+        <li>Syllabus lesen</li>
+        <li>Falls moeglich: 1&ndash;2 Entrepreneurs als potentielle Interviewpartner im Kopf haben &mdash; nach Tutorial 1 hat das Team nur <strong>4 Tage</strong> bis zur Interviewee-Announce-Deadline</li>
+      </ul>
+    </div>
+
+    <div class="card deadlines">
+      <h2>Deadlines</h2>
+
+      <div class="deadline-item">
+        <div class="deadline-urgent">&#128308; Sonntag 19.04. &middot; 23:59h</div>
+        <div class="deadline-date">In 3 Tagen</div>
+        <div class="deadline-desc"><strong>SBE Skill Registration Period 6</strong> &mdash; Registrierung schliesst. Falls noch nicht erledigt: heute/morgen machen.</div>
+      </div>
+
+      <div class="deadline-item">
+        <div class="deadline-urgent">&#128308; Dienstag 21.04. &middot; 23:59h</div>
+        <div class="deadline-date">In 5 Tagen</div>
+        <div class="deadline-desc"><strong>Announce the Interviewee</strong> (EBC2158, Team-Abgabe, Text-Entry)<br>Name Entrepreneur, Firma, Ort, Branche, Kontakt (Email/LinkedIn/Phone). <em>Team wird erst Freitag gebildet &mdash; sehr enges Zeitfenster.</em></div>
+      </div>
+
+      <div class="deadline-item">
+        <div class="deadline-warn">&#128993; Dienstag 21.04. &middot; 11:00h (Tutorial 2)</div>
+        <div class="deadline-date">In 5 Tagen &mdash; Pflichtlektuere</div>
+        <div class="deadline-desc"><strong>Facilitation 1</strong> &mdash; Literatur:<br>&middot; Scarborough &amp; Cornwall (2025) <strong>Ch. 1+2</strong><br>&middot; Jensen et al. (2021) <em>&bdquo;Entrepreneurs and the Truth&ldquo;</em> (HBR 99(4), 124&ndash;131)</div>
+      </div>
+
+      <div class="deadline-item">
+        <div class="deadline-warn">&#128993; Montag 20.04. &middot; 16:00h (Tutorial)</div>
+        <div class="deadline-date">In 4 Tagen &mdash; Material-Prep</div>
+        <div class="deadline-desc"><strong>EBC2022 Meeting 2: Linear Programming</strong> (Arman Rouhani, TAP23 X 1.001)<br>Materialien: Reader 1 LP, Reader 2 Sensitivity Report, Excel-Templates (Production Planning + Exercise Meeting 2). <strong>Laptop mit Excel mitbringen.</strong></div>
+      </div>
+
+      <div class="deadline-item">
+        <div class="deadline-soon">&#128309; Freitag 24.04. &middot; 23:59h</div>
+        <div class="deadline-date">In 8 Tagen</div>
+        <div class="deadline-desc"><strong>Team Contract</strong> (EBC2158, Team-Abgabe) &mdash; Upload nach Team-Bildung morgen.</div>
+      </div>
+    </div>
+
+    <div class="card announce">
+      <h2>Ankuendigungen</h2>
+      <p><strong>EBC2158 Welcome (09.04.):</strong> Teaching-Team heisst willkommen. Course Structure: Opening Lecture Di 14.04., Tutorials starten Fr 17.04.</p>
+      <p><strong>EBC2022 Welcome (02.04.):</strong> Lehrbuch &bdquo;Operations Management&ldquo; plus diverse Readers. Fokus: LP, Sensitivity, ILP, Capacity, Quality, Inventory, Scheduling, Project Mgmt.</p>
+    </div>
+
+    <footer>
+      Aktualisiert: 16. April 2026 &middot; 09:25
+    </footer>
+  </div>
 </body>
 </html>
