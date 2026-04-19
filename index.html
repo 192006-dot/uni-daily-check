@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uni Daily Check — Fr 17.04.2026</title>
+<title>Uni Daily Check — Wochenplan 20.–24.04.2026</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -45,10 +45,22 @@
     margin-bottom: 12px;
   }
   .card.today { border-left: 3px solid #4ade80; }
-  .card.tomorrow { border-left: 3px solid #60a5fa; }
+  .card.day { border-left: 3px solid #60a5fa; }
   .card.warn { border-left: 3px solid #fbbf24; }
   .card.urgent { border-left: 3px solid #f87171; background: #2a1414; }
-  .course-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; }
+  .day-label {
+    display: inline-block;
+    background: #1e2a3a;
+    color: #60a5fa;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: 0.04em;
+  }
+  .day-label.none { background: #262626; color: #888; }
+  .course-title { font-size: 1.02rem; font-weight: 600; margin-bottom: 6px; }
   .meta { color: #a0a0a0; font-size: 0.88rem; margin-bottom: 4px; }
   .meta strong { color: #d0d0d0; font-weight: 500; }
   .topic {
@@ -114,135 +126,316 @@
     margin-right: 4px;
     margin-top: 4px;
   }
+  .lit-block {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 10px;
+  }
+  .lit-day {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #60a5fa;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .lit-title { font-size: 0.92rem; color: #e0e0e0; }
+  .lit-title em { color: #fbbf24; font-style: normal; }
+  .plan-row {
+    padding: 10px 0;
+    border-bottom: 1px solid #2a2a2a;
+  }
+  .plan-row:last-child { border-bottom: none; }
+  .plan-day {
+    color: #4ade80;
+    font-weight: 600;
+    font-size: 0.88rem;
+    margin-bottom: 3px;
+  }
+  .plan-task { font-size: 0.9rem; color: #d0d0d0; }
+  .risk {
+    background: #2a1414;
+    border: 1px solid #3a1818;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-top: 8px;
+    font-size: 0.88rem;
+    color: #f87171;
+  }
+  .mini-session {
+    font-size: 0.84rem;
+    color: #c0c0c0;
+    padding: 4px 0;
+    border-bottom: 1px dashed #2a2a2a;
+  }
+  .mini-session:last-child { border-bottom: none; }
+  .mini-session strong { color: #e0e0e0; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
     <h1>Uni Daily Check</h1>
-    <div class="date">Freitag, 17. April 2026</div>
-    <div class="badge">Tages-Check</div>
+    <div class="date">Sonntag, 19. April 2026 · Wochenplan 20.–24.04.</div>
+    <div class="badge">Wochen-Ueberblick</div>
   </header>
 
+  <!-- WOCHENUEBERSICHT -->
   <div class="section">
-    <div class="section-title">Heute</div>
-    <div class="card today">
-      <div class="course-title">EBC2158 — Entrepreneurship &amp; Small Business Management</div>
-      <div class="meta">⏰ <strong>11:00 – 13:00</strong></div>
-      <div class="meta">📍 TAP23 (X) 1.001</div>
-      <div class="meta">👨‍🏫 Zahra Ghasemian · Tutorial 1 (Gruppe B/18)</div>
+    <div class="section-title">Termine der Woche</div>
+
+    <!-- MONTAG -->
+    <div class="card day">
+      <div class="day-label">Montag · 20.04.</div>
+      <div class="course-title">EBC2022 — Management of Operations &amp; Product Development</div>
+      <div class="meta">⏰ <strong>13:30 – 15:30</strong></div>
+      <div class="meta">📍 TS53 E2.07 · Tutorial A (Meeting 3)</div>
+      <div class="meta">👨‍🏫 Dr. Constantinus van Hoesel</div>
 
       <div class="topic">
         <strong>Thema</strong>
-        Tutorial Introduction + Team Allocation. Heute werden die Teams für die Facilitations und das Entrepreneur-Interview/Business-Project gebildet und die Facilitation-Slots verteilt. Kein inhaltliches Fach-Thema, aber <em>strukturbestimmend für das ganze Trimester</em>.
-      </div>
-
-      <div class="highlight-box">
-        ⚠️ Anwesenheit heute <strong>kritisch</strong> — wer fehlt, bekommt kein Team und keinen Facilitation-Slot zugewiesen.
+        Integer Linear Programming — Erweiterung der LP-Grundlagen auf diskrete Entscheidungsvariablen. Anwendungsfall: Car-Manufacturing Case mit Produktions-Mix-Optimierung.
       </div>
 
       <div class="prep">
         <strong>Vorbereitung</strong>
-        • Syllabus durchlesen<br>
-        • Offene Fragen zu Kursaufbau / Bewertung notieren
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">Morgen &amp; Wochenende</div>
-    <div class="card tomorrow">
-      <div class="course-title">Samstag 18.04 — Kein Uni-Termin</div>
-      <div class="meta">Nächster Termin: <strong>Mo 20.04 · 16:00</strong> EBC2022 Meeting 2</div>
-
-      <div class="topic">
-        <strong>Wochenend-Fokus</strong>
-        Zwei parallele Vorbereitungen ab Samstag:
-        <ul style="margin-top: 6px;">
-          <li><strong>Interviewpartner suchen</strong> — Deadline Dienstag 21.04! Team aus heutigem Tutorial kontaktieren, Entrepreneur finden.</li>
-          <li><strong>EBC2158 Tutorial 2</strong> (Di 21.04, Facilitation 1): Scarborough &amp; Cornwall (2025) <em>Ch. 1 + 2</em> + HBR-Artikel Jensen et al. (2021) „Entrepreneurs and the Truth" (Link in Canvas).</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="card warn">
-      <div class="course-title">Vorschau Montag 20.04 · EBC2022 Meeting 2</div>
-      <div class="meta">⏰ 16:00 – 18:00 · TAP23 (X) 1.001 · Arman Rouhani</div>
-      <div class="topic">
-        <strong>Thema</strong>
-        Linear Programming + Sensitivity Report, angewandt auf Production Planning in Excel.
-      </div>
-      <div class="prep">
-        <strong>Materialien</strong>
-        Reader 1 (Linear Programming), Reader 2 (Sensitivity Report), Exercise Templates Meeting 2.xlsx, Production-Planning-Datei.
-        <div style="margin-top: 6px;">
+        • Reader 3 — Integer Linear Programming (Module 3) durchlesen<br>
+        • Reader implementation — Car Manufacturing.xlsx ansehen<br>
+        • Exercises Template Ex 1.xlsx vorbereitet mitbringen<br>
+        • Sensitivity-Report-Logik aus Meeting 2 noch im Kopf haben (baut drauf auf)
+        <div style="margin-top: 8px;">
           <span class="material-tag">💻 Laptop</span>
-          <span class="material-tag">📊 Excel + Solver</span>
+          <span class="material-tag">📊 Excel + Solver aktiv</span>
+          <span class="material-tag">📁 .xlsx vorab heruntergeladen</span>
         </div>
       </div>
     </div>
+
+    <!-- DIENSTAG -->
+    <div class="card urgent">
+      <div class="day-label" style="background: #3a1414; color: #f87171;">Dienstag · 21.04. — DEADLINE-TAG</div>
+      <div class="course-title">EBC2158 — Entrepreneurship &amp; Small Business Management</div>
+      <div class="meta">⏰ <strong>11:00 – 13:00</strong></div>
+      <div class="meta">📍 TAP23 (X) 1.001 · Tutorial 2 — Facilitation 1</div>
+      <div class="meta">👨‍🏫 Zahra Ghasemian</div>
+
+      <div class="topic">
+        <strong>Thema</strong>
+        <strong style="color:#4ade80; display:inline; font-size:inherit; letter-spacing:0;">Lernziele aus Canvas:</strong>
+        Entrepreneurship definieren, Rolle von Small Business fuer die Wirtschaft. Benefits &amp; Drawbacks des Unternehmer-Seins. Pitfalls erkennen. Hohe ethische Standards — Verantwortung gegenueber Kunden, Mitarbeitenden, Investoren &amp; Community.
+      </div>
+
+      <div class="prep">
+        <strong>Pflicht-Literatur</strong>
+        • <strong>Scarborough &amp; Cornwall (2025) — Ch. 1 + Ch. 2</strong><br>
+        • <strong>Jensen, K., Byers, T., Dunham, L. &amp; Fjeld, J. (2021)</strong>: „Entrepreneurs and the Truth", <em>Harvard Business Review</em> 99(4), S. 124–131 (Link in Canvas)
+      </div>
+
+      <div class="highlight-box">
+        🔴 Bis <strong>23:59</strong>: „Announce the interviewee" hochladen — Text-Eintrag mit (1) Entrepreneur-Name, (2) Firma, (3) Location, (4) Industrie, (5) Kontakt (Email/LinkedIn/Tel). <strong>Team-Abgabe — vorher abstimmen!</strong>
+      </div>
+    </div>
+
+    <!-- MITTWOCH -->
+    <div class="card day">
+      <div class="day-label">Mittwoch · 22.04.</div>
+      <div class="course-title">EBC2022 — Management of Operations &amp; Product Development</div>
+      <div class="meta">⏰ <strong>13:30 – 15:30</strong></div>
+      <div class="meta">📍 TS53 G1.03 · Tutorial B (Meeting 4)</div>
+      <div class="meta">👨‍🏫 Dr. Constantinus van Hoesel</div>
+
+      <div class="topic">
+        <strong>Thema</strong>
+        Strategic Capacity Planning (Stevenson Ch. 05) — Langfrist-Kapazitaets-Entscheidungen, Skaleneffekte, Entscheidungsbaeume fuer Kapazitaetsausbau.
+      </div>
+
+      <div class="prep">
+        <strong>Vorbereitung</strong>
+        • <strong>Ch05 Strategic Capacity Planning.pdf</strong> (Stevenson) lesen — das ist diesmal KEIN Reader, sondern ein Lehrbuch-Kapitel<br>
+        • Begriffe klaeren: <em>design capacity</em>, <em>effective capacity</em>, <em>utilization</em>, <em>capacity cushion</em>, <em>break-even</em>
+        <div style="margin-top: 8px;">
+          <span class="material-tag">💻 Laptop</span>
+          <span class="material-tag">🧮 Taschenrechner</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- DONNERSTAG -->
+    <div class="card warn">
+      <div class="day-label" style="background: #3a2a0f; color: #fbbf24;">Donnerstag · 23.04. — MAJOR-INFOTAG</div>
+      <div class="course-title">Major Information Sessions (Block)</div>
+      <div class="meta">📍 TS53 H0.01 Aula · <strong>10:15 – 16:00</strong></div>
+      <div class="meta">🎓 8 Infosessions à 30 Min fuer alle IB-Majors</div>
+
+      <div class="topic">
+        <strong>Was passiert</strong>
+        Einmaliges Event: Jeder Major stellt sich 30 Min vor. Relevant fuer die Major-Wahl ab dem dritten Studienjahr. Kein Fach-Thema, aber strategisch wichtig.
+      </div>
+
+      <div class="prep" style="background:#1a1a0f;">
+        <strong>Programm</strong>
+        <div class="mini-session">10:15–10:45 · <strong>Supply Chain Management</strong> — Simon Bartczek</div>
+        <div class="mini-session">11:00–11:30 · <strong>Accounting</strong> — Prof. Alexander Brueggen</div>
+        <div class="mini-session">11:45–12:15 · <strong>Entrepreneurship</strong> — Roy Broersma</div>
+        <div class="mini-session">12:30–13:00 · <strong>Information Management</strong> — Lars Rieser</div>
+        <div class="mini-session">13:15–13:45 · <strong>Marketing</strong> — Kelly Geyskens</div>
+        <div class="mini-session">14:00–14:30 · <strong>Organisation</strong> — Désirée Schumacher</div>
+        <div class="mini-session">14:45–15:15 · <strong>Strategy</strong> — Bas Janssens</div>
+        <div class="mini-session">15:30–16:00 · <strong>Finance</strong> — Paulo Mauricio Rodrigues</div>
+      </div>
+
+      <div class="highlight-box">
+        💡 Langer Tag mit kurzen Bloecken — Mittagspause zwischen Mittag und 14:00 einplanen. Notizen-App oder Heft mitnehmen, Fragen pro Major sammeln.
+      </div>
+    </div>
+
+    <!-- FREITAG -->
+    <div class="card warn">
+      <div class="day-label" style="background: #3a2a0f; color: #fbbf24;">Freitag · 24.04.</div>
+      <div class="course-title">EBC2158 — Tutorial 3 (Optional Workshop)</div>
+      <div class="meta">⏰ <strong>11:00 – 13:00</strong></div>
+      <div class="meta">📍 TAP23 (X) 1.001 · Tutorial B</div>
+      <div class="meta">👨‍🏫 Zahra Ghasemian</div>
+
+      <div class="topic">
+        <strong>Was passiert</strong>
+        Reservierter Workspace fuer die Arbeit am Entrepreneur Interview Project. Tutor + Gruppe geben Feedback zu Interview-Fragen ODER zur Datenanalyse/Praesentation — je nach Fortschritt. <strong>Anwesenheit nicht verpflichtend</strong> — haengt davon ab, ob das Team Feedback/Arbeitsraum braucht.
+      </div>
+
+      <div class="highlight-box">
+        🔴 Unabhaengig von Tutorial-Besuch: Bis <strong>23:59</strong> das <strong>Team Contract</strong> als PDF hochladen (Template aus Canvas, von ALLEN unterschrieben). Koordination mit Team noetig!
+      </div>
+    </div>
   </div>
 
+  <!-- LITERATUR -->
+  <div class="section">
+    <div class="section-title">Literatur &amp; Downloads nach Tag</div>
+
+    <div class="lit-block">
+      <div class="lit-day">Fuer Montag · EBC2022 Meeting 3</div>
+      <div class="lit-title">Reader 3 — <em>Integer Linear Programming</em> (PDF auf Canvas, Meeting 3)</div>
+      <div class="lit-title">Reader implementation — <em>Car Manufacturing.xlsx</em></div>
+      <div class="lit-title">Exercises Template — <em>Ex 1.xlsx</em></div>
+    </div>
+
+    <div class="lit-block">
+      <div class="lit-day">Fuer Dienstag · EBC2158 Tutorial 2</div>
+      <div class="lit-title">Scarborough &amp; Cornwall (2025) — <em>Essentials of Entrepreneurship and Small Business Management</em>, Ch. 1 + 2</div>
+      <div class="lit-title">Jensen, Byers, Dunham &amp; Fjeld (2021) — <em>„Entrepreneurs and the Truth"</em>, HBR 99(4), S. 124–131</div>
+    </div>
+
+    <div class="lit-block">
+      <div class="lit-day">Fuer Mittwoch · EBC2022 Meeting 4</div>
+      <div class="lit-title">Stevenson — <em>Ch05 Strategic Capacity Planning.pdf</em> (Canvas Modul Meeting 4)</div>
+    </div>
+
+    <div class="lit-block">
+      <div class="lit-day">Fuer Freitag · EBC2158 Tutorial 3 (optional)</div>
+      <div class="lit-title">Kein neuer Stoff — eigene Interview-Fragen / Datenanalyse mitbringen, falls Teilnahme geplant</div>
+    </div>
+  </div>
+
+  <!-- DEADLINES -->
   <div class="section">
     <div class="section-title">Deadlines</div>
     <div class="card">
       <div class="deadline">
         <div class="deadline-info">
-          <div class="deadline-name">SBE Skill Registration Periode 6 schließt</div>
-          <div class="deadline-detail">23:59h — falls noch nicht erledigt, heute/morgen registrieren!</div>
-        </div>
-        <div class="deadline-date d-urgent">So 19.04</div>
-      </div>
-      <div class="deadline">
-        <div class="deadline-info">
           <div class="deadline-name">Announce the interviewee (EBC2158)</div>
-          <div class="deadline-detail">Text-Eintrag: Entrepreneur-Name, Firma, Location, Industry, Kontakt (Email/LinkedIn/Tel). Braucht Vorlauf — Team + Interviewpartner finden!</div>
+          <div class="deadline-detail">Text-Eintrag mit 5 Feldern: Entrepreneur-Name · Firma · Ort · Industrie · Kontakt (Email/LinkedIn/Tel). <strong>Team-Aufgabe</strong> — heute/morgen mit Team final abstimmen.</div>
         </div>
-        <div class="deadline-date d-urgent">Di 21.04</div>
+        <div class="deadline-date d-urgent">Di 21.04 · 23:59</div>
       </div>
       <div class="deadline">
         <div class="deadline-info">
-          <div class="deadline-name">Team contract (EBC2158)</div>
-          <div class="deadline-detail">PDF, unterschrieben von allen Team-Mitgliedern. Optional: Template aus Canvas.</div>
+          <div class="deadline-name">Team Contract (EBC2158)</div>
+          <div class="deadline-detail">PDF, unterschrieben von ALLEN Team-Mitgliedern. Template „Group Contract Template.docx" optional auf Canvas. Unterschriften brauchen Vorlauf!</div>
         </div>
-        <div class="deadline-date d-warn">Fr 24.04</div>
+        <div class="deadline-date d-warn">Fr 24.04 · 23:59</div>
       </div>
       <div class="deadline">
         <div class="deadline-info">
-          <div class="deadline-name">Entrepreneur Interview Presentation + Consent Form</div>
-          <div class="deadline-detail">Slides + AI-Statement + Consent-Form vom Interviewpartner.</div>
+          <div class="deadline-name">Entrepreneur Interview Presentation + Consent Form + AI-Statement (EBC2158)</div>
+          <div class="deadline-detail">100 Punkte. Slides + AI-Statement hochladen. Zusaetzlich: Consent-Form vom Interviewpartner (separat). Interview muss in den naechsten ~3 Wochen stattfinden.</div>
         </div>
-        <div class="deadline-date d-soon">Mo 11.05</div>
+        <div class="deadline-date d-soon">Mo 11.05 · 23:59</div>
       </div>
       <div class="deadline">
         <div class="deadline-info">
-          <div class="deadline-name">Team reflection (EBC2158)</div>
-          <div class="deadline-detail">Upload als PDF nach Interview-Phase.</div>
+          <div class="deadline-name">Team Reflection (EBC2158)</div>
+          <div class="deadline-detail">PDF nach Interview-Phase.</div>
         </div>
-        <div class="deadline-date d-ok">Di 19.05</div>
+        <div class="deadline-date d-ok">Di 19.05 · 23:59</div>
       </div>
       <div class="deadline">
         <div class="deadline-info">
           <div class="deadline-name">Case Sports Inc. (EBC2022)</div>
-          <div class="deadline-detail">Gruppen-Abgabe.</div>
+          <div class="deadline-detail">100 Punkte. Gruppen-Abgabe: Slides + Excel-Datei. Case-PDFs (Hebei/Zhejiang/Sichuan/Hunan) bereits auf Canvas.</div>
         </div>
-        <div class="deadline-date d-ok">Di 26.05</div>
+        <div class="deadline-date d-ok">Di 26.05 · 23:59</div>
       </div>
     </div>
   </div>
 
+  <!-- ANKUENDIGUNGEN -->
   <div class="section">
-    <div class="section-title">Ankündigungen</div>
+    <div class="section-title">Ankuendigungen</div>
     <div class="card warn">
-      <div class="course-title">EBC2158: Dritte Abwesenheit für Scope-Event nicht genehmigt</div>
+      <div class="course-title">EBC2158: Dritte Abwesenheit fuer Scope-Event wird nicht genehmigt</div>
       <div class="meta" style="margin-top: 6px;">
-        Laut Syllabus sind 2 Fehltermine ohne Folgen erlaubt. Ein <strong>Scope-Event</strong> zählt als normale Absence — darüber hinaus wird nichts bewilligt. Bei 3+ Absences: Compensatory Assignment.
+        Viele Anfragen, ein drittes Pflicht-Tutorial wegen Scope-Event zu versaeumen — werden abgelehnt. Laut Syllabus: 2 Fehlzeiten ohne Folgen erlaubt. Ab der 3. Absence: Compensatory Assignment (ohne Einfluss auf GPA). Ausserdem: <strong>Keine Klassen am Di 5. Mai und Fr 15. Mai</strong>.
       </div>
+    </div>
+  </div>
+
+  <!-- WOCHENPLAN-EMPFEHLUNG -->
+  <div class="section">
+    <div class="section-title">Plan fuer die Woche</div>
+    <div class="card">
+      <div class="plan-row">
+        <div class="plan-day">Heute · Sonntag 19.04.</div>
+        <div class="plan-task">• Scarborough &amp; Cornwall Ch. 1+2 lesen (fuer Di) — 2–3 h<br>• HBR-Artikel Jensen et al. „Entrepreneurs and the Truth" (~20 Min)<br>• Team kontaktieren: Interviewpartner final bestaetigen, Kontaktdaten sammeln<br>• Reader 3 (Integer LP) + Car-Manufacturing-Excel fuer Mo herunterladen</div>
+      </div>
+      <div class="plan-row">
+        <div class="plan-day">Mo 20.04.</div>
+        <div class="plan-task">• Vormittags: Letzte Feinschliffe am Interviewee-Eintrag<br>• 13:30 EBC2022 Tutorial (Integer LP)<br>• Abends: Ch05 Strategic Capacity Planning starten (fuer Mi)</div>
+      </div>
+      <div class="plan-row">
+        <div class="plan-day">Di 21.04.</div>
+        <div class="plan-task">• Vormittags bereits vorm Tutorial: Interviewee-Eintrag <strong>abschicken</strong> (nicht auf 23:59 warten!)<br>• 11:00 EBC2158 Tutorial 2 (Facilitation 1)<br>• Nachmittags: Ch05 fertig lesen</div>
+      </div>
+      <div class="plan-row">
+        <div class="plan-day">Mi 22.04.</div>
+        <div class="plan-task">• 13:30 EBC2022 Tutorial (Capacity Planning)<br>• Abends: Team Contract mit Team ausfuellen + Unterschriften organisieren</div>
+      </div>
+      <div class="plan-row">
+        <div class="plan-day">Do 23.04.</div>
+        <div class="plan-task">• 10:15–16:00 Major Info Sessions — Fragen vorbereiten, Notizen machen<br>• Abends: Team Contract final unterschrieben als PDF zusammenstellen</div>
+      </div>
+      <div class="plan-row">
+        <div class="plan-day">Fr 24.04.</div>
+        <div class="plan-task">• Vormittags: Team Contract hochladen<br>• 11:00 Optional Workshop (nur falls Team Feedback will)<br>• Nachmittags puffer: Interview-Vorbereitung starten (Fragen drafteni)</div>
+      </div>
+    </div>
+
+    <div class="section-title" style="margin-top: 18px;">Risiken</div>
+    <div class="risk">
+      ⚠️ <strong>Interviewee-Entry (Di 23:59)</strong> ist die heikelste Deadline: Team-Koordination + Kontakt-Info vom echten Entrepreneur. Wenn das heute nicht steht, wird's eng.
+    </div>
+    <div class="risk">
+      ⚠️ <strong>Team Contract</strong> braucht ALLE Unterschriften — wenn ein Team-Mitglied Fr nicht erreichbar ist, verpasst ihr die Deadline. Vorziehen auf Mi/Do!
+    </div>
+    <div class="risk">
+      ⚠️ <strong>Do Infosessions = 5h45 am Stueck</strong>: Keine Tutorials drumherum, aber strategisch wichtig. Essen/Pausen bewusst einplanen, sonst bist du bei den spaeten Majors (Strategy/Finance) nicht mehr aufnahmefaehig.
     </div>
   </div>
 
   <footer>
-    Aktualisiert: 17.04.2026, automatischer Morgen-Check
+    Aktualisiert: 19.04.2026 · Wochen-Check<br>
+    Quellen: MaastrichtU Timetable (iCal) + Canvas API (Module, Pages, Assignments)
   </footer>
 </div>
 </body>
