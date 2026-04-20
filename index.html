@@ -2,166 +2,155 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uni Daily Check — Montag 20. April</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uni Daily Check — 20.04.2026</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;background:#0f0f0f;color:#e0e0e0;line-height:1.5;padding:16px;max-width:600px;margin:0 auto}
-header{text-align:center;padding:16px 0 24px}
-h1{font-size:24px;font-weight:700;color:#fff;margin-bottom:6px}
-.sub{font-size:13px;color:#888}
-.badge{display:inline-block;background:#4ade80;color:#000;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;margin-top:8px}
-h2{font-size:16px;font-weight:700;color:#fff;margin:22px 0 10px;padding-bottom:6px;border-bottom:1px solid #2a2a2a}
-h2 .icon{margin-right:8px}
-.card{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:10px;padding:14px;margin-bottom:10px}
-.card.today{border-color:#4ade80}
-.card.tomorrow{border-color:#60a5fa;background:#0d141a}
-.card.urgent{border-color:#f87171;background:#1a0d0d}
-.day-label{font-size:11px;font-weight:700;letter-spacing:1px;color:#60a5fa;text-transform:uppercase;margin-bottom:4px}
-.day-label.today{color:#4ade80}
-.card h3{font-size:15px;font-weight:600;color:#fff;margin-bottom:6px}
-.meta{font-size:12px;color:#aaa;margin-bottom:8px}
-.meta span{margin-right:12px}
-.topic{background:#0f0f0f;border-left:2px solid #4ade80;padding:8px 10px;margin:8px 0;font-size:13px;border-radius:0 4px 4px 0;color:#ccc}
-.topic.tom{border-left-color:#60a5fa}
-.topic strong{color:#fff}
-.prep{background:#0f0f0f;border-left:2px solid #fbbf24;padding:8px 10px;margin-top:8px;font-size:12px;border-radius:0 4px 4px 0}
-.prep strong{color:#fbbf24;display:block;margin-bottom:4px;font-size:11px;text-transform:uppercase;letter-spacing:0.5px}
-.lit-item{font-size:12px;color:#ccc;margin-bottom:4px;padding-left:10px;border-left:1px solid #333}
-.materials{background:#0f0f0f;border-left:2px solid #f87171;padding:8px 10px;margin-top:8px;font-size:12px;border-radius:0 4px 4px 0}
-.materials strong{color:#f87171;display:block;margin-bottom:4px;font-size:11px;text-transform:uppercase;letter-spacing:0.5px}
-.deadline{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:8px;padding:12px;margin-bottom:8px}
-.deadline.urgent{background:#1a0d0d;border-color:#f87171}
-.deadline.warn{background:#1a1608;border-color:#fbbf24}
-.deadline-title{font-weight:700;color:#fff;margin-bottom:4px;font-size:14px}
-.deadline-meta{font-size:11px;color:#aaa;margin-bottom:6px}
-.deadline-body{font-size:13px;color:#ccc}
-.announce{background:#1a1608;border:1px solid #fbbf24;border-radius:8px;padding:12px;margin-bottom:8px;font-size:13px;color:#ddd}
-.announce strong{color:#fbbf24;display:block;margin-bottom:4px}
-footer{text-align:center;color:#555;font-size:11px;padding:24px 0 12px;border-top:1px solid #2a2a2a;margin-top:24px}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0f0f0f;color:#e0e0e0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55;padding:20px 16px 60px}
+  .wrap{max-width:600px;margin:0 auto}
+  header{margin-bottom:24px}
+  h1{font-size:22px;font-weight:700;letter-spacing:-0.3px}
+  .date{color:#888;font-size:14px;margin-top:4px}
+  .badge{display:inline-block;background:#4ade8022;color:#4ade80;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600;margin-top:10px;letter-spacing:0.5px;text-transform:uppercase}
+  section{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:18px;margin-bottom:14px}
+  h2{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:14px;color:#888}
+  h2.today{color:#4ade80}
+  h2.tomorrow{color:#60a5fa}
+  h2.deadlines{color:#fbbf24}
+  h2.alerts{color:#f87171}
+  .course{font-size:17px;font-weight:700;margin-bottom:8px;color:#fff}
+  .meta{font-size:14px;color:#bbb;margin-bottom:4px}
+  .meta strong{color:#e0e0e0}
+  .topic{margin-top:14px;padding-top:14px;border-top:1px solid #2a2a2a}
+  .topic-label{font-size:11px;text-transform:uppercase;letter-spacing:0.6px;color:#888;margin-bottom:6px}
+  .topic-body{font-size:14.5px;color:#d4d4d4}
+  .prep{margin-top:12px;background:#0f0f0f;border-radius:8px;padding:12px}
+  .prep-label{font-size:11px;text-transform:uppercase;letter-spacing:0.6px;color:#fbbf24;margin-bottom:6px;font-weight:600}
+  .prep ul{list-style:none;padding:0}
+  .prep li{font-size:13.5px;color:#d4d4d4;padding:3px 0;padding-left:14px;position:relative}
+  .prep li:before{content:"—";position:absolute;left:0;color:#666}
+  .deadline{background:#0f0f0f;border-radius:8px;padding:12px;margin-bottom:10px;border-left:3px solid #666}
+  .deadline.urgent{border-left-color:#f87171;background:#f8717110}
+  .deadline.warn{border-left-color:#fbbf24;background:#fbbf2408}
+  .dl-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:6px}
+  .dl-title{font-weight:700;font-size:14px;color:#fff}
+  .dl-when{font-size:12px;color:#888;white-space:nowrap}
+  .dl-urgent .dl-when{color:#f87171;font-weight:600}
+  .dl-warn .dl-when{color:#fbbf24;font-weight:600}
+  .dl-body{font-size:13px;color:#bbb}
+  .note{background:#fbbf2410;border-left:3px solid #fbbf24;padding:10px 12px;border-radius:6px;margin-top:12px;font-size:13px;color:#d4d4d4}
+  footer{text-align:center;color:#555;font-size:11px;margin-top:22px}
 </style>
 </head>
 <body>
-<header>
-  <h1>Uni Daily Check</h1>
-  <div class="sub">Montag, 20. April 2026 · KW 17</div>
-  <div class="badge">Tages-Check</div>
-</header>
+<div class="wrap">
+  <header>
+    <h1>Uni Daily Check</h1>
+    <div class="date">Montag, 20. April 2026</div>
+    <span class="badge">Tages-Check</span>
+  </header>
 
-<h2><span class="icon">🎓</span>Heute</h2>
-<div class="card today">
-  <div class="day-label today">Mo · 13:30 – 15:30</div>
-  <h3>EBC2022 — Tutorial A · Integer Linear Programming</h3>
-  <div class="meta">
-    <span>📍 TS53 E2.07</span>
-    <span>👨‍🏫 Stan van Hoesel</span>
-  </div>
-  <div class="topic">
-    <strong>📝 Session 3 – Integer Linear Programming (ILP):</strong>
-    Nach Basics LP (Sitzung 2) werden heute Optimierungsprobleme betrachtet,
-    bei denen Entscheidungsvariablen ganzzahlig sein müssen (z.B. „Wie viele
-    Autos bauen?"). Du lernst, ILPs in den 5 Schritten zu formulieren
-    (Sets, Parameter, Decision Vars, Objective, Constraints) und sie mit
-    Excel Solver zu lösen – angewandt auf ein Car-Manufacturing-Problem.
-  </div>
-  <div class="prep">
-    <strong>📚 Pflicht-Vorbereitung</strong>
-    <div class="lit-item"><strong style="color:#fbbf24;display:inline;text-transform:none;letter-spacing:0;font-size:12px">Reader 3</strong> – Integer Linear Programming.pdf (vollständig lesen)</div>
-    <div class="lit-item"><strong style="color:#fbbf24;display:inline;text-transform:none;letter-spacing:0;font-size:12px">Reader Implementation</strong> – Car Manufacturing.xlsx (Excel-Modell durchgehen)</div>
-    <div class="lit-item"><strong style="color:#fbbf24;display:inline;text-transform:none;letter-spacing:0;font-size:12px">Exercises – Template Ex 1.xlsx</strong> vorbereiten (ohne Vorbereitung → „absent" markiert!)</div>
-  </div>
-  <div class="materials">
-    <strong>💻 Mitbringen</strong>
-    Laptop mit Excel inkl. Solver-Add-In aktiviert
-  </div>
+  <section>
+    <h2 class="today">Heute — Montag</h2>
+    <div class="course">Management of Operations &amp; Product Development</div>
+    <div class="meta"><strong>16:00 – 18:00</strong> · TAP23 (X) 1.001</div>
+    <div class="meta">Tutorial A (Gruppe 32) · Arman Rouhani</div>
+
+    <div class="topic">
+      <div class="topic-label">Thema — Meeting 2</div>
+      <div class="topic-body">Erstes Tutorial nach der Opening Lecture. Einstieg in <strong>Linear Programming (LP)</strong>: Wie formuliert man Optimierungsprobleme mathematisch, und wie interpretiert man den <strong>Sensitivity Report</strong>? Die Uebungen laufen ueber Excel am Beispiel Production Planning. Wer die Opening-Lecture-Videos zu LP und Excel-Implementation gesehen hat, ist gut vorbereitet.</div>
+    </div>
+
+    <div class="prep">
+      <div class="prep-label">Vorbereitung</div>
+      <ul>
+        <li>Reader 1 — Linear Programming (Canvas · Meeting 2)</li>
+        <li>Reader 2 — Sensitivity Report (Canvas · Meeting 2)</li>
+        <li>Reader Implementation — Production Planning.xlsx (anschauen)</li>
+        <li>Exercise Templates Meeting 2.xlsx (in Session genutzt)</li>
+        <li>Videos aus Opening Lecture: Linear Programming + Excel Implementation Teil 1&amp;2</li>
+      </ul>
+    </div>
+
+    <div class="note"><strong>Mitbringen:</strong> Laptop mit Excel (Solver-Add-in aktiviert).</div>
+  </section>
+
+  <section>
+    <h2 class="tomorrow">Morgen — Dienstag</h2>
+    <div class="course">Entrepreneurship &amp; Small Business Management</div>
+    <div class="meta"><strong>11:00 – 13:00</strong> · TAP23 (X) 1.001</div>
+    <div class="meta">Tutorial A (Gruppe 18) · Zahra Ghasemian</div>
+
+    <div class="topic">
+      <div class="topic-label">Thema — Tutorial 2 · Facilitation 1</div>
+      <div class="topic-body">Definition von Entrepreneurship und Rolle von Small Businesses; Vor- und Nachteile des Unternehmerdaseins; typische Fallstricke; ethische Standards und Verantwortung gegenueber Kunden, Mitarbeitenden, Investoren, Communities.</div>
+    </div>
+
+    <div class="prep">
+      <div class="prep-label">Pflichtlektuere fuer morgen</div>
+      <ul>
+        <li>Scarborough &amp; Cornwall (2025): <strong>Kapitel 1 + 2</strong></li>
+        <li>Jensen, Byers, Dunham &amp; Fjeld (2021): <em>Entrepreneurs and the Truth</em>, Harvard Business Review 99(4), S. 124–131 (Link auf Canvas)</li>
+      </ul>
+    </div>
+
+    <div class="note"><strong>Heute Abend:</strong> HBR-Artikel + Kapitel 1+2 lesen. Parallel mit Team absprechen, WEN ihr interviewen wollt — die Abgabe laeuft schon morgen 21:59.</div>
+  </section>
+
+  <section>
+    <h2 class="alerts">Dringend — Team-Deadlines</h2>
+
+    <div class="deadline urgent dl-urgent">
+      <div class="dl-top">
+        <div class="dl-title">Announce the interviewee</div>
+        <div class="dl-when">morgen · 21:59</div>
+      </div>
+      <div class="dl-body">Team-Text-Eintrag mit <strong>(1) Name des Entrepreneurs, (2) Firma, (3) Ort, (4) Branche, (5) Kontakt</strong> (E-Mail / LinkedIn / Telefon). Heute mit Team ausmachen — und idealerweise schon angefragt haben.</div>
+    </div>
+
+    <div class="deadline warn dl-warn">
+      <div class="dl-top">
+        <div class="dl-title">Team contract</div>
+        <div class="dl-when">Freitag 24.04. · 21:59</div>
+      </div>
+      <div class="dl-body">PDF mit dem von allen Mitgliedern unterschriebenen Teamvertrag. Template optional auf Canvas (Group Contract Template.docx).</div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="deadlines">Kommende Abgaben</h2>
+
+    <div class="deadline">
+      <div class="dl-top">
+        <div class="dl-title">Entrepreneur Interview Presentation</div>
+        <div class="dl-when">Mo 11.05.</div>
+      </div>
+      <div class="dl-body">Slides + AI Statement hochladen. Vorlauf: Interview fuehren, auswerten, Praesi bauen.</div>
+    </div>
+
+    <div class="deadline">
+      <div class="dl-top">
+        <div class="dl-title">Consent Form</div>
+        <div class="dl-when">Mo 11.05.</div>
+      </div>
+      <div class="dl-body">Einwilligungserklaerung vom Interviewpartner.</div>
+    </div>
+
+    <div class="deadline">
+      <div class="dl-top">
+        <div class="dl-title">Case Sports Inc. (EBC2022)</div>
+        <div class="dl-when">Di 26.05.</div>
+      </div>
+      <div class="dl-body">Case-Abgabe — kommt in Meeting 3/4 zur Sprache.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="alerts">Ankuendigung (EBC2158)</h2>
+    <div class="dl-body" style="color:#bbb;font-size:13.5px"><strong>Scope-Event:</strong> Anfragen, wegen eines dritten Tutorials fuer ein Scope-Event entschuldigt zu werden, werden <strong>nicht genehmigt</strong>. Laut Syllabus darfst du maximal 2 Pflicht-Tutorials ohne Folgen missen.</div>
+  </section>
+
+  <footer>Aktualisiert: 20.04.2026</footer>
 </div>
-
-<h2><span class="icon">📅</span>Morgen</h2>
-<div class="card tomorrow">
-  <div class="day-label">Di · 11:00 – 13:00</div>
-  <h3>EBC2158 — Tutorial A · Entrepreneurship & Small Business</h3>
-  <div class="meta">
-    <span>📍 TAP23 (X) 1.001</span>
-    <span>👨‍🏫 Zahra Ghasemian</span>
-  </div>
-  <div class="topic tom">
-    <strong>📝 Tutorial 2 – Facilitation 1:</strong>
-    Einstieg ins Thema Entrepreneurship. Was ist ein Unternehmer, welche
-    Rolle spielen Small Businesses in der Wirtschaft, welche Vor-/Nachteile
-    hat die Selbstständigkeit, welche typischen Pitfalls gibt es – plus ein
-    Block zu ethischen Standards und Verantwortung gegenüber Kunden,
-    Mitarbeitern, Investoren und Community.
-  </div>
-  <div class="prep">
-    <strong>📚 Heute Abend lesen</strong>
-    <div class="lit-item">Scarborough &amp; Cornwall (2025) <strong style="color:#fff;display:inline;text-transform:none;letter-spacing:0;font-size:12px">Ch. 1 + Ch. 2</strong></div>
-    <div class="lit-item">Jensen, Byers, Dunham &amp; Fjeld (2021) – „Entrepreneurs and the Truth", <em>Harvard Business Review</em> 99(4), S. 124–131 (Link auf Canvas)</div>
-  </div>
-</div>
-
-<h2><span class="icon">✅</span>Deadlines</h2>
-
-<div class="deadline urgent">
-  <div class="deadline-title">🔴 MORGEN 23:59 · Announce the Interviewee</div>
-  <div class="deadline-meta">EBC2158 · Team-Abgabe (Text Entry)</div>
-  <div class="deadline-body">
-    Team muss bis morgen Abend den Interviewpartner benennen:
-    (1) Name des Entrepreneurs · (2) Firma · (3) Standort · (4) Branche ·
-    (5) Kontakt (Email / LinkedIn / Telefon).
-    <br><br>
-    <strong style="color:#f87171">→ Heute Abend Team anschreiben und final entscheiden!</strong>
-  </div>
-</div>
-
-<div class="deadline warn">
-  <div class="deadline-title">🟡 Fr 24.04. 23:59 · Team Contract</div>
-  <div class="deadline-meta">EBC2158 · PDF-Upload</div>
-  <div class="deadline-body">
-    Team-Vertrag als PDF, signiert von allen Mitgliedern. Canvas bietet
-    ein optionales Template (Group Contract Template.docx).
-  </div>
-</div>
-
-<div class="deadline">
-  <div class="deadline-title">⚪ Mo 11.05. · Entrepreneur Interview Präsentation + Consent Form</div>
-  <div class="deadline-meta">EBC2158 · Slides + AI Statement + Consent-Form-Upload</div>
-  <div class="deadline-body">
-    Hat 3 Wochen Vorlauf – aber steht und fällt mit dem Interviewpartner
-    (morgige Deadline).
-  </div>
-</div>
-
-<div class="deadline">
-  <div class="deadline-title">⚪ Di 26.05. · Case Sports Inc</div>
-  <div class="deadline-meta">EBC2022 · Team-Abgabe · 20 % der Endnote</div>
-  <div class="deadline-body">
-    Team-Case auf Basis des zugewiesenen Datasets (Hebei / Zhejiang /
-    Sichuan / Hunan). Präsentation + Report.
-  </div>
-</div>
-
-<h2><span class="icon">📢</span>Ankündigung</h2>
-<div class="announce">
-  <strong>EBC2158 · Scope Event (gepostet 16.04.)</strong>
-  Anfragen auf 3. Fehltag für das Scope-Event werden <strong>nicht genehmigt</strong>.
-  Du darfst max. 2 Pflicht-Tutorials verpassen – wer zum Scope-Event will,
-  muss einen der beiden Absences dafür verwenden. Keine Klassen am
-  Di 5. Mai und Fr 8. Mai.
-</div>
-
-<h2><span class="icon">🔭</span>Übermorgen</h2>
-<div class="card">
-  <div class="day-label">Mi · 13:30 – 15:30</div>
-  <h3>EBC2022 — Tutorial B · Strategic Capacity Planning &amp; Decision Theory</h3>
-  <div class="meta"><span>📍 TS53 G1.03</span><span>👨‍🏫 Stan van Hoesel</span></div>
-  <div class="topic">
-    <strong>📝 Session 4:</strong> Einstieg in die „Core Topics" – wie trifft man
-    Entscheidungen unter Risiko, wie plant man strategische Kapazität.
-  </div>
-</div>
-
-<footer>
-  Aktualisiert: 2026-04-20 · automatisch generiert
-</footer>
 </body>
 </html>
