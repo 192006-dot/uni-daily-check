@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Uni Daily Check · Mi 22. April</title>
+<title>Uni Daily Check · Fr 24. April</title>
 <style>
   :root{
     --bg:#0f0f0f; --fg:#e0e0e0; --muted:#9a9a9a;
@@ -29,25 +29,21 @@
   .card.accent-green{border-left:3px solid var(--green)}
   .card.accent-blue{border-left:3px solid var(--blue)}
   .card.accent-yellow{border-left:3px solid var(--yellow)}
-  .card.accent-red{border-left:3px solid var(--red);background:#1d1212}
-  .title{font-size:17px;font-weight:600;margin:0 0 6px}
-  .meta{font-size:14px;color:var(--muted);margin:0 0 4px}
-  .meta span{display:inline-block;margin-right:10px}
-  .label{display:block;font-size:11px;text-transform:uppercase;
-    letter-spacing:.08em;color:var(--muted);margin:12px 0 4px;font-weight:600}
-  .body{font-size:15px;color:var(--fg)}
-  .chip{display:inline-block;padding:2px 8px;border-radius:6px;
-    font-size:11px;font-weight:600;letter-spacing:.02em;margin-right:6px}
-  .chip-red{background:#3a1515;color:var(--red);border:1px solid #4a1f1f}
-  .chip-yellow{background:#2a2411;color:var(--yellow);border:1px solid #3a3118}
-  .chip-blue{background:#132238;color:var(--blue);border:1px solid #1c3350}
-  .chip-green{background:#132617;color:var(--green);border:1px solid #1b3b22}
-  .list-flat{list-style:none;padding:0;margin:0}
-  .list-flat li{padding:8px 0;border-bottom:1px solid var(--border);font-size:14px}
-  .list-flat li:last-child{border-bottom:0}
-  .time{font-variant-numeric:tabular-nums;color:var(--blue);font-weight:600;margin-right:8px}
-  footer{color:var(--muted);font-size:12px;text-align:center;padding-top:20px;
-    border-top:1px solid var(--border);margin-top:30px}
+  .card.accent-red{border-left:3px solid var(--red);background:#1f1414}
+  .card h3{margin:0 0 6px;font-size:16px;font-weight:600}
+  .meta{color:var(--muted);font-size:13.5px;margin:2px 0}
+  .meta strong{color:#d4d4d4;font-weight:500}
+  .label{font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;
+    color:var(--muted);margin:10px 0 4px;font-weight:600}
+  .content{font-size:14.5px;color:#d0d0d0}
+  .content ul{margin:4px 0 0;padding-left:18px}
+  .content li{margin:3px 0}
+  .tag{display:inline-block;padding:2px 8px;border-radius:6px;
+    font-size:11.5px;margin-right:4px;font-weight:500}
+  .tag.yellow{background:#3b2f0d;color:var(--yellow)}
+  .tag.red{background:#3b1717;color:var(--red)}
+  .tag.blue{background:#102033;color:var(--blue)}
+  footer{color:#555;font-size:12px;text-align:center;margin-top:28px}
 </style>
 </head>
 <body>
@@ -55,73 +51,76 @@
 
 <header>
   <h1>Uni Daily Check</h1>
-  <div class="date">Mittwoch, 22. April 2026</div>
+  <div class="date">Freitag, 24. April 2026</div>
   <span class="badge">Tages-Check</span>
 </header>
 
 <section>
   <h2>Heute</h2>
 
+  <div class="card accent-red">
+    <h3>🔴 Deadline heute · 21:59 – Team Contract</h3>
+    <div class="content">
+      Team Contract als <strong>PDF</strong> hochladen, unterschrieben von allen Teammitgliedern.
+      <ul>
+        <li>Template auf Canvas (Group Contract Template.docx) – optional</li>
+        <li>Option A: ausdrucken, handschriftlich signieren, scannen → PDF</li>
+        <li>Option B: in Word ausfuellen, als PDF speichern, digital per e-Signature unterzeichnen</li>
+      </ul>
+    </div>
+  </div>
+
   <div class="card accent-green">
-    <div class="title">Management of Operations &amp; Product Development</div>
-    <div class="meta">
-      <span>🎓 Meeting 3 · Tutorial B</span>
-      <span>⏰ 16:00–18:00</span>
-    </div>
-    <div class="meta">
-      <span>📍 TAP23 (X) 1.001 · Tapijnkazerne 23</span>
-    </div>
-    <div class="meta"><span>👨‍🏫 Arman Rouhani</span></div>
+    <h3>🎓 Entrepreneurship &amp; Small Business Management</h3>
+    <div class="meta">⏰ <strong>11:00 – 13:00</strong> · Tutorial B</div>
+    <div class="meta">📍 TAP23 (X) 1.001</div>
+    <div class="meta">👩‍🏫 Zahra Ghasemian</div>
+    <div style="margin-top:8px"><span class="tag yellow">Tutorial 3 · OPTIONAL</span></div>
 
-    <span class="label">Thema</span>
-    <div class="body">
-      Integer Linear Programming. Aufbauend auf dem LP-Stoff aus Meeting 2
-      erweitern wir das Modell um <b>ganzzahlige Entscheidungsvariablen</b>
-      und wenden es auf eine Car-Manufacturing-Fallstudie in Excel an.
+    <div class="label">Thema</div>
+    <div class="content">
+      Feedback-Session fuer das <strong>Entrepreneur Interview Project</strong>. Je nach
+      Fortschritt gibt Tutorin + Tutorialgruppe Feedback auf eure Interviewfragen oder
+      auf Datenanalyse &amp; Folien.
     </div>
 
-    <span class="label">Vorbereitung</span>
-    <div class="body">
-      • <b>Reader 3 – Integer Linear Programming.pdf</b> gelesen<br>
-      • <b>Reader Implementation – Car Manufacturing.xlsx</b> durchgearbeitet<br>
-      • <b>Exercises – Template Ex 1.xlsx</b> versuchen vor der Session
+    <div class="label">Anwesenheit</div>
+    <div class="content">
+      <strong>Nicht verpflichtend</strong>. Nur hingehen, wenn euer Team Feedback braucht
+      oder einen gemeinsamen Arbeitsplatz.
     </div>
 
-    <span class="label">Mitbringen</span>
-    <div class="body">
-      Laptop mit Excel + aktiviertem <b>Solver-Add-in</b>. Ohne Solver kommst
-      du nicht durch die Uebung.
+    <div class="label">Vorbereitung</div>
+    <div class="content">
+      Keine Literatur. Falls du gehst: aktueller Stand der Interviewfragen oder
+      Datenanalyse/Folien mitbringen.
     </div>
   </div>
 </section>
 
 <section>
-  <h2>Morgen · Donnerstag 23. April</h2>
-
+  <h2>Morgen · Samstag 25.4.</h2>
   <div class="card accent-blue">
-    <div class="title">Major Information Sessions</div>
-    <div class="meta">
-      <span>⏰ 10:15–16:00</span>
-      <span>📍 TS53 H0.01 Aula · Tongersestraat 53</span>
+    <h3>Keine Termine</h3>
+    <div class="content">
+      Nutze das Wochenende fuer die Vorbereitung auf <strong>Dienstag</strong>
+      (Tutorial 4 – Facilitation 2, 11:00, TAP23 X 1.001).
     </div>
 
-    <span class="label">Ablauf · 9 Majors je 30 Min</span>
-    <ul class="list-flat">
-      <li><span class="time">10:15</span>Supply Chain Management – Bartczek</li>
-      <li><span class="time">11:00</span>Accounting – Brüggen</li>
-      <li><span class="time">11:45</span>Entrepreneurship – Broersma</li>
-      <li><span class="time">12:30</span>Information Management – Rieser</li>
-      <li><span class="time">13:15</span>Marketing – Geyskens</li>
-      <li><span class="time">14:00</span>Organisation – Schumacher</li>
-      <li><span class="time">14:45</span>Strategy – Janssens</li>
-      <li><span class="time">15:30</span>Finance – Mauricio Rodrigues</li>
-    </ul>
+    <div class="label">Literatur Tutorial 4</div>
+    <div class="content">
+      <ul>
+        <li>Scarborough &amp; Cornwall (2025), <strong>Kapitel 3</strong></li>
+        <li>Fisher, G. (2012) – <em>Effectuation, Causation and Bricolage</em>, ETP 36(5), 1019–1051 · auf Canvas</li>
+        <li>Blank, S. (2013) – <em>Why the Lean Start-Up Changes Everything</em>, HBR 91(5), 63–72 · auf Canvas</li>
+      </ul>
+    </div>
 
-    <span class="label">Heute Abend vorbereiten</span>
-    <div class="body">
-      Ueberlege welche 3–4 Majors du realistisch in Betracht ziehst.
-      Die Sessions sind Entscheidungsgrundlage fuer dein Major-Choice nach
-      dem 2. Jahr. Kurze Frageliste pro Major hilft.
+    <div class="label">Lernziele Dienstag</div>
+    <div class="content">
+      Entrepreneurial Thinking &amp; Decision-Making, Rolle von Kreativitaet/Innovation,
+      <strong>Causation vs. Effectuation vs. Bricolage</strong>,
+      Lean-Start-up-Methode.
     </div>
   </div>
 </section>
@@ -130,68 +129,49 @@
   <h2>Deadlines</h2>
 
   <div class="card accent-red">
-    <div class="title"><span class="chip chip-red">FR 24.04</span> Team contract · EBC2158</div>
-    <div class="body" style="margin-top:6px">
-      PDF mit dem von <b>allen Team-Mitgliedern unterschriebenen</b>
-      Team-Kontrakt hochladen. Template: <em>Group Contract Template.docx</em>
-      (optional). Deadline <b>Fr 24.04 um 21:59</b>.
-      <br><br>
-      <b>Heute/morgen erledigen:</b> Template runterladen, Rollen &amp; Regeln
-      im Team abstimmen, alle Unterschriften einsammeln. Nicht erst Freitagabend.
-    </div>
+    <h3>🔴 Team Contract</h3>
+    <div class="meta"><strong>Heute · Fr 24.4. · 21:59</strong></div>
   </div>
 
   <div class="card accent-yellow">
-    <div class="title"><span class="chip chip-yellow">MO 11.05</span> Entrepreneur Interview · EBC2158</div>
-    <div class="body" style="margin-top:6px">
-      Slides + AI-Statement + <b>Consent Form</b> des Interviewpartners.
-      100 Punkte. Interviewpartner <b>muss bis dahin gefuehrt und ausgewertet</b>
-      sein – Lead-Time einplanen.
-      <br><br>
-      Das Fr-Tutorial (24.04) ist <b>optional</b> – reserviert fuer Feedback
-      zu Interviewfragen und Datenauswertung. Nutzen falls dein Team sich
-      noch unsicher ist.
-    </div>
+    <h3>🟡 Entrepreneur Interview – Presentation</h3>
+    <div class="meta"><strong>Mo 11.5. · 21:59</strong> · in 17 Tagen</div>
+    <div class="content">Folien + AI Statement hochladen. Im heutigen optionalen Workshop kannst du genau dafuer Feedback holen.</div>
   </div>
 
   <div class="card accent-yellow">
-    <div class="title"><span class="chip chip-yellow">DI 19.05</span> Team reflection · EBC2158</div>
-    <div class="body" style="margin-top:6px">Team-Reflexion hochladen.</div>
+    <h3>🟡 Consent Form (Interview)</h3>
+    <div class="meta"><strong>Mo 11.5. · 21:59</strong></div>
+    <div class="content">Einverstaendniserklaerung des Interviewpartners hochladen.</div>
   </div>
 
   <div class="card">
-    <div class="title"><span class="chip chip-blue">DI 26.05</span> Case Sports Inc. · EBC2022</div>
-    <div class="body" style="margin-top:6px">
-      Slides + Excel-Datei zur Sports-Inc-Fallstudie. 100 Punkte.
-      Dein Team bekommt eine der 4 Provinzen (Hebei, Zhejiang, Sichuan, Hunan).
-      Rubric liegt im Canvas-Modul <em>Case: Sports Inc</em>.
-    </div>
+    <h3>Team Reflection</h3>
+    <div class="meta">Di 19.5. · 21:59</div>
   </div>
 
   <div class="card">
-    <div class="title"><span class="chip chip-blue">DO 04.06</span> Written Proposal + Video Pitch · EBC2158</div>
-    <div class="body" style="margin-top:6px">
-      20% der Note. Dokument + AI-Statement + Link zum Video-Pitch.
-    </div>
+    <h3>Written Project Proposal (20%)</h3>
+    <div class="meta">Do 4.6. · 21:59</div>
+  </div>
+
+  <div class="card">
+    <h3>Video Pitch</h3>
+    <div class="meta">Do 4.6. · 21:59</div>
   </div>
 </section>
 
 <section>
-  <h2>Ankuendigungen</h2>
-  <div class="card accent-yellow">
-    <div class="title">ESBM: Keine 3. Absenz-Ausnahme fuer Scope-Event</div>
-    <div class="body" style="margin-top:6px">
-      Die Koordinatoren (Sergio &amp; Kim) haben klargestellt: Anfragen, eine
-      dritte mandatorische Session wegen eines Scope-Events zu verpassen,
-      werden <b>nicht genehmigt</b>. Du darfst laut Syllabus max. 2 mandatorische
-      Sessions fehlen. Fuer Scope also eine der erlaubten Absenzen nutzen oder
-      die optionalen Workshops skippen (24.04, keine Class 05.05 + 15.05).
+  <h2>Hinweise</h2>
+  <div class="card">
+    <div class="content">
+      <strong>Mo 27.4.:</strong> SBE Exam (de-)registration period 5 oeffnet – pruefe ob du dich fuer Klausuren an-/abmelden musst.
     </div>
   </div>
 </section>
 
 <footer>
-  Aktualisiert: Mi 22.04.2026 · Quelle: MaastrichtUni Timetable &amp; Canvas
+  Aktualisiert: 24.04.2026
 </footer>
 
 </div>
