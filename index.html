@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uni Daily Check — Mo 27.04.2026</title>
+<title>Uni Daily Check — Dienstag 28. April</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -12,30 +12,32 @@
     font-family: system-ui, -apple-system, sans-serif;
     line-height: 1.55;
     padding: 16px;
-    max-width: 600px;
-    margin: 0 auto;
-    -webkit-text-size-adjust: 100%;
   }
-  header { padding: 16px 0 24px; }
-  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; }
-  .date { color: #9ca3af; font-size: 14px; }
+  .wrap { max-width: 600px; margin: 0 auto; }
+  header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #2a2a2a;
+  }
+  h1 { font-size: 22px; margin-bottom: 4px; }
+  .date { color: #a0a0a0; font-size: 14px; }
   .badge {
     display: inline-block;
-    background: #1f2937;
-    color: #4ade80;
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-size: 12px;
+    background: #4ade80;
+    color: #0f0f0f;
+    font-size: 11px;
     font-weight: 600;
-    margin-top: 8px;
-    border: 1px solid #2a2a2a;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 8px;
+    vertical-align: middle;
   }
-  section { margin-bottom: 20px; }
+  section { margin-bottom: 24px; }
   h2 {
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 1.2px;
-    color: #9ca3af;
+    color: #a0a0a0;
     margin-bottom: 10px;
     font-weight: 600;
   }
@@ -50,216 +52,160 @@
   .card.tomorrow { border-left: 3px solid #60a5fa; }
   .card.warn { border-left: 3px solid #fbbf24; }
   .card.urgent { border-left: 3px solid #f87171; }
-  .card-title {
-    font-size: 16px;
-    font-weight: 600;
-    color: #f3f4f6;
-    margin-bottom: 6px;
-  }
+  .course { font-size: 17px; font-weight: 600; margin-bottom: 6px; }
   .meta {
-    color: #9ca3af;
-    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 13px;
+    color: #b0b0b0;
     margin-bottom: 10px;
   }
-  .meta .pipe { margin: 0 6px; color: #4b5563; }
+  .meta span { white-space: nowrap; }
   .label {
-    color: #9ca3af;
-    font-size: 12px;
+    font-size: 11px;
+    color: #888;
     text-transform: uppercase;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.6px;
     margin-top: 12px;
     margin-bottom: 4px;
-    font-weight: 600;
   }
-  p { font-size: 15px; color: #e0e0e0; }
-  ul { list-style: none; padding: 0; }
-  ul li {
-    padding: 6px 0 6px 18px;
+  .topic { font-size: 14px; color: #d0d0d0; }
+  ul { list-style: none; padding-left: 0; }
+  li {
+    padding: 4px 0 4px 16px;
     position: relative;
-    font-size: 15px;
+    font-size: 13px;
   }
-  ul li:before {
-    content: "›";
+  li:before {
+    content: "▪";
     position: absolute;
     left: 0;
     color: #4ade80;
-    font-weight: 700;
   }
-  .green { color: #4ade80; }
-  .blue { color: #60a5fa; }
-  .yellow { color: #fbbf24; }
-  .red { color: #f87171; }
-  .footer {
+  .card.warn li:before { color: #fbbf24; }
+  .card.urgent li:before { color: #f87171; }
+  .card.tomorrow li:before { color: #60a5fa; }
+  .deadline-date { font-weight: 600; }
+  footer {
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid #2a2a2a;
+    color: #666;
+    font-size: 11px;
     text-align: center;
-    color: #6b7280;
-    font-size: 12px;
-    padding: 24px 0 16px;
-    border-top: 1px solid #1f2937;
-    margin-top: 24px;
-  }
-  .deadline-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 10px 0;
-    border-bottom: 1px solid #1f2937;
-    gap: 12px;
-  }
-  .deadline-row:last-child { border-bottom: none; }
-  .deadline-info { flex: 1; }
-  .deadline-info .name { font-size: 15px; color: #f3f4f6; font-weight: 500; }
-  .deadline-info .desc { font-size: 13px; color: #9ca3af; margin-top: 3px; }
-  .deadline-date {
-    font-size: 13px;
-    font-weight: 600;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-  .free-day {
-    background: linear-gradient(135deg, #1a1a1a 0%, #1f2937 100%);
-    text-align: center;
-    padding: 24px 16px;
-  }
-  .free-day .emoji { font-size: 32px; margin-bottom: 8px; }
-  .tip {
-    background: #1f2937;
-    border: 1px solid #2a2a2a;
-    border-left: 3px solid #fbbf24;
-    border-radius: 8px;
-    padding: 12px 14px;
-    margin-top: 12px;
-    font-size: 14px;
-  }
-  .tip .tip-label {
-    color: #fbbf24;
-    font-weight: 600;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    margin-bottom: 4px;
   }
 </style>
 </head>
 <body>
-  <header>
-    <h1>Uni Daily Check</h1>
-    <div class="date">Montag, 27. April 2026</div>
-    <span class="badge">Tages-Check</span>
-  </header>
+<div class="wrap">
 
-  <section>
-    <h2>Heute</h2>
-    <div class="card today free-day">
-      <div class="emoji">🌤️</div>
-      <div class="card-title">Kein Tutorial heute</div>
-      <p class="meta">Periode 5, Woche 3 — der Montag ist frei.</p>
-      <div class="tip">
-        <div class="tip-label">💡 So nutzt du den Tag</div>
-        Lies die Literatur fuer morgen (EBC2158 Tutorial 4) und checke, ob euer Team schon einen Interview-Partner hat. Die Interview-Deadline ist in 2 Wochen.
-      </div>
+<header>
+  <h1>Uni Daily Check<span class="badge">Tages-Check</span></h1>
+  <div class="date">Dienstag, 28. April 2026</div>
+</header>
+
+<section>
+  <h2>Heute</h2>
+  <div class="card today">
+    <div class="course">EBC2158 — Entrepreneurship and Small Business Management</div>
+    <div class="meta">
+      <span>⏰ 11:00 – 13:00</span>
+      <span>📍 TAP23 (X) 1.001</span>
+      <span>👨‍🏫 Zahra Ghasemian</span>
     </div>
+    <div style="font-size:12px;color:#888;">Tutorial 4 — Facilitation 2 (Week 3)</div>
 
-    <div class="card warn">
-      <div class="card-title">📚 Vorbereitung fuer morgen</div>
-      <div class="label">EBC2158 — Tutorial 4 (Facilitation 2)</div>
-      <ul>
-        <li>Scarborough &amp; Cornwall (2025), <strong>Kapitel 3</strong></li>
-        <li>Fisher, G. (2012). <em>Effectuation, Causation and Bricolage</em> — Entrepreneurship Theory and Practice 36(5), 1019–1051. (Canvas)</li>
-        <li>Blank, S. (2013). <em>Why the Lean Start-Up Changes Everything</em> — HBR 91(5), 63–72. (Canvas)</li>
-      </ul>
-      <div class="label">Optional: Mittwoch (EBC2022)</div>
-      <ul>
-        <li>Reader 3 — Integer Linear Programming</li>
-        <li>Excel: Reader Implementation (Car Manufacturing) + Exercise Templates 4.2 / 4.3 / 4.4</li>
-      </ul>
-    </div>
-  </section>
+    <div class="label">Thema</div>
+    <div class="topic">Wie Entrepreneurs denken und entscheiden — Kreativität & Innovation als Kern unternehmerischen Handelns. Drei Ansätze zur Opportunity Recognition: <b>Causation</b> (planungsbasiert), <b>Effectuation</b> (ressourcenbasiert) und <b>Bricolage</b> (improvisierend). Plus Einführung in die <b>Lean-Start-up-Methode</b>.</div>
 
-  <section>
-    <h2>Morgen — Dienstag, 28. April</h2>
-    <div class="card tomorrow">
-      <div class="card-title">🎓 EBC2158 — Tutorial 4 (Facilitation 2)</div>
-      <div class="meta">⏰ 11:00–13:00 <span class="pipe">·</span> 📍 TAP23 (X) 1.001 <span class="pipe">·</span> 👩‍🏫 Zahra Ghasemian</div>
+    <div class="label">Vorbereitung (Pflichtlektüre)</div>
+    <ul>
+      <li>Scarborough & Cornwall (2025), <b>Kapitel 3</b></li>
+      <li>Fisher, G. (2012). <i>Effectuation, Causation and Bricolage: A behavioural comparison of emerging theories in entrepreneurship research.</i> ETP 36(5), 1019–1051. (auf Canvas)</li>
+      <li>Blank, S. (2013). <i>Why the Lean Start-Up Changes Everything.</i> HBR 91(5), 63–72. (auf Canvas)</li>
+    </ul>
 
-      <div class="label">📝 Thema</div>
-      <p>Wie Entrepreneurs denken und Entscheidungen unter Unsicherheit treffen. Im Fokus: <strong>Causation vs. Effectuation vs. Bricolage</strong>, die Rolle von Kreativitaet und Innovation in der Opportunity Recognition, und die <strong>Lean-Startup-Methode</strong> als Ansatz fuer fruehe Geschaeftsmodellvalidierung.</p>
-
-      <div class="label">🎯 Lernziele</div>
-      <ul>
-        <li>Entrepreneurial Decision-Making erklaeren</li>
-        <li>Techniken zur Foerderung des kreativen Prozesses anwenden</li>
-        <li>Causation, Effectuation und Bricolage unterscheiden</li>
-        <li>Lean-Startup-Methode beschreiben</li>
-      </ul>
-    </div>
-  </section>
-
-  <section>
-    <h2>Uebermorgen — Mittwoch, 29. April</h2>
-    <div class="card tomorrow">
-      <div class="card-title">📊 EBC2022 — Meeting 3 (Tutorial B)</div>
-      <div class="meta">⏰ 13:30–15:30 <span class="pipe">·</span> 📍 TS53 G1.03 <span class="pipe">·</span> 👨‍🏫 Constantinus van Hoesel</div>
-
-      <div class="label">📝 Thema</div>
-      <p><strong>Integer Linear Programming</strong> — Aufbauend auf Linear Programming aus den ersten Meetings. Anwendung auf Production-Planning und Car-Manufacturing-Cases. Die Excel-Templates 4.2 / 4.3 / 4.4 werden in der Session bearbeitet.</p>
-
-      <div class="tip">
-        <div class="tip-label">💻 Material</div>
-        Laptop mit Excel mitbringen — Reader 3 + die drei Excel-Templates aus Canvas.
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Deadlines</h2>
-    <div class="card urgent">
-      <div class="deadline-row">
-        <div class="deadline-info">
-          <div class="name red">🔴 Entrepreneur Interview Presentation</div>
-          <div class="desc">Slides (PDF, 15min Praesentation) + AI-Statement. Team-Assignment (4–5 Personen). <strong>Braucht Vorlauf:</strong> Interviewpartner finden, Termin, Fragen vorbereiten.</div>
-        </div>
-        <div class="deadline-date red">Mo 11.05.<br><span style="font-weight:400; color:#9ca3af; font-size:11px;">in 14 Tagen</span></div>
-      </div>
-      <div class="deadline-row">
-        <div class="deadline-info">
-          <div class="name red">🔴 Consent form</div>
-          <div class="desc">Unterschrieben von <strong>allen Teammitgliedern UND dem Entrepreneur</strong> (PDF). Hand- oder digitale Signatur.</div>
-        </div>
-        <div class="deadline-date red">Mo 11.05.<br><span style="font-weight:400; color:#9ca3af; font-size:11px;">in 14 Tagen</span></div>
-      </div>
-      <div class="deadline-row">
-        <div class="deadline-info">
-          <div class="name yellow">🟡 Team reflection</div>
-          <div class="desc">EBC2158 — Reflexion ueber die Teamarbeit hochladen.</div>
-        </div>
-        <div class="deadline-date yellow">Di 19.05.</div>
-      </div>
-      <div class="deadline-row">
-        <div class="deadline-info">
-          <div class="name yellow">🟡 Case Sports Inc.</div>
-          <div class="desc">EBC2022 — Case-Abgabe.</div>
-        </div>
-        <div class="deadline-date yellow">Di 26.05.</div>
-      </div>
-      <div class="deadline-row">
-        <div class="deadline-info">
-          <div class="name">Written project proposal (20%)</div>
-          <div class="desc">EBC2158 — Dokument + AI-Statement.</div>
-        </div>
-        <div class="deadline-date">Do 04.06.</div>
-      </div>
-      <div class="deadline-row">
-        <div class="deadline-info">
-          <div class="name">Video Pitch</div>
-          <div class="desc">EBC2158 — Link zum Video einreichen.</div>
-        </div>
-        <div class="deadline-date">Do 04.06.</div>
-      </div>
-    </div>
-  </section>
-
-  <div class="footer">
-    Aktualisiert: 27.04.2026
+    <div class="label">Mitbringen</div>
+    <ul>
+      <li>Notizen zu den drei Texten — die Tutorin diskutiert Causation / Effectuation / Bricolage anhand konkreter Fälle</li>
+    </ul>
   </div>
+</section>
+
+<section>
+  <h2>Morgen — Mittwoch 29. April</h2>
+  <div class="card tomorrow">
+    <div class="course">EBC2022 — Management of Operations & Product Development</div>
+    <div class="meta">
+      <span>⏰ 13:30 – 15:30</span>
+      <span>📍 TS53 G1.03</span>
+      <span>👨‍🏫 Constantinus van Hoesel</span>
+    </div>
+    <div style="font-size:12px;color:#888;">Tutorial B — Meeting 3</div>
+
+    <div class="label">Thema</div>
+    <div class="topic"><b>Integer Linear Programming (ILP)</b> — diskrete Optimierungsprobleme. Aufbauend auf Meeting 1 (Linear Programming) und Meeting 2 (Sensitivity Analysis). Anwendung am Fallbeispiel <b>Car Manufacturing</b>.</div>
+
+    <div class="label">Heute Abend vorbereiten</div>
+    <ul>
+      <li><b>Reader 3 — Integer Linear Programming.pdf</b> (Canvas Modul „Meeting 3") durchlesen</li>
+      <li>Excel-Files anschauen: <b>Exercises Template Ex 1.xlsx</b> + <b>Excel Templates 4.2, 4.3, 4.4.xlsx</b></li>
+      <li>Beispiel <b>Reader implementation — Car Manufacturing.xlsx</b> öffnen, damit du das Setup verstehst</li>
+    </ul>
+
+    <div class="label">Mitbringen</div>
+    <ul>
+      <li>💻 Laptop mit Excel + Solver Add-in aktiviert (Tutorial ist hands-on)</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Deadlines</h2>
+
+  <div class="card warn">
+    <div class="course">🟡 Entrepreneur Interview Presentation</div>
+    <div class="meta">
+      <span class="deadline-date">📅 Mo, 11. Mai (in 13 Tagen)</span>
+      <span>EBC2158</span>
+      <span>100 Punkte</span>
+    </div>
+    <div class="topic">Team-Assignment (4–5 Studierende): Interview mit einem Entrepreneur eurer Wahl. <b>15-Minuten-Präsentation</b> der Ergebnisse im Tutorial. Themen wahlweise: Causation/Effectuation/Bricolage <i>oder</i> Decision-Making unter Unsicherheit. Basis = Tutorials 2 & 3 (Scarborough & Cornwall Ch. 1–3, Jensen 2021, Fisher 2012, Blank 2013).</div>
+    <div class="label">Was jetzt zu tun ist</div>
+    <ul>
+      <li>Interviewee bestätigen + Interviewtermin fixieren (Ankündigung war am 21. April fällig)</li>
+      <li>Interviewfragen im Team entwerfen — gleich nach heutiger Session sinnvoll, weil Causation/Effectuation/Bricolage frisch sind</li>
+      <li>Slides als <b>PDF</b> hochladen + <b>AI-Statement</b> (sonst –1.0 Notenabzug!)</li>
+      <li>Separat: <b>Consent Form</b> hochladen (gleicher Termin 11. Mai)</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="course">Vorschau — Freitag 1. Mai</div>
+    <div class="meta"><span>EBC2158 Tutorial 5 — Facilitation 3</span><span>11:00, TAP23</span></div>
+    <div class="topic">Business Planning Process — von Idea Assessment bis zur strategischen Planung.</div>
+    <div class="label">Lektüre fürs Wochenende</div>
+    <ul>
+      <li>Scarborough & Cornwall (2025), <b>Kapitel 4 + 5</b></li>
+      <li>HBR (2017): <i>How Venture Capitalists Really Assess a Pitch.</i> 95(3), 26–28 (auf Canvas)</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="course">Weitere Termine</div>
+    <ul>
+      <li>Di, 19. Mai — Team Reflection (EBC2158)</li>
+      <li>Do, 4. Juni — Written Project Proposal 20% + Video Pitch (EBC2158)</li>
+      <li>Mi, 10. Juni — Exam EBC2022 Operations</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  Aktualisiert: Dienstag, 28. April 2026
+</footer>
+
+</div>
 </body>
 </html>
