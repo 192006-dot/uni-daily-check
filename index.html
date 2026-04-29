@@ -3,209 +3,156 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uni Daily Check - Mi 29. April</title>
+<title>Uni Daily Check — Mittwoch 29. April 2026</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: #0f0f0f;
-    color: #e0e0e0;
-    font-family: system-ui, -apple-system, sans-serif;
-    line-height: 1.55;
-    padding: 16px;
-  }
-  .container { max-width: 600px; margin: 0 auto; }
-  header {
-    padding: 20px 0 12px;
-    border-bottom: 1px solid #2a2a2a;
-    margin-bottom: 20px;
-  }
-  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; }
-  .date { color: #888; font-size: 14px; }
-  .badge {
-    display: inline-block;
-    background: #1f3a8a;
-    color: #93c5fd;
-    padding: 3px 10px;
-    border-radius: 12px;
-    font-size: 11px;
-    font-weight: 600;
-    margin-top: 8px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  .card {
-    background: #1a1a1a;
-    border: 1px solid #2a2a2a;
-    border-radius: 12px;
-    padding: 16px;
-    margin-bottom: 14px;
-  }
-  .card h2 {
-    font-size: 13px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    margin-bottom: 12px;
-  }
-  .today h2 { color: #4ade80; }
-  .tomorrow h2 { color: #60a5fa; }
-  .deadlines h2 { color: #fbbf24; }
-  .announce h2 { color: #c084fc; }
-  .session {
-    padding: 12px;
-    background: #0f0f0f;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    border-left: 3px solid #4ade80;
-  }
-  .session.tom { border-left-color: #60a5fa; }
-  .session-title { font-weight: 600; font-size: 15px; margin-bottom: 6px; }
-  .session-meta { color: #999; font-size: 13px; margin-bottom: 8px; }
-  .session-meta span { display: inline-block; margin-right: 12px; }
-  .topic, .prep {
-    background: #141414;
-    border-radius: 6px;
-    padding: 10px 12px;
-    margin-top: 8px;
-    font-size: 13.5px;
-  }
-  .topic strong, .prep strong { color: #fbbf24; display: block; margin-bottom: 4px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; }
-  .deadline {
-    padding: 10px 12px;
-    background: #0f0f0f;
-    border-radius: 8px;
-    margin-bottom: 8px;
-    border-left: 3px solid #fbbf24;
-    font-size: 13.5px;
-  }
-  .deadline.urgent { border-left-color: #f87171; background: #2a1010; }
-  .deadline-title { font-weight: 600; margin-bottom: 4px; }
-  .deadline-due { color: #999; font-size: 12px; }
-  .deadline-detail { color: #c0c0c0; font-size: 12.5px; margin-top: 6px; }
-  .tip {
-    background: #1a2a1a;
-    border-left: 3px solid #4ade80;
-    padding: 10px 12px;
-    border-radius: 6px;
-    font-size: 13px;
-    margin-top: 8px;
-  }
-  .tip strong { color: #4ade80; }
-  .note { color: #888; font-size: 12px; font-style: italic; margin-top: 6px; }
-  footer {
-    text-align: center;
-    color: #666;
-    font-size: 12px;
-    padding: 20px 0;
-  }
-  .ann-item {
-    background: #0f0f0f;
-    border-radius: 6px;
-    padding: 10px 12px;
-    margin-bottom: 8px;
-    font-size: 13px;
-    border-left: 3px solid #c084fc;
-  }
-  .ann-title { font-weight: 600; margin-bottom: 4px; }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0f0f0f;color:#e0e0e0;font-family:system-ui,-apple-system,sans-serif;line-height:1.55;padding:16px;font-size:15px}
+  .wrap{max-width:600px;margin:0 auto}
+  h1{font-size:22px;margin-bottom:4px;color:#fff}
+  .date{color:#888;font-size:13px;margin-bottom:6px}
+  .badge{display:inline-block;background:#4ade80;color:#0f0f0f;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;margin-bottom:18px}
+  .card{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:16px;margin-bottom:14px}
+  .card.today{border-color:#4ade80}
+  .card.tomorrow{border-color:#60a5fa}
+  .card.urgent{border-color:#f87171}
+  .card.hint{border-color:#fbbf24}
+  .label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+  .label.today{color:#4ade80}
+  .label.tomorrow{color:#60a5fa}
+  .label.urgent{color:#f87171}
+  .label.hint{color:#fbbf24}
+  h2{font-size:17px;color:#fff;margin-bottom:6px}
+  .meta{color:#bbb;font-size:13px;margin-bottom:10px}
+  .meta span{margin-right:10px}
+  .section{margin-top:12px}
+  .section-title{font-size:12px;font-weight:600;color:#888;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px}
+  .section p, .section li{font-size:14px;color:#d0d0d0}
+  ul{padding-left:18px}
+  li{margin-bottom:3px}
+  .deadline{display:flex;justify-content:space-between;align-items:flex-start;padding:10px 0;border-bottom:1px solid #2a2a2a}
+  .deadline:last-child{border-bottom:none}
+  .deadline-info{flex:1}
+  .deadline-title{font-weight:600;color:#fff;font-size:14px}
+  .deadline-detail{color:#aaa;font-size:12px;margin-top:2px}
+  .deadline-date{color:#888;font-size:12px;font-weight:600;text-align:right;white-space:nowrap;margin-left:10px}
+  .urgent-text{color:#f87171}
+  .warn-text{color:#fbbf24}
+  footer{color:#555;font-size:11px;text-align:center;margin-top:20px;padding-top:12px;border-top:1px solid #2a2a2a}
+  strong{color:#fff}
 </style>
 </head>
 <body>
-<div class="container">
-
-<header>
+<div class="wrap">
   <h1>Uni Daily Check</h1>
   <div class="date">Mittwoch, 29. April 2026</div>
-  <div class="badge">Tages-Check</div>
-</header>
+  <span class="badge">Tages-Check</span>
 
-<div class="card today">
-  <h2>Heute</h2>
-  <div class="session">
-    <div class="session-title">EBC2022 - Operations &amp; Product Development</div>
-    <div class="session-meta">
-      <span>13:30 - 15:30</span>
-      <span>TS53 G1.03</span>
+  <div class="card today">
+    <div class="label today">Heute</div>
+    <h2>Management of Operations &amp; Product Development</h2>
+    <div class="meta">
+      <span>⏰ 16:00–18:00</span>
+      <span>📍 TAP23 (X) 1.001</span>
     </div>
-    <div class="session-meta">Tutorial B/27 - Hoesel C.P.M.</div>
-    <div class="topic">
-      <strong>Thema</strong>
-      Naechster Schritt nach LP, Sensitivity und ILP: strategische Planungsentscheidungen. Es geht um Capacity Planning (wie viel Produktionskapazitaet aufbauen) und Location Planning (wo Standorte platzieren) - quantitative Methoden uebersetzt in Management-Entscheidungen mit Trade-offs.
-      <div class="note">Genaue Session laut Modulreihenfolge: Meeting 5 - Ch08 Location Planning (oder ggf. Ch05 Strategic Capacity, falls hier ein Meeting verschoben wurde).</div>
-    </div>
-    <div class="prep">
-      <strong>Vorbereitung</strong>
-      Reader aus den Canvas-Modulen "Meeting 4" (Ch05 Strategic Capacity Planning) und "Meeting 5" (Ch08 Location Planning) durchlesen. Excel-Templates dieser Module pruefen.
-    </div>
-    <div class="prep">
-      <strong>Mitbringen</strong>
-      Laptop mit Excel + Solver, Reader-PDFs, Taschenrechner.
-    </div>
-  </div>
-</div>
+    <div class="meta"><span>👥 Tutorial B / Gruppe 32 · Meeting 5</span></div>
 
-<div class="card tomorrow">
-  <h2>Morgen - Donnerstag 30. April</h2>
-  <div class="session tom">
-    <div class="session-title">Kein Tutorial</div>
-    <div class="session-meta">Vorlesungsfreier Tag</div>
-    <div class="tip">
-      <strong>Heute Abend / morgen vorbereiten</strong> fuer Freitag (EBC2158 Tutorial 5, 11:00 TAP23 X 1.001):<br>
-      Lernziel laut Canvas: Schritte des Business-Planning-Prozesses (von Ideen-Bewertung bis strategische Planung) erklaeren und diskutieren wie sie die Erfolgschancen erhoehen.<br><br>
-      Literatur:<br>
-      - <b>Scarborough &amp; Cornwall (2025) Ch. 4 + 5</b><br>
-      - HBR-Artikel: <i>"How Venture Capitalists Really Assess a Pitch"</i> (HBR 2017, 95(3), 26-28) - auf Canvas
+    <div class="section">
+      <div class="section-title">Thema</div>
+      <p><strong>Location Planning (Ch. 8).</strong> Wie trifft man Standortentscheidungen für Werke, Lager oder Filialen? Quantitative Verfahren zur Bewertung von Standortalternativen — Factor-Rating, Center-of-Gravity-Methode und die Transportation-Method. Übergang von ILP (Meeting 4) zur Aggregate Planning (Meeting 6).</p>
     </div>
-    <div class="tip">
-      <strong>Wichtig - Interview-Projekt vorantreiben:</strong> Bis 11. Mai braucht es ein 4-5er-Team, einen Interviewpartner und ein unterschriebenes Consent-Form. Wenn das noch offen ist - jetzt anstossen, das hat Vorlauf.
+
+    <div class="section">
+      <div class="section-title">Vorbereitung</div>
+      <ul>
+        <li><strong>Stevenson — Ch. 8 Location Planning</strong> (PDF in Canvas, Modul „Meeting 5")</li>
+        <li>Übungen aus dem Kapitel mitrechnen — diesmal kein separates Excel-Template, der Stoff baut auf der LP/ILP-Logik aus Meetings 2–4 auf</li>
+      </ul>
     </div>
-  </div>
-</div>
 
-<div class="card deadlines">
-  <h2>Deadlines</h2>
-
-  <div class="deadline urgent">
-    <div class="deadline-title">Exam (de)-registration Periode 5</div>
-    <div class="deadline-due">Sonntag 3. Mai, 23:59 (in 4 Tagen)</div>
-    <div class="deadline-detail">Pruefungsanmeldung/-abmeldung fuer EBC2022 und EBC2158 abschliessen. Letzter Tag - danach geht nichts mehr.</div>
-  </div>
-
-  <div class="deadline">
-    <div class="deadline-title">Entrepreneur Interview - Praesentation + AI Statement</div>
-    <div class="deadline-due">Montag 11. Mai, 23:59 (in 12 Tagen) - EBC2158, 100 Pkt</div>
-    <div class="deadline-detail">
-      Team-Aufgabe (4-5 Studierende): Interview mit Entrepreneur, 15-Min-Praesentation im Tutorial.<br>
-      Hochladen: Slides als PDF + AI-Tools-Statement (Liste aller Tools/Prompts oder Non-Use-Erklaerung).<br>
-      Bezug zu Lit: Scarborough/Cornwall Ch. 1-3, Jensen 2021, Fisher 2012, Blank 2013.<br>
-      Topic 1: Decision-Making unter Unsicherheit (causation/effectuation/bricolage).
+    <div class="section">
+      <div class="section-title">Mitbringen</div>
+      <p>Laptop mit Excel + Solver, Taschenrechner. Reader 1–3 (LP / Sensitivity / ILP) griffbereit, falls Standortmodelle als ILP gerechnet werden.</p>
     </div>
   </div>
 
-  <div class="deadline">
-    <div class="deadline-title">Consent Form - Interview</div>
-    <div class="deadline-due">Montag 11. Mai, 23:59 - EBC2158</div>
-    <div class="deadline-detail">Von allen Teammitgliedern + dem Entrepreneur unterschrieben. Word-Vorlage von Canvas, dann als PDF hochladen.</div>
+  <div class="card urgent">
+    <div class="label urgent">🔴 Heute Abend / morgen früh erledigen</div>
+    <h2>MIS Exam Inspection Registration</h2>
+    <div class="meta"><span>⏳ Deadline: morgen Donnerstag, 30. April · 23:59</span></div>
+    <p>Falls du deine MIS-Klausur einsehen möchtest: über den Link in der Canvas-Ankündigung „First Sit Exam Inspection Registration" (gepostet 22.04.) registrieren. Nach dem 30.04. ist die Anmeldung zu — Inspektion findet on-campus statt.</p>
   </div>
 
-  <div class="deadline">
-    <div class="deadline-title">Case Sports Inc</div>
-    <div class="deadline-due">Dienstag 26. Mai - EBC2022</div>
-    <div class="deadline-detail">Team-Praesentation. Templates fuer Hebei/Zhejiang/Sichuan/Hunan auf Canvas.</div>
+  <div class="card tomorrow">
+    <div class="label tomorrow">Morgen — Donnerstag 30. April</div>
+    <h2>Kein Tutorial</h2>
+    <p>Donnerstag ist Self-Study-Tag. Nutze ihn, um die <strong>Friday-Vorbereitung</strong> für Entrepreneurship abzuschließen — die Literatur ist umfangreich.</p>
+
+    <div class="section">
+      <div class="section-title">Heute Abend / Morgen vorbereiten für Freitag</div>
+      <ul>
+        <li><strong>Scarborough &amp; Cornwall (2025), Ch. 4 + 5</strong> — Business-Planning-Prozess (Idea Assessment → Strategic Planning)</li>
+        <li><strong>HBR (2017): „How Venture Capitalists Really Assess a Pitch"</strong> — 95(3), S. 26–28 (auf Canvas)</li>
+        <li>Lernziel: Erklären können, wie der Business-Planning-Prozess die Erfolgschancen eines Gründers erhöht</li>
+      </ul>
+    </div>
   </div>
-</div>
 
-<div class="card announce">
-  <h2>Ankuendigung EBC2158</h2>
-  <div class="ann-item">
-    <div class="ann-title">Drittes Fehlen wegen Scope-Event wird NICHT genehmigt</div>
-    Bis zu 2 Tutorials duerfen ohne Folgen verpasst werden. Wer zum Scope-Event will, muss eine dieser Absences nutzen. Jedes weitere Fehlen erfordert die compensatory assignment (im First Sit, ohne GPA-Effekt).
+  <div class="card">
+    <div class="label" style="color:#a78bfa">Übermorgen — Freitag 1. Mai</div>
+    <h2>Entrepreneurship &amp; Small Business Mgmt</h2>
+    <div class="meta">
+      <span>⏰ 11:00–13:00</span>
+      <span>📍 TAP23 (X) 1.001</span>
+    </div>
+    <div class="meta"><span>📝 Tutorial 5 — Facilitation 3 · Business Planning Process</span></div>
   </div>
-</div>
 
-<footer>
-  Aktualisiert: 29. April 2026
-</footer>
+  <div class="card hint">
+    <div class="label hint">⚠️ Diese Woche / nächste Woche</div>
+    <div class="deadline">
+      <div class="deadline-info">
+        <div class="deadline-title urgent-text">SBE Exam (de-)registration Periode 5</div>
+        <div class="deadline-detail">Schließt — letzte Möglichkeit, dich für Period-5-Klausuren ein-/abzumelden.</div>
+      </div>
+      <div class="deadline-date urgent-text">So 03.05.<br>23:59</div>
+    </div>
+    <div class="deadline">
+      <div class="deadline-info">
+        <div class="deadline-title warn-text">Entrepreneur Interview Presentation</div>
+        <div class="deadline-detail"><strong>EBC2158 · 100 Pkt · Team (4–5 Personen).</strong> Slides als PDF + AI-Statement + Consent Form. 15-Min-Präsentation im Tutorial. Basis: Scarborough &amp; Cornwall Ch. 1–3, Jensen 2021, Fisher 2012, Blank 2013. <strong>Interviewpartner muss spätestens Anfang nächster Woche stehen</strong> — nur noch 12 Tage.</div>
+      </div>
+      <div class="deadline-date warn-text">Mo 11.05.<br>23:59</div>
+    </div>
+    <div class="deadline">
+      <div class="deadline-info">
+        <div class="deadline-title">Team Reflection (EBC2158)</div>
+        <div class="deadline-detail">Reflexion über die Teamarbeit — kurz, individuell.</div>
+      </div>
+      <div class="deadline-date">Di 19.05.</div>
+    </div>
+    <div class="deadline">
+      <div class="deadline-info">
+        <div class="deadline-title">Case Sports Inc. (EBC2022)</div>
+        <div class="deadline-detail">Operations-Management-Fallstudie — Modul „Case: Sports Inc" liegt schon in Canvas.</div>
+      </div>
+      <div class="deadline-date">Di 26.05.</div>
+    </div>
+    <div class="deadline">
+      <div class="deadline-info">
+        <div class="deadline-title">Written Proposal + Video Pitch (EBC2158)</div>
+        <div class="deadline-detail">20 % Bewertung. Schriftliches Geschäftskonzept + Pitch-Video.</div>
+      </div>
+      <div class="deadline-date">Do 04.06.</div>
+    </div>
+  </div>
 
+  <div class="card">
+    <div class="label" style="color:#888">Ankündigungen (letzte 14 Tage)</div>
+    <p style="font-size:13px;color:#bbb"><strong style="color:#fbbf24">EBC2003 (MIS)</strong> · 22.04. — Registrierung für Exam Inspection ist offen. Deadline 30.04. 23:59. Inspektion findet on-campus statt; Procedure wird nach Deadline kommuniziert.</p>
+    <p style="font-size:13px;color:#bbb;margin-top:8px"><strong style="color:#fbbf24">EBC2158</strong> · 16.04. — Anträge auf eine 3. entschuldigte Abwesenheit für Scope-Events werden <strong>nicht</strong> genehmigt. Du darfst max. 2 Sessions ohne Auswirkung auf die Note verpassen.</p>
+  </div>
+
+  <footer>Aktualisiert: 29.04.2026 · Maastricht University · Periode 5</footer>
 </div>
 </body>
 </html>
