@@ -3,186 +3,177 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uni Daily Check — Mi 06.05.2026</title>
+<title>Uni Daily Check — Fr 08.05.2026</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: #0f0f0f;
-    color: #e0e0e0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-    font-size: 15px;
-    line-height: 1.5;
-    padding: 20px 16px 60px;
-  }
-  .container { max-width: 600px; margin: 0 auto; }
-  header {
-    text-align: center;
-    margin-bottom: 24px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid #2a2a2a;
-  }
-  header h1 { font-size: 22px; font-weight: 600; margin-bottom: 6px; }
-  header .date { color: #a0a0a0; font-size: 14px; margin-bottom: 8px; }
-  .badge {
-    display: inline-block;
-    background: #1f3a1f;
-    color: #4ade80;
-    padding: 3px 10px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-weight: 500;
-  }
-  section { margin-bottom: 22px; }
-  h2 {
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    color: #909090;
-    margin-bottom: 10px;
-    padding-left: 4px;
-  }
-  .card {
-    background: #1a1a1a;
-    border: 1px solid #2a2a2a;
-    border-radius: 10px;
-    padding: 14px 16px;
-    margin-bottom: 10px;
-  }
-  .card-today { border-left: 3px solid #4ade80; }
-  .card-tomorrow { border-left: 3px solid #60a5fa; }
-  .card-friday { border-left: 3px solid #60a5fa; }
-  .card-deadline-urgent { border-left: 3px solid #f87171; }
-  .card-deadline-warn { border-left: 3px solid #fbbf24; }
-  .card-deadline { border-left: 3px solid #6b7280; }
-  .card-info { border-left: 3px solid #fbbf24; }
-  .course-title { font-size: 16px; font-weight: 600; color: #e8e8e8; margin-bottom: 6px; }
-  .meta { color: #a0a0a0; font-size: 13px; margin-bottom: 4px; }
-  .meta strong { color: #c8c8c8; font-weight: 500; }
-  .topic { margin-top: 10px; padding: 10px 12px; background: #0f1f0f; border-radius: 6px; font-size: 14px; color: #d4f0d4; }
-  .topic strong { color: #4ade80; display: block; margin-bottom: 4px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; }
-  .prep { margin-top: 8px; padding: 10px 12px; background: #1f1a0f; border-radius: 6px; font-size: 14px; color: #f0e5d4; }
-  .prep strong { color: #fbbf24; display: block; margin-bottom: 4px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; }
-  .deadline-title { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
-  .deadline-due { font-size: 13px; color: #a0a0a0; margin-bottom: 6px; }
-  .deadline-detail { font-size: 13px; color: #c0c0c0; }
-  .urgent .deadline-due { color: #f87171; font-weight: 500; }
-  .warn .deadline-due { color: #fbbf24; font-weight: 500; }
-  .empty { color: #707070; font-style: italic; font-size: 14px; }
-  footer { text-align: center; color: #606060; font-size: 12px; margin-top: 30px; padding-top: 16px; border-top: 1px solid #2a2a2a; }
-  ul { list-style: none; padding-left: 0; }
-  ul li { padding: 2px 0; padding-left: 14px; position: relative; }
-  ul li::before { content: "·"; position: absolute; left: 4px; color: #6b7280; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#0f0f0f;color:#e0e0e0;line-height:1.55;padding:16px}
+  .wrap{max-width:600px;margin:0 auto}
+  header{padding:18px 20px;background:linear-gradient(135deg,#1a1a1a,#0f0f0f);border:1px solid #2a2a2a;border-radius:14px;margin-bottom:18px}
+  header h1{font-size:1.45rem;letter-spacing:-.02em}
+  header .date{color:#9ca3af;font-size:.92rem;margin-top:4px}
+  .badge{display:inline-block;background:#1f2937;border:1px solid #374151;color:#9ca3af;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px;margin-top:10px}
+  .card{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:14px;padding:18px 20px;margin-bottom:14px}
+  .card.today{border-left:3px solid #4ade80}
+  .card.tomorrow{border-left:3px solid #60a5fa}
+  .card.warn{border-left:3px solid #fbbf24}
+  .card.urgent{border-left:3px solid #f87171}
+  .card h2{font-size:1.05rem;color:#f3f4f6;margin-bottom:12px;letter-spacing:-.01em}
+  .card h2 .pill{font-size:.7rem;font-weight:500;background:#374151;color:#d1d5db;padding:2px 8px;border-radius:999px;margin-left:6px;letter-spacing:.05em;text-transform:uppercase}
+  .session{background:#111;border:1px solid #232323;border-radius:10px;padding:14px;margin-bottom:10px}
+  .session:last-child{margin-bottom:0}
+  .session h3{font-size:.98rem;color:#f3f4f6;margin-bottom:6px}
+  .meta{font-size:.85rem;color:#9ca3af;margin-bottom:10px;display:flex;flex-wrap:wrap;gap:10px}
+  .meta span{display:inline-flex;align-items:center;gap:4px}
+  .topic{background:#0f1c14;border:1px solid #1f3a2a;color:#bbf7d0;padding:10px 12px;border-radius:8px;font-size:.9rem;margin-bottom:10px}
+  .prep{background:#1a1610;border:1px solid #3a2f1f;color:#fde68a;padding:10px 12px;border-radius:8px;font-size:.88rem;margin-bottom:8px}
+  .prep strong,.topic strong{color:#fff;display:block;margin-bottom:4px;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+  ul{list-style:none;padding:0}
+  li{padding:4px 0;font-size:.9rem}
+  li:before{content:"›";color:#6b7280;margin-right:8px}
+  .deadline{display:flex;justify-content:space-between;align-items:flex-start;padding:11px 0;border-bottom:1px solid #232323;gap:10px}
+  .deadline:last-child{border-bottom:none}
+  .deadline .desc{flex:1;font-size:.9rem}
+  .deadline .desc small{display:block;color:#9ca3af;margin-top:3px;font-size:.78rem}
+  .deadline .when{font-size:.78rem;font-weight:600;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0}
+  .when.red{background:#3b1414;color:#fca5a5;border:1px solid #5c1f1f}
+  .when.yellow{background:#3b2f14;color:#fde68a;border:1px solid #5c4a1f}
+  .when.gray{background:#1f2937;color:#9ca3af;border:1px solid #374151}
+  footer{text-align:center;color:#6b7280;font-size:.78rem;margin-top:18px;padding:10px}
+  .empty{color:#6b7280;font-style:italic;font-size:.9rem;padding:8px 0}
+  .tip{background:#11192a;border:1px solid #1e2d4a;color:#bfdbfe;padding:10px 12px;border-radius:8px;font-size:.88rem;margin-top:8px}
 </style>
 </head>
 <body>
-<div class="container">
+<div class="wrap">
 
 <header>
   <h1>Uni Daily Check</h1>
-  <div class="date">Mittwoch, 06. Mai 2026</div>
+  <div class="date">Freitag, 8. Mai 2026</div>
   <span class="badge">Tages-Check</span>
 </header>
 
-<section>
-  <h2>Heute</h2>
-  <div class="card card-today">
-    <div class="course-title">Management of Operations &amp; Product Development</div>
-    <div class="meta">⏰ <strong>13:30 – 15:30</strong> · 📍 TS53 G1.03</div>
-    <div class="meta">👨‍🏫 Dozent: Constantinus van Hoesel · Tutorial B (Meeting 4)</div>
+<div class="card today">
+  <h2>Heute <span class="pill">Fr 08.05.</span></h2>
+
+  <div class="session">
+    <h3>Entrepreneurship & Small Business — Guest Lecture</h3>
+    <div class="meta">
+      <span>⏰ 16:00 – 18:00</span>
+      <span>📍 TS53 A-1.01 (Franz Palm Hall)</span>
+      <span>👨‍🏫 Sergio Páramo-Ortiz</span>
+    </div>
     <div class="topic">
-      <strong>📝 Thema</strong>
-      Strategic Capacity Planning (Chapter 5). Es geht darum, wie Unternehmen ihre Produktionskapazität langfristig planen — wie viel Output kann/sollte realistisch erzeugt werden, welche Engpässe entstehen und wie man Auslastung gegen Investitionskosten balanciert.
+      <strong>Thema</strong>
+      Panel-Diskussion mit Maastricht-University-Alumni, die Entrepreneure oder Small-Business-Owner geworden sind. Es gibt keine Literatur-Vorbereitung — der Fokus liegt auf dem Austausch mit dem Panel. <strong style="color:#fca5a5;font-size:.78rem;display:inline">⚠ Anwesenheit ist Pflicht.</strong>
     </div>
     <div class="prep">
-      <strong>📚 Vorbereitung</strong>
-      Reader: <em>Ch05 Strategic Capacity Planning.pdf</em> (einzige Pflichtlektüre in Meeting 4 auf Canvas) — durchlesen, Schlüsselbegriffe wie Design Capacity, Effective Capacity, Utilization &amp; Bottleneck-Analyse parat haben.
+      <strong>Vorbereitung</strong>
+      Ein paar Fragen fuer das Panel ueberlegen. Anknuepfungspunkte: Decision-Making (Causation vs. Effectuation, Bricolage), Umgang mit Unsicherheit, Motivation und Hintergrund — also genau die Konzepte, die ihr fuer eure Interview-Praesentation braucht. Doppelter Nutzen: ihr koennt Inspiration fuer die eigene Praesentation sammeln.
+    </div>
+  </div>
+</div>
+
+<div class="card urgent">
+  <h2>🔴 Wochenend-Sprint <span class="pill">Mo Deadline</span></h2>
+  <p style="font-size:.9rem;margin-bottom:10px">Montag 21:59 ist der grosse Abgabe-Block fuer das Entrepreneur-Interview. Heute Abend / Wochenende muss alles fertig werden:</p>
+  <ul>
+    <li>Slides als PDF — fuer 15-min Team-Praesentation Dienstag</li>
+    <li>AI-Statement auf der LETZTEN Slide (Tools, Prompts; ohne Statement = -1/10 Punkt)</li>
+    <li>Consent Form von allen Team-Mitgliedern <em>und</em> dem Interviewpartner unterschrieben (Word ausfuellen → drucken & per Hand unterschreiben → scannen, oder digital signieren) → als PDF abgeben</li>
+    <li>Praesentation muss enthalten: warum Person Entrepreneur ist · Background von Person & Business · Interview-Ablauf · Findings mit Zitaten · Verknuepfung zur Theorie (Scarborough/Cornwall 2025 Kap. 1-3, Jensen 2021, Fisher 2012, Blank 2013) · Empfehlungen</li>
+  </ul>
+  <div class="tip">💡 Komponente "Findings + Theorie-Link" soll der Hauptteil sein. Topic 1 (Causation/Effectuation/Bricolage) oder Topic 2 (wer ist Entrepreneur & warum) — entscheidet euch fuer den Winkel, der zu eurem Interviewpartner passt.</div>
+</div>
+
+<div class="card tomorrow">
+  <h2>Wochenende & naechste Woche</h2>
+
+  <div class="session">
+    <h3>Sa 09. + So 10. Mai</h3>
+    <div class="meta"><span>📚 Keine Termine — Sprint-Zeit</span></div>
+    <ul>
+      <li>Slides finalisieren + Generalprobe fuer Dienstag</li>
+      <li>Consent Form sichern (Mit-Studenten + Entrepreneur unterschreiben lassen)</li>
+      <li>EBC2022 Reader checken fuer Mo Tutorial (Linear Programming / ILP / weiterer Stoff je nach Meeting-Stand)</li>
+    </ul>
+  </div>
+
+  <div class="session">
+    <h3>Mo 11.05. — Operations Management</h3>
+    <div class="meta">
+      <span>⏰ 13:30 – 15:30</span>
+      <span>📍 TS53 E2.07</span>
+      <span>👨‍🏫 Constantinus van Hoesel</span>
+    </div>
+    <div class="topic">
+      <strong>Thema</strong>
+      EBC2022 Tutorial A. Pruefe in Canvas welches Meeting dran ist (LP / Sensitivity / ILP / Capacity Planning) und nimm den passenden Reader + die Excel-Templates mit. Laptop nicht vergessen.
     </div>
     <div class="prep">
-      <strong>💻 Mitbringen</strong>
-      Laptop für eventuelle Excel-Übungen (Vorwochen arbeiteten mit Templates). Heute selbst kein neues Excel-File im Modul — eher konzeptuelle/rechnerische Übungen.
+      <strong>Bis 21:59 abgeben</strong>
+      Entrepreneur Interview Slides (PDF) · Consent Form (PDF, signiert)
     </div>
   </div>
-</section>
 
-<section>
-  <h2>Morgen — Donnerstag 07.05.</h2>
-  <div class="card card-tomorrow">
-    <div class="empty">Keine Termine im Stundenplan.</div>
-    <div class="prep" style="margin-top:10px">
-      <strong>💡 Nutze den Tag</strong>
-      <ul>
-        <li>Entrepreneur-Interview-Präsentation (Slides + AI-Statement) finalisieren — Deadline Montag 11.05.</li>
-        <li>Consent Form ausdrucken/digital signieren — alle Teammitglieder + Entrepreneur müssen unterschreiben (Vorlauf nicht unterschätzen!).</li>
-        <li>Fragen für die Alumni-Panel-Diskussion am Freitag vorbereiten.</li>
-      </ul>
+  <div class="session">
+    <h3>Di 12.05. — Tutorial 6: Interview Presentation</h3>
+    <div class="meta">
+      <span>⏰ 11:00 – 13:00</span>
+      <span>📍 TAP23 (X) 1.001</span>
+      <span>👨‍🏫 Zahra Ghasemian</span>
     </div>
-  </div>
-</section>
-
-<section>
-  <h2>Freitag 08.05. — Vorschau</h2>
-  <div class="card card-friday">
-    <div class="course-title">Entrepreneurship &amp; Small Business Management</div>
-    <div class="meta">⏰ <strong>16:00 – 18:00</strong> · 📍 TS53 A-1.01 (Franz Palm Lecture Hall)</div>
-    <div class="meta">👨‍🏫 Dozent: Sergio Paramo Ortiz · <strong style="color:#f87171">Anwesenheit verpflichtend</strong></div>
     <div class="topic">
-      <strong>📝 Thema</strong>
-      Gastvorlesung: Panel-Diskussion mit MU-Alumni, die Unternehmer/Small-Business-Owner geworden sind. <strong>Eigene Fragen für das Panel im Voraus vorbereiten.</strong> Keine Pflichtliteratur.
+      <strong>Thema</strong>
+      Live-Praesentation eures Entrepreneur-Interviews vor Tutor und Tutorial-Gruppe. 15 Minuten. Die Tutorin gibt Feedback und benotet die Praesentation — Note kommt nach Kursende.
     </div>
   </div>
-</section>
+</div>
 
-<section>
-  <h2>Deadlines</h2>
+<div class="card warn">
+  <h2>✅ Deadlines</h2>
 
-  <div class="card card-deadline-urgent urgent">
-    <div class="deadline-title">🔴 Entrepreneur Interview Presentation</div>
-    <div class="deadline-due">Montag, 11.05.2026 · 23:59 (in 5 Tagen)</div>
-    <div class="deadline-detail">
-      Team-Aufgabe (4–5 Studierende). 15-Min-Präsentation zum Interview mit einem Entrepreneur. Upload: <strong>Slides als PDF</strong> + <strong>AI-Tools-Statement</strong> (sonst –1 Punkt).<br>
-      Inhalt basiert auf Tutorial 2 &amp; 3: Scarborough &amp; Cornwall (2025) Ch.1–3, Jensen (2021), Fisher (2012), Blank (2013). Wahl zwischen Topic 1 (Causation / Effectuation / Bricolage — Entscheidungsfindung unter Unsicherheit) oder Topic 2.
+  <div class="deadline">
+    <div class="desc">
+      <strong>Interview Presentation Slides + AI Statement</strong>
+      <small>EBC2158 · PDF · 100 Punkte · Praesentation Di in Tut 6</small>
     </div>
+    <div class="when red">Mo 11.05. 21:59</div>
   </div>
 
-  <div class="card card-deadline-urgent urgent">
-    <div class="deadline-title">🔴 Consent Form</div>
-    <div class="deadline-due">Montag, 11.05.2026 · 23:59 (in 5 Tagen)</div>
-    <div class="deadline-detail">
-      Von <strong>allen Teammitgliedern + dem Entrepreneur</strong> unterschrieben. Word-Datei runterladen → ausdrucken+handsignieren oder digital per PDF-E-Signatur → als <strong>PDF</strong> hochladen. Vorlauf für die Unterschrift des Entrepreneurs einplanen!
+  <div class="deadline">
+    <div class="desc">
+      <strong>Consent Form (signiert)</strong>
+      <small>EBC2158 · PDF · von Team + Entrepreneur unterschrieben — ohne Form keine Bewertung</small>
     </div>
+    <div class="when red">Mo 11.05. 21:59</div>
   </div>
 
-  <div class="card card-deadline-warn warn">
-    <div class="deadline-title">🟡 Team Reflection (EBC2158)</div>
-    <div class="deadline-due">Dienstag, 19.05.2026 · 23:59 (in 13 Tagen)</div>
-    <div class="deadline-detail">Reflexion über die Teamarbeit hochladen.</div>
-  </div>
-
-  <div class="card card-deadline">
-    <div class="deadline-title">⚪ Case Sports Inc. (EBC2022)</div>
-    <div class="deadline-due">Dienstag, 26.05.2026 · 23:59 (in 20 Tagen)</div>
-    <div class="deadline-detail">Case-Materialien liegen schon auf Canvas (Team 1 Hebei / Team 2 Zhejiang / Team 3 Sichuan / Team 4 Hunan + Rubric Presentation.xlsx).</div>
-  </div>
-
-  <div class="card card-deadline">
-    <div class="deadline-title">⚪ Written Proposal (20%) + Video Pitch</div>
-    <div class="deadline-due">Donnerstag, 04.06.2026 · 23:59 (in 29 Tagen)</div>
-    <div class="deadline-detail">EBC2158: schriftlicher Proposal (mit AI-Statement) + Video-Pitch-Link.</div>
-  </div>
-</section>
-
-<section>
-  <h2>Hinweise</h2>
-  <div class="card card-info">
-    <div class="deadline-detail">
-      ℹ️ <strong>SBE Exam-Registrierung Periode 5</strong> war am Sonntag 03.05. um 23:59 fällig — falls noch nicht angemeldet, sofort beim SSC nachfragen.
+  <div class="deadline">
+    <div class="desc">
+      <strong>Team Reflection</strong>
+      <small>EBC2158 · Reflexion des Team-Prozesses bisher</small>
     </div>
+    <div class="when yellow">Di 19.05. 21:59</div>
   </div>
-</section>
 
-<footer>
-  Aktualisiert: 06.05.2026 · 08:20 CEST
-</footer>
+  <div class="deadline">
+    <div class="desc">
+      <strong>Case Sports Inc. (Slides + Excel)</strong>
+      <small>EBC2022 · 100 Punkte · Team-Case rund um Linear Programming · pruefe welche Region (Hebei/Zhejiang/Sichuan/Hunan) eurem Team zugewiesen ist</small>
+    </div>
+    <div class="when yellow">Di 26.05. 21:59</div>
+  </div>
+
+  <div class="deadline">
+    <div class="desc">
+      <strong>Written Project Proposal (20%) + Video Pitch</strong>
+      <small>EBC2158 · Hauptdokument + AI-Statement, Video-Link</small>
+    </div>
+    <div class="when gray">Do 04.06. 21:59</div>
+  </div>
+</div>
+
+<footer>Aktualisiert: Freitag 08.05.2026</footer>
 
 </div>
 </body>
