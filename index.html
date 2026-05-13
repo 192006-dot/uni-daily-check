@@ -1,153 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uni Daily Check — Mi 13.05</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uni Daily Check — Mi 13. May 2026</title>
 <style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{background:#0f0f0f;color:#e0e0e0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.5;padding:16px}
+  *{box-sizing:border-box}
+  body{margin:0;padding:24px 16px 48px;background:#0f0f0f;color:#e0e0e0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5}
   .wrap{max-width:600px;margin:0 auto}
-  header{margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid #2a2a2a}
-  h1{font-size:22px;font-weight:700;color:#fff}
-  .date{color:#9ca3af;font-size:13px;margin-top:4px}
-  .badge{display:inline-block;background:#1f2937;color:#60a5fa;padding:3px 9px;border-radius:6px;font-size:11px;margin-top:6px;letter-spacing:.3px}
-  section{margin-bottom:18px}
-  h2{font-size:13px;text-transform:uppercase;letter-spacing:.8px;color:#9ca3af;margin-bottom:10px;font-weight:600}
-  .card{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:10px;padding:14px;margin-bottom:10px}
-  .card.today{border-left:3px solid #4ade80}
-  .card.tomorrow{border-left:3px solid #60a5fa}
-  .card.warn{border-left:3px solid #fbbf24}
-  .card.urgent{border-left:3px solid #f87171}
-  .card.info{border-left:3px solid #a78bfa}
-  .row{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-bottom:6px}
-  .label{font-size:11px;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;min-width:75px}
-  .val{color:#e0e0e0;font-size:14px}
-  .title{font-size:16px;font-weight:600;color:#fff;margin-bottom:8px}
-  .time{color:#4ade80;font-weight:600}
-  .room{color:#fbbf24}
-  .prof{color:#9ca3af;font-size:13px}
-  .topic{background:#222;padding:10px 12px;border-radius:6px;margin-top:8px;font-size:13.5px;color:#d1d5db}
-  .prep{margin-top:10px;font-size:13.5px}
-  .prep ul{list-style:none;padding-left:0;margin-top:4px}
-  .prep li{padding:4px 0 4px 14px;position:relative;color:#cbd5e1}
-  .prep li::before{content:"›";position:absolute;left:0;color:#60a5fa}
-  .deadline-title{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:6px}
-  .dl-name{font-weight:600;color:#fff;font-size:14.5px}
-  .dl-when{font-size:12px;color:#fbbf24;white-space:nowrap}
-  .dl-when.urgent{color:#f87171}
-  .dl-when.calm{color:#9ca3af}
-  .dl-desc{font-size:13px;color:#cbd5e1}
-  .small{font-size:12.5px;color:#9ca3af;margin-top:6px}
-  footer{margin-top:24px;padding-top:14px;border-top:1px solid #2a2a2a;font-size:11.5px;color:#6b7280;text-align:center}
-  strong{color:#fff}
-  .pill{display:inline-block;font-size:11px;background:#2d2d2d;color:#cbd5e1;padding:2px 7px;border-radius:5px;margin-right:4px}
+  h1{margin:0 0 4px;font-size:24px;letter-spacing:-0.01em}
+  .date{color:#a0a0a0;font-size:14px;margin-bottom:8px}
+  .badge{display:inline-block;background:#1e3a8a;color:#dbeafe;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase}
+  .card{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:16px;margin:14px 0}
+  .card h2{margin:0 0 10px;font-size:13px;letter-spacing:0.05em;text-transform:uppercase;color:#a0a0a0;font-weight:600}
+  .today h2{color:#4ade80}
+  .tomorrow h2{color:#60a5fa}
+  .deadlines h2{color:#fbbf24}
+  .hint h2{color:#fbbf24}
+  .session{border-left:3px solid #4ade80;padding-left:12px;margin-bottom:12px}
+  .session-title{font-weight:700;font-size:16px;margin-bottom:4px}
+  .meta{color:#a0a0a0;font-size:13px;margin:2px 0}
+  .topic{margin-top:10px;font-size:14px}
+  .topic-label{color:#a0a0a0;font-size:11px;text-transform:uppercase;letter-spacing:0.05em;font-weight:600;margin-bottom:4px}
+  .prep{background:#0f1e0f;border:1px solid #1f3a1f;border-radius:8px;padding:10px 12px;margin-top:10px;font-size:13px}
+  .prep-title{color:#4ade80;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px}
+  .deadline{padding:10px 12px;border-radius:8px;margin:8px 0;font-size:13px;border:1px solid}
+  .dl-yellow{background:#2a230f;border-color:#5a4a1f;color:#fde68a}
+  .dl-green{background:#0f1e0f;border-color:#1f3a1f;color:#bbf7d0}
+  .dl-date{font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:2px}
+  .footer{color:#666;font-size:11px;text-align:center;margin-top:24px}
+  ul{margin:4px 0 0;padding-left:18px}
+  li{margin:2px 0}
+  a{color:#60a5fa}
+  .empty{color:#a0a0a0;font-size:14px;font-style:italic}
 </style>
 </head>
 <body>
 <div class="wrap">
-
-<header>
+  <span class="badge">Tages-Check</span>
   <h1>Uni Daily Check</h1>
-  <div class="date">Mittwoch, 13. Mai 2026</div>
-  <span class="badge">Tages-Check · Period 5 · Woche 5</span>
-</header>
+  <div class="date">Mittwoch, 13. May 2026</div>
 
-<section>
-  <h2>Heute</h2>
   <div class="card today">
-    <div class="title">EBC2022 — Management of Operations & Product Dev.</div>
-    <div class="row"><span class="label">Zeit</span><span class="val time">13:30 – 15:30</span></div>
-    <div class="row"><span class="label">Raum</span><span class="val room">TS53 G1.03 (Tongersestraat 53)</span></div>
-    <div class="row"><span class="label">Dozent</span><span class="val prof">Constantinus van Hoesel</span></div>
-    <div class="row"><span class="label">Sitzung</span><span class="val">Meeting 6 · Tutorial B</span></div>
-
-    <div class="topic">
-      <strong>Thema: Quality Control (Ch. 10)</strong><br>
-      Heute geht es um <strong>Statistical Process Control</strong> — wie man mit Control Charts (X̄- und R-Karten) prüft, ob ein Produktionsprozess stabil läuft, und wie man Abweichungen außerhalb der Kontrollgrenzen erkennt. Du arbeitest mit Control Limit Factors und der z-Wert-Tabelle, um Prozess­variabilität zu quantifizieren und über Eingriffe zu entscheiden.
-    </div>
-
-    <div class="prep">
-      <strong>Vorbereitung:</strong>
-      <ul>
-        <li><strong>Ch10 Quality Control.pdf</strong> — komplett lesen (Lehrbuchkapitel)</li>
-        <li><strong>Control limit factors.pdf</strong> — Referenz­tabelle (A2, D3, D4) für die Übungen bereithalten</li>
-        <li><strong>Table of z values.pdf</strong> — Standardnormalverteilung, für Capability-Berechnungen</li>
-      </ul>
-      <div class="small">💻 Laptop mitnehmen — Tutorial arbeitet typischerweise mit den PDFs + Tabellen. Excel-Übung war für Meeting 6 nicht hochgeladen, evtl. wird sie in der Session ausgeteilt.</div>
+    <h2>Heute</h2>
+    <div class="session">
+      <div class="session-title">Operations &amp; Product Development</div>
+      <div class="meta">Meeting 6 · Tutorial B/32</div>
+      <div class="meta">⏰ 16:00 – 18:00 · 📍 TAP23 (X) 1.001</div>
+      <div class="meta">👨‍🏫 Arman Rouhani</div>
+      <div class="topic">
+        <div class="topic-label">Thema</div>
+        Quality Control. Statistische Prozesskontrolle: Aufbau und Interpretation von Kontrollkarten (x̄-, R-, p-, c-Charts), Berechnung von Control Limits über die Faktoren-Tabellen, Beurteilung ob ein Prozess „in control" ist. Verbindet Statistik (Normalverteilung, z-Werte) mit operativer Qualitätssicherung.
+      </div>
+      <div class="prep">
+        <div class="prep-title">Vorbereitung</div>
+        <ul>
+          <li>Ch10 Quality Control.pdf — komplett durchlesen</li>
+          <li>Control limit factors.pdf — Tabelle wird in der Session gebraucht</li>
+          <li>Table of z values.pdf — für Toleranzgrenzen</li>
+        </ul>
+        💻 Laptop mit Excel mitbringen (Standard für Operations-Tutorials)
+      </div>
     </div>
   </div>
-</section>
 
-<section>
-  <h2>Morgen — Donnerstag 14.05</h2>
   <div class="card tomorrow">
-    <div class="title">Kein Tutorial</div>
-    <div class="dl-desc">Donnerstag und Freitag sind frei von Sitzungen. Das ist dein Vorbereitungs­fenster für nächste Woche.</div>
-    <div class="prep">
-      <strong>Heute Abend / morgen sinnvoll vorbereiten:</strong>
+    <h2>Morgen — Donnerstag 14. May</h2>
+    <div class="empty">Keine Termine. Auch Freitag 15. May fällt der Entrepreneurship-Unterricht aus (offiziell von Veerle bestätigt).</div>
+  </div>
+
+  <div class="card hint">
+    <h2>Wie du die freie Zeit nutzt</h2>
+    <div style="font-size:14px">
+      Drei lange Tage ohne Pflichttermine (Do–So), bevor Dienstag 19. May voll wird. Priorität:
       <ul>
-        <li><strong>Team Reflection schreiben</strong> (1 Seite, Start-Stop-Continue als Team) — Deadline Di 19.05</li>
-        <li><strong>Business Idea Slides</strong> (min. 2) für EBC2158 Tutorial 7 am Di 19.05 mit dem Team koordinieren</li>
-        <li>Vorlesen: <strong>Ch11 Aggregate Planning</strong> für Meeting 7 am Mi 20.05</li>
+        <li><strong>Slides für Entrepreneurship Tutorial 7</strong> — min. 2 Slides zur Business-Idee, 15-Min-Pitch im Workshop. Tools die du nutzen sollst: Business Model Canvas.</li>
+        <li><strong>Team Reflection schreiben</strong> (1 Seite max, Start-Stop-Continue) — Abgabe Di 19. May 23:59.</li>
+        <li><strong>Case Sports Inc anfangen</strong> — Abgabe Di 26. May, Slides + Excel. Linear Programming anwenden (Reader 1 + Reader 2 als Basis).</li>
       </ul>
     </div>
   </div>
-</section>
 
-<section>
-  <h2>Deadlines</h2>
+  <div class="card deadlines">
+    <h2>Anstehende Deadlines</h2>
 
-  <div class="card urgent">
-    <div class="deadline-title">
-      <span class="dl-name">Team Reflection (EBC2158)</span>
-      <span class="dl-when urgent">Di 19.05 · 21:59 · in 6 Tagen</span>
+    <div class="deadline dl-yellow">
+      <div class="dl-date">Di 19. May · 23:59 · in 6 Tagen</div>
+      <strong>Team Reflection</strong> (Entrepreneurship)<br>
+      1 Seite max, Start-Stop-Continue als Team. Nicht benotet, fließt aber in Participation &amp; Professionalism ein.
     </div>
-    <div class="dl-desc">
-      <strong>Team-Aufgabe, 1 Seite max.</strong> Methode: <strong>Start-Stop-Continue</strong> — was sollte das Team neu starten, was stoppen, was beibehalten? Wird zwar nicht benotet, fließt aber in die Participation & Professionalism-Note ein. Wird auch in Tutorial 7 (Di 19.05) besprochen, also vor der Session fertig haben.
+
+    <div class="deadline dl-yellow">
+      <div class="dl-date">Di 26. May · 23:59 · in 13 Tagen</div>
+      <strong>Case Sports Inc.</strong> (Operations)<br>
+      Slides + Excel-File hochladen. LP-Anwendung auf die Sports-Inc-Fallstudie.
+    </div>
+
+    <div class="deadline dl-green">
+      <div class="dl-date">Do 4. Jun · 23:59 · in 22 Tagen</div>
+      <strong>Written Project Proposal 20%</strong> (Entrepreneurship)<br>
+      PDF, 2000–2500 Wörter, plus AI-Statement (Pflicht, sonst –1.0 Punkt). Baut auf Lehrbuch Ch. 3–5, 9, 11, 12 &amp; 15. Klares Deckblatt mit allen Namen/IDs.
+    </div>
+
+    <div class="deadline dl-green">
+      <div class="dl-date">Do 4. Jun · 23:59 · in 22 Tagen</div>
+      <strong>Video Pitch</strong> (Entrepreneurship)<br>
+      Link zum Video hochladen.
     </div>
   </div>
 
-  <div class="card warn">
-    <div class="deadline-title">
-      <span class="dl-name">Case Sports Inc. (EBC2022)</span>
-      <span class="dl-when">Di 26.05 · 21:59 · in 13 Tagen · 100 Pkt.</span>
-    </div>
-    <div class="dl-desc">
-      <strong>Slides + Excel hochladen.</strong> Case-Material liegt unter <em>Module: Case: Sports Inc</em> — je nach Team eines von vier Szenarien (Hebei, Zhejiang, Sichuan, Hunan). Rubric Presentation.xlsx im selben Modul anschauen, damit ihr die Bewertungs­kriterien erfüllt. Excel-Modell und Präsentations­logik diese Woche planen — wartet nicht bis zum Wochenende vor der Abgabe.
-    </div>
-  </div>
-
-  <div class="card info">
-    <div class="deadline-title">
-      <span class="dl-name">Written Project Proposal (20%) + Video Pitch (EBC2158)</span>
-      <span class="dl-when calm">Do 04.06 · 21:59 · in 22 Tagen</span>
-    </div>
-    <div class="dl-desc">Beide am selben Tag fällig. Erst nach der Team Reflection priorisieren, aber nicht aus den Augen verlieren.</div>
-  </div>
-</section>
-
-<section>
-  <h2>Nächste Termine</h2>
-  <div class="card">
-    <div class="row"><span class="label">Mo 18.05</span><span class="val">EBC2022 Meeting 7 · Aggregate Planning (Ch11) · 16:00</span></div>
-    <div class="row"><span class="label">Di 19.05</span><span class="val">EBC2158 Tutorial 7 · Workshop: Business Idea präsentieren · 11:00 · <strong>+ Reflection-Deadline</strong></span></div>
-    <div class="row"><span class="label">Mi 20.05</span><span class="val">EBC2022 Meeting 7 · Tutorial B · 16:00</span></div>
-    <div class="row"><span class="label">Fr 22.05</span><span class="val">EBC2158 Tutorial 8 · Facilitation 4 · 11:00</span></div>
-  </div>
-</section>
-
-<section>
-  <h2>Ankündigungen</h2>
-  <div class="card">
-    <div class="dl-desc"><span class="pill">EBC2022</span> Canvas ist nach kurzer Downtime wieder online (Veerle Timmermans, 12.05). Keine inhaltlichen Änderungen.</div>
-  </div>
-</section>
-
-<footer>
-  Aktualisiert: 13.05.2026
-</footer>
-
+  <div class="footer">Aktualisiert: Mi 13. May 2026</div>
 </div>
 </body>
 </html>
