@@ -28,17 +28,20 @@
   .room{color:#fbbf24}
   .prof{color:#9ca3af;font-size:13px}
   .topic{background:#222;padding:10px 12px;border-radius:6px;margin-top:8px;font-size:13.5px;color:#d1d5db}
-  .topic strong{color:#a78bfa}
-  .prep{margin-top:8px;padding-top:8px;border-top:1px solid #2a2a2a;font-size:13.5px}
-  .prep strong{color:#fbbf24}
-  .deadline-date{color:#fbbf24;font-weight:600;font-size:12px}
-  .deadline-date.red{color:#f87171}
-  .deadline-date.green{color:#4ade80}
-  .small{font-size:12px;color:#9ca3af;margin-top:4px}
-  ul{margin-left:18px;margin-top:4px}
-  li{margin-bottom:3px;font-size:13.5px}
-  footer{margin-top:20px;padding-top:14px;border-top:1px solid #2a2a2a;color:#6b7280;font-size:11px;text-align:center}
-  .tip{background:#1c1d2e;border:1px solid #2d2e44;padding:10px 12px;border-radius:6px;font-size:13px;color:#c4b5fd;margin-top:8px}
+  .prep{margin-top:10px;font-size:13.5px}
+  .prep ul{list-style:none;padding-left:0;margin-top:4px}
+  .prep li{padding:4px 0 4px 14px;position:relative;color:#cbd5e1}
+  .prep li::before{content:"›";position:absolute;left:0;color:#60a5fa}
+  .deadline-title{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:6px}
+  .dl-name{font-weight:600;color:#fff;font-size:14.5px}
+  .dl-when{font-size:12px;color:#fbbf24;white-space:nowrap}
+  .dl-when.urgent{color:#f87171}
+  .dl-when.calm{color:#9ca3af}
+  .dl-desc{font-size:13px;color:#cbd5e1}
+  .small{font-size:12.5px;color:#9ca3af;margin-top:6px}
+  footer{margin-top:24px;padding-top:14px;border-top:1px solid #2a2a2a;font-size:11.5px;color:#6b7280;text-align:center}
+  strong{color:#fff}
+  .pill{display:inline-block;font-size:11px;background:#2d2d2d;color:#cbd5e1;padding:2px 7px;border-radius:5px;margin-right:4px}
 </style>
 </head>
 <body>
@@ -46,44 +49,47 @@
 
 <header>
   <h1>Uni Daily Check</h1>
-  <div class="date">Mittwoch · 13. May 2026</div>
-  <span class="badge">Tages-Check</span>
+  <div class="date">Mittwoch, 13. Mai 2026</div>
+  <span class="badge">Tages-Check · Period 5 · Woche 5</span>
 </header>
 
 <section>
   <h2>Heute</h2>
   <div class="card today">
-    <div class="title">Management of Operations &amp; Product Dev.</div>
-    <div class="row"><span class="time">13:30 – 15:30</span><span class="room">TS53 G1.03</span></div>
-    <div class="row"><span class="prof">Constantinus van Hoesel · Tutorial B (Session 27)</span></div>
+    <div class="title">EBC2022 — Management of Operations & Product Dev.</div>
+    <div class="row"><span class="label">Zeit</span><span class="val time">13:30 – 15:30</span></div>
+    <div class="row"><span class="label">Raum</span><span class="val room">TS53 G1.03 (Tongersestraat 53)</span></div>
+    <div class="row"><span class="label">Dozent</span><span class="val prof">Constantinus van Hoesel</span></div>
+    <div class="row"><span class="label">Sitzung</span><span class="val">Meeting 6 · Tutorial B</span></div>
 
     <div class="topic">
-      <strong>Thema:</strong> Letzte Tutorial-Phase des Kurses — alle 12 Inhalts-Meetings sind abgeschlossen (zuletzt Ch16 Scheduling &amp; Ch17 Project Management). Die verbleibenden Sessions dienen der <em>Case Sports Inc</em>-Arbeit: Teams bereiten Slides + Excel-Modell vor (Hebei / Zhejiang / Sichuan / Hunan).
-      <div class="small" style="margin-top:6px">Hinweis: Canvas hat keine eigene Page fuer „Tutorial 27" — exakter Ablauf nicht 100% verifizierbar. Erwartung: Case-Work, Feedback oder Q&amp;A vor der Abgabe am 26.05.</div>
+      <strong>Thema: Quality Control (Ch. 10)</strong><br>
+      Heute geht es um <strong>Statistical Process Control</strong> — wie man mit Control Charts (X̄- und R-Karten) prüft, ob ein Produktionsprozess stabil läuft, und wie man Abweichungen außerhalb der Kontrollgrenzen erkennt. Du arbeitest mit Control Limit Factors und der z-Wert-Tabelle, um Prozess­variabilität zu quantifizieren und über Eingriffe zu entscheiden.
     </div>
 
     <div class="prep">
       <strong>Vorbereitung:</strong>
       <ul>
-        <li>Aktuellen Stand des <em>Sports Inc</em>-Team-PDFs durchgehen (Hebei / Zhejiang / Sichuan / Hunan — je nach Team)</li>
-        <li>Excel-Modell zum Case mitbringen — Stand kurz reviewen</li>
-        <li>Rubric Presentation.xlsx kennen (Bewertungskriterien)</li>
-        <li>Laptop mitbringen</li>
+        <li><strong>Ch10 Quality Control.pdf</strong> — komplett lesen (Lehrbuchkapitel)</li>
+        <li><strong>Control limit factors.pdf</strong> — Referenz­tabelle (A2, D3, D4) für die Übungen bereithalten</li>
+        <li><strong>Table of z values.pdf</strong> — Standardnormalverteilung, für Capability-Berechnungen</li>
       </ul>
+      <div class="small">💻 Laptop mitnehmen — Tutorial arbeitet typischerweise mit den PDFs + Tabellen. Excel-Übung war für Meeting 6 nicht hochgeladen, evtl. wird sie in der Session ausgeteilt.</div>
     </div>
   </div>
 </section>
 
 <section>
-  <h2>Morgen · Donnerstag 14.05</h2>
+  <h2>Morgen — Donnerstag 14.05</h2>
   <div class="card tomorrow">
-    <div class="title">Kein Tutorial — freier Tag</div>
-    <div class="tip">
-      <strong>Produktiv nutzen:</strong>
-      <ul style="margin-top:6px">
-        <li><strong>Team-Reflection fuer Entrep</strong> starten (Deadline Di 19.05, Team-Effort) — Start/Stop/Continue mit dem Team abstimmen</li>
-        <li><strong>Sports Inc Case</strong> weiter ausbauen — Slides &amp; Excel bis 26.05</li>
-        <li>Falls heute Feedback im Tutorial kam: direkt einarbeiten solange es frisch ist</li>
+    <div class="title">Kein Tutorial</div>
+    <div class="dl-desc">Donnerstag und Freitag sind frei von Sitzungen. Das ist dein Vorbereitungs­fenster für nächste Woche.</div>
+    <div class="prep">
+      <strong>Heute Abend / morgen sinnvoll vorbereiten:</strong>
+      <ul>
+        <li><strong>Team Reflection schreiben</strong> (1 Seite, Start-Stop-Continue als Team) — Deadline Di 19.05</li>
+        <li><strong>Business Idea Slides</strong> (min. 2) für EBC2158 Tutorial 7 am Di 19.05 mit dem Team koordinieren</li>
+        <li>Vorlesen: <strong>Ch11 Aggregate Planning</strong> für Meeting 7 am Mi 20.05</li>
       </ul>
     </div>
   </div>
@@ -92,38 +98,54 @@
 <section>
   <h2>Deadlines</h2>
 
-  <div class="card warn">
-    <div class="row"><span class="deadline-date">Di 19. May · 21:59</span></div>
-    <div class="title" style="font-size:15px">Team Reflection (Entrepreneurship)</div>
-    <div class="val">Eine Seite max., <strong>Start-Stop-Continue</strong>-Methode zur Team-Dynamik. <strong>Team-Effort</strong> — nicht einzeln. Wird nicht benotet, fliesst aber in „Participation &amp; Professionalism" ein. Hochladen muss EIN Team-Mitglied.</div>
-    <div class="small">Heute Team anschreiben, damit ihr bis Mo gemeinsam dran arbeiten koennt.</div>
+  <div class="card urgent">
+    <div class="deadline-title">
+      <span class="dl-name">Team Reflection (EBC2158)</span>
+      <span class="dl-when urgent">Di 19.05 · 21:59 · in 6 Tagen</span>
+    </div>
+    <div class="dl-desc">
+      <strong>Team-Aufgabe, 1 Seite max.</strong> Methode: <strong>Start-Stop-Continue</strong> — was sollte das Team neu starten, was stoppen, was beibehalten? Wird zwar nicht benotet, fließt aber in die Participation & Professionalism-Note ein. Wird auch in Tutorial 7 (Di 19.05) besprochen, also vor der Session fertig haben.
+    </div>
   </div>
 
   <div class="card warn">
-    <div class="row"><span class="deadline-date">Di 26. May · 21:59</span></div>
-    <div class="title" style="font-size:15px">Case Sports Inc (MOPD) — 100 Pts</div>
-    <div class="val">Slides + Excel-Datei hochladen. Team-basiert. Bewertet nach „Rubric Presentation.xlsx".</div>
-    <div class="small">Heutiges Tutorial nutzen fuer letzte Feedback-Runde mit van Hoesel.</div>
+    <div class="deadline-title">
+      <span class="dl-name">Case Sports Inc. (EBC2022)</span>
+      <span class="dl-when">Di 26.05 · 21:59 · in 13 Tagen · 100 Pkt.</span>
+    </div>
+    <div class="dl-desc">
+      <strong>Slides + Excel hochladen.</strong> Case-Material liegt unter <em>Module: Case: Sports Inc</em> — je nach Team eines von vier Szenarien (Hebei, Zhejiang, Sichuan, Hunan). Rubric Presentation.xlsx im selben Modul anschauen, damit ihr die Bewertungs­kriterien erfüllt. Excel-Modell und Präsentations­logik diese Woche planen — wartet nicht bis zum Wochenende vor der Abgabe.
+    </div>
   </div>
 
   <div class="card info">
-    <div class="row"><span class="deadline-date green">Do 04. June · 21:59</span></div>
-    <div class="title" style="font-size:15px">Written Project Proposal 20% + Video Pitch</div>
-    <div class="val">Entrepreneurship Hauptabgabe: Schriftliches Proposal (100 Pts) + Pitch-Video-Link (100 Pts) + AI Statement.</div>
-    <div class="small">Vorlauf 3 Wochen — nicht aufschieben, parallel zur Case planen.</div>
+    <div class="deadline-title">
+      <span class="dl-name">Written Project Proposal (20%) + Video Pitch (EBC2158)</span>
+      <span class="dl-when calm">Do 04.06 · 21:59 · in 22 Tagen</span>
+    </div>
+    <div class="dl-desc">Beide am selben Tag fällig. Erst nach der Team Reflection priorisieren, aber nicht aus den Augen verlieren.</div>
   </div>
 </section>
 
 <section>
-  <h2>Ankuendigungen</h2>
+  <h2>Nächste Termine</h2>
   <div class="card">
-    <div class="row"><span class="deadline-date" style="color:#9ca3af">12. May</span> <span class="val" style="color:#9ca3af;font-size:13px">MOPD · Veerle Timmermans</span></div>
-    <div class="val" style="font-size:13.5px">Canvas ist wieder online — Materialien wieder vollstaendig zugaenglich.</div>
+    <div class="row"><span class="label">Mo 18.05</span><span class="val">EBC2022 Meeting 7 · Aggregate Planning (Ch11) · 16:00</span></div>
+    <div class="row"><span class="label">Di 19.05</span><span class="val">EBC2158 Tutorial 7 · Workshop: Business Idea präsentieren · 11:00 · <strong>+ Reflection-Deadline</strong></span></div>
+    <div class="row"><span class="label">Mi 20.05</span><span class="val">EBC2022 Meeting 7 · Tutorial B · 16:00</span></div>
+    <div class="row"><span class="label">Fr 22.05</span><span class="val">EBC2158 Tutorial 8 · Facilitation 4 · 11:00</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Ankündigungen</h2>
+  <div class="card">
+    <div class="dl-desc"><span class="pill">EBC2022</span> Canvas ist nach kurzer Downtime wieder online (Veerle Timmermans, 12.05). Keine inhaltlichen Änderungen.</div>
   </div>
 </section>
 
 <footer>
-  Aktualisiert: Mi 13.05.2026 · automatischer Daily Check
+  Aktualisiert: 13.05.2026
 </footer>
 
 </div>
