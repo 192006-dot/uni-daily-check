@@ -3,29 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uni Daily Check</title>
+<title>Uni Daily Check — Fr 15. Mai</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background:#0f0f0f; color:#e0e0e0; font-family:system-ui,-apple-system,sans-serif; line-height:1.55; padding:16px; }
+  body { background:#0f0f0f; color:#e0e0e0; font-family:system-ui,-apple-system,sans-serif;
+         line-height:1.55; padding:16px; }
   .wrap { max-width:600px; margin:0 auto; }
-  header { text-align:center; margin-bottom:20px; }
-  header h1 { font-size:1.5rem; }
-  header .date { color:#9a9a9a; font-size:.95rem; margin-top:4px; }
-  .badge { display:inline-block; background:#2a2a2a; color:#4ade80; font-size:.75rem; padding:3px 10px; border-radius:999px; margin-top:8px; letter-spacing:.5px; }
-  .card { background:#1a1a1a; border:1px solid #2a2a2a; border-radius:14px; padding:16px; margin-bottom:14px; }
-  .sec-title { font-size:.78rem; text-transform:uppercase; letter-spacing:1.2px; margin:22px 0 10px; color:#9a9a9a; }
-  .green { color:#4ade80; } .blue { color:#60a5fa; } .yellow { color:#fbbf24; } .red { color:#f87171; }
-  .card h2 { font-size:1.05rem; margin-bottom:6px; }
-  .meta { font-size:.9rem; color:#bdbdbd; margin:2px 0; }
-  .lbl { font-weight:600; }
-  .body-txt { font-size:.92rem; margin-top:10px; }
-  .body-txt p { margin:7px 0; }
-  ul { margin:6px 0 2px 18px; } li { margin:4px 0; font-size:.9rem; }
-  .alert { border-left:4px solid #f87171; background:#241616; }
-  .warn  { border-left:4px solid #fbbf24; background:#241f12; }
-  .info  { border-left:4px solid #60a5fa; }
-  .pill { display:inline-block; font-size:.72rem; padding:2px 9px; border-radius:999px; background:#2a2a2a; margin-bottom:8px; }
-  footer { text-align:center; color:#666; font-size:.8rem; margin-top:24px; }
+  header { text-align:center; padding:18px 0 10px; }
+  header h1 { font-size:1.5rem; color:#fff; }
+  header .date { color:#9aa; margin-top:4px; font-size:.95rem; }
+  .badge { display:inline-block; margin-top:10px; background:#1f2a1f; color:#4ade80;
+           border:1px solid #2e4a2e; padding:4px 12px; border-radius:999px; font-size:.8rem; }
+  .card { background:#1a1a1a; border:1px solid #2a2a2a; border-radius:14px;
+          padding:16px; margin:14px 0; }
+  .card h2 { font-size:1.05rem; margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+  .today h2 { color:#4ade80; }
+  .tomorrow h2 { color:#60a5fa; }
+  .deadlines h2 { color:#fbbf24; }
+  .ann h2 { color:#9aa; }
+  .sub { font-size:.78rem; text-transform:uppercase; letter-spacing:.05em;
+         color:#888; margin:14px 0 6px; }
+  .item { border-left:3px solid #333; padding:8px 0 8px 12px; margin:8px 0; }
+  .item.green { border-color:#4ade80; }
+  .item.blue { border-color:#60a5fa; }
+  .item.yellow { border-color:#fbbf24; }
+  .item.red { border-color:#f87171; background:#241818; border-radius:0 8px 8px 0; }
+  .item .t { font-weight:600; color:#fff; }
+  .meta { color:#9aa; font-size:.88rem; margin:3px 0; }
+  .meta b { color:#cdd; }
+  p.txt { font-size:.92rem; margin:6px 0; }
+  .lit { font-size:.88rem; color:#cbd; background:#161616; border:1px solid #262626;
+         border-radius:8px; padding:8px 10px; margin:6px 0; }
+  .red .t { color:#f87171; }
+  ul { margin:6px 0 0 18px; font-size:.9rem; }
+  li { margin:3px 0; }
+  footer { text-align:center; color:#666; font-size:.78rem; padding:20px 0 10px; }
   a { color:#60a5fa; }
 </style>
 </head>
@@ -34,102 +46,134 @@
 
   <header>
     <h1>🎓 Uni Daily Check</h1>
-    <div class="date">Freitag, 15. Mai 2026 · Maastricht University</div>
-    <div class="badge">TAGES-CHECK</div>
+    <div class="date">Freitag, 15. Mai 2026</div>
+    <div class="badge">Tages-Check · Periode 5</div>
   </header>
 
-  <div class="sec-title red">🔴 Dringend — heute fällig</div>
-  <div class="card alert">
-    <span class="pill red">EBC2158 · Entrepreneurship</span>
-    <h2>Interview-Abgabe — HEUTE 23:59</h2>
-    <div class="body-txt">
-      <p>Lade <span class="lbl">heute bis 23:59</span> auf Canvas hoch:</p>
-      <ul>
-        <li>Entrepreneur Interview <span class="lbl">Präsentationsfolien</span> + AI-Statement</li>
-        <li>Unterschriebenes <span class="lbl">Consent Form</span></li>
-      </ul>
-      <p class="red">⚠️ Ohne unterschriebenes Consent Form wird die Präsentation NICHT bewertet (Reminder Sergio &amp; Kim, 14. Mai).</p>
+  <!-- HEUTE -->
+  <div class="card today">
+    <h2>📅 Heute — Freitag</h2>
+    <div class="item green">
+      <div class="t">Keine Vorlesung / kein Tutorial heute</div>
+      <p class="meta">Stundenplan ist leer. EBC2158 bestätigt auf Canvas explizit:
+        „<i>no class on Friday May 15</i>“.</p>
+    </div>
+
+    <div class="item red">
+      <div class="t">🔴 HEUTE 23:59 — EBC2158: Letzter Upload-Reminder</div>
+      <p class="meta">Interview-Präsentation + <b>unterschriebenes Consent-Formular</b>
+        + AI-Statement müssen hochgeladen sein.</p>
+      <p class="txt">Status: Deine Präsentation wurde bereits am <b>12. Mai eingereicht</b>
+        und ist als „graded" markiert. ✅ Trotzdem: <b>kontrollier heute, dass das
+        unterschriebene Consent-Formular wirklich dabei ist</b> — ohne signiertes
+        Formular wird die Präsentation laut Ankündigung nicht bewertet.</p>
+    </div>
+
+    <p class="sub">💡 Sinnvoll heute / am Wochenende</p>
+    <ul>
+      <li><b>Di 19. Mai</b> vorbereiten: Slides für die Business-Idee-Präsentation
+        (siehe Morgen-Vorschau, min. 2 Slides).</li>
+      <li><b>Case Sports Inc.</b> (EBC2022, fällig Di 26.) anfangen — größte
+        benotete Abgabe dieser Periode (Slides + Excel, 100 Punkte).</li>
+      <li>EBC2158 Consent-Formular-Check (siehe oben).</li>
+    </ul>
+  </div>
+
+  <!-- MORGEN / NÄCHSTE TAGE -->
+  <div class="card tomorrow">
+    <h2>🔭 Morgen & nächste Tage</h2>
+    <div class="item blue">
+      <div class="t">Sa 16. & So 17. Mai — keine Termine</div>
+      <p class="meta">Wochenende zur Vorbereitung nutzen (siehe Tipps oben).</p>
+    </div>
+
+    <div class="item blue">
+      <div class="t">Mo 18. Mai · 13:30–15:30 — EBC2022 Management of Operations &amp; Product Development</div>
+      <p class="meta"><b>Tutorial A</b> · 📍 TS53 E2.07 · 👨‍🏫 C. van Hoesel</p>
+      <p class="txt"><b>Thema:</b> Quantitatives Operations-Management — der Kurs
+        baut auf Linear Programming → Sensitivitätsanalyse → Integer LP →
+        Kapazitäts- &amp; Standortplanung → Qualitätskontrolle → Aggregate Planning
+        → Inventory Management auf. Aktiver Fokus dieser Wochen ist die
+        <b>Case Sports Inc.</b> (Slides + Excel).</p>
+      <p class="lit">⚠️ Hinweis: Canvas ordnet die Meetings nach Thema, nicht nach
+        Datum — das exakte Montags-Thema lässt sich aus Canvas nicht eindeutig
+        zuordnen. <b>Laptop mit Excel/Solver mitbringen</b> (Kurs ist stark
+        Excel-basiert).</p>
+    </div>
+
+    <div class="item blue">
+      <div class="t">Di 19. Mai · 11:00–13:00 — EBC2158 Entrepreneurship &amp; Small Business Mgmt</div>
+      <p class="meta"><b>Tutorial 7 — Workshop</b> · 📍 TAP23 (X) 1.001 · 👩‍🏫 Z. Ghasemian</p>
+      <p class="txt"><b>Thema:</b> Workshop „Present Business Idea(s)". Jedes Team
+        präsentiert die Geschäftsidee (min. 2 Slides), 15 Min Präsentation +
+        10 Min Feedback von Tutor &amp; Peers.</p>
+      <p class="lit"><b>Präsentation muss abdecken</b> (Syllabus S. 12 &amp; 18):
+        ① Problem/Bedarf + Relevanz · ② Zielkundensegment + Begründung ·
+        ③ Produkt/Service + Mehrwert · ④ Warum eine „gute" Opportunity
+        (Feasibility, Opportunity Recognition) · ⑤ Ethische Implikationen +
+        sozialer/ökologischer Impact.</p>
+      <p class="txt">Letzte 15 Min: Team-Reflexion (Start-Stop-Continue) —
+        <b>noch am selben Tag als 1-seitiges Dokument hochladen</b> (siehe Deadlines).</p>
     </div>
   </div>
 
-  <div class="sec-title green">Heute — Freitag 15. Mai</div>
-  <div class="card">
-    <h2 class="green">Kein Tutorial / keine Lecture heute</h2>
-    <div class="body-txt">
-      <p>Keine Termine heute und am Wochenende (Sa 16. / So 17. Mai). Nutze die Zeit:</p>
-      <ul>
-        <li><span class="lbl">Zuerst:</span> Interview-Deliverables hochladen (s. oben — heute fällig).</li>
-        <li>Folien für den Di-Workshop bauen (s. unten).</li>
-        <li>Team-Reflexion vorbereiten (Di 19. fällig).</li>
-        <li>Lesen für Fr 22. Mai: Scarborough &amp; Cornwall Ch. 9 + 11.</li>
-      </ul>
+  <!-- DEADLINES -->
+  <div class="card deadlines">
+    <h2>✅ Deadlines</h2>
+
+    <div class="item red">
+      <div class="t">🔴 HEUTE Fr 15. Mai 23:59 — EBC2158 Interview-Upload</div>
+      <p class="meta">Präsentation + signiertes Consent-Formular + AI-Statement.
+        Bereits am 12.5. eingereicht → nur Consent-Formular gegenchecken.</p>
+    </div>
+
+    <div class="item red">
+      <div class="t">🔴 Di 19. Mai 23:59 — EBC2158 Team Reflection</div>
+      <p class="meta">1 Seite (max.), Methode <b>Start–Stop–Continue</b>.
+        Wird im Di-Workshop gestartet, am selben Tag auf Canvas hochladen.
+        Nicht benotet, zählt aber für Participation/Professionalism.</p>
+    </div>
+
+    <div class="item yellow">
+      <div class="t">🟡 Di 26. Mai 21:59 — EBC2022 Case Sports Inc. (100 Pkt)</div>
+      <p class="meta">Abgabe: <b>Slides + Excel-Datei</b>. Größte benotete Abgabe
+        der Periode. <b>Am Wochenende anfangen</b> — Material im Canvas-Modul
+        „Case: Sports Inc" (Team-PDFs + Rubric Presentation.xlsx).</p>
+    </div>
+
+    <div class="item yellow">
+      <div class="t">🟡 Do 4. Juni 23:59 — EBC2158 Written Project Proposal (20%)</div>
+      <p class="meta">2000–2500 Wörter, PDF + AI-Statement. Stützt sich auf
+        Scarborough &amp; Cornwall Ch. 3–5, 9, 11, 12, 15. Am selben Tag außerdem:
+        <b>Video Pitch</b> (Link einreichen). Vorlauf einplanen.</p>
     </div>
   </div>
 
-  <div class="sec-title blue">Kommende Termine — Mo &amp; Di</div>
-
-  <div class="card info">
-    <span class="pill blue">EBC2022 · Operations &amp; Product Dev.</span>
-    <h2 class="blue">Mo 18. Mai · Tutorial</h2>
-    <div class="meta">⏰ 16:00–18:00 · 📍 TAP23 (X) 1.001</div>
-    <div class="meta">👨‍🏫 Arman Rouhani</div>
-    <div class="body-txt">
-      <p><span class="lbl">Thema (aus Modul-Reihenfolge abgeleitet):</span> Nach Aggregate Planning (Ch. 11) folgt voraussichtlich <span class="lbl">Inventory Management (Ch. 12)</span> mit der Übungs-Case <span class="lbl">„Parts Emporium"</span>. Bestellmengen, Sicherheitsbestände, Service-Level — die z-Werte-Tabelle wird gebraucht.</p>
-      <p><span class="lbl">Vorbereitung:</span> Ch12 Inventory Management.pdf lesen, 6CasePartsEmporium.pdf durcharbeiten, Table of z values.pdf griffbereit. Laptop mit Excel mitbringen.</p>
-      <p class="meta">(Genaues Meeting nicht eindeutig im Kalender markiert — Topic aus Canvas-Modulreihenfolge geschlossen.)</p>
+  <!-- ANKÜNDIGUNGEN -->
+  <div class="card ann">
+    <h2>📢 Ankündigungen</h2>
+    <div class="item">
+      <div class="t">EBC2158 — Reminder Upload (14.5.)</div>
+      <p class="meta">Interview-Präsentation, Consent-Formular &amp; AI-Statement
+        vor Fr 15.5. 23:59 hochladen. Ohne signiertes Consent-Formular keine Bewertung.</p>
+    </div>
+    <div class="item">
+      <div class="t">EBC2158 — Workshop-Prep &amp; Team-Dynamik (14.5.)</div>
+      <p class="meta">Inhalt des Di-Workshops = Abschnitt 1 des Projekts (Business
+        Idea &amp; Opportunity Justification). Außerdem: Team-Verträge revisiten,
+        Reibungen früh proaktiv ansprechen, bei Bedarf Tutor kontaktieren —
+        keine Toleranz für Free Rider.</p>
+    </div>
+    <div class="item">
+      <div class="t">EBC2022 — Canvas wieder online (12.5.)</div>
+      <p class="meta">Canvas ist wieder erreichbar (V. Timmermans).</p>
     </div>
   </div>
 
-  <div class="card info">
-    <span class="pill blue">EBC2158 · Entrepreneurship</span>
-    <h2 class="blue">Di 19. Mai · Tutorial 7 — Workshop</h2>
-    <div class="meta">⏰ 11:00–13:00 · 📍 TAP23 (X) 1.001</div>
-    <div class="meta">👩‍🏫 Zahra Ghasemian</div>
-    <div class="body-txt">
-      <p><span class="lbl">Thema:</span> Workshop „Present Business idea(s)" — Ihr stellt eure Geschäftsidee vor (min. 2 Folien, bis 15 Min + 10 Min Feedback). Mandatorisch &amp; formativ. Fokus: Section 1 des Entrepreneurial Project (Syllabus S. 12 &amp; 18).</p>
-      <p><span class="lbl">Präsentation muss abdecken:</span></p>
-      <ul>
-        <li>Problem/Bedarf + warum relevant</li>
-        <li>Zielkundensegment + Begründung, warum diese Gruppe das Problem hat</li>
-        <li>Produkt/Service + wie es Wert schafft</li>
-        <li>Warum eine „gute" Opportunity (Feasibility, Opportunity Recognition)</li>
-        <li>Ethische + soziale/ökologische Implikationen</li>
-      </ul>
-      <p>Letzte 15 Min: <span class="lbl">Team-Reflexion</span> (start-stop-continue). Optional: individuelles Feedback zu Professional Attitude beim Tutor anfragen.</p>
-    </div>
-  </div>
-
-  <div class="sec-title yellow">✅ Deadlines</div>
-
-  <div class="card alert">
-    <span class="pill red">Heute · EBC2158</span>
-    <div class="meta"><span class="lbl red">Fr 15. Mai 23:59</span> — Interview-Folien + AI-Statement + Consent Form (ohne Consent keine Bewertung).</div>
-  </div>
-
-  <div class="card warn">
-    <span class="pill yellow">In 4 Tagen · EBC2158</span>
-    <div class="meta"><span class="lbl yellow">Di 19. Mai 23:59</span> — Team Reflection. 1 Seite max, Methode start-stop-continue, als Team. Nicht benotet, fließt aber in Participation &amp; Professionalism ein. Wird in den letzten 15 Min des Di-Tutorials erstellt, am selben Tag hochladen.</div>
-  </div>
-
-  <div class="card warn">
-    <span class="pill yellow">In 11 Tagen · EBC2022</span>
-    <div class="meta"><span class="lbl yellow">Di 26. Mai 23:59</span> — Case Sports Inc.: Slides + Excel-Datei hochladen (100 Pkt). Team-Case-Material (Hebei/Zhejiang/Sichuan/Hunan) + Rubric im Modul „Case: Sports Inc". Excel früh anfangen.</div>
-  </div>
-
-  <div class="card">
-    <span class="pill">Do 4. Juni · EBC2158</span>
-    <div class="meta"><span class="lbl">Do 4. Juni 23:59</span> — Written Project Proposal (20%): PDF, 2000–2500 Wörter + AI-Statement. Stützt sich auf Ch. 3–5, 9 &amp; 11, 12 &amp; 15. Klare Titelseite (Namen, IDs, Kurs, Tutor). Gleicher Tag: Video Pitch (Link einreichen).</div>
-  </div>
-
-  <div class="sec-title yellow">📢 Ankündigungen</div>
-  <div class="card">
-    <div class="body-txt">
-      <p><span class="lbl">EBC2158 — Team Dynamics (14. Mai):</span> Einige Teams haben Probleme. Sergio &amp; Kim bitten: Team-Contract erneut anschauen, Reibungen proaktiv als Team ansprechen, bei Bedarf früh den Tutor einbeziehen — nicht bis Kursende warten. Free-Riding wird nicht toleriert. Der Di-Workshop ist die Gelegenheit, Team-Themen anzusprechen.</p>
-      <p><span class="lbl">EBC2158 — Fr 22. Mai (Vorschau):</span> Tutorial 8 „Facilitation 4". Lernziele: Marketingplan entwickeln (Zielkunden + Gewinnung/Bindung), Pricing-Methoden &amp; -Strategien vergleichen. Vorbereitung: Scarborough &amp; Cornwall (2025) Ch. 9 + 11; Roux, T. (2020) Guerrilla-Marketing-Artikel (auf Canvas).</p>
-    </div>
-  </div>
-
-  <footer>Aktualisiert: 15. Mai 2026, 08:30 CEST</footer>
+  <footer>
+    Aktualisiert: 15. Mai 2026, 09:05 ·
+    <a href="https://192006-dot.github.io/uni-daily-check/">uni-daily-check</a>
+  </footer>
 
 </div>
 </body>
