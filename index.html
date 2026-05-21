@@ -1,161 +1,199 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Uni Daily Check · Do 21. Mai</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uni Daily Check — Do 21.05.2026</title>
 <style>
-  *{box-sizing:border-box}
-  body{margin:0;background:#0f0f0f;color:#e0e0e0;font:15px/1.5 system-ui,-apple-system,sans-serif;padding:16px}
-  .wrap{max-width:600px;margin:0 auto}
-  h1{font-size:22px;margin:0 0 4px;color:#fff}
-  .sub{color:#9a9a9a;font-size:13px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
-  .badge{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:999px;padding:3px 10px;font-size:11px;color:#aaa;letter-spacing:.04em;text-transform:uppercase}
-  .card{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:14px 16px;margin-bottom:12px}
-  .card.today{border-left:3px solid #4ade80}
-  .card.tomorrow{border-left:3px solid #60a5fa}
-  .card.next{border-left:3px solid #6b7280}
-  .card.deadlines{border-left:3px solid #fbbf24}
-  .card.urgent{border-left:3px solid #f87171;background:#1f1414}
-  .label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9a9a9a;margin-bottom:6px}
-  .label.today{color:#4ade80}
-  .label.tomorrow{color:#60a5fa}
-  .label.next{color:#9a9a9a}
-  .label.deadlines{color:#fbbf24}
-  .label.urgent{color:#f87171}
-  .course{font-size:17px;font-weight:600;color:#fff;margin-bottom:6px}
-  .meta{color:#bdbdbd;font-size:13px;line-height:1.7}
-  .meta .row{display:flex;gap:8px;align-items:flex-start;margin-bottom:2px}
-  .meta .ico{width:18px;flex-shrink:0;text-align:center;color:#9a9a9a}
-  .topic{margin:10px 0 0;padding:10px 12px;background:#0f0f0f;border:1px solid #232323;border-radius:8px;font-size:14px;color:#e0e0e0}
-  .topic .t-label{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#9a9a9a;display:block;margin-bottom:4px}
-  .prep{margin-top:8px;font-size:13px;color:#d4d4d4}
-  .prep ul{margin:4px 0 0;padding-left:18px}
-  .prep li{margin-bottom:3px}
-  .empty{color:#9a9a9a;font-style:italic;font-size:14px}
-  .tip{margin-top:8px;font-size:13px;color:#fbbf24;background:#1f1a0a;border:1px solid #3a2f0f;border-radius:6px;padding:8px 10px}
-  .deadline-row{padding:10px 0;border-top:1px solid #232323;font-size:13px}
-  .deadline-row:first-of-type{border-top:none;padding-top:4px}
-  .d-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:3px;flex-wrap:wrap}
-  .d-title{color:#fff;font-weight:500;font-size:14px}
-  .d-date{font-size:12px;color:#9a9a9a;white-space:nowrap}
-  .d-tag{display:inline-block;font-size:10px;padding:1px 7px;border-radius:4px;background:#262626;color:#aaa;margin-left:6px;letter-spacing:.04em;text-transform:uppercase}
-  .d-tag.red{background:#3a1414;color:#f87171}
-  .d-tag.yel{background:#3a2f0a;color:#fbbf24}
-  .d-tag.gry{background:#262626;color:#9a9a9a}
-  .d-info{color:#bdbdbd;font-size:12.5px;line-height:1.5}
-  .foot{text-align:center;color:#666;font-size:11px;margin-top:18px;padding-top:12px;border-top:1px solid #232323}
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0f0f0f;
+    color: #e0e0e0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    line-height: 1.5;
+    padding: 16px;
+  }
+  .container { max-width: 600px; margin: 0 auto; }
+  header {
+    text-align: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #2a2a2a;
+  }
+  h1 { font-size: 24px; font-weight: 600; margin-bottom: 8px; }
+  .date { color: #888; font-size: 14px; }
+  .badge {
+    display: inline-block;
+    background: #1e3a8a;
+    color: #93c5fd;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin-top: 8px;
+  }
+  .card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  .card h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card h3 { font-size: 16px; margin: 12px 0 6px; }
+  .card p { margin-bottom: 8px; font-size: 14px; }
+  .card ul { list-style: none; padding-left: 0; }
+  .card li {
+    padding: 6px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #222;
+  }
+  .card li:last-child { border-bottom: none; }
+  .today { border-left: 3px solid #4ade80; }
+  .tomorrow { border-left: 3px solid #60a5fa; }
+  .deadline-card { border-left: 3px solid #fbbf24; }
+  .urgent { background: #2a1a1a; border-left: 3px solid #f87171; }
+  .urgent h2 { color: #f87171; }
+  .meta {
+    color: #888;
+    font-size: 13px;
+    margin: 4px 0 8px;
+  }
+  .meta span { display: inline-block; margin-right: 10px; }
+  .label {
+    color: #4ade80;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+  }
+  .label.blue { color: #60a5fa; }
+  .label.yellow { color: #fbbf24; }
+  .label.red { color: #f87171; }
+  .lit {
+    background: #0f0f0f;
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin: 4px 0;
+    border: 1px solid #222;
+  }
+  .due-date {
+    color: #fbbf24;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .due-date.red { color: #f87171; }
+  footer {
+    text-align: center;
+    color: #555;
+    font-size: 12px;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #2a2a2a;
+  }
+  strong { color: #fff; }
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="container">
 
+<header>
   <h1>Uni Daily Check</h1>
-  <div class="sub">
-    <span>Donnerstag, 21. Mai 2026</span>
-    <span class="badge">Tages-Check</span>
-  </div>
+  <div class="date">Donnerstag · 21. May 2026</div>
+  <div class="badge">Tages-Check</div>
+</header>
 
-  <!-- HEUTE -->
-  <div class="card today">
-    <div class="label today">Heute · Do 21. Mai</div>
-    <div class="course">Kein Tutorial heute</div>
-    <div class="meta">
-      <div class="row"><span class="ico">📅</span><span>Heute findet keine Veranstaltung statt — freier Studientag.</span></div>
-    </div>
-    <div class="tip">
-      💡 <strong>Empfehlung für heute:</strong>
-      <ul style="margin:6px 0 0;padding-left:20px;color:#e0e0e0">
-        <li>Lies Scarborough &amp; Cornwall (2025) <strong>Kap. 9 (Marketing Plan)</strong> + <strong>Kap. 11 (Pricing)</strong> für morgen.</li>
-        <li>Lies den Artikel: Roux (2020) – Guerrilla Marketing, J. Public Affairs 20(2) e2007 (in Canvas).</li>
-        <li>Starte mit <strong>Case Sports Inc.</strong> (EBC2022) — Slides + Excel, fällig Di 26. Mai.</li>
-      </ul>
-    </div>
-  </div>
+<div class="card today">
+  <h2>🟢 Heute · Donnerstag</h2>
+  <p><strong>Kein Tutorial heute.</strong> Freier Tag für Vorbereitung.</p>
+  <p class="meta">Der Stundenplan hat heute keine Termine. Gute Gelegenheit, das Wochenende zu entlasten.</p>
 
-  <!-- MORGEN -->
-  <div class="card tomorrow">
-    <div class="label tomorrow">Morgen · Fr 22. Mai</div>
-    <div class="course">EBC2158 · Entrepreneurship &amp; Small Business</div>
-    <div class="meta">
-      <div class="row"><span class="ico">⏰</span><span>11:00 – 13:00 Uhr</span></div>
-      <div class="row"><span class="ico">📍</span><span>TAP23 (X) 1.001 · Tapijnkazerne</span></div>
-      <div class="row"><span class="ico">👨‍🏫</span><span>Z. Ghasemian · Tutorial 8 (Facilitation 4)</span></div>
-    </div>
-    <div class="topic">
-      <span class="t-label">📝 Thema</span>
-      <strong>Marketing &amp; Pricing für das Entrepreneurial Project.</strong>
-      Ihr lernt, wie man einen <em>effektiven Marketingplan</em> aufstellt (Zielkund:innen identifizieren, gewinnen und binden) und welche
-      <em>Preisstrategien</em> Startups einsetzen, um den Geschäftserfolg zu maximieren. Praktischer Bezug zum laufenden Business-Idea-Projekt.
-    </div>
-    <div class="prep">
-      <strong>📚 Vorbereitung (heute lesen!):</strong>
-      <ul>
-        <li>Scarborough &amp; Cornwall (2025) <strong>Kap. 9 (Marketing Plan)</strong> + <strong>Kap. 11 (Pricing Strategies)</strong></li>
-        <li>Roux, T. (2020). „Does the guerrilla win, if he does not lose?" – Advertising media practitioners' views on guerrilla marketing. <em>J. Public Affairs</em>, 20(2), e2007. <span style="color:#9a9a9a">[verfügbar auf Canvas]</span></li>
-      </ul>
-    </div>
-  </div>
+  <div class="label yellow">💡 Empfehlung für heute</div>
+  <ul>
+    <li>📖 <strong>Literatur für morgen lesen:</strong> Scarborough &amp; Cornwall (2025) <strong>Ch. 9 (Marketing Plan)</strong> und <strong>Ch. 11 (Pricing)</strong> + Artikel Roux (2020) zu Guerrilla Marketing.</li>
+    <li>📊 <strong>Sports Inc. Case anfangen</strong> (Deadline Mo 26.05): Slides + Excel-Modell sind im Team zu erstellen — Team-Sync heute starten, Aufgaben verteilen.</li>
+    <li>✏️ <strong>Written Project Proposal skizzieren</strong> (Deadline Do 04.06, 2000–2500 Wörter, 20% der Note): Gliederung erstellen, Business Idea konsolidieren.</li>
+  </ul>
+</div>
 
-  <!-- NÄCHSTE WOCHE VORSCHAU -->
-  <div class="card next">
-    <div class="label next">Nächste Woche</div>
-    <div class="meta">
-      <div class="row"><span class="ico">📅</span><span><strong>Mo 25.5.</strong> · EBC2022 Meeting 9: <em>Scheduling</em> (Ch.16) · 13:30 · TS53 E2.07</span></div>
-      <div class="row"><span class="ico">📅</span><span><strong>Di 26.5.</strong> · EBC2158 Tutorial 9: <em>Workshop – Updated Entrepreneurial Project</em> präsentieren · 11:00 · TAP23 1.001</span></div>
-      <div class="row"><span class="ico">📅</span><span><strong>Mi 27.5.</strong> · EBC2022 Meeting 10: <em>Project Management</em> (Ch.17) · 13:30 · TS53 G1.03</span></div>
-      <div class="row"><span class="ico">📅</span><span><strong>Fr 29.5.</strong> · EBC2158 Tutorial 10: <em>Facilitation 5</em> · 11:00 · TAP23 1.001</span></div>
-    </div>
-  </div>
+<div class="card tomorrow">
+  <h2>🔵 Morgen · Freitag 22.05</h2>
 
-  <!-- DEADLINES -->
-  <div class="card deadlines">
-    <div class="label deadlines">⏳ Deadlines</div>
+  <h3>🎓 Entrepreneurship — Tutorial 8 (Facilitation 4)</h3>
+  <p class="meta">
+    <span>⏰ 11:00–13:00</span>
+    <span>📍 TAP23 (X) 1.001</span><br>
+    <span>👨‍🏫 Z. Ghasemian (Zahra)</span>
+  </p>
 
-    <div class="deadline-row">
-      <div class="d-head">
-        <div class="d-title">Case Sports Inc. <span class="d-tag yel">in 5 Tagen</span></div>
-        <div class="d-date">Di 26. Mai · 23:59</div>
-      </div>
-      <div class="d-info">
-        EBC2022 · Upload der <strong>Präsentations-Slides + Excel-Datei</strong> zum Sports-Inc-Fall.
-        Team-Materialien (Hebei/Zhejiang/Sichuan/Hunan) liegen im Canvas-Modul „Case: Sports Inc". Rubric vorhanden.
-        <br><span style="color:#fbbf24">→ Heute oder morgen anfangen — fällt parallel mit Mo/Mi-Meetings &amp; Tutorial 9!</span>
-      </div>
-    </div>
+  <div class="label blue">📝 Thema</div>
+  <p>Marketing &amp; Pricing für das eigene Entrepreneurial Project. Lernziele: einen wirksamen Marketingplan entwickeln (Zielkunden identifizieren + Akquise/Retention) und verschiedene Pricing-Methoden &amp; -Strategien vergleichen, um Geschäftserfolg zu maximieren.</p>
 
-    <div class="deadline-row">
-      <div class="d-head">
-        <div class="d-title">Written Project Proposal (20%) <span class="d-tag gry">in 14 Tagen</span></div>
-        <div class="d-date">Do 4. Juni · 23:59</div>
-      </div>
-      <div class="d-info">
-        EBC2158 · <strong>2000–2500 Wörter PDF</strong> (Cover, Inhaltsverzeichnis, Referenzen exkl.) + <strong>AI-Statement</strong>.
-        Inhalt: Business Idea + Opportunity Justification, Market Analysis &amp; Competitive Positioning, Marketing &amp; Pricing (Kap. 9 &amp; 11), Financial Planning (Kap. 12 &amp; 15), ethische/soziale Reflexion.
-        <br><span style="color:#9a9a9a">→ Tutorial 8 (morgen) liefert genau die Marketing/Pricing-Theorie für den Proposal-Abschnitt.</span>
-      </div>
-    </div>
+  <div class="label blue">📚 Vorbereitung (Pflicht)</div>
+  <div class="lit">📕 <strong>Scarborough &amp; Cornwall (2025)</strong> — Ch. 9 (Marketing Plan) + Ch. 11 (Pricing)</div>
+  <div class="lit">📄 <strong>Roux, T. (2020)</strong> — "Does the guerrilla win, if he does not lose?" — <em>Journal of Public Affairs 20(2), e2007</em> (auf Canvas verfügbar)</div>
 
-    <div class="deadline-row">
-      <div class="d-head">
-        <div class="d-title">Video Pitch <span class="d-tag gry">in 14 Tagen</span></div>
-        <div class="d-date">Do 4. Juni · 23:59</div>
-      </div>
-      <div class="d-info">
-        EBC2158 · Video-Link auf Canvas einreichen. Parallel zum Written Proposal.
-      </div>
-    </div>
-  </div>
+  <div class="label blue">🎒 Mitbringen</div>
+  <p>Laptop (Facilitation = aktive Beteiligung). Eigenes Projekt mental im Hinterkopf — die Konzepte direkt auf die eigene Business Idea anwenden.</p>
+</div>
 
-  <!-- EXAM -->
-  <div class="card next">
-    <div class="label next">📌 Klausur in 3 Wochen</div>
-    <div class="meta">
-      <div class="row"><span class="ico">📝</span><span><strong>EBC2022 Exam</strong> · Mi 10. Juni · 09:00 · Paul-Henri-Spaaklaan, MECC Westhal</span></div>
-    </div>
-  </div>
+<div class="card deadline-card">
+  <h2>🟡 Wochenend-Prep — was JETZT anfangen</h2>
+  <p>Nach dem Tutorial morgen kommt direkt der harte Block. Sinnvolle Reihenfolge:</p>
+  <ul>
+    <li><strong>Sa/So:</strong> Sports Inc. Slides &amp; Excel-Modell fertig (Team-Arbeit, Deadline Mo 23:59). Rubric Presentation.xlsx auf Canvas checken.</li>
+    <li><strong>Mo Vormittag:</strong> Folien für Tutorial 9 Update-Präsentation (min. 2 Slides, 15 min) vorbereiten.</li>
+    <li><strong>Mo–Mi:</strong> Project Proposal entwerfen (Sektionen: Business Idea, Market Analysis, Marketing/Strategy Ch. 9+11, Financial Planning Ch. 12+15).</li>
+  </ul>
+</div>
 
-  <div class="foot">Aktualisiert: 21.05.2026 · 08:30</div>
+<div class="card urgent">
+  <h2>🔴 Deadlines</h2>
+
+  <div class="due-date red">📅 Montag 26.05.2026 · 23:59 — in 5 Tagen</div>
+  <h3>Case Sports Inc. — 100 Punkte</h3>
+  <p>EBC2022 Operations &amp; Product Development. Upload: <strong>Slides + Excel-Datei</strong>. Gruppenarbeit (Teams: Hebei / Zhejiang / Sichuan / Hunan — Team-PDF auf Canvas). Rubric Presentation.xlsx vorher anschauen.</p>
+  <p class="meta">⚠️ Kein EBC2022-Tutorial vor Abgabe — keine Last-Minute-Klärung im Tutorial möglich.</p>
+
+  <div class="due-date" style="margin-top:14px;">📅 Dienstag 26.05.2026 — Tutorial 9 (kein Upload)</div>
+  <h3>Update Entrepreneurial Project — formative Präsentation</h3>
+  <p>Min. 2 Slides, 15 min Vortrag + 10 min Feedback. Nicht benotet, aber direkte Vorstufe zur Written Proposal — Feedback unbedingt mitnehmen.</p>
+
+  <div class="due-date" style="margin-top:14px;">📅 Donnerstag 04.06.2026 · 23:59 — in 14 Tagen</div>
+  <h3>Written Project Proposal — 20% · 100 Punkte</h3>
+  <p><strong>2000–2500 Wörter</strong> (strikt, ohne Cover/TOC/References). PDF + AI Statement separat. Struktur:</p>
+  <ul>
+    <li>Business Idea &amp; Opportunity Justification (Ch. 3–5)</li>
+    <li>Market Analysis &amp; Competitive Positioning</li>
+    <li>Marketing &amp; Strategy (Ch. 9 &amp; 11) — wird morgen behandelt!</li>
+    <li>Financial Planning (Ch. 12 &amp; 15)</li>
+    <li>Ethische / soziale / ökologische Implikationen</li>
+  </ul>
+
+  <div class="due-date" style="margin-top:14px;">📅 Donnerstag 04.06.2026 · 23:59 — in 14 Tagen</div>
+  <h3>Video Pitch — 100 Punkte</h3>
+  <p>Link zum Video auf Canvas einreichen (gleiches Datum wie Proposal). Aufnahme + Schnitt einplanen.</p>
+</div>
+
+<div class="card">
+  <h2>📢 Aktuelle Ankündigungen</h2>
+  <ul>
+    <li><strong>14.05 (Entrepreneurship):</strong> Interview-Präsentationen + Consent Form + AI Statement waren bis Fr 15.05 einzureichen. Ohne unterschriebenes Consent Form keine Bewertung — falls noch offen, dringend prüfen.</li>
+    <li><strong>14.05 (Entrepreneurship):</strong> Tutorial 7 (Di 19.05) Workshop war über die erste Sektion des Project Proposals — Business Idea &amp; Opportunity Justification. Feedback von dort jetzt in die Written Proposal einarbeiten.</li>
+  </ul>
+</div>
+
+<footer>
+  Aktualisiert: 21.05.2026 · automatisch generiert<br>
+  Quelle: Maastricht Timetable (iCal) + Canvas API
+</footer>
 
 </div>
 </body>
