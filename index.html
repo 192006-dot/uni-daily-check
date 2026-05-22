@@ -3,96 +3,67 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Uni Daily Check – Freitag 22. Mai</title>
+<title>Uni Daily Check — Fr 22. Mai</title>
 <style>
-  :root { color-scheme: dark; }
-  * { box-sizing: border-box; }
-  body { margin:0; background:#0f0f0f; color:#e0e0e0; font-family: system-ui, -apple-system, sans-serif; line-height:1.5; }
-  .wrap { max-width:600px; margin:0 auto; padding:20px 16px 60px; }
-  header { margin-bottom:24px; }
-  h1 { margin:0 0 6px; font-size:22px; }
-  .date { color:#9ca3af; font-size:14px; }
-  .badge { display:inline-block; margin-top:8px; padding:4px 10px; border-radius:999px; background:#1e3a2b; color:#4ade80; font-size:12px; font-weight:600; }
-  .card { background:#1a1a1a; border:1px solid #2a2a2a; border-radius:12px; padding:16px; margin-bottom:14px; }
-  .card h2 { margin:0 0 10px; font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:.6px; color:#9ca3af; }
-  .today h2 { color:#4ade80; }
-  .tomorrow h2 { color:#60a5fa; }
-  .deadlines h2 { color:#fbbf24; }
-  .row { display:flex; gap:10px; align-items:baseline; margin:6px 0; font-size:14px; }
-  .row .k { color:#9ca3af; min-width:80px; }
-  .row .v { flex:1; }
-  .topic { background:#111; border-left:3px solid #4ade80; padding:10px 12px; margin:10px 0; border-radius:6px; font-size:14px; }
-  .prep { background:#111; border-left:3px solid #fbbf24; padding:10px 12px; margin:10px 0; border-radius:6px; font-size:14px; }
-  .dl { padding:10px 12px; margin:8px 0; border-radius:8px; background:#111; border-left:3px solid #fbbf24; font-size:14px; }
-  .dl .when { color:#9ca3af; font-size:12px; }
-  strong.kurs { color:#e0e0e0; }
-  footer { margin-top:24px; color:#6b7280; font-size:12px; text-align:center; }
+:root{color-scheme:dark}
+body{margin:0;padding:24px 16px;background:#0f0f0f;color:#e0e0e0;font-family:system-ui,-apple-system,sans-serif;line-height:1.5}
+.wrap{max-width:600px;margin:0 auto}
+h1{font-size:1.6rem;margin:0 0 4px}
+.sub{color:#888;font-size:.9rem;margin-bottom:4px}
+.badge{display:inline-block;background:#1f2937;color:#60a5fa;padding:2px 10px;border-radius:999px;font-size:.75rem;margin-bottom:20px}
+.card{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:16px;margin-bottom:14px}
+.card h2{margin:0 0 10px;font-size:1rem;color:#9ca3af;text-transform:uppercase;letter-spacing:.05em}
+.today h2{color:#4ade80}
+.tomorrow h2{color:#60a5fa}
+.deadlines h2{color:#fbbf24}
+.row{margin:8px 0}
+.label{color:#888;font-size:.85rem}
+.urgent{color:#f87171;font-weight:600}
+.warn{color:#fbbf24}
+.ok{color:#4ade80}
+.pill{display:inline-block;background:#262626;padding:2px 8px;border-radius:6px;font-size:.8rem;margin-right:4px}
+ul{margin:6px 0;padding-left:20px}
+li{margin:4px 0}
+.foot{color:#666;font-size:.75rem;text-align:center;margin-top:20px}
+strong{color:#fff}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <h1>Uni Daily Check</h1>
-    <div class="date">Freitag, 22. Mai 2026</div>
-    <span class="badge">Tages-Check</span>
-  </header>
+  <h1>Uni Daily Check</h1>
+  <div class="sub">Freitag, 22. Mai 2026</div>
+  <div class="badge">Tages-Check</div>
 
-  <section class="card today">
-    <h2>Heute · Freitag</h2>
-    <div class="row"><div class="k">Kurs</div><div class="v"><strong class="kurs">Entrepreneurship &amp; Small Business Management</strong> (EBC2158)</div></div>
-    <div class="row"><div class="k">Session</div><div class="v">Tutorial 8 – Facilitation 4 (Tutorial B)</div></div>
-    <div class="row"><div class="k">Zeit</div><div class="v">11:00 – 13:00</div></div>
-    <div class="row"><div class="k">Raum</div><div class="v">TAP23 (X) 1.001</div></div>
-    <div class="row"><div class="k">Dozent</div><div class="v">Zahra Ghasemian</div></div>
+  <div class="card today">
+    <h2>🎓 Heute</h2>
+    <div class="row"><strong>Entrepreneurship & SBM (EBC2158)</strong> · Tutorial 8 — Facilitation 4</div>
+    <div class="row"><span class="pill">⏰ 11:00–13:00</span><span class="pill">📍 TAP23 (X) 1.001</span></div>
+    <div class="row label">👨‍🏫 Zahra Ghasemian · Gruppe B/18</div>
+    <div class="row"><span class="label">Thema:</span> <strong>Marketing & Pricing.</strong> Ihr entwickelt einen effektiven Marketingplan (Zielkunden identifizieren, Akquise & Bindung) und vergleicht verschiedene Pricing-Methoden und -Strategien. Plus: kritischer Blick auf Guerrilla-Marketing.</div>
+    <div class="row"><span class="label">📚 Vorbereitung:</span>
+      <ul>
+        <li>Scarborough & Cornwall (2025) — <strong>Kapitel 9 + 11</strong></li>
+        <li>Roux, T. (2020) — <em>"Does the guerrilla win, if he does not lose?"</em> Journal of Public Affairs 20(2), e2007 (auf Canvas)</li>
+      </ul>
+    </div>
+  </div>
 
-    <div class="topic">
-      <strong>Thema:</strong> Marketing &amp; Pricing.
-      Heute lernst du, einen wirksamen Marketing-Plan aufzustellen – Zielkunden identifizieren und Strategien
-      zur Gewinnung &amp; Bindung definieren. Zusätzlich werden verschiedene Pricing-Methoden
-      und -Strategien verglichen, mit denen Unternehmen Erfolg maximieren.
-    </div>
+  <div class="card tomorrow">
+    <h2>📅 Wochenende & Vorschau</h2>
+    <div class="row"><strong>Sa 23. + So 24.</strong> — keine Termine.</div>
+    <div class="row"><strong>Di 26.05. · 11:00–13:00 · EBC2158 Tutorial 9</strong></div>
+    <div class="row label">Workshop: <strong>Updated Entrepreneurial Project</strong> präsentieren. Min. 2 Slides, 15 min Vortrag + 10 min Feedback. Slides müssen NICHT auf Canvas hochgeladen werden.</div>
+    <div class="row"><span class="warn">💡 Wochenend-Prep:</span> Slides für Di vorbereiten + an Project Proposal & Video Pitch (Deadline 04.06.) arbeiten.</div>
+  </div>
 
-    <div class="prep">
-      <strong>Vorbereitung (Pflicht):</strong><br>
-      • <em>Scarborough &amp; Cornwall (2025)</em> – Kapitel 9 &amp; 11<br>
-      • Roux, T. (2020): „Does the guerrilla win, if he does not lose? Advertising media practitioners’ views on guerrilla marketing challenges and potential negative consequences.“ <em>Journal of Public Affairs</em>, 20(2), e2007 – auf Canvas verfügbar.
-    </div>
-  </section>
+  <div class="card deadlines">
+    <h2>✅ Deadlines</h2>
+    <div class="row"><span class="urgent">🔴 Di 26.05. 23:59</span> — <strong>Case Sports Inc.</strong> (MOPD / EBC2022). Team-Abgabe, Rubric Presentation auf Canvas.</div>
+    <div class="row"><span class="warn">🟡 Do 04.06. 23:59</span> — <strong>Written Project Proposal (20%)</strong> + AI Statement (EBC2158).</div>
+    <div class="row"><span class="warn">🟡 Do 04.06. 23:59</span> — <strong>Video Pitch</strong> Link einreichen (EBC2158).</div>
+  </div>
 
-  <section class="card tomorrow">
-    <h2>Vorschau · Wochenende → Dienstag</h2>
-    <div class="row"><div class="v">Samstag &amp; Sonntag: keine Termine.</div></div>
-    <div class="row"><div class="v"><strong>Dienstag 26. Mai · 11:00–13:00 · TAP23 1.001</strong><br>Tutorial 9 – <em>Workshop: Present updated Entrepreneurial Project</em></div></div>
-    <div class="topic">
-      <strong>Was Dienstag passiert:</strong> Ihr präsentiert ein Update eures Entrepreneurship-Projekts (mind. 2 Slides, bis 15 Min) und bekommt formatives Feedback von Tutor + Peers (10 Min). Slides müssen <em>nicht</em> auf Canvas hochgeladen werden.
-    </div>
-    <div class="prep">
-      <strong>Wochenend-To-Do:</strong><br>
-      1. Slides (≥2) für Dienstag bauen – Stand &amp; nächste Schritte des Projekts.<br>
-      2. Mit dem <strong>Written Project Proposal</strong> (Deadline 4. Juni) starten – heutige Inhalte zu Marketing &amp; Pricing fließen direkt in Section „Marketing &amp; Strategy“ (Kap. 9 &amp; 11) ein.
-    </div>
-  </section>
-
-  <section class="card deadlines">
-    <h2>Deadlines</h2>
-    <div class="dl">
-      <strong>Case „Sports Inc.“</strong> (MOPD – EBC2022)<br>
-      <span class="when">Di 26. Mai, 23:59 – in 4 Tagen</span>
-    </div>
-    <div class="dl">
-      <strong>Written Project Proposal (20%)</strong> – Entrepreneurship<br>
-      <span class="when">Do 4. Juni, 23:59 – in 13 Tagen</span><br>
-      PDF, 2000–2500 Wörter, narrative Form (keine Bullets), Coverpage mit Titel/Namen/IDs.
-      Struktur: Opportunity &amp; Feasibility (Kap. 3–5), Marketing &amp; Strategy (Kap. 9 &amp; 11), Financial Planning (Kap. 12 &amp; 15).
-      Plus separates <em>AI-Statement</em> (Tools + Prompts oder Nicht-Nutzungs-Erklärung – sonst -1.0 Punkt).
-    </div>
-    <div class="dl">
-      <strong>Video Pitch</strong> – Entrepreneurship<br>
-      <span class="when">Do 4. Juni, 23:59 – Link einreichen</span>
-    </div>
-  </section>
-
-  <footer>Aktualisiert: 22.05.2026</footer>
+  <div class="foot">Aktualisiert: 22.05.2026</div>
 </div>
 </body>
 </html>
