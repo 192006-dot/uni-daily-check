@@ -1,132 +1,97 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uni Daily Check — Wochenplan</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uni Daily Check</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#0f0f0f;color:#e0e0e0;font-family:system-ui,-apple-system,sans-serif;line-height:1.5;padding:16px}
-.wrap{max-width:600px;margin:0 auto}
-h1{font-size:24px;margin-bottom:4px}
-.sub{color:#888;font-size:14px;margin-bottom:6px}
-.badge{display:inline-block;background:#4ade80;color:#0f0f0f;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;margin-bottom:16px}
-h2{font-size:18px;margin:24px 0 12px;color:#60a5fa;border-bottom:1px solid #2a2a2a;padding-bottom:6px}
-.card{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:10px;padding:14px;margin-bottom:12px}
-.day{color:#60a5fa;font-weight:600;font-size:15px;margin-bottom:6px}
-.time{color:#fbbf24;font-size:13px;margin-bottom:4px}
-.topic{color:#e0e0e0;margin:6px 0}
-.prep{color:#a0a0a0;font-size:14px;margin-top:6px;padding-top:6px;border-top:1px dashed #2a2a2a}
-.dl-red{border-left:4px solid #f87171}
-.dl-yellow{border-left:4px solid #fbbf24}
-.dl-green{border-left:4px solid #4ade80}
-.dl-title{font-weight:600;margin-bottom:4px}
-.dl-meta{color:#888;font-size:13px;margin-bottom:6px}
-.muted{color:#888}
-ul{padding-left:18px;margin:6px 0}
-li{margin:4px 0}
-.foot{color:#666;font-size:12px;text-align:center;margin-top:32px;padding-top:16px;border-top:1px solid #2a2a2a}
-.free{color:#666;font-style:italic}
+  :root{color-scheme:dark;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#0f0f0f;color:#e0e0e0;font-family:system-ui,-apple-system,sans-serif;line-height:1.5;padding:16px;}
+  .wrap{max-width:600px;margin:0 auto;}
+  header{text-align:center;margin-bottom:20px;}
+  header h1{font-size:1.5rem;}
+  header .date{color:#9a9a9a;font-size:.95rem;margin-top:4px;}
+  .badge{display:inline-block;margin-top:8px;background:#1a1a1a;border:1px solid #2a2a2a;color:#4ade80;font-size:.75rem;padding:3px 10px;border-radius:999px;}
+  .card{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:16px;margin-bottom:14px;}
+  .card h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+  .today h2{color:#4ade80;}
+  .tomorrow h2{color:#60a5fa;}
+  .deadlines h2{color:#f87171;}
+  .ann h2{color:#9a9a9a;}
+  .item{margin-bottom:14px;}
+  .item:last-child{margin-bottom:0;}
+  .course{font-weight:600;font-size:1.05rem;}
+  .meta{color:#9a9a9a;font-size:.9rem;margin:2px 0;}
+  .label{color:#cfcfcf;font-weight:600;font-size:.85rem;margin-top:8px;}
+  .body{font-size:.92rem;}
+  .dl{border-left:3px solid;padding:8px 0 8px 12px;margin-bottom:10px;}
+  .dl.red{border-color:#f87171;}
+  .dl.yellow{border-color:#fbbf24;}
+  .dl .when{font-weight:600;}
+  .dl.red .when{color:#f87171;}
+  .dl.yellow .when{color:#fbbf24;}
+  footer{text-align:center;color:#6a6a6a;font-size:.78rem;margin-top:20px;}
+  a{color:#60a5fa;}
 </style>
 </head>
 <body>
 <div class="wrap">
-<h1>Uni Daily Check</h1>
-<div class="sub">Sonntag, 24. Mai 2026 · Maastricht University</div>
-<span class="badge">Wochenplan 25.05. – 29.05.</span>
+  <header>
+    <h1>Uni Daily Check</h1>
+    <div class="date">Montag, 25. Mai 2026</div>
+    <div class="badge">Tages-Check</div>
+  </header>
 
-<h2>📅 Termine der Woche</h2>
+  <div class="card today">
+    <h2>Heute · Montag</h2>
+    <div class="body">Kein Tutorial heute. 💡 Nutze den Tag, um die <strong>Case Sports Inc.</strong> abzuschließen (morgen 23:59 fällig!) und deine <strong>2 Slides für Tutorial 9</strong> morgen früh vorzubereiten.</div>
+    <div class="dl red" style="margin-top:12px;">
+      <div class="when">🔴 Heute erledigen: Case Sports Inc. fertigstellen</div>
+      <div class="body">Slides + Excel-Modell hochladen (LP zur Standort­wahl der Flagship-Stores). Denk auch an die <em>Additional Assignment – IB</em>: gleiches LP mit neuem Datensatz, nur die optimale Store-Platzierung — keine Sensitivitäts­analyse, kein Inventory-Modell.</div>
+    </div>
+  </div>
 
-<div class="card">
-<div class="day">Montag, 25. Mai</div>
-<div class="free">Kein Termin — Vorbereitungstag.</div>
-</div>
+  <div class="card tomorrow">
+    <h2>Morgen · Dienstag 26. Mai</h2>
+    <div class="item">
+      <div class="course">🎓 Entrepreneurship &amp; Small Business Mgmt (EBC2158)</div>
+      <div class="meta">⏰ 11:00–13:00 · TAP23 (X) 1.001</div>
+      <div class="meta">👩‍🏫 Z. Ghasemian · Tutorial A</div>
+      <div class="label">📝 Thema — Tutorial 9: Workshop</div>
+      <div class="body">Du präsentierst ein <strong>Update deines Entrepreneurship-Projekts</strong> und bekommst formatives Feedback von Tutorin und Peers. Präsentation max. 15 Min, danach 10 Min Feedback.</div>
+      <div class="label">📚 Heute Abend vorbereiten</div>
+      <div class="body">Mindestens <strong>2 Slides</strong> erstellen, die euren Projektfortschritt zeigen. Slides müssen <em>nicht</em> auf Canvas hochgeladen werden. Plan: ~30–45 Min.</div>
+    </div>
+    <div class="item">
+      <div class="course">🎓 Mittwoch: Management of Operations (EBC2022)</div>
+      <div class="meta">⏰ Mi 13:30–15:30 · TS53 G1.03 · van Hoesel</div>
+      <div class="body">Folgesession nach der Case-Abgabe. Themenbereich der Phase: Inventory Management (Ch. 12), Case Parts Emporium, Scheduling (Ch. 16), Project Management (Ch. 17). Genaues Meeting-Thema nicht eindeutig auf Canvas datiert.</div>
+    </div>
+  </div>
 
-<div class="card">
-<div class="day">Dienstag, 26. Mai</div>
-<div class="time">11:00–13:00 · TAP23 (X) 1.001</div>
-<div class="topic"><strong>EBC2158 Entrepreneurship</strong> — Tutorial 9: Workshop "Present updated Entrepreneurial Project"</div>
-<div class="prep"><strong>Vorbereitung:</strong> Min. 2 Slides mit Update zum Entrepreneurship-Projekt erstellen (kein Upload nötig). 15 min Präsentation + 10 min Peer-/Tutor-Feedback. Fokus: Fortschritt zum Written Proposal & Video Pitch (Deadline 04.06.).</div>
-</div>
+  <div class="card deadlines">
+    <h2>Deadlines</h2>
+    <div class="dl red">
+      <div class="when">🔴 MORGEN · Di 26.05, 23:59 — Case Sports Inc. (EBC2022)</div>
+      <div class="body">Slides + Excel-File hochladen. Plus die zusätzliche Variante (Additional Assignment – IB) mit neuem Datensatz.</div>
+    </div>
+    <div class="dl yellow">
+      <div class="when">🟡 Do 04.06, 23:59 — Written Project Proposal (20%) (EBC2158)</div>
+      <div class="body">PDF mit klarer Titelseite (Titel, alle Namen + ID-Nummern, Kurs, Tutor, Assignment). <strong>Plus AI-Tools-Statement</strong> — bei Fehlen 1 voller Punkt Abzug (1/10). Tools auflisten + Prompts angeben, oder Nichtnutzung erklären.</div>
+    </div>
+    <div class="dl yellow">
+      <div class="when">🟡 Do 04.06, 23:59 — Video Pitch (EBC2158)</div>
+      <div class="body">Link zum Video auf Canvas einreichen. Final Pitch-Präsentation läuft in Tutorial 12 (Fr 05.06).</div>
+    </div>
+  </div>
 
-<div class="card">
-<div class="day">Mittwoch, 27. Mai</div>
-<div class="time">16:00–18:00 · TAP23 (X) 1.001</div>
-<div class="topic"><strong>EBC2022 Operations &amp; Product Dev</strong> — Tutorial (Meeting 6): Quality Control</div>
-<div class="prep"><strong>Vorbereitung:</strong> Ch. 10 "Quality Control" gelesen. Tabellen mitnehmen: Control limit factors + Z-Tabelle. Laptop mit Excel. Tipp: Case Sports Inc. (Abgabe Di!) sollte fertig sein, weil parallel die <em>Additional case (LP-Variante mit team-spezifischem Dataset)</em> läuft — Posting vom 23.05.</div>
-</div>
+  <div class="card ann">
+    <h2>Ankündigung · EBC2022</h2>
+    <div class="body"><strong>Additional case online:</strong> Zweites Assignment als Variante des Sports-Inc-LP. Jedes Team bekommt einen anderen Datensatz. Wenn dein Excel-Modell sauber automatisiert ist, geht es schnell. Aufgabe: nur die optimale Flagship-Store-Platzierung bestimmen — Parameter im Case-Modul, Sheet 1 der Excel-Datei „Additional Assignment – IB".</div>
+  </div>
 
-<div class="card">
-<div class="day">Donnerstag, 28. Mai</div>
-<div class="free">Kein Termin — Schreibtag für Written Proposal.</div>
-</div>
-
-<div class="card">
-<div class="day">Freitag, 29. Mai</div>
-<div class="time">11:00–13:00 · TAP23 (X) 1.001</div>
-<div class="topic"><strong>EBC2158 Entrepreneurship</strong> — Tutorial 10: Facilitation 5 (Financial Plan &amp; Financing)</div>
-<div class="prep"><strong>Vorbereitung:</strong> Scarborough &amp; Cornwall (2025) <strong>Ch. 12 + Ch. 15 (bis Abschnitt 15.4)</strong>. ILOs: (1) Financial Plan entwickeln und im SME-Management nutzen, (2) Finanzierungsquellen für Entrepreneure vergleichen. Direkt relevant für den Finance-Teil des Written Proposal.</div>
-</div>
-
-<h2>📚 Literatur diese Woche</h2>
-<div class="card">
-<ul>
-<li><strong>Mi:</strong> EBC2022 — Ch. 10 Quality Control (PDF auf Canvas)</li>
-<li><strong>Fr:</strong> EBC2158 — Scarborough &amp; Cornwall (2025): Ch. 12 (Financial Plan) + Ch. 15 bis 15.4 (Sources of Financing)</li>
-<li><strong>Querbezug zum Proposal:</strong> Ch. 3–5 (Opportunity/Feasibility), Ch. 9 &amp; 11 (Marketing/Strategy), Ch. 12 &amp; 15 (Finance) — alles im Proposal verwertbar</li>
-</ul>
-</div>
-
-<h2>✅ Deadlines</h2>
-
-<div class="card dl-red">
-<div class="dl-title">🔴 Di, 26.05. · 23:59 — Case Sports Inc. (EBC2022)</div>
-<div class="dl-meta">100 Punkte · Team-Abgabe</div>
-<div>Upload: Slides + Excel-Datei zum Sports Inc. Case. Excel-Modell sollte sauber strukturiert und automatisiert sein — das spart Zeit beim parallel laufenden <em>Additional assignment-IB.xlsx</em> (LP-Variante mit eigenem Dataset).</div>
-</div>
-
-<div class="card dl-yellow">
-<div class="dl-title">🟡 Do, 04.06. · 23:59 — Written Project Proposal (EBC2158, 20%)</div>
-<div class="dl-meta">2000–2500 Wörter (strikt!) · PDF · + AI Usage Statement</div>
-<div>Struktur: (1) Business Idea &amp; Opportunity Justification, (2) Marketing/Strategy, (3) Financial Plan. Konzepte aus Ch. 3–5, 9, 11, 12, 15 anwenden. <strong>Cover Page</strong> mit Titel, allen Namen + IDs, Kurs, Tutor. AI-Statement fehlt → −1 Punkt. Late: 2h grace, danach −1/Tag.</div>
-</div>
-
-<div class="card dl-yellow">
-<div class="dl-title">🟡 Do, 04.06. · 23:59 — Video Pitch (EBC2158)</div>
-<div class="dl-meta">Link zum Video einreichen</div>
-<div>Parallel zum Proposal. Plant ihr früh den Drehtag — Schnitt &amp; Upload brauchen Puffer.</div>
-</div>
-
-<h2>📢 Ankündigungen (letzte Woche)</h2>
-<div class="card">
-<div class="dl-title">EBC2022 — "Additional case online" (23.05.)</div>
-<div>LP-Variante zum Sports Inc. Case. Jedes Team erhält eigenen Dataset. Wenn euer Original-Excel sauber automatisiert ist, ist die Zusatzaufgabe schnell erledigt → Argument für gute Excel-Struktur HEUTE.</div>
-</div>
-
-<h2>💡 Wochenplan — Empfehlung</h2>
-<div class="card">
-<ul>
-<li><strong>Heute (So):</strong> Sports Inc. Slides &amp; Excel finalisieren (Deadline Di!). Excel-Modell sauber automatisieren → spart Zeit beim Additional Case. Ch. 10 Quality Control quer lesen.</li>
-<li><strong>Mo:</strong> Sports Inc. final polish + Submit. Additional LP-Case starten (mit eurem Dataset). Slides für Tutorial 9 (2 Slides Projekt-Update) bauen.</li>
-<li><strong>Di:</strong> Vormittag Tutorial 9. Nachmittag: Written Proposal Skelett anlegen (Sections 1–3, ~500 Wörter pro Teil), Feedback aus Tutorial einbauen.</li>
-<li><strong>Mi:</strong> Vormittag Ch. 10 + Z-Tabelle frisch wiederholen. Nachmittag Tutorial Operations. Abends 30 min Video-Pitch Konzept (Script).</li>
-<li><strong>Do (freier Tag):</strong> Hauptschreibtag Proposal — Ziel 1500+ Wörter. Parallel Ch. 12 + 15 (bis 15.4) lesen für Finance-Section.</li>
-<li><strong>Fr:</strong> Tutorial 10 — Inputs direkt in Proposal Finance-Section. Wochenende: Proposal finalisieren + Video drehen/schneiden.</li>
-</ul>
-</div>
-
-<h2>⚠️ Risiken</h2>
-<div class="card">
-<ul>
-<li><strong>Sports Inc. Excel:</strong> Wenn nicht automatisiert → Additional Case wird zur Mega-Aufgabe. Investiert HEUTE 1h in saubere Formeln.</li>
-<li><strong>Proposal Wortlimit:</strong> 2000–2500 strikt. Erst Outline, dann schreiben — sonst Schnittstress am Donnerstag.</li>
-<li><strong>Video Pitch:</strong> Klassischer Last-Minute-Fail. Plant Dreh spätestens Sa 30.05., damit Schnitt-Puffer bleibt.</li>
-<li><strong>AI Statement:</strong> −1 Punkt automatisch bei Fehlen. Checkliste vor Abgabe.</li>
-<li><strong>Team-Koordination:</strong> Sports Inc + Additional Case + Video = drei Team-Abgaben. Heute klärt: wer macht was.</li>
-</ul>
-</div>
-
-<div class="foot">Aktualisiert: 24.05.2026 · Quellen: MU Timetable iCal + Canvas API</div>
+  <footer>Aktualisiert: 25. Mai 2026, 08:10 · <a href="https://192006-dot.github.io/uni-daily-check/">Online-Version</a></footer>
 </div>
 </body>
 </html>
