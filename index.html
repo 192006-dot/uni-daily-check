@@ -6,32 +6,23 @@
 <title>Uni Daily Check</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background:#0f0f0f; color:#e0e0e0; font-family: system-ui, -apple-system, sans-serif;
-         line-height:1.5; padding:16px; }
+  body { background:#0f0f0f; color:#e0e0e0; font-family: system-ui, -apple-system, sans-serif; line-height:1.5; padding:16px; }
   .wrap { max-width:600px; margin:0 auto; }
-  header { text-align:center; margin-bottom:24px; }
-  header h1 { font-size:1.6rem; }
+  header { text-align:center; margin-bottom:20px; }
+  header h1 { font-size:1.6rem; color:#fff; }
   header .date { color:#888; margin-top:4px; }
-  .badge { display:inline-block; background:#1a1a1a; border:1px solid #2a2a2a;
-           color:#4ade80; padding:3px 12px; border-radius:999px; font-size:.8rem; margin-top:10px; }
-  .card { background:#1a1a1a; border:1px solid #2a2a2a; border-radius:12px;
-          padding:16px; margin-bottom:16px; }
-  .section-title { font-size:1.1rem; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
-  .today .section-title { color:#4ade80; }
-  .tomorrow .section-title { color:#60a5fa; }
-  .deadlines .section-title { color:#fbbf24; }
+  .badge { display:inline-block; background:#4ade80; color:#0f0f0f; font-size:.75rem; font-weight:700; padding:3px 10px; border-radius:12px; margin-top:8px; }
+  .card { background:#1a1a1a; border:1px solid #2a2a2a; border-radius:12px; padding:16px; margin-bottom:14px; }
+  .sec-title { font-size:1.1rem; font-weight:700; margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+  .green { color:#4ade80; } .blue{ color:#60a5fa; } .yellow{ color:#fbbf24; } .red{ color:#f87171; }
   .meta { color:#aaa; font-size:.9rem; margin:2px 0; }
-  .topic { margin:10px 0; }
-  .label { font-size:.8rem; text-transform:uppercase; letter-spacing:.5px; color:#777; margin-top:10px; }
-  .urgent { border-left:3px solid #f87171; padding-left:12px; }
-  .urgent .d { color:#f87171; font-weight:600; }
-  .soon { border-left:3px solid #fbbf24; padding-left:12px; }
-  .soon .d { color:#fbbf24; font-weight:600; }
-  .later { border-left:3px solid #555; padding-left:12px; }
-  .dl-item { margin-bottom:14px; }
-  .dl-item small { color:#999; display:block; margin-top:4px; }
-  .tip { background:#16241a; border:1px solid #244a2e; border-radius:8px; padding:10px 12px; color:#9fe6b0; font-size:.9rem; margin-top:10px;}
-  footer { text-align:center; color:#666; font-size:.8rem; margin-top:24px; }
+  .label { color:#888; font-size:.8rem; text-transform:uppercase; letter-spacing:.05em; margin-top:10px; }
+  .course { font-weight:700; color:#fff; font-size:1.05rem; }
+  .deadline { border-left:3px solid; padding-left:12px; margin-bottom:12px; }
+  .d-red { border-color:#f87171; } .d-yellow{ border-color:#fbbf24; }
+  ul { margin:6px 0 0 18px; } li{ margin:3px 0; }
+  footer { text-align:center; color:#555; font-size:.8rem; margin-top:20px; }
+  a { color:#60a5fa; }
 </style>
 </head>
 <body>
@@ -42,46 +33,73 @@
     <div class="badge">Tages-Check</div>
   </header>
 
-  <div class="card today">
-    <div class="section-title">📗 Heute</div>
-    <p><b>Kein Tutorial heute.</b></p>
-    <div class="tip">💡 Heute ist Arbeitstag: <b>Case Sports Inc.</b> ist morgen Abend (Di 21:59) fällig — Slides + Excel finalisieren. Parallel läuft das <b>Written Project Proposal</b> (Entrepreneurship, 4. Juni) — gutes Fenster, um an der Opportunity-/Feasibility-Analyse (Kap. 3–5) zu schreiben.</div>
+  <!-- HEUTE -->
+  <div class="card">
+    <div class="sec-title green">📅 Heute</div>
+    <p class="meta"><strong>Kein Tutorial heute.</strong></p>
+    <p class="label">💡 Nutze den Tag für</p>
+    <ul>
+      <li>🔴 <strong>Case Sports Inc. fertigstellen</strong> — morgen 21:59 fällig (Slides + Excel + Zusatz-Assignment).</li>
+      <li>2 Slides für den morgigen Entrepreneurship-Workshop vorbereiten (Projekt-Update).</li>
+    </ul>
   </div>
 
-  <div class="card tomorrow">
-    <div class="section-title">📘 Morgen — Dienstag, 26. Mai</div>
-    <div class="topic">
-      <b>Entrepreneurship &amp; Small Business Management</b><br>
-      <div class="meta">⏰ 11:00–13:00 · TAP23 (X) 1.001</div>
-      <div class="meta">👩‍🏫 Zahra Ghasemian · Tutorial 9 (Woche 7)</div>
-    </div>
-    <div class="label">Thema</div>
-    <p>Workshop: <b>Präsentation des aktualisierten Entrepreneurial Projects</b>. Du stellst den Fortschritt deines Projekts dem Tutorial vor und bekommst formatives Feedback von Tutor und Mitstudierenden — als Vorbereitung auf das Written Proposal &amp; den Video Pitch.</p>
-    <div class="label">Heute Abend vorbereiten</div>
-    <p>Mindestens <b>2 Slides</b> erstellen, die den Projekt-Fortschritt zeigen. Präsentation max. 15 Min + 10 Min Feedback. Slides müssen <b>nicht</b> auf Canvas hochgeladen werden.</p>
+  <!-- MORGEN -->
+  <div class="card">
+    <div class="sec-title blue">━━ Morgen: Dienstag, 26. Mai ━━</div>
+
+    <p class="course">Entrepreneurship &amp; Small Business (EBC2158)</p>
+    <p class="meta">⏰ 11:00–13:00 · 📍 TAP23 (X) 1.001 · 👩‍🏫 Z. Ghasemian</p>
+    <p class="meta">Tutorial 9 — Workshop: Present updated Entrepreneurial Project</p>
+    <p class="label">📝 Thema</p>
+    <p class="meta">Du präsentierst ein <strong>Update zu deinem Entrepreneurship-Projekt</strong> und bekommst formatives Feedback von Tutor &amp; Mitstudierenden. Workshop-Session zur Vorbereitung auf Proposal &amp; Video-Pitch (beide 04.06).</p>
+    <p class="label">📚 Vorbereitung</p>
+    <ul>
+      <li>Mindestens <strong>2 Slides</strong> erstellen, die deinen Projektfortschritt zeigen.</li>
+      <li>Präsentation max. 15 Min + 10 Min Feedback.</li>
+      <li>Slides müssen <strong>nicht</strong> auf Canvas hochgeladen werden.</li>
+    </ul>
+
+    <p class="label" style="margin-top:14px;">🔴 Deadline morgen Abend</p>
+    <p class="meta"><strong>Case Sports Inc. (EBC2022)</strong> — 26.05, 21:59. Heute Abend fertig machen!</p>
   </div>
 
-  <div class="card deadlines">
-    <div class="section-title">⏳ Deadlines</div>
+  <!-- DEADLINES -->
+  <div class="card">
+    <div class="sec-title yellow">✅ Deadlines</div>
 
-    <div class="dl-item urgent">
-      <div class="d">🔴 MORGEN — Di 26. Mai, 21:59</div>
-      <b>Case Sports Inc.</b> (Management of Operations &amp; Product Development)
-      <small>Slides + Excel-Datei zum Sports-Inc-Case hochladen (100 Pkt., Online-Upload). Team-Case zur China-Provinzen-Analyse (Hebei / Zhejiang / Sichuan / Hunan). Präsentiert wird am Mittwoch im Tutorial.</small>
+    <div class="deadline d-red">
+      <p><strong class="red">🔴 Case Sports Inc.</strong> — Di 26.05, 21:59 · EBC2022 · 100 Pkt</p>
+      <p class="meta">Hochladen: <strong>Slides + Excel-Datei</strong> zum Sports-Inc-Case.</p>
+      <p class="meta">⚠️ <strong>Zusatz-Assignment</strong> (Ankündigung 23.05): Variante des LP mit team-spezifischem Datensatz (Excel „Additional Assignment - IB" im Case-Modul). Nur die <strong>optimalen Flagship-Store-Standorte</strong> bestimmen — keine Sensitivitätsanalyse, kein Inventory-Modell. Bei gut automatisiertem Excel-Modell schnell erledigt.</p>
     </div>
 
-    <div class="dl-item soon">
-      <div class="d">🟡 Do 4. Juni, 23:59</div>
-      <b>Written Project Proposal (20%)</b> + <b>Video Pitch</b> (Entrepreneurship)
-      <small>Proposal 2000–2500 Wörter (PDF), klare Titelseite mit allen Namen/IDs. Anwenden: Opportunity &amp; Feasibility (Kap. 3–5), Marketing &amp; Strategy (Kap. 9 &amp; 11), Financial Planning (Kap. 12 &amp; 15). AI-Statement nicht vergessen (sonst −1 Punkt!). 2 h Kulanz nach Deadline, danach −1 Pkt/Tag.</small>
+    <div class="deadline d-yellow">
+      <p><strong class="yellow">🟡 Written Project Proposal (20%)</strong> — Do 04.06, 23:59 · EBC2158</p>
+      <p class="meta"><strong>2000–2500 Wörter</strong> (exkl. Deckblatt/Inhalt/Quellen/Anhang), als PDF + <strong>AI-Statement</strong> (sonst -1 Punkt). Deckblatt mit Titel, allen Namen + IDs, Kurs, Tutor.</p>
+      <p class="meta">Struktur: Business Idea &amp; Opportunity (Ch. 3–5, inkl. Ethik/Impact), Market Analysis &amp; Competitive Positioning, Marketing Strategy (Ch. 9 &amp; 11), Financial Planning (Ch. 12 &amp; 15).</p>
     </div>
 
-    <div class="dl-item later">
-      <div class="meta">📅 Mittwoch 27. Mai · 13:30–15:30 · TS53 G1.03 — Operations-Tutorial (van Hoesel): Case-Sports-Inc-Präsentation. Laptop mit Excel mitbringen.</div>
+    <div class="deadline d-yellow">
+      <p><strong class="yellow">🟡 Video Pitch</strong> — Do 04.06, 23:59 · EBC2158</p>
+      <p class="meta">Link zum Pitch-Video auf Canvas posten. Wird am 05.06 in Tutorial 12 (Pitch + Investor Q&amp;A) präsentiert.</p>
     </div>
   </div>
 
-  <footer>Aktualisiert: 25. Mai 2026, 09:05</footer>
+  <!-- ÜBERMORGEN -->
+  <div class="card">
+    <div class="sec-title">🔭 Übermorgen: Mittwoch, 27. Mai</div>
+    <p class="course">Management of Operations &amp; Product Development (EBC2022)</p>
+    <p class="meta">⏰ 16:00–18:00 · 📍 TAP23 (X) 1.001 · 👨‍🏫 A. Rouhani · Tutorial B</p>
+  </div>
+
+  <!-- ANKÜNDIGUNG -->
+  <div class="card">
+    <div class="sec-title">📢 Ankündigung (EBC2022, 23.05)</div>
+    <p class="meta"><strong>„Additional case online"</strong>: Zweites Assignment als Variante des Sports-Inc-LP. Jedes Team erhält einen eigenen Datensatz (neue Städte mit Population/Koordinaten, neue Distanzen, neue Setup-Kosten). Aufgabe: nur die optimalen Flagship-Store-Platzierungen. Parameter im Case-Modul, Sheet 1 der Datei „Additional Assignment - IB".</p>
+  </div>
+
+  <footer>Aktualisiert: 25.05.2026</footer>
 </div>
 </body>
 </html>
