@@ -15,135 +15,133 @@
     padding: 16px;
   }
   .container { max-width: 600px; margin: 0 auto; }
+
   .header {
     text-align: center;
-    padding: 24px 0 16px;
+    padding: 24px 0 20px;
     border-bottom: 1px solid #2a2a2a;
     margin-bottom: 20px;
   }
-  .header h1 { font-size: 22px; font-weight: 700; color: #e0e0e0; }
-  .header .date { color: #888; font-size: 14px; margin-top: 4px; }
+  .header h1 { font-size: 22px; font-weight: 700; color: #ffffff; letter-spacing: -0.5px; }
+  .header .date { font-size: 14px; color: #888; margin-top: 4px; }
   .badge {
     display: inline-block;
-    background: #1a1a1a;
-    border: 1px solid #4ade80;
-    color: #4ade80;
+    background: #4ade80;
+    color: #000;
     font-size: 11px;
-    font-weight: 600;
-    padding: 2px 10px;
+    font-weight: 700;
+    padding: 3px 10px;
     border-radius: 20px;
     margin-top: 8px;
-    text-transform: uppercase;
     letter-spacing: 0.5px;
   }
+
   .card {
     background: #1a1a1a;
     border: 1px solid #2a2a2a;
     border-radius: 12px;
-    padding: 16px;
+    padding: 18px;
     margin-bottom: 14px;
   }
   .card-header {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
-  .card-header h2 { font-size: 15px; font-weight: 700; }
-  .section-label {
+  .card-header h2 { font-size: 16px; font-weight: 700; }
+  .section-icon { font-size: 18px; }
+
+  .label-today { color: #4ade80; }
+  .label-tomorrow { color: #60a5fa; }
+  .label-deadline { color: #f87171; }
+  .label-announcement { color: #c084fc; }
+
+  .session {
+    border-left: 3px solid #4ade80;
+    padding-left: 14px;
+    margin-bottom: 16px;
+  }
+  .session.tomorrow { border-left-color: #60a5fa; }
+  .session.urgent { border-left-color: #f87171; }
+
+  .session-title { font-size: 15px; font-weight: 700; color: #ffffff; margin-bottom: 6px; }
+  .meta { font-size: 13px; color: #888; margin-bottom: 10px; display: flex; flex-wrap: wrap; gap: 10px; }
+
+  .row { margin-bottom: 10px; }
+  .row-label {
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.8px;
-    padding: 2px 8px;
-    border-radius: 6px;
-    white-space: nowrap;
+    color: #666;
+    margin-bottom: 4px;
   }
-  .label-green { background: #052e16; color: #4ade80; }
-  .label-blue  { background: #0c1a2e; color: #60a5fa; }
-  .label-red   { background: #2d0f0f; color: #f87171; }
-  .label-yellow{ background: #2a1a00; color: #fbbf24; }
-  .alert-urgent {
-    background: #2d0f0f;
-    border: 1px solid #f87171;
+  .row-content { font-size: 14px; color: #d0d0d0; }
+
+  .alert {
+    background: rgba(248, 113, 113, 0.1);
+    border: 1px solid rgba(248, 113, 113, 0.4);
     border-radius: 10px;
     padding: 14px 16px;
     margin-bottom: 14px;
   }
-  .alert-urgent .alert-title {
+  .alert-title {
+    font-size: 13px;
+    font-weight: 700;
     color: #f87171;
-    font-weight: 700;
-    font-size: 14px;
-    margin-bottom: 6px;
-  }
-  .meta-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    margin-bottom: 6px;
-    font-size: 14px;
-  }
-  .meta-row .icon { width: 18px; flex-shrink: 0; text-align: center; }
-  .meta-row .value { color: #e0e0e0; }
-  .section-divider {
-    font-size: 11px;
-    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #555;
-    margin: 6px 0 10px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid #222;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
   }
-  .theme-box {
-    background: #111;
-    border-left: 3px solid #4ade80;
-    border-radius: 0 8px 8px 0;
-    padding: 10px 12px;
-    margin: 10px 0;
-    font-size: 14px;
-    color: #ccc;
-  }
-  .theme-box.blue { border-color: #60a5fa; }
-  .theme-box.red  { border-color: #f87171; }
-  .theme-box.yellow { border-color: #fbbf24; }
-  ul.checklist { list-style: none; padding: 0; }
-  ul.checklist li {
-    padding: 4px 0;
-    font-size: 14px;
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-  }
-  ul.checklist li::before { content: "→"; color: #555; flex-shrink: 0; }
+  .alert-content { font-size: 14px; color: #e0e0e0; }
+
   .deadline-item {
     display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 10px 0;
+    gap: 12px;
+    padding: 12px 0;
     border-bottom: 1px solid #222;
   }
   .deadline-item:last-child { border-bottom: none; }
   .deadline-dot {
     width: 10px; height: 10px;
     border-radius: 50%;
+    margin-top: 6px;
     flex-shrink: 0;
-    margin-top: 5px;
   }
   .dot-red { background: #f87171; }
   .dot-yellow { background: #fbbf24; }
-  .deadline-text .title { font-weight: 600; font-size: 14px; }
-  .deadline-text .due { color: #888; font-size: 12px; margin-top: 1px; }
-  .deadline-text .detail { color: #aaa; font-size: 13px; margin-top: 4px; }
+  .deadline-info { flex: 1; }
+  .deadline-name { font-size: 14px; font-weight: 600; color: #e0e0e0; }
+  .deadline-date { font-size: 12px; color: #888; margin-top: 2px; }
+  .deadline-desc { font-size: 13px; color: #aaa; margin-top: 4px; }
+
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin-right: 4px;
+  }
+  .tag-green { background: rgba(74,222,128,0.15); color: #4ade80; }
+
+  a { color: #60a5fa; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
   .footer {
     text-align: center;
-    color: #444;
     font-size: 12px;
-    padding: 20px 0 8px;
+    color: #555;
+    padding: 20px 0 10px;
     border-top: 1px solid #1e1e1e;
     margin-top: 8px;
   }
-  .footer a { color: #60a5fa; text-decoration: none; }
+
+  ul { padding-left: 18px; }
+  ul li { margin-bottom: 4px; font-size: 14px; color: #d0d0d0; }
+
+  hr { border: none; border-top: 1px solid #222; margin: 14px 0; }
 </style>
 </head>
 <body>
@@ -152,145 +150,204 @@
   <div class="header">
     <h1>Uni Daily Check</h1>
     <div class="date">Dienstag, 26. Mai 2026</div>
-    <div class="badge">Tages-Check</div>
+    <div class="badge">TAGES-CHECK</div>
   </div>
 
-  <div class="alert-urgent">
-    <div class="alert-title">🔴 DEADLINE HEUTE — 23:59 Uhr</div>
-    <div style="font-size:14px; color:#e0e0e0;">
-      <strong>MOPD: Case Sports Inc.</strong> — Slides <em>und</em> Excel-Datei auf Canvas hochladen!<br>
-      <span style="color:#f87171; font-size:13px;">Noch nicht eingereicht. Nicht vergessen!</span>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <span class="section-label label-green">Heute</span>
-      <h2>Entrepreneurship — Tutorial 9</h2>
-    </div>
-    <div class="meta-row">
-      <span class="icon">⏰</span>
-      <span class="value"><strong>11:00 – 13:00 Uhr</strong></span>
-    </div>
-    <div class="meta-row">
-      <span class="icon">📍</span>
-      <span class="value">TAP23 (X), Raum 1.001</span>
-    </div>
-    <div class="meta-row">
-      <span class="icon">📋</span>
-      <span class="value">Workshop: Present Updated Entrepreneurial Project</span>
-    </div>
-    <div class="section-divider" style="margin-top:12px;">Thema</div>
-    <div class="theme-box">
-      Workshop zur Fortschrittspräsentation des Entrepreneurship-Projekts. Jede Gruppe präsentiert ihren aktuellen Stand (max. 15 Min.) und erhält anschließend formatives Feedback vom Tutor und den Peers (10 Min.). Ziel ist es, den Entwicklungsstand zu zeigen und gezieltes Feedback für das finale Proposal einzuholen.
-    </div>
-    <div class="section-divider">Vorbereitung</div>
-    <ul class="checklist">
-      <li>Mindestens <strong>2 Slides</strong> über den Projektfortschritt erstellen</li>
-      <li>Inhalt: Problem, Lösung, Fortschritt seit letzter Session</li>
-      <li>Slides müssen <strong>nicht</strong> auf Canvas hochgeladen werden</li>
-      <li>Format: 15 Min. Präsentation + 10 Min. Feedback vom Tutor und Peers</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <span class="section-label label-red">Heute bis 23:59</span>
-      <h2>MOPD — Case Sports Inc. abgeben</h2>
-    </div>
-    <div class="meta-row">
-      <span class="icon">📤</span>
-      <span class="value">Canvas-Upload: <strong>Slides (Präsentation) + Excel-Datei</strong></span>
-    </div>
-    <div class="section-divider" style="margin-top:10px;">Hauptaufgabe</div>
-    <ul class="checklist">
-      <li>Präsentation im Consultancy-Style (Original-Chinesischer-Datensatz)</li>
-      <li>Excel-Modell mit Linear Programming Lösung</li>
-      <li>Alle Aspekte des Cases abdecken — Tutor stellt morgen Fragen dazu!</li>
-    </ul>
-    <div class="section-divider">Zusatzaufgabe: IB-Variante (Additional Assignment)</div>
-    <div class="theme-box red" style="font-size:13px;">
-      Zweites Assignment: LP-Modell mit <strong>neuem Städte-Datensatz</strong>. Nur optimale Flagship Store Platzierungen bestimmen — keine Sensitivitätsanalyse, kein Inventory Model. Datei: <em>Additional Assignment - IB</em> im Case-Modul auf Canvas. Eigene Städte anhand Tutorial-Gruppe + Teamnummer im Tab 2 nachschauen.
+  <div class="alert">
+    <div class="alert-title">🔴 DEADLINE HEUTE – 23:59 Uhr</div>
+    <div class="alert-content">
+      <strong>EBC2022 – Case Sports Inc.</strong><br>
+      Upload auf Canvas: Präsentation-Slides + Excel-Datei.<br>
+      <span style="font-size:13px; color:#aaa;">Falls noch nicht abgegeben — jetzt sofort erledigen!</span>
     </div>
   </div>
 
   <div class="card">
     <div class="card-header">
-      <span class="section-label label-blue">Morgen</span>
-      <h2>MOPD — Tutorial B</h2>
+      <span class="section-icon">📅</span>
+      <h2 class="label-today">Heute – Dienstag, 26. Mai</h2>
     </div>
-    <div class="meta-row">
-      <span class="icon">⏰</span>
-      <span class="value"><strong>13:30 – 15:30 Uhr</strong></span>
+
+    <div class="session">
+      <div class="session-title">EBC2158 – Entrepreneurship &amp; Small Business Management</div>
+      <div class="meta">
+        <span>⏰ 11:00 – 13:00</span>
+        <span>📍 TAP23 (X) 1.001</span>
+        <span>👥 Tutorial A / Gruppe 18</span>
+      </div>
+
+      <div class="row">
+        <div class="row-label">Thema</div>
+        <div class="row-content">
+          <strong>Tutorial 9 – Workshop: Present Updated Entrepreneurial Project</strong><br>
+          Jede Gruppe präsentiert den aktuellen Stand ihres Entrepreneurship-Projekts dem Tutor und den Kommilitonen. Formatives Feedback — kein Prüfungscharakter, aber eine wichtige Gelegenheit, das Pitch-Material vor dem finalen Abgabedatum (4. Juni) zu verfeinern.
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="row-label">Was vorbereiten</div>
+        <div class="row-content">
+          <ul>
+            <li>Mindestens <strong>2 Folien</strong> mit aktuellem Projektfortschritt (mehr erlaubt)</li>
+            <li>Präsentation dauert <strong>bis zu 15 Minuten</strong>, dann 10 Minuten Feedback vom Tutor + Peers</li>
+            <li>Zeigt konkreten Fortschritt: Businessidee, Marktbeschreibung, aktuelle Erkenntnisse</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="row-label">Hinweis</div>
+        <div class="row-content">
+          <span class="tag tag-green">Kein Canvas-Upload</span> Die Folien für diesen Workshop müssen NICHT auf Canvas hochgeladen werden.
+        </div>
+      </div>
     </div>
-    <div class="meta-row">
-      <span class="icon">📍</span>
-      <span class="value">TS53, Raum G1.03 (Tongersestraat 53)</span>
+
+    <hr>
+
+    <div class="session urgent">
+      <div class="session-title">🔴 Abgabe: Case Sports Inc. (EBC2022) — bis 23:59 Uhr</div>
+      <div class="meta">
+        <span>📤 Canvas → EBC2022 → Assignments → "Case Sports Inc."</span>
+      </div>
+
+      <div class="row">
+        <div class="row-label">Was abgeben?</div>
+        <div class="row-content">
+          <ul>
+            <li><strong>Präsentation (Slides):</strong> Consultancy-Style über die ursprüngliche chinesische Region — alle Aspekte: LP-Modell, Sensitivity Analysis, Inventory Model. Rechnet mit Fragen vom Tutor.</li>
+            <li><strong>Excel-Datei:</strong> Enthält beide LP-Modelle:
+              <ul style="margin-top:4px;">
+                <li>Original-LP (chinesische Region)</li>
+                <li>Zusätzliches LP (belgischer Datensatz aus "Additional Assignment-IB.xlsx")</li>
+                <li>Inventory Model für eure chinesische Region</li>
+              </ul>
+            </li>
+          </ul>
+          <div style="margin-top:8px; padding:8px; background:#111; border-radius:6px; font-size:13px; color:#bbb;">
+            ⚠️ Das Zusatz-Assignment (Belgium) erscheint <strong>nur im Excel</strong> — NICHT in der Präsentation!
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="row-label">Bewertung (100 Pkt.)</div>
+        <div class="row-content" style="font-size:13px;">
+          Visual aspects: 20 Pkt. &nbsp;|&nbsp; Structure &amp; Style: 25 Pkt. &nbsp;|&nbsp; Computation: 25 Pkt. &nbsp;|&nbsp; Interpretation &amp; Empfehlungen: 30 Pkt.
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="row-label">Euer Team-Datensatz</div>
+        <div class="row-content" style="font-size:13px; color:#aaa;">
+          Auf Sheet 2 der "Additional Assignment-IB.xlsx" findet ihr eure 9 Städte (nach Tutorial-Gruppe + Team-Nummer). Löst nur das LP — keine Sensitivity Analysis, kein Inventory Model für den belgischen Datensatz.
+        </div>
+      </div>
     </div>
-    <div class="section-divider" style="margin-top:10px;">Was erwartet wird</div>
-    <div class="theme-box blue">
-      Laut Kurs-Ankündigung wird die Sports Inc. Präsentation im Consultancy-Style gehalten. Tutor und Kommilitonen stellen Fragen zu <strong>allen Aspekten des Cases</strong> — LP-Modell, Standortwahl, Annahmen, Ergebnisse. Gut vorbereitet sein!
-    </div>
-    <div class="section-divider">Heute Abend vorbereiten</div>
-    <ul class="checklist">
-      <li>Sports Inc. Slides finalisieren und nochmal durchgehen</li>
-      <li>Excel-Modell und alle Ergebnisse verstehen und erklären können</li>
-      <li>Mögliche Fragen des Tutors antizipieren (Warum diese Standorte? Sensitivität?)</li>
-      <li>IB-Zusatzaufgabe (neue Städte) fertigstellen, falls noch ausstehend</li>
-    </ul>
   </div>
 
   <div class="card">
     <div class="card-header">
-      <span class="section-label label-yellow">Vorschau</span>
-      <h2>Freitag, 29. Mai — Entrepreneurship Tutorial 10</h2>
+      <span class="section-icon">🔵</span>
+      <h2 class="label-tomorrow">Morgen – Mittwoch, 27. Mai</h2>
     </div>
-    <div class="meta-row">
-      <span class="icon">📋</span>
-      <span class="value">Facilitation 5: Financial Plan &amp; Financing Sources</span>
+
+    <div class="session tomorrow">
+      <div class="session-title">EBC2022 – Management of Operations &amp; Product Development</div>
+      <div class="meta">
+        <span>⏰ 16:00 – 18:00</span>
+        <span>📍 TAP23 (X) 1.001</span>
+        <span>👥 Tutorial B / Gruppe 32</span>
+      </div>
+
+      <div class="row">
+        <div class="row-label">Was passiert</div>
+        <div class="row-content">
+          Präsentationssession für den Sports Inc. Case im Tutorial (da die Abgabe heute endet). Seid vorbereitet auf Fragen zu allen Aspekten des Modells: LP-Modell, Sensitivity Analysis, Inventory Model.
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="row-label">Heute Abend vorbereiten</div>
+        <div class="row-content">
+          <ul>
+            <li>Slides + Excel vor 23:59 Uhr abgeben</li>
+            <li>Präsentation nochmal durchgehen — ihr werdet vom Tutor und Kommilitonen befragt</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="theme-box yellow" style="margin-top:8px;">
-      <strong>Lernziele:</strong> Finanzplan entwickeln und erklären, wie Entrepreneurs ihr Unternehmen damit steuern. Unterschiedliche Finanzierungsquellen für Entrepreneurs vergleichen und kontrastieren.
-    </div>
-    <div class="section-divider" style="margin-top:10px;">Literatur (bis Freitag lesen)</div>
-    <ul class="checklist">
-      <li><strong>Scarborough &amp; Cornwall (2025)</strong> — Kapitel 12 (Financial Plan) + Kapitel 15 (bis Abschnitt 15.4)</li>
-    </ul>
   </div>
 
   <div class="card">
     <div class="card-header">
-      <span class="section-label label-red">Deadlines</span>
-      <h2>Nächste Abgaben</h2>
+      <span class="section-icon">✅</span>
+      <h2 class="label-deadline">Deadlines</h2>
     </div>
+
     <div class="deadline-item">
       <div class="deadline-dot dot-red"></div>
-      <div class="deadline-text">
-        <div class="title">Case Sports Inc. — Slides + Excel</div>
-        <div class="due">🔴 HEUTE — Di. 26. Mai, 23:59 Uhr</div>
-        <div class="detail">Management of Operations &amp; Product Development (EBC2022) · Canvas-Upload</div>
+      <div class="deadline-info">
+        <div class="deadline-name">🔴 Case Sports Inc. — EBC2022</div>
+        <div class="deadline-date">HEUTE, 26. Mai 2026 – 23:59 Uhr</div>
+        <div class="deadline-desc">Upload Slides + Excel (beide LP-Modelle + Inventory Model) auf Canvas</div>
       </div>
     </div>
+
     <div class="deadline-item">
       <div class="deadline-dot dot-yellow"></div>
-      <div class="deadline-text">
-        <div class="title">Written Project Proposal (20%)</div>
-        <div class="due">🟡 Do. 4. Juni — 23:59 Uhr</div>
-        <div class="detail">Entrepreneurship (EBC2158) · 2000–2500 Wörter als PDF + AI-Nutzungserklärung. Frontpage mit Namen, Matrikelnummern, Tutor. Verspätungsstrafe ab Minute 121: −1 Punkt/Tag.</div>
+      <div class="deadline-info">
+        <div class="deadline-name">Written Project Proposal (20%) — EBC2158</div>
+        <div class="deadline-date">4. Juni 2026 – 23:59 Uhr &nbsp;·&nbsp; <span style="color:#fbbf24;">noch 9 Tage</span></div>
+        <div class="deadline-desc">
+          2000–2500 Wörter als PDF + AI-Tools-Statement hochladen. Deckblatt: Titel, alle Studentennamen, ID-Nummern, Kursname, Tutor, Assignment-Name. Bis 2h nach Deadline keine Strafe; ab Minute 121: −1 Punkt pro Tag.
+        </div>
       </div>
     </div>
+
     <div class="deadline-item">
       <div class="deadline-dot dot-yellow"></div>
-      <div class="deadline-text">
-        <div class="title">Video Pitch (10%)</div>
-        <div class="due">🟡 Do. 4. Juni — 23:59 Uhr</div>
-        <div class="detail">Entrepreneurship (EBC2158) · Max. 5 Min. Video als YouTube-Unlisted hochladen, Link auf Canvas einreichen. Pitch = überzeugend für Investoren, nicht nur Proposal-Zusammenfassung. Ethik/Nachhaltigkeit einbauen!</div>
+      <div class="deadline-info">
+        <div class="deadline-name">Video Pitch (5 Min., 10%) — EBC2158</div>
+        <div class="deadline-date">4. Juni 2026 – 23:59 Uhr &nbsp;·&nbsp; <span style="color:#fbbf24;">noch 9 Tage</span></div>
+        <div class="deadline-desc">
+          Video auf <strong>YouTube als "Unlisted"</strong> hochladen → nur den Link auf Canvas einreichen (kein Video-Upload!). Inhalt: Problem, Lösung, Wertversprechen, Business-Modell, ethische/soziale Verantwortung. Alle Gruppenmitglieder müssen mitwirken.
+        </div>
       </div>
+    </div>
+
+    <div style="margin-top:12px; padding:10px 12px; background:#111; border-radius:8px; font-size:13px; color:#aaa;">
+      💡 Proposal + Pitch haben dieselbe Deadline (4. Juni). Spätestens ab Donnerstag konkret planen: wer schreibt was, wann filmen?
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="section-icon">📢</span>
+      <h2 class="label-announcement">Ankündigung – EBC2022 (23. Mai)</h2>
+    </div>
+    <div style="font-size:14px; color:#d0d0d0;">
+      <strong>Additional Case online</strong> — von Veerle Timmermans<br><br>
+      Jedes Team hat einen individuellen belgischen Datensatz ("Additional Assignment-IB.xlsx" → Sheet 2). Löst das LP für eure 9 Städte und fügt die Lösung der Excel-Datei hinzu, die ihr heute abgebt. Nur das LP ist gefragt — keine Sensitivity Analysis, kein Inventory Model für den belgischen Fall.
+    </div>
+  </div>
+
+  <div class="card" style="border-color: #1e2020;">
+    <div class="card-header">
+      <span class="section-icon">📆</span>
+      <h2 style="color:#666;">Ausblick – Nächste Tage</h2>
+    </div>
+    <div style="font-size:14px; color:#888; line-height:1.8;">
+      <strong style="color:#aaa;">Di, 2. Juni:</strong> EBC2158 Tutorial 11 – Optional Workshop Final Feedback (11:00, TAP23)<br>
+      <strong style="color:#aaa;">Mi, 3. Juni:</strong> EBC2022 Closing Lecture (08:30, TS53 A-1.01)<br>
+      <strong style="color:#f87171;">Do, 4. Juni:</strong> 🔴 Deadline Written Proposal + Video Pitch (EBC2158, 23:59)<br>
+      <strong style="color:#aaa;">Fr, 5. Juni:</strong> EBC2158 Tutorial 12 – Pitch Video &amp; Investors Q&amp;A (11:00, TAP23)<br>
+      <strong style="color:#aaa;">Mi, 10. Juni:</strong> 📝 EBC2022 Exam – MECC Westhal (09:00–11:00)
     </div>
   </div>
 
   <div class="footer">
-    Aktualisiert: Di. 26. Mai 2026, 08:00 Uhr &nbsp;·&nbsp;
+    Aktualisiert: Dienstag, 26. Mai 2026 · 08:10 Uhr CEST<br>
     <a href="https://192006-dot.github.io/uni-daily-check/">192006-dot.github.io/uni-daily-check</a>
   </div>
 
