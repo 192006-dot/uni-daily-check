@@ -3,280 +3,150 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uni Daily Check – Clara</title>
+<title>Uni Daily Check</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: #0f0f0f;
-    color: #e0e0e0;
-    font-family: system-ui, -apple-system, sans-serif;
-    font-size: 15px;
-    line-height: 1.6;
-    padding: 16px;
-  }
-  .container { max-width: 600px; margin: 0 auto; }
-
-  .header {
-    text-align: center;
-    padding: 24px 0 20px;
-    border-bottom: 1px solid #2a2a2a;
-    margin-bottom: 20px;
-  }
-  .header h1 { font-size: 22px; font-weight: 700; color: #fff; letter-spacing: -0.3px; }
-  .header .date { font-size: 13px; color: #888; margin-top: 4px; }
-  .badge {
-    display: inline-block;
-    background: #1e3a2f;
-    color: #4ade80;
-    border: 1px solid #4ade80;
-    border-radius: 12px;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 2px 10px;
-    margin-top: 8px;
-    letter-spacing: 0.5px;
-  }
-
-  .card {
-    background: #1a1a1a;
-    border: 1px solid #2a2a2a;
-    border-radius: 12px;
-    padding: 18px;
-    margin-bottom: 14px;
-  }
-  .card-header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 14px;
-  }
-  .card-header h2 { font-size: 14px; font-weight: 700; letter-spacing: 0.3px; text-transform: uppercase; }
-
+  body { background: #0f0f0f; color: #e0e0e0; font-family: system-ui, -apple-system, sans-serif; max-width: 600px; margin: 0 auto; padding: 16px; }
+  .header { text-align: center; padding: 20px 0 12px; }
+  .header h1 { font-size: 1.4rem; color: #fff; letter-spacing: 0.5px; }
+  .header .date { color: #888; font-size: 0.85rem; margin-top: 4px; }
+  .badge { display: inline-block; background: #1e3a2f; color: #4ade80; font-size: 0.7rem; padding: 2px 8px; border-radius: 12px; margin-top: 6px; }
+  .card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 10px; padding: 16px; margin: 12px 0; }
+  .section-title { font-size: 0.7rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
   .green { color: #4ade80; }
   .blue { color: #60a5fa; }
   .yellow { color: #fbbf24; }
   .red { color: #f87171; }
-
-  .dot-green { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; flex-shrink: 0; }
-  .dot-blue  { width: 8px; height: 8px; border-radius: 50%; background: #60a5fa; flex-shrink: 0; }
-  .dot-red   { width: 8px; height: 8px; border-radius: 50%; background: #f87171; flex-shrink: 0; }
-  .dot-yellow{ width: 8px; height: 8px; border-radius: 50%; background: #fbbf24; flex-shrink: 0; }
-
-  .alert {
-    border-radius: 8px;
-    padding: 12px 14px;
-    margin-bottom: 12px;
-    font-size: 13px;
-  }
-  .alert-red    { background: #2a1515; border: 1px solid #f87171; }
-  .alert-yellow { background: #2a2210; border: 1px solid #fbbf24; }
-  .alert-green  { background: #152a1e; border: 1px solid #4ade80; }
-  .alert-blue   { background: #151e2a; border: 1px solid #60a5fa; }
-
-  .info-row {
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-    margin-bottom: 8px;
-    font-size: 13px;
-  }
-  .info-label {
-    color: #888;
-    min-width: 80px;
-    flex-shrink: 0;
-    font-size: 12px;
-    padding-top: 1px;
-  }
-
-  .section-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    color: #555;
-    margin: 14px 0 8px;
-  }
-
-  .deadline-item {
-    padding: 10px 12px;
-    border-radius: 8px;
-    margin-bottom: 8px;
-    font-size: 13px;
-  }
-  .deadline-red    { background: #2a1515; border-left: 3px solid #f87171; }
-  .deadline-yellow { background: #2a2210; border-left: 3px solid #fbbf24; }
-
-  .deadline-title { font-weight: 600; margin-bottom: 3px; }
-  .deadline-sub { color: #999; font-size: 12px; }
-
-  .tag {
-    display: inline-block;
-    font-size: 11px;
-    padding: 2px 8px;
-    border-radius: 6px;
-    font-weight: 600;
-    margin-right: 4px;
-  }
-  .tag-blue   { background: #1f2a3a; color: #60a5fa; }
-  .tag-green  { background: #1f3a2a; color: #4ade80; }
-
-  .footer {
-    text-align: center;
-    font-size: 12px;
-    color: #444;
-    padding: 20px 0 10px;
-    border-top: 1px solid #2a2a2a;
-    margin-top: 10px;
-  }
-  .footer a { color: #60a5fa; text-decoration: none; }
-
-  hr.divider { border: none; border-top: 1px solid #2a2a2a; margin: 14px 0; }
+  .course-name { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+  .meta-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 6px 0; }
+  .meta-chip { background: #252525; border-radius: 6px; padding: 3px 8px; font-size: 0.78rem; color: #b0b0b0; }
+  .meta-chip span { color: #e0e0e0; }
+  .topic-box { background: #1f2a1f; border-left: 3px solid #4ade80; padding: 10px 12px; border-radius: 0 6px 6px 0; margin: 10px 0; font-size: 0.88rem; line-height: 1.5; }
+  .topic-box.blue-box { background: #1a1f2a; border-left-color: #60a5fa; }
+  .topic-box.red-box { background: #2a1a1a; border-left-color: #f87171; }
+  .prep-list { list-style: none; padding: 0; margin: 8px 0; }
+  .prep-list li { padding: 5px 0; font-size: 0.87rem; border-bottom: 1px solid #222; display: flex; gap: 8px; align-items: flex-start; }
+  .prep-list li:last-child { border-bottom: none; }
+  .prep-list li::before { content: "→"; color: #4ade80; flex-shrink: 0; margin-top: 1px; }
+  .prep-list li.blue-arrow::before { color: #60a5fa; }
+  .prep-list li.red-arrow::before { content: "⚠"; color: #f87171; }
+  .deadline-item { padding: 10px; border-radius: 8px; margin: 8px 0; }
+  .deadline-item.urgent { background: #2a1a1a; border: 1px solid #5a2a2a; }
+  .deadline-item.warning { background: #2a2518; border: 1px solid #5a4a20; }
+  .deadline-item.soon { background: #1e2030; border: 1px solid #2a3050; }
+  .deadline-title { font-weight: 600; font-size: 0.9rem; margin-bottom: 4px; }
+  .deadline-meta { font-size: 0.78rem; color: #999; }
+  .deadline-detail { font-size: 0.82rem; color: #ccc; margin-top: 5px; line-height: 1.4; }
+  .announce-box { background: #1a1a24; border: 1px solid #2a2a40; border-radius: 8px; padding: 10px 12px; margin: 8px 0; font-size: 0.85rem; line-height: 1.5; }
+  .footer { text-align: center; color: #555; font-size: 0.75rem; margin-top: 20px; padding-top: 12px; border-top: 1px solid #1e1e1e; }
+  h3 { font-size: 0.9rem; font-weight: 600; margin: 8px 0 4px; }
 </style>
 </head>
 <body>
-<div class="container">
 
-  <div class="header">
-    <h1>Uni Daily Check</h1>
-    <div class="date">Dienstag, 26. Mai 2026</div>
-    <div class="badge">TAGES-CHECK</div>
-  </div>
-
-  <!-- URGENT Deadline -->
-  <div class="alert alert-red">
-    <strong class="red">🔴 ABGABE HEUTE — 23:59 Uhr!</strong><br>
-    <strong>EBC2022 – Case Sports Inc.</strong><br>
-    Hochladen auf Canvas: Präsentationsfolien + Excel mit <em>beiden</em> LP-Modellen (China-Region + Belgien-Zusatz) + Inventurmodell für die China-Region. Belgien-LP: Flaggschiff-Standorte aus neuem Datensatz bestimmen (nur LP-Lösung, keine Sensitivitätsanalyse, nicht in Präsentation).
-  </div>
-
-  <!-- Heute -->
-  <div class="card">
-    <div class="card-header">
-      <div class="dot-green"></div>
-      <h2 class="green">Heute — Dienstag, 26. Mai</h2>
-    </div>
-
-    <span class="tag tag-green">Tutorial</span>
-    <span class="tag tag-blue">EBC2158 Entrepreneurship</span>
-    <br><br>
-
-    <div class="info-row">
-      <span class="info-label">⏰ Uhrzeit</span>
-      <span><strong>11:00 – 13:00 Uhr</strong></span>
-    </div>
-    <div class="info-row">
-      <span class="info-label">📍 Raum</span>
-      <span>TAP23 (X) 1.001 · Tapijnkazerne 23</span>
-    </div>
-    <div class="info-row">
-      <span class="info-label">👩‍🏫 Tutorin</span>
-      <span>Ghasemian, Z (Zahra)</span>
-    </div>
-
-    <hr class="divider">
-
-    <div class="section-label">Was passiert heute?</div>
-    <p style="font-size:13px;"><strong>Tutorial 9 – Workshop: Present Updated Entrepreneurial Project</strong><br>
-    Clara präsentiert den aktuellen Stand des Entrepreneurship-Projekts vor der Gruppe. Präsentation: bis zu 15 Minuten, danach 10 Minuten formatives Feedback von Tutorin und Kommiliton:innen.</p>
-
-    <div class="section-label">Vorbereitung</div>
-    <div class="alert alert-green" style="margin-top:0;">
-      📊 <strong>Mindestens 2 Folien</strong> über den aktuellen Projektfortschritt erstellen.<br>
-      <span style="color:#999;font-size:12px;">Folien müssen NICHT auf Canvas hochgeladen werden.</span>
-    </div>
-
-    <div class="info-row" style="margin-top:4px;">
-      <span class="info-label">💻 Mitbringen</span>
-      <span style="font-size:13px;">Laptop für die Präsentation</span>
-    </div>
-  </div>
-
-  <!-- Morgen -->
-  <div class="card">
-    <div class="card-header">
-      <div class="dot-blue"></div>
-      <h2 class="blue">Morgen — Mittwoch, 27. Mai</h2>
-    </div>
-
-    <span class="tag tag-blue">Tutorial</span>
-    <span class="tag" style="background:#1e2a3a;color:#93c5fd;">EBC2022 Operations</span>
-    <br><br>
-
-    <div class="info-row">
-      <span class="info-label">⏰ Uhrzeit</span>
-      <span><strong>13:30 – 15:30 Uhr</strong></span>
-    </div>
-    <div class="info-row">
-      <span class="info-label">📍 Raum</span>
-      <span>TS53 G1.03 · Tongersestraat 53</span>
-    </div>
-    <div class="info-row">
-      <span class="info-label">👨‍🏫 Tutor</span>
-      <span>Hoesel, CPM, van (Constantinus)</span>
-    </div>
-
-    <hr class="divider">
-
-    <div class="section-label">Thema: Meeting 8 – Inventory Management (Ch. 12)</div>
-    <p style="font-size:13px;">Lagerhaltungsmanagement: Bestellmengen, Sicherheitsbestände und Servicelevels mit statistischen Methoden. Praxisbezug über den <strong>Case „Parts Emporium"</strong>. Berechnungen werden im Tutorial mit Excel durchgeführt.</p>
-
-    <div class="section-label">Heute Abend noch vorbereiten</div>
-    <div class="alert alert-blue" style="margin-top:0;">
-      📖 <strong>Ch12 Inventory Management.pdf</strong> lesen (Canvas → Meeting 8)<br>
-      📋 <strong>6CasePartsEmporium.pdf</strong> durchlesen<br>
-      📊 <strong>Table of z values.pdf</strong> ausdrucken oder digital bereithalten<br>
-      💻 <strong>Laptop + Excel</strong> mitbringen
-    </div>
-  </div>
-
-  <!-- Deadlines -->
-  <div class="card">
-    <div class="card-header">
-      <div class="dot-red"></div>
-      <h2 class="red">Deadlines</h2>
-    </div>
-
-    <div class="deadline-item deadline-red">
-      <div class="deadline-title">🔴 Case Sports Inc. — EBC2022</div>
-      <div class="deadline-sub">HEUTE · 26. Mai · 23:59 Uhr</div>
-      <div style="margin-top:6px;font-size:12px;color:#ccc;">
-        Upload: Präsentationsfolien + Excel (China-LP + Belgien-LP + Inventurmodell China)
-      </div>
-    </div>
-
-    <div class="deadline-item deadline-yellow">
-      <div class="deadline-title">🟡 Written Project Proposal 20% — EBC2158</div>
-      <div class="deadline-sub">Donnerstag, 4. Juni · 23:59 Uhr · noch 9 Tage</div>
-      <div style="margin-top:6px;font-size:12px;color:#ccc;">
-        2.000–2.500 Wörter als PDF + AI-Statement. Struktur: Opportunity Recognition (Ch. 3–5), Marketing &amp; Strategie (Ch. 9 &amp; 11), Finanzplanung (Ch. 12 &amp; 15). Deckblatt mit Namen, Matrikelnr., Kurs, Tutor.
-      </div>
-    </div>
-
-    <div class="deadline-item deadline-yellow">
-      <div class="deadline-title">🟡 Video Pitch 10% — EBC2158</div>
-      <div class="deadline-sub">Donnerstag, 4. Juni · 23:59 Uhr · noch 9 Tage</div>
-      <div style="margin-top:6px;font-size:12px;color:#ccc;">
-        Max. 5 Min. Video → YouTube als <em>unlisted</em> hochladen → Link auf Canvas eintragen. Pitch an fiktive Investor:innen: Problem, Lösung, Wert, Business-Modell + ethische/soziale Dimension.
-      </div>
-    </div>
-  </div>
-
-  <!-- Ankündigung -->
-  <div class="card">
-    <div class="card-header">
-      <div class="dot-yellow"></div>
-      <h2 class="yellow">Ankündigung – EBC2022 (23. Mai)</h2>
-    </div>
-    <div class="alert alert-yellow" style="margin-top:0;font-size:13px;">
-      <strong>Zusatz-Datensatz Sports Inc.:</strong> Jedes Team bekommt 9 neue Belgien-Städte mit neuen Parametern (Bevölkerung, Distanzen, Kosten). Aufgabe: LP lösen → optimale Flagship-Standorte bestimmen. <em>Nur</em> die LP-Lösung, keine Sensitivitätsanalyse, kein Belgien-Inventurmodell. Datei: <strong>„Additional Assignment – IB.xlsx"</strong> im Case-Modul (Sheet 2: Teamzuteilung nach Tutorial-Gruppe und Team-Nr.). Lösung in Excel-File einfügen, <em>nicht</em> in Präsentation.
-    </div>
-  </div>
-
-  <div class="footer">
-    Aktualisiert: Dienstag, 26. Mai 2026 · 09:30 Uhr<br>
-    <a href="https://192006-dot.github.io/uni-daily-check/">192006-dot.github.io/uni-daily-check</a>
-  </div>
-
+<div class="header">
+  <h1>Uni Daily Check</h1>
+  <div class="date">Dienstag, 26. Mai 2026</div>
+  <div class="badge">Tages-Check</div>
 </div>
+
+<!-- URGENT ALERT -->
+<div class="card" style="border-color: #5a2a2a; background: #1e0f0f;">
+  <div class="section-title red">🔴 DEADLINE HEUTE — 23:59 UHR</div>
+  <div class="deadline-title" style="color: #f87171; font-size: 1rem;">Case Sports Inc. · EBC2022</div>
+  <div class="deadline-detail">
+    Bis <strong>23:59 Uhr</strong> auf Canvas hochladen:<br>
+    1. <strong>Präsentationsfolien</strong> (Original Chinese region — consultancy style)<br>
+    2. <strong>Excel-Datei</strong> mit beiden LP-Modellen (China-Region + Belgien-Variante) + Inventory Model<br>
+    <br>
+    Für das Belgien-LP: Aus der Datei <em>Additional Assignment-IB.xlsx</em> → Sheet 2: Teamspezifische 9 Städte anhand Tutorialgruppe/Teamnummer nachschlagen. Nur optimale Flagshipstore-Platzierungen berechnen (keine Sensitivity Analysis, kein Inventory Model für Belgien).
+  </div>
+</div>
+
+<!-- HEUTE -->
+<div class="card">
+  <div class="section-title green">Heute · Dienstag 26. Mai</div>
+  <div class="course-name">EBC2158 · Entrepreneurship &amp; Small Business Management</div>
+  <div class="meta-row">
+    <div class="meta-chip">⏰ <span>11:00 – 13:00</span></div>
+    <div class="meta-chip">📍 <span>TAP23 (X) 1.001</span></div>
+    <div class="meta-chip">👩‍🏫 <span>Ghasemian, Z (Zahra)</span></div>
+  </div>
+  <div class="topic-box">
+    <strong>Tutorial 9 · Workshop: Present Updated Entrepreneurial Project (Week 7)</strong><br><br>
+    Heute präsentierst du den aktuellen Stand deines Entrepreneurship-Projekts vor der Tutorialgruppe. Ziel ist formatives Feedback vom Tutor und den Mitstudierenden — kein Assessment, aber verpflichtend. Je mehr du einbringst, desto nützlicher das Feedback.
+  </div>
+  <h3 style="color: #4ade80;">Was du brauchst:</h3>
+  <ul class="prep-list">
+    <li>Mindestens <strong>2 Slides</strong> vorbereitet haben (zeigen Fortschritt deines Projekts)</li>
+    <li>Präsentation dauert bis zu <strong>15 Minuten</strong>, danach 10 min Feedback</li>
+    <li>Slides <strong>NICHT</strong> auf Canvas hochladen</li>
+    <li class="red-arrow">Letzte Ankündigung: Fokus auf Business Idea &amp; Opportunity Justification (Problem, Zielkunde, Produkt/Dienstleistung, Wertschöpfung, Machbarkeit, ethische Implikationen)</li>
+  </ul>
+</div>
+
+<!-- MORGEN -->
+<div class="card">
+  <div class="section-title blue">Morgen · Mittwoch 27. Mai</div>
+  <div class="course-name">EBC2022 · Management of Operations &amp; Product Development</div>
+  <div class="meta-row">
+    <div class="meta-chip">⏰ <span>16:00 – 18:00</span></div>
+    <div class="meta-chip">📍 <span>TAP23 (X) 1.001</span></div>
+    <div class="meta-chip">👨‍🏫 <span>Rouhani, A (Arman)</span></div>
+  </div>
+  <div class="topic-box blue-box">
+    <strong>Meeting 5 · Location Planning</strong><br><br>
+    Das Tutorial behandelt Standortplanung aus Operations-Perspektive: wie und wo Kapazitäten/Standorte optimal platziert werden. Thematisch direkt anschließend an die Quantitative-Methoden aus dem Sports Inc. Case (LP-Modell für Standortwahl).
+  </div>
+  <h3 style="color: #60a5fa;">Heute Abend noch vorbereiten:</h3>
+  <ul class="prep-list">
+    <li class="blue-arrow"><strong>Ch08 Location Planning</strong> lesen (PDF auf Canvas in Meeting 5 Modul)</li>
+    <li class="blue-arrow">Sports Inc. Case fertigstellen und hochladen (Deadline 23:59!)</li>
+  </ul>
+</div>
+
+<!-- DEADLINES -->
+<div class="card">
+  <div class="section-title yellow">Deadlines im Überblick</div>
+
+  <div class="deadline-item urgent">
+    <div class="deadline-title red">🔴 Case Sports Inc. — EBC2022</div>
+    <div class="deadline-meta">Heute, Di 26. Mai · 23:59 Uhr</div>
+    <div class="deadline-detail">Slides + Excel (China-LP + Belgien-LP + Inventory Model) hochladen. Belgien-Variante: nur LP lösen, keine Sensitivity Analysis.</div>
+  </div>
+
+  <div class="deadline-item warning">
+    <div class="deadline-title yellow">🟡 Written Project Proposal 20% — EBC2158</div>
+    <div class="deadline-meta">Do 4. Juni · 23:59 Uhr</div>
+    <div class="deadline-detail">Schriftlicher Projektvorschlag (20% der Note) + AI Statement hochladen. Noch 9 Tage.</div>
+  </div>
+
+  <div class="deadline-item warning">
+    <div class="deadline-title yellow">🟡 Video Pitch — EBC2158</div>
+    <div class="deadline-meta">Do 4. Juni · 23:59 Uhr</div>
+    <div class="deadline-detail">Link zum Video Pitch auf Canvas einfügen. Gleiche Deadline wie Projektvorschlag.</div>
+  </div>
+
+  <div class="deadline-item soon">
+    <div class="deadline-title" style="color: #93c5fd;">🔵 Facilitation 5 · Tutorial 10 — EBC2158</div>
+    <div class="deadline-meta">Fr 29. Mai</div>
+    <div class="deadline-detail">Vorbereitung: Scarborough &amp; Cornwall (2025), Kapitel 12 + Kapitel 15 (bis Abschnitt 15.4) lesen. Thema: Financial Planning &amp; Finanzierungsquellen für Entrepreneurs.</div>
+  </div>
+</div>
+
+<!-- ANKÜNDIGUNG -->
+<div class="card">
+  <div class="section-title" style="color: #a78bfa;">Ankündigung · EBC2022</div>
+  <div class="announce-box">
+    <strong>Additional Case (23. Mai)</strong><br>
+    Das Belgien-Zusatz-LP ist eine Variante des Sports Inc. Falls das Excel-Modell gut strukturiert ist, geht es schnell. Aus <em>Additional Assignment-IB.xlsx</em>: Sheet 1 enthält alle neuen Parameter (Städte, Distanzen, Setup-Kosten, Profit/Kunde, Max. Reisedistanz, Bevölkerungsanteil). Sheet 2 zeigt deine 9 spezifischen Städte nach Tutorialgruppe + Teamnummer. Das Belgien-LP läuft <strong>nicht</strong> in der Präsentation — nur die China-Region wird präsentiert.
+  </div>
+</div>
+
+<div class="footer">
+  Aktualisiert: Dienstag, 26. Mai 2026 · 09:15 CEST<br>
+  <a href="https://192006-dot.github.io/uni-daily-check/" style="color: #555;">192006-dot.github.io/uni-daily-check</a>
+</div>
+
 </body>
 </html>
