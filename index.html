@@ -3,157 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uni Daily Check · Mittwoch 27. Mai</title>
+<title>Uni Daily Check</title>
 <style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;background:#0f0f0f;color:#e0e0e0;line-height:1.55;padding:18px;max-width:600px;margin:0 auto;-webkit-font-smoothing:antialiased}
-  header{margin-bottom:24px}
-  h1{font-size:22px;font-weight:700;color:#fff;margin-bottom:6px}
-  .date{font-size:14px;color:#888;margin-bottom:10px}
-  .badge{display:inline-block;background:#1e293b;color:#60a5fa;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600;letter-spacing:0.3px}
-  section{margin-bottom:22px}
-  .section-title{font-size:11px;font-weight:700;letter-spacing:1.5px;color:#888;text-transform:uppercase;margin-bottom:10px;padding-left:2px}
-  .card{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:16px;margin-bottom:10px}
-  .card.today{border-left:3px solid #4ade80}
-  .card.tomorrow{border-left:3px solid #60a5fa}
-  .card.hint{border-left:3px solid #fbbf24}
-  .card.urgent{border-left:3px solid #f87171}
-  .card-title{font-size:16px;font-weight:600;color:#fff;margin-bottom:8px}
-  .meta{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:#a0a0a0;margin-bottom:12px}
-  .meta span{display:flex;align-items:center;gap:5px}
-  .label{font-size:11px;font-weight:700;letter-spacing:0.6px;color:#4ade80;text-transform:uppercase;margin:10px 0 4px}
-  .label.blue{color:#60a5fa}
-  .label.yellow{color:#fbbf24}
-  .label.red{color:#f87171}
-  .body{font-size:14px;color:#cfcfcf}
-  ul{padding-left:18px;margin-top:4px}
-  li{margin-bottom:4px;font-size:13.5px}
-  .due{display:inline-block;background:#2a1a1a;color:#fca5a5;padding:2px 8px;border-radius:6px;font-size:12px;font-weight:600;margin-left:6px}
-  .due.soon{background:#2a2317;color:#fde68a}
-  .due.later{background:#1f2a18;color:#bef264}
-  footer{margin-top:32px;padding-top:18px;border-top:1px solid #2a2a2a;font-size:11px;color:#666;text-align:center}
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background:#0f0f0f; color:#e0e0e0; font-family:system-ui,-apple-system,sans-serif; line-height:1.5; padding:16px; }
+  .wrap { max-width:600px; margin:0 auto; }
+  header { text-align:center; margin-bottom:20px; }
+  header h1 { font-size:1.6rem; margin-bottom:4px; }
+  header .date { color:#9a9a9a; font-size:.95rem; }
+  .badge { display:inline-block; background:#4ade80; color:#0f0f0f; font-weight:600; font-size:.75rem; padding:3px 10px; border-radius:999px; margin-top:8px; }
+  .card { background:#1a1a1a; border:1px solid #2a2a2a; border-radius:12px; padding:16px; margin-bottom:16px; }
+  .sec-title { font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; margin-bottom:10px; font-weight:700; }
+  .green { color:#4ade80; } .blue { color:#60a5fa; } .yellow { color:#fbbf24; } .red { color:#f87171; }
+  .border-green { border-left:3px solid #4ade80; } .border-blue { border-left:3px solid #60a5fa; }
+  .border-yellow { border-left:3px solid #fbbf24; } .border-red { border-left:3px solid #f87171; }
+  .course { font-size:1.1rem; font-weight:700; margin-bottom:6px; }
+  .meta { font-size:.9rem; color:#bdbdbd; margin-bottom:3px; }
+  .label { font-size:.78rem; color:#888; text-transform:uppercase; letter-spacing:.05em; margin:12px 0 4px; font-weight:600; }
+  .body-text { font-size:.92rem; }
+  ul { padding-left:18px; margin-top:4px; }
+  li { margin-bottom:4px; font-size:.92rem; }
+  .dl-item { padding:10px 12px; border-radius:8px; background:#161616; margin-bottom:10px; }
+  .dl-item .when { font-size:.82rem; font-weight:600; }
+  .note { background:#161616; border-radius:8px; padding:12px; font-size:.9rem; }
+  footer { text-align:center; color:#666; font-size:.8rem; margin-top:24px; padding-bottom:20px; }
+  a { color:#60a5fa; }
 </style>
 </head>
 <body>
+<div class="wrap">
+  <header>
+    <h1>Uni Daily Check</h1>
+    <div class="date">Donnerstag, 28. Mai 2026</div>
+    <span class="badge">Tages-Check</span>
+  </header>
 
-<header>
-  <h1>Uni Daily Check</h1>
-  <div class="date">Mittwoch, 27. Mai 2026</div>
-  <span class="badge">Tages-Check</span>
-</header>
+  <!-- HEUTE -->
+  <div class="card border-green">
+    <div class="sec-title green">Heute &middot; Donnerstag</div>
+    <div class="body-text">Kein Tutorial heute.</div>
+    <div class="label">Empfehlung fuer heute</div>
+    <ul>
+      <li><strong>Morgen vorbereiten:</strong> Scarborough &amp; Cornwall (2025) <strong>Ch. 12 + Ch. 15 (bis Abschnitt 15.4)</strong> lesen &mdash; Finanzplan &amp; Finanzierungsquellen.</li>
+      <li><strong>An den Projekt-Deadlines arbeiten:</strong> Beide EBC2158-Abgaben (Written Proposal + Video Pitch) sind <strong>am 4. Juni</strong> faellig &mdash; das ist Gruppenarbeit, also heute schon mit dem Team starten.</li>
+      <li>Tipp: Das morgige Tutorial behandelt genau die Finanzplanung (Ch. 12 &amp; 15), die du fuer den Finanzteil des Proposals brauchst &mdash; gut verzahnt.</li>
+    </ul>
+  </div>
 
-<section>
-  <div class="section-title">Heute</div>
-  <div class="card today">
-    <div class="card-title">🎓 Management of Operations &amp; Product Development</div>
-    <div class="meta">
-      <span>⏰ 13:30–15:30</span>
-      <span>📍 TS53 G1.03</span>
-      <span>👨‍🏫 C. van Hoesel</span>
-    </div>
-    <div class="body">
-      <div class="label">Thema · Meeting 8</div>
-      Inventory Management. Du lernst, wie Unternehmen Bestände steuern: Sicherheitsbestände bestimmen, Bestellpunkte berechnen und Service-Level-Entscheidungen treffen. Quantitative Verfahren (EOQ, Reorder Point) werden anhand des Parts-Emporium-Cases angewendet.
+  <!-- MORGEN -->
+  <div class="card border-blue">
+    <div class="sec-title blue">Morgen &middot; Freitag, 29. Mai</div>
+    <div class="course">EBC2158 &ndash; Entrepreneurship &amp; SBM</div>
+    <div class="meta">Tutorial 10 &middot; Facilitation 5 (Week 7)</div>
+    <div class="meta">&#9200; 11:00&ndash;13:00 &middot; &#128205; TAP23 (X) 1.001</div>
+    <div class="meta">&#128104;&#8205;&#127979; Zahra Ghasemian</div>
 
-      <div class="label">Vorbereitung</div>
+    <div class="label">Thema</div>
+    <div class="body-text">Finanzplanung fuer Gruender &amp; KMU. Du lernst, einen Finanzplan zu entwickeln und zu erklaeren, wie Unternehmer ihr Geschaeft damit steuern. Ausserdem werden verschiedene Finanzierungsquellen fuer Gruender verglichen (Eigen- vs. Fremdkapital etc.).</div>
+
+    <div class="label">Vorbereitung (heute Abend)</div>
+    <ul>
+      <li>Scarborough &amp; Cornwall (2025): <strong>Ch. 12</strong> + <strong>Ch. 15 (bis 15.4)</strong></li>
+      <li>Facilitation-Session: falls deine Gruppe diese Woche facilitiert, Slides + AI-Statement vorbereiten.</li>
+    </ul>
+  </div>
+
+  <!-- DEADLINES -->
+  <div class="card border-yellow">
+    <div class="sec-title yellow">Deadlines</div>
+
+    <div class="dl-item border-yellow">
+      <div class="when yellow">&#128993; Do, 4. Juni &middot; 23:59 (in 7 Tagen)</div>
+      <div class="body-text"><strong>Written Project Proposal (20%)</strong> &mdash; EBC2158</div>
       <ul>
-        <li><strong>Ch. 12 Inventory Management</strong> (PDF im Modul Meeting 8) lesen — Schwerpunkt EOQ, Sicherheitsbestand, Service Level.</li>
-        <li><strong>Case „Parts Emporium"</strong> (6CasePartsEmporium.pdf) durchgehen — Daten &amp; Aufgabenstellung verstehen.</li>
-        <li><strong>Table of z values</strong> bereithalten für Sicherheitsbestand-Rechnungen.</li>
+        <li>2000&ndash;2500 Woerter (exakt), PDF, mit Deckblatt (Titel, alle Namen, IDs, Kurs, Tutor).</li>
+        <li>Struktur stuetzt sich auf: Opportunity/Feasibility (Ch. 3&ndash;5), Marketing &amp; Strategie (Ch. 9 &amp; 11), Finanzplanung (Ch. 12 &amp; 15).</li>
+        <li>+ AI-Statement Pflicht (sonst &minus;1 Note).</li>
       </ul>
-
-      <div class="label">Mitbringen</div>
-      Laptop mit Excel, Taschenrechner, z-Tabelle (digital oder Ausdruck).
     </div>
-  </div>
-</section>
 
-<section>
-  <div class="section-title">Morgen — Donnerstag</div>
-  <div class="card tomorrow">
-    <div class="card-title">📭 Kein Tutorial</div>
-    <div class="body">
-      Ein freier Tag — ideal zum Vorarbeiten. Drei Prioritäten:
-      <div class="label blue">1 · Project Proposal Entrepreneurship</div>
-      Deadline rückt näher (Do 4. Juni). 2000–2500 Wörter. Heute: Business Idea + Opportunity Justification angehen (Ch. 3–5).
-      <div class="label blue">2 · Literatur für Freitag</div>
-      Scarborough &amp; Cornwall (2025) <strong>Ch. 12 + Ch. 15 (bis 15.4)</strong> — Financial Plan &amp; Sources of Financing.
-      <div class="label blue">3 · Video Pitch planen</div>
-      5-min Konzept skizzieren (Problem · Solution · Value · Market · Business Model · Ethics). Aufnahme braucht Vorlauf — nicht auf den letzten Tag schieben.
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="section-title">Freitag — 29. Mai (Vorschau)</div>
-  <div class="card tomorrow">
-    <div class="card-title">🎓 Entrepreneurship · Tutorial 10 (Facilitation 5)</div>
-    <div class="meta">
-      <span>⏰ 11:00–13:00</span>
-      <span>📍 TAP23 (X) 1.001</span>
-      <span>👨‍🏫 Z. Ghasemian</span>
-    </div>
-    <div class="body">
-      <div class="label blue">Thema</div>
-      Financial Plan &amp; Sources of Financing — wie SMEs ihre Finanzplanung aufstellen und welche Finanzierungsquellen verfügbar sind.
-      <div class="label blue">Vorbereitung</div>
-      Scarborough &amp; Cornwall (2025) <strong>Ch. 12 + Ch. 15 (bis 15.4)</strong>.
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="section-title">Deadlines</div>
-
-  <div class="card urgent">
-    <div class="card-title">📝 Written Project Proposal 20% <span class="due">Do 4. Juni · 23:59</span></div>
-    <div class="body">
-      EBC2158 Entrepreneurship · 2000–2500 Wörter PDF + AI Statement.
+    <div class="dl-item border-yellow">
+      <div class="when yellow">&#128993; Do, 4. Juni &middot; 23:59 (in 7 Tagen)</div>
+      <div class="body-text"><strong>Video Pitch (10%)</strong> &mdash; EBC2158</div>
       <ul>
-        <li>Business Idea &amp; Opportunity Justification (Ch. 3–5)</li>
-        <li>Marketing &amp; Strategy (Ch. 9 &amp; 11)</li>
-        <li>Financial Planning (Ch. 12 &amp; 15)</li>
-        <li>Cover Page mit Titel, allen Namen + IDs, Kursname, Tutor</li>
+        <li>Max. 5 Min, auf YouTube als <em>unlisted</em> hochladen, Link auf Canvas.</li>
+        <li>Problem &rarr; Loesung &rarr; Wert &rarr; Geschaeftsmodell; muss verantwortungsvolle Wertschoepfung zeigen (ethisch/sozial/oekologisch).</li>
+        <li>Alle Gruppenmitglieder praesentieren; konsistent mit dem Proposal.</li>
       </ul>
-      Noch <strong>8 Tage</strong>. Spätestens am Wochenende sollte ein erster vollständiger Draft stehen.
+    </div>
+
+    <div class="dl-item border-red">
+      <div class="when red">&#128308; Mi, 10. Juni &middot; Klausur</div>
+      <div class="body-text"><strong>EBC2022 &ndash; Operations &amp; Product Development</strong>, Exam.</div>
     </div>
   </div>
 
-  <div class="card urgent">
-    <div class="card-title">🎥 Video Pitch 10% <span class="due">Do 4. Juni · 23:59</span></div>
-    <div class="body">
-      5 Minuten Pitch · YouTube als <em>unlisted</em>, Link auf Canvas einreichen.
-      Struktur: Problem · Solution · Value Proposition · Target Market · Business Model · Ethical/Sustainability.
-      <strong>Vorlauf einplanen</strong> — Aufnahme + Cut + Team-Koordination dauert.
+  <!-- ANKUENDIGUNGEN -->
+  <div class="card">
+    <div class="sec-title">Ankuendigung (EBC2022)</div>
+    <div class="note">
+      <strong>Zusatzfall online (23.05.):</strong> Eine Variante des Sports-Inc.-LP. Jedes Team bekommt einen anderen Datensatz. Aufgabe: nur die optimale Platzierung der Flagship-Stores bestimmen (keine Sensitivitaetsanalyse, kein Inventory-Modell). Parameter im Case-Modul, erstes Excel-Sheet. Bei gut automatisiertem Modell schnell erledigt.
     </div>
   </div>
 
-  <div class="card hint">
-    <div class="card-title">📊 EBC2022 Additional Case (Belgium LP) <span class="due soon">offen</span></div>
-    <div class="body">
-      LP-Variante mit neuem Datensatz für Belgien-Cities lösen (Datei „Additional Assignment - IB.xlsx" im Case-Modul). Nur die optimale Flagship-Store-Platzierung — keine Sensitivität, kein Inventory-Modell. In das bestehende Sports-Inc-Excel einbauen und mit dem Excel-Upload abgeben.
-    </div>
-  </div>
-
-  <div class="card hint">
-    <div class="card-title">📚 EBC2022 Exam <span class="due later">Mi 10. Juni · 09:00</span></div>
-    <div class="body">
-      Closing Lecture am Mi 3. Juni · 08:30. Old Exams (2425 First &amp; Second Sit) liegen im Modul „Old Exams".
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="section-title">Ankündigung diese Woche</div>
-  <div class="card hint">
-    <div class="card-title">📢 EBC2022 · Additional Case Online (23. Mai)</div>
-    <div class="body">
-      Zweite Aufgabe ist online: Variante des Sports-Inc-LP mit neuem Datensatz für Belgien-Cities (jedes Team bekommt eigene 9 Städte — Liste auf Tab 2). Nur Optimal-Placement berechnen. Datei: Modul „Case: Sports Inc" → <em>Additional Assignment - IB.xlsx</em>.
-    </div>
-  </div>
-</section>
-
-<footer>Aktualisiert: 27. Mai 2026, 09:30</footer>
-
+  <footer>Aktualisiert: 28. Mai 2026, 08:20 CEST</footer>
+</div>
 </body>
 </html>
