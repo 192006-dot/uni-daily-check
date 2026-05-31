@@ -6,73 +6,51 @@
 <title>Uni Daily Check — Wochenplan</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: #0f0f0f; color: #e0e0e0;
-    font-family: system-ui, -apple-system, sans-serif;
-    line-height: 1.55; padding: 16px;
-  }
-  .wrap { max-width: 600px; margin: 0 auto; }
-  header { text-align: center; margin-bottom: 24px; }
-  header h1 { font-size: 1.6rem; color: #fff; }
-  header .date { color: #9aa0a6; font-size: .95rem; margin-top: 4px; }
-  .badge {
-    display: inline-block; margin-top: 10px; padding: 4px 14px;
-    background: #1f3a2a; color: #4ade80; border: 1px solid #4ade80;
-    border-radius: 20px; font-size: .8rem; font-weight: 600;
-  }
-  h2 {
-    font-size: 1.1rem; color: #fff; margin: 28px 0 12px;
-    padding-bottom: 6px; border-bottom: 1px solid #2a2a2a;
-  }
-  .card {
-    background: #1a1a1a; border: 1px solid #2a2a2a;
-    border-radius: 12px; padding: 14px 16px; margin-bottom: 12px;
-  }
-  .day-label {
-    font-size: .78rem; font-weight: 700; letter-spacing: .05em;
-    text-transform: uppercase; color: #60a5fa; margin-bottom: 6px;
-  }
-  .day-label.today { color: #4ade80; }
-  .day-label.free { color: #f87171; }
-  .ev-title { font-weight: 600; color: #fff; font-size: 1rem; }
-  .ev-meta { color: #9aa0a6; font-size: .85rem; margin: 3px 0 8px; }
-  .ev-meta span { color: #cbd0d5; }
-  .ev-desc { font-size: .9rem; color: #c8ccd0; }
-  .prep {
-    margin-top: 8px; padding: 8px 10px; background: #161616;
-    border-left: 3px solid #fbbf24; border-radius: 4px; font-size: .85rem;
-  }
-  .prep b { color: #fbbf24; }
-  .lit-item { font-size: .9rem; margin-bottom: 10px; }
-  .lit-item .src { color: #60a5fa; font-weight: 600; font-size: .8rem; }
-  .dl {
-    border-left: 4px solid #f87171; padding-left: 12px;
-    margin-bottom: 14px;
-  }
-  .dl.next { border-left-color: #4ade80; }
-  .dl.soft { border-left-color: #fbbf24; }
-  .dl .when { font-weight: 700; }
-  .dl.next .when { color: #4ade80; }
-  .dl .when.red { color: #f87171; }
-  .dl .what { font-weight: 600; color: #fff; margin-top: 2px; }
-  .dl .det { font-size: .87rem; color: #c8ccd0; margin-top: 4px; }
-  .tag {
-    display: inline-block; font-size: .7rem; padding: 1px 8px;
-    border-radius: 10px; margin-left: 6px; vertical-align: middle;
-  }
-  .tag.red { background: #3a1f1f; color: #f87171; border: 1px solid #f87171; }
-  .tag.green { background: #1f3a2a; color: #4ade80; border: 1px solid #4ade80; }
-  .tag.yellow { background: #3a341f; color: #fbbf24; border: 1px solid #fbbf24; }
-  ul.plan { list-style: none; }
-  ul.plan li { padding: 8px 0; border-bottom: 1px solid #222; font-size: .9rem; }
-  ul.plan li:last-child { border-bottom: none; }
-  ul.plan b { color: #60a5fa; }
-  .risk { background: #1f1414; border: 1px solid #4a2525; border-radius: 10px; padding: 12px 14px; margin-top: 8px; }
-  .risk b { color: #f87171; }
-  .ann { font-size: .9rem; }
-  .ann .t { color: #fbbf24; font-weight: 600; }
-  footer { text-align: center; color: #6b7177; font-size: .8rem; margin: 30px 0 10px; }
-  .note { font-size: .8rem; color: #7d8389; font-style: italic; margin-top: 6px; }
+  body { background:#0f0f0f; color:#e0e0e0; font-family:system-ui,-apple-system,sans-serif;
+         line-height:1.5; padding:16px; }
+  .wrap { max-width:600px; margin:0 auto; }
+  header { text-align:center; margin-bottom:24px; }
+  h1 { font-size:1.6rem; margin-bottom:6px; }
+  .date { color:#9a9a9a; font-size:.95rem; }
+  .badge { display:inline-block; background:#1e3a5f; color:#60a5fa; font-size:.75rem;
+           font-weight:600; padding:3px 12px; border-radius:20px; margin-top:8px;
+           border:1px solid #2a4a6f; }
+  h2 { font-size:1.05rem; margin:28px 0 12px; color:#cfcfcf; border-bottom:1px solid #2a2a2a;
+       padding-bottom:6px; }
+  .card { background:#1a1a1a; border:1px solid #2a2a2a; border-radius:10px; padding:14px;
+          margin-bottom:12px; }
+  .day-label { font-size:.78rem; font-weight:700; letter-spacing:.5px; text-transform:uppercase;
+               color:#60a5fa; margin-bottom:6px; }
+  .day-label.today { color:#4ade80; }
+  .ev-title { font-weight:600; font-size:1rem; margin-bottom:4px; }
+  .ev-meta { font-size:.85rem; color:#9a9a9a; margin-bottom:8px; }
+  .ev-meta span { color:#cfcfcf; }
+  .ev-desc { font-size:.9rem; color:#d0d0d0; }
+  .prep { font-size:.85rem; color:#fbbf24; margin-top:8px; }
+  .prep b { color:#fbbf24; }
+  .free { color:#777; font-size:.88rem; font-style:italic; }
+  .lit-item { font-size:.9rem; margin-bottom:10px; padding-left:10px; border-left:2px solid #2a4a6f; }
+  .lit-item .course { color:#60a5fa; font-weight:600; font-size:.78rem; }
+  .dl { border-left:3px solid #f87171; }
+  .dl.soon { border-left-color:#fbbf24; }
+  .dl.next { border-left-color:#4ade80; }
+  .dl-when { font-size:.8rem; font-weight:700; }
+  .dl-when.red { color:#f87171; }
+  .dl-when.yellow { color:#fbbf24; }
+  .dl-when.green { color:#4ade80; }
+  .rec { font-size:.9rem; }
+  .rec b { color:#4ade80; }
+  ul { margin:6px 0 0 18px; }
+  li { font-size:.9rem; margin-bottom:5px; }
+  .risk { color:#f87171; }
+  .ann-title { font-weight:600; font-size:.92rem; color:#60a5fa; margin-bottom:4px; }
+  .ann-body { font-size:.86rem; color:#c8c8c8; }
+  footer { text-align:center; color:#666; font-size:.78rem; margin-top:32px;
+           border-top:1px solid #2a2a2a; padding-top:14px; }
+  .tag { display:inline-block; font-size:.7rem; padding:2px 8px; border-radius:6px;
+         font-weight:600; margin-right:6px; }
+  .tag.opt { background:#2a2a1a; color:#fbbf24; }
+  .tag.graded { background:#3a1a1a; color:#f87171; }
 </style>
 </head>
 <body>
@@ -80,160 +58,131 @@
 
   <header>
     <h1>📚 Uni Daily Check</h1>
-    <div class="date">Sonntag, 31. Mai 2026 · Maastricht University</div>
-    <span class="badge">Wochenplan · 01.–05. Juni</span>
+    <div class="date">Sonntag, 31. Mai 2026</div>
+    <span class="badge">📅 Wochenplan · 01.–05. Juni</span>
   </header>
 
-  <!-- ============ WOCHENÜBERSICHT ============ -->
+  <!-- WOCHENÜBERSICHT -->
   <h2>🗓️ Wochenübersicht</h2>
 
   <div class="card">
     <div class="day-label">Montag · 01. Juni</div>
-    <div class="ev-title">Management of Operations &amp; Product Development</div>
-    <div class="ev-meta"><span>13:30–15:30</span> · Tutorial A · TS53 E2.07 · van Hoesel</div>
-    <div class="ev-desc">Letztes Tutorial des Kurses (EBC2022). Voraussichtlich Abschluss der letzten Themen — <b>Scheduling (Kap. 16)</b> und <b>Project Management (Kap. 17)</b> — sowie Vorbereitung auf die Klausur am 10. Juni.</div>
-    <div class="prep"><b>Mitbringen:</b> Laptop mit deinem Excel-LP-Modell (Sports-Inc-Case), Taschenrechner, z-Wert-Tabelle. Offene Fragen für die Klausur notieren.</div>
+    <div class="ev-title">EBC2022 — Operations & Product Development</div>
+    <div class="ev-meta">🕓 <span>16:00–18:00</span> · 📍 TAP23 (X) 1.001 · 👤 Arman Rouhani · Tutorial A</div>
+    <div class="ev-desc">Letztes Tutorial vor der Klausur. Abschluss der Operations-Themen — Scheduling (Kap. 16) & Project Management (Kap. 17), klausurrelevante Rechenaufgaben.</div>
+    <div class="prep"><b>Mitbringen:</b> Laptop + Excel, z-Werte-Tabelle, Kapitel-PDFs (Ch16 Scheduling, Ch17 Project Management) durchgesehen.</div>
   </div>
 
   <div class="card">
     <div class="day-label">Dienstag · 02. Juni</div>
-    <div class="ev-title">Entrepreneurship &amp; Small Business Management</div>
-    <div class="ev-meta"><span>11:00–13:00</span> · Tutorial 11 · TAP23 (X) 1.001 · Ghasemian</div>
-    <div class="ev-desc"><b>Optionaler</b> Workshop: letztes Feedback zu Projekt &amp; Präsentation. Anwesenheit ist NICHT verpflichtend — kommt, wenn ihr als Gruppe noch Feedback braucht oder einen Arbeitsraum wollt.</div>
-    <div class="prep"><b>Nutzen:</b> Letzte Chance vor der Proposal-Deadline (Do), um Feedback von der Tutorin zu holen. Bringt euren Proposal-Entwurf + Pitch-Konzept mit.</div>
+    <div class="ev-title">EBC2158 — Entrepreneurship & Small Business <span class="tag opt">OPTIONAL</span></div>
+    <div class="ev-meta">🕚 <span>11:00–13:00</span> · 📍 TAP23 (X) 1.001 · 👤 Zahra Ghasemian · Tutorial 11</div>
+    <div class="ev-desc">Optionaler Workshop: <b>finales Feedback</b> auf Projekt & Pitch. Anwesenheit nicht verpflichtend — hängt vom Feedback-Bedarf deiner Gruppe ab. Reservierter Arbeitsraum zum gemeinsamen Arbeiten.</div>
+    <div class="prep"><b>Nutze die Chance:</b> Bring den (fast fertigen) Proposal-Entwurf + Pitch-Skript mit — 2 Tage vor der Deadline letztes Feedback holen.</div>
   </div>
 
   <div class="card">
     <div class="day-label">Mittwoch · 03. Juni</div>
-    <div class="ev-title">Management of Operations &amp; Product Development</div>
-    <div class="ev-meta"><span>08:30–10:30</span> · Lecture · TS53 A-1.01 (Franz-Palm-Hörsaal) · Timmermans</div>
-    <div class="ev-desc">Abschluss-Lecture (EBC2022) — die letzte Veranstaltung vor der Klausur. Sehr wahrscheinlich Recap / Exam-Q&amp;A über den gesamten Stoff (LP, Inventory, Scheduling, Project Management).</div>
-    <div class="prep"><b>Vorher:</b> Alten Stoff überfliegen, damit du gezielt Fragen stellen kannst. Die alten Klausuren (First/Second Sit 24/25) liegen im Canvas-Modul „Old Exams".</div>
+    <div class="ev-title">EBC2022 — Operations & Product Development</div>
+    <div class="ev-meta">🕣 <span>08:30–10:30</span> · 📍 TS53 A-1.01 (Franz-Palm-Hörsaal) · 👤 Veerle Timmermans · Lecture</div>
+    <div class="ev-desc">Abschluss-Vorlesung — eine Woche vor der Klausur (10.06.). Voraussichtlich Wrap-up / Klausurvorbereitung über den gesamten Stoff.</div>
+    <div class="prep"><b>Mitbringen:</b> Notizen vom ganzen Kurs, Fragen zur Klausur vorbereiten. 08:30 — früh aufstehen!</div>
   </div>
 
-  <div class="card">
-    <div class="day-label free">Donnerstag · 04. Juni · KEINE Lehrveranstaltung</div>
-    <div class="ev-title">🔴 DEADLINE-TAG (EBC2158)</div>
-    <div class="ev-meta">bis <span>23:59</span></div>
-    <div class="ev-desc">Kein Termin im Stundenplan — aber heute Abend laufen <b>zwei</b> Abgaben ab: Written Project Proposal (20%) und Video Pitch (10%). Dieser freie Tag ist dein Puffer, um beides fertigzustellen.</div>
+  <div class="card dl">
+    <div class="day-label">Donnerstag · 04. Juni</div>
+    <div class="ev-title">Kein Termin — aber Deadline 23:59 🔴</div>
+    <div class="ev-desc"><b>EBC2158:</b> Abgabe Written Project Proposal (20%) + Video Pitch (10%). Beides Gruppenabgabe inkl. AI-Statement. Puffertag ohne Veranstaltung — voll für die Abgabe nutzen.</div>
   </div>
 
   <div class="card">
     <div class="day-label">Freitag · 05. Juni</div>
-    <div class="ev-title">Entrepreneurship &amp; Small Business Management</div>
-    <div class="ev-meta"><span>11:00–13:00</span> · Tutorial 12 · TAP23 (X) 1.001 · Ghasemian</div>
-    <div class="ev-desc">Finale: Ihr zeigt euer <b>Video-Pitch</b> der Gruppe und stellt euch dem <b>Investor-Q&amp;A</b> (bewertet). Außerdem wird die Kursevaluation ausgefüllt.</div>
-    <div class="prep"><b>Mitbringen:</b> Fertiges Video (YouTube-Link bereit), seid auf Investor-Fragen zu Marktgröße, Geschäftsmodell &amp; Finanzen vorbereitet — alle Gruppenmitglieder sollten antworten können.</div>
+    <div class="ev-title">EBC2158 — Pitch & Investor Q&A <span class="tag graded">BENOTET</span></div>
+    <div class="ev-meta">🕚 <span>11:00–13:00</span> · 📍 TAP23 (X) 1.001 · 👤 Zahra Ghasemian · Tutorial 12</div>
+    <div class="ev-desc"><b>Pitch Defence (10%):</b> Video-Pitch zeigen + Investor Q&A. 20 Min/Team (5 Min Video + 15 Min Fragen von Tutor & anderen Teams). Danach Kursevaluation.</div>
+    <div class="prep risk"><b>⚠️ Pflicht:</b> ALLE Teammitglieder müssen <b>physisch</b> anwesend sein. Online = Abwesenheit → −50% auf die individuelle Note.</div>
   </div>
 
-  <!-- ============ LITERATUR & VORBEREITUNG ============ -->
-  <h2>📖 Literatur &amp; Vorbereitung</h2>
+  <!-- LITERATUR / VORBEREITUNG -->
+  <h2>📖 Vorbereitung & Literatur</h2>
 
   <div class="card">
     <div class="lit-item">
-      <span class="src">EBC2022 · für Mo/Mi &amp; Klausur</span><br>
-      Operations-Management-Stoff wiederholen, Schwerpunkt der letzten Wochen:
-      <b>Kap. 16 „Scheduling"</b> und <b>Kap. 17 „Project Management"</b> (PDFs im Canvas).
-      Davor: Lineare Programmierung (Sports-Inc-Case + „Modelling Linear Programs") und Inventory-Modelle.
+      <span class="course">EBC2158 · Proposal (für Do)</span><br>
+      Textbuch-Konzepte einarbeiten: <b>Kap. 3–5</b> (Opportunity Recognition & Feasibility), <b>Kap. 9 & 11</b> (Marketing & Strategy), <b>Kap. 12 & 15</b> (Financial Planning). Diese Kapitel bilden die analytische Grundlage des Proposals.
     </div>
     <div class="lit-item">
-      <span class="src">EBC2022 · Klausur-Prep</span><br>
-      Alte Klausuren durchrechnen: <b>„EBC2022-2425 First Sit"</b> &amp; <b>„EBC2022 2425 Second Sit"</b> (Modul „Old Exams"). z-Wert-Tabelle bereithalten.
-    </div>
-    <div class="lit-item">
-      <span class="src">EBC2158 · für Proposal &amp; Pitch (bis Do)</span><br>
-      Lehrbuch-Kapitel, die im Proposal angewendet werden müssen:
-      <b>Kap. 3–5</b> (Opportunity Recognition &amp; Feasibility), <b>Kap. 9 &amp; 11</b> (Marketing &amp; Strategy), <b>Kap. 12 &amp; 15</b> (Financial Planning).
+      <span class="course">EBC2022 · Klausurvorbereitung (Mo + Mi)</span><br>
+      Kapitel-PDFs auf Canvas: <b>Ch08</b> Location Planning · <b>Ch10</b> Quality Control (+ Control limit factors, z-Werte) · <b>Ch11</b> Aggregate Planning (+ Excel Exercise 5) · <b>Ch12</b> Inventory Management (+ Parts Emporium Case) · <b>Ch16</b> Scheduling · <b>Ch17</b> Project Management. Dazu LP / Sensitivity / Integer LP aus dem ersten Teil.
     </div>
   </div>
 
-  <!-- ============ DEADLINES ============ -->
+  <!-- DEADLINES -->
   <h2>✅ Deadlines</h2>
 
-  <div class="card">
-    <div class="dl">
-      <div class="when red">🔴 Donnerstag, 04. Juni · 23:59</div>
-      <div class="what">EBC2158 — Written Project Proposal <span class="tag red">20%</span></div>
-      <div class="det">
-        PDF mit <b>2000–2500 Wörtern</b> (exkl. Deckblatt, Inhaltsverzeichnis, Quellen, Anhang) als <i>zusammenhängender Fließtext</i>, nicht in Stichpunkten.
-        Pflicht-Inhalte: Geschäftsidee &amp; Opportunity-Justification (inkl. ethische/soziale/ökologische Reflexion), Marktanalyse &amp; Wettbewerbspositionierung, sowie Marketing/Strategie &amp; Finanzplanung.
-        <b>Deckblatt</b> mit Titel, allen Namen + Matrikelnummern, Kurs, Tutorin, Assignment.
-        <b>+ separate AI-Nutzungserklärung</b> hochladen (sonst –1,0 Note!). 2 h Kulanz nach Deadline, danach –1 Note pro angefangenem Tag.<br>
-        <span class="note">Geschätzter Aufwand (Gruppe, Endspurt): 6–10 h für Schreiben, Kürzen auf Wortlimit &amp; Korrekturlesen.</span>
-      </div>
-    </div>
-
-    <div class="dl">
-      <div class="when red">🔴 Donnerstag, 04. Juni · 23:59</div>
-      <div class="what">EBC2158 — Video Pitch <span class="tag red">10%</span></div>
-      <div class="det">
-        Max. <b>5-Minuten-Video</b>, auf YouTube als <b>„nicht gelistet" (unlisted)</b> hochladen, dann nur den <b>Link</b> in Canvas einfügen (keine Datei!).
-        Struktur: Problem → Lösung → Value Proposition → Zielmarkt → Geschäftsmodell → Ethik/Nachhaltigkeit → „Why this opportunity".
-        Alle Gruppenmitglieder müssen mitwirken. Muss konsistent zum Proposal sein. Handy/Tageslicht reicht — Kreativität zählt mehr als Studio.<br>
-        <span class="note">Geschätzter Aufwand: 3–5 h (Skript, Aufnahme, Schnitt, Upload). Vor der Proposal-Abgabe abstimmen, da beide aufeinander aufbauen.</span>
-      </div>
-    </div>
-
-    <div class="dl next">
-      <div class="when">🟡 Mittwoch, 10. Juni · 09:00</div>
-      <div class="what">EBC2022 — KLAUSUR <span class="tag yellow">Exam</span></div>
-      <div class="det">
-        Schriftliche Klausur über den gesamten Operations-Management-Stoff (40 Punkte des Endgrades). Jetzt schon mit Wiederholung beginnen — nicht erst nach dem EBC2158-Stress am Wochenende.
-      </div>
-    </div>
-
-    <div class="dl next">
-      <div class="when">🟢 Freitag, 05. Juni · in der Session</div>
-      <div class="what">EBC2158 — Video-Präsentation + Investor-Q&amp;A</div>
-      <div class="det">Keine Online-Abgabe, aber bewertete Live-Präsentation des Videos + Q&amp;A im Tutorial 12. Bereitet euch auf kritische Investor-Fragen vor.</div>
-    </div>
-
-    <div class="dl soft">
-      <div class="when" style="color:#fbbf24">⚪ Nur falls zutreffend (verpasste Sessions)</div>
-      <div class="what">Nachhol-/Resit-Aufgaben</div>
-      <div class="det">
-        19.06.: Resit-Aufgaben Corporate Governance (EBC2020) &amp; MIS (EBC2003) — nur relevant bei Resit/3+ verpassten Tutorials.
-        06.07.: EBC2158 Attendance-Ersatzaufgabe — nur wenn ≥3 Pflichtsitzungen gefehlt.
-        <span class="note">Für dich vermutlich nicht relevant — bitte selbst prüfen.</span>
-      </div>
-    </div>
+  <div class="card dl">
+    <div class="dl-when red">🔴 Donnerstag 04.06. · 23:59</div>
+    <div class="ev-title" style="margin-top:6px;">EBC2158 — Written Project Proposal (20%)</div>
+    <div class="ev-desc">PDF, <b>2000–2500 Wörter</b> (nicht weniger, nicht mehr; ohne Deckblatt/Inhaltsverzeichnis/Referenzen/Anhang). Eine zusammenhängende Erzählung, keine Bullet Points. Inhalt: Business Idea & Opportunity Justification (Problem, Zielkunde, Produkt/Value, warum „gute" Opportunity), Marketing & Strategy, Financial Planning, ethische/nachhaltige Implikationen. Klares Deckblatt (Titel, alle Namen + IDs, Kurs, Tutor). <b>+ AI-Statement</b> (Tools + Prompts auflisten, sonst −1/10). 2 h Kulanz, danach −1/10 pro Tag.<br><span style="color:#fbbf24;">⏱ Aufwand: ~6–10 h Gruppenarbeit (Schreiben, Abstimmen, Korrektur).</span></div>
   </div>
 
-  <!-- ============ ANKÜNDIGUNGEN ============ -->
-  <h2>📣 Ankündigungen</h2>
-  <div class="card ann">
-    <div class="t">EBC2022 · „Additional case online" (23.05.)</div>
-    Zweite Aufgabe als Variante des Sports-Inc-LP-Modells: jedes Team bekommt einen <b>anderen Datensatz</b> und bestimmt nur die optimale Flagship-Store-Platzierung (keine Sensitivitätsanalyse, kein Inventory-Modell). Parameter liegen im „Case"-Modul (erstes Excel-Sheet).
-    <div class="note">Falls noch offen: schnell erledigen, wenn euer Excel-Modell sauber automatisiert ist. (Keine separate Deadline im Planner — bitte im Case-Modul prüfen.)</div>
+  <div class="card dl">
+    <div class="dl-when red">🔴 Donnerstag 04.06. · 23:59</div>
+    <div class="ev-title" style="margin-top:6px;">EBC2158 — Video Pitch (10%)</div>
+    <div class="ev-desc">Max. <b>5 Min</b> Video, auf YouTube als <b>„unlisted"</b> hochladen, nur den Link in Canvas einfügen (kein File-Upload). Struktur: Problem → Lösung → Value Proposition → Zielmarkt → Business-Model-Logik → Ethik/Nachhaltigkeit. Keine bloße Zusammenfassung — überzeugende Investoren-Narrative. <b>Alle Mitglieder müssen mitwirken.</b> Muss konsistent mit dem Proposal sein.<br><span style="color:#fbbf24;">⏱ Aufwand: ~4–6 h (Skript, Aufnahme, Upload) — Puffer für Technik einplanen!</span></div>
   </div>
 
-  <!-- ============ EMPFEHLUNGEN ============ -->
-  <h2>💡 Empfehlungen für die Woche</h2>
+  <div class="card dl next">
+    <div class="dl-when green">🟢 Freitag 05.06. · 11:00 (in Tutorial 12)</div>
+    <div class="ev-title" style="margin-top:6px;">EBC2158 — Investor Q&A / Pitch Defence (10%)</div>
+    <div class="ev-desc">Live im Tutorial: 5 Min Video + 15 Min Verteidigung (Feasibility, Annahmen, Risiken, Limitationen). Keine Abgabe — Bewertung vor Ort. Alle physisch anwesend (sonst −50% individuell).</div>
+  </div>
+
+  <div class="card dl next">
+    <div class="dl-when green">🟢 Mittwoch 10.06. · 09:00–11:00 — NÄCHSTE WOCHE</div>
+    <div class="ev-title" style="margin-top:6px;">EBC2022 — KLAUSUR (Exam)</div>
+    <div class="ev-desc">📍 MECC Westhal, Paul-Henri-Spaaklaan. Operations Management gesamter Stoff (40 Punkte Exam-Komponente). Stoff: LP/Sensitivity/Integer LP, Location Planning, Quality Control, Aggregate Planning, Inventory, Scheduling, Project Management. <b>Schon dieses Wochenende mit der Vorbereitung beginnen</b> — nach der EBC2158-Deadline bleiben nur ~5 Tage.</div>
+  </div>
+
+  <!-- ANKÜNDIGUNGEN -->
+  <h2>📢 Ankündigungen</h2>
   <div class="card">
-    <ul class="plan">
-      <li><b>Heute (So):</b> Proposal-Rohtext + Pitch-Skript der Gruppe finalisieren. Aufgaben verteilen: wer schreibt welchen Abschnitt, wer schneidet das Video. Wortzahl checken (Ziel 2000–2500).</li>
-      <li><b>Mo:</b> EBC2022-Tutorial nutzen, um die letzten Themen + Klausurfragen zu klären. Abends: Proposal-Abschnitte zusammenführen.</li>
-      <li><b>Di:</b> Optionalen EBC2158-Workshop für letztes Tutor-Feedback nutzen (lohnt sich vor der Deadline!). Video aufnehmen.</li>
-      <li><b>Mi:</b> Vormittags Abschluss-Lecture EBC2022 (Recap). Nachmittags: Proposal korrekturlesen, AI-Statement schreiben, Video schneiden &amp; auf YouTube (unlisted) hochladen.</li>
-      <li><b>Do:</b> Puffer-/Abgabetag. <b>Beides bis 23:59 abgeben</b> — Proposal-PDF + AI-Statement, Video-Link. Deckblatt-Check nicht vergessen!</li>
-      <li><b>Fr:</b> Pitch im Tutorial präsentieren + Investor-Q&amp;A. Danach: voll auf EBC2022-Klausur (10.06.) umschalten.</li>
+    <div class="ann-title">EBC2022 · Additional Case online (23.05.)</div>
+    <div class="ann-body">Zweite Aufgabe als Variante des Sports-Inc.-LP (jedes Team eigener Datensatz, 9 zugewiesene Städte). Aufgabe: nur optimale Flagship-Store-Standorte bestimmen — keine Sensitivity, kein Inventory. Parameter im Case-Modul (Excel „Additional Assignment – IB"). <i>Hinweis: gehörte zur Case-Abgabe (Deadline 26.05. bereits vorbei) — nur relevant, falls noch offen.</i></div>
+  </div>
+  <div class="card">
+    <div class="ann-title">EBC2158 · Team-Dynamik (14.05.)</div>
+    <div class="ann-body">Tutoren mahnten Teams, bei Reibungen den Team-Contract zu revisiten und Probleme proaktiv anzugehen. Relevant für die finale Abgabewoche — klare Aufgabenverteilung in der Gruppe sichern.</div>
+  </div>
+
+  <!-- EMPFEHLUNGEN -->
+  <h2>💡 Plan für die Woche</h2>
+  <div class="card rec">
+    <ul>
+      <li><b>Heute (So):</b> Gruppe koordinieren — Freitag-Anwesenheit aller bestätigen. Proposal-Rohfassung (2000–2500 W.) schreiben/finalisieren. Pitch-Skript (5 Min) entwerfen + Aufnahme-Termin vor Do festlegen. AI-Statement-Liste anlegen.</li>
+      <li><b>Mo:</b> EBC2022-Tutorial 16:00 (Scheduling/Project Mgmt). Abends Proposal-Feinschliff, Pitch proben.</li>
+      <li><b>Di:</b> Optionalen EBC2158-Workshop 11:00 nutzen → letztes Feedback. Danach Proposal finalisieren + Video aufnehmen & als unlisted auf YouTube laden.</li>
+      <li><b>Mi:</b> EBC2022-Vorlesung 08:30 (Klausur-Prep). Proposal final korrekturlesen, Wortzahl prüfen, Deckblatt + AI-Statement fertig.</li>
+      <li><b>Do:</b> 🔴 Vor 23:59 Proposal-PDF + Video-Link + AI-Statements in Canvas einreichen. Lieber mittags fertig.</li>
+      <li><b>Fr:</b> Pitch Defence 11:00 — alle physisch da, Q&A-Antworten (Feasibility, Risiken) vorbereiten.</li>
+      <li><b>Wochenende danach:</b> Vollgas EBC2022-Klausurvorbereitung (Exam 10.06.).</li>
     </ul>
   </div>
 
-  <div class="risk">
-    <b>⚠️ Risiken</b>
-    <ul style="margin-top:6px; padding-left:18px; font-size:.88rem;">
-      <li><b>Doppel-Deadline am Do:</b> Proposal UND Video am selben Abend. Wenn ihr beides auf Donnerstag schiebt, wird's eng — Video-Upload/Rendering kann scheitern. Video spätestens Mi hochladen.</li>
-      <li><b>AI-Statement vergessen:</b> Fehlende AI-Erklärung = automatisch –1,0 Note. Beim Proposal direkt mitabgeben.</li>
-      <li><b>Wortlimit:</b> „2000–2500, no less, no more" — über/unter dem Limit kostet Punkte. Vor Abgabe zählen.</li>
-      <li><b>Gruppenabhängigkeit:</b> Proposal + Pitch sind Teamarbeit — wenn ein Mitglied nicht liefert, leiden beide Abgaben. Heute Rollen klar verteilen.</li>
-      <li><b>Klausur unterschätzt:</b> Der EBC2158-Endspurt frisst das Wochenende — die EBC2022-Klausur ist schon Mi 10.06. Mind. 1–2 h Wiederholung diese Woche einplanen.</li>
+  <h2>⚠️ Risiken</h2>
+  <div class="card rec">
+    <ul>
+      <li class="risk"><b>Video-Engpass:</b> Aufnahme + YouTube-Upload kosten Zeit & brauchen alle Mitglieder. Bei Technik-Problemen Donnerstag Abend = Stress. → Video bis Mittwoch fertig.</li>
+      <li class="risk"><b>AI-Statement vergessen:</b> Fehlt es bei Proposal oder Pitch → −1 ganzer Punkt (1/10). Für beide Abgaben separat.</li>
+      <li class="risk"><b>Wortzahl strikt:</b> 2000–2500 Wörter — sowohl drunter als auch drüber zählt als Verstoß. Vorher zählen.</li>
+      <li class="risk"><b>Freitag-Anwesenheit:</b> Wer Fr nicht physisch da ist → −50% individuell. Heute schon mit allen abklären.</li>
+      <li class="risk"><b>Klausur unterschätzt:</b> EBC2022 am 10.06. ist nur 5 Tage nach der EBC2158-Deadline. Prep nicht auf das Wochenende vor der Klausur schieben.</li>
     </ul>
   </div>
 
   <footer>
-    Aktualisiert: 31.05.2026, automatischer Wochen-Check<br>
-    Termine: MU-Stundenplan (iCal) · Inhalte: Canvas
+    Aktualisiert: 31.05.2026, 09:00 · Quellen: MU Timetable (iCal) + Canvas API<br>
+    EBC2022 nutzt Kapitel-PDFs statt Detail-Seiten — Sessions aus Themen­sequenz & Stundenplan abgeleitet.
   </footer>
 
 </div>
