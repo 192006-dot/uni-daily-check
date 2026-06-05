@@ -3,194 +3,128 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uni Daily Check – Clara</title>
+<title>Uni Daily Check</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: #0f0f0f; color: #e0e0e0;
-    font-family: system-ui, -apple-system, sans-serif;
-    line-height: 1.55; padding: 16px;
+  :root{
+    --bg:#0f0f0f; --card:#1a1a1a; --border:#2a2a2a; --text:#e0e0e0; --muted:#9a9a9a;
+    --green:#4ade80; --blue:#60a5fa; --yellow:#fbbf24; --red:#f87171;
   }
-  .wrap { max-width: 600px; margin: 0 auto; }
-  header { text-align: center; margin-bottom: 22px; }
-  header h1 { font-size: 1.6rem; color: #fff; }
-  header .date { color: #9a9a9a; margin-top: 4px; font-size: 0.95rem; }
-  .badge {
-    display: inline-block; margin-top: 10px; padding: 4px 14px;
-    background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 20px;
-    font-size: 0.8rem; color: #4ade80; letter-spacing: .5px;
-  }
-  .card {
-    background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 14px;
-    padding: 16px 18px; margin-bottom: 16px;
-  }
-  .section-title {
-    font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1.2px;
-    margin: 26px 0 10px; padding-left: 4px; font-weight: 600;
-  }
-  .t-today { color: #4ade80; }
-  .t-tomorrow { color: #60a5fa; }
-  .t-deadline { color: #f87171; }
-  .t-info { color: #fbbf24; }
-  .course { font-size: 1.15rem; font-weight: 600; color: #fff; margin-bottom: 6px; }
-  .meta { color: #b8b8b8; font-size: 0.92rem; margin: 2px 0; }
-  .meta .ic { display: inline-block; width: 22px; }
-  .block { margin-top: 12px; }
-  .block .lbl { font-weight: 600; color: #e0e0e0; display: block; margin-bottom: 3px; }
-  .block p, .block li { font-size: 0.92rem; color: #cfcfcf; }
-  ul { padding-left: 20px; margin-top: 4px; }
-  li { margin-bottom: 4px; }
-  .urgent {
-    border-color: #f87171; background: #1f1414;
-  }
-  .urgent .course { color: #f87171; }
-  .pill {
-    display: inline-block; font-size: 0.72rem; padding: 2px 9px; border-radius: 12px;
-    margin-left: 6px; vertical-align: middle;
-  }
-  .pill-red { background: #3a1717; color: #f87171; border: 1px solid #5a2222; }
-  .pill-blue { background: #15233a; color: #60a5fa; border: 1px solid #234a6e; }
-  .deadline-row {
-    display: flex; align-items: flex-start; gap: 10px;
-    padding: 10px 0; border-bottom: 1px solid #232323;
-  }
-  .deadline-row:last-child { border-bottom: none; }
-  .dot { font-size: 1.1rem; line-height: 1.4; flex-shrink: 0; }
-  .deadline-row .d-body { font-size: 0.9rem; }
-  .deadline-row .d-when { font-size: 0.78rem; color: #9a9a9a; }
-  .tip {
-    background: #1e1a10; border: 1px solid #3a3115; border-radius: 10px;
-    padding: 10px 12px; font-size: 0.88rem; color: #e8d9a8; margin-top: 10px;
-  }
-  footer {
-    text-align: center; color: #6a6a6a; font-size: 0.78rem;
-    margin-top: 28px; padding-top: 14px; border-top: 1px solid #1f1f1f;
-  }
-  a { color: #60a5fa; text-decoration: none; }
-  .warn-strip {
-    background: #2a1414; border: 1px solid #5a2222; border-radius: 10px;
-    padding: 8px 12px; font-size: 0.82rem; color: #f8a5a5; margin-bottom: 14px;
-  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,sans-serif;
+    line-height:1.55;padding:16px}
+  .wrap{max-width:600px;margin:0 auto}
+  header{text-align:center;padding:8px 0 20px}
+  header h1{font-size:1.6rem;letter-spacing:-.5px}
+  header .date{color:var(--muted);margin-top:4px;font-size:.95rem}
+  .badge{display:inline-block;margin-top:10px;padding:4px 12px;border-radius:999px;
+    background:rgba(74,222,128,.12);color:var(--green);font-size:.8rem;font-weight:600;
+    border:1px solid rgba(74,222,128,.3)}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;
+    padding:18px;margin-bottom:16px}
+  .sec-title{font-size:.78rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;
+    margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .green{color:var(--green)} .blue{color:var(--blue)} .yellow{color:var(--yellow)} .red{color:var(--red)}
+  .accent-green{border-left:3px solid var(--green)}
+  .accent-blue{border-left:3px solid var(--blue)}
+  .accent-red{border-left:3px solid var(--red)}
+  .course{font-size:1.15rem;font-weight:700;margin-bottom:6px}
+  .meta{color:var(--muted);font-size:.9rem;margin-bottom:3px}
+  .meta b{color:var(--text);font-weight:600}
+  .block{margin-top:14px}
+  .block .label{font-size:.8rem;font-weight:700;color:var(--text);margin-bottom:4px}
+  .block p{font-size:.92rem;color:#cfcfcf}
+  ul{list-style:none;margin-top:6px}
+  li{position:relative;padding-left:18px;margin-bottom:6px;font-size:.9rem;color:#cfcfcf}
+  li::before{content:"▸";position:absolute;left:0;color:var(--muted)}
+  .pill{display:inline-block;padding:2px 9px;border-radius:6px;font-size:.72rem;font-weight:700;margin-bottom:8px}
+  .pill-red{background:rgba(248,113,113,.13);color:var(--red);border:1px solid rgba(248,113,113,.3)}
+  .dl{padding:12px 14px;border-radius:10px;margin-bottom:10px;background:#161616;border:1px solid var(--border)}
+  .dl.red{border-color:rgba(248,113,113,.35)}
+  .dl.yellow{border-color:rgba(251,191,36,.3)}
+  .dl .head{font-weight:700;font-size:.95rem;margin-bottom:3px}
+  .dl .sub{font-size:.85rem;color:var(--muted)}
+  a{color:var(--blue);word-break:break-word}
+  .footer{text-align:center;color:var(--muted);font-size:.78rem;padding:10px 0 4px}
+  .note{font-size:.85rem;color:#cfcfcf;margin-top:6px}
 </style>
 </head>
 <body>
 <div class="wrap">
-
   <header>
-    <h1>Uni Daily Check</h1>
-    <div class="date">Donnerstag, 4. Juni 2026</div>
+    <h1>🎓 Uni Daily Check</h1>
+    <div class="date">Freitag, 5. Juni 2026</div>
     <div class="badge">Tages-Check</div>
   </header>
 
-  <div class="warn-strip">
-    🔴 <strong>Heute Nacht 23:59 fällig:</strong> Written Project Proposal (20%) + Video Pitch (10%) — beides EBC2158.
-  </div>
-
   <!-- HEUTE -->
-  <div class="section-title t-today">▍Heute · Donnerstag</div>
+  <div class="card accent-green">
+    <div class="sec-title green">● Heute</div>
+    <div class="course">EBC2158 · Entrepreneurship &amp; Small Business Management</div>
+    <div class="meta">⏰ <b>11:00–13:00</b> · 📍 TAP23 (X) 1.001</div>
+    <div class="meta">👩‍🏫 Zahra Ghasemian · Tutorial B</div>
+    <div class="pill pill-red" style="margin-top:10px">FINALE SESSION · Tutorial 12</div>
 
-  <div class="card">
-    <div class="course">Kein Tutorial heute 🎯</div>
-    <p class="meta">Heute steht kein Termin im Stundenplan – aber zwei Abgaben laufen heute Nacht aus. Der Tag gehört der Finalisierung.</p>
-  </div>
+    <div class="block">
+      <div class="label">📝 Thema: Pitch-Video &amp; Mock Investor Q&amp;A (Pitch Defence)</div>
+      <p>Letzte Session des Kurses. Role-Play-Simulation mit drei rotierenden Rollen: <b>Entrepreneurs</b> (pitchen ihr Venture), <b>Investors</b> (anderes Team + Tutorin stellen Fragen) und <b>Note-takers</b>. Pro Team 20 Min: 5 Min Video-Pitch abspielen + 15 Min Live-Q&amp;A. Bewertet (Pitch Defence = 10 %).</p>
+    </div>
 
-  <div class="card urgent">
-    <div class="course">Written Project Proposal <span class="pill pill-red">20% · heute 23:59</span></div>
-    <p class="meta">EBC2158 · Entrepreneurship & Small Business Management</p>
     <div class="block">
-      <span class="lbl">Was abgeben:</span>
+      <div class="label">✅ Heute vorbereiten / mitbringen</div>
       <ul>
-        <li>PDF, <strong>2000–2500 Wörter</strong> (exkl. Cover, Inhaltsverzeichnis, Referenzen, Anhang) – als zusammenhängender Fließtext, nicht in Stichpunkten</li>
-        <li>Deckblatt mit Titel, allen Namen + Matrikelnummern, Kurs, Tutor, Assignment</li>
-        <li>Separates <strong>AI-Statement</strong> (genutzte Tools + Prompts ODER Nicht-Nutzungs-Erklärung)</li>
-      </ul>
-    </div>
-    <div class="block">
-      <span class="lbl">Geforderte Struktur:</span>
-      <ul>
-        <li><strong>Business Idea & Opportunity</strong> – Problem, Zielkunde, Produkt/Wert, „gute" Opportunity (Feasibility, Ch. 3–5) + Ethik/Nachhaltigkeit</li>
-        <li><strong>Market Analysis & Competitive Positioning</strong> – Wettbewerber, Wettbewerbsvorteil, Trends, Risiken</li>
-        <li><strong>Marketing Strategy</strong> – Zielgruppe, Akquise/Retention, Pricing (Ch. 9 & 11)</li>
-        <li><strong>Financial Logic & Feasibility</strong> – Annahmen, Umsatz-/Kostenstruktur, <strong>Break-even-Analyse</strong> (Ch. 12 & 15)</li>
-        <li><strong>Anhang:</strong> Teamwork-Reflexion (~200 Wörter) + AI-Deklaration</li>
-      </ul>
-    </div>
-    <div class="tip">⚠️ APA 7. Referenzen <strong>echt</strong> prüfen – jede erfundene Quelle = −1 Punkt + Meldung an Board of Examiners. Fehlende AI-Deklaration = −1 Punkt. Kulanz: 2 h (bis 02:00), danach −1 Punkt/Tag.</div>
-  </div>
-
-  <div class="card urgent">
-    <div class="course">Video Pitch <span class="pill pill-red">10% · heute 23:59</span></div>
-    <p class="meta">EBC2158 · max. 5 Minuten</p>
-    <div class="block">
-      <span class="lbl">Was abgeben:</span>
-      <p>Video auf <strong>YouTube als „unlisted"</strong> hochladen → nur den Link in Canvas einreichen (kein File-Upload!).</p>
-    </div>
-    <div class="block">
-      <span class="lbl">Inhalt (überzeugende Investor-Story, kein Proposal-Abklatsch):</span>
-      <ul>
-        <li>Problem → Solution → Value Proposition (was macht euch einzigartig)</li>
-        <li>Target Market · Business-Model-Logik (wie verdient ihr Geld)</li>
-        <li>Ethik/Nachhaltigkeit · „Why this opportunity"</li>
-        <li>Alle Teammitglieder tragen bei · konsistent zum schriftlichen Proposal</li>
+        <li><b>Course evaluation</b> gleich zu Beginn ausfüllen: <a href="https://iwio-sbe.maastrichtuniversity.nl">iwio-sbe.maastrichtuniversity.nl</a> (~7 Min, Student-ID bereithalten).</li>
+        <li><b>Pitch-Defence vorbereiten:</b> Annahmen, Feasibility, getroffene Entscheidungen sowie Limitations &amp; Risiken durchdenken — die Investoren bohren nach.</li>
+        <li><b>Alle Teammitglieder physisch anwesend</b> — Online zählt als Abwesenheit (Bewertungskomponente!).</li>
+        <li>Video-Pitch-Link sollte bereits eingereicht sein (war gestern fällig).</li>
       </ul>
     </div>
   </div>
 
   <!-- MORGEN -->
-  <div class="section-title t-tomorrow">▍Morgen · Freitag, 5. Juni</div>
-
-  <div class="card">
-    <div class="course">EBC2158 – Tutorial 12 <span class="pill pill-blue">Finale</span></div>
-    <p class="meta"><span class="ic">⏰</span> 11:00 – 13:00 Uhr</p>
-    <p class="meta"><span class="ic">📍</span> TAP23 (X) 1.001 (Tapijnkazerne 23)</p>
-    <p class="meta"><span class="ic">👩‍🏫</span> Zahra Ghasemian</p>
+  <div class="card accent-blue">
+    <div class="sec-title blue">● Morgen · Samstag 6. Juni</div>
+    <p class="note">Keine Termine. Mit der heutigen Session ist <b>EBC2158 abgeschlossen</b>.</p>
     <div class="block">
-      <span class="lbl">Thema – Pitch Video Presentation & Investors Q&A:</span>
-      <p>Role-Play-Simulation mit drei rotierenden Rollen: <em>Entrepreneurs</em>, <em>Investors</em>, <em>Note-takers</em>. Wenn euer Team dran ist, spielt ihr euer 5-Min-Video ab und stellt euch einem <strong>15-Min Live-Q&A</strong>. Tutor + ein anderes Team agieren als Investoren. <strong>Der Q&A ist die bewertete Komponente</strong> – alle Mitglieder müssen aktiv beitragen und <strong>physisch anwesend</strong> sein (online nicht erlaubt). Am Ende wird die Kurs-Evaluation ausgefüllt.</p>
+      <div class="label">💡 Wochenende nutzen</div>
+      <p>Nächste große Sache: <b>EBC2022-Klausur am Mittwoch 10. Juni</b> (Management of Operations &amp; Product Development). Nutze das Wochenende zum Lernen — das ist jetzt die Priorität.</p>
     </div>
-    <div class="tip">💡 <strong>Heute Abend noch vorbereiten:</strong> Mind. <strong>eine Frage</strong> für ein anderes Team mitbringen. Auf Verteidigung vorbereiten: Annahmen begründen, Risiken/Limitationen, Feasibility (nur Kursthemen). Optional kleine Support-Slides (nicht benotet). Und: Video + AI-Statement müssen bis dahin eingereicht sein.</div>
   </div>
 
   <!-- DEADLINES -->
-  <div class="section-title t-deadline">▍Deadlines</div>
-
   <div class="card">
-    <div class="deadline-row">
-      <span class="dot">🔴</span>
-      <div class="d-body">
-        <strong>Written Proposal + Video Pitch</strong> (EBC2158)
-        <div class="d-when">Heute, Do 4. Juni · 23:59</div>
-      </div>
+    <div class="sec-title yellow">⏳ Deadlines</div>
+
+    <div class="dl red">
+      <div class="head red">🔴 EBC2022 Klausur — Mi 10. Juni</div>
+      <div class="sub">09:00–11:00 · MECC Westhal (Paul-Henri-Spaaklaan). In 5 Tagen — übers Wochenende vorbereiten.</div>
     </div>
-    <div class="deadline-row">
-      <span class="dot">🔴</span>
-      <div class="d-body">
-        <strong>EBC2022 KLAUSUR</strong> – Management of Operations & Product Development
-        <div class="d-when">Mi 10. Juni · 09:00 · MECC Westhal (Paul-Henri-Spaaklaan)</div>
-      </div>
+
+    <div class="dl red">
+      <div class="head red">🔴 Heute bewertet: Investor Q&amp;A (10 %)</div>
+      <div class="sub">Keine Abgabe — Bewertung erfolgt live in der Session. Physische Anwesenheit &amp; aktive Teilnahme nötig.</div>
+    </div>
+
+    <div class="dl yellow">
+      <div class="head yellow">⚠️ Video Pitch + Written Proposal (20 %) — war gestern 4. Juni fällig</div>
+      <div class="sub">Falls noch nicht eingereicht: 2h-Kulanz ist vorbei, jetzt −1 Punkt pro angefangenem Tag Verspätung. Bitte kurz checken, ob beides abgegeben ist.</div>
+    </div>
+
+    <div class="dl yellow">
+      <div class="head yellow">🟡 Course Assignment Attendance &amp; AI Statement — Mo 6. Juli</div>
+      <div class="sub">Nur relevant, falls 3 oder mehr Pflicht-Sessions verpasst wurden.</div>
     </div>
   </div>
-
-  <div class="tip">📘 <strong>Klausur-Prep EBC2022 (ab Wochenende):</strong> Recap-Slides sind seit gestern online (Modul „Other": <em>Recap Lecture MOPD-IB 2026.pdf</em>). Üben mit den Altklausuren (Modul „Old Exams" + „Meeting 12": First/Second Sit 2024-25 mit Antworten, 2022-23 & 2023-24 mit Lösungen). Wichtig fürs Rechnen: <em>Modelling Linear Programs.pdf</em> und <em>Testvision notation.pdf</em>.</div>
 
   <!-- ANKÜNDIGUNGEN -->
-  <div class="section-title t-info">▍Ankündigungen</div>
-
   <div class="card">
-    <div class="block" style="margin-top:0">
-      <span class="lbl">EBC2158 (01.06) – Mock Investor Q&A am Fr 05.06:</span>
-      <p>Erinnerung von Sergio & Kim: Jedes Team bereitet mind. eine Frage für ein anderes Team vor. Q&A ist bewertet, alle physisch anwesend, online nicht erlaubt. Optionale Support-Slides erlaubt (nicht benotet). Sicherstellen, dass Video-Pitch + AI-Statement eingereicht sind.</p>
-    </div>
-    <div class="block">
-      <span class="lbl">EBC2022 (03.06) – Recap-Lecture-Slides online:</span>
-      <p>Die Slides der Recap-Lecture von gestern sind im Modul „Other" veröffentlicht. (Veerle Timmermans)</p>
-    </div>
+    <div class="sec-title" style="color:var(--muted)">📣 Ankündigungen</div>
+    <ul>
+      <li><b>Heute:</b> Course-Evaluation zu Beginn der Pitch-Q&amp;A-Session ausfüllen (iwio-sbe, ~7 Min).</li>
+      <li><b>01.06.:</b> Die Q&amp;A-Session ist ein Role-Play mit rotierenden Rollen (Entrepreneurs / Investors / Note-takers) — jedes Team durchläuft jede Rolle.</li>
+    </ul>
   </div>
 
-  <footer>
-    Aktualisiert: Donnerstag, 4. Juni 2026
-  </footer>
-
+  <div class="footer">Aktualisiert: 5. Juni 2026 · automatischer Tages-Check</div>
 </div>
 </body>
 </html>
