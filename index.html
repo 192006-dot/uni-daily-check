@@ -5,128 +5,119 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Uni Daily Check</title>
 <style>
-  :root{
-    --bg:#0f0f0f; --text:#e0e0e0; --card:#1a1a1a; --border:#2a2a2a;
-    --green:#4ade80; --blue:#60a5fa; --yellow:#fbbf24; --red:#f87171; --muted:#888;
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0f0f0f; color: #e0e0e0;
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.55; padding: 16px;
   }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,sans-serif;
-       line-height:1.55;padding:16px;font-size:15px}
-  .wrap{max-width:600px;margin:0 auto}
-  header{text-align:center;margin-bottom:22px}
-  header h1{font-size:1.5rem;font-weight:700;letter-spacing:.3px}
-  header .date{color:var(--muted);margin-top:4px;font-size:.9rem}
-  .badge{display:inline-block;margin-top:10px;background:#1e293b;color:var(--blue);
-         padding:3px 12px;border-radius:20px;font-size:.78rem;font-weight:600}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;
-        padding:16px 18px;margin-bottom:16px}
-  .sec-title{font-size:.78rem;text-transform:uppercase;letter-spacing:1.2px;
-             font-weight:700;margin-bottom:10px}
-  .today .sec-title{color:var(--green)}
-  .tomorrow .sec-title{color:var(--blue)}
-  .deadlines .sec-title{color:var(--yellow)}
-  .urgent .sec-title{color:var(--red)}
-  .info .sec-title{color:var(--muted)}
-  .course{font-size:1.08rem;font-weight:700;margin-bottom:8px}
-  .meta{color:var(--muted);font-size:.9rem;margin-bottom:3px}
-  .meta b{color:var(--text);font-weight:600}
-  .block{margin-top:12px}
-  .block .lbl{font-weight:700;font-size:.85rem;margin-bottom:4px}
-  .topics{list-style:none;margin-top:6px}
-  .topics li{padding:6px 0;border-bottom:1px solid var(--border);font-size:.9rem}
-  .topics li:last-child{border-bottom:none}
-  .topics li b{color:var(--green)}
-  .pill{display:inline-block;background:#2a2a2a;border-radius:6px;padding:2px 8px;
-        font-size:.8rem;margin:3px 4px 0 0;color:#cbd5e1}
-  .hl-red{color:var(--red);font-weight:700}
-  .hl-yellow{color:var(--yellow);font-weight:600}
-  .urgent{border-color:#7f1d1d;background:#1c1212}
-  .note{font-size:.86rem;color:var(--muted);margin-top:8px}
-  a{color:var(--blue)}
-  footer{text-align:center;color:var(--muted);font-size:.78rem;margin-top:8px}
+  .wrap { max-width: 600px; margin: 0 auto; }
+  header { text-align: center; margin-bottom: 22px; }
+  header h1 { font-size: 1.5rem; color: #fff; }
+  header .date { color: #9ca3af; margin-top: 4px; font-size: 0.95rem; }
+  .badge {
+    display: inline-block; margin-top: 10px; padding: 4px 12px;
+    background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 999px;
+    font-size: 0.8rem; color: #9ca3af;
+  }
+  .card {
+    background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 14px;
+    padding: 16px 18px; margin-bottom: 16px;
+  }
+  .card h2 { font-size: 1.05rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .green { color: #4ade80; }
+  .blue  { color: #60a5fa; }
+  .yellow{ color: #fbbf24; }
+  .red   { color: #f87171; }
+  .lbl { font-weight: 600; }
+  .muted { color: #9ca3af; }
+  .row { margin: 7px 0; }
+  .big { font-size: 1.05rem; color: #fff; font-weight: 600; }
+  .item { border-left: 3px solid #2a2a2a; padding: 4px 0 4px 12px; margin: 12px 0; }
+  .item.yellow-b { border-color: #fbbf24; }
+  .item.blue-b { border-color: #60a5fa; }
+  .item .when { color: #9ca3af; font-size: 0.85rem; }
+  .item .cond { color: #fbbf24; font-size: 0.85rem; margin-top: 3px; }
+  a { color: #60a5fa; }
+  footer { text-align: center; color: #6b7280; font-size: 0.78rem; margin-top: 24px; }
+  .tip { background:#15210f; border:1px solid #294018; border-radius:10px; padding:10px 12px; margin-top:10px; }
+  .tip .green { font-weight:600; }
 </style>
 </head>
 <body>
 <div class="wrap">
+
   <header>
-    <h1>🎓 Uni Daily Check</h1>
-    <div class="date">Montag, 8. Juni 2026</div>
-    <div class="badge">Tages-Check · Klausurwoche</div>
+    <h1>📚 Uni Daily Check</h1>
+    <div class="date">Donnerstag, 11. Juni 2026</div>
+    <div class="badge">Tages-Check · Clara · Maastricht University</div>
   </header>
 
   <!-- HEUTE -->
-  <div class="card today">
-    <div class="sec-title">Heute · Montag</div>
-    <div class="course">Kein Tutorial heute — Lerntag</div>
-    <div class="meta">Diese Woche steht nur <b>eine</b> Veranstaltung im Stundenplan: die Klausur am Mittwoch.</div>
-    <div class="block">
-      <div class="lbl">💡 So nutzt du heute am besten:</div>
-      <ul class="topics">
-        <li><b>Alte Klausuren rechnen</b> — am repräsentativsten ist die <b>EBC2022 2024-2025 First Sit (mit Lösungen)</b> in Modul „Meeting 12". Zusätzlich vier weitere Sätze im Modul „Old Exams".</li>
-        <li><b>Linear Programming priorisieren</b> — 1 volle Frage ist garantiert, plus LP-Teile in anderen Aufgaben. Sets, Parameter, Entscheidungsvariablen, Zielfunktion, Constraints sicher beherrschen.</li>
-        <li><b>Sensitivity Report</b> verstehen: Shadow Price, Reduced Cost, Allowable Increase/Decrease.</li>
-      </ul>
-    </div>
-  </div>
+  <div class="card">
+    <h2 class="green">🟢 Heute · Donnerstag</h2>
+    <div class="big">Keine Vorlesungen oder Tutorials.</div>
+    <p class="muted row">Periode 5 ist vorbei — das Examen <b>Management of Operations &amp; Product Development</b> (EBC2022) war gestern, 10. Juni. Bis zum Start von Periode 6 (22. Juni) stehen keine Termine an.</p>
 
-  <!-- KLAUSUR-SCOPE -->
-  <div class="card info">
-    <div class="sec-title">📋 Klausur-Übersicht (aus dem Recap Lecture 2026)</div>
-    <div class="meta"><b>Format:</b> 120 Min · Testvision · 4 offene Fragen mit Unterfragen · je 10 Pkt · 40 gesamt · <b>22/40 zum Bestehen</b></div>
-    <div class="meta"><b>Aufbau:</b> 1 volle LP-Frage + 3 Fragen zu den übrigen Themen (z. T. auch mit LP). Fragen ähneln stark den Tutorial-Aufgaben.</div>
-    <div class="meta"><b>Erlaubt:</b> Casio Fx-82 oder Fx-85. Kein Formelblatt!</div>
-    <div class="meta"><b>Gestellt:</b> Tabelle mit Kontrollgrenzen + z-Werte-Tabelle + Schmierpapier.</div>
-    <div class="block">
-      <div class="lbl">Prüfungsstoff — 7 Themen + LP:</div>
-      <ul class="topics">
-        <li><b>1 · Decision Trees</b> — Certainty/Risk/Uncertainty; EMV; Maximax, Maximin, Laplace, Minimax-Regret; EVPI; Decision Trees; Sensitivitätsanalyse.</li>
-        <li><b>2 · Location Planning</b> — (Weighted) Center of Gravity; Manhattan-/Euklidische Distanz; optimale Lösung via LP.</li>
-        <li><b>3 · Quality Control</b> — Kontrollgrenzen für Mittelwert (X̄ ± A₂R̄) &amp; Range (D₃R̄, D₄R̄); statistische Kontrolle (≤0,26% außerhalb); Prozessfähigkeit (Cp &gt; 1,33).</li>
-        <li><b>4 · Aggregate Planning</b> — Chase Plan vs. Level Plan; optimaler Plan via LP.</li>
-        <li><b>5 · Inventory Management</b> — EOQ = √(2DS/H) (D &amp; H gleiche Zeiteinheit!); Reorder Point ROP = d̄·LT + z·σ_d·√LT.</li>
-        <li><b>6 · Scheduling</b> — Johnson's Rule (Makespan, 2-Maschinen-Flow-Shop); Sequencing FCFS, SPT, EDD, CR, S/O.</li>
-        <li><b>7 · Project Management</b> — AoN-Diagramm; ES/EF/LS/LF + Slack; kritischer Pfad; Crashing (Heuristik &amp; LP).</li>
-        <li><b>LP-Querschnitt</b> — Domain-, Demand-, Supply-, Flow-Balance-, Linking-Constraints; Sensitivity Report lesen.</li>
-      </ul>
+    <div class="tip">
+      <div class="green">💡 Sinnvoll heute:</div>
+      <div class="row">📝 <b>Klausurlösungen sind online</b> — Stan van Hoesel hat die EBC2022-Examenfragen mit Lösungen hochgeladen. Canvas-Modul <i>„First Sit Exam and Second Sit Exam + Solutions"</i>. Geh deine Antworten durch, solange das Examen noch frisch ist.</div>
+      <div class="row">😌 Ansonsten: durchatmen nach dem Examen. Nichts ist dringend.</div>
     </div>
-    <div class="note">Testvision-Notation (Formeleditor, Summenzeichen, Subscript) vorab im PDF „Testvision notation" auf Canvas anschauen.</div>
   </div>
 
   <!-- MORGEN -->
-  <div class="card tomorrow">
-    <div class="sec-title">Morgen · Dienstag 9. Juni</div>
-    <div class="course">Letzter Lerntag vor der Klausur</div>
-    <div class="meta">Kein Termin im Stundenplan — voll zum Üben nutzen.</div>
-    <div class="block">
-      <div class="lbl">Heute Abend / morgen einplanen:</div>
-      <ul class="topics">
-        <li>Mindestens <b>eine alte Klausur unter Zeit (120 Min, am Computer)</b> komplett durchrechnen — am besten First Sit 24/25.</li>
-        <li>Schwächste Themen gezielt nacharbeiten (Tutorial-Aufgaben neu rechnen).</li>
-        <li>Casio Fx-82/85 bereitlegen &amp; Funktionen checken. z-Werte &amp; Kontrollgrenzen-Tabellen werden gestellt.</li>
-      </ul>
+  <div class="card">
+    <h2 class="blue">🔵 Morgen &amp; Wochenende · Fr 12. – So 14. Juni</h2>
+    <div class="big">Ebenfalls keine Termine.</div>
+    <p class="muted row">Freies Wochenende. Heute Abend nichts vorzubereiten.</p>
+    <div class="item blue-b">
+      <div class="lbl">Nächster Kurs: Communication and Leadership (EBS2019)</div>
+      <div class="when">Start Montag, 22. Juni · 08:30 · TAP11 D0.012 (Tutorial Woche 1)</div>
+      <div class="muted" style="font-size:0.85rem;margin-top:3px;">Erst in 11 Tagen — noch nichts zu tun. Vorbereitungsmaterial erscheint i.d.R. kurz vor Start auf Canvas.</div>
     </div>
   </div>
 
-  <!-- DEADLINE / KLAUSUR -->
-  <div class="card urgent">
-    <div class="sec-title">🔴 Mittwoch · Klausur</div>
-    <div class="course">EBC2022 — Management of Operations &amp; Product Development</div>
-    <div class="meta">⏰ <b>10. Juni · 09:00–11:00</b></div>
-    <div class="meta">📍 <b>MECC Westhal</b> (Paul-Henri-Spaaklaan)</div>
-    <div class="note hl-red">Rechtzeitig da sein, Casio-Rechner mitbringen. 120 Min, 22/40 zum Bestehen.</div>
+  <!-- DEADLINES -->
+  <div class="card">
+    <h2 class="yellow">🟡 Deadlines im Blick</h2>
+    <p class="muted row" style="font-size:0.88rem;">In den nächsten 7 Tagen keine festen Abgaben. Die folgenden sind <b>Resit-/Bedingt-Aufgaben</b> — nur relevant, falls sie auf dich zutreffen:</p>
+
+    <div class="item yellow-b">
+      <div class="lbl">Corporate Governance (EBC2020) — Round 2 / Resit</div>
+      <div class="when">Fr 19. Juni, 21:59</div>
+      <div class="cond">⚠️ Nur falls Round 1 nicht bestanden: Individual Paper (Round 2) + Statement of Originality + Participation-Resit.</div>
+    </div>
+
+    <div class="item yellow-b">
+      <div class="lbl">Management Information Systems (EBC2003) — Course Assignment</div>
+      <div class="when">Fr 19. Juni, 17:00</div>
+      <div class="cond">⚠️ Nur falls du mehr als 3 Tutorials verpasst hast.</div>
+    </div>
+
+    <div class="item yellow-b">
+      <div class="lbl">Entrepreneurship &amp; Small Business (EBC2158) — Attendance + AI-Statement</div>
+      <div class="when">Mo 6. Juli, 21:59</div>
+      <div class="cond">⚠️ Nur falls du 3+ Pflichtsessions verpasst hast.</div>
+    </div>
+
+    <div class="item yellow-b">
+      <div class="lbl">Management of Operations (EBC2022) — Course Assignment</div>
+      <div class="when">Di 7. Juli, 21:59</div>
+      <div class="cond">⚠️ Nur falls 3+ Tutorials verpasst (handschriftl. Lösungen + Excel + kleines mündliches Examen Resit-Woche 9./10. Juli) ODER Sports-Inc-Case nicht bestanden (neuer Case in der Examenwoche).</div>
+    </div>
   </div>
 
-  <!-- WEITERE DEADLINES -->
-  <div class="card deadlines">
-    <div class="sec-title">✅ Weitere Hinweise</div>
-    <ul class="topics">
-      <li><b>Resit:</b> Woche 6.–10. Juli, gleiche Struktur/Niveau. Genaues Datum erst Freitag davor.</li>
-      <li><b>Nur falls zutreffend</b> — 3+ verpasste Tutorials: handschriftliche Lösungen + Excel bis <span class="hl-yellow">Di 7. Juli</span> + kleine mündliche Prüfung. Sports-Inc-Case nicht bestanden: neuer Case bis <span class="hl-yellow">Di 6. Juli</span>. Kontakt: vm.timmermans@maastrichtuniversity.nl</li>
-      <li class="note">Im Planner stehen außerdem Resit-Abgaben anderer Kurse (MIS, Corporate Governance) zum 19. Juni — nur relevant, falls du dort an der Nachprüfung teilnimmst.</li>
-    </ul>
+  <!-- ANKÜNDIGUNGEN / ADMIN -->
+  <div class="card">
+    <h2 class="yellow">📢 Ankündigungen &amp; Admin</h2>
+    <div class="row">📝 <span class="lbl">EBC2022:</span> <span class="muted">Examenfragen + Lösungen vom 10. Juni sind im Canvas-Modul verfügbar. Fehler bitte an s.vanhoesel@maastrichtuniversity.nl.</span></div>
+    <div class="row">📝 <span class="lbl">EBC2003 (MIS):</span> <span class="muted">First-Sit Exam Inspection Assessment ist online — nur für Studierende, die zur Inspektion erschienen sind und Kommentare eingereicht haben.</span></div>
+    <div class="row">🗓️ <span class="lbl">Admin Periode 6:</span> <span class="muted">Exam-(De)Registration öffnet 27. Juni. Course Registration Periode 1 schließt 15. Juli — stell sicher, dass du angemeldet bist.</span></div>
   </div>
 
-  <footer>Aktualisiert: 8. Juni 2026, 09:05 CEST</footer>
+  <footer>Aktualisiert: 11. Juni 2026, 08:05</footer>
+
 </div>
 </body>
 </html>
