@@ -5,119 +5,89 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Uni Daily Check</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: #0f0f0f; color: #e0e0e0;
-    font-family: system-ui, -apple-system, sans-serif;
-    line-height: 1.55; padding: 16px;
-  }
-  .wrap { max-width: 600px; margin: 0 auto; }
-  header { text-align: center; margin-bottom: 22px; }
-  header h1 { font-size: 1.5rem; color: #fff; }
-  header .date { color: #9ca3af; margin-top: 4px; font-size: 0.95rem; }
-  .badge {
-    display: inline-block; margin-top: 10px; padding: 4px 12px;
-    background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 999px;
-    font-size: 0.8rem; color: #9ca3af;
-  }
-  .card {
-    background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 14px;
-    padding: 16px 18px; margin-bottom: 16px;
-  }
-  .card h2 { font-size: 1.05rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
-  .green { color: #4ade80; }
-  .blue  { color: #60a5fa; }
-  .yellow{ color: #fbbf24; }
-  .red   { color: #f87171; }
-  .lbl { font-weight: 600; }
-  .muted { color: #9ca3af; }
-  .row { margin: 7px 0; }
-  .big { font-size: 1.05rem; color: #fff; font-weight: 600; }
-  .item { border-left: 3px solid #2a2a2a; padding: 4px 0 4px 12px; margin: 12px 0; }
-  .item.yellow-b { border-color: #fbbf24; }
-  .item.blue-b { border-color: #60a5fa; }
-  .item .when { color: #9ca3af; font-size: 0.85rem; }
-  .item .cond { color: #fbbf24; font-size: 0.85rem; margin-top: 3px; }
-  a { color: #60a5fa; }
-  footer { text-align: center; color: #6b7280; font-size: 0.78rem; margin-top: 24px; }
-  .tip { background:#15210f; border:1px solid #294018; border-radius:10px; padding:10px 12px; margin-top:10px; }
-  .tip .green { font-weight:600; }
+  body { background:#0f0f0f; color:#e0e0e0; font-family:system-ui,-apple-system,sans-serif; margin:0; padding:16px; }
+  .wrap { max-width:600px; margin:0 auto; }
+  .card { background:#1a1a1a; border:1px solid #2a2a2a; border-radius:12px; padding:16px; margin-bottom:16px; }
+  h1 { font-size:1.4em; margin:0 0 4px; }
+  h2 { font-size:1.05em; margin:0 0 10px; }
+  .date { color:#888; font-size:0.9em; }
+  .badge { display:inline-block; background:#2a2a2a; color:#4ade80; border-radius:99px; padding:2px 10px; font-size:0.75em; margin-top:6px; }
+  .green { color:#4ade80; } .blue { color:#60a5fa; } .yellow { color:#fbbf24; } .red { color:#f87171; }
+  .item { border-left:3px solid #2a2a2a; padding:8px 12px; margin:10px 0; }
+  .item.green { border-color:#4ade80; color:#e0e0e0; }
+  .item.blue { border-color:#60a5fa; color:#e0e0e0; }
+  .item.yellow { border-color:#fbbf24; color:#e0e0e0; }
+  .item.red { border-color:#f87171; color:#e0e0e0; }
+  .meta { color:#888; font-size:0.85em; }
+  p { line-height:1.5; margin:6px 0; }
+  ul { margin:6px 0; padding-left:20px; } li { margin:4px 0; line-height:1.45; }
+  .footer { color:#666; font-size:0.8em; text-align:center; margin-top:24px; }
+  strong { color:#fff; }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <header>
-    <h1>📚 Uni Daily Check</h1>
-    <div class="date">Donnerstag, 11. Juni 2026</div>
-    <div class="badge">Tages-Check · Clara · Maastricht University</div>
-  </header>
-
-  <!-- HEUTE -->
   <div class="card">
-    <h2 class="green">🟢 Heute · Donnerstag</h2>
-    <div class="big">Keine Vorlesungen oder Tutorials.</div>
-    <p class="muted row">Periode 5 ist vorbei — das Examen <b>Management of Operations &amp; Product Development</b> (EBC2022) war gestern, 10. Juni. Bis zum Start von Periode 6 (22. Juni) stehen keine Termine an.</p>
+    <h1>Uni Daily Check</h1>
+    <div class="date">Freitag, 12. Juni 2026</div>
+    <span class="badge">Tages-Check</span>
+  </div>
 
-    <div class="tip">
-      <div class="green">💡 Sinnvoll heute:</div>
-      <div class="row">📝 <b>Klausurlösungen sind online</b> — Stan van Hoesel hat die EBC2022-Examenfragen mit Lösungen hochgeladen. Canvas-Modul <i>„First Sit Exam and Second Sit Exam + Solutions"</i>. Geh deine Antworten durch, solange das Examen noch frisch ist.</div>
-      <div class="row">😌 Ansonsten: durchatmen nach dem Examen. Nichts ist dringend.</div>
+  <div class="card">
+    <h2 class="green">📅 Heute — Freitag 12.06.</h2>
+    <p><strong>Keine Uni-Termine.</strong> Periode 5 ist abgeschlossen — die EBC2022-Klausur (Management of Operations &amp; Product Development) war am Mittwoch, 10. Juni. 🎉</p>
+    <div class="item green">
+      <strong>💡 Optional heute:</strong>
+      <ul>
+        <li><strong>EBC2022:</strong> Stan van Hoesel hat die Klausurfragen <em>mit Lösungen</em> auf Canvas gestellt (Modul „First Sit Exam and Second Sit Exam + Solutions&ldquo;). Kurz drüberschauen lohnt sich — Fehler in den Lösungen kann man ihm per Mail melden, Kommentare zur eigenen Klausur über TestVision.</li>
+        <li><strong>EBC2003 (MIS):</strong> Wer bei der Exam Inspection war: Das Inspection-Assessment des First Sit ist jetzt im Modules-Menü einsehbar.</li>
+      </ul>
     </div>
   </div>
 
-  <!-- MORGEN -->
   <div class="card">
-    <h2 class="blue">🔵 Morgen &amp; Wochenende · Fr 12. – So 14. Juni</h2>
-    <div class="big">Ebenfalls keine Termine.</div>
-    <p class="muted row">Freies Wochenende. Heute Abend nichts vorzubereiten.</p>
-    <div class="item blue-b">
-      <div class="lbl">Nächster Kurs: Communication and Leadership (EBS2019)</div>
-      <div class="when">Start Montag, 22. Juni · 08:30 · TAP11 D0.012 (Tutorial Woche 1)</div>
-      <div class="muted" style="font-size:0.85rem;margin-top:3px;">Erst in 11 Tagen — noch nichts zu tun. Vorbereitungsmaterial erscheint i.d.R. kurz vor Start auf Canvas.</div>
+    <h2 class="blue">🌤 Morgen &amp; Wochenende</h2>
+    <p><strong>Komplett frei.</strong> Samstag, Sonntag und auch die ganze nächste Woche (15.–19.06.) stehen keine Termine im Stundenplan.</p>
+    <div class="item blue">
+      <strong>Nächster Termin:</strong> Montag, <strong>22. Juni</strong>, 08:30–10:30<br>
+      <span class="meta">EBS2019 — Communication and Leadership Skills, Tutorial Woche 1<br>
+      Raum TAP11 D0.012 (Tapijnkazerne 11) · Tutorin: Kim van Cruchten<br>
+      Weitere Sessions: Mi 24.06. + Do 25.06., jeweils 08:30–10:30, gleicher Raum</span>
+      <p class="meta">⚠️ Der Kurs ist auf Canvas noch nicht freigeschaltet — Vorbereitungsmaterial ist daher noch nicht einsehbar. Sobald die Canvas-Seite live ist, checken wir die Pages.</p>
     </div>
   </div>
 
-  <!-- DEADLINES -->
   <div class="card">
-    <h2 class="yellow">🟡 Deadlines im Blick</h2>
-    <p class="muted row" style="font-size:0.88rem;">In den nächsten 7 Tagen keine festen Abgaben. Die folgenden sind <b>Resit-/Bedingt-Aufgaben</b> — nur relevant, falls sie auf dich zutreffen:</p>
-
-    <div class="item yellow-b">
-      <div class="lbl">Corporate Governance (EBC2020) — Round 2 / Resit</div>
-      <div class="when">Fr 19. Juni, 21:59</div>
-      <div class="cond">⚠️ Nur falls Round 1 nicht bestanden: Individual Paper (Round 2) + Statement of Originality + Participation-Resit.</div>
+    <h2 class="yellow">✅ Deadlines &amp; Fristen</h2>
+    <p class="meta">Die Canvas-Deadlines der nächsten Wochen sind alle konditional — nur relevant, falls eines davon auf dich zutrifft:</p>
+    <div class="item yellow">
+      <strong>Fr 19.06. — nur falls zutreffend:</strong>
+      <ul>
+        <li><strong>EBC2003 MIS</strong> Course Assignment (17:00) — nur für Studierende, die <em>mehr als 3 Tutorials</em> verpasst haben.</li>
+        <li><strong>EBC2020 Corporate Governance Resit</strong> (23:59): Individual Paper Round 2 + Statement of Originality + Participation-Resit — nur falls Round 1 nicht bestanden.</li>
+      </ul>
     </div>
-
-    <div class="item yellow-b">
-      <div class="lbl">Management Information Systems (EBC2003) — Course Assignment</div>
-      <div class="when">Fr 19. Juni, 17:00</div>
-      <div class="cond">⚠️ Nur falls du mehr als 3 Tutorials verpasst hast.</div>
+    <div class="item yellow">
+      <strong>Di 07.07. — EBC2022 Course Assignment</strong> — nur bei 3+ verpassten Tutorials (handschriftliche Lösungen + Excel-Dateien nachreichen, kleines mündliches Examen in der Resit-Woche 9./10. Juli). Falls der Sports-Inc-Case nicht bestanden wurde: neuer Case in der Examenswoche + Präsentation in der Resit-Woche.
     </div>
-
-    <div class="item yellow-b">
-      <div class="lbl">Entrepreneurship &amp; Small Business (EBC2158) — Attendance + AI-Statement</div>
-      <div class="when">Mo 6. Juli, 21:59</div>
-      <div class="cond">⚠️ Nur falls du 3+ Pflichtsessions verpasst hast.</div>
-    </div>
-
-    <div class="item yellow-b">
-      <div class="lbl">Management of Operations (EBC2022) — Course Assignment</div>
-      <div class="when">Di 7. Juli, 21:59</div>
-      <div class="cond">⚠️ Nur falls 3+ Tutorials verpasst (handschriftl. Lösungen + Excel + kleines mündliches Examen Resit-Woche 9./10. Juli) ODER Sports-Inc-Case nicht bestanden (neuer Case in der Examenwoche).</div>
+    <div class="item red">
+      <strong>🗓 Organisatorisch (für alle relevant):</strong>
+      <ul>
+        <li><strong>Exam-(De-)Registration Periode 6:</strong> öffnet 27.06., schließt <strong>Mi 01.07., 23:59</strong>.</li>
+        <li><strong>Kursregistrierung Studienjahr 2026/27, Periode 1:</strong> schließt <strong>Mi 15.07., 23:59</strong> — rechtzeitig Kurse wählen!</li>
+      </ul>
     </div>
   </div>
 
-  <!-- ANKÜNDIGUNGEN / ADMIN -->
   <div class="card">
-    <h2 class="yellow">📢 Ankündigungen &amp; Admin</h2>
-    <div class="row">📝 <span class="lbl">EBC2022:</span> <span class="muted">Examenfragen + Lösungen vom 10. Juni sind im Canvas-Modul verfügbar. Fehler bitte an s.vanhoesel@maastrichtuniversity.nl.</span></div>
-    <div class="row">📝 <span class="lbl">EBC2003 (MIS):</span> <span class="muted">First-Sit Exam Inspection Assessment ist online — nur für Studierende, die zur Inspektion erschienen sind und Kommentare eingereicht haben.</span></div>
-    <div class="row">🗓️ <span class="lbl">Admin Periode 6:</span> <span class="muted">Exam-(De)Registration öffnet 27. Juni. Course Registration Periode 1 schließt 15. Juli — stell sicher, dass du angemeldet bist.</span></div>
+    <h2>📣 Ankündigungen</h2>
+    <div class="item">
+      <strong>BEELab (11.06.):</strong> Das Behavioral &amp; Experimental Economics Lab sucht Teilnehmer:innen für bezahlte Experimente — Anmeldung über neues System nötig (auch für frühere Teilnehmer). Lab gegenüber dem SBE-Hauptgebäude, Tongersestraat 49A.
+    </div>
   </div>
 
-  <footer>Aktualisiert: 11. Juni 2026, 08:05</footer>
-
+  <div class="footer">Aktualisiert: Freitag, 12.06.2026 · 08:15 Uhr</div>
 </div>
 </body>
 </html>
