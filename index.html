@@ -5,91 +5,134 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Uni Daily Check</title>
 <style>
-  body { background:#0f0f0f; color:#e0e0e0; font-family:system-ui,-apple-system,sans-serif; margin:0; padding:16px; }
-  .wrap { max-width:600px; margin:0 auto; }
-  .card { background:#1a1a1a; border:1px solid #2a2a2a; border-radius:12px; padding:16px; margin-bottom:16px; }
-  h1 { font-size:1.4em; margin:0 0 4px; }
-  h2 { font-size:1.05em; margin:0 0 10px; }
-  .date { color:#888; font-size:0.9em; }
-  .badge { display:inline-block; background:#2a2a2a; color:#4ade80; border-radius:99px; padding:2px 10px; font-size:0.75em; margin-top:6px; }
-  .green { color:#4ade80; } .blue { color:#60a5fa; } .yellow { color:#fbbf24; } .red { color:#f87171; }
-  .item { border-left:3px solid #2a2a2a; padding:8px 12px; margin:10px 0; }
-  .item.green { border-color:#4ade80; color:#e0e0e0; }
-  .item.blue { border-color:#60a5fa; color:#e0e0e0; }
-  .item.yellow { border-color:#fbbf24; color:#e0e0e0; }
-  .item.red { border-color:#f87171; color:#e0e0e0; }
-  .meta { color:#888; font-size:0.85em; }
-  p { line-height:1.5; margin:6px 0; }
-  ul { margin:6px 0; padding-left:20px; } li { margin:4px 0; line-height:1.45; }
-  .footer { color:#666; font-size:0.8em; text-align:center; margin-top:24px; }
-  strong { color:#fff; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0f0f0f; color: #e0e0e0; font-family: system-ui, -apple-system, sans-serif;
+         line-height: 1.55; padding: 16px; }
+  .wrap { max-width: 600px; margin: 0 auto; }
+  header { text-align: center; margin-bottom: 22px; }
+  header h1 { font-size: 1.5rem; color: #fff; }
+  header .date { color: #9a9a9a; font-size: .95rem; margin-top: 4px; }
+  .badge { display: inline-block; margin-top: 10px; background: #1e2a1e; color: #4ade80;
+           border: 1px solid #2f4a2f; font-size: .75rem; padding: 3px 12px; border-radius: 999px; }
+  .card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 14px;
+          padding: 16px 18px; margin-bottom: 16px; }
+  .card h2 { font-size: 1.05rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .h-today { color: #4ade80; } .h-tom { color: #60a5fa; }
+  .h-dl { color: #f87171; } .h-hint { color: #fbbf24; }
+  .sub { font-size: .82rem; color: #8a8a8a; text-transform: uppercase; letter-spacing: .04em;
+         margin: 14px 0 4px; }
+  .item { margin-bottom: 12px; }
+  .item .title { font-weight: 600; color: #fff; }
+  .meta { font-size: .9rem; color: #b5b5b5; margin-top: 2px; }
+  .lit { font-size: .92rem; }
+  .lit li { margin: 4px 0 4px 18px; }
+  .pill { display:inline-block; font-size:.72rem; padding:2px 9px; border-radius:999px; margin-left:6px; vertical-align:middle;}
+  .pill-red { background:#2e1818; color:#f87171; border:1px solid #4a2f2f;}
+  .pill-yel { background:#2e2a16; color:#fbbf24; border:1px solid #4a432f;}
+  .pill-blue{ background:#16212e; color:#60a5fa; border:1px solid #2f3f4a;}
+  .dl { border-left: 3px solid #2a2a2a; padding-left: 12px; margin-bottom: 14px; }
+  .dl.red { border-color: #f87171; } .dl.yellow { border-color: #fbbf24; } .dl.blue { border-color: #60a5fa; }
+  .dl .when { font-size: .8rem; color: #9a9a9a; }
+  .dl .what { font-weight: 600; color: #fff; }
+  .dl .note { font-size: .88rem; color: #b5b5b5; margin-top: 3px; }
+  .empty { color: #9a9a9a; font-style: italic; }
+  a { color: #60a5fa; text-decoration: none; word-break: break-all; }
+  footer { text-align: center; color: #6a6a6a; font-size: .8rem; margin-top: 18px; }
+  .tip { background:#181610; border:1px solid #3a3320; border-radius:10px; padding:12px 14px;
+         font-size:.92rem; color:#e9d9a8; margin-top:10px;}
 </style>
 </head>
 <body>
 <div class="wrap">
+  <header>
+    <h1>🎓 Uni Daily Check</h1>
+    <div class="date">Montag, 15. Juni 2026</div>
+    <div class="badge">Tages-Check</div>
+  </header>
 
-<div class="card">
-  <h1>Uni Daily Check</h1>
-  <div class="date">Freitag, 12. Juni 2026</div>
-  <span class="badge">Tages-Check</span>
-</div>
+  <!-- HEUTE -->
+  <div class="card">
+    <h2 class="h-today">📅 Heute</h2>
+    <p class="empty">Kein Tutorial, keine Vorlesung — Pause zwischen Periode 5 (Klausur war am 10.06.) und Periode 6.</p>
+    <div class="tip">
+      💡 <strong>Nutze die freien Tage für den Start von „Communication and Leadership Skills" am Mo 22.06.</strong>
+      Das ist ein 2-wöchiger Skills-Block (6 Sessions in ~2 Wochen) — leg mit der Vorbereitung für Tutorial 1 los (siehe „Kommt als Nächstes").
+      Falls für dich Resits anstehen: die Corporate-Governance-Abgabe ist schon <strong>Freitag 19.06.</strong> (siehe Deadlines).
+    </div>
+  </div>
 
-<div class="card">
-  <h2 class="green">📅 Heute</h2>
-  <p><strong>Keine Termine.</strong> Periode 5 ist abgeschlossen — die MOPD-Klausur (EBC2022) war am Mittwoch (10.06.), bei Entrepreneurship (EBC2158) ist alles eingereicht.</p>
-  <div class="item green">
-    <strong>🎉 Noten sind da (Periode 4):</strong>
-    <ul>
-      <li><strong>Corporate Governance (EBC2020):</strong> Endnote <strong>8.5</strong> (Individual Paper: 9.0, Participation: 8.5)</li>
-      <li><strong>Management Information Systems (EBC2003):</strong> Endnote <strong>8.5</strong> (Exam: 8.5, Group Work: 8.0)</li>
+  <!-- VORSCHAU / KOMMENDE WOCHE -->
+  <div class="card">
+    <h2 class="h-tom">🔵 Kommt als Nächstes — ab Mo 22.06.</h2>
+    <div class="item">
+      <div class="title">Communication and Leadership Skills (EBS2019)<span class="pill pill-blue">Tutorial 1</span></div>
+      <div class="meta">⏰ Mo 22.06., 08:30–10:30 · 📍 TAP11, Raum D0.012</div>
+      <div class="meta">👩‍🏫 Kim van Cruchten · weitere Sessions: Mi 24.06., Do 25.06., Mo 29.06. …</div>
+    </div>
+
+    <div class="sub">📝 Thema Tutorial 1 — „Meeting Minds: Building Connections and Awareness"</div>
+    <p>Selbst-Reflexion zum Einstieg: Wer bist du im Umgang mit anderen, was willst du im Kurs entwickeln?
+       Kennenlernen der Tutorial-Gruppe (es wird viel in Paaren/Kleinteams gearbeitet) und ein erstes Verständnis davon,
+       was „Kommunikation" und „Leadership" überhaupt bedeuten.</p>
+
+    <div class="sub">📚 Pflichtlektüre (vorab lesen!)</div>
+    <ul class="lit">
+      <li>📃 <strong>Gordon, T. (2001)</strong> — Leader Effectiveness Training (L.E.T.), <strong>Kapitel 1</strong></li>
+      <li>📃 <strong>Marvin Bower (1997):</strong> „Developing Leaders in a Business" — McKinsey &amp; Company (Online-Artikel)</li>
+      <li>🎥 <strong>Daniel Ofman (2017):</strong> „Core Qualities and the Core Quadrant" (YouTube-Video)</li>
     </ul>
-    <p class="meta">Beide Kurse bestanden — die Resit-Deadlines am 19.06. betreffen dich NICHT.</p>
+
+    <div class="sub">✍️ Vor der Session vorbereiten — Personal SWOT</div>
+    <p class="lit">Fülle die <strong>Personal SWOT</strong> auf Basis der Kernqualitäten-Quadranten von Ofman (2001) aus
+       (Vorlage: „Personal SWOT Analysis Core Qualities.pdf" in Canvas). Mindestens <strong>3 Quadranten</strong> ausfüllen,
+       dann eine Liste deiner Stärken &amp; Schwächen im Umgang mit Menschen / in einer Leadership-Rolle
+       (Studierendenorga, Job, WG, Sportverein, Familie, Tutorial-Subgruppe …).</p>
+
+    <div class="tip">
+      ⚠️ <strong>Wichtig zum Bestehen:</strong> Pass/Fail-Kurs. Anwesenheit bei <strong>mind. 5 von 6 Sessions</strong> Pflicht —
+      mehr als 1 Fehltermin = Kurs muss wiederholt werden (kein Resit!). Auch das <strong>Team Assignment</strong> hat keinen Resit.
+    </div>
   </div>
-  <div class="item yellow">
-    <strong>💡 MOPD-Klausur nacharbeiten (optional):</strong> Van Hoesel hat die Klausurfragen mit Lösungen auf Canvas gestellt (Modul „First Sit Exam and Second Sit Exam + Solutions"). Fehler kannst du per Mail/Testvision melden — lohnt sich kurz reinzuschauen, falls du Punkte anfechten willst.
+
+  <!-- DEADLINES -->
+  <div class="card">
+    <h2 class="h-dl">✅ Deadlines</h2>
+
+    <div class="dl red">
+      <div class="when">🔴 Freitag, 19.06. (~22:00–23:59)</div>
+      <div class="what">Corporate Governance (EBC2020) — Resit Round 2 <span class="pill pill-red">nur falls Resit nötig</span></div>
+      <div class="note">Individual Paper (Round 2 resit) + Statement of Originality + Participation/Attendance resit.
+        Nur relevant, wenn du Round 1 nicht bestanden hast — dann aber dringend, da diese Woche fällig.</div>
+    </div>
+
+    <div class="dl yellow">
+      <div class="when">🟡 Freitag, 19.06. (17:00)</div>
+      <div class="what">Management Information Systems (EBC2003) — Course Assignment <span class="pill pill-yel">bedingt</span></div>
+      <div class="note">Laut Canvas nur für Studierende, die mehr als 3 Tutorials verpasst haben. Sonst ignorieren.</div>
+    </div>
+
+    <div class="dl blue">
+      <div class="when">🔵 Montag, 29.06. (18:00)</div>
+      <div class="what">Communication &amp; Leadership Skills — Team Assignment + In-class Skill Practice</div>
+      <div class="note">Während des Kurses. Team Assignment ist Gruppenarbeit ohne Resit-Option — früh ins Team einbringen.</div>
+    </div>
+
+    <div class="dl blue">
+      <div class="when">🔵 Freitag, 03.07. (21:00)</div>
+      <div class="what">Communication &amp; Leadership Skills — Learning Journal</div>
+      <div class="note">Individuelle Abgabe (Resit möglich). Tipp: schon ab Tutorial 1 laufend Notizen/Reflexionen sammeln.</div>
+    </div>
   </div>
-</div>
 
-<div class="card">
-  <h2 class="blue">📅 Morgen: Samstag, 13. Juni</h2>
-  <p>Keine Termine, keine Abgaben. <strong>Freies Wochenende</strong> — bis zum Start von Periode 6 (Skill) am 22.06. ist vorlesungsfrei.</p>
-</div>
-
-<div class="card">
-  <h2 class="blue">🔭 Ausblick: Periode 6</h2>
-  <div class="item blue">
-    <strong>EBS2019 — Communication and Leadership Skills</strong><br>
-    Erstes Tutorial: <strong>Montag, 22.06., 13:30–17:00</strong> · TAP11 F0.027 (Tapijnkazerne 11)<br>
-    Woche 1: Mo 22.06., Mi 24.06., Do 25.06. (jeweils 13:30) · Woche 2: Mo 29.06., Mi 01.07., Do 02.07.
-    <p class="meta">Der Canvas-Kurs ist noch nicht freigeschaltet — Inhalte/Vorbereitung werden vermutlich kurz vor Kursstart sichtbar. Wird im Daily Check gemeldet, sobald er online ist.</p>
+  <!-- HINWEISE -->
+  <div class="card">
+    <h2 class="h-hint">🔔 Hinweise</h2>
+    <div class="item">
+      <div class="meta">📌 <strong>Sa 27.06.:</strong> SBE Exam (De-)Registration für Periode 6 öffnet — ggf. zur Klausur an-/abmelden.</div>
+    </div>
   </div>
-  <div class="item yellow">
-    <strong>📋 Admin-Fristen:</strong>
-    <ul>
-      <li><strong>Exam (De-)Registration Periode 6:</strong> öffnet 27.06., schließt <strong>01.07. (23:59)</strong></li>
-      <li><strong>Kursregistrierung Periode 1 (2026/27):</strong> schließt <strong>15.07. (23:59)</strong></li>
-    </ul>
-  </div>
-</div>
 
-<div class="card">
-  <h2>✅ Deadlines</h2>
-  <p>Keine relevanten Deadlines in den nächsten 7 Tagen.</p>
-  <ul>
-    <li class="meta">19.06. — CG-Resit-Paper &amp; MIS-Ersatz-Assignment: nur für nicht bestandene Kurse bzw. &gt;3 verpasste Tutorials — <strong>beides trifft auf dich nicht zu</strong>.</li>
-    <li class="meta">Entrepreneurship (EBC2158): Written Proposal &amp; Video Pitch sind eingereicht (04.06.), Noten stehen noch aus.</li>
-  </ul>
-</div>
-
-<div class="card">
-  <h2 class="yellow">📢 Ankündigungen</h2>
-  <ul>
-    <li><strong>MOPD (11.06.):</strong> BEELab sucht Teilnehmer für bezahlte Verhaltensökonomie-Experimente — optional, falls du nebenbei etwas verdienen willst.</li>
-    <li><strong>MOPD (10.06.):</strong> Klausur + Lösungen online (siehe oben).</li>
-  </ul>
-</div>
-
-<div class="footer">Aktualisiert: 12.06.2026, 08:17 Uhr</div>
+  <footer>Aktualisiert: 15.06.2026, 08:30 · <a href="https://192006-dot.github.io/uni-daily-check/">192006-dot.github.io/uni-daily-check</a></footer>
 </div>
 </body>
 </html>
