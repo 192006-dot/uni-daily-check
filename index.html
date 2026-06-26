@@ -3,122 +3,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uni Daily Check — 25. Juni 2026</title>
+<title>Uni Daily Check</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background:#0f0f0f; color:#e0e0e0; font-family:system-ui,-apple-system,sans-serif;
-         line-height:1.55; padding:16px; }
-  .wrap { max-width:600px; margin:0 auto; }
-  header { text-align:center; margin-bottom:20px; }
-  header h1 { font-size:1.5rem; color:#fff; }
-  header .date { color:#9a9a9a; font-size:.95rem; margin-top:4px; }
-  .badge { display:inline-block; margin-top:10px; padding:4px 12px; border-radius:999px;
-           background:#1e3a2a; color:#4ade80; font-size:.75rem; font-weight:600; letter-spacing:.5px; }
-  .card { background:#1a1a1a; border:1px solid #2a2a2a; border-radius:14px;
-          padding:16px; margin-bottom:14px; }
-  .sec-title { font-size:.78rem; text-transform:uppercase; letter-spacing:1px;
-               font-weight:700; margin:22px 0 10px; }
-  .t-today { color:#4ade80; } .t-tom { color:#60a5fa; }
-  .t-dl { color:#f87171; } .t-info { color:#fbbf24; }
-  .course { font-size:1.15rem; font-weight:700; color:#fff; margin-bottom:6px; }
-  .meta { color:#bdbdbd; font-size:.9rem; margin:2px 0; }
-  .meta b { color:#e0e0e0; }
-  .block { margin-top:12px; }
-  .block h4 { font-size:.82rem; text-transform:uppercase; letter-spacing:.5px;
-              color:#888; margin-bottom:6px; }
-  .block p { font-size:.93rem; }
-  ul { list-style:none; margin-top:4px; }
-  li { font-size:.92rem; padding:5px 0 5px 20px; position:relative; }
-  li::before { content:"›"; position:absolute; left:4px; color:#666; }
-  a { color:#60a5fa; text-decoration:none; word-break:break-word; }
-  .pill { display:inline-block; font-size:.7rem; font-weight:700; padding:2px 8px;
-          border-radius:6px; margin-bottom:8px; }
-  .pill-blue { background:#1e2a3a; color:#60a5fa; }
-  .dl { border-left:3px solid #444; padding-left:12px; margin-bottom:14px; }
-  .dl.red { border-color:#f87171; } .dl.yellow { border-color:#fbbf24; }
-  .dl .when { font-size:.8rem; font-weight:700; }
-  .dl.red .when { color:#f87171; } .dl.yellow .when { color:#fbbf24; }
-  .dl .what { font-weight:700; color:#fff; margin:3px 0; }
-  .dl .desc { font-size:.88rem; color:#bdbdbd; }
-  footer { text-align:center; color:#666; font-size:.78rem; margin-top:24px; }
-  .tip { background:#1a1a1a; border:1px solid #2a2a2a; border-left:3px solid #fbbf24;
-         border-radius:8px; padding:12px; font-size:.9rem; margin-top:10px; }
+  body {
+    background: #0f0f0f; color: #e0e0e0;
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.55; padding: 16px;
+  }
+  .wrap { max-width: 600px; margin: 0 auto; }
+  header { text-align: center; margin-bottom: 24px; }
+  header h1 { font-size: 1.5rem; color: #fff; }
+  header .date { color: #9a9a9a; font-size: 0.95rem; margin-top: 4px; }
+  .badge {
+    display: inline-block; margin-top: 10px; padding: 4px 12px;
+    background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 999px;
+    font-size: 0.78rem; color: #4ade80;
+  }
+  .card {
+    background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px;
+    padding: 16px; margin-bottom: 16px;
+  }
+  .section-label {
+    font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em;
+    font-weight: 600; margin-bottom: 10px;
+  }
+  .l-today { color: #4ade80; }
+  .l-tomorrow { color: #60a5fa; }
+  .l-hint { color: #fbbf24; }
+  .l-urgent { color: #f87171; }
+  h2 { font-size: 1.1rem; color: #fff; margin-bottom: 4px; }
+  .meta { font-size: 0.9rem; color: #b5b5b5; margin: 2px 0; }
+  .block { margin-top: 12px; }
+  .block .t { font-weight: 600; color: #e8e8e8; font-size: 0.9rem; margin-bottom: 3px; }
+  .block p, .block li { font-size: 0.9rem; color: #cfcfcf; }
+  ul { margin: 4px 0 0 18px; }
+  li { margin-bottom: 3px; }
+  .deadline {
+    border-left: 3px solid #555; padding: 8px 0 8px 12px; margin-bottom: 12px;
+  }
+  .deadline.red { border-color: #f87171; }
+  .deadline.yellow { border-color: #fbbf24; }
+  .deadline .d-title { font-weight: 600; color: #fff; font-size: 0.95rem; }
+  .deadline .d-when { font-size: 0.82rem; margin: 2px 0 4px; }
+  .deadline.red .d-when { color: #f87171; }
+  .deadline.yellow .d-when { color: #fbbf24; }
+  .deadline p { font-size: 0.86rem; color: #cfcfcf; }
+  .rest { color: #888; font-style: italic; font-size: 0.92rem; }
+  footer { text-align: center; color: #666; font-size: 0.78rem; margin-top: 20px; }
+  a { color: #60a5fa; }
 </style>
 </head>
 <body>
 <div class="wrap">
+
   <header>
-    <h1>🎓 Uni Daily Check</h1>
-    <div class="date">Donnerstag, 25. Juni 2026</div>
-    <div class="badge">TAGES-CHECK · PERIODE 6</div>
+    <h1>Uni Daily Check</h1>
+    <div class="date">Freitag, 26. Juni 2026</div>
+    <span class="badge">Tages-Check</span>
   </header>
 
   <!-- HEUTE -->
-  <div class="sec-title t-today">📅 Heute · Donnerstag</div>
   <div class="card">
-    <div class="course">Communication and Leadership Skills</div>
-    <div class="meta"><b>⏰ 13:30 – 15:30</b> · 📍 TAP11 F0.027</div>
-    <div class="meta">👨‍🏫 Egbert Veltman · <b>Tutorial 1</b> — „Meeting Minds: Building Connections and Awareness"</div>
+    <div class="section-label l-today">Heute &middot; Freitag</div>
+    <h2>Kein Tutorial heute</h2>
+    <p class="rest">Diese Woche (Tutorials 1&ndash;3) ist durch. Das Wochenende ist Vorbereitungszeit f&uuml;r Montag.</p>
+    <div class="block">
+      <div class="t">&#128161; Nutze heute &amp; das Wochenende f&uuml;r:</div>
+      <ul>
+        <li><strong>Team-Assignment koordinieren</strong> &ndash; F&auml;llig <strong>Montag</strong>, das ist eine Team-Abgabe. Heute schon mit dem Team abstimmen (Fall ausarbeiten braucht Vorlauf!).</li>
+        <li><strong>Pflichtliteratur lesen</strong> f&uuml;r Tutorial 4: Gordon L.E.T. (2001), <em>Kapitel 3 &amp; 7</em>; Hackman, J.R. (2009) &bdquo;Why teams don&rsquo;t work&ldquo;, Interview von Diane Coutu, HBR 87(5), S. 98&ndash;105.</li>
+        <li><strong>Self-Assessment ausf&uuml;llen</strong>: Datei <em>Session_4_Preparation_Teamwork_Self_Assessment.docx</em> + die Vorbereitungsreflexion (siehe Montag).</li>
+        <li><strong>Learning Journal</strong> voranbringen &ndash; Sessions 1&ndash;3 schon dokumentieren (f&auml;llig Freitag 3. Juli).</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MONTAG VORSCHAU -->
+  <div class="card">
+    <div class="section-label l-tomorrow">N&auml;chste Session &middot; Montag 29. Juni</div>
+    <h2>Tutorial 4 &ndash; Tuned in Teams</h2>
+    <p class="meta">&#9200; 08:30 &middot; TAP11 D0.012</p>
+    <p class="meta">&#128104;&#8205;&#127979; Kim van Cruchten</p>
 
     <div class="block">
-      <h4>📝 Thema</h4>
-      <p>Auftakt von EBS2019: Dich selbst kennenlernen und reflektieren, welche Kommunikations-/Leadership-Skills du verbessern willst. Ihr lernt die Tutorial-Gruppe kennen (viel Paar- und Teamarbeit folgt) und entwickelt ein erstes gemeinsames Verständnis davon, was <b>Kommunikation</b> und <b>Leadership</b> überhaupt bedeuten.</p>
+      <div class="t">&#128221; Thema</div>
+      <p>Kommunikation &amp; F&uuml;hrung im Team. Basis sind Hackmans f&uuml;nf Bedingungen f&uuml;r Team-Effektivit&auml;t (echtes Team, klare Richtung, bef&auml;higende Struktur, unterst&uuml;tzender Kontext, gutes Coaching). Ziel: Bewusstsein f&uuml;r die eigenen Team-Skills, verstehen warum Organisationen Teams einsetzen, und erkennen wann ein Teammitglied einen guten Zuh&ouml;rer braucht. <strong>Achtung:</strong> Diese Session l&auml;uft <em>ohne Tutor</em> &ndash; das Team arbeitet selbstst&auml;ndig und muss zwei Beobachter benennen, die nur mitschreiben.</p>
     </div>
 
     <div class="block">
-      <h4>📚 Vorbereitung (Before Class)</h4>
+      <div class="t">&#128218; Vorbereitung (heute Abend / Wochenende)</div>
       <ul>
-        <li><b>Lesen:</b> Gordon, L.E.T. (2001) — <b>Kapitel 1</b></li>
-        <li><b>Lesen:</b> Marvin Bower (1997), „Developing Leaders in a Business" (McKinsey) — <a href="https://www.mckinsey.com/featured-insights/leadership/developing-leaders-in-a-business">Link</a></li>
-        <li><b>Video:</b> Daniel Ofman (2017), „Core Qualities and the Core Quadrant" (YouTube)</li>
-        <li><b>Aufgabe 1 — Personal SWOT:</b> Mit dem Core-Quadrant-Modell von Ofman ausfüllen (mind. 2–3 Quadranten), daraus Stärken/Schwächen im Umgang mit anderen &amp; in Leadership ableiten. Vorlage: <i>Personal SWOT Analysis Core Qualities.pdf</i> (Canvas).</li>
-        <li><b>Aufgabe 2 — Metaphern:</b> Je eine Metapher für <b>Kommunikation</b> und für <b>Leadership</b> vorbereiten (Gegenstand, Zeichnung, Gedicht, Film…) + kurze Erklärung. Du musst sie in der Session teilen können.</li>
+        <li>Literatur: Gordon (2001) Kap. 3 &amp; 7; Hackman/Coutu (2009) HBR-Interview S. 98&ndash;105.</li>
+        <li>Before-Class-Reflexion: &Uuml;ber die eigene Rolle als Teammitglied nachdenken &ndash; Welche St&auml;rken kann ein Team auf dich z&auml;hlen? Welche St&auml;rken werden oft ungenutzt gelassen, und warum? Woran m&ouml;chtest du in der Teamarbeit arbeiten?</li>
+        <li>Self-Assessment-Datei ausf&uuml;llen: <em>Session_4_Preparation_Teamwork_Self_Assessment.docx</em>.</li>
       </ul>
     </div>
 
     <div class="block">
-      <h4>🎒 Mitbringen</h4>
-      <p>Ausgefüllte Personal-SWOT &amp; deine zwei Metaphern (bereit zum Teilen). Die In-Class-Aufgaben („How you see others / how others see you" + Intro Kommunikation &amp; Leadership) werden in der Session erklärt.</p>
-    </div>
-  </div>
-
-  <!-- MORGEN -->
-  <div class="sec-title t-tom">🔵 Morgen · Freitag 26. Juni</div>
-  <div class="card">
-    <span class="pill pill-blue">KEIN TUTORIAL</span>
-    <p class="meta">Morgen kein Termin im Stundenplan. Nächste Session: <b>Montag 29. Juni, 13:30–15:30, TAP11 F0.027</b> (Tutorial 2 — „Foundations of Connection").</p>
-    <div class="tip">
-      <b>💡 Wochenende nutzen — drei Sachen laufen auf Montag zu:</b><br>
-      1) <b>Team Assignment</b> (Deadline Mo 18:00) — du brauchst ein Team. Heute/morgen Gruppe finden und Case-Idee festlegen, sonst wird's knapp.<br>
-      2) <b>Tutorial-2-Vorbereitung:</b> McKinsey „Lead at your best" (Barsh &amp; Lavoie 2014) lesen; HBR-Video „What Makes a Leader?"; Vinh-Giang-Video; dazu die <i>Ladder of Inference</i> recherchieren und einen Link/Video auf das Discussion Board posten.<br>
-      3) <b>Learning Journal</b> nach jeder Session direkt mitschreiben — spart Stress vor Fr 3.7.
+      <div class="t">&#128206; Materialien dabei haben</div>
+      <p>Ausgef&uuml;llte Self-Assessment, Team Reflection &amp; Observer Form (Canvas-Dateien zu Session 4), Laptop.</p>
     </div>
   </div>
 
   <!-- DEADLINES -->
-  <div class="sec-title t-dl">⏳ Deadlines</div>
   <div class="card">
-    <div class="dl red">
-      <div class="when">🔴 Montag 29. Juni · 18:00 Uhr</div>
-      <div class="what">Team Assignment (Upload, pass/fail)</div>
-      <div class="desc">Eigener „close-to-home"-Case: ein ungelöstes zwischenmenschliches Problem, komplex genug für aktives Zuhören / Konfrontation / Konfliktlösung, <b>mind. 2 Rollen</b> für Rollenspiele, <b>1000–1500 Wörter</b>. Dazu Reflexions-/Awareness-Übung + Observation Report. <b>Braucht ein Team → jetzt organisieren.</b></div>
+    <div class="section-label l-urgent">Deadlines</div>
+
+    <div class="deadline red">
+      <div class="d-title">&#128308; Team Assignment &ndash; eigener Fall</div>
+      <div class="d-when">Montag 29. Juni, 18:00 Uhr &middot; Canvas Upload (Team)</div>
+      <p>Einen eigenen, realen &bdquo;close to home&ldquo;-Fall ausarbeiten: ein <em>ungel&ouml;stes zwischenmenschliches Problem</em>, komplex genug f&uuml;r &Uuml;bungen in aktivem Zuh&ouml;ren, Konfrontation &amp; Konfliktl&ouml;sung. Mind. 2 Rollen f&uuml;r Rollenspiele. <strong>1000&ndash;1500 W&ouml;rter.</strong> Dazu Reflexions-/Awareness-&Uuml;bung + Beobachtungsbericht. &#9888;&#65039; Team-Abgabe &rarr; <strong>jetzt mit dem Team abstimmen</strong>, nicht erst Sonntagabend.</p>
     </div>
-    <div class="dl red">
-      <div class="when">🔴 Montag 29. Juni · 18:00 Uhr</div>
-      <div class="what">In class: Skill practice and application</div>
-      <div class="desc">Zugehörige In-Class-Abgabe rund um Tutorial 2 (Upload).</div>
+
+    <div class="deadline yellow">
+      <div class="d-title">&#128993; Learning Journal &ndash; individuell</div>
+      <div class="d-when">Freitag 3. Juli, 21:00 Uhr &middot; Canvas Upload (Pass/Fail)</div>
+      <p>Pers&ouml;nliches Portfolio, strukturiert nach Sessions: was vor/w&auml;hrend/nach jeder Session gelernt &amp; reflektiert wurde. <strong>2500&ndash;3500 W&ouml;rter</strong> (ohne Titel/Inhalt/Quellen/Anhang). Wird mit Plagiats- &amp; KI-Erkennung gepr&uuml;ft. Tipp: jetzt schon Notizen zu Sessions 1&ndash;3 festhalten, sonst wird&rsquo;s am Freitag eng.</p>
     </div>
-    <div class="dl yellow">
-      <div class="when">🟡 Freitag 3. Juli · 21:00 Uhr</div>
-      <div class="what">Learning Journal (Upload, pass/fail)</div>
-      <div class="desc">Persönliches Portfolio, nach Sessions strukturiert: SWOT, Evidence aus jeder Session, Reflexion über Perception-Übung &amp; Metaphern, Action Points. <b>2500–3500 Wörter</b>. Wird mit Plagiats-/AI-Software geprüft. → Ab heute nach Session 1 mitschreiben.</div>
+
+    <div class="deadline">
+      <div class="d-title">&#9888;&#65039; SBE: Exam (de)-registration Periode 6</div>
+      <div class="d-when" style="color:#9a9a9a;">Anmeldefenster offen ab Sa 27. Juni &middot; schlie&szlig;t Mi 1. Juli 23:59</div>
+      <p>Falls eine Pr&uuml;fung/Resit in Periode 6 ansteht: rechtzeitig an-/abmelden.</p>
     </div>
   </div>
 
   <footer>
-    Aktualisiert: 25. Juni 2026, 08:10 CEST<br>
-    Quelle: MU Timetable (iCal) + Canvas (EBS2019)
+    Aktualisiert: 26. Juni 2026, 08:30 Uhr
   </footer>
+
 </div>
 </body>
 </html>
