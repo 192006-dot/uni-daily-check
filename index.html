@@ -9,130 +9,153 @@
   body {
     background: #0f0f0f; color: #e0e0e0;
     font-family: system-ui, -apple-system, sans-serif;
-    line-height: 1.55; padding: 16px;
+    line-height: 1.6; padding: 16px;
   }
   .wrap { max-width: 600px; margin: 0 auto; }
-  header { text-align: center; margin-bottom: 24px; }
-  header h1 { font-size: 1.5rem; color: #fff; }
-  header .date { color: #9a9a9a; font-size: 0.95rem; margin-top: 4px; }
+  header { text-align: center; margin-bottom: 24px; padding-top: 8px; }
+  header h1 { font-size: 1.6rem; color: #fff; }
+  header .date { color: #9a9a9a; margin-top: 4px; }
   .badge {
-    display: inline-block; margin-top: 10px; padding: 4px 12px;
+    display: inline-block; margin-top: 10px; padding: 4px 14px;
     background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 999px;
-    font-size: 0.78rem; color: #4ade80;
+    font-size: .8rem; color: #4ade80;
   }
   .card {
-    background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px;
-    padding: 16px; margin-bottom: 16px;
+    background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 14px;
+    padding: 18px; margin-bottom: 16px;
   }
-  .section-label {
-    font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em;
-    font-weight: 600; margin-bottom: 10px;
+  .section-title {
+    font-size: .8rem; text-transform: uppercase; letter-spacing: .08em;
+    margin: 26px 0 12px; font-weight: 700;
   }
-  .l-today { color: #4ade80; }
-  .l-tomorrow { color: #60a5fa; }
-  .l-hint { color: #fbbf24; }
-  .l-urgent { color: #f87171; }
-  h2 { font-size: 1.1rem; color: #fff; margin-bottom: 4px; }
-  .meta { font-size: 0.9rem; color: #b5b5b5; margin: 2px 0; }
-  .block { margin-top: 12px; }
-  .block .t { font-weight: 600; color: #e8e8e8; font-size: 0.9rem; margin-bottom: 3px; }
-  .block p, .block li { font-size: 0.9rem; color: #cfcfcf; }
-  ul { margin: 4px 0 0 18px; }
-  li { margin-bottom: 3px; }
+  .t-today { color: #4ade80; }
+  .t-tom { color: #60a5fa; }
+  .t-dead { color: #f87171; }
+  .t-note { color: #fbbf24; }
+  .course { font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+  .meta { color: #b8b8b8; font-size: .95rem; margin: 2px 0; }
+  .meta .ic { display: inline-block; width: 22px; }
+  .lbl { font-weight: 700; color: #fff; margin: 14px 0 4px; }
+  .body-txt { color: #cfcfcf; font-size: .95rem; }
+  ul { padding-left: 20px; margin: 4px 0; }
+  li { margin: 3px 0; color: #cfcfcf; font-size: .95rem; }
+  .lit { color: #d8b4fe; font-weight: 600; }
   .deadline {
-    border-left: 3px solid #555; padding: 8px 0 8px 12px; margin-bottom: 12px;
+    border-left: 4px solid #f87171; padding-left: 12px; margin-bottom: 14px;
   }
-  .deadline.red { border-color: #f87171; }
-  .deadline.yellow { border-color: #fbbf24; }
-  .deadline .d-title { font-weight: 600; color: #fff; font-size: 0.95rem; }
-  .deadline .d-when { font-size: 0.82rem; margin: 2px 0 4px; }
-  .deadline.red .d-when { color: #f87171; }
-  .deadline.yellow .d-when { color: #fbbf24; }
-  .deadline p { font-size: 0.86rem; color: #cfcfcf; }
-  .rest { color: #888; font-style: italic; font-size: 0.92rem; }
-  footer { text-align: center; color: #666; font-size: 0.78rem; margin-top: 20px; }
+  .deadline.soon { border-left-color: #f87171; }
+  .deadline.warn { border-left-color: #fbbf24; }
+  .deadline .d-title { font-weight: 700; color: #fff; }
+  .deadline .d-when { font-size: .85rem; }
+  .d-when.red { color: #f87171; }
+  .d-when.yellow { color: #fbbf24; }
+  .divider { height: 1px; background: #2a2a2a; margin: 10px 0; border: none; }
+  footer { text-align: center; color: #6a6a6a; font-size: .8rem; margin: 28px 0 12px; }
   a { color: #60a5fa; }
 </style>
 </head>
 <body>
 <div class="wrap">
-
   <header>
-    <h1>Uni Daily Check</h1>
-    <div class="date">Freitag, 26. Juni 2026</div>
-    <span class="badge">Tages-Check</span>
+    <h1>🎓 Uni Daily Check</h1>
+    <div class="date">Mittwoch, 1. Juli 2026</div>
+    <div class="badge">Tages-Check</div>
   </header>
 
   <!-- HEUTE -->
+  <div class="section-title t-today">📅 Heute — Mittwoch 01.07.</div>
   <div class="card">
-    <div class="section-label l-today">Heute &middot; Freitag</div>
-    <h2>Kein Tutorial heute</h2>
-    <p class="rest">Diese Woche (Tutorials 1&ndash;3) ist durch. Das Wochenende ist Vorbereitungszeit f&uuml;r Montag.</p>
-    <div class="block">
-      <div class="t">&#128161; Nutze heute &amp; das Wochenende f&uuml;r:</div>
-      <ul>
-        <li><strong>Team-Assignment koordinieren</strong> &ndash; F&auml;llig <strong>Montag</strong>, das ist eine Team-Abgabe. Heute schon mit dem Team abstimmen (Fall ausarbeiten braucht Vorlauf!).</li>
-        <li><strong>Pflichtliteratur lesen</strong> f&uuml;r Tutorial 4: Gordon L.E.T. (2001), <em>Kapitel 3 &amp; 7</em>; Hackman, J.R. (2009) &bdquo;Why teams don&rsquo;t work&ldquo;, Interview von Diane Coutu, HBR 87(5), S. 98&ndash;105.</li>
-        <li><strong>Self-Assessment ausf&uuml;llen</strong>: Datei <em>Session_4_Preparation_Teamwork_Self_Assessment.docx</em> + die Vorbereitungsreflexion (siehe Montag).</li>
-        <li><strong>Learning Journal</strong> voranbringen &ndash; Sessions 1&ndash;3 schon dokumentieren (f&auml;llig Freitag 3. Juli).</li>
-      </ul>
+    <div class="course">Communication and Leadership Skills</div>
+    <div class="meta"><span class="ic">📖</span>Tutorial 5 — <strong>Confrontation to Collaboration</strong></div>
+    <div class="meta"><span class="ic">⏰</span>08:30 – 10:30 Uhr</div>
+    <div class="meta"><span class="ic">📍</span>TAP11 D0.012 (Tapijn)</div>
+    <div class="meta"><span class="ic">👩‍🏫</span>Kim van Cruchten</div>
+
+    <div class="lbl">📝 Thema</div>
+    <div class="body-txt">
+      Nicht jedes Problem löst sich durch aktives Zuhören. Wenn das Verhalten anderer
+      inakzeptabel ist, musst du konfrontieren — und zwar so, dass eine positive
+      Verhaltensänderung entsteht. Heute geht es um <strong>Konfrontations-Skills</strong>:
+      der Unterschied zwischen <em>passivem, aggressivem und assertivem</em> Reagieren,
+      der Zusammenhang von Emotionen &amp; Coping-Mechanismen mit Konfliktlösung, das
+      Formulieren einer <strong>dreiteiligen Ich-Botschaft</strong> und das „Shifting Gears"
+      zwischen Ich-Botschaften und aktivem Zuhören — angewendet auf einen realen Team-Case.
     </div>
+
+    <div class="lbl">📚 Vorbereitung (Pflichtlektüre)</div>
+    <div class="body-txt"><span class="lit">Gordon, L.E.T. (2001) — Kapitel 6</span></div>
+
+    <div class="lbl">✍️ Before Class (vorbereiten)</div>
+    <ul>
+      <li>Recherchiere die 3 Reaktionstypen <strong>Aggressiv / Passiv / Assertiv</strong> und schreibe zu jedem ein eigenes Beispiel aus deiner Erfahrung.</li>
+      <li>Denk an 2 Situationen, in denen du jemanden mit inakzeptablem Verhalten konfrontiert hast — wie? Wie reagierte die Person? Hat sich etwas geändert?</li>
+      <li>Wie hängt Konfrontation mit Leadership zusammen?</li>
+    </ul>
   </div>
 
-  <!-- MONTAG VORSCHAU -->
+  <!-- MORGEN -->
+  <div class="section-title t-tom">🔵 Morgen — Donnerstag 02.07. (letzte Session!)</div>
   <div class="card">
-    <div class="section-label l-tomorrow">N&auml;chste Session &middot; Montag 29. Juni</div>
-    <h2>Tutorial 4 &ndash; Tuned in Teams</h2>
-    <p class="meta">&#9200; 08:30 &middot; TAP11 D0.012</p>
-    <p class="meta">&#128104;&#8205;&#127979; Kim van Cruchten</p>
+    <div class="course">Communication and Leadership Skills</div>
+    <div class="meta"><span class="ic">📖</span>Tutorial 6 — <strong>Reflective Resolutions</strong></div>
+    <div class="meta"><span class="ic">⏰</span>08:30 – 10:30 Uhr · TAP11 D0.012 · Kim van Cruchten</div>
 
-    <div class="block">
-      <div class="t">&#128221; Thema</div>
-      <p>Kommunikation &amp; F&uuml;hrung im Team. Basis sind Hackmans f&uuml;nf Bedingungen f&uuml;r Team-Effektivit&auml;t (echtes Team, klare Richtung, bef&auml;higende Struktur, unterst&uuml;tzender Kontext, gutes Coaching). Ziel: Bewusstsein f&uuml;r die eigenen Team-Skills, verstehen warum Organisationen Teams einsetzen, und erkennen wann ein Teammitglied einen guten Zuh&ouml;rer braucht. <strong>Achtung:</strong> Diese Session l&auml;uft <em>ohne Tutor</em> &ndash; das Team arbeitet selbstst&auml;ndig und muss zwei Beobachter benennen, die nur mitschreiben.</p>
+    <div class="lbl">📝 Thema</div>
+    <div class="body-txt">
+      Die letzte Session. Wer konfrontiert wird, ist selten begeistert — Konflikt ist oft
+      unvermeidbar. Thema: wie sich Konflikte lösen lassen und wie Menschen unterschiedlich
+      auf verschiedene Ansätze reagieren. Fokus: <strong>Method III – der „No-lose"-Ansatz</strong>
+      zur Konfliktlösung. Außerdem Rückblick auf die gesamte Lernreise in Communication &amp; Leadership.
     </div>
 
-    <div class="block">
-      <div class="t">&#128218; Vorbereitung (heute Abend / Wochenende)</div>
-      <ul>
-        <li>Literatur: Gordon (2001) Kap. 3 &amp; 7; Hackman/Coutu (2009) HBR-Interview S. 98&ndash;105.</li>
-        <li>Before-Class-Reflexion: &Uuml;ber die eigene Rolle als Teammitglied nachdenken &ndash; Welche St&auml;rken kann ein Team auf dich z&auml;hlen? Welche St&auml;rken werden oft ungenutzt gelassen, und warum? Woran m&ouml;chtest du in der Teamarbeit arbeiten?</li>
-        <li>Self-Assessment-Datei ausf&uuml;llen: <em>Session_4_Preparation_Teamwork_Self_Assessment.docx</em>.</li>
-      </ul>
+    <div class="lbl">📚 Vorbereitung (Pflichtlektüre)</div>
+    <div class="body-txt">
+      <span class="lit">Gordon, L.E.T. (2001) — Kapitel 8 &amp; 9</span> (Konfliktlösung)<br>
+      <span class="lit">Kapitel 10, 12 &amp; Personal Postscript</span> (Reflexion)
     </div>
 
-    <div class="block">
-      <div class="t">&#128206; Materialien dabei haben</div>
-      <p>Ausgef&uuml;llte Self-Assessment, Team Reflection &amp; Observer Form (Canvas-Dateien zu Session 4), Laptop.</p>
-    </div>
+    <div class="lbl">✍️ Heute Abend schon vorbereiten</div>
+    <ul>
+      <li>Recherchiere die 5 Konfliktstile: Forcing/Competing, Accommodating, Avoiding, Compromising, Collaboration. Was ist <strong>dein</strong> dominanter Stil? Beispiel bereithalten.</li>
+      <li>Was macht eine gute Führungskraft aus? Wie sieht effektive Kommunikation aus? Hat sich deine Antwort im Kurs verändert?</li>
+      <li>Würdest du eine andere Metapher für Kommunikation &amp; Leadership wählen? Warum (nicht)?</li>
+    </ul>
   </div>
 
   <!-- DEADLINES -->
+  <div class="section-title t-dead">✅ Deadlines</div>
   <div class="card">
-    <div class="section-label l-urgent">Deadlines</div>
-
-    <div class="deadline red">
-      <div class="d-title">&#128308; Team Assignment &ndash; eigener Fall</div>
-      <div class="d-when">Montag 29. Juni, 18:00 Uhr &middot; Canvas Upload (Team)</div>
-      <p>Einen eigenen, realen &bdquo;close to home&ldquo;-Fall ausarbeiten: ein <em>ungel&ouml;stes zwischenmenschliches Problem</em>, komplex genug f&uuml;r &Uuml;bungen in aktivem Zuh&ouml;ren, Konfrontation &amp; Konfliktl&ouml;sung. Mind. 2 Rollen f&uuml;r Rollenspiele. <strong>1000&ndash;1500 W&ouml;rter.</strong> Dazu Reflexions-/Awareness-&Uuml;bung + Beobachtungsbericht. &#9888;&#65039; Team-Abgabe &rarr; <strong>jetzt mit dem Team abstimmen</strong>, nicht erst Sonntagabend.</p>
+    <div class="deadline soon">
+      <div class="d-title">🔴 Learning Journal — Abgabe</div>
+      <div class="d-when red">Freitag, 3. Juli · vor 21:00 Uhr — nur noch 2 Tage!</div>
+      <div class="body-txt" style="margin-top:6px">
+        Individuelles Portfolio, <strong>2500–3500 Wörter</strong> (ohne Titelblatt, Inhalt, Literatur, Anhang).
+        Strukturiere nach den Sessions, reflektiere vor/während/nach jeder Session. Bewertung: pass/fail.
+        Upload als Datei auf Canvas → Assignments. <em>Wird mit Plagiats- &amp; KI-Detektion geprüft.</em>
+      </div>
+      <div class="body-txt" style="margin-top:6px; color:#fbbf24">
+        💡 Tipp: Sessions 1–5 heute finalisieren, Session 6 nach morgen ergänzen, dann Freitag früh abgeben.
+      </div>
     </div>
-
-    <div class="deadline yellow">
-      <div class="d-title">&#128993; Learning Journal &ndash; individuell</div>
-      <div class="d-when">Freitag 3. Juli, 21:00 Uhr &middot; Canvas Upload (Pass/Fail)</div>
-      <p>Pers&ouml;nliches Portfolio, strukturiert nach Sessions: was vor/w&auml;hrend/nach jeder Session gelernt &amp; reflektiert wurde. <strong>2500&ndash;3500 W&ouml;rter</strong> (ohne Titel/Inhalt/Quellen/Anhang). Wird mit Plagiats- &amp; KI-Erkennung gepr&uuml;ft. Tipp: jetzt schon Notizen zu Sessions 1&ndash;3 festhalten, sonst wird&rsquo;s am Freitag eng.</p>
+    <hr class="divider">
+    <div class="deadline soon">
+      <div class="d-title">🔴 SBE: Exam (de-)registration Periode 6</div>
+      <div class="d-when red">Schließt HEUTE, 01.07. um 23:59 Uhr</div>
+      <div class="body-txt" style="margin-top:6px">
+        Administrative Frist aus dem Timetable. Falls für eine Prüfung (ab-)gemeldet werden muss — heute erledigen.
+      </div>
     </div>
-
-    <div class="deadline">
-      <div class="d-title">&#9888;&#65039; SBE: Exam (de)-registration Periode 6</div>
-      <div class="d-when" style="color:#9a9a9a;">Anmeldefenster offen ab Sa 27. Juni &middot; schlie&szlig;t Mi 1. Juli 23:59</div>
-      <p>Falls eine Pr&uuml;fung/Resit in Periode 6 ansteht: rechtzeitig an-/abmelden.</p>
+    <hr class="divider">
+    <div class="deadline warn">
+      <div class="d-title t-note">🟡 SBE: Course registration Periode 1</div>
+      <div class="d-when yellow">Schließt 15. Juli</div>
+      <div class="body-txt" style="margin-top:6px">
+        Anmeldung für Kurse der nächsten Periode — rechtzeitig checken, noch kein Stress.
+      </div>
     </div>
   </div>
 
-  <footer>
-    Aktualisiert: 26. Juni 2026, 08:30 Uhr
-  </footer>
-
+  <footer>Aktualisiert: 01.07.2026, 08:02 Uhr</footer>
 </div>
 </body>
 </html>
