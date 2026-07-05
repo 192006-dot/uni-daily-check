@@ -3,38 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uni Daily Check — Wochenplan</title>
+<title>Uni Daily Check – Wochenplan</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background:#0f0f0f; color:#e0e0e0; font-family:system-ui,-apple-system,sans-serif;
-         line-height:1.55; padding:16px; }
-  .wrap { max-width:600px; margin:0 auto; }
-  header { text-align:center; padding:8px 0 20px; }
-  header h1 { font-size:1.5rem; color:#fff; }
-  header .date { color:#888; font-size:.9rem; margin-top:4px; }
-  .badge { display:inline-block; background:#1e3a2f; color:#4ade80; border:1px solid #4ade80;
-           border-radius:999px; padding:3px 12px; font-size:.75rem; margin-top:10px; font-weight:600; }
-  .card { background:#1a1a1a; border:1px solid #2a2a2a; border-radius:12px; padding:16px; margin:14px 0; }
-  h2 { font-size:1.05rem; color:#fff; margin-bottom:10px; display:flex; align-items:center; gap:8px; }
-  h3 { font-size:.95rem; margin:4px 0; }
-  .hl-green{color:#4ade80;} .hl-blue{color:#60a5fa;} .hl-yellow{color:#fbbf24;} .hl-red{color:#f87171;}
-  .big-note { background:#14261a; border:1px solid #2f6b45; border-radius:12px; padding:18px; margin:14px 0; }
-  .big-note h2 { color:#4ade80; }
-  .day { border-left:3px solid #333; padding:6px 0 6px 12px; margin:8px 0; }
-  .day.free { border-left-color:#4ade80; }
-  .day .lbl { font-weight:700; font-size:.8rem; letter-spacing:.05em; color:#60a5fa; }
-  .day .body { color:#bbb; font-size:.9rem; margin-top:2px; }
-  .item { padding:10px 0; border-bottom:1px solid #242424; }
-  .item:last-child { border-bottom:none; }
-  .item .tag { font-size:.72rem; font-weight:700; padding:2px 8px; border-radius:6px; }
-  .tag-na { background:#2a2a2a; color:#888; }
-  .tag-info { background:#2a2318; color:#fbbf24; }
-  .item .meta { color:#888; font-size:.82rem; margin-top:3px; }
-  .item .why { color:#4ade80; font-size:.82rem; margin-top:3px; }
-  .strike { color:#666; }
-  ul { padding-left:18px; }
-  li { margin:5px 0; font-size:.9rem; color:#ccc; }
-  footer { text-align:center; color:#555; font-size:.75rem; padding:20px 0 8px; }
+  body {
+    background: #0f0f0f; color: #e0e0e0;
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.55; padding: 16px;
+  }
+  .wrap { max-width: 600px; margin: 0 auto; }
+  header { text-align: center; margin-bottom: 22px; }
+  header h1 { font-size: 1.5rem; color: #fff; }
+  header .date { color: #9a9a9a; font-size: .9rem; margin-top: 4px; }
+  .badge {
+    display: inline-block; background: #1e3a24; color: #4ade80;
+    border: 1px solid #326b3d; border-radius: 999px;
+    padding: 3px 12px; font-size: .78rem; font-weight: 600; margin-top: 8px;
+  }
+  section { margin-bottom: 26px; }
+  h2 {
+    font-size: 1.05rem; color: #fff; margin-bottom: 12px;
+    border-bottom: 1px solid #2a2a2a; padding-bottom: 6px;
+  }
+  .card {
+    background: #1a1a1a; border: 1px solid #2a2a2a;
+    border-radius: 12px; padding: 14px 16px; margin-bottom: 12px;
+  }
+  .card.today { border-color: #4ade80; }
+  .day-label { font-size: .78rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: #60a5fa; margin-bottom: 4px; }
+  .day-label.today { color: #4ade80; }
+  .card h3 { font-size: 1rem; color: #fff; margin-bottom: 4px; }
+  .meta { font-size: .82rem; color: #9a9a9a; margin-bottom: 6px; }
+  .desc { font-size: .9rem; }
+  .empty { color: #7a7a7a; font-style: italic; font-size: .88rem; }
+  .prep { font-size: .85rem; color: #cdd6a0; margin-top: 8px; padding-top: 8px; border-top: 1px dashed #333; }
+  .prep b { color: #fbbf24; }
+  .pill { display:inline-block; font-size:.72rem; padding:2px 8px; border-radius:6px; font-weight:600; margin-right:6px; }
+  .pill.red { background:#3a1c1c; color:#f87171; border:1px solid #5c2a2a; }
+  .pill.yellow { background:#3a331c; color:#fbbf24; border:1px solid #5c522a; }
+  .pill.green { background:#1e3a24; color:#4ade80; border:1px solid #326b3d; }
+  .pill.grey { background:#242424; color:#9a9a9a; border:1px solid #333; }
+  .dl { border-left: 3px solid #444; padding-left: 12px; }
+  .dl.urgent { border-left-color: #f87171; }
+  .dl.soon { border-left-color: #fbbf24; }
+  .dl.next { border-left-color: #4ade80; }
+  .dl h3 { font-size: .95rem; color:#fff; margin-bottom:3px; }
+  .dl .when { font-size:.8rem; color:#f87171; font-weight:600; }
+  .dl.next .when { color:#4ade80; }
+  .dl .body { font-size:.86rem; margin-top:5px; }
+  .note { font-size:.82rem; color:#9a9a9a; background:#151515; border:1px solid #262626; border-radius:8px; padding:10px 12px; margin-top:8px; }
+  ul { margin: 6px 0 0 18px; }
+  li { font-size:.88rem; margin-bottom:5px; }
+  .lit b { color:#fff; }
+  .rec { background:#141b14; border:1px solid #2a3a2a; border-radius:12px; padding:14px 16px; }
+  .rec .day { font-weight:700; color:#4ade80; }
+  .risk { background:#1c1414; border:1px solid #3a2a2a; border-radius:12px; padding:14px 16px; margin-top:12px; }
+  .risk .day { font-weight:700; color:#f87171; }
+  footer { text-align:center; color:#666; font-size:.78rem; margin-top:30px; padding-top:14px; border-top:1px solid #222; }
   a { color:#60a5fa; }
 </style>
 </head>
@@ -42,135 +67,225 @@
 <div class="wrap">
 
   <header>
-    <h1>🎓 Uni Daily Check</h1>
-    <div class="date">Sonntag, 05. Juli 2026</div>
-    <div class="badge">Wochenplan · 06.–10.07.</div>
+    <h1>📚 Uni Daily Check</h1>
+    <div class="date">Sonntag, 5. Juli 2026 · KW 28 (06.–10.07.)</div>
+    <div class="badge">Wochenplan · Resit-Woche</div>
   </header>
 
-  <!-- HEADLINE FINDING -->
-  <div class="big-note">
-    <h2>✅ Diese Woche ist frei — alles bestanden</h2>
-    <p style="font-size:.92rem;color:#cfe9d8;">
-      Keine Vorlesungen, keine Tutorials und <strong>keine für dich geltende Deadline</strong>.
-      Alle vier Abgabetermine dieser Woche sind reine <em>Resit-/Nachhol-Aufgaben</em> —
-      nur für Studierende, die durchgefallen sind oder Sitzungen verpasst haben.
-      Du hast in allen Kursen bestanden, also betrifft dich nichts davon.
-    </p>
-    <p style="font-size:.92rem;color:#fbbf24;margin-top:10px;">
-      👉 Das <strong>einzige</strong> echte To-do: Kursanmeldung Periode 1 (2026/27)
-      läuft am <strong>15. Juli</strong> aus — kurz prüfen, ob du angemeldet bist.
-    </p>
+  <div class="note" style="border-color:#5c522a; background:#221f14; color:#fbbf24;">
+    ⚠️ <b>Diese Woche keine Vorlesungen oder Tutorials.</b> Der Stundenplan
+    listet nur eine Verwaltungs-Warnung (Kursregistrierung Periode 1 schließt
+    15. Juli). Es ist <b>Resit-/Prüfungswoche</b> — es geht rein um mögliche
+    Wiederholungs-Abgaben. <b>Wichtig:</b> Die meisten Aufgaben unten gelten
+    <u>nur, wenn du etwas nicht bestanden oder ≥3 Pflichtsitzungen verpasst
+    hast</u>. Prüfe deine Noten im Studentenportal, um zu wissen, was für dich
+    zählt.
   </div>
 
   <!-- WOCHENÜBERSICHT -->
-  <div class="card">
-    <h2>📅 Wochenübersicht Mo–Fr</h2>
-    <div class="day free"><div class="lbl">MONTAG 06.07.</div>
-      <div class="body">Keine Termine. Nur Canvas-Deadline „Attendance course assignment" (EBC2158) —
-        <span class="hl-green">betrifft dich nicht</span> (Anwesenheit = „complete").</div></div>
-    <div class="day free"><div class="lbl">DIENSTAG 07.07.</div>
-      <div class="body">Keine Termine. Nur „Course Assignment" (Operations EBC2022) —
-        <span class="hl-green">betrifft dich nicht</span> (Sports-Inc-Case 80, Klausur 8,25 bestanden).</div></div>
-    <div class="day free"><div class="lbl">MITTWOCH 08.07.</div>
-      <div class="body">Keine Termine. Hinweis im Stundenplan: Kursanmeldung Periode 1 endet 15. Juli.</div></div>
-    <div class="day free"><div class="lbl">DONNERSTAG 09.07.</div>
-      <div class="body">Keine Termine. (Offizielle Resit-Woche — für dich nicht relevant.)</div></div>
-    <div class="day free"><div class="lbl">FREITAG 10.07.</div>
-      <div class="body">Keine Termine. Zwei Resit-Deadlines EBC2158 (Interview + Projekt) —
-        <span class="hl-green">betreffen dich nicht</span> (beide Originale mit 90 bestanden).</div></div>
-  </div>
+  <section>
+    <h2>🗓️ Wochenübersicht</h2>
 
-  <!-- LITERATUR -->
-  <div class="card">
-    <h2>📚 Vorbereitung / Literatur</h2>
-    <p style="color:#bbb;font-size:.9rem;">
-      Keine vorzubereitende Literatur diese Woche — es finden keine Sessions statt.
-      Die Kurse dieser Periode (Entrepreneurship EBC2158, Operations EBC2022,
-      Communication &amp; Leadership EBS2019) sind inhaltlich abgeschlossen.
-    </p>
-  </div>
+    <div class="card today">
+      <div class="day-label today">Montag · 06.07.</div>
+      <h3>Deadline: Entrepreneurship – Attendance-Aufgabe</h3>
+      <div class="meta">Abgabe bis 23:59 · Canvas · <span class="pill grey">nur bei ≥3 verpassten Pflichtsitzungen</span></div>
+      <div class="desc">Kein Präsenztermin. Falls betroffen: aufgenommene 30-Min-Video­präsentation(en) + AI-Statement hochladen.</div>
+    </div>
+
+    <div class="card">
+      <div class="day-label">Dienstag · 07.07.</div>
+      <h3>Deadline: Management of Operations & Product Development – Course Assignment</h3>
+      <div class="meta">Abgabe bis 23:59 · Canvas · <span class="pill grey">nur bei ≥3 verpassten Tutorials / nicht bestandenem Sports-Inc-Case</span></div>
+      <div class="desc">Kein Präsenztermin. Zusätzlich Hinweis im Feed: <b>SBE Kursregistrierung Periode 1 schließt 15. Juli</b> — diese Woche im Blick behalten.</div>
+    </div>
+
+    <div class="card">
+      <div class="day-label">Mittwoch · 08.07.</div>
+      <h3>Kein Termin</h3>
+      <div class="meta">Freier Tag</div>
+      <div class="desc empty">Idealer Arbeitstag für die Resit-Abgaben vom Freitag (Interview-Präsentation, Projekt-Proposal).</div>
+    </div>
+
+    <div class="card">
+      <div class="day-label">Donnerstag · 09.07.</div>
+      <h3>Kein fester Termin</h3>
+      <div class="meta">Resit-Woche · evtl. mündliche Prüfung MgmtOps</div>
+      <div class="desc empty">Falls du bei MgmtOps ≥3 Tutorials verpasst hast: mündliche Prüfung mit Koordinator ist für 9./10. Juli vorgesehen — Termin aktiv vereinbaren.</div>
+    </div>
+
+    <div class="card">
+      <div class="day-label">Freitag · 10.07.</div>
+      <h3>Doppel-Deadline: Entrepreneurship Resits</h3>
+      <div class="meta">Beide bis 23:59 · Canvas · <span class="pill grey">nur bei nicht bestandener Original-Note</span></div>
+      <div class="desc">Resit <b>Entrepreneur-Interview</b> (Video + Consent + AI-Statement) <i>und</i> Resit <b>Entrepreneurial Project</b> (Proposal-PDF + AI-Statement).</div>
+    </div>
+  </section>
+
+  <!-- LITERATUR / VORBEREITUNG -->
+  <section>
+    <h2>📖 Literatur & Vorbereitung</h2>
+    <div class="card lit">
+      <div class="meta" style="margin-bottom:8px;">Relevant nur für die Entrepreneurship-Resits, die für dich zählen:</div>
+      <ul>
+        <li><b>Resit Interview</b> stützt sich auf Tutorials 2 & 3:
+          <b>Scarborough & Cornwall (2025)</b>, Kapitel 1, 2, 3;
+          sowie <b>Jensen (2021)</b>, <b>Fisher (2012)</b> und <b>Blank (2013)</b>.
+          Konzepte: Causation, Effectuation, Bricolage; Motivation & Hintergrund des Gründers.</li>
+        <li><b>Resit Projekt (Proposal)</b> stützt sich auf das Lehrbuch
+          <b>Scarborough & Cornwall</b>: Kapitel <b>3–5</b> (Opportunity Recognition & Feasibility),
+          <b>9 & 11</b> (Marketing & Strategie), <b>12 & 15</b> (Financial Planning).</li>
+        <li><b>MgmtOps</b> (falls betroffen): handschriftliche Lösungen aller
+          verpassten Tutorials + Excel-Dateien (Aufgaben auf Canvas / beim Tutor prüfen).</li>
+      </ul>
+      <div class="prep"><b>Achtung:</b> Für das Proposal gilt APA-7 mit Referenzliste.
+        Erfundene/„fake" Quellen = 1 Punkt Abzug pro Quelle und gelten als
+        akademisches Fehlverhalten. Nur real existierende Literatur zitieren.</div>
+    </div>
+  </section>
 
   <!-- DEADLINES -->
-  <div class="card">
-    <h2>✅ Deadlines-Analyse</h2>
+  <section>
+    <h2>✅ Deadlines</h2>
 
-    <div class="item">
-      <span class="tag tag-na">GILT NICHT</span>
-      <h3 class="strike">Mo 06.07. · Attendance Course Assignment (EBC2158)</h3>
-      <div class="meta">Nur bei 3+ verpassten Pflichtsitzungen (30-min-Video pro Fehltag).</div>
-      <div class="why">✓ Deine Anwesenheit steht auf „complete" → nichts zu tun.</div>
+    <div class="card">
+      <div class="dl urgent">
+        <h3>Entrepreneurship – Attendance Course Assignment</h3>
+        <div class="when">🔴 Montag 06.07., 23:59</div>
+        <div class="body">
+          <span class="pill grey">nur bei ≥3 verpassten Pflichtsitzungen</span><br>
+          Pro verpasster Sitzung (ab der 3.) eine <b>30-Min-Videopräsentation</b>
+          zu den Lernzielen der verpassten Facilitation-Session (mit den Kapiteln/Readings
+          dieser Session). Video als <i>unlisted</i> auf YouTube, Link + separates
+          AI-Statement je Video auf Canvas. <b>Kumulativ</b> — mehr Fehltage = mehr Videos.
+          <div class="note">Keine Resit-Registrierung nötig, um diese Aufgabe zu machen
+            (Ankündigung Sergio, 30.06. — überschreibt frühere Info).</div>
+        </div>
+      </div>
     </div>
 
-    <div class="item">
-      <span class="tag tag-na">GILT NICHT</span>
-      <h3 class="strike">Di 07.07. · Course Assignment (Operations EBC2022)</h3>
-      <div class="meta">Nur bei 3+ verpassten Tutorials ODER durchgefallenem Sports-Inc-Case.</div>
-      <div class="why">✓ Sports-Inc-Case 80 + Klausur 8,25 bestanden → nichts zu tun.</div>
+    <div class="card">
+      <div class="dl urgent">
+        <h3>Management of Operations & Product Development – Course Assignment</h3>
+        <div class="when">🔴 Dienstag 07.07., 23:59</div>
+        <div class="body">
+          <span class="pill grey">nur bei ≥3 verpassten Tutorials oder nicht bestandenem Sports-Inc-Case</span><br>
+          Bei ≥3 Fehl-Tutorials: <b>handschriftliche Lösungen</b> aller verpassten
+          Tutorials + <b>Excel-Dateien</b> hochladen, <u>und</u> kleine <b>mündliche
+          Prüfung</b> mit dem Koordinator in der Resit-Woche (9./10. Juli) vereinbaren.<br>
+          Bei nicht bestandenem <b>Sports-Inc-Case</b>: neuer, ähnlicher Case wird in
+          der Prüfungswoche hochgeladen (individuell zu bearbeiten) + Präsentationssession
+          in der Resit-Woche.
+        </div>
+      </div>
     </div>
 
-    <div class="item">
-      <span class="tag tag-na">GILT NICHT</span>
-      <h3 class="strike">Fr 10.07. · Resit Entrepreneur Interview (EBC2158)</h3>
-      <div class="meta">Wiederholung nur bei durchgefallenem Original-Interview.</div>
-      <div class="why">✓ Original mit 90/100 bestanden → nichts zu tun.</div>
+    <div class="card">
+      <div class="dl soon">
+        <h3>Entrepreneurship – Resit Entrepreneur-Interview</h3>
+        <div class="when" style="color:#fbbf24;">🟡 Freitag 10.07., 23:59</div>
+        <div class="body">
+          <span class="pill grey">nur bei nicht bestandener Note</span><br>
+          Individuell einen <b>Entrepreneur interviewen</b> (Betrieb <u>außerhalb
+          Maastrichts</u>), Fragen selbst entwerfen, Ergebnisse in einer
+          <b>15-Min-Videopräsentation</b> darstellen (du selbst sichtbar).
+          Wähle Topic 1 (Entscheidung/Unsicherheit: Causation/Effectuation/Bricolage)
+          oder Topic 2 (Wer & Warum: Hintergrund/Motivation). Hochladen: YouTube-Link
+          <i>(unlisted)</i> + <b>unterschriebenes Consent-Formular</b> + AI-Statement.
+          <div class="note">⏳ <b>Höchstes Vorlauf-Risiko:</b> du brauchst zuerst einen
+            Interviewpartner und einen abgestimmten Termin. Das sollte schon stehen.</div>
+        </div>
+      </div>
     </div>
 
-    <div class="item">
-      <span class="tag tag-na">GILT NICHT</span>
-      <h3 class="strike">Fr 10.07. · Resit Entrepreneurial Project (EBC2158)</h3>
-      <div class="meta">Wiederholung der schriftlichen Projekt-Proposal nur bei Nichtbestehen.</div>
-      <div class="why">✓ Original-Proposal mit 90/100 bestanden → nichts zu tun.</div>
+    <div class="card">
+      <div class="dl soon">
+        <h3>Entrepreneurship – Resit Entrepreneurial Project</h3>
+        <div class="when" style="color:#fbbf24;">🟡 Freitag 10.07., 23:59</div>
+        <div class="body">
+          <span class="pill grey">nur bei nicht bestandener Note</span><br>
+          <b>Written Project Proposal, 2000–2500 Wörter</b> (nicht weniger/mehr,
+          exkl. Deckblatt/Inhalt/Referenzen/Anhang), als <b>PDF</b> + AI-Statement.
+          Struktur: Business Idea & Opportunity (inkl. Ethik/Impact), Market Analysis
+          & Competitive Positioning, Marketing Strategy, Financial Logic & Feasibility
+          (Break-even). Deckblatt mit Titel, Namen, IDs, Kurs, Tutor.
+          <div class="note">Kulanz: Abgabe bis 120 Min nach Deadline ohne Strafe;
+            danach −1 Punkt je angefangenem Tag. Fake-Quellen −1 Punkt/Quelle
+            (akad. Fehlverhalten).</div>
+        </div>
+      </div>
     </div>
 
-    <div class="item">
-      <span class="tag tag-info">ECHTES TO-DO</span>
-      <h3 class="hl-yellow">Bis Mi 15.07. · Kursanmeldung Periode 1 (2026/27)</h3>
-      <div class="meta">SBE-Hinweis im Stundenplan: Anmeldefenster schließt am 15. Juli, 23:59.</div>
-      <div class="why hl-yellow">→ Kurz im Student Portal prüfen, ob du für die Kurse der Periode 1 angemeldet bist.</div>
+    <div class="card">
+      <div class="dl next">
+        <h3>SBE – Kursregistrierung Periode 1 schließt</h3>
+        <div class="when">🟢 Mittwoch 15.07., 23:59 (nächste Woche)</div>
+        <div class="body">Registrierung für die Kurse der Periode 1 (kommendes
+          Studienjahr) läuft ab. Diese Woche schon erledigen, damit es nicht untergeht.</div>
+      </div>
     </div>
-  </div>
+  </section>
 
   <!-- ANKÜNDIGUNGEN -->
-  <div class="card">
-    <h2>📢 Ankündigungen (letzte 10 Tage)</h2>
-    <div class="item">
-      <h3 class="hl-blue">Operations EBC2022 — „Comments on the exam" (02.07.)</h3>
-      <div class="meta">Über 90 % haben bestanden, Modus-Note 7,5. 28 von 90 kommentierten Klausuren
-        bekamen Extrapunkte. Nur schriftlich in TestVision Notiertes wird bepunktet.
-        (Du hast 8,25 — alles gut.)</div>
+  <section>
+    <h2>📢 Ankündigungen (letzte Tage)</h2>
+    <div class="card">
+      <ul>
+        <li><b>MgmtOps – „Comments on the exam" (02.07.):</b> Über 90 % haben
+          bestanden, Modus-Note 7,5. 28 von 90 Kommentaren brachten Extrapunkte.
+          Nur Niedergeschriebenes in TestVision zählt.</li>
+        <li><b>Entrepreneurship – Resit-Registrierung (30.06., Sergio):</b> Für die
+          Attendance-Aufgabe ist <b>keine</b> Resit-Registrierung nötig
+          (überschreibt frühere Aussage). Notenänderungen erscheinen nach dem
+          Inspektionszeitraum im Portal.</li>
+        <li><b>Entrepreneurship – Final Grades / Inspections (23.06.):</b>
+          Endnoten im Studentenportal, Teilnoten in Canvas. Bei Fail wirst du ab
+          29.06. automatisch für die Resit registriert (NG = selbst registrieren).
+          Inspektions-Deadline war 30.06.</li>
+      </ul>
     </div>
-    <div class="item">
-      <h3 class="hl-blue">Entrepreneurship EBC2158 — Klarstellung Resit &amp; Notenänderungen (30.06.)</h3>
-      <div class="meta">Für die Attendance-Nachholaufgabe ist KEINE Resit-Registrierung nötig.
-        Notenänderungen erscheinen im Student Portal erst nach Ablauf der Einsichtsperiode.
-        (Betrifft dich nicht — nur zur Info.)</div>
-    </div>
-  </div>
+  </section>
 
   <!-- EMPFEHLUNGEN -->
-  <div class="card">
+  <section>
     <h2>💡 Empfehlung für die Woche</h2>
-    <ul>
-      <li><strong>Sonntag/diese Woche:</strong> Entspann dich — die Periode ist durch und du hast alles bestanden.
-        Guter Moment zum Durchatmen oder um für die nächste Periode vorzuarbeiten.</li>
-      <li><strong>Ein einziger Klick, den du machen solltest:</strong> Im Student Portal checken,
-        dass deine Kursanmeldung für Periode 1 (2026/27) steht — Frist 15. Juli.</li>
-      <li><strong>Noch offen (nur abwarten):</strong> Die Noten für Communication &amp; Leadership
-        Skills (EBS2019) sind eingereicht, aber noch nicht benotet. Nichts zu tun — kommt automatisch.</li>
-    </ul>
-    <h2 style="margin-top:16px;">⚠️ Risiken</h2>
-    <ul>
-      <li class="hl-yellow">Einziges reales Risiko: die <strong>Kursanmeldung Periode 1 am 15. Juli verpassen</strong> —
-        das würde die nächste Periode blockieren. Sonst nichts.</li>
-      <li>Falls du selbst weißt, dass du in einem Kurs doch eine Sitzung verpasst oder etwas
-        nicht bestanden hast (laut Canvas unwahrscheinlich), gälten die Resit-Deadlines am
-        06./07./10.07. doch — dann sofort melden.</li>
-    </ul>
-  </div>
+    <div class="rec">
+      <p><span class="day">Zuerst (heute, So):</span> Studentenportal öffnen und
+        <b>Noten checken</b> — nur so weißt du, welche der vier Aufgaben für dich
+        überhaupt zählt. Das entscheidet die ganze Woche.</p>
+      <p style="margin-top:8px;"><span class="day">Montag:</span> Falls
+        Attendance-Aufgabe (Entrep) relevant: Videos heute aufnehmen & hochladen
+        (Deadline heute 23:59!). Sonst nichts zu tun.</p>
+      <p style="margin-top:8px;"><span class="day">Dienstag:</span> Falls MgmtOps
+        relevant: handschriftliche Lösungen + Excel abgeben (23:59) und mündliche
+        Prüfung für Do/Fr terminieren.</p>
+      <p style="margin-top:8px;"><span class="day">Mi/Do (freie Tage):</span>
+        An den beiden Freitags-Resits arbeiten, falls relevant: Interview-Präsentation
+        aufnehmen; Proposal (2000–2500 Wörter) schreiben. Beides zieht sich —
+        früh anfangen.</p>
+      <p style="margin-top:8px;"><span class="day">Freitag:</span> Beide
+        Entrepreneurship-Resits final hochladen (Video-Link + Consent + AI-Statement;
+        Proposal-PDF + AI-Statement). AI-Statement <b>nie vergessen</b> — sonst −1 Punkt.</p>
+    </div>
+
+    <div class="risk">
+      <p><span class="day">⚠️ Risiken:</span></p>
+      <ul style="margin-left:16px;">
+        <li><b>Interviewpartner-Vorlauf:</b> Ohne bereits geführtes Interview ist die
+          Freitags-Deadline kaum machbar (Person außerhalb Maastrichts + Consent-Formular).
+          Das ist der größte Engpass.</li>
+        <li><b>AI-Statement vergessen:</b> Kostet bei beiden Resits automatisch 1 von 10 Punkten.</li>
+        <li><b>Fake-Referenzen im Proposal:</b> −1 Punkt je erfundener Quelle + gilt als
+          akademisches Fehlverhalten. Jede Quelle real prüfen.</li>
+        <li><b>Wortzahl Proposal:</b> Hart 2000–2500 Wörter — nicht drunter, nicht drüber.</li>
+        <li><b>Registrierungs-Deadline 15.07.</b> geht in der Resit-Hektik leicht unter.</li>
+      </ul>
+    </div>
+  </section>
 
   <footer>
-    Aktualisiert: 05.07.2026 · Datenquelle: MU Timetable (iCal) + Canvas API<br>
-    <a href="https://192006-dot.github.io/uni-daily-check/">192006-dot.github.io/uni-daily-check</a>
+    Aktualisiert: Sonntag, 05.07.2026, 08:18 CEST<br>
+    Quellen: Maastricht Timetable (iCal) + Canvas API · automatisch generiert
   </footer>
 
 </div>
