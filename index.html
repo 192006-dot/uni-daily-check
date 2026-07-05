@@ -3,159 +3,176 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uni Daily Check</title>
+<title>Uni Daily Check — Wochenplan</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: #0f0f0f; color: #e0e0e0;
-    font-family: system-ui, -apple-system, sans-serif;
-    line-height: 1.6; padding: 16px;
-  }
-  .wrap { max-width: 600px; margin: 0 auto; }
-  header { text-align: center; margin-bottom: 24px; padding-top: 8px; }
-  header h1 { font-size: 1.6rem; color: #fff; }
-  header .date { color: #9a9a9a; margin-top: 4px; }
-  .badge {
-    display: inline-block; margin-top: 10px; padding: 4px 14px;
-    background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 999px;
-    font-size: .8rem; color: #4ade80;
-  }
-  .card {
-    background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 14px;
-    padding: 18px; margin-bottom: 16px;
-  }
-  .section-title {
-    font-size: .8rem; text-transform: uppercase; letter-spacing: .08em;
-    margin: 26px 0 12px; font-weight: 700;
-  }
-  .t-today { color: #4ade80; }
-  .t-tom { color: #60a5fa; }
-  .t-dead { color: #f87171; }
-  .t-note { color: #fbbf24; }
-  .course { font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
-  .meta { color: #b8b8b8; font-size: .95rem; margin: 2px 0; }
-  .meta .ic { display: inline-block; width: 22px; }
-  .lbl { font-weight: 700; color: #fff; margin: 14px 0 4px; }
-  .body-txt { color: #cfcfcf; font-size: .95rem; }
-  ul { padding-left: 20px; margin: 4px 0; }
-  li { margin: 3px 0; color: #cfcfcf; font-size: .95rem; }
-  .lit { color: #d8b4fe; font-weight: 600; }
-  .deadline {
-    border-left: 4px solid #f87171; padding-left: 12px; margin-bottom: 14px;
-  }
-  .deadline.soon { border-left-color: #f87171; }
-  .deadline.warn { border-left-color: #fbbf24; }
-  .deadline .d-title { font-weight: 700; color: #fff; }
-  .deadline .d-when { font-size: .85rem; }
-  .d-when.red { color: #f87171; }
-  .d-when.yellow { color: #fbbf24; }
-  .divider { height: 1px; background: #2a2a2a; margin: 10px 0; border: none; }
-  footer { text-align: center; color: #6a6a6a; font-size: .8rem; margin: 28px 0 12px; }
-  a { color: #60a5fa; }
+  body { background:#0f0f0f; color:#e0e0e0; font-family:system-ui,-apple-system,sans-serif;
+         line-height:1.55; padding:16px; }
+  .wrap { max-width:600px; margin:0 auto; }
+  header { text-align:center; padding:8px 0 20px; }
+  header h1 { font-size:1.5rem; color:#fff; }
+  header .date { color:#888; font-size:.9rem; margin-top:4px; }
+  .badge { display:inline-block; background:#1e3a2f; color:#4ade80; border:1px solid #4ade80;
+           border-radius:999px; padding:3px 12px; font-size:.75rem; margin-top:10px; font-weight:600; }
+  .card { background:#1a1a1a; border:1px solid #2a2a2a; border-radius:12px; padding:16px; margin:14px 0; }
+  h2 { font-size:1.05rem; color:#fff; margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+  h3 { font-size:.95rem; margin:4px 0; }
+  .hl-green{color:#4ade80;} .hl-blue{color:#60a5fa;} .hl-yellow{color:#fbbf24;} .hl-red{color:#f87171;}
+  .big-note { background:#14261a; border:1px solid #2f6b45; border-radius:12px; padding:18px; margin:14px 0; }
+  .big-note h2 { color:#4ade80; }
+  .day { border-left:3px solid #333; padding:6px 0 6px 12px; margin:8px 0; }
+  .day.free { border-left-color:#4ade80; }
+  .day .lbl { font-weight:700; font-size:.8rem; letter-spacing:.05em; color:#60a5fa; }
+  .day .body { color:#bbb; font-size:.9rem; margin-top:2px; }
+  .item { padding:10px 0; border-bottom:1px solid #242424; }
+  .item:last-child { border-bottom:none; }
+  .item .tag { font-size:.72rem; font-weight:700; padding:2px 8px; border-radius:6px; }
+  .tag-na { background:#2a2a2a; color:#888; }
+  .tag-info { background:#2a2318; color:#fbbf24; }
+  .item .meta { color:#888; font-size:.82rem; margin-top:3px; }
+  .item .why { color:#4ade80; font-size:.82rem; margin-top:3px; }
+  .strike { color:#666; }
+  ul { padding-left:18px; }
+  li { margin:5px 0; font-size:.9rem; color:#ccc; }
+  footer { text-align:center; color:#555; font-size:.75rem; padding:20px 0 8px; }
+  a { color:#60a5fa; }
 </style>
 </head>
 <body>
 <div class="wrap">
+
   <header>
     <h1>🎓 Uni Daily Check</h1>
-    <div class="date">Mittwoch, 1. Juli 2026</div>
-    <div class="badge">Tages-Check</div>
+    <div class="date">Sonntag, 05. Juli 2026</div>
+    <div class="badge">Wochenplan · 06.–10.07.</div>
   </header>
 
-  <!-- HEUTE -->
-  <div class="section-title t-today">📅 Heute — Mittwoch 01.07.</div>
-  <div class="card">
-    <div class="course">Communication and Leadership Skills</div>
-    <div class="meta"><span class="ic">📖</span>Tutorial 5 — <strong>Confrontation to Collaboration</strong></div>
-    <div class="meta"><span class="ic">⏰</span>08:30 – 10:30 Uhr</div>
-    <div class="meta"><span class="ic">📍</span>TAP11 D0.012 (Tapijn)</div>
-    <div class="meta"><span class="ic">👩‍🏫</span>Kim van Cruchten</div>
-
-    <div class="lbl">📝 Thema</div>
-    <div class="body-txt">
-      Nicht jedes Problem löst sich durch aktives Zuhören. Wenn das Verhalten anderer
-      inakzeptabel ist, musst du konfrontieren — und zwar so, dass eine positive
-      Verhaltensänderung entsteht. Heute geht es um <strong>Konfrontations-Skills</strong>:
-      der Unterschied zwischen <em>passivem, aggressivem und assertivem</em> Reagieren,
-      der Zusammenhang von Emotionen &amp; Coping-Mechanismen mit Konfliktlösung, das
-      Formulieren einer <strong>dreiteiligen Ich-Botschaft</strong> und das „Shifting Gears"
-      zwischen Ich-Botschaften und aktivem Zuhören — angewendet auf einen realen Team-Case.
-    </div>
-
-    <div class="lbl">📚 Vorbereitung (Pflichtlektüre)</div>
-    <div class="body-txt"><span class="lit">Gordon, L.E.T. (2001) — Kapitel 6</span></div>
-
-    <div class="lbl">✍️ Before Class (vorbereiten)</div>
-    <ul>
-      <li>Recherchiere die 3 Reaktionstypen <strong>Aggressiv / Passiv / Assertiv</strong> und schreibe zu jedem ein eigenes Beispiel aus deiner Erfahrung.</li>
-      <li>Denk an 2 Situationen, in denen du jemanden mit inakzeptablem Verhalten konfrontiert hast — wie? Wie reagierte die Person? Hat sich etwas geändert?</li>
-      <li>Wie hängt Konfrontation mit Leadership zusammen?</li>
-    </ul>
+  <!-- HEADLINE FINDING -->
+  <div class="big-note">
+    <h2>✅ Diese Woche ist frei — alles bestanden</h2>
+    <p style="font-size:.92rem;color:#cfe9d8;">
+      Keine Vorlesungen, keine Tutorials und <strong>keine für dich geltende Deadline</strong>.
+      Alle vier Abgabetermine dieser Woche sind reine <em>Resit-/Nachhol-Aufgaben</em> —
+      nur für Studierende, die durchgefallen sind oder Sitzungen verpasst haben.
+      Du hast in allen Kursen bestanden, also betrifft dich nichts davon.
+    </p>
+    <p style="font-size:.92rem;color:#fbbf24;margin-top:10px;">
+      👉 Das <strong>einzige</strong> echte To-do: Kursanmeldung Periode 1 (2026/27)
+      läuft am <strong>15. Juli</strong> aus — kurz prüfen, ob du angemeldet bist.
+    </p>
   </div>
 
-  <!-- MORGEN -->
-  <div class="section-title t-tom">🔵 Morgen — Donnerstag 02.07. (letzte Session!)</div>
+  <!-- WOCHENÜBERSICHT -->
   <div class="card">
-    <div class="course">Communication and Leadership Skills</div>
-    <div class="meta"><span class="ic">📖</span>Tutorial 6 — <strong>Reflective Resolutions</strong></div>
-    <div class="meta"><span class="ic">⏰</span>08:30 – 10:30 Uhr · TAP11 D0.012 · Kim van Cruchten</div>
+    <h2>📅 Wochenübersicht Mo–Fr</h2>
+    <div class="day free"><div class="lbl">MONTAG 06.07.</div>
+      <div class="body">Keine Termine. Nur Canvas-Deadline „Attendance course assignment" (EBC2158) —
+        <span class="hl-green">betrifft dich nicht</span> (Anwesenheit = „complete").</div></div>
+    <div class="day free"><div class="lbl">DIENSTAG 07.07.</div>
+      <div class="body">Keine Termine. Nur „Course Assignment" (Operations EBC2022) —
+        <span class="hl-green">betrifft dich nicht</span> (Sports-Inc-Case 80, Klausur 8,25 bestanden).</div></div>
+    <div class="day free"><div class="lbl">MITTWOCH 08.07.</div>
+      <div class="body">Keine Termine. Hinweis im Stundenplan: Kursanmeldung Periode 1 endet 15. Juli.</div></div>
+    <div class="day free"><div class="lbl">DONNERSTAG 09.07.</div>
+      <div class="body">Keine Termine. (Offizielle Resit-Woche — für dich nicht relevant.)</div></div>
+    <div class="day free"><div class="lbl">FREITAG 10.07.</div>
+      <div class="body">Keine Termine. Zwei Resit-Deadlines EBC2158 (Interview + Projekt) —
+        <span class="hl-green">betreffen dich nicht</span> (beide Originale mit 90 bestanden).</div></div>
+  </div>
 
-    <div class="lbl">📝 Thema</div>
-    <div class="body-txt">
-      Die letzte Session. Wer konfrontiert wird, ist selten begeistert — Konflikt ist oft
-      unvermeidbar. Thema: wie sich Konflikte lösen lassen und wie Menschen unterschiedlich
-      auf verschiedene Ansätze reagieren. Fokus: <strong>Method III – der „No-lose"-Ansatz</strong>
-      zur Konfliktlösung. Außerdem Rückblick auf die gesamte Lernreise in Communication &amp; Leadership.
-    </div>
-
-    <div class="lbl">📚 Vorbereitung (Pflichtlektüre)</div>
-    <div class="body-txt">
-      <span class="lit">Gordon, L.E.T. (2001) — Kapitel 8 &amp; 9</span> (Konfliktlösung)<br>
-      <span class="lit">Kapitel 10, 12 &amp; Personal Postscript</span> (Reflexion)
-    </div>
-
-    <div class="lbl">✍️ Heute Abend schon vorbereiten</div>
-    <ul>
-      <li>Recherchiere die 5 Konfliktstile: Forcing/Competing, Accommodating, Avoiding, Compromising, Collaboration. Was ist <strong>dein</strong> dominanter Stil? Beispiel bereithalten.</li>
-      <li>Was macht eine gute Führungskraft aus? Wie sieht effektive Kommunikation aus? Hat sich deine Antwort im Kurs verändert?</li>
-      <li>Würdest du eine andere Metapher für Kommunikation &amp; Leadership wählen? Warum (nicht)?</li>
-    </ul>
+  <!-- LITERATUR -->
+  <div class="card">
+    <h2>📚 Vorbereitung / Literatur</h2>
+    <p style="color:#bbb;font-size:.9rem;">
+      Keine vorzubereitende Literatur diese Woche — es finden keine Sessions statt.
+      Die Kurse dieser Periode (Entrepreneurship EBC2158, Operations EBC2022,
+      Communication &amp; Leadership EBS2019) sind inhaltlich abgeschlossen.
+    </p>
   </div>
 
   <!-- DEADLINES -->
-  <div class="section-title t-dead">✅ Deadlines</div>
   <div class="card">
-    <div class="deadline soon">
-      <div class="d-title">🔴 Learning Journal — Abgabe</div>
-      <div class="d-when red">Freitag, 3. Juli · vor 21:00 Uhr — nur noch 2 Tage!</div>
-      <div class="body-txt" style="margin-top:6px">
-        Individuelles Portfolio, <strong>2500–3500 Wörter</strong> (ohne Titelblatt, Inhalt, Literatur, Anhang).
-        Strukturiere nach den Sessions, reflektiere vor/während/nach jeder Session. Bewertung: pass/fail.
-        Upload als Datei auf Canvas → Assignments. <em>Wird mit Plagiats- &amp; KI-Detektion geprüft.</em>
-      </div>
-      <div class="body-txt" style="margin-top:6px; color:#fbbf24">
-        💡 Tipp: Sessions 1–5 heute finalisieren, Session 6 nach morgen ergänzen, dann Freitag früh abgeben.
-      </div>
+    <h2>✅ Deadlines-Analyse</h2>
+
+    <div class="item">
+      <span class="tag tag-na">GILT NICHT</span>
+      <h3 class="strike">Mo 06.07. · Attendance Course Assignment (EBC2158)</h3>
+      <div class="meta">Nur bei 3+ verpassten Pflichtsitzungen (30-min-Video pro Fehltag).</div>
+      <div class="why">✓ Deine Anwesenheit steht auf „complete" → nichts zu tun.</div>
     </div>
-    <hr class="divider">
-    <div class="deadline soon">
-      <div class="d-title">🔴 SBE: Exam (de-)registration Periode 6</div>
-      <div class="d-when red">Schließt HEUTE, 01.07. um 23:59 Uhr</div>
-      <div class="body-txt" style="margin-top:6px">
-        Administrative Frist aus dem Timetable. Falls für eine Prüfung (ab-)gemeldet werden muss — heute erledigen.
-      </div>
+
+    <div class="item">
+      <span class="tag tag-na">GILT NICHT</span>
+      <h3 class="strike">Di 07.07. · Course Assignment (Operations EBC2022)</h3>
+      <div class="meta">Nur bei 3+ verpassten Tutorials ODER durchgefallenem Sports-Inc-Case.</div>
+      <div class="why">✓ Sports-Inc-Case 80 + Klausur 8,25 bestanden → nichts zu tun.</div>
     </div>
-    <hr class="divider">
-    <div class="deadline warn">
-      <div class="d-title t-note">🟡 SBE: Course registration Periode 1</div>
-      <div class="d-when yellow">Schließt 15. Juli</div>
-      <div class="body-txt" style="margin-top:6px">
-        Anmeldung für Kurse der nächsten Periode — rechtzeitig checken, noch kein Stress.
-      </div>
+
+    <div class="item">
+      <span class="tag tag-na">GILT NICHT</span>
+      <h3 class="strike">Fr 10.07. · Resit Entrepreneur Interview (EBC2158)</h3>
+      <div class="meta">Wiederholung nur bei durchgefallenem Original-Interview.</div>
+      <div class="why">✓ Original mit 90/100 bestanden → nichts zu tun.</div>
+    </div>
+
+    <div class="item">
+      <span class="tag tag-na">GILT NICHT</span>
+      <h3 class="strike">Fr 10.07. · Resit Entrepreneurial Project (EBC2158)</h3>
+      <div class="meta">Wiederholung der schriftlichen Projekt-Proposal nur bei Nichtbestehen.</div>
+      <div class="why">✓ Original-Proposal mit 90/100 bestanden → nichts zu tun.</div>
+    </div>
+
+    <div class="item">
+      <span class="tag tag-info">ECHTES TO-DO</span>
+      <h3 class="hl-yellow">Bis Mi 15.07. · Kursanmeldung Periode 1 (2026/27)</h3>
+      <div class="meta">SBE-Hinweis im Stundenplan: Anmeldefenster schließt am 15. Juli, 23:59.</div>
+      <div class="why hl-yellow">→ Kurz im Student Portal prüfen, ob du für die Kurse der Periode 1 angemeldet bist.</div>
     </div>
   </div>
 
-  <footer>Aktualisiert: 01.07.2026, 08:02 Uhr</footer>
+  <!-- ANKÜNDIGUNGEN -->
+  <div class="card">
+    <h2>📢 Ankündigungen (letzte 10 Tage)</h2>
+    <div class="item">
+      <h3 class="hl-blue">Operations EBC2022 — „Comments on the exam" (02.07.)</h3>
+      <div class="meta">Über 90 % haben bestanden, Modus-Note 7,5. 28 von 90 kommentierten Klausuren
+        bekamen Extrapunkte. Nur schriftlich in TestVision Notiertes wird bepunktet.
+        (Du hast 8,25 — alles gut.)</div>
+    </div>
+    <div class="item">
+      <h3 class="hl-blue">Entrepreneurship EBC2158 — Klarstellung Resit &amp; Notenänderungen (30.06.)</h3>
+      <div class="meta">Für die Attendance-Nachholaufgabe ist KEINE Resit-Registrierung nötig.
+        Notenänderungen erscheinen im Student Portal erst nach Ablauf der Einsichtsperiode.
+        (Betrifft dich nicht — nur zur Info.)</div>
+    </div>
+  </div>
+
+  <!-- EMPFEHLUNGEN -->
+  <div class="card">
+    <h2>💡 Empfehlung für die Woche</h2>
+    <ul>
+      <li><strong>Sonntag/diese Woche:</strong> Entspann dich — die Periode ist durch und du hast alles bestanden.
+        Guter Moment zum Durchatmen oder um für die nächste Periode vorzuarbeiten.</li>
+      <li><strong>Ein einziger Klick, den du machen solltest:</strong> Im Student Portal checken,
+        dass deine Kursanmeldung für Periode 1 (2026/27) steht — Frist 15. Juli.</li>
+      <li><strong>Noch offen (nur abwarten):</strong> Die Noten für Communication &amp; Leadership
+        Skills (EBS2019) sind eingereicht, aber noch nicht benotet. Nichts zu tun — kommt automatisch.</li>
+    </ul>
+    <h2 style="margin-top:16px;">⚠️ Risiken</h2>
+    <ul>
+      <li class="hl-yellow">Einziges reales Risiko: die <strong>Kursanmeldung Periode 1 am 15. Juli verpassen</strong> —
+        das würde die nächste Periode blockieren. Sonst nichts.</li>
+      <li>Falls du selbst weißt, dass du in einem Kurs doch eine Sitzung verpasst oder etwas
+        nicht bestanden hast (laut Canvas unwahrscheinlich), gälten die Resit-Deadlines am
+        06./07./10.07. doch — dann sofort melden.</li>
+    </ul>
+  </div>
+
+  <footer>
+    Aktualisiert: 05.07.2026 · Datenquelle: MU Timetable (iCal) + Canvas API<br>
+    <a href="https://192006-dot.github.io/uni-daily-check/">192006-dot.github.io/uni-daily-check</a>
+  </footer>
+
 </div>
 </body>
 </html>
