@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uni Daily Check – Wochenplan</title>
+<title>Uni Daily Check – Montag, 13. Juli 2026</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -30,6 +30,7 @@
     border-radius: 12px; padding: 14px 16px; margin-bottom: 12px;
   }
   .card.today { border-color: #4ade80; }
+  .card.tmrw { border-color: #2f4a6b; }
   .card.flag { border-color: #5c522a; }
   .day-label { font-size: .78rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: #60a5fa; margin-bottom: 4px; }
   .day-label.today { color: #4ade80; }
@@ -42,7 +43,6 @@
   .pill { display:inline-block; font-size:.72rem; padding:2px 8px; border-radius:6px; font-weight:600; margin-right:6px; }
   .pill.red { background:#3a1c1c; color:#f87171; border:1px solid #5c2a2a; }
   .pill.yellow { background:#3a331c; color:#fbbf24; border:1px solid #5c522a; }
-  .pill.green { background:#1e3a24; color:#4ade80; border:1px solid #326b3d; }
   .pill.grey { background:#242424; color:#9a9a9a; border:1px solid #333; }
   .dl { border-left: 3px solid #444; padding-left: 12px; margin-bottom:14px; }
   .dl.urgent { border-left-color: #f87171; }
@@ -56,14 +56,11 @@
   .note { font-size:.82rem; color:#9a9a9a; background:#151515; border:1px solid #262626; border-radius:8px; padding:10px 12px; margin-top:8px; }
   ul { margin: 6px 0 0 18px; }
   li { font-size:.88rem; margin-bottom:5px; }
-  .lit b { color:#fff; }
   .rec { background:#141b14; border:1px solid #2a3a2a; border-radius:12px; padding:14px 16px; }
   .rec .day { font-weight:700; color:#4ade80; }
-  .risk { background:#1c1414; border:1px solid #3a2a2a; border-radius:12px; padding:14px 16px; margin-top:12px; }
-  .risk .day { font-weight:700; color:#f87171; }
-  .hero { background:#141b14; border:1px solid #2a3a2a; border-radius:12px; padding:16px; text-align:center; }
-  .hero .big { font-size:1.15rem; color:#4ade80; font-weight:700; margin-bottom:6px; }
-  .hero .sub { font-size:.88rem; color:#b8c0b8; }
+  .hero { background:#1c1414; border:1px solid #4a2a2a; border-radius:12px; padding:16px; text-align:center; }
+  .hero .big { font-size:1.15rem; color:#f87171; font-weight:700; margin-bottom:6px; }
+  .hero .sub { font-size:.88rem; color:#c8b8b8; }
   footer { text-align:center; color:#666; font-size:.78rem; margin-top:30px; padding-top:14px; border-top:1px solid #222; }
   a { color:#60a5fa; }
 </style>
@@ -73,155 +70,112 @@
 
   <header>
     <h1>📚 Uni Daily Check</h1>
-    <div class="date">Sonntag, 12. Juli 2026</div>
-    <span class="badge">Wochenplan · Sommerpause</span>
+    <div class="date">Montag, 13. Juli 2026</div>
+    <span class="badge">Tages-Check · Sommerpause</span>
   </header>
 
   <section>
     <div class="hero">
-      <div class="big">☀️ Vorlesungsfreie Woche</div>
-      <div class="sub">Die Vorlesungszeit ist vorbei. Deine letzte Veranstaltung war
-      am <b>Do, 2. Juli</b> (Communication &amp; Leadership Skills, Periode 6).
-      In der Woche 13.–17. Juli stehen <b>keine Tutorien oder Vorlesungen</b> im
-      Stundenplan. Der nächste Unterricht startet mit <b>Periode 1 im September 2026</b>.</div>
-    </div>
-    <div class="note">Nur <b>ein Termin, der alle betrifft</b>: die Kursanmeldung für
-    Periode 1 schließt am <b>Mittwoch, 15. Juli um 23:59 Uhr</b> (siehe unten). Dazu
-    <b>eine bedingte Frist am Freitag</b>: Anmeldung zur MIS-Resit-Klausureinsicht —
-    aber nur, falls du diese Resit geschrieben hast. Mehr steht diese Woche nicht an.</div>
-  </section>
-
-  <section>
-    <h2>🗓️ Wochenübersicht (Mo–Fr)</h2>
-
-    <div class="card">
-      <div class="day-label">Montag · 13. Juli</div>
-      <h3>Keine Veranstaltung</h3>
-      <div class="meta">Vorlesungsfrei · kein Termin im Stundenplan</div>
-      <div class="empty">Freier Tag — Sommerpause.</div>
-    </div>
-
-    <div class="card">
-      <div class="day-label">Dienstag · 14. Juli</div>
-      <h3>Keine Veranstaltung</h3>
-      <div class="meta">Vorlesungsfrei · kein Termin im Stundenplan</div>
-      <div class="empty">Freier Tag — Sommerpause.</div>
-    </div>
-
-    <div class="card flag">
-      <div class="day-label" style="color:#fbbf24">Mittwoch · 15. Juli</div>
-      <h3>⚠️ Deadline: Kursanmeldung Periode 1</h3>
-      <div class="meta">Frist um 23:59 Uhr · SBE (Timetable-Feed) · keine Präsenz</div>
-      <div class="desc">Kein Unterricht, aber die <b>Course-Registration für Periode 1</b>
-      (Studienjahr 2026–2027) schließt heute um 23:59. Wenn du deine Kurse für den
-      Semesterstart im September noch nicht angemeldet hast, muss das bis heute Abend passieren.</div>
-      <div class="prep"><b>Zu tun:</b> In MyUM / SBE einloggen, Kursanmeldung Periode 1
-      prüfen und ggf. abschließen. Dauer: ~10–15 Min.</div>
-    </div>
-
-    <div class="card">
-      <div class="day-label">Donnerstag · 16. Juli</div>
-      <h3>Keine Veranstaltung</h3>
-      <div class="meta">Vorlesungsfrei · kein Termin im Stundenplan</div>
-      <div class="empty">Freier Tag — Sommerpause.</div>
-    </div>
-
-    <div class="card flag">
-      <div class="day-label">Freitag · 17. Juli</div>
-      <h3>Keine Veranstaltung <span class="pill yellow" style="margin-left:6px">nur ggf.</span></h3>
-      <div class="meta">Vorlesungsfrei · kein Stundenplan-Termin</div>
-      <div class="desc">Frei — <b>außer</b> du hast die <b>MIS-Resit (EBC2003)</b> geschrieben:
-      dann schließt heute um <b>23:59</b> die Anmeldung zur <i>Klausureinsicht</i> (Exam
-      Inspection, findet auf dem Campus statt). Betrifft nur Resit-Teilnehmer bzw. wer das
-      Course-Assignment bis 19.06. abgeben musste.</div>
+      <div class="big">⏳ Kursanmeldung: noch 2 Tage</div>
+      <div class="sub">Heute und morgen stehen <b>keine Termine</b> an — Sommerpause.
+      Das Einzige, was diese Woche wirklich zählt: Die <b>Kursanmeldung für Periode 1</b>
+      schließt am <b>Mittwoch, 15. Juli um 23:59 Uhr</b>. Erledige das heute, dann ist
+      die Pause komplett frei.</div>
     </div>
   </section>
 
   <section>
-    <h2>📖 Literatur diese Woche</h2>
-    <div class="card">
-      <div class="empty">Keine Pflichtlektüre — es finden keine Sessions statt, für die
-      etwas vorbereitet werden müsste. In Canvas sind für die kommende Woche keine neuen
-      Module oder Pages angelegt.</div>
+    <h2>🗓️ Heute — Montag, 13. Juli</h2>
+    <div class="card today">
+      <div class="day-label today">Heute</div>
+      <h3>Keine Veranstaltung</h3>
+      <div class="meta">Vorlesungsfrei · kein Termin im Stundenplan</div>
+      <div class="desc">Die Vorlesungszeit ist vorbei. Deine letzte Veranstaltung war am
+      <b>Do, 2. Juli</b> (Communication &amp; Leadership Skills, EBS2019 — Periode 6).
+      Der nächste Unterricht startet erst mit <b>Periode 1 im September 2026</b>.</div>
+      <div class="prep"><b>Sinnvoll heute:</b> Im Student Portal einloggen und die
+      Kursanmeldung für Periode 1 prüfen bzw. abschließen (~10–15 Min). Das ist die
+      einzige harte Frist der Woche — heute erledigt heißt Risiko null.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🔭 Morgen — Dienstag, 14. Juli</h2>
+    <div class="card tmrw">
+      <div class="day-label">Morgen</div>
+      <h3>Ebenfalls keine Veranstaltung</h3>
+      <div class="meta">Vorlesungsfrei · kein Termin im Stundenplan</div>
+      <div class="desc">Auch morgen steht nichts an — es gibt <b>nichts vorzubereiten</b>,
+      keine Literatur, keine Abgabe.</div>
+      <div class="prep"><b>Heute Abend vorbereiten:</b> Nichts Fachliches. Nur: falls die
+      Kursanmeldung noch offen ist, spätestens morgen erledigen — Mittwoch 23:59 ist Schluss.</div>
     </div>
   </section>
 
   <section>
     <h2>✅ Deadlines</h2>
 
-    <div class="dl soon">
+    <div class="dl urgent">
       <h3>Kursanmeldung Periode 1 schließt</h3>
-      <div class="when">🟡 Mittwoch, 15. Juli · 23:59 Uhr</div>
-      <div class="body">Anmeldefrist für die Kurse in Periode 1 (Studienjahr 2026–2027).
-      Nach dieser Frist ist die reguläre Anmeldung geschlossen. <b>Konkret:</b> Anmeldung
-      in MyUM/SBE prüfen und, falls noch offen, heute oder spätestens Mittwoch abschließen.</div>
+      <div class="when">🔴 Mittwoch, 15. Juli · 23:59 Uhr — in 2 Tagen</div>
+      <div class="body">Anmeldefrist für die Kurse der <b>Periode 1</b> (Studienjahr
+      2026–2027, Start September). Nach dieser Frist ist die reguläre Anmeldung geschlossen —
+      ohne Anmeldung kein Platz in den Kursen.
+        <ul>
+          <li><b>Wo:</b> Student Portal → My Courses → Course registration</li>
+          <li><b>Dauer:</b> ~10–15 Minuten</li>
+          <li><b>Quelle:</b> dein SBE-Stundenplan („Course registration period 1 closes“)</li>
+        </ul>
+      </div>
     </div>
 
     <div class="dl soon">
-      <h3>MIS-Resit — Anmeldung zur Klausureinsicht <span class="pill yellow">bedingt</span></h3>
+      <h3>MIS-Resit — Anmeldung zur Klausureinsicht <span class="pill yellow">nur bedingt</span></h3>
       <div class="when">🟡 Freitag, 17. Juli · 23:59 Uhr</div>
       <div class="body">Gilt <b>nur</b>, falls du die <b>MIS-Resit (EBC2003)</b> geschrieben
-      hast oder das Course-Assignment bis 19.06. einreichen musstest. Dann musst du dich
-      über den Link in der Canvas-Ankündigung (MIS, 09.07.) für die <b>Einsicht auf dem
-      Campus</b> anmelden. Wenn dich das nicht betrifft: ignorieren.</div>
+      hast oder das Course-Assignment bis 19.06. einreichen musstest. Dann Anmeldung zur
+      <b>Einsicht auf dem Campus</b> über den Link in der Canvas-Ankündigung (MIS, 09.07.).
+      Betrifft dich das nicht: ignorieren.
+      <span class="pill grey" style="margin-top:6px">nicht gegen dein Canvas verifiziert</span></div>
     </div>
 
     <div class="dl next">
-      <h3>Nächste Wochen — keine Abgaben</h3>
-      <div class="when">🟢 kein Termin in den nächsten 21 Tagen</div>
-      <div class="body">Weder im Canvas-Planner noch in den Kurs-Assignments steht eine
-      Abgabe an. Das einzige offene Planner-Item ist ein <i>Attendance</i>-Platzhalter in
-      Quantitative Methods III (administrativ, kein aktives To-do). Der Lehrbetrieb startet
-      wieder in <b>Periode 1 (Anfang September 2026)</b>.</div>
+      <h3>Danach — nichts bis September</h3>
+      <div class="when">🟢 keine weitere Abgabe in den nächsten Wochen</div>
+      <div class="body">Nach Mittwoch steht bis zum Semesterstart nichts mehr an.
+      Nächste Kalendertermine: <b>11. September</b> (Kursanmeldung Periode 2 schließt) und
+      <b>25. September</b> (Prüfungsanmeldung Periode 1 schließt).</div>
     </div>
   </section>
 
   <section>
-    <h2>📢 Ankündigungen (letzte 2 Wochen)</h2>
-    <div class="card">
-      <div class="desc">Alle aktuellen Ankündigungen betreffen den <b>Abschluss von Periode 6
-      und die Resit-Woche</b> — nichts Neues für kommende Kurse:</div>
-      <ul>
-        <li><b>MIS (EBC2003), 09.07.:</b> Termin zur <i>Einsicht der Resit-Klausur</i>
-        (Exam Inspection). Nur relevant, falls du die MIS-Resit geschrieben hast.</li>
-        <li><b>Entrepreneurship &amp; SBM (EBC2158), 07.07.:</b> Update zu
-        <i>Notenänderungen</i> nach Einsichts-Anfragen.</li>
-        <li><b>Management of Operations (EBC2022), 02.07.:</b> <i>Kommentare zur Klausur</i>
-        wurden veröffentlicht.</li>
-        <li><b>Entrepreneurship &amp; SBM (EBC2158), 30.06.:</b> Klarstellung zur
-        <i>Anmeldung für die Resit des Attendance-Assignments</i> und zu Notenänderungen.</li>
-      </ul>
-      <div class="note">👉 Wenn du an einer dieser Resits teilgenommen hast, lohnt ein Blick
-      in die jeweilige Canvas-Ankündigung wegen Einsichtsterminen und finalen Noten.</div>
-    </div>
-  </section>
-
-  <section>
-    <h2>💡 Empfehlung für die Woche</h2>
+    <h2>💡 Empfehlung</h2>
     <div class="rec">
-      <p><span class="day">Heute (So):</span> Kurz in MyUM/SBE einloggen und prüfen, ob die
-      <b>Kursanmeldung für Periode 1</b> abgeschlossen ist. Wenn ja — entspann dich, die
-      Woche ist frei. Wenn nein: gleich erledigen, dann ist der einzige Wochentermin weg.</p>
-      <p style="margin-top:8px"><span class="day">Mo/Di:</span> Nichts Verpflichtendes.
-      Optional: finale Noten &amp; Klausur-Feedback aus Periode 6 in Canvas anschauen
-      (v.a. falls Resit geschrieben).</p>
-      <p style="margin-top:8px"><span class="day">Mittwoch:</span> <b>Spätestens heute</b> die
-      Kursanmeldung Periode 1 abschließen, falls noch offen (Deadline 23:59).</p>
-      <p style="margin-top:8px"><span class="day">Do/Fr:</span> Frei. <b>Falls du die
-      MIS-Resit geschrieben hast:</b> bis Fr 23:59 zur Klausureinsicht anmelden (Link in der
-      Canvas-Ankündigung MIS). Sonst gute Zeit zum Vorarbeiten für September (Bücherliste/
-      Reader für die Periode-1-Kurse) — kein Muss.</p>
+      <p><span class="day">Heute:</span> Kursanmeldung Periode 1 abhaken — das ist der
+      einzige Punkt, der diese Woche zählt. Danach ist die Sommerpause wirklich frei.</p>
+      <p style="margin-top:8px"><span class="day">Optional:</span> Falls du eine Resit
+      geschrieben hast, lohnt ein Blick in die finalen Noten und das Klausur-Feedback
+      in Canvas.</p>
     </div>
-    <div class="risk">
-      <p><span class="day">⚠️ Risiko:</span> Der einzige Stolperstein diese Woche ist die
-      <b>Anmeldefrist am Mittwoch 23:59</b>. Wird sie verpasst, kann die reguläre
-      Kursanmeldung für Periode 1 geschlossen sein und du müsstest über eine Nachfrist/
-      Ausnahme gehen. → Am besten <b>heute</b> abhaken, dann ist das Risiko null.</p>
+  </section>
+
+  <section>
+    <h2>⚠️ Hinweis zur Datenlage</h2>
+    <div class="card flag">
+      <h3>Canvas konnte für dein Konto nicht gelesen werden</h3>
+      <div class="desc">Dieser Check basiert heute <b>nur auf deinem Stundenplan</b> — der ist
+      korrekt und vollständig. Die <b>Canvas-Daten</b> (Ankündigungen, Aufgaben, Noten) stammen
+      aus einem <b>anderen Account</b>, nicht aus deinem: im System ist nur ein einziger,
+      gemeinsamer Canvas-Zugang hinterlegt.</div>
+      <div class="note">Für heute ändert das nichts — in der Sommerpause gibt es ohnehin keine
+      Kursinhalte vorzubereiten, und die Anmeldefrist am Mittwoch kommt aus deinem eigenen
+      Stundenplan. Der MIS-Hinweis oben ist deshalb bewusst als <i>bedingt</i> markiert.
+      Der Konfigurationsfehler ist an Franz gemeldet.</div>
     </div>
   </section>
 
   <footer>
-    Aktualisiert: 12. Juli 2026, 09:03 Uhr (CEST) · Datenquellen: Maastricht Timetable (iCal) + Canvas
+    Aktualisiert: 13. Juli 2026, 09:46 Uhr (CEST) · Quelle: Maastricht Timetable (iCal)
   </footer>
 
 </div>
