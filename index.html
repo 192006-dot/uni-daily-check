@@ -3,54 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uni Daily Check</title>
+<title>Uni Daily Check — Fr 17. Juli 2026</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     background: #0f0f0f; color: #e0e0e0;
     font-family: system-ui, -apple-system, sans-serif;
-    line-height: 1.55; padding: 16px 12px 40px;
+    line-height: 1.55; padding: 20px 16px 48px;
   }
   .wrap { max-width: 600px; margin: 0 auto; }
-  header { text-align: center; margin-bottom: 22px; }
-  header h1 { font-size: 1.5rem; letter-spacing: -0.5px; }
+  header { text-align: center; margin-bottom: 24px; }
+  header h1 { font-size: 1.6rem; letter-spacing: -0.5px; }
   header .date { color: #9a9a9a; font-size: 0.95rem; margin-top: 4px; }
   .badge {
     display: inline-block; margin-top: 10px; padding: 4px 12px;
-    background: #1a2e1a; color: #4ade80; border: 1px solid #2f5130;
-    border-radius: 999px; font-size: 0.78rem; font-weight: 600;
+    background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 999px;
+    font-size: 0.78rem; color: #4ade80; letter-spacing: 0.5px;
   }
   .card {
     background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 14px;
-    padding: 16px 18px; margin-bottom: 16px;
+    padding: 18px 18px; margin-bottom: 16px;
   }
-  .card h2 {
-    font-size: 0.82rem; text-transform: uppercase; letter-spacing: 1px;
-    margin-bottom: 12px; font-weight: 700;
-  }
-  h2.today { color: #4ade80; }
-  h2.tomorrow { color: #60a5fa; }
-  h2.hint { color: #fbbf24; }
-  h2.urgent { color: #f87171; }
-  h2.info { color: #9a9a9a; }
-  .lead { font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; }
+  .card h2 { font-size: 1.05rem; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .today h2 { color: #4ade80; }
+  .tomorrow h2 { color: #60a5fa; }
+  .hint h2 { color: #fbbf24; }
+  .ann h2 { color: #c0c0c0; }
+  .card p { margin-bottom: 8px; font-size: 0.95rem; }
+  .card p:last-child { margin-bottom: 0; }
+  .lead { font-size: 1.05rem; color: #f0f0f0; font-weight: 600; margin-bottom: 12px; }
   .muted { color: #9a9a9a; }
-  .row { margin: 8px 0; font-size: 0.95rem; }
-  .row .k { color: #9a9a9a; }
-  ul { list-style: none; margin: 6px 0; }
-  li { position: relative; padding-left: 18px; margin: 8px 0; font-size: 0.95rem; }
-  li::before { content: "•"; position: absolute; left: 3px; color: #555; }
-  .deadline { border-left: 3px solid #2a2a2a; padding: 10px 14px; margin: 10px 0; border-radius: 6px; background: #161616; }
-  .deadline.soft { border-left-color: #fbbf24; }
-  .deadline.info { border-left-color: #60a5fa; }
-  .deadline .d-title { font-weight: 600; }
-  .deadline .d-when { font-size: 0.85rem; color: #9a9a9a; margin-top: 2px; }
-  .pill { display:inline-block; font-size:0.72rem; padding:2px 8px; border-radius:999px; margin-left:6px; vertical-align:middle; }
-  .pill.y { background:#2e2a12; color:#fbbf24; }
-  .pill.b { background:#12233a; color:#60a5fa; }
-  strong.hl { color: #e8e8e8; }
-  a { color: #60a5fa; }
-  footer { text-align: center; color: #6a6a6a; font-size: 0.8rem; margin-top: 26px; }
+  .pill {
+    display: inline-block; padding: 2px 9px; border-radius: 6px;
+    font-size: 0.72rem; margin-right: 6px; margin-bottom: 4px;
+  }
+  .pill-green { background: rgba(74,222,128,.12); color: #4ade80; }
+  .pill-blue  { background: rgba(96,165,250,.12); color: #60a5fa; }
+  .pill-yellow{ background: rgba(251,191,36,.12); color: #fbbf24; }
+  ul { margin: 6px 0 6px 20px; }
+  li { margin-bottom: 6px; font-size: 0.93rem; }
+  .ann-item { padding: 10px 0; border-bottom: 1px solid #242424; }
+  .ann-item:last-child { border-bottom: none; }
+  .ann-item .meta { font-size: 0.78rem; color: #7a7a7a; margin-bottom: 3px; }
+  .ann-item .t { font-weight: 600; color: #e8e8e8; margin-bottom: 3px; }
+  footer { text-align: center; color: #666; font-size: 0.78rem; margin-top: 28px; }
 </style>
 </head>
 <body>
@@ -59,69 +55,50 @@
   <header>
     <h1>🎓 Uni Daily Check</h1>
     <div class="date">Freitag, 17. Juli 2026</div>
-    <div class="badge">Tages-Check</div>
+    <div class="badge">☀️ SEMESTERFERIEN · TAGES-CHECK</div>
   </header>
 
-  <!-- HEUTE -->
-  <div class="card">
-    <h2 class="today">📅 Heute · Freitag</h2>
-    <div class="lead">Kein Tutorial, keine Vorlesung.</div>
-    <p class="muted">Das Studienjahr 2025&ndash;2026 ist abgeschlossen &mdash; das letzte Tutorial war am 2. Juli (Communication &amp; Leadership Skills), die Prüfungen von Periode&nbsp;6 sind vorbei. Du bist offiziell in den <strong class="hl">Sommerferien</strong>. ☀️</p>
-    <p class="muted" style="margin-top:10px;">Der nächste feste Uni-Termin im Kalender ist erst am <strong class="hl">2. Oktober</strong> (QM&nbsp;III &ndash; Attendance). Bis dahin steht nichts an.</p>
-  </div>
-
-  <!-- WICHTIG: NOTEN -->
-  <div class="card">
-    <h2 class="hint">📊 Was gerade relevant ist: Deine Noten</h2>
-    <p class="muted">Die Endnoten der letzten Kurse werden diese Woche veröffentlicht &mdash; ein Blick lohnt sich:</p>
+  <section class="card today">
+    <h2>📅 Heute — Freitag</h2>
+    <p class="lead">Kein Tutorial, keine Lecture. Du bist in den Semesterferien.</p>
+    <p class="muted">Das letzte reguläre Tutorial war am 2. Juli (Communication &amp; Leadership Skills). Der Stundenplan enthält bis 7. September nur administrative Erinnerungen — keine Präsenztermine.</p>
+    <p style="margin-top:12px;">💡 <strong>Produktiv nutzen:</strong></p>
     <ul>
-      <li><strong class="hl">Communication &amp; Leadership Skills</strong> (EBS2019): Pass/Fail-Noten seit <strong class="hl">13.&nbsp;Juli</strong> im Student Portal.</li>
-      <li><strong class="hl">Management of Operations &amp; Product Development</strong> (EBC2022): Resit-Noten seit <strong class="hl">15.&nbsp;Juli</strong> auf Canvas, Student Portal folgt diese Woche. Über 90&nbsp;% haben bestanden, Notenschnitt 7,5.</li>
-      <li><strong class="hl">Entrepreneurship &amp; Small Business Mgmt</strong> (EBC2158): Endnoten im Portal; Notenänderungen aus Resit-Assignments werden ~10 Werktage nach Ende der Resit-Periode freigegeben.</li>
+      <li>Noten im Student Portal checken — die Ergebnisse aus Periode 6 sind seit dem 13. Juli veröffentlicht (siehe unten).</li>
+      <li>Nächster Studienstart ist der 7. September. Bis dahin nichts vorzubereiten — echte Pause.</li>
+      <li>Im Blick behalten: <strong>Kurs-Registrierung Periode 2</strong> schließt <strong>Freitag, 11. September</strong> (23:59). Rechtzeitig einschreiben.</li>
     </ul>
-    <p class="row"><span class="k">➜ Check:</span> Student Portal → My Courses → Show Results, und Canvas.</p>
-  </div>
+  </section>
 
-  <!-- MORGEN -->
-  <div class="card">
-    <h2 class="tomorrow">🔜 Morgen · Samstag, 18. Juli</h2>
-    <div class="lead">Nichts geplant. Wochenende.</div>
-    <p class="muted">Keine Termine, keine Abgaben. Heute Abend musst du für morgen nichts vorbereiten.</p>
-  </div>
+  <section class="card tomorrow">
+    <h2>🔭 Morgen &amp; Wochenende</h2>
+    <p><span class="pill pill-blue">Sa 18. Juli</span> <span class="pill pill-blue">So 19. Juli</span></p>
+    <p>Keine Uni-Termine. Nichts, was du heute Abend vorbereiten musst.</p>
+    <p class="muted">Frei — genieß das Wochenende. Der erste akademische Termin nach der Pause liegt erst im September.</p>
+  </section>
 
-  <!-- DEADLINES / TERMINE -->
-  <div class="card">
-    <h2 class="info">✅ Anstehende Termine &amp; Hinweise</h2>
+  <section class="card hint">
+    <h2>✅ Deadlines</h2>
+    <p><strong>Keine offenen Canvas-Deadlines</strong> zwischen jetzt und dem 15. September (Planner geprüft — leer).</p>
+    <p style="margin-top:8px;"><span class="pill pill-yellow">Admin</span> Kurs-Registrierung <strong>Periode 2</strong> — schließt <strong>Fr, 11. Sept 2026, 23:59</strong>. Kein Stress jetzt, aber vormerken.</p>
+  </section>
 
-    <div class="deadline soft">
-      <div class="d-title">Resit-Inspektion Ops &amp; Product Development <span class="pill y">nur bei Resit</span></div>
-      <div class="d-when">Findet „next week&ldquo; statt (ab Mo, 20. Juli) &middot; wird über Canvas angekündigt. Nur relevant, falls du eine Resit geschrieben hast und die Bewertung einsehen willst.</div>
+  <section class="card ann">
+    <h2>📢 Ankündigungen</h2>
+    <div class="ann-item">
+      <div class="meta">13. Juli · Communication &amp; Leadership Skills (EBS2019)</div>
+      <div class="t">Noten veröffentlicht</div>
+      <div class="muted">Die Bewertungen (pass/fail) wurden verarbeitet und sollten bald im Student Portal sichtbar sein. „Have a great summer!" — Desiree</div>
     </div>
-
-    <div class="deadline info">
-      <div class="d-title">Kursanmeldung Periode&nbsp;2 <span class="pill b">Vorlauf</span></div>
-      <div class="d-when">Schließt Freitag, 11. September (23:59). Die Anmeldung für Periode&nbsp;1 ist bereits am 15. Juli geschlossen &mdash; falls du dafür noch nicht registriert bist, kläre das mit der SBE-Studienberatung.</div>
+    <div class="ann-item">
+      <div class="meta">7. Juli · Entrepreneurship &amp; Small Business Mgmt (EBC2158)</div>
+      <div class="t">Notenänderungen (Inspection Requests) — Update</div>
+      <div class="muted">Alle Notenänderungen aus Einsichtnahme-Anträgen sind verarbeitet. Notenänderungen aus Resit-Assignments (Periode 5) werden 10 Werktage nach der Resit-Woche freigegeben. Bei fehlender Verarbeitung → E-Mail an Sergio.</div>
     </div>
-
-    <div class="deadline">
-      <div class="d-title">QM III &ndash; Attendance</div>
-      <div class="d-when">Erster Canvas-Termin des neuen Jahres: 2. Oktober. Kein Handlungsbedarf jetzt.</div>
-    </div>
-  </div>
-
-  <!-- WEEKEND TIPP -->
-  <div class="card">
-    <h2 class="hint">💡 Fürs Wochenende</h2>
-    <ul>
-      <li>Endnoten im Student Portal checken &mdash; besonders die Ops&amp;PD-Resit und Comm&amp;Leadership.</li>
-      <li>Falls Resit geschrieben: nächste Woche auf die Canvas-Ankündigung zur Inspektion achten.</li>
-      <li>Prüfen, ob deine Kursanmeldung fürs neue Studienjahr (Start September) vollständig ist.</li>
-      <li>Ansonsten: genieß die Ferien. 🌞</li>
-    </ul>
-  </div>
+  </section>
 
   <footer>
-    Aktualisiert: 17. Juli 2026 · Datenquellen: MU Timetable + Canvas
+    Aktualisiert: 17. Juli 2026, 09:22 · Datenquelle: MyTimetable + Canvas
   </footer>
 
 </div>
