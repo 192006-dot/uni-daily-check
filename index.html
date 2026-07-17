@@ -3,215 +3,126 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uni Daily Check – Montag, 13. Juli 2026</title>
+<title>Uni Daily Check</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     background: #0f0f0f; color: #e0e0e0;
     font-family: system-ui, -apple-system, sans-serif;
-    line-height: 1.55; padding: 16px;
+    line-height: 1.55; padding: 16px 12px 40px;
   }
   .wrap { max-width: 600px; margin: 0 auto; }
   header { text-align: center; margin-bottom: 22px; }
-  h1 { font-size: 25px; font-weight: 700; letter-spacing: -.02em; }
-  .date { color: #9a9a9a; font-size: 15px; margin-top: 4px; }
-  .badges { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+  header h1 { font-size: 1.5rem; letter-spacing: -0.5px; }
+  header .date { color: #9a9a9a; font-size: 0.95rem; margin-top: 4px; }
   .badge {
-    font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px;
-    background: #1a1a1a; border: 1px solid #2a2a2a; color: #9a9a9a;
+    display: inline-block; margin-top: 10px; padding: 4px 12px;
+    background: #1a2e1a; color: #4ade80; border: 1px solid #2f5130;
+    border-radius: 999px; font-size: 0.78rem; font-weight: 600;
   }
-  .badge.warn { background: rgba(248,113,113,.1); border-color: rgba(248,113,113,.35); color: #f87171; }
-
-  .hero {
-    background: #1a1a1a; border: 1px solid #2a2a2a; border-left: 3px solid #f87171;
-    border-radius: 12px; padding: 16px 18px; margin-bottom: 26px;
-  }
-  .hero .k {
-    color: #f87171; font-weight: 700; font-size: 12px;
-    letter-spacing: .05em; text-transform: uppercase;
-  }
-  .hero p { margin-top: 8px; font-size: 15px; }
-
-  h2 {
-    font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
-    color: #7a7a7a; margin: 28px 0 12px;
-  }
-
   .card {
-    background: #1a1a1a; border: 1px solid #2a2a2a;
-    border-radius: 12px; padding: 16px 18px; margin-bottom: 12px;
+    background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 14px;
+    padding: 16px 18px; margin-bottom: 16px;
   }
-  .card.today  { border-left: 3px solid #4ade80; }
-  .card.tmrw   { border-left: 3px solid #60a5fa; }
-  .card.urgent { border-left: 3px solid #f87171; }
-  .card.note   { border-left: 3px solid #fbbf24; }
-  .card.ok     { border-left: 3px solid #4ade80; }
-
-  .tag {
-    display: inline-block; font-size: 11px; font-weight: 700;
-    letter-spacing: .05em; text-transform: uppercase;
-    padding: 3px 8px; border-radius: 5px; margin-bottom: 10px;
+  .card h2 {
+    font-size: 0.82rem; text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 12px; font-weight: 700;
   }
-  .tag.today  { background: rgba(74,222,128,.12); color: #4ade80; }
-  .tag.tmrw   { background: rgba(96,165,250,.12); color: #60a5fa; }
-  .tag.urgent { background: rgba(248,113,113,.12); color: #f87171; }
-  .tag.note   { background: rgba(251,191,36,.12); color: #fbbf24; }
-  .tag.ok     { background: rgba(74,222,128,.12); color: #4ade80; }
-
-  .title { font-size: 17px; font-weight: 650; color: #f0f0f0; }
-  .sub   { color: #8a8a8a; font-size: 14px; margin-top: 3px; }
-  .card p { margin-top: 10px; font-size: 14.5px; }
-  .label { color: #fbbf24; font-weight: 650; }
-  .green { color: #4ade80; font-weight: 650; }
-  .red   { color: #f87171; font-weight: 650; }
-  .blue  { color: #60a5fa; font-weight: 650; }
-  strong { color: #f0f0f0; font-weight: 650; }
-
-  .meta {
-    margin-top: 12px; padding-top: 12px; border-top: 1px solid #262626;
-    font-size: 13.5px; color: #9a9a9a;
-  }
-  .meta div { margin-top: 4px; }
-  .meta .mk { color: #7a7a7a; }
-
-  .grades { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; }
-  .grades td { padding: 7px 0; border-bottom: 1px solid #242424; }
-  .grades td:last-child { text-align: right; font-weight: 700; color: #4ade80; }
-  .grades tr:last-child td { border-bottom: none; }
-
-  footer { margin-top: 32px; text-align: center; color: #5a5a5a; font-size: 12.5px; }
+  h2.today { color: #4ade80; }
+  h2.tomorrow { color: #60a5fa; }
+  h2.hint { color: #fbbf24; }
+  h2.urgent { color: #f87171; }
+  h2.info { color: #9a9a9a; }
+  .lead { font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; }
+  .muted { color: #9a9a9a; }
+  .row { margin: 8px 0; font-size: 0.95rem; }
+  .row .k { color: #9a9a9a; }
+  ul { list-style: none; margin: 6px 0; }
+  li { position: relative; padding-left: 18px; margin: 8px 0; font-size: 0.95rem; }
+  li::before { content: "•"; position: absolute; left: 3px; color: #555; }
+  .deadline { border-left: 3px solid #2a2a2a; padding: 10px 14px; margin: 10px 0; border-radius: 6px; background: #161616; }
+  .deadline.soft { border-left-color: #fbbf24; }
+  .deadline.info { border-left-color: #60a5fa; }
+  .deadline .d-title { font-weight: 600; }
+  .deadline .d-when { font-size: 0.85rem; color: #9a9a9a; margin-top: 2px; }
+  .pill { display:inline-block; font-size:0.72rem; padding:2px 8px; border-radius:999px; margin-left:6px; vertical-align:middle; }
+  .pill.y { background:#2e2a12; color:#fbbf24; }
+  .pill.b { background:#12233a; color:#60a5fa; }
+  strong.hl { color: #e8e8e8; }
+  a { color: #60a5fa; }
+  footer { text-align: center; color: #6a6a6a; font-size: 0.8rem; margin-top: 26px; }
 </style>
 </head>
 <body>
 <div class="wrap">
 
   <header>
-    <h1>📚 Uni Daily Check</h1>
-    <div class="date">Montag, 13. Juli 2026</div>
-    <div class="badges">
-      <span class="badge">Tages-Check</span>
-      <span class="badge">Sommerpause</span>
-      <span class="badge warn">Kursanmeldung: noch 2 Tage</span>
-    </div>
+    <h1>🎓 Uni Daily Check</h1>
+    <div class="date">Freitag, 17. Juli 2026</div>
+    <div class="badge">Tages-Check</div>
   </header>
 
-  <div class="hero">
-    <div class="k">Das Einzige, was diese Woche zählt</div>
-    <p>
-      Heute und morgen: <strong>keine Termine</strong> — Sommerpause. Alle Kurse sind
-      abgeschlossen und bestanden. Es bleibt <strong>eine harte Frist</strong>:
-      die <span class="red">Kursanmeldung für Periode 1</span> schließt am
-      <strong>Mittwoch, 15. Juli um 23:59 Uhr</strong>. Heute erledigt = Pause komplett frei.
-    </p>
+  <!-- HEUTE -->
+  <div class="card">
+    <h2 class="today">📅 Heute · Freitag</h2>
+    <div class="lead">Kein Tutorial, keine Vorlesung.</div>
+    <p class="muted">Das Studienjahr 2025&ndash;2026 ist abgeschlossen &mdash; das letzte Tutorial war am 2. Juli (Communication &amp; Leadership Skills), die Prüfungen von Periode&nbsp;6 sind vorbei. Du bist offiziell in den <strong class="hl">Sommerferien</strong>. ☀️</p>
+    <p class="muted" style="margin-top:10px;">Der nächste feste Uni-Termin im Kalender ist erst am <strong class="hl">2. Oktober</strong> (QM&nbsp;III &ndash; Attendance). Bis dahin steht nichts an.</p>
   </div>
 
-  <h2>🗓️ Heute — Montag, 13. Juli</h2>
-  <div class="card today">
-    <span class="tag today">Heute</span>
-    <div class="title">Keine Veranstaltung</div>
-    <div class="sub">Vorlesungsfrei · kein Eintrag im Stundenplan</div>
-    <p>
-      Die Vorlesungszeit ist vorbei. Deine letzte Veranstaltung war am <strong>Do, 2. Juli</strong>
-      (Communication &amp; Leadership Skills, EBS2019 — Periode 6). Der nächste Unterricht
-      startet erst mit <span class="blue">Periode 1 im September 2026</span>.
-    </p>
-    <p>
-      <span class="label">Sinnvoll heute:</span> Im Student Portal einloggen und die
-      <strong>Kursanmeldung für Periode 1</strong> prüfen bzw. abschließen (~10–15 Min).
-      Das ist die einzige harte Frist der Woche — heute erledigt heißt Risiko null.
-    </p>
+  <!-- WICHTIG: NOTEN -->
+  <div class="card">
+    <h2 class="hint">📊 Was gerade relevant ist: Deine Noten</h2>
+    <p class="muted">Die Endnoten der letzten Kurse werden diese Woche veröffentlicht &mdash; ein Blick lohnt sich:</p>
+    <ul>
+      <li><strong class="hl">Communication &amp; Leadership Skills</strong> (EBS2019): Pass/Fail-Noten seit <strong class="hl">13.&nbsp;Juli</strong> im Student Portal.</li>
+      <li><strong class="hl">Management of Operations &amp; Product Development</strong> (EBC2022): Resit-Noten seit <strong class="hl">15.&nbsp;Juli</strong> auf Canvas, Student Portal folgt diese Woche. Über 90&nbsp;% haben bestanden, Notenschnitt 7,5.</li>
+      <li><strong class="hl">Entrepreneurship &amp; Small Business Mgmt</strong> (EBC2158): Endnoten im Portal; Notenänderungen aus Resit-Assignments werden ~10 Werktage nach Ende der Resit-Periode freigegeben.</li>
+    </ul>
+    <p class="row"><span class="k">➜ Check:</span> Student Portal → My Courses → Show Results, und Canvas.</p>
   </div>
 
-  <h2>🔭 Morgen — Dienstag, 14. Juli</h2>
-  <div class="card tmrw">
-    <span class="tag tmrw">Morgen</span>
-    <div class="title">Ebenfalls keine Veranstaltung</div>
-    <div class="sub">Vorlesungsfrei · kein Eintrag im Stundenplan</div>
-    <p>
-      Auch morgen steht nichts an — <strong>nichts vorzubereiten</strong>, keine Literatur,
-      keine Abgabe.
-    </p>
-    <p>
-      <span class="label">Heute Abend vorbereiten:</span> Nichts Fachliches. Nur: falls die
-      Kursanmeldung noch offen ist, spätestens morgen erledigen — Mittwoch 23:59 ist Schluss.
-    </p>
+  <!-- MORGEN -->
+  <div class="card">
+    <h2 class="tomorrow">🔜 Morgen · Samstag, 18. Juli</h2>
+    <div class="lead">Nichts geplant. Wochenende.</div>
+    <p class="muted">Keine Termine, keine Abgaben. Heute Abend musst du für morgen nichts vorbereiten.</p>
   </div>
 
-  <h2>✅ Deadlines</h2>
+  <!-- DEADLINES / TERMINE -->
+  <div class="card">
+    <h2 class="info">✅ Anstehende Termine &amp; Hinweise</h2>
 
-  <div class="card urgent">
-    <span class="tag urgent">🔴 In 2 Tagen</span>
-    <div class="title">Kursanmeldung Periode 1 schließt</div>
-    <div class="sub">Mittwoch, 15. Juli · 23:59 Uhr</div>
-    <p>
-      Anmeldefrist für die Kurse der <strong>Periode 1</strong> (Studienjahr 2026–2027,
-      Start September). Nach der Frist ist die reguläre Anmeldung zu — <strong>ohne
-      Anmeldung kein Platz in den Kursen</strong>.
-    </p>
-    <div class="meta">
-      <div><span class="mk">Wo:</span> Student Portal → Course registration</div>
-      <div><span class="mk">Dauer:</span> ~10–15 Minuten</div>
-      <div><span class="mk">Quelle:</span> SBE-Stundenplan („Course registration period 1 closes TODAY“, 15.07.)</div>
-      <div><span class="mk">Ehrlich:</span> Ob du schon angemeldet bist, steht weder in Canvas
-        noch im Stundenplan — das musst du einmal selbst im Portal nachsehen.</div>
+    <div class="deadline soft">
+      <div class="d-title">Resit-Inspektion Ops &amp; Product Development <span class="pill y">nur bei Resit</span></div>
+      <div class="d-when">Findet „next week&ldquo; statt (ab Mo, 20. Juli) &middot; wird über Canvas angekündigt. Nur relevant, falls du eine Resit geschrieben hast und die Bewertung einsehen willst.</div>
+    </div>
+
+    <div class="deadline info">
+      <div class="d-title">Kursanmeldung Periode&nbsp;2 <span class="pill b">Vorlauf</span></div>
+      <div class="d-when">Schließt Freitag, 11. September (23:59). Die Anmeldung für Periode&nbsp;1 ist bereits am 15. Juli geschlossen &mdash; falls du dafür noch nicht registriert bist, kläre das mit der SBE-Studienberatung.</div>
+    </div>
+
+    <div class="deadline">
+      <div class="d-title">QM III &ndash; Attendance</div>
+      <div class="d-when">Erster Canvas-Termin des neuen Jahres: 2. Oktober. Kein Handlungsbedarf jetzt.</div>
     </div>
   </div>
 
-  <div class="card ok">
-    <span class="tag ok">Geprüft · betrifft dich nicht</span>
-    <div class="title">MIS-Resit-Einsicht (Fr, 17. Juli)</div>
-    <div class="sub">EBC2003 — Management Information Systems</div>
-    <p>
-      Die Canvas-Ankündigung vom 09.07. gilt ausdrücklich nur für Studierende, die die
-      <strong>Resit geschrieben</strong> haben oder das Course Assignment bis 19.06. abgeben mussten.
-      Dein MIS-Ergebnis: <span class="green">Endnote 8,5</span> (Exam 8,5 · Participation 8,5 ·
-      Group Work 8,0) — also keine Resit, kein Handlungsbedarf. <strong>Kannst du ignorieren.</strong>
-    </p>
-  </div>
-
-  <div class="card note">
-    <span class="tag note">Läuft im Hintergrund</span>
-    <div class="title">Entrepreneurship: Notenanpassungen noch unterwegs</div>
-    <div class="sub">EBC2158 — Canvas-Ankündigung vom 07.07.</div>
-    <p>
-      Die Anpassungen aus den <em>Inspection Requests</em> sind laut Sergio durch. Änderungen aus
-      Resit-Leistungen (inkl. Ersatzaufgaben für Fehlzeiten) erscheinen erst
-      <strong>10 Arbeitstage nach Ende der Resit-Woche Periode 5</strong> im Portal.
-      Inhaltlich betrifft dich das nicht — falls deine Endnote im Portal noch nicht final
-      aussieht, ist das der Grund und kein Fehler.
-    </p>
-  </div>
-
-  <h2>🎓 Stand deiner Kurse — alles durch</h2>
-  <div class="card ok">
-    <span class="tag ok">Bestanden</span>
-    <table class="grades">
-      <tr><td>EBC2022 — Management of Operations &amp; Product Dev.</td><td>8,0</td></tr>
-      <tr><td>EBC2003 — Management Information Systems</td><td>8,5</td></tr>
-      <tr><td>EBC2158 — Entrepreneurship &amp; Small Business Mgmt.</td><td>85–100</td></tr>
-      <tr><td>EBS2019 — Communication &amp; Leadership Skills</td><td>abgegeben</td></tr>
-    </table>
-    <p>
-      Bei Entrepreneurship steht die <strong>Attendance auf „complete“</strong> — also bestanden.
-      Die Ersatzaufgabe für Fehlzeiten (ab 3 versäumten Sessions) und die beiden Resits betreffen
-      dich <strong>nicht</strong>; sie sind inzwischen ohnehin gesperrt.
-    </p>
-  </div>
-
-  <h2>💡 Empfehlung</h2>
+  <!-- WEEKEND TIPP -->
   <div class="card">
-    <p>
-      <span class="label">Heute:</span> Kursanmeldung Periode 1 abhaken — der einzige Punkt,
-      der diese Woche wirklich zählt. Danach ist die Sommerpause frei.
-    </p>
-    <p>
-      <span class="label">Danach:</span> Bis September steht nichts an. Nächste Kalendertermine:
-      <strong>11. September</strong> (Kursanmeldung Periode 2 schließt) und
-      <strong>25. September</strong> (Prüfungsanmeldung Periode 1 schließt).
-    </p>
+    <h2 class="hint">💡 Fürs Wochenende</h2>
+    <ul>
+      <li>Endnoten im Student Portal checken &mdash; besonders die Ops&amp;PD-Resit und Comm&amp;Leadership.</li>
+      <li>Falls Resit geschrieben: nächste Woche auf die Canvas-Ankündigung zur Inspektion achten.</li>
+      <li>Prüfen, ob deine Kursanmeldung fürs neue Studienjahr (Start September) vollständig ist.</li>
+      <li>Ansonsten: genieß die Ferien. 🌞</li>
+    </ul>
   </div>
 
-  <footer>Aktualisiert: Montag, 13. Juli 2026 · Quellen: SBE-Stundenplan (iCal) + Canvas</footer>
+  <footer>
+    Aktualisiert: 17. Juli 2026 · Datenquellen: MU Timetable + Canvas
+  </footer>
 
 </div>
 </body>
