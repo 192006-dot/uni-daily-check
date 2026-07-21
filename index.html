@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uni Daily Check — Montag, 20. Juli 2026</title>
+<title>Uni Daily Check — Dienstag, 21. Juli 2026</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -27,7 +27,6 @@
   .card h2 { font-size: 1.05rem; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
   .today h2 { color: #4ade80; }
   .tomorrow h2 { color: #60a5fa; }
-  .dead h2 { color: #f87171; }
   .rec h2 { color: #fbbf24; }
   .card p { margin-bottom: 8px; font-size: 0.95rem; }
   .card p:last-child { margin-bottom: 0; }
@@ -41,64 +40,69 @@
     display: inline-block; padding: 2px 9px; border-radius: 6px;
     font-size: 0.72rem; margin-right: 6px; margin-bottom: 4px;
   }
-  .pill-green { background: rgba(74,222,128,.12); color: #4ade80; }
-  .pill-blue  { background: rgba(96,165,250,.12); color: #60a5fa; }
   .pill-yellow{ background: rgba(251,191,36,.12); color: #fbbf24; }
-  .pill-red   { background: rgba(248,113,113,.12); color: #f87171; }
   ul { margin: 6px 0 6px 20px; }
   li { margin-bottom: 6px; font-size: 0.93rem; }
+  .deadline-datum { color: #fbbf24; font-weight: 600; }
   footer { text-align: center; color: #666; font-size: 0.78rem; margin-top: 28px; line-height: 1.5; }
-  a { color: #60a5fa; }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <header>
-    <h1>🎓 Uni Daily Check</h1>
-    <div class="date">Montag, 20. Juli 2026</div>
-    <div class="badge">☀️ TAGES-CHECK · SEMESTERFERIEN</div>
-  </header>
+<header>
+  <h1>📚 Uni Daily Check</h1>
+  <div class="date">Dienstag, 21. Juli 2026</div>
+  <span class="badge">Tages-Check</span>
+</header>
 
-  <section class="card today">
-    <h2>📅 Heute — Montag 20.07.</h2>
-    <p class="lead">Keine Termine. Sommerpause.</p>
-    <p class="muted">Der Stundenplan (MyTimetable, heute frisch geladen) enthält für heute keinerlei Tutorials, Lectures oder andere Veranstaltungen. Die letzte reguläre Lehrveranstaltung war am 1./2. Juli (EBS2019 — Communication &amp; Leadership Skills). Der nächste Eintrag im Feed ist erst wieder im September.</p>
-  </section>
+<div class="card today">
+  <h2>🌴 Heute</h2>
+  <p class="lead">Keine Termine — Semesterferien.</p>
+  <p class="muted">
+    Das akademische Jahr 2025/26 ist abgeschlossen. Im Stundenplan stehen bis
+    Anfang September keine Tutorials, Lectures oder Prüfungen.
+  </p>
+</div>
 
-  <section class="card tomorrow">
-    <h2>🔵 Morgen — Dienstag 21.07.</h2>
-    <p class="lead">Ebenfalls frei. Auch Mittwoch: nichts.</p>
-    <p class="muted">Nichts vorzubereiten, keine Literatur, keine Abgaben. Der neue Stundenplan fürs kommende Studienjahr ist noch nicht eingepflegt — sobald dort Termine auftauchen, stehen sie hier.</p>
-  </section>
+<div class="card tomorrow">
+  <h2>📅 Morgen (Mittwoch, 22. Juli)</h2>
+  <p class="lead">Ebenfalls keine Termine.</p>
+  <p class="muted">Nichts vorzubereiten — genieß den Sommer. 🙂</p>
+</div>
 
-  <section class="card dead">
-    <h2>✅ Deadlines</h2>
-    <p><span class="pill pill-green">Diese Woche</span> Keine Abgaben oder Fristen.</p>
-    <p style="margin-top:10px;"><span class="pill pill-yellow">Vormerken</span> <strong>Kurs-Registrierung Periode 2</strong> schließt <strong>Freitag, 11. September 2026, 23:59</strong>. Noch weit weg, aber das ist die einzige echte Frist am Horizont — verpasste Einschreibung heißt kein Kursplatz.</p>
-    <p style="margin-top:10px;" class="muted">Danach: Exam-(De)Registration Periode 1 → 21.–25. September 2026.</p>
-    <p style="margin-top:10px;" class="muted">Zur Info: Die Kurs-Registrierung Periode 1 ist am 15. Juli abgelaufen. Falls du dich damals einschreiben wolltest und unsicher bist, ob es geklappt hat: kurz im Student Portal prüfen — sonst bleibt Periode 2 im September als zweite Chance.</p>
-  </section>
+<div class="card rec">
+  <h2>🗓️ Nächste Fristen (aus dem Stundenplan)</h2>
+  <ul>
+    <li>
+      <span class="pill pill-yellow">SBE</span>
+      <strong>Kursregistrierung Periode 2</strong> schließt am
+      <span class="deadline-datum">Freitag, 11. September 2026 (23:59 Uhr)</span>.
+      <p class="muted" style="margin-top:4px;">
+        Hinweis: Die Registrierung für Periode 1 ist bereits am 15. Juli
+        geschlossen. Falls die Kurse für Periode 1 noch nicht registriert
+        sind, bitte im Student Portal prüfen — Periode 2 ist die nächste
+        offene Frist.
+      </p>
+    </li>
+  </ul>
+</div>
 
-  <section class="card alert">
-    <h2>⚠️ Canvas aktuell nicht abrufbar</h2>
-    <p>Der Canvas-Zugangs-Token ist am 18.07. abgelaufen (HTTP 401, heute erneut geprüft). Deshalb kann ich derzeit keine Kurs-Seiten, Aufgaben oder neuen Ankündigungen einlesen — der Check basiert bis auf Weiteres nur auf dem Stundenplan.</p>
-    <p class="muted" style="margin-top:8px;">Inhaltlich verpasst du dadurch gerade nichts: Es laufen keine Kurse. Der Token sollte aber vor Semesterstart im September erneuert werden (Aufgabe für Franz).</p>
-  </section>
+<div class="card alert">
+  <h2>⚠️ Canvas nicht erreichbar</h2>
+  <p class="muted">
+    Der Canvas-API-Token ist am 18. Juli abgelaufen — alle Canvas-Abfragen
+    (Kurse, Deadlines, Ankündigungen) schlagen derzeit mit „401 Unauthorized“
+    fehl. Bis ein neuer Token hinterlegt ist, basiert dieser Check nur auf dem
+    Stundenplan. In den Semesterferien fehlen dadurch aber keine relevanten
+    Inhalte.
+  </p>
+</div>
 
-  <section class="card rec">
-    <h2>💡 Für heute</h2>
-    <p class="lead">Nichts fürs Studium zu tun — genieß den freien Montag.</p>
-    <ul>
-      <li><strong>Optional:</strong> Falls noch nicht geschehen, Noten aus Periode 6 im Student Portal checken (EBS2019-Bewertungen wurden Mitte Juli veröffentlicht).</li>
-      <li><strong>Vormerken:</strong> Kurs-Registrierung Periode 2 → Frist Fr, 11. September.</li>
-    </ul>
-  </section>
-
-  <footer>
-    Aktualisiert: Montag, 20. Juli 2026, 08:56 CEST<br>
-    Datenquellen: MyTimetable (ok, 66 Einträge geladen) · Canvas (Token abgelaufen — 401, erneut geprüft 08:55)
-  </footer>
+<footer>
+  Aktualisiert: 21.07.2026, 08:27 Uhr<br>
+  Quelle: Maastricht University Timetable · Canvas derzeit nicht verfügbar
+</footer>
 
 </div>
 </body>
