@@ -28,82 +28,56 @@
   .today h2 { color: #4ade80; }
   .tomorrow h2 { color: #60a5fa; }
   .rec h2 { color: #fbbf24; }
+  .warn h2 { color: #f87171; }
   .card p { margin-bottom: 8px; font-size: 0.95rem; }
   .card p:last-child { margin-bottom: 0; }
-  .lead { font-size: 1.05rem; color: #f0f0f0; font-weight: 600; margin-bottom: 12px; }
-  .muted { color: #9a9a9a; }
-  .alert {
-    background: rgba(248,113,113,.08); border: 1px solid rgba(248,113,113,.35);
-  }
-  .alert h2 { color: #f87171; }
+  .muted { color: #9a9a9a; font-size: 0.88rem; }
+  ul { padding-left: 20px; }
+  li { margin-bottom: 8px; font-size: 0.95rem; }
+  li:last-child { margin-bottom: 0; }
   .pill {
-    display: inline-block; padding: 2px 9px; border-radius: 6px;
-    font-size: 0.72rem; margin-right: 6px; margin-bottom: 4px;
+    display: inline-block; font-size: 0.74rem; padding: 2px 8px;
+    border-radius: 999px; margin-right: 6px; vertical-align: middle;
   }
-  .pill-yellow{ background: rgba(251,191,36,.12); color: #fbbf24; }
-  ul { margin: 6px 0 6px 20px; }
-  li { margin-bottom: 6px; font-size: 0.93rem; }
-  .deadline-datum { color: #fbbf24; font-weight: 600; }
-  footer { text-align: center; color: #666; font-size: 0.78rem; margin-top: 28px; line-height: 1.5; }
+  .pill-yellow { background: rgba(251,191,36,0.12); color: #fbbf24; border: 1px solid rgba(251,191,36,0.35); }
+  footer { text-align: center; color: #666; font-size: 0.8rem; margin-top: 26px; }
 </style>
 </head>
 <body>
 <div class="wrap">
-
 <header>
-  <h1>📚 Uni Daily Check</h1>
+  <h1>🎓 Uni Daily Check</h1>
   <div class="date">Dienstag, 21. Juli 2026</div>
   <span class="badge">Tages-Check</span>
 </header>
 
 <div class="card today">
-  <h2>🌴 Heute</h2>
-  <p class="lead">Keine Termine — Semesterferien.</p>
-  <p class="muted">
-    Das akademische Jahr 2025/26 ist abgeschlossen. Im Stundenplan stehen bis
-    Anfang September keine Tutorials, Lectures oder Prüfungen.
-  </p>
+  <h2>📅 Heute</h2>
+  <p><strong>Keine Veranstaltungen — Sommerpause.</strong></p>
+  <p class="muted">Der letzte Termin im Stundenplan war das Tutorial „Communication and Leadership Skills" (EBS2019) am 2. Juli. Für diese Woche sind keine Tutorials oder Lectures eingetragen.</p>
 </div>
 
 <div class="card tomorrow">
-  <h2>📅 Morgen (Mittwoch, 22. Juli)</h2>
-  <p class="lead">Ebenfalls keine Termine.</p>
-  <p class="muted">Nichts vorzubereiten — genieß den Sommer. 🙂</p>
+  <h2>🌅 Morgen &amp; Übermorgen</h2>
+  <p><strong>Ebenfalls frei.</strong> Keine Termine am Mittwoch (22.07.) und Donnerstag (23.07.).</p>
+  <p class="muted">Der Stundenplan für das neue akademische Jahr ist noch nicht veröffentlicht — im Feed stehen bis September nur Verwaltungsfristen. Sobald neue Termine erscheinen, tauchen sie hier auf.</p>
 </div>
 
 <div class="card rec">
-  <h2>🗓️ Nächste Fristen (aus dem Stundenplan)</h2>
+  <h2>💡 Fristen im Blick</h2>
   <ul>
-    <li>
-      <span class="pill pill-yellow">SBE</span>
-      <strong>Kursregistrierung Periode 2</strong> schließt am
-      <span class="deadline-datum">Freitag, 11. September 2026 (23:59 Uhr)</span>.
-      <p class="muted" style="margin-top:4px;">
-        Hinweis: Die Registrierung für Periode 1 ist bereits am 15. Juli
-        geschlossen. Falls die Kurse für Periode 1 noch nicht registriert
-        sind, bitte im Student Portal prüfen — Periode 2 ist die nächste
-        offene Frist.
-      </p>
-    </li>
+    <li><span class="pill pill-yellow">Frist</span><strong>Course Registration Periode 2</strong> schließt am <strong>Freitag, 11. September 2026, 23:59 Uhr</strong>. Periode 1 ist seit dem 15. Juli zu — falls die Kurswahl für Periode 2 noch offen ist, rechtzeitig anmelden.</li>
+    <li><span class="pill pill-yellow">Frist</span><strong>Exam (De)Registration Periode 1</strong>: öffnet am 21. September, schließt am <strong>Freitag, 25. September 2026, 23:59 Uhr</strong>.</li>
   </ul>
 </div>
 
-<div class="card alert">
+<div class="card warn">
   <h2>⚠️ Canvas nicht erreichbar</h2>
-  <p class="muted">
-    Der Canvas-API-Token ist am 18. Juli abgelaufen — alle Canvas-Abfragen
-    (Kurse, Deadlines, Ankündigungen) schlagen derzeit mit „401 Unauthorized“
-    fehl. Bis ein neuer Token hinterlegt ist, basiert dieser Check nur auf dem
-    Stundenplan. In den Semesterferien fehlen dadurch aber keine relevanten
-    Inhalte.
-  </p>
+  <p>Der Canvas-API-Token ist am <strong>18. Juli abgelaufen</strong> — Kursinhalte, Planner und Ankündigungen konnten heute nicht geladen werden. Zum Erneuern: Canvas → Account → Settings → „New Access Token", dann den neuen Token als CANVAS_API_TOKEN hinterlegen.</p>
+  <p class="muted">In der Sommerpause fehlen dadurch keine akuten Infos: keine Sessions und keine bekannten Abgaben diese Woche.</p>
 </div>
 
-<footer>
-  Aktualisiert: 21.07.2026, 08:45 Uhr<br>
-  Quelle: Maastricht University Timetable · Canvas derzeit nicht verfügbar
-</footer>
-
+<footer>Aktualisiert: Dienstag, 21. Juli 2026 · 09:27 Uhr</footer>
 </div>
 </body>
 </html>
