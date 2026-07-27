@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uni Daily Check — Wochenplan 27.07.–31.07.2026</title>
+<title>Uni Daily Check — Montag, 27. Juli 2026</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -25,8 +25,8 @@
     padding: 18px; margin-bottom: 16px;
   }
   .card h2 { font-size: 1.05rem; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-  .week h2 { color: #60a5fa; }
-  .lit h2 { color: #60a5fa; }
+  .today h2 { color: #4ade80; }
+  .tomorrow h2 { color: #60a5fa; }
   .rec h2 { color: #fbbf24; }
   .warn h2 { color: #f87171; }
   .green h2 { color: #4ade80; }
@@ -41,13 +41,12 @@
     border-bottom: 1px solid #2a2a2a; font-size: 0.95rem;
   }
   .day-row:last-child { border-bottom: none; padding-bottom: 0; }
-  .day-name { color: #60a5fa; font-weight: 600; min-width: 88px; }
+  .day-name { color: #60a5fa; font-weight: 600; min-width: 96px; }
   .day-free { color: #9a9a9a; }
   .pill {
     display: inline-block; font-size: 0.74rem; padding: 2px 8px;
     border-radius: 999px; margin-right: 6px; vertical-align: middle;
   }
-  .pill-yellow { background: rgba(251,191,36,0.12); color: #fbbf24; border: 1px solid rgba(251,191,36,0.35); }
   .pill-green { background: rgba(74,222,128,0.12); color: #4ade80; border: 1px solid rgba(74,222,128,0.35); }
   footer { text-align: center; color: #666; font-size: 0.8rem; margin-top: 26px; }
 </style>
@@ -56,31 +55,33 @@
 <div class="wrap">
 <header>
   <h1>🎓 Uni Daily Check</h1>
-  <div class="date">Sonntag, 26. Juli 2026 · Woche 27.07.–31.07.</div>
-  <span class="badge">Wochenplan</span>
+  <div class="date">Montag, 27. Juli 2026</div>
+  <span class="badge">Tages-Check</span>
 </header>
 
-<div class="card week">
-  <h2>📅 Wochenübersicht</h2>
-  <div class="day-row"><span class="day-name">Montag 27.07.</span><span class="day-free">Keine Veranstaltungen</span></div>
-  <div class="day-row"><span class="day-name">Dienstag 28.07.</span><span class="day-free">Keine Veranstaltungen</span></div>
-  <div class="day-row"><span class="day-name">Mittwoch 29.07.</span><span class="day-free">Keine Veranstaltungen</span></div>
-  <div class="day-row"><span class="day-name">Donnerstag 30.07.</span><span class="day-free">Keine Veranstaltungen</span></div>
-  <div class="day-row"><span class="day-name">Freitag 31.07.</span><span class="day-free">Keine Veranstaltungen</span></div>
-  <p class="muted" style="margin-top:12px;">Sommerpause bestätigt: Der Stundenplan-Feed (Stand heute, 10:49 Uhr) enthält für diese Woche keinen einzigen Termin. Der letzte Kurs des Studienjahres war „Communication and Leadership Skills“ (EBS2019), Tutorial am 2. Juli. Der nächste Lehrtermin erscheint frühestens Anfang September, sobald der Stundenplan für Periode 1 des neuen Studienjahres veröffentlicht wird.</p>
+<div class="card today">
+  <h2>📅 Heute — Montag, 27. Juli</h2>
+  <p><strong>Keine Veranstaltungen.</strong> Kein Tutorial, keine Lecture, keine Abgabe.</p>
+  <p class="muted">Der persönliche Stundenplan-Feed (heute um 08:00 Uhr abgerufen) enthält für heute keinen einzigen Termin. Sommerpause. Der letzte Kurs des Studienjahres war „Communication and Leadership Skills“ (EBS2019), letztes Tutorial am 2. Juli.</p>
 </div>
 
-<div class="card lit">
-  <h2>📚 Literatur diese Woche</h2>
-  <p><strong>Nichts zu lesen.</strong> Keine Sessions → keine Pflichtlektüre.</p>
-  <p class="muted">Hinweis: Canvas konnte nicht geprüft werden (Token abgelaufen, siehe unten). Da aber laut Stundenplan keinerlei Veranstaltungen stattfinden, gibt es keine sessionbezogene Vorbereitung, die dadurch verloren geht.</p>
+<div class="card tomorrow">
+  <h2>🔜 Morgen — Dienstag, 28. Juli</h2>
+  <p><strong>Ebenfalls nichts.</strong> Auch für Mittwoch, 29. Juli, steht nichts im Plan.</p>
+  <div style="margin-top:10px;">
+    <div class="day-row"><span class="day-name">Di 28.07.</span><span class="day-free">Keine Veranstaltungen</span></div>
+    <div class="day-row"><span class="day-name">Mi 29.07.</span><span class="day-free">Keine Veranstaltungen</span></div>
+    <div class="day-row"><span class="day-name">Do 30.07.</span><span class="day-free">Keine Veranstaltungen</span></div>
+    <div class="day-row"><span class="day-name">Fr 31.07.</span><span class="day-free">Keine Veranstaltungen</span></div>
+  </div>
+  <p class="muted" style="margin-top:12px;">Heute Abend ist also nichts vorzubereiten. Der nächste Lehrtermin erscheint frühestens Anfang September, sobald der Stundenplan für Periode 1 des neuen Studienjahres veröffentlicht wird.</p>
 </div>
 
 <div class="card green">
   <h2>✅ Deadlines</h2>
-  <p><strong>Diese Woche: keine.</strong> Nächste Woche (03.–09.08.): ebenfalls keine.</p>
+  <p><strong>Diese Woche und nächste Woche: keine.</strong></p>
   <ul style="margin-top:8px;">
-    <li><span class="pill pill-green">Sept.</span><strong>Course Registration Periode 2</strong> schließt <strong>Freitag, 11. September 2026, 23:59 Uhr</strong>. Periode 1 ist seit 15. Juli zu — falls die Herbst-Kurswahl noch nicht komplett ist, ist Periode 2 die letzte reguläre Chance.</li>
+    <li><span class="pill pill-green">Sept.</span><strong>Course Registration Periode 2</strong> schließt <strong>Freitag, 11. September 2026, 23:59 Uhr</strong>. Periode 1 ist seit 15. Juli geschlossen — falls die Herbst-Kurswahl noch nicht komplett ist, ist Periode 2 die letzte reguläre Chance.</li>
     <li><span class="pill pill-green">Sept.</span><strong>Exam (De)Registration Periode 1</strong>: öffnet 21. September, schließt <strong>Freitag, 25. September 2026, 23:59 Uhr</strong>.</li>
   </ul>
   <p class="muted">Beide Fristen stammen aus dem offiziellen Stundenplan-Feed. Canvas-Deadlines (Assignments) konnten wegen des abgelaufenen Tokens nicht geprüft werden — in der vorlesungsfreien Zeit sind dort aber erfahrungsgemäß keine Abgaben aktiv.</p>
@@ -88,22 +89,21 @@
 
 <div class="card warn">
   <h2>⚠️ Canvas nicht erreichbar</h2>
-  <p>Der Canvas-API-Token ist am <strong>18. Juli abgelaufen</strong> (heute erneut geprüft, 10:49 Uhr: HTTP 401, Token weiterhin ungültig). Kursinhalte, Planner, Assignments und Ankündigungen konnten deshalb <strong>nicht</strong> gelesen werden — dieser Wochenplan basiert allein auf dem Stundenplan-Feed.</p>
+  <p>Der Canvas-API-Token ist am <strong>18. Juli abgelaufen</strong> (heute um 08:00 Uhr erneut geprüft: HTTP 401, Token weiterhin ungültig). Kursinhalte, Planner, Assignments und Ankündigungen konnten deshalb <strong>nicht</strong> gelesen werden — dieser Check basiert allein auf dem Stundenplan-Feed.</p>
   <p><strong>So beheben:</strong> Canvas im Browser öffnen → Account → Settings → „+ New Access Token“ → neuen Token als <code>CANVAS_API_TOKEN</code> hinterlegen.</p>
   <p class="muted">Solange Sommerpause ist, geht dadurch nichts Akutes verloren. Bis spätestens Ende August erneuern, damit zum Semesterstart die Inhalts-Vorschau (Pages, Literatur, Deadlines) wieder funktioniert.</p>
 </div>
 
 <div class="card rec">
-  <h2>💡 Empfehlungen für die Woche</h2>
+  <h2>💡 Was heute sinnvoll ist</h2>
   <ul>
-    <li><strong>Frei nehmen — guten Gewissens.</strong> Es gibt keine Sessions, keine Lektüre und keine Abgaben. Erholung ist diese Woche die beste Investition.</li>
-    <li><strong>Einmalig 10 Minuten: Canvas-Token erneuern</strong> (Anleitung oben). Das ist der einzige offene Punkt und entsperrt alle künftigen Checks.</li>
-    <li><strong>Kurz prüfen: Ist die Kurswahl für Herbst komplett?</strong> Periode 1 der Course Registration ist seit 15.07. geschlossen. Falls ein Kurs fehlt: Periode 2 läuft bis 11.09. — kein Zeitdruck, aber gut zu wissen.</li>
-    <li><strong>Kein Handlungsbedarf sonst.</strong> Die nächste echte Frist ist erst am 11. September.</li>
+    <li><strong>Frei machen — mit gutem Gewissen.</strong> Keine Sessions, keine Pflichtlektüre, keine Abgaben. Es gibt diese Woche schlicht nichts nachzuholen.</li>
+    <li><strong>Einmalig 10 Minuten: Canvas-Token erneuern</strong> (Anleitung oben). Einziger offener Punkt — und er entsperrt alle künftigen Checks.</li>
+    <li><strong>Kurz prüfen: Ist die Kurswahl für Herbst komplett?</strong> Registration Periode 1 ist seit 15.07. zu. Falls ein Kurs fehlt: Periode 2 läuft bis 11.09. — kein Zeitdruck, aber gut zu wissen.</li>
   </ul>
 </div>
 
-<footer>Aktualisiert: Sonntag, 26. Juli 2026 · 10:49 Uhr</footer>
+<footer>Aktualisiert: Montag, 27. Juli 2026 · 08:00 Uhr</footer>
 </div>
 </body>
 </html>
