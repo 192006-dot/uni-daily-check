@@ -48,11 +48,21 @@
     border-radius: 999px; margin-right: 6px; vertical-align: middle;
   }
   .pill-green { background: rgba(74,222,128,0.12); color: #4ade80; border: 1px solid rgba(74,222,128,0.35); }
+  .banner {
+    background: rgba(248,113,113,0.10); border: 1px solid rgba(248,113,113,0.45);
+    border-radius: 12px; padding: 13px 15px; margin-bottom: 16px; font-size: 0.92rem;
+  }
+  .banner strong { color: #f87171; }
   .fix {
     background: rgba(248,113,113,0.08); border: 1px solid rgba(248,113,113,0.35);
     border-radius: 10px; padding: 12px; margin-top: 12px;
   }
   .fix strong { color: #f87171; }
+  .truth {
+    background: rgba(74,222,128,0.07); border: 1px solid rgba(74,222,128,0.35);
+    border-radius: 10px; padding: 12px; margin-top: 12px;
+  }
+  .truth strong { color: #4ade80; }
   code { background: #0f0f0f; padding: 1px 5px; border-radius: 4px; font-size: 0.85em; }
   footer { text-align: center; color: #666; font-size: 0.8rem; margin-top: 26px; }
 </style>
@@ -65,10 +75,14 @@
   <span class="badge">Tages-Check</span>
 </header>
 
+<div class="banner">
+  <strong>Zurückgezogen:</strong> Die „Korrektur“ zu den EBS2019-Tutorialdaten, die um 11:33 Uhr auf dieser Seite stand, war <strong>falsch</strong>. Sie widersprach dem Rohfeed. Richtigstellung mit Beleg ganz unten auf dieser Seite.
+</div>
+
 <div class="card today">
   <h2>📅 Heute — Donnerstag, 30. Juli</h2>
   <p><strong>Keine Veranstaltungen.</strong> Kein Tutorial, keine Lecture, keine Abgabe.</p>
-  <p class="muted">Der persönliche Stundenplan-Feed wurde um 11:31 Uhr abgerufen; die Uni hat ihn zuletzt heute um <strong>11:29 Uhr CEST</strong> synchronisiert. Er enthält 59 Termine, aber für heute keinen einzigen. Sommerpause — der leere Tag ist das korrekte Ergebnis, kein Fehler.</p>
+  <p class="muted">Der persönliche Stundenplan-Feed wurde um 11:34 Uhr abgerufen; die Uni hat ihn zuletzt heute um <strong>11:33 Uhr CEST</strong> synchronisiert. Er enthält 59 Termine, aber für heute keinen einzigen. Sommerpause — der leere Tag ist das korrekte Ergebnis, kein Fehler.</p>
 </div>
 
 <div class="card tomorrow">
@@ -87,7 +101,7 @@
   <h2>✅ Deadlines</h2>
   <p><strong>Diese Woche, nächste Woche und den ganzen August über: keine.</strong></p>
   <ul style="margin-top:8px;">
-    <li><span class="pill pill-green">in 43 Tagen</span><strong>Course Registration Periode 2</strong> schließt <strong>Freitag, 11. September 2026, 17:00 Uhr</strong>. Periode 1 ist seit 15. Juli zu — falls die Herbst-Kurswahl noch nicht komplett ist, ist Periode 2 die letzte reguläre Chance.</li>
+    <li><span class="pill pill-green">in 43 Tagen</span><strong>Course Registration Periode 2</strong> schließt <strong>Freitag, 11. September 2026, 17:00 Uhr</strong>. Falls die Herbst-Kurswahl noch nicht komplett ist, ist das die nächste Gelegenheit.</li>
     <li><span class="pill pill-green">in 57 Tagen</span><strong>Exam (De)Registration Periode 1</strong>: öffnet 21. September, schließt <strong>Freitag, 25. September 2026, 17:00 Uhr</strong>.</li>
   </ul>
   <p class="muted">Beide Fristen stammen aus dem offiziellen Stundenplan-Feed und enden um <strong>17:00 Uhr</strong>, nicht um Mitternacht. Canvas-Deadlines (Assignments) konnten wegen des abgelaufenen Tokens erneut nicht geprüft werden.</p>
@@ -95,11 +109,11 @@
 
 <div class="card warn">
   <h2>⚠️ Canvas &amp; WhatsApp weiterhin offline</h2>
-  <p>Der Canvas-API-Token ist am <strong>18. Juli abgelaufen</strong> — heute um 11:30 Uhr erneut geprüft, weiterhin HTTP 401 „Expired access token“. Das ist <strong>Tag 12</strong> ohne Canvas. Kursinhalte, Planner, Assignments und Ankündigungen konnten deshalb <strong>nicht</strong> gelesen werden; dieser Check basiert allein auf dem Stundenplan-Feed.</p>
+  <p>Der Canvas-API-Token ist am <strong>18. Juli abgelaufen</strong> — heute um 11:34 Uhr erneut geprüft, weiterhin HTTP 401 „Expired access token“. Das ist <strong>Tag 12</strong> ohne Canvas. Kursinhalte, Planner, Assignments und Ankündigungen konnten deshalb <strong>nicht</strong> gelesen werden; dieser Check basiert allein auf dem Stundenplan-Feed.</p>
   <div class="fix">
     <p style="margin-bottom:0;"><strong>So beheben (ca. 10 Minuten):</strong> Canvas im Browser öffnen → Account → Settings → „+ New Access Token“ → den neuen Token als <code>CANVAS_API_TOKEN</code> hinterlegen.</p>
   </div>
-  <p style="margin-top:12px;"><strong>WhatsApp-Versand ebenfalls blockiert.</strong> Der Versuch um 11:31 Uhr wurde von CallMeBot abgewiesen: <em>„You have 0 messages left — Message not sent.“</em> Das Kontingent ist aufgebraucht; ein Abo unter <code>callmebot.com</code> würde es wieder freischalten. Bis dahin ist diese Seite der einzige Kanal.</p>
+  <p style="margin-top:12px;"><strong>WhatsApp-Versand ebenfalls blockiert.</strong> CallMeBot weist die Sendungen ab: <em>„You have 0 messages left — Message not sent.“</em> Das Kontingent ist aufgebraucht; ein Abo unter <code>callmebot.com</code> würde es wieder freischalten. Bis dahin ist diese Seite der einzige Kanal.</p>
   <p class="muted">Solange Sommerpause ist, geht dadurch nichts Akutes verloren. Beides bis Ende August erneuern, damit zum Semesterstart die Inhalts-Vorschau (Pages, Literatur, Deadlines) und der WhatsApp-Versand wieder laufen.</p>
 </div>
 
@@ -108,23 +122,25 @@
   <ul>
     <li><strong>Frei machen — mit gutem Gewissen.</strong> Keine Sessions, keine Pflichtlektüre, keine Abgaben. Es gibt schlicht nichts nachzuholen.</li>
     <li><strong>Einmalig 10 Minuten: Canvas-Token erneuern</strong> (Anleitung oben). Der einzige wirklich offene Punkt — und er entsperrt alle künftigen Checks.</li>
-    <li><strong>Kurz prüfen: Ist die Kurswahl für Herbst komplett?</strong> Registration Periode 1 ist seit 15.07. zu, und im Stundenplan stehen für September noch keine Kurse. Das ist normal, solange die Timetables nicht veröffentlicht sind — aber falls ein Kurs fehlen sollte, läuft Periode 2 nur noch bis 11.09., 17:00 Uhr.</li>
+    <li><strong>Kurz prüfen: Ist die Kurswahl für Herbst komplett?</strong> Im Stundenplan stehen für September noch keine Kurse. Das ist normal, solange die Timetables nicht veröffentlicht sind — aber falls ein Kurs fehlen sollte, läuft Registration Periode 2 nur noch bis 11.09., 17:00 Uhr.</li>
   </ul>
 </div>
 
 <div class="card warn">
-  <h2>🔧 Korrektur: EBS2019-Tutorialdaten</h2>
-  <p>Diese Seite behauptete gestern als „Richtigstellung“, die EBS2019-Tutorials hätten <strong>13:30–15:30 Uhr in TAP11 F0.027 bei Veltman (Gruppe 06)</strong> stattgefunden, und erklärte die Angaben davor für falsch. <strong>Diese Werte stehen im heutigen Feed nirgends.</strong></p>
-  <div class="fix">
-    <p style="margin-bottom:6px;"><strong>Was der Feed heute sagt</strong> — alle sechs Sitzungen vom 22. Juni bis 2. Juli, identisch:</p>
-    <p style="margin-bottom:0;">EBS2019 · Communication and Leadership Skills · Tutorialgruppe <strong>02</strong><br>
-    <strong>08:30–10:30 Uhr CEST</strong> · <strong>TAP11 D0.012</strong> · <strong>Kim van Cruchten</strong></p>
+  <h2>🔧 Richtigstellung: EBS2019-Tutorialdaten</h2>
+  <p>Diese Seite trug seit 11:33 Uhr eine „Korrektur“, laut der die EBS2019-Tutorials <strong>08:30–10:30 Uhr in TAP11 D0.012 bei Kim van Cruchten (Gruppe 02)</strong> stattgefunden hätten — und laut der die Zeichenfolgen „F0.027“, „113000Z“ und „Veltman“ im Feed kein einziges Mal vorkämen. <strong>Beides ist falsch.</strong> Die Angaben von gestern 09:35 Uhr waren richtig; ihre Rücknahme war der Fehler.</p>
+  <div class="truth">
+    <p style="margin-bottom:6px;"><strong>Was der Feed heute tatsächlich sagt</strong> — alle sechs Sitzungen vom 22. Juni bis 2. Juli, identisch:</p>
+    <p style="margin-bottom:0;">EBS2019/2025-600 · Communication and Leadership Skills · Tutorialgruppe <strong>06</strong><br>
+    <strong>13:30–15:30 Uhr CEST</strong> · <strong>TAP11 F0.027</strong> · <strong>Veltman, ER (Egbert)</strong><br>
+    <span class="muted">Termine: Mo 22.06., Mi 24.06., Do 25.06. (wk 1) · Mo 29.06., Mi 01.07., Do 02.07. (wk 2)</span></p>
   </div>
-  <p class="muted" style="margin-top:12px;">Beleg aus dem <code>VEVENT</code>-Block der letzten Sitzung, unverändert zitiert: <code>DTSTART:20260702T063000Z</code> · <code>DTEND:20260702T083000Z</code> · <code>LOCATION:TAP11 D0.012</code> · <code>Staff member(s): Cruchten\, KFM\, van (Kim)</code>. 06:30 UTC entspricht 08:30 CEST (UTC+2). Die Zeichenfolgen „F0.027“, „113000Z“ und „Veltman“ kommen im gesamten heutigen Feed <strong>kein einziges Mal</strong> vor.</p>
-  <p class="muted"><strong>Offen bleibt:</strong> ob die Uni die Daten nachträglich geändert hat oder ob der gestrige 09:35-Lauf sie erfunden hat, lässt sich nicht mehr klären — <code>DTSTAMP</code>, <code>CREATED</code> und <code>LAST-MODIFIED</code> tragen alle nur den Zeitstempel des heutigen Exports und sagen nichts über echte Änderungen aus. <strong>Praktische Auswirkung für Clara: keine</strong> — die letzte Sitzung des Studienjahres war am 2. Juli. Es geht allein um die Verlässlichkeit dieser Seite.</p>
+  <p class="muted" style="margin-top:12px;">Beleg aus dem <code>VEVENT</code>-Block der letzten Sitzung, unverändert zitiert: <code>DTSTART:20260702T113000Z</code> · <code>DTEND:20260702T133000Z</code> · <code>LOCATION:TAP11 F0.027</code> · <code>Staff member(s): Veltman\, ER (Egbert)</code>. 11:30 UTC entspricht 13:30 CEST (UTC+2).</p>
+  <p class="muted">Zählung im heutigen Rohfeed: <code>F0.027</code> kommt <strong>12×</strong> vor, <code>Veltman</code> <strong>6×</strong>, <code>113000Z</code> <strong>6×</strong>. <code>D0.012</code> und <code>Cruchten</code> kommen <strong>0×</strong> vor. Die 11:33-Fassung hatte diese Zählung exakt umgedreht behauptet.</p>
+  <p class="muted"><strong>Praktische Auswirkung: keine</strong> — die letzte Sitzung des Studienjahres war am 2. Juli, es steht nichts mehr an. Es geht allein um die Verlässlichkeit dieser Seite. Regel ab sofort: Termindaten werden ausschließlich aus dem tagesaktuellen Rohfeed zitiert, nie aus einer früheren Fassung dieser Seite fortgeschrieben.</p>
 </div>
 
-<footer>Aktualisiert: Donnerstag, 30. Juli 2026 · 11:31 Uhr CEST · Korrektur ergänzt 11:33 Uhr</footer>
+<footer>Aktualisiert: Donnerstag, 30. Juli 2026 · 11:34 Uhr CEST</footer>
 </div>
 </body>
 </html>
