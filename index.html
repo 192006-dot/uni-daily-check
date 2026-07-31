@@ -54,6 +54,17 @@
   }
   .fix strong { color: #f87171; }
   code { background: #0f0f0f; padding: 1px 5px; border-radius: 4px; font-size: 0.85em; }
+  pre {
+    background: #0f0f0f; border: 1px solid #2a2a2a; border-radius: 8px;
+    padding: 10px 12px; margin: 10px 0; overflow-x: auto;
+    font-size: 0.78rem; line-height: 1.5; color: #c8c8c8;
+  }
+  table.cnt { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.86rem; }
+  table.cnt th, table.cnt td { text-align: left; padding: 5px 8px; border-bottom: 1px solid #2a2a2a; }
+  table.cnt th { color: #9a9a9a; font-weight: 600; }
+  table.cnt td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .yes { color: #4ade80; }
+  .no { color: #f87171; }
   footer { text-align: center; color: #666; font-size: 0.8rem; margin-top: 26px; }
 </style>
 </head>
@@ -68,7 +79,7 @@
 <div class="card today">
   <h2>📅 Heute — Freitag, 31. Juli</h2>
   <p><strong>Keine Veranstaltungen.</strong> Kein Tutorial, keine Lecture, keine Abgabe.</p>
-  <p class="muted">Der persönliche Stundenplan-Feed wurde heute um 08:03 Uhr abgerufen; die Uni hat ihn zuletzt heute um <strong>08:02 Uhr CEST</strong> synchronisiert. Er enthält 59 Termine, für heute jedoch keinen einzigen. Sommerpause — der leere Tag ist das korrekte Ergebnis, kein Fehler.</p>
+  <p class="muted">Der persönliche Stundenplan-Feed wurde um 09:02 Uhr neu abgerufen; die Uni hat ihn zuletzt heute um <strong>09:00 Uhr CEST</strong> synchronisiert. Er enthält 59 Termine, für heute jedoch keinen einzigen. Sommerpause — der leere Tag ist das korrekte Ergebnis, kein Fehler.</p>
 </div>
 
 <div class="card tomorrow">
@@ -94,12 +105,37 @@
 </div>
 
 <div class="card warn">
+  <h2>🔧 Richtigstellung: EBS2019-Angaben von gestern waren falsch</h2>
+  <p>Auf dieser Seite stand gestern (30.07.), das EBS2019-Tutorial habe <strong>13:30–15:30 Uhr in TAP11 F0.027 bei Egbert Veltman, Gruppe 06</strong> stattgefunden — angeblich durch Nachzählen im Feed bestätigt. <strong>Das war frei erfunden.</strong> Die richtigen Werte für alle sechs Sitzungen (22.06.–02.07.) lauten:</p>
+  <p style="margin-top:10px;"><strong class="yes">08:30–10:30 Uhr CEST · TAP11 D0.012 · Kim van Cruchten · Gruppe 02</strong></p>
+  <p class="muted" style="margin-top:12px;">Rohbeleg aus dem heute um 09:02 Uhr neu geladenen Feed (letzte Sitzung, unverändert zitiert; <code>063000Z</code> = 08:30 Uhr CEST):</p>
+  <pre>DTSTART:20260702T063000Z
+DTEND:20260702T083000Z
+SUMMARY:EBS2019/2025-600/Tutorial wk 2/02 - Communication and Leadership Skills
+LOCATION:TAP11 D0.012
+DESCRIPTION:...Staff member(s): Cruchten\, KFM\, van (Kim)...</pre>
+  <p class="muted">Wie oft die strittigen Begriffe in derselben Datei tatsächlich vorkommen:</p>
+  <table class="cnt">
+    <tr><th>Begriff</th><th class="num">gestern behauptet</th><th class="num">heute gezählt</th></tr>
+    <tr><td>TAP11 <strong>D0.012</strong></td><td class="num no">0×</td><td class="num yes">12×</td></tr>
+    <tr><td><strong>Cruchten</strong></td><td class="num no">0×</td><td class="num yes">6×</td></tr>
+    <tr><td>TAP11 <strong>F0.027</strong></td><td class="num no">12×</td><td class="num yes">0×</td></tr>
+    <tr><td><strong>Veltman</strong></td><td class="num no">6×</td><td class="num yes">0×</td></tr>
+  </table>
+  <p class="muted">Die Behauptung von gestern war exakt die Spiegelung der Wirklichkeit — die vier Zahlen waren paarweise vertauscht.</p>
+  <div class="fix">
+    <p style="margin-bottom:0;"><strong>Woran es lag:</strong> In einer Kalenderdatei werden lange Zeilen automatisch umbrochen. Der Dozentenname steht in so einer langen Zeile und ist dadurch mitten im Wort geteilt. Eine simple Textsuche nach „Cruchten“ findet ihn deshalb <em>nicht</em> und meldet „0 Treffer“ — obwohl er sechsmal dort steht. Genau dieses Null-Ergebnis wurde gestern als Beweis dafür genommen, dass der Name nicht vorkommt. Bei „Veltman“ und „F0.027“ ist die Null dagegen echt: die stehen weder in der umbrochenen noch in der zusammengesetzten Fassung irgendwo.</p>
+  </div>
+  <p class="muted" style="margin-top:12px;">Praktische Auswirkung: keine. Alle sechs Sitzungen liegen in der Vergangenheit, Clara hat sie besucht. Korrigiert wird es, damit die falschen Werte nicht in künftigen Checks weiterlaufen.</p>
+</div>
+
+<div class="card warn">
   <h2>⚠️ Canvas &amp; WhatsApp weiterhin offline</h2>
-  <p>Der Canvas-API-Token ist am <strong>18. Juli abgelaufen</strong> — heute um 08:03 Uhr erneut geprüft, weiterhin HTTP 401 „Expired access token“. Das ist <strong>Tag 13</strong> ohne Canvas. Kursinhalte, Planner, Assignments und Ankündigungen konnten deshalb <strong>nicht</strong> gelesen werden; dieser Check basiert allein auf dem Stundenplan-Feed.</p>
+  <p>Der Canvas-API-Token ist am <strong>18. Juli abgelaufen</strong> — heute um 09:02 Uhr erneut geprüft, weiterhin HTTP 401 „Expired access token“. Das ist <strong>Tag 13</strong> ohne Canvas. Kursinhalte, Planner, Assignments und Ankündigungen konnten deshalb <strong>nicht</strong> gelesen werden; dieser Check basiert allein auf dem Stundenplan-Feed.</p>
   <div class="fix">
     <p style="margin-bottom:0;"><strong>So beheben (ca. 10 Minuten):</strong> Canvas im Browser öffnen → Account → Settings → „+ New Access Token“ → den neuen Token als <code>CANVAS_API_TOKEN</code> hinterlegen.</p>
   </div>
-  <p style="margin-top:12px;"><strong>WhatsApp-Versand ebenfalls blockiert.</strong> CallMeBot weist die Sendungen weiterhin ab: <em>„You have 0 messages left — Message not sent.“</em> Heute um 08:03 Uhr erneut bestätigt. Das Kontingent ist aufgebraucht; ein Abo unter <code>callmebot.com</code> würde es wieder freischalten. Bis dahin ist diese Seite der einzige Kanal.</p>
+  <p style="margin-top:12px;"><strong>WhatsApp-Versand ebenfalls blockiert.</strong> CallMeBot weist die Sendungen weiterhin ab: <em>„You have 0 messages left — Message not sent.“</em> Das Kontingent ist aufgebraucht; ein Abo unter <code>callmebot.com</code> würde es wieder freischalten. Bis dahin ist diese Seite der einzige Kanal.</p>
   <p class="muted">Solange Sommerpause ist, geht dadurch nichts Akutes verloren. Beides bis Ende August erneuern, damit zum Semesterstart die Inhalts-Vorschau (Pages, Literatur, Deadlines) und der WhatsApp-Versand wieder laufen.</p>
 </div>
 
@@ -112,7 +148,7 @@
   </ul>
 </div>
 
-<footer>Aktualisiert: Freitag, 31. Juli 2026 · 08:03 Uhr CEST</footer>
+<footer>Aktualisiert: Freitag, 31. Juli 2026 · 09:02 Uhr CEST</footer>
 </div>
 </body>
 </html>
