@@ -2,151 +2,180 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uni Daily Check — Donnerstag, 6. August 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uni Daily Check — Wochenplan 10.–14.08.2026</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  * { box-sizing: border-box; }
   body {
-    background: #0f0f0f;
-    color: #e0e0e0;
-    font-family: system-ui, -apple-system, sans-serif;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px 16px 40px;
-    line-height: 1.5;
+    margin: 0; padding: 16px 14px 40px;
+    background: #0f0f0f; color: #e0e0e0;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.55; font-size: 16px;
   }
-  header { text-align: center; margin-bottom: 24px; }
-  h1 { font-size: 1.5rem; color: #fff; letter-spacing: -0.5px; }
-  .date { color: #888; font-size: 0.9rem; margin-top: 4px; }
+  .wrap { max-width: 600px; margin: 0 auto; }
+  header { margin-bottom: 22px; }
+  h1 { font-size: 1.5rem; margin: 0 0 6px; letter-spacing: -0.02em; }
+  .date { color: #9a9a9a; font-size: 0.95rem; }
   .badge {
-    display: inline-block;
-    background: #1a1a1a;
-    border: 1px solid #2a2a2a;
-    color: #60a5fa;
-    font-size: 0.78rem;
-    font-weight: 600;
-    padding: 4px 12px;
-    border-radius: 999px;
-    margin-top: 10px;
+    display: inline-block; margin-top: 10px; padding: 4px 11px;
+    background: #1a2f42; color: #60a5fa; border: 1px solid #2c4a66;
+    border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+  }
+  h2 {
+    font-size: 1.02rem; text-transform: uppercase; letter-spacing: 0.06em;
+    color: #9a9a9a; margin: 30px 0 12px; font-weight: 600;
   }
   .card {
-    background: #1a1a1a;
-    border: 1px solid #2a2a2a;
-    border-radius: 12px;
-    padding: 16px;
-    margin-bottom: 14px;
+    background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 11px;
+    padding: 14px 16px; margin-bottom: 11px;
   }
-  .card h2 {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  .card.accent-red { border-left: 3px solid #f87171; }
+  .card.accent-yellow { border-left: 3px solid #fbbf24; }
+  .card.accent-green { border-left: 3px solid #4ade80; }
+  .card.accent-blue { border-left: 3px solid #60a5fa; }
+  .day { font-weight: 700; color: #60a5fa; font-size: 0.97rem; margin-bottom: 3px; }
+  .empty { color: #7c7c7c; font-size: 0.92rem; }
+  .ttl { font-weight: 650; margin-bottom: 5px; }
+  .ttl.red { color: #f87171; }
+  .ttl.yellow { color: #fbbf24; }
+  .ttl.green { color: #4ade80; }
+  .meta { color: #9a9a9a; font-size: 0.88rem; }
+  p { margin: 7px 0; }
+  ul { margin: 8px 0 4px; padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  code {
+    background: #262626; padding: 1.5px 6px; border-radius: 4px;
+    font-size: 0.85em; color: #d4d4d4;
   }
-  .green { color: #4ade80; }
-  .blue { color: #60a5fa; }
-  .yellow { color: #fbbf24; }
-  .red { color: #f87171; }
-  .big-notice { text-align: center; padding: 28px 16px; }
-  .big-notice .emoji { font-size: 2.5rem; display: block; margin-bottom: 10px; }
-  .big-notice h2 { font-size: 1.2rem; color: #4ade80; justify-content: center; margin-bottom: 8px; }
-  .big-notice p { color: #aaa; font-size: 0.95rem; }
-  ul { list-style: none; }
-  li { padding: 8px 0; border-bottom: 1px solid #242424; font-size: 0.92rem; }
-  li:last-child { border-bottom: none; }
-  .deadline-date { font-weight: 600; }
-  .small { font-size: 0.85rem; color: #999; margin-top: 4px; }
-  .warn-box {
-    background: #2a1f1f;
-    border: 1px solid #4a2a2a;
-    border-radius: 8px;
-    padding: 10px 12px;
-    font-size: 0.88rem;
-    margin-top: 10px;
-    color: #f0c0c0;
+  .banner {
+    background: #2a1618; border: 1px solid #5c2b2e; border-radius: 11px;
+    padding: 15px 16px; margin-bottom: 12px;
   }
+  .banner .ttl { color: #f87171; }
   footer {
-    text-align: center;
-    color: #666;
-    font-size: 0.8rem;
-    margin-top: 28px;
-    line-height: 1.6;
+    margin-top: 34px; padding-top: 15px; border-top: 1px solid #2a2a2a;
+    color: #6e6e6e; font-size: 0.82rem;
   }
 </style>
 </head>
 <body>
+<div class="wrap">
 
 <header>
   <h1>Uni Daily Check</h1>
-  <div class="date">Donnerstag, 6. August 2026</div>
-  <span class="badge">Tages-Check</span>
+  <div class="date">Sonntag, 9. August 2026</div>
+  <div class="badge">Wochenplan 10.–14.08.</div>
 </header>
 
-<div class="card big-notice">
-  <span class="emoji">🏖️</span>
-  <h2>Heute keine Termine</h2>
-  <p>Für Donnerstag, den 06.08. steht kein Eintrag im Stundenplan — kein Tutorial, keine Lecture, keine Abgabe. Das ist korrekt so: die Semesterpause läuft noch bis zum <strong>6. September 2026</strong>.</p>
+<div class="banner">
+  <div class="ttl">Sommerpause — keine Termine diese Woche</div>
+  <p>Der Stundenplan-Feed (heute frisch abgerufen, 55 Einträge) enthält für
+  <strong>Mo 10.08. bis Fr 14.08.</strong> keine einzige Veranstaltung.</p>
+  <p class="meta">Letzte Lehrveranstaltung im Feed: Do 02.07.2026 (EBS2019 Tutorial wk&nbsp;2).
+  Der nächste Eintrag überhaupt kommt am 07.09.2026 — das sind noch 29 Tage.</p>
 </div>
 
-<div class="card">
-  <h2><span class="blue">📅</span> Morgen: Freitag, 7. August</h2>
-  <p style="font-size:0.92rem;">Ebenfalls leer — genau wie Samstag (08.08.) und der gesamte restliche August. Es gibt heute Abend nichts vorzubereiten, und auch fürs Wochenende steht nichts an.</p>
-  <div class="small">Die letzte Lehrveranstaltung im Feed war am <strong>02.07.2026</strong> (EBS2019 — Communication and Leadership Skills, Tutorial wk 2, TAP11 D0.012, bei Kim van Cruchten). Danach folgt bis Ende Juni 2027 keine einzige weitere Lehrveranstaltung im Feed — nur Registrierungsfristen.</div>
-</div>
+<h2>Wochenübersicht</h2>
 
 <div class="card">
-  <h2><span class="yellow">✅</span> Nächste Fristen</h2>
+  <div class="day">Montag, 10.08.</div>
+  <div class="empty">Keine Veranstaltung</div>
+</div>
+<div class="card">
+  <div class="day">Dienstag, 11.08.</div>
+  <div class="empty">Keine Veranstaltung</div>
+</div>
+<div class="card">
+  <div class="day">Mittwoch, 12.08.</div>
+  <div class="empty">Keine Veranstaltung</div>
+</div>
+<div class="card">
+  <div class="day">Donnerstag, 13.08.</div>
+  <div class="empty">Keine Veranstaltung</div>
+</div>
+<div class="card">
+  <div class="day">Freitag, 14.08.</div>
+  <div class="empty">Keine Veranstaltung</div>
+</div>
+
+<h2>Literatur</h2>
+<div class="card accent-yellow">
+  <div class="ttl yellow">Keine Angaben verfügbar</div>
+  <p>Zwei Gründe, beide heute geprüft:</p>
   <ul>
-    <li>
-      <span class="deadline-date yellow">Fr 11.09.2026, 17:00 Uhr</span> — SBE: <strong>Kursregistrierung Periode 2 schließt</strong>
-      <div class="small">Noch 36 Tage hin. Vorwarnungen im Feed am 07.09. und 10.09.</div>
-    </li>
-    <li>
-      <span class="deadline-date yellow">Mo 21.09. – Fr 25.09.2026, 17:00 Uhr</span> — SBE: <strong>Klausur-(De-)Registrierung Periode 1</strong>
-      <div class="small">Anmeldefenster öffnet am 21.09., schließt Freitag 25.09. um 17:00 Uhr.</div>
-    </li>
-    <li>
-      <span class="deadline-date">Fr 06.11.2026, 17:00 Uhr</span> — SBE: Skill-Registrierung Periode 3 schließt
-      <div class="small">Weit hin, nur zur Kenntnis.</div>
-    </li>
+    <li>Es finden diese Woche keine Sitzungen statt, zu denen es etwas vorzubereiten gäbe.</li>
+    <li>Canvas ist nicht erreichbar — der API-Token ist am <strong>18.07.2026</strong> abgelaufen
+    (heute erneut <code>401 Expired access token</code>). Kurs-Seiten, Module und Assignments
+    können nicht gelesen werden.</li>
   </ul>
-  <div class="small">Keine Canvas-Deadlines in dieser Liste — der Planner ist wegen des abgelaufenen Tokens nicht abrufbar (siehe unten).</div>
+  <p class="meta">Sobald der Token erneuert ist, liefert der Check hier wieder
+  Kapitel und Seitenzahlen pro Tag.</p>
 </div>
 
-<div class="card">
-  <h2><span class="yellow">🔎</span> Beobachtung: Periode 1 fehlt im Stundenplan</h2>
-  <p style="font-size:0.92rem;">Die Kursregistrierung für <strong>Periode 1 endete am 15.07.2026</strong>. Trotzdem enthält der persönliche Stundenplan-Feed für den Semesterstart im September <em>keine</em> Tutorials oder Lectures — nur Registrierungs- und Klausurfristen.</p>
-  <div class="small">Das kann schlicht daran liegen, dass die Uni die Stundenpläne für Periode 1 noch nicht veröffentlicht hat. Sicherheitshalber: einmal im MyUM-Portal nachsehen, ob die Kurswahl für Periode 1 wirklich registriert ist. Wenn bis Ende August nichts im Stundenplan auftaucht, beim SBE Student Services nachfragen.</div>
+<h2>Deadlines</h2>
+
+<div class="card accent-green">
+  <div class="ttl green">Diese Woche: keine</div>
+  <p class="meta">Im Feed steht für 10.–14.08. keine Frist.</p>
 </div>
 
-<div class="card">
-  <h2><span class="red">⚠️</span> Canvas nicht erreichbar</h2>
-  <p style="font-size:0.92rem;">Der Canvas-API-Token ist seit dem <strong>18.07.2026 abgelaufen</strong>. Heute um 09:33 Uhr erneut geprüft: die Kursliste liefert weiterhin Fehler 401 („Expired access token"). Ein Deep Dive in Module, Pages, Assignments und Ankündigungen war deshalb nicht möglich — in der Semesterpause entgehen dadurch aber sehr wahrscheinlich keine aktuellen Inhalte.</p>
-  <div class="warn-box">
-    <strong>To-do für Franz:</strong> Neuen Token in Canvas generieren (Account → Einstellungen → „+ Neuer Zugangstoken") und in der <code>.env</code> hinterlegen — spätestens vor dem Semesterstart im September, sonst startet das Semester ohne Kursinhalte.
-  </div>
+<div class="card accent-yellow">
+  <div class="ttl yellow">Fr 11.09.2026, 17:00 — Kursanmeldung Periode 2</div>
+  <p>Feed-Eintrag: „SBE: Course registration period 2 closes TODAY (17:00h)“.
+  Vorwarnungen laufen ab Mo 07.09.</p>
+  <p class="meta">Noch 33 Tage. Nichts zu tun diese Woche, aber der Termin ist hart —
+  wer ihn verpasst, bekommt die Kurse der Periode 2 nicht.</p>
 </div>
 
-<div class="card">
-  <h2><span class="yellow">📵</span> WhatsApp-Versand steht still</h2>
-  <p style="font-size:0.92rem;">Das CallMeBot-Kontingent ist aufgebraucht. Heute um 09:33 Uhr erneut getestet: „You have 0 messages left … Message not sent". Diese Seite hier ist derzeit der einzige funktionierende Kanal.</p>
-  <div class="warn-box">
-    <strong>To-do für Franz:</strong> Pro Nummer separat nachbuchen — callmebot.com/491608329844 und callmebot.com/491627665193.
-  </div>
+<div class="card accent-yellow">
+  <div class="ttl yellow">Fr 25.09.2026, 17:00 — Prüfungsanmeldung Periode 1</div>
+  <p>Feed-Eintrag: „SBE: Exam (de)registration period 1 closes TODAY (17:00h)“.
+  Anmeldefenster öffnet Mo 21.09.</p>
+  <p class="meta">Noch 47 Tage.</p>
 </div>
 
-<div class="card">
-  <h2><span class="green">💡</span> Was du heute tun kannst</h2>
+<h2>Ankündigungen</h2>
+<div class="card accent-yellow">
+  <div class="ttl yellow">Nicht abrufbar</div>
+  <p>Canvas-Announcements brauchen einen gültigen Token. Solange der abgelaufen ist,
+  kann dieser Check nicht sagen, ob es neue Ankündigungen gibt — auch nicht, dass es keine gibt.</p>
+</div>
+
+<h2>Empfehlungen</h2>
+
+<div class="card accent-red">
+  <div class="ttl red">Für Franz: Canvas-Token erneuern</div>
+  <p>Das ist die einzige echte Aufgabe aus diesem Lauf. Der Token ist seit 22 Tagen tot.</p>
   <ul>
-    <li><strong>Nichts müssen.</strong> Keine Uni-Pflichten, keine Deadline in Sicht, keine Vorbereitung nötig.</li>
-    <li><strong>Optional (10 Min):</strong> Im MyUM-Portal prüfen, ob deine Kurswahl für <em>Periode 1</em> registriert ist — siehe Beobachtung oben. Das ist gerade der einzige Punkt, der später Ärger machen könnte.</li>
+    <li>Canvas → Account → Settings → <strong>New Access Token</strong></li>
+    <li>Neuen Token in <code>.env</code> als <code>CANVAS_API_TOKEN</code> eintragen</li>
   </ul>
+  <p>Wenn das <strong>vor Anfang September</strong> passiert, stehen zum Start von Periode 1
+  wieder Themen, Literatur und Assignment-Details in diesem Check. Passiert es nicht,
+  bleiben die Wochenpläne inhaltsleer und zeigen nur noch Uhrzeiten und Räume.</p>
+</div>
+
+<div class="card accent-blue">
+  <div class="ttl">Für Clara: diese Woche ist frei</div>
+  <p>Keine Sitzung, keine Frist, keine Vorbereitung. Es gibt aus den Daten
+  nichts zu tun — und es wäre unehrlich, hier eine Aufgabe zu erfinden.</p>
+  <p class="meta">Der nächste Check, der wieder echten Inhalt hat, wird der Anfang September sein,
+  wenn der Stundenplan für Periode 1 gefüllt wird.</p>
+</div>
+
+<div class="card accent-yellow">
+  <div class="ttl yellow">Risiko</div>
+  <p>Der Stundenplan für Periode 1 ist noch komplett leer. Ob das nur an der
+  Sommerpause liegt oder an einer fehlenden Kursanmeldung, lässt sich ohne Canvas
+  nicht unterscheiden. Wenn Anfang September immer noch keine Termine erscheinen,
+  ist das ein Warnsignal und sollte direkt bei SBE geprüft werden.</p>
 </div>
 
 <footer>
-  Aktualisiert: 06.08.2026 09:33 Uhr<br>
-  Quellen: UM Timetable (iCal, entfaltet geparst: 55 Events gesamt, davon 16 Tutorials / 1 Lecture / 1 Exam / 37 Fristen · 0 Termine 06.–08.08. · Feed-Sync 06.08. 09:05 CEST) · Canvas: nicht verfügbar (Token abgelaufen seit 18.07.2026, 401 um 09:33 Uhr bestätigt)
+  Aktualisiert: 09.08.2026, 09:02 CEST<br>
+  Quelle: MU-Stundenplan-Feed (55 Einträge, Prüfsumme 19df5151) · Canvas nicht erreichbar (401)
 </footer>
 
+</div>
 </body>
 </html>
