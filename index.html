@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Uni Daily Check — Wochenplan 10.–14.08.2026</title>
+<title>Uni Daily Check — Montag, 10.08.2026</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -34,6 +34,7 @@
   .card.accent-green { border-left: 3px solid #4ade80; }
   .card.accent-blue { border-left: 3px solid #60a5fa; }
   .day { font-weight: 700; color: #60a5fa; font-size: 0.97rem; margin-bottom: 3px; }
+  .day.today { color: #4ade80; }
   .empty { color: #7c7c7c; font-size: 0.92rem; }
   .ttl { font-weight: 650; margin-bottom: 5px; }
   .ttl.red { color: #f87171; }
@@ -63,24 +64,25 @@
 
 <header>
   <h1>Uni Daily Check</h1>
-  <div class="date">Sonntag, 9. August 2026</div>
-  <div class="badge">Wochenplan 10.–14.08.</div>
+  <div class="date">Montag, 10. August 2026</div>
+  <div class="badge">Tages-Check</div>
 </header>
 
 <div class="banner">
-  <div class="ttl">Sommerpause — keine Termine diese Woche</div>
-  <p>Der Stundenplan-Feed (heute frisch abgerufen, 55 Einträge) enthält für
-  <strong>Mo 10.08. bis Fr 14.08.</strong> keine einzige Veranstaltung.</p>
-  <p class="meta">Letzte Lehrveranstaltung im Feed: Do 02.07.2026 (EBS2019 Tutorial wk&nbsp;2).
-  Der nächste Eintrag überhaupt kommt am 07.09.2026 — das sind noch 29 Tage.</p>
+  <div class="ttl">Sommerpause — heute, morgen und übermorgen keine Termine</div>
+  <p>Der Stundenplan-Feed wurde heute frisch abgerufen (55 Einträge) und enthält für
+  <strong>Mo 10.08., Di 11.08. und Mi 12.08.</strong> keine einzige Veranstaltung.</p>
+  <p class="meta">Letzte Lehrveranstaltung im Feed: Do 02.07.2026 (EBS2019, Tutorial wk&nbsp;2) —
+  das war vor 39 Tagen. Der nächste Feed-Eintrag überhaupt kommt am 07.09.2026, in 28 Tagen.</p>
 </div>
 
-<h2>Wochenübersicht</h2>
-
-<div class="card">
-  <div class="day">Montag, 10.08.</div>
-  <div class="empty">Keine Veranstaltung</div>
+<h2>Heute — Montag, 10.08.</h2>
+<div class="card accent-green">
+  <div class="day today">Kein Tutorial, keine Lecture, keine Abgabe</div>
+  <p class="meta">Nichts im Feed. Auch keine Frist, die heute läuft.</p>
 </div>
+
+<h2>Morgen &amp; Übermorgen</h2>
 <div class="card">
   <div class="day">Dienstag, 11.08.</div>
   <div class="empty">Keine Veranstaltung</div>
@@ -89,49 +91,42 @@
   <div class="day">Mittwoch, 12.08.</div>
   <div class="empty">Keine Veranstaltung</div>
 </div>
-<div class="card">
-  <div class="day">Donnerstag, 13.08.</div>
-  <div class="empty">Keine Veranstaltung</div>
-</div>
-<div class="card">
-  <div class="day">Freitag, 14.08.</div>
-  <div class="empty">Keine Veranstaltung</div>
-</div>
+<p class="meta">Heute Abend ist also nichts vorzubereiten.</p>
 
-<h2>Literatur</h2>
+<h2>Thema &amp; Literatur</h2>
 <div class="card accent-yellow">
   <div class="ttl yellow">Keine Angaben verfügbar</div>
-  <p>Zwei Gründe, beide heute geprüft:</p>
+  <p>Zwei Gründe, beide in diesem Lauf geprüft:</p>
   <ul>
-    <li>Es finden diese Woche keine Sitzungen statt, zu denen es etwas vorzubereiten gäbe.</li>
+    <li>Es findet keine Sitzung statt, zu der es etwas vorzubereiten gäbe.</li>
     <li>Canvas ist nicht erreichbar — der API-Token ist am <strong>18.07.2026</strong> abgelaufen
-    (heute erneut <code>401 Expired access token</code>). Kurs-Seiten, Module und Assignments
+    (heute erneut <code>401 Expired access token</code>). Module, Kurs-Seiten und Assignments
     können nicht gelesen werden.</li>
   </ul>
-  <p class="meta">Sobald der Token erneuert ist, liefert der Check hier wieder
-  Kapitel und Seitenzahlen pro Tag.</p>
+  <p class="meta">Sobald der Token erneuert ist, stehen hier wieder Lernziele,
+  Kapitel und Seitenzahlen.</p>
 </div>
 
 <h2>Deadlines</h2>
 
 <div class="card accent-green">
   <div class="ttl green">Diese Woche: keine</div>
-  <p class="meta">Im Feed steht für 10.–14.08. keine Frist.</p>
+  <p class="meta">Im Feed steht für 10.–16.08. keine Frist.</p>
 </div>
 
 <div class="card accent-yellow">
   <div class="ttl yellow">Fr 11.09.2026, 17:00 — Kursanmeldung Periode 2</div>
   <p>Feed-Eintrag: „SBE: Course registration period 2 closes TODAY (17:00h)“.
   Vorwarnungen laufen ab Mo 07.09.</p>
-  <p class="meta">Noch 33 Tage. Nichts zu tun diese Woche, aber der Termin ist hart —
+  <p class="meta">Noch 32 Tage. Jetzt nichts zu tun, aber der Termin ist hart —
   wer ihn verpasst, bekommt die Kurse der Periode 2 nicht.</p>
 </div>
 
 <div class="card accent-yellow">
   <div class="ttl yellow">Fr 25.09.2026, 17:00 — Prüfungsanmeldung Periode 1</div>
   <p>Feed-Eintrag: „SBE: Exam (de)registration period 1 closes TODAY (17:00h)“.
-  Anmeldefenster öffnet Mo 21.09.</p>
-  <p class="meta">Noch 47 Tage.</p>
+  Das Anmeldefenster öffnet Mo 21.09.</p>
+  <p class="meta">Noch 46 Tage.</p>
 </div>
 
 <h2>Ankündigungen</h2>
@@ -144,22 +139,22 @@
 <h2>Empfehlungen</h2>
 
 <div class="card accent-red">
-  <div class="ttl red">Für Franz: Canvas-Token erneuern</div>
-  <p>Das ist die einzige echte Aufgabe aus diesem Lauf. Der Token ist seit 22 Tagen tot.</p>
+  <div class="ttl red">Canvas-Token erneuern (für Franz)</div>
+  <p>Die einzige echte Aufgabe aus diesem Lauf. Der Token ist seit 23 Tagen tot.</p>
   <ul>
     <li>Canvas → Account → Settings → <strong>New Access Token</strong></li>
     <li>Neuen Token in <code>.env</code> als <code>CANVAS_API_TOKEN</code> eintragen</li>
   </ul>
-  <p>Wenn das <strong>vor Anfang September</strong> passiert, stehen zum Start von Periode 1
+  <p>Passiert das <strong>vor Anfang September</strong>, stehen zum Start von Periode 1
   wieder Themen, Literatur und Assignment-Details in diesem Check. Passiert es nicht,
-  bleiben die Wochenpläne inhaltsleer und zeigen nur noch Uhrzeiten und Räume.</p>
+  bleiben die Checks inhaltsleer und zeigen nur Uhrzeiten und Räume.</p>
 </div>
 
 <div class="card accent-blue">
-  <div class="ttl">Diese Woche ist frei</div>
-  <p>Keine Sitzung, keine Frist, keine Vorbereitung. Es gibt aus den Daten
-  nichts zu tun — und es wäre unehrlich, hier eine Aufgabe zu erfinden.</p>
-  <p class="meta">Der nächste Check, der wieder echten Inhalt hat, wird der Anfang September sein,
+  <div class="ttl">Nichts zu tun</div>
+  <p>Keine Sitzung, keine Frist, keine Vorbereitung. Aus den Daten ergibt sich
+  heute keine Aufgabe — und es wäre unehrlich, hier eine zu erfinden.</p>
+  <p class="meta">Der nächste Check mit echtem Inhalt wird der Anfang September sein,
   wenn der Stundenplan für Periode 1 gefüllt wird.</p>
 </div>
 
@@ -172,8 +167,9 @@
 </div>
 
 <footer>
-  Aktualisiert: 09.08.2026, 09:06 CEST<br>
-  Quelle: MU-Stundenplan-Feed (55 Einträge, SHA-256 c5c0f2d2) · Canvas nicht erreichbar (401)
+  Aktualisiert: 10.08.2026, 09:18 CEST<br>
+  Quelle: MU-Stundenplan-Feed (55 Einträge, SHA-256 d474ba37, in diesem Lauf berechnet) ·
+  Canvas nicht erreichbar (401)
 </footer>
 
 </div>
