@@ -48,14 +48,9 @@
     background: #262626; padding: 1.5px 6px; border-radius: 4px;
     font-size: 0.85em; color: #d4d4d4;
   }
-  .banner {
-    background: #2a1618; border: 1px solid #5c2b2e; border-radius: 11px;
-    padding: 15px 16px; margin-bottom: 12px;
-  }
-  .banner .ttl { color: #f87171; }
   footer {
-    margin-top: 34px; padding-top: 15px; border-top: 1px solid #2a2a2a;
-    color: #6e6e6e; font-size: 0.82rem;
+    margin-top: 34px; color: #6b6b6b; font-size: 0.82rem;
+    border-top: 1px solid #222; padding-top: 14px;
   }
 </style>
 </head>
@@ -65,121 +60,57 @@
 <header>
   <h1>Uni Daily Check</h1>
   <div class="date">Mittwoch, 12. August 2026</div>
-  <div class="badge">Tages-Check</div>
+  <span class="badge">Tages-Check</span>
 </header>
 
-<div class="banner">
-  <div class="ttl">Sommerpause — heute, morgen und übermorgen keine Termine</div>
-  <p>Der Stundenplan-Feed wurde in diesem Lauf um 08:03 CEST frisch abgerufen
-  (53 Einträge). Für <strong>Mi 12.08., Do 13.08. und Fr 14.08.</strong> enthält er
-  keine einzige Veranstaltung.</p>
-  <p class="meta">Letzte Lehrveranstaltung im Feed: Do 02.07.2026 — das war vor 41 Tagen.
-  Der nächste Feed-Eintrag überhaupt (eine SBE-Anmeldewarnung) kommt am
-  07.09.2026, in 26 Tagen.</p>
-  <p class="meta">WhatsApp-Zustellung heute fehlgeschlagen — CallMeBot meldet
-  „0 messages left, Message not sent“ (Re-Subscribe nötig). Diese Seite ist
-  deshalb der einzige Kanal für diesen Check.</p>
-</div>
-
-<h2>Heute — Mittwoch, 12.08.</h2>
+<h2>Heute &amp; die nächsten Tage</h2>
 <div class="card accent-green">
-  <div class="day today">Kein Tutorial, keine Lecture, keine Abgabe</div>
-  <p class="meta">Nichts im Feed. Auch keine Frist, die heute läuft.</p>
+  <div class="day today">Mittwoch, 12.08. (heute)</div>
+  <p class="empty">Keine Termine — Semesterpause.</p>
+</div>
+<div class="card accent-blue">
+  <div class="day">Donnerstag, 13.08. (morgen)</div>
+  <p class="empty">Keine Termine — Semesterpause.</p>
+</div>
+<div class="card accent-blue">
+  <div class="day">Freitag, 14.08. (übermorgen)</div>
+  <p class="empty">Keine Termine — Semesterpause.</p>
+</div>
+<div class="card">
+  <p>🏖️ Die Semesterpause läuft laut Plan bis <strong>06.09.2026</strong>. Der leere
+  Stundenplan ist korrekt und kein Fehler. Für September sind aktuell noch keine
+  Kurstermine im Feed — sobald welche erscheinen, tauchen sie hier auf.</p>
 </div>
 
-<h2>Morgen &amp; Übermorgen</h2>
-<div class="card">
-  <div class="day">Donnerstag, 13.08.</div>
-  <div class="empty">Keine Veranstaltung</div>
-</div>
-<div class="card">
-  <div class="day">Freitag, 14.08.</div>
-  <div class="empty">Keine Veranstaltung</div>
-</div>
-<p class="meta">Heute Abend ist also nichts vorzubereiten.</p>
-
-<h2>Thema &amp; Literatur</h2>
-<div class="card accent-yellow">
-  <div class="ttl yellow">Keine Angaben verfügbar</div>
-  <p>Zwei Gründe, beide in diesem Lauf geprüft:</p>
-  <ul>
-    <li>Es findet keine Sitzung statt, zu der es etwas vorzubereiten gäbe.</li>
-    <li>Canvas ist nicht erreichbar — der API-Token ist am <strong>18.07.2026</strong> abgelaufen
-    (heute erneut <code>401</code>, Tag 25). Module, Kurs-Seiten und Assignments
-    können nicht gelesen werden.</li>
-  </ul>
-  <p class="meta">Sobald der Token erneuert ist, stehen hier wieder Lernziele,
-  Kapitel und Seitenzahlen.</p>
+<h2>Hinweise</h2>
+<div class="card accent-red">
+  <div class="ttl red">⚠️ Canvas-Token abgelaufen</div>
+  <p>Der Canvas-API-Token ist seit <strong>18.07.2026</strong> abgelaufen — alle
+  Canvas-Abfragen (Kurse, Deadlines, Ankündigungen, Seiteninhalte) schlagen mit
+  401 fehl. Der Deep-Dive in Kursinhalte ist bis dahin nicht möglich; dieser
+  Check basiert nur auf dem Stundenplan-Feed.</p>
+  <p><strong>💡 Perfekte Pausen-Aufgabe (2 Min):</strong> Neuen Token generieren
+  unter Canvas → Account → Settings → <em>„+ New Access Token"</em> und den Wert
+  in der Umgebungsvariable <code>CANVAS_API_TOKEN</code> ersetzen. Das schaltet
+  den kompletten Deep-Dive wieder frei — rechtzeitig vor Semesterstart.</p>
 </div>
 
 <h2>Deadlines</h2>
-
-<div class="card accent-green">
-  <div class="ttl green">Diese Woche: keine</div>
-  <p class="meta">Im Feed steht für 12.–18.08. keine Frist.</p>
-</div>
-
 <div class="card accent-yellow">
-  <div class="ttl yellow">Fr 11.09.2026, 17:00 — Kursanmeldung Periode 2</div>
-  <p>Feed-Eintrag: „SBE: Course registration period 2 closes TODAY (17:00h)“.
-  Vorwarnungen laufen ab Mo 07.09.</p>
-  <p class="meta">Noch 30 Tage. Jetzt nichts zu tun, aber der Termin ist hart —
-  wer ihn verpasst, bekommt die Kurse der Periode 2 nicht.</p>
-</div>
-
-<div class="card accent-yellow">
-  <div class="ttl yellow">Fr 25.09.2026, 17:00 — Prüfungsanmeldung Periode 1</div>
-  <p>Feed-Eintrag: „SBE: Exam (de)registration period 1 closes TODAY (17:00h)“.
-  Das Anmeldefenster öffnet Mo 21.09.</p>
-  <p class="meta">Noch 44 Tage.</p>
+  <div class="ttl yellow">🟡 Kursregistrierung Periode 2</div>
+  <p>Schließt <strong>Freitag, 11.09.2026 um 17:00 Uhr</strong> (SBE).
+  Noch ca. 4 Wochen Zeit — aber vor Semesterstart am besten früh prüfen, ob alle
+  gewünschten Kurse registriert sind.</p>
+  <p class="meta">Quelle: Timetable-Feed (offizielle SBE-Warnung)</p>
 </div>
 
 <h2>Ankündigungen</h2>
-<div class="card accent-yellow">
-  <div class="ttl yellow">Nicht abrufbar</div>
-  <p>Canvas-Announcements brauchen einen gültigen Token. Solange der abgelaufen ist,
-  kann dieser Check nicht sagen, ob es neue Ankündigungen gibt — auch nicht, dass es keine gibt.</p>
-</div>
-
-<h2>Empfehlungen</h2>
-
-<div class="card accent-red">
-  <div class="ttl red">Canvas-Token erneuern (für Franz)</div>
-  <p>Die einzige echte Aufgabe aus diesem Lauf. Der Token ist seit 25 Tagen tot.</p>
-  <ul>
-    <li>Canvas → Account → Settings → <strong>New Access Token</strong></li>
-    <li>Neuen Token in <code>.env</code> als <code>CANVAS_API_TOKEN</code> eintragen</li>
-  </ul>
-  <p>Passiert das <strong>vor Anfang September</strong>, stehen zum Start von Periode 1
-  wieder Themen, Literatur und Assignment-Details in diesem Check. Passiert es nicht,
-  bleiben die Checks inhaltsleer und zeigen nur Uhrzeiten und Räume.</p>
-</div>
-
-<div class="card accent-yellow">
-  <div class="ttl yellow">Kursanmeldung Periode 1 — falls unsicher, jetzt prüfen</div>
-  <p>Was der Feed belegt: das Anmeldefenster für <strong>Periode 1 ist am 15.07.2026 geschlossen</strong>
-  („Course registration period 1 closes TODAY (23:59h)“). Falls du dich damals nicht
-  angemeldet hast, löst sich das im September nicht von selbst.</p>
-  <p>Was der Feed <em>nicht</em> belegt: dass du nicht angemeldet bist. Stundenpläne werden
-  oft erst kurz vor Periodenbeginn gefüllt — ein leerer Feed im August unterscheidet
-  „nicht angemeldet“ und „noch nicht veröffentlicht“ nicht.</p>
-  <p class="meta">Wenn unklar: in MyUM den Anmeldestatus für Periode 1 nachsehen oder SBE fragen —
-  jetzt, nicht erst im September.</p>
-</div>
-
-<div class="card accent-blue">
-  <div class="ttl">Sonst nichts zu tun</div>
-  <p>Keine Sitzung, keine Frist, keine Vorbereitung. Aus den Daten ergibt sich
-  heute keine weitere Aufgabe — und es wäre unehrlich, hier eine zu erfinden.</p>
-  <p class="meta">Der nächste Check mit echtem Inhalt wird der Anfang September sein,
-  wenn der Stundenplan für Periode 1 gefüllt wird.</p>
+<div class="card">
+  <p class="empty">Nicht abrufbar — Canvas-Token abgelaufen (siehe Hinweis oben).</p>
 </div>
 
 <footer>
-  Aktualisiert: 12.08.2026, 08:03 CEST<br>
-  Quelle: MU-Stundenplan-Feed · 53 Einträge · 0 Termine 12.–14.08. ·
-  letzter Lehrtermin 02.07.2026 · nächster Eintrag 07.09.2026 ·
-  Canvas nicht erreichbar (401, Tag 25)
+  Aktualisiert: 12.08.2026, 08:08 Uhr
 </footer>
 
 </div>
