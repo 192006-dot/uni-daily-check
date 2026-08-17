@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Uni Daily Check — Donnerstag, 13.08.2026</title>
+<title>Uni Daily Check — Montag, 17.08.2026</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -40,6 +40,7 @@
   .ttl.red { color: #f87171; }
   .ttl.yellow { color: #fbbf24; }
   .ttl.green { color: #4ade80; }
+  .ttl.blue { color: #60a5fa; }
   .meta { color: #9a9a9a; font-size: 0.88rem; }
   p { margin: 7px 0; }
   ul { margin: 8px 0 4px; padding-left: 20px; }
@@ -48,6 +49,12 @@
     background: #262626; padding: 1.5px 6px; border-radius: 4px;
     font-size: 0.85em; color: #d4d4d4;
   }
+  .slot {
+    margin: 9px 0; padding-left: 11px; border-left: 2px solid #333;
+  }
+  .slot .cname { font-weight: 650; color: #e8e8e8; }
+  .slot .when { color: #4ade80; font-size: 0.9rem; }
+  .slot .where { color: #9a9a9a; font-size: 0.88rem; }
   footer {
     margin-top: 34px; color: #6b6b6b; font-size: 0.82rem;
     border-top: 1px solid #222; padding-top: 14px;
@@ -59,79 +66,139 @@
 
 <header>
   <h1>Uni Daily Check</h1>
-  <div class="date">Donnerstag, 13. August 2026</div>
+  <div class="date">Montag, 17. August 2026</div>
   <span class="badge">Tages-Check</span>
 </header>
 
+<h2>Das Wichtigste heute</h2>
+<div class="card accent-green">
+  <div class="ttl green">🗓️ Der Periode-1-Stundenplan ist jetzt da</div>
+  <p>Seit dem letzten Check hat sich der Feed <strong>substanziell geändert</strong>:
+  von 52 auf <strong>81 Einträge</strong>. Nach Wochen, in denen ab Juli nur noch
+  SBE-Registrierungsfristen im Feed standen, sind jetzt die
+  <strong>echten Kurstermine der Periode 1 veröffentlicht</strong> — mit Räumen und
+  Dozenten. Der offene Punkt aus den letzten Checks („falls Ende August immer noch
+  nichts erscheint, bei SBE nachfragen") hat sich damit erledigt.</p>
+  <p class="meta">Feed-Sync laut Timetable: 17.08.2026, 08:00 CEST.</p>
+</div>
+
 <h2>Heute &amp; die nächsten Tage</h2>
 <div class="card accent-green">
-  <div class="day today">Donnerstag, 13.08. (heute)</div>
+  <div class="day today">Montag, 17.08. (heute)</div>
   <p class="empty">Keine Termine — Semesterpause.</p>
 </div>
 <div class="card accent-blue">
-  <div class="day">Freitag, 14.08. (morgen)</div>
+  <div class="day">Dienstag, 18.08. (morgen)</div>
   <p class="empty">Keine Termine — Semesterpause.</p>
 </div>
 <div class="card accent-blue">
-  <div class="day">Samstag, 15.08. (übermorgen)</div>
+  <div class="day">Mittwoch, 19.08. (übermorgen)</div>
   <p class="empty">Keine Termine — Semesterpause.</p>
 </div>
 <div class="card">
-  <p>🏖️ <strong>Semesterpause</strong> — im Feed stehen bis auf Weiteres keine
-  Kurstermine. Der leere Stundenplan ist korrekt und kein Fehler. Ein Enddatum der
-  Pause nennt der Feed nicht.</p>
-  <p>Im heutigen Feed steht nach dem <strong>02.07.2026</strong> (letztes Tutorial
-  „Communication and Leadership Skills") <strong>kein einziger Kurstermin</strong> mehr —
-  die September-Einträge sind ausschließlich SBE-Registrierungsfristen, keine
-  Veranstaltungen. Sobald echte Kurstermine im Feed erscheinen, tauchen sie hier auf.</p>
-  <p class="meta">Der Feed reicht bis Juni 2027 — ab September stehen darin bisher
-  nur Fristen. Das ist Mitte August noch normal. Falls <strong>Ende August</strong>
-  immer noch keine Periode-1-Lehrtermine erscheinen, lohnt eine Nachfrage bei
-  SBE Student Services / MyUM.</p>
+  <p>🏖️ Der leere Stundenplan ist bis Ende August <strong>korrekt und kein Fehler</strong>.
+  Der nächste Termin im Feed ist <strong>Dienstag, 01.09.</strong> — dazwischen liegt
+  kein einziger Kurstermin.</p>
 </div>
 
-<h2>Hinweise</h2>
-<div class="card accent-red">
-  <div class="ttl red">⚠️ Canvas-Token abgelaufen — Tag 26</div>
-  <p>Der Canvas-API-Token ist seit <strong>18.07.2026</strong> abgelaufen. Alle
-  Canvas-Abfragen (Kurse, Module, Seiteninhalte, Deadlines, Ankündigungen) schlagen
-  weiterhin mit <code>401 Expired access token</code> fehl. Der inhaltliche Deep-Dive
-  ist damit nicht möglich — dieser Check basiert <strong>ausschließlich</strong> auf
-  dem Stundenplan-Feed.</p>
-  <p><strong>💡 Perfekte Pausen-Aufgabe (2 Min):</strong> Neuen Token generieren
-  unter Canvas → Account → Settings → <em>„+ New Access Token"</em> und den Wert
-  in der Umgebungsvariable <code>CANVAS_API_TOKEN</code> ersetzen. Das schaltet
-  den kompletten Deep-Dive wieder frei — am besten noch in der Pause, bevor die
-  Lehrtermine wieder starten.</p>
+<h2>Vorschau: Periode 1 startet in 15 Tagen</h2>
+<div class="card accent-blue">
+  <div class="ttl blue">▶️ Dienstag, 01.09. — Opening Lectures</div>
+  <div class="slot">
+    <div class="cname">EBC2060 — Digitalisation and Organisations</div>
+    <div class="when">10:30 – 12:00 Uhr</div>
+    <div class="where">TAP11 F0.019 · Ohlrogge, F (Fynn)</div>
+  </div>
+  <div class="slot">
+    <div class="cname">EBC2080 — Behavioural Economics (IB/IBE)</div>
+    <div class="when">16:00 – 18:00 Uhr</div>
+    <div class="where">TS53 H0.01 Aula · Meissner, TGK (Thomas)</div>
+  </div>
+  <p class="meta">Zwischen den beiden Lectures liegen vier Stunden Pause.</p>
 </div>
-<div class="card accent-yellow">
-  <div class="ttl yellow">⚠️ WhatsApp-Zustellung fehlgeschlagen</div>
-  <p>Der Versand wurde heute zweimal versucht (08:02 und 08:08 Uhr). CallMeBot
-  antwortete beide Male <em>„You have 0 messages left … Message not sent"</em> — es kam
-  <strong>keine WhatsApp-Nachricht</strong> an. Ein Re-Subscribe über
-  callmebot.com ist nötig. Diese Seite ist deshalb der einzige funktionierende
-  Kanal für diesen Check.</p>
-  <p>Um <strong>09:08 Uhr</strong> erneut geprüft (Test-Ping, keine Summary):
-  weiterhin <em>„0 messages left"</em>. Der Versand der Tages-Zusammenfassung wurde
-  deshalb <strong>nicht</strong> erneut versucht — er würde nur weitere
-  Fehlschläge erzeugen. Kontingent auffüllen:
-  <code>callmebot.com/491608329844</code>.</p>
+
+<div class="card accent-blue">
+  <div class="ttl blue">▶️ Freitag, 04.09. — erste Tutorials</div>
+  <div class="slot">
+    <div class="cname">EBC2060 — Tutorial B / Gruppe 03</div>
+    <div class="when">11:00 – 13:00 Uhr</div>
+    <div class="where">TS53 A0.24 · Sutton, NA (Nick)</div>
+  </div>
+  <div class="slot">
+    <div class="cname">EBC2080 — Tutorial B / Gruppe 06</div>
+    <div class="when">13:30 – 15:30 Uhr</div>
+    <div class="where">TS53 G0.03 · Baby Sujatha, K (Karthika)</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ttl">🔁 Dein fester Wochenrhythmus ab September</div>
+  <p>Beide Kurse laufen parallel über die ganze Periode, jeweils zweimal pro Woche:</p>
+  <ul>
+    <li><strong>Dienstags</strong> (im Feed „Tutorial A"): EBC2060 11:00–13:00 in
+      TS53 G0.03, danach EBC2080 13:30–15:30 in TAP23 (X) 0.013</li>
+    <li><strong>Freitags</strong> (im Feed „Tutorial B"): EBC2060 11:00–13:00 in
+      TS53 A0.24, danach EBC2080 13:30–15:30 in TS53 G0.03</li>
+  </ul>
+  <p class="meta">Achtung: Die Räume unterscheiden sich je nach Wochentag — dienstags
+  und freitags sind es nicht dieselben. Die Bezeichnungen „Tutorial A" / „Tutorial B"
+  stehen so im Feed; die Gruppennummern (03 bzw. 06) sind bei beiden identisch.</p>
+  <p><strong>Zwei Sondertermine</strong> im September:</p>
+  <ul>
+    <li>Fr 18.09., 16:00–18:00 — EBC2080 <em>Lecture wk3</em>, TAP11 F0.019 (Meissner).
+      An dem Freitag entfällt das EBC2080-Tutorial.</li>
+    <li>Fr 25.09., 08:45–10:45 — EBC2060 <em>Guest Lecture</em>, TAP11 F0.019 (Ohlrogge).
+      Früher Start als sonst.</li>
+  </ul>
 </div>
 
 <h2>Deadlines</h2>
 <div class="card accent-yellow">
   <div class="ttl yellow">🟡 Kursregistrierung Periode 2</div>
   <p>Schließt <strong>Freitag, 11.09.2026 um 17:00 Uhr</strong> (SBE).
-  Noch <strong>29 Tage</strong>. Vor Semesterstart am besten früh prüfen, ob alle
-  gewünschten Kurse registriert sind.</p>
-  <p class="meta">Quelle: Timetable-Feed (offizielle SBE-Warnung, Typ „Deadline")</p>
+  Noch <strong>25 Tage</strong>. Fällt in die zweite Vorlesungswoche — am besten
+  vorher erledigen, nicht erst wenn Periode 1 schon läuft.</p>
+  <p class="meta">Quelle: Timetable-Feed (SBE-Eintrag, Typ „Deadline")</p>
 </div>
 <div class="card accent-yellow">
   <div class="ttl yellow">🟡 Prüfungs-(De)Registrierung Periode 1</div>
-  <p>Das Anmeldefenster <strong>öffnet Montag, 21.09.2026</strong> und schließt
+  <p>Fenster <strong>öffnet Montag, 21.09.2026</strong>, schließt
   <strong>Freitag, 25.09.2026 um 17:00 Uhr</strong> (SBE).
-  Noch <strong>43 Tage</strong>.</p>
-  <p class="meta">Quelle: Timetable-Feed (offizielle SBE-Warnung, Typ „Deadline")</p>
+  Noch <strong>39 Tage</strong>. Ohne Anmeldung keine Klausur — das betrifft
+  EBC2060 und EBC2080.</p>
+  <p class="meta">Quelle: Timetable-Feed (SBE-Eintrag, Typ „Deadline")</p>
+</div>
+
+<h2>Hinweise</h2>
+<div class="card accent-red">
+  <div class="ttl red">⚠️ Canvas-Token abgelaufen — Tag 30, jetzt zeitkritisch</div>
+  <p>Der Canvas-API-Token ist seit <strong>18.07.2026</strong> abgelaufen. Alle
+  Abfragen (Kurse, Module, Seiteninhalte, Deadlines, Ankündigungen) scheitern
+  weiterhin an <code>401 Expired access token</code>. Dieser Check basiert deshalb
+  <strong>ausschließlich</strong> auf dem Stundenplan-Feed — ich kann Termine,
+  Räume und Dozenten liefern, aber <strong>keine Themen, keine Lernziele und keine
+  Literatur</strong>.</p>
+  <p><strong>Warum es jetzt drängt:</strong> Periode 1 startet in 15 Tagen. Ab dann
+  ist genau der fehlende Teil der wertvolle — was in der Session drankommt und was
+  vorher gelesen werden muss. Der Token sollte <strong>vor dem 01.09.</strong>
+  erneuert sein.</p>
+  <p><strong>💡 2 Minuten:</strong> Canvas → Account → Settings →
+  <em>„+ New Access Token"</em>, dann den Wert in <code>CANVAS_API_TOKEN</code>
+  in der Datei <code>.env</code> ersetzen.</p>
+  <p class="meta">Nebenbefund: Es gibt nur <strong>einen gemeinsamen</strong>
+  Canvas-Token für alle Nutzer (Franz'), keinen eigenen für Clara. Auch nach der
+  Erneuerung würde der Check also Franz' Canvas lesen, nicht Claras. Wer Claras
+  Kursinhalte will, braucht einen Token aus <em>ihrem</em> Canvas-Account.</p>
+</div>
+<div class="card accent-red">
+  <div class="ttl red">⚠️ WhatsApp erneut nicht zugestellt</div>
+  <p>Beide Nachrichten dieses Checks wurden heute an <code>+49 162 7665193</code>
+  gesendet. CallMeBot antwortete: <em>„You have <b>0</b> messages left …
+  Message not sent"</em> — es kam <strong>keine WhatsApp-Nachricht</strong> an.</p>
+  <p>Diese Seite ist damit weiterhin der <strong>einzige funktionierende Kanal</strong>.
+  Kontingent auffüllen unter <code>callmebot.com/491627665193</code>
+  (Claras Nummer — nicht Franz' <code>491608329844</code>, das ist ein separates
+  Kontingent und ebenfalls leer).</p>
 </div>
 
 <h2>Ankündigungen</h2>
@@ -140,11 +207,12 @@
 </div>
 
 <footer>
-  Aktualisiert: 13.08.2026, 09:08 Uhr (CEST) — Feed erneut abgerufen: 52 Einträge,
-  Sync laut Feed heute 09:06 CEST. Zahlen unverändert gegenüber dem 09:07-Lauf:
-  0 Termine 13.–15.08., nächster Feed-Eintrag Mo 07.09. (Registrierungs-Warnung,
-  kein Kurstermin). Canvas weiterhin <code>401</code>, CallMeBot-Kontingent
-  weiterhin 0 (dritter Fehlschlag dokumentiert).
+  Aktualisiert: 17.08.2026 (CEST). Quelle: persönlicher Timetable-iCal-Feed,
+  <strong>81 Einträge</strong> (13.08. waren es 52), Sync laut Feed heute 08:00 CEST.
+  Alle Uhrzeiten aus UTC in CEST umgerechnet (der Feed liefert
+  <code>Z</code>-Zeitstempel). 0 Termine am 17.–19.08.; nächster Kurstermin
+  Di 01.09. Canvas: <code>401</code>, kein Deep-Dive möglich.
+  CallMeBot-Kontingent: 0, Versand fehlgeschlagen.
 </footer>
 
 </div>
