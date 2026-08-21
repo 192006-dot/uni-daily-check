@@ -1,66 +1,70 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Uni Daily Check — Clara &amp; Franz — Donnerstag, 20.08.2026</title>
+<title>Uni Daily Check — Clara &amp; Franz — Freitag, 21.08.2026</title>
 <style>
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; padding: 16px 14px 40px;
-    background: #0f0f0f; color: #e0e0e0;
-    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-    line-height: 1.55; font-size: 16px;
+  :root{
+    --bg:#0f0f0f; --fg:#e0e0e0; --card:#1a1a1a; --line:#2a2a2a; --muted:#8a8a8a;
+    --green:#4ade80; --blue:#60a5fa; --yellow:#fbbf24; --red:#f87171;
   }
-  .wrap { max-width: 600px; margin: 0 auto; }
-  header { margin-bottom: 22px; }
-  h1 { font-size: 1.5rem; margin: 0 0 6px; letter-spacing: -0.02em; }
-  .date { color: #9a9a9a; font-size: 0.95rem; }
-  .badge {
-    display: inline-block; margin-top: 10px; padding: 4px 11px;
-    background: #1a2f42; color: #60a5fa; border: 1px solid #2c4a66;
-    border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    font-size:16px; line-height:1.55; -webkit-text-size-adjust:100%;
   }
-  .badge.who {
-    background: #16301f; color: #4ade80; border-color: #2b543a; margin-left: 6px;
+  .wrap{max-width:600px; margin:0 auto; padding:20px 16px 56px}
+  header{padding:8px 0 4px}
+  h1{font-size:26px; margin:0 0 4px; letter-spacing:-.02em}
+  .date{color:var(--muted); font-size:15px; margin:0}
+  .badges{margin:12px 0 6px; display:flex; gap:8px; flex-wrap:wrap}
+  .badge{
+    font-size:12px; font-weight:600; padding:4px 10px; border-radius:999px;
+    border:1px solid var(--line); background:#151515; color:var(--muted);
   }
-  h2 {
-    font-size: 1.02rem; text-transform: uppercase; letter-spacing: 0.06em;
-    color: #9a9a9a; margin: 30px 0 12px; font-weight: 600;
+  .badge.on{border-color:#2f4a35; background:#13251a; color:var(--green)}
+  h2{
+    font-size:13px; text-transform:uppercase; letter-spacing:.10em;
+    color:var(--muted); margin:32px 0 10px; font-weight:600;
   }
-  h2.person { color: #4ade80; border-bottom: 1px solid #2b543a; padding-bottom: 7px; }
-  .card {
-    background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 11px;
-    padding: 14px 16px; margin-bottom: 11px;
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:12px;
+    padding:14px 16px; margin:10px 0;
   }
-  .card.accent-red { border-left: 3px solid #f87171; }
-  .card.accent-yellow { border-left: 3px solid #fbbf24; }
-  .card.accent-green { border-left: 3px solid #4ade80; }
-  .card.accent-blue { border-left: 3px solid #60a5fa; }
-  .day { font-weight: 700; color: #60a5fa; font-size: 0.97rem; margin-bottom: 3px; }
-  .day.today { color: #4ade80; }
-  .empty { color: #7c7c7c; font-size: 0.92rem; }
-  .ttl { font-weight: 650; margin-bottom: 5px; }
-  .ttl.red { color: #f87171; }
-  .ttl.yellow { color: #fbbf24; }
-  .ttl.green { color: #4ade80; }
-  .ttl.blue { color: #60a5fa; }
-  .meta { color: #9a9a9a; font-size: 0.88rem; }
-  p { margin: 7px 0; }
-  ul { margin: 8px 0 4px; padding-left: 20px; }
-  li { margin-bottom: 6px; }
-  code {
-    background: #262626; padding: 1.5px 6px; border-radius: 4px;
-    font-size: 0.85em; color: #d4d4d4;
+  .card.green{border-left:3px solid var(--green)}
+  .card.blue{border-left:3px solid var(--blue)}
+  .card.yellow{border-left:3px solid var(--yellow)}
+  .card.red{border-left:3px solid var(--red)}
+  .ttl{font-weight:600; font-size:16px; margin:0 0 6px}
+  .ttl.green{color:var(--green)} .ttl.blue{color:var(--blue)}
+  .ttl.yellow{color:var(--yellow)} .ttl.red{color:var(--red)}
+  p{margin:8px 0}
+  .meta{color:var(--muted); font-size:14px}
+  .big{font-size:19px; font-weight:600; margin:2px 0 6px}
+  ul{margin:8px 0; padding-left:20px} li{margin:5px 0}
+  .who{
+    display:inline-block; font-size:11px; font-weight:700; letter-spacing:.06em;
+    padding:2px 8px; border-radius:5px; margin-right:8px; vertical-align:2px;
   }
-  .slot { margin: 9px 0; padding-left: 11px; border-left: 2px solid #333; }
-  .slot .cname { font-weight: 650; color: #e8e8e8; }
-  .slot .when { color: #4ade80; font-size: 0.9rem; }
-  .slot .where { color: #9a9a9a; font-size: 0.88rem; }
-  footer {
-    margin-top: 34px; color: #6b6b6b; font-size: 0.82rem;
-    border-top: 1px solid #222; padding-top: 14px;
+  .who.c{background:#2a1f33; color:#c4a5e0}
+  .who.f{background:#1f2a33; color:#8fc4e0}
+  .slot{
+    border-top:1px solid var(--line); padding:10px 0 2px; margin-top:6px;
   }
+  .slot:first-of-type{border-top:0; margin-top:0}
+  .time{font-variant-numeric:tabular-nums; font-weight:600}
+  .room{color:var(--muted); font-size:14px}
+  code{
+    background:#101010; border:1px solid var(--line); border-radius:4px;
+    padding:1px 5px; font-size:13px;
+  }
+  footer{
+    margin-top:36px; padding-top:14px; border-top:1px solid var(--line);
+    color:var(--muted); font-size:13px;
+  }
+  a{color:var(--blue)}
 </style>
 </head>
 <body>
@@ -68,375 +72,221 @@
 
 <header>
   <h1>Uni Daily Check</h1>
-  <div class="date">Donnerstag, 20. August 2026</div>
-  <div><span class="badge">Tages-Check</span><span class="badge who">Clara &amp; Franz</span></div>
+  <p class="date">Freitag, 21. August 2026</p>
+  <div class="badges">
+    <span class="badge on">Tages-Check</span>
+    <span class="badge">Clara &amp; Franz</span>
+    <span class="badge">Semesterpause</span>
+  </div>
 </header>
 
 <h2>Das Wichtigste heute</h2>
 
-<div class="card accent-green">
-  <div class="ttl green">Ruhiger Tag — nichts steht an</div>
-  <p>Heute, morgen und übermorgen (20.–22.08.) steht in <strong>beiden</strong>
-  Feeds kein einziger Termin. Semesterpause.</p>
-  <p>Nächster Kurstermin: <strong>Dienstag, 01.09.</strong> — in
-  <strong>12 Tagen</strong>. Keine neuen Kurse, keine Verschiebungen,
-  keine Deadline in den nächsten 7 Tagen.</p>
+<div class="card green">
+  <div class="ttl green">Nichts steht an — und nichts hat sich geändert</div>
+  <p class="big">0 Termine am 21., 22. und 23.08.</p>
+  <p>Gilt für <strong>beide</strong> Stundenpläne. Semesterpause. Der nächste
+  Kurstermin ist <strong>Dienstag, 01.09.</strong> — in <strong>11 Tagen</strong>.</p>
+  <p class="meta">Heute erstmals hart belegt statt nur behauptet: Der Rohfeed von
+  heute ist mit dem gestrigen Snapshot Zeile für Zeile verglichen worden. Beide
+  Feeds haben unverändert <strong>je 82 Einträge</strong>, und der einzige
+  Unterschied zu gestern sind die Synchronisations-Zeitstempel des
+  Timetable-Servers. <strong>Kein Termin wurde verschoben, keiner ist
+  ausgefallen, keiner ist neu.</strong> Die Snapshot-Sicherung läuft seit dem
+  20.08. und hat damit ihren ersten Nutzen gebracht.</p>
 </div>
 
-<div class="card accent-blue">
-  <div class="ttl blue">ℹ️ Der Feed ist um einen Eintrag geschrumpft — harmlos</div>
-  <p>Beide Feeds haben heute <strong>82 Einträge</strong>, gestern waren es
-  je 83. Deckungsgleich sind weiterhin <strong>49</strong> Einträge
-  (unverändert), der Rückgang steckt im persönlichen Teil (je 34&nbsp;→&nbsp;33).</p>
-  <p><strong>Geprüft und wichtig:</strong> <em>Alle künftigen Termine sind
-  unverändert</em> — jeder Termin, der gestern auf dieser Seite stand, steht
-  heute noch genauso im Rohfeed. Es ist also kein Tutorial ausgefallen und
-  nichts verschoben worden.</p>
-  <p class="meta"><strong>Nachtrag 09:52 — jetzt eindeutig geklärt:</strong>
-  Herausgefallen ist <strong>Di 26.05., EBC2158 Tutorial A / Gruppe 18</strong>
-  (Entrepreneurship and Small Business Management, Periode 5 — längst vorbei).
-  Beleg ohne Feed-Rohkopie: Die <em>gestrige</em> Seite führte diesen Termin
-  in der A/B-Belegliste auf (Git-Stand <code>ccdb9c1</code>, Zeile 323); im
-  heutigen Feed ist er nicht mehr enthalten, die drei danebenstehenden
-  Termine (29.05., 02.06., 05.06.) dagegen schon. Der Feed hält also ein
-  rollierendes Fenster von rund <strong>83 Tagen</strong> in die Vergangenheit.
-  Die Git-Historie dieser Seite ersetzt damit die fehlende Feed-Rohkopie.
-  Die A/B-Schlussfolgerung bleibt unberührt — sie wird von den drei noch
-  vorhandenen Terminen weiterhin getragen.</p>
+<div class="card red">
+  <div class="ttl red">Canvas ist weiterhin tot — Tag 34</div>
+  <p>Der Canvas-Zugang ist seit dem <strong>18.07.2026</strong> abgelaufen. Heute
+  erneut geprüft: jeder Abruf antwortet mit
+  <code>401 Expired access token</code>.</p>
+  <p>Das ist der Grund, warum auf dieser Seite <strong>keine Themen, keine
+  Lernziele und keine Literaturangaben</strong> stehen. Der Stundenplan liefert
+  Uhrzeit, Raum und Dozent — die Inhalte kämen aus Canvas, und Canvas antwortet
+  nicht. Erfunden wird hier nichts.</p>
+  <p class="meta"><strong>Was zu tun ist:</strong> Franz erzeugt ein neues Token
+  in Canvas (Account → Settings → „+ New Access Token") und trägt es in die
+  <code>.env</code> ein. <strong>Vor dem 01.09.</strong> — sonst startet Periode 1
+  ohne jede inhaltliche Vorbereitung, und genau da liegt der Mehrwert dieses
+  Checks.</p>
+  <p class="meta">Nebenbefund, unverändert: Es gibt nur <em>ein</em> gemeinsames
+  Token. Clara und Franz lesen damit dasselbe Canvas-Konto. Für Claras eigene
+  Kursinhalte bräuchte es ein zweites Token — solange die Kurse identisch sind,
+  fällt das nicht auf, ändern sich die Kurse, liefert der Check falsche Inhalte.</p>
 </div>
 
 <h2>Heute &amp; die nächsten Tage</h2>
 
 <div class="card">
-  <div class="day today">Donnerstag, 20.08. (heute)</div>
-  <div class="empty">Keine Termine — Semesterpause. Gilt für Clara und Franz.</div>
-</div>
-<div class="card">
-  <div class="day">Freitag, 21.08. (morgen)</div>
-  <div class="empty">Keine Termine. Es gibt nichts vorzubereiten.</div>
-</div>
-<div class="card">
-  <div class="day">Samstag, 22.08. (übermorgen)</div>
-  <div class="empty">Keine Termine.</div>
+  <p class="ttl">Freitag, 21.08. — heute</p>
+  <p>Keine Termine. Für Clara und für Franz.</p>
+  <div class="slot">
+    <p class="ttl">Samstag, 22.08. — morgen</p>
+    <p>Keine Termine. Es gibt nichts vorzubereiten — Periode 1 beginnt erst am 01.09.</p>
+  </div>
+  <div class="slot">
+    <p class="ttl">Sonntag, 23.08. — übermorgen</p>
+    <p>Keine Termine.</p>
+  </div>
 </div>
 
-<div class="card accent-yellow">
-  <div class="ttl yellow">💡 Zwei Dinge, die sich heute lohnen</div>
+<div class="card yellow">
+  <div class="ttl yellow">Was sich am Wochenende trotzdem lohnt</div>
   <ul>
-    <li><strong>Kursregistrierung Periode 2 vorziehen.</strong> Frist ist
-      <strong>Fr 11.09. um 17:00</strong> — das liegt schon in der zweiten
-      Vorlesungswoche. Jetzt erledigen ist deutlich entspannter als mittendrin.</li>
-    <li><strong>Canvas-Token erneuern</strong> (nur Franz kann das).
-      Noch 12 Tage bis Periode 1 — danach fehlt genau der Teil, der diesen
-      Check nützlich macht. Siehe Hinweis unten.</li>
+    <li><strong>Kursregistrierung Periode 2 erledigen.</strong> Frist ist
+    <strong>Freitag, 11.09. um 17:00</strong> — 21 Tage hin, aber der Termin liegt
+    mitten in der zweiten Vorlesungswoche, wenn schon Tutorials laufen. Jetzt ist
+    es eine Zehn-Minuten-Sache, dann ist sie weg.</li>
+    <li><strong>Canvas-Token erneuern (Franz).</strong> Fünf Minuten Arbeit, und
+    dieser Check kann ab dem 01.09. wieder das tun, wofür er gebaut wurde:
+    Literatur und Lernziele pro Sitzung liefern.</li>
+    <li><strong>Mehr nicht.</strong> Es gibt keine offene Abgabe, keine
+    Anmeldefrist in dieser Woche und nichts inhaltlich Nachzuholendes. Das
+    Wochenende ist frei — das ist ein Befund, keine Lücke im Check.</li>
   </ul>
 </div>
 
-<h2>Gemeinsam: Periode 1 startet in 12 Tagen</h2>
+<h2>Der Start von Periode 1 — 01.09.</h2>
 
-<div class="card accent-blue">
-  <div class="ttl blue">▶️ Dienstag, 01.09. — Opening Lectures (für beide gleich)</div>
+<div class="card blue">
+  <div class="ttl blue">Dienstag, 01.09. — Opening Lectures (für beide gleich)</div>
   <div class="slot">
-    <div class="cname">EBC2060 — Digitalisation and Organisations</div>
-    <div class="when">10:30 – 12:00 Uhr</div>
-    <div class="where">TAP11 F0.019 · Ohlrogge, F (Fynn)</div>
+    <p><span class="time">10:30 – 12:00</span> · EBC2060 — Digitalisation and Organisations</p>
+    <p class="room">TAP11 F0.019 · Ohlrogge, F (Fynn) · Lecture</p>
   </div>
   <div class="slot">
-    <div class="cname">EBC2080 — Behavioural Economics (IB/IBE)</div>
-    <div class="when">16:00 – 18:00 Uhr</div>
-    <div class="where">TS53 H0.01 Aula · Meissner, TGK (Thomas)</div>
+    <p><span class="time">16:00 – 18:00</span> · EBC2080 — Behavioural Economics (IB/IBE)</p>
+    <p class="room">TS53 H0.01 Aula · Meissner, TGK (Thomas) · Lecture</p>
   </div>
-  <p class="meta">Dazwischen liegen vier Stunden Pause.</p>
+  <p class="meta">Zwischen den beiden Lectures liegen vier Stunden Pause. Alle
+  Zeiten sind aus dem Rohfeed (UTC) nach Europe/Brussels umgerechnet und decken
+  sich exakt mit dem SBE-Stundenraster.</p>
 </div>
 
-<div class="card accent-blue">
-  <div class="ttl blue">▶️ Donnerstag, 03.09. — Thesis-Auftakt (für beide gleich)</div>
+<div class="card blue">
+  <div class="ttl blue">Donnerstag, 03.09. — Bachelor Thesis (für beide gleich)</div>
   <div class="slot">
-    <div class="cname">EBS2080 — Writing a Bachelor's Thesis</div>
-    <div class="when">13:30 – 15:30 Uhr</div>
-    <div class="where">TS53 A-1.01 Prof. Dr. Franz Palm Lecture Hall · Wibral, M (Matthias)</div>
+    <p><span class="time">13:30 – 15:30</span> · EBS2080 — Writing a Bachelor's Thesis</p>
+    <p class="room">TS53 A-1.01 Prof. Dr. Franz Palm Lecture Hall · Wibral, M (Matthias) · Opening Lecture</p>
   </div>
-</div>
-
-<div class="card accent-red">
-  <div class="ttl red">📝 Klausuren stehen fest (für beide gleich)</div>
-  <div class="slot">
-    <div class="cname">EBC2060 — Digitalisation and Organisations</div>
-    <div class="when">Dienstag, 20.10. · 15:00 – 17:00 Uhr</div>
-    <div class="where">Paul Henri Spaaklaan — MECC Westhal · in 61 Tagen</div>
-  </div>
-  <div class="slot">
-    <div class="cname">EBC2080 — Behavioural Economics (IB/IBE)</div>
-    <div class="when">Donnerstag, 22.10. · 12:00 – 14:00 Uhr</div>
-    <div class="where">Paul Henri Spaaklaan — MECC Westhal · in 63 Tagen</div>
-  </div>
-  <p class="meta">Nur zwei Tage dazwischen — und beide erfordern eine
-  Prüfungsanmeldung im Fenster 21.–25.09. (siehe „Deadlines").</p>
-</div>
-
-<h2 class="person">👤 Claras Plan</h2>
-
-<div class="card">
-  <p class="meta">Quelle: Claras persönlicher Timetable-Feed
-  (Personal timetable: I6387262, <strong>82 Einträge</strong>), abgerufen und
-  entfaltet am 20.08. um 09:37 CEST; Feed-Sync-Stempel 09:02 CEST.
-  Alle Zeiten aus UTC in CEST umgerechnet.</p>
-</div>
-
-<div class="card accent-green">
-  <div class="ttl green">▶️ Freitag, 04.09. — Claras erste Tutorials</div>
-  <div class="slot">
-    <div class="cname">EBC2060 — Tutorial B / Gruppe 03</div>
-    <div class="when">11:00 – 13:00 Uhr</div>
-    <div class="where">TS53 A0.24 · Sutton, NA (Nick)</div>
-  </div>
-  <div class="slot">
-    <div class="cname">EBC2080 — Tutorial B / Gruppe 06</div>
-    <div class="when">13:30 – 15:30 Uhr</div>
-    <div class="where">TS53 G0.03 · Baby Sujatha, K (Karthika)</div>
-  </div>
-  <p class="meta">30 Minuten Puffer zwischen den beiden Tutorials.</p>
 </div>
 
 <div class="card">
-  <div class="ttl">🔁 Claras Wochenrhythmus ab September</div>
-  <ul>
-    <li><strong>Dienstags</strong> („Tutorial A"): EBC2060 11:00–13:00 in
-      <strong>TS53 G0.03</strong>, danach EBC2080 13:30–15:30 in
-      <strong>TAP23 (X) 0.013</strong></li>
-    <li><strong>Freitags</strong> („Tutorial B"): EBC2060 11:00–13:00 in
-      <strong>TS53 A0.24</strong>, danach EBC2080 13:30–15:30 in
-      <strong>TS53 G0.03</strong></li>
-  </ul>
-  <p class="meta">Uhrzeiten in beiden Reihen identisch — nur die Räume wechseln
-  je nach Wochentag. Tutoren: Sutton (EBC2060), Baby Sujatha (EBC2080).</p>
+  <p class="ttl"><span class="who c">CLARA</span>Freitag, 04.09. — die ersten Tutorials</p>
+  <div class="slot">
+    <p><span class="time">11:00 – 13:00</span> · EBC2060 — Tutorial B / Gruppe 03</p>
+    <p class="room">TS53 A0.24 · Sutton, NA (Nick)</p>
+  </div>
+  <div class="slot">
+    <p><span class="time">13:30 – 15:30</span> · EBC2080 — Tutorial B / Gruppe 06</p>
+    <p class="room">TS53 G0.03 · Baby Sujatha, K (Karthika)</p>
+  </div>
 </div>
 
 <div class="card">
-  <div class="ttl">Claras dritter Kurs: EBS2079 — Leadership Skills</div>
+  <p class="ttl"><span class="who f">FRANZ</span>Freitag, 04.09. — die ersten Tutorials</p>
   <div class="slot">
-    <div class="cname">Lecture / Gruppe 01</div>
-    <div class="when">Donnerstag, 17.09. · 12:00 – 13:00 Uhr</div>
-    <div class="where">TS53 A-1.01 Prof. Dr. Franz Palm Lecture Hall · Zaar, SMR (Sonja)</div>
+    <p><span class="time">08:30 – 10:30</span> · EBC2060 — Tutorial B / Gruppe 01</p>
+    <p class="room">TS53 A0.24 · Sutton, NA (Nick)</p>
   </div>
   <div class="slot">
-    <div class="cname">Tutorial / Gruppe 15</div>
-    <div class="when">Mittwoch, 30.09. · 11:00 – 13:00 Uhr</div>
-    <div class="where">TAP11 F2.018 · Palma, R, di (Roberta)</div>
+    <p><span class="time">11:00 – 13:00</span> · EBC2080 — Tutorial B / Gruppe 03</p>
+    <p class="room">TS53 H0.04 · Triêu, VGA (Anh)</p>
   </div>
-  <p class="meta">Beides sind bei Clara sonst leere Tage. Unverändert gegenüber
-  gestern — der Kurs war die Neuigkeit vom 19.08., heute ist er einfach da.</p>
-</div>
-
-<div class="card accent-yellow">
-  <div class="ttl yellow">📌 Claras zwei abweichende Freitage</div>
-  <ul>
-    <li><strong>Fr 18.09.</strong> — EBC2060-Tutorial normal (11:00–13:00,
-      TS53 A0.24). Für EBC2080 steht an dem Tag <em>kein</em> Tutorial
-      im Feed, stattdessen <strong>Lecture wk3 16:00–18:00</strong> in
-      TAP11 F0.019 (Meissner).</li>
-    <li><strong>Fr 25.09.</strong> — statt des EBC2060-Tutorials eine
-      <strong>Guest Lecture 08:45–10:45</strong> in TAP11 F0.019 (Ohlrogge),
-      also über zwei Stunden früher als sonst. Das EBC2080-Tutorial läuft
-      normal (13:30–15:30, TS53 G0.03).</li>
-  </ul>
-  <p class="meta">So steht es im Feed — ob die Tutorials offiziell „entfallen"
-  oder nur anders eingetragen sind, sagt der Feed nicht.</p>
-</div>
-
-<h2 class="person">👤 Franz' Plan</h2>
-
-<div class="card">
-  <p class="meta">Quelle: Franz' persönlicher Timetable-Feed
-  (Personal timetable: I6380276, ebenfalls <strong>82 Einträge</strong>),
-  abgerufen und entfaltet am 20.08. um 09:37 CEST; Feed-Sync-Stempel 09:36 CEST.
-  Gleiche Kurse wie bei Clara, aber andere Tutorial-Gruppen, andere Zeiten,
-  andere Räume, teils andere Tutoren.</p>
-</div>
-
-<div class="card accent-green">
-  <div class="ttl green">▶️ Freitag, 04.09. — Franz' erste Tutorials</div>
-  <div class="slot">
-    <div class="cname">EBC2060 — Tutorial B / Gruppe 01</div>
-    <div class="when">08:30 – 10:30 Uhr</div>
-    <div class="where">TS53 A0.24 · Sutton, NA (Nick)</div>
-  </div>
-  <div class="slot">
-    <div class="cname">EBC2080 — Tutorial B / Gruppe 03</div>
-    <div class="when">11:00 – 13:00 Uhr</div>
-    <div class="where">TS53 H0.04 · Triêu, VGA (Anh)</div>
-  </div>
-  <p class="meta">Früher Start — 08:30 Uhr, mit 30 Minuten Puffer dazwischen.</p>
 </div>
 
 <div class="card">
-  <div class="ttl">🔁 Franz' Wochenrhythmus ab September</div>
-  <ul>
-    <li><strong>Dienstags</strong> („Tutorial A"): EBC2060 08:30–10:30 in
-      <strong>TS53 G0.03</strong>, danach EBC2080 11:00–13:00 in
-      <strong>TS53 A0.24</strong></li>
-    <li><strong>Freitags</strong> („Tutorial B"): EBC2060 08:30–10:30 in
-      <strong>TS53 A0.24</strong>, danach EBC2080 11:00–13:00 in
-      <strong>TS53 H0.04</strong></li>
-  </ul>
-  <p class="meta">Uhrzeiten in beiden Reihen identisch — nur die Räume wechseln
-  je nach Wochentag. Tutoren: Sutton (EBC2060), Triêu (EBC2080).</p>
-</div>
-
-<div class="card">
-  <div class="ttl">Franz' dritter Kurs: EBS2079 — Leadership Skills</div>
-  <div class="slot">
-    <div class="cname">Lecture / Gruppe 02</div>
-    <div class="when">Donnerstag, 17.09. · 13:30 – 14:30 Uhr</div>
-    <div class="where">TS53 A-1.01 Prof. Dr. Franz Palm Lecture Hall · Zaar, SMR (Sonja)</div>
-  </div>
-  <div class="slot">
-    <div class="cname">Tutorial / Gruppe 07</div>
-    <div class="when">Mittwoch, 30.09. · 13:30 – 15:30 Uhr</div>
-    <div class="where">TS53 E0.08 · Zondag, VC (Vivian)</div>
-  </div>
-  <p class="meta">Gleiche Lecture wie Clara, aber Gruppe 02 statt 01 — also
-  90 Minuten später; das Tutorial liegt in einem anderen Raum bei einer
-  anderen Tutorin.</p>
-</div>
-
-<div class="card accent-yellow">
-  <div class="ttl yellow">📌 Franz' zwei abweichende Freitage</div>
-  <ul>
-    <li><strong>Fr 18.09.</strong> — EBC2060-Tutorial normal (08:30–10:30,
-      TS53 A0.24). Für EBC2080 kein Tutorial im Feed, stattdessen
-      <strong>Lecture wk3 16:00–18:00</strong> in TAP11 F0.019 (Meissner).</li>
-    <li><strong>Fr 25.09.</strong> — statt des EBC2060-Tutorials eine
-      <strong>Guest Lecture 08:45–10:45</strong> in TAP11 F0.019 (Ohlrogge),
-      also 15 Minuten später als sonst. Das EBC2080-Tutorial läuft normal
-      (11:00–13:00, TS53 H0.04).</li>
-  </ul>
-  <p class="meta">So steht es im Feed — ob die Tutorials offiziell „entfallen"
-  oder nur anders eingetragen sind, sagt der Feed nicht.</p>
-</div>
-
-<h2>Geklärt — betrifft beide</h2>
-
-<div class="card accent-green">
-  <div class="ttl green">✅ Tutorial A und B — es sind beide</div>
-  <p>Am 18.08. wurde das aus den Felddaten geklärt und gilt weiter: In den
-  abgeschlossenen Kursen (EBC2158 Gruppe 18, EBC2022 Gruppe 32) stehen
-  <strong>A und B mit identischer Gruppennummer</strong>, Woche für Woche
-  abwechselnd. Das waren real besuchte Kurse — A und B sind also keine
-  Alternativen, sondern die zwei wöchentlichen Sitzungen derselben Gruppe.
-  Genau so ist es auch in Periode 1 eingetragen.</p>
-  <p><strong>Konkret — vier Tutorials pro Woche, für beide:</strong></p>
-  <ul>
-    <li><strong>Clara:</strong> dienstags 11:00–15:30 und freitags 11:00–15:30</li>
-    <li><strong>Franz:</strong> dienstags 08:30–13:00 und freitags 08:30–13:00</li>
-  </ul>
-  <p class="meta">Kein MyUM-Nachschauen nötig. Der Wochenplan halbiert sich nicht.</p>
+  <div class="ttl">Der Rhythmus ab dem 08.09. — unverändert gegenüber gestern</div>
+  <p><span class="who c">CLARA</span> dienstags <strong>11:00 – 15:30</strong>,
+  freitags <strong>11:00 – 15:30</strong>. Tutoren: Sutton (EBC2060),
+  Baby Sujatha (EBC2080).</p>
+  <p><span class="who f">FRANZ</span> dienstags <strong>08:30 – 13:00</strong>,
+  freitags <strong>08:30 – 13:00</strong>. Tutoren: Sutton (EBC2060),
+  Triêu (EBC2080).</p>
+  <p class="meta">„Tutorial A" und „Tutorial B" sind keine zwei Gruppen zur
+  Auswahl, sondern die beiden wöchentlichen Sitzungen desselben Kurses:
+  A dienstags, B freitags. Beide finden statt, beide sind Pflicht. Diese
+  Einordnung stammt aus der Auswertung vom 18.08. und wird hier nur
+  fortgeschrieben.</p>
+  <p class="meta">Klausuren beider Kurse: <strong>Di 20.10., 15:00 – 17:00</strong>
+  (EBC2060) und <strong>Do 22.10., 12:00 – 14:00</strong> (EBC2080), jeweils
+  MECC Westhal, Paul Henri Spaaklaan. Für beide identisch.</p>
 </div>
 
 <h2>Deadlines</h2>
 
+<div class="card yellow">
+  <div class="ttl yellow">Kursregistrierung Periode 2 — Fr 11.09., 17:00</div>
+  <p>In <strong>21 Tagen</strong>. Die einzige echte Frist im Moment. Der Feed
+  weist sie ab dem 07.09. dreimal aus, zuletzt am Stichtag selbst mit dem Zusatz
+  „closes TODAY (17:00h)". Gilt für Clara und Franz.</p>
+</div>
+
 <div class="card">
-  <p><strong>In den nächsten 7 Tagen: keine</strong> — für beide. Die nächsten
-  beiden Fristen (identisch für Clara und Franz):</p>
+  <div class="ttl">Danach</div>
+  <ul>
+    <li><strong>Mo 21.09.</strong> — Prüfungsanmeldung Periode 1 öffnet.</li>
+    <li><strong>Fr 25.09., 17:00</strong> — Prüfungsanmeldung Periode 1 schließt.
+    Das ist die Anmeldung zu den Klausuren am 20. und 22.10.</li>
+  </ul>
+  <p class="meta">Keine Abgabe, kein Assignment, keine Anmeldung in den nächsten
+  sieben Tagen. Ob es Abgaben innerhalb der Kurse gibt, ist unbekannt, solange
+  Canvas nicht antwortet — der Stundenplan kennt nur Registrierungsfristen.</p>
 </div>
 
-<div class="card accent-yellow">
-  <div class="ttl yellow">🟡 Kursregistrierung Periode 2</div>
-  <p>Schließt <strong>Freitag, 11.09.2026 um 17:00 Uhr</strong> (SBE).
-  Noch <strong>22 Tage</strong>. Fällt in die zweite Vorlesungswoche — am
-  besten vorher erledigen, nicht erst wenn Periode 1 schon läuft.</p>
-  <p class="meta">Quelle: Timetable-Feed (SBE-Eintrag, Typ „Deadline")</p>
+<h2>Zustellung</h2>
+
+<div class="card green">
+  <div class="ttl green">Zugestellt über ntfy — beide Teile</div>
+  <p>Claras Zusammenfassung ging heute um <strong>08:15 CEST in zwei Teilen</strong>
+  an <code>ntfy.sh/claude-franz-test1</code> raus, beide mit HTTP 200 bestätigt
+  (Message-IDs <code>7fnbiqSHI3vw</code> und <code>bvPjPwxTmFmO</code>).</p>
+  <p class="meta">HTTP 200 heißt „beim ntfy-Server angekommen", nicht „gelesen".
+  Damit die Nachricht ankommt, muss die App <strong>ntfy</strong> installiert und
+  das Thema <code>claude-franz-test1</code> abonniert sein. Das Thema ist
+  öffentlich und wird von beiden gemeinsam genutzt; Nachrichten verfallen nach
+  12 Stunden.</p>
 </div>
 
-<div class="card accent-yellow">
-  <div class="ttl yellow">🟡 Prüfungs-(De)Registrierung Periode 1</div>
-  <p>Fenster öffnet <strong>Montag, 21.09.2026</strong> (in 32 Tagen),
-  schließt <strong>Freitag, 25.09.2026 um 17:00 Uhr</strong> (in 36 Tagen).</p>
-  <p>Ohne Anmeldung keine Klausur — das betrifft beide Klausuren
-  am 20.10. und 22.10.</p>
-  <p class="meta">Quelle: Timetable-Feed (SBE-Eintrag, Typ „Deadline")</p>
+<div class="card red">
+  <div class="ttl red">WhatsApp: weiterhin kein Guthaben — heute geprüft</div>
+  <p>Der Versand an Claras Nummer wurde heute einmal versucht. CallMeBot
+  antwortet zwar mit HTTP 200, im Antworttext steht aber wörtlich
+  <em>„You have <strong>0</strong> messages left"</em> und
+  <em>„Message not sent"</em>. Der Statuscode allein täuscht Erfolg vor — deshalb
+  wird hier der Antworttext ausgewertet.</p>
+  <p class="meta">Beide Nummern sind seit dem 13.07. ohne Guthaben, das sind heute
+  <strong>39 Tage</strong>. Behebbar nur durch ein Abo bzw. Top-up
+  <em>pro Nummer</em> bei CallMeBot. Weitere Teile wurden nicht versucht — bei
+  Kontingent 0 ändert ein zweiter Versuch nichts.</p>
 </div>
 
-<h2>Hinweise</h2>
+<h2>Prüfprotokoll</h2>
 
-<div class="card accent-red">
-  <div class="ttl red">⚠️ Canvas-Token abgelaufen — Tag 33, noch 12 Tage bis Periode 1</div>
-  <p>Der Canvas-API-Token ist seit <strong>18.07.2026</strong> abgelaufen.
-  Alle Abfragen (Kurse, Module, Seiteninhalte, Deadlines, Ankündigungen)
-  scheitern weiterhin an <code>401 Expired access token</code> — heute erneut
-  geprüft. Dieser Check basiert deshalb ausschließlich auf den
-  Stundenplan-Feeds: Termine, Räume und Dozenten sind vollständig, aber es
-  gibt <strong>keine Themen, keine Lernziele, keine Literatur</strong>.</p>
-  <p><strong>Warum es drängt:</strong> Ab dem 01.09. ist genau der fehlende
-  Teil der wertvolle — was in der Session drankommt und was vorher gelesen
-  werden muss. Der Token sollte vor dem 01.09. erneuert sein.</p>
-  <p class="meta">💡 2 Minuten: Canvas → Account → Settings →
-  „+ New Access Token", dann den Wert in <code>CANVAS_API_TOKEN</code>
-  in der Datei <code>.env</code> ersetzen.</p>
-  <p class="meta">Nebenbefund, unverändert: Es gibt nur <strong>einen
-  gemeinsamen</strong> Canvas-Token für alle Nutzer. Auch nach der Erneuerung
-  läse Claras Check also Franz' Canvas. Wer Claras Kursinhalte will, braucht
-  einen Token aus ihrem Account.</p>
-</div>
-
-<div class="card accent-red">
-  <div class="ttl red">⚠️ WhatsApp: heute erneut nicht zugestellt</div>
-  <p>Dieser Lauf ist Claras Lauf, getestet wurde deshalb nur ihre Nummer.
-  CallMeBot antwortete wörtlich:</p>
-  <p><code>You have 0 messages left. … Message not sent</code></p>
-  <p>Die Tagesnachricht ist also <strong>nicht angekommen</strong>. Es wurde
-  kein zweiter Versuch unternommen und kein zweiter Teil gesendet — das würde
-  nur weitere Fehlschläge produzieren. Beide Nummern sind seit dem 13.07.
-  ohne Guthaben, das sind heute <strong>38 Tage</strong>.</p>
-  <p class="meta">Behebbar nur durch ein Abo/Top-up pro Nummer bei CallMeBot
-  (getrennte Links je Nummer).</p>
-</div>
-
-<div class="card accent-green">
-  <div class="ttl green">✅ Zugestellt: Claras Zusammenfassung ging über ntfy raus</div>
-  <p><strong>Korrektur zum Kasten darüber.</strong> Dort stand zunächst, diese
-  Seite sei „der einzige funktionierende Kanal". Das stimmt nicht:
-  <code>ntfy.sh</code> funktioniert und wurde schon am 19.08. genutzt — in der
-  Fassung von 09:37 war der Hinweis nur versehentlich herausgefallen.</p>
-  <p>Claras Tageszusammenfassung wurde deshalb um <strong>09:41 CEST in zwei
-  Teilen</strong> an <code>ntfy.sh/claude-franz-test1</code> gesendet, beide
-  mit <strong>HTTP 200</strong> bestätigt (Message-IDs <code>7YE4WJ4X24bo</code>
-  und <code>vhEzohRMZzTW</code>). CallMeBot wurde <em>nicht</em> erneut
-  versucht — bei Kontingent 0 ändert ein zweiter Versuch nichts.</p>
-  <p class="meta"><strong>Damit die Nachricht auch ankommt:</strong> HTTP 200
-  heißt nur „auf dem ntfy-Server angekommen", nicht „gelesen". Dafür muss die
-  App <strong>ntfy</strong> installiert und das Thema
-  <code>claude-franz-test1</code> abonniert sein — sonst landet die Nachricht
-  im Leeren. Das Thema ist öffentlich und wird von Clara und Franz gemeinsam
-  genutzt; wer es kennt, kann mitlesen. Nachrichten verfallen nach 12 Stunden.</p>
-</div>
-
-<div class="card accent-yellow">
-  <div class="ttl yellow">⚠️ Diese Seite wird von zwei Personen geteilt</div>
-  <p><code>daily-check.sh</code> läuft nacheinander für Clara und Franz und
-  beide schreiben in <strong>dieselbe</strong> <code>index.html</code>.
-  Wer zuletzt läuft, gewinnt.</p>
-  <p>Deshalb ist diese Seite weiterhin <strong>symmetrisch</strong> gebaut:
-  neutraler Kopf, gemeinsame Termine oben, danach je ein eigener Abschnitt pro
-  Person — beide heute um 09:37 CEST frisch aus dem jeweils eigenen Feed
-  geparst. Keine Zeit auf dieser Seite ist aus der Vorgängerseite übernommen.</p>
-  <p class="meta"><strong>Zu entscheiden (Franz):</strong> getrennte Seiten
-  (<code>clara.html</code> / <code>franz.html</code>) oder diese
-  Zwei-Abschnitte-Seite dauerhaft. <code>REPO_PATH</code> und
-  <code>PAGES_URL</code> sind in <code>daily-check.sh</code> nicht pro Nutzer
-  parametrisiert — ohne Änderung dort bleibt jede Lösung handgepflegt.
-  Spätestens vor Fr 04.09. relevant, denn dort divergieren die Tutorials zum
-  ersten Mal. Umgebaut wurde nichts.</p>
+<div class="card">
+  <ul>
+    <li><strong>Stundenplan Clara</strong> (I6387262) — abgerufen, 82 Einträge.</li>
+    <li><strong>Stundenplan Franz</strong> (I6380276) — abgerufen, 82 Einträge.</li>
+    <li><strong>Vergleich mit gestern</strong> — beide Feeds inhaltlich identisch,
+    nur Sync-Zeitstempel verändert. Snapshots liegen unter
+    <code>snapshots/</code> (außerhalb dieses Repos).</li>
+    <li><strong>Überschneidung beider Pläne</strong> — 49 Termine identisch,
+    je 33 persönlich. Unverändert gegenüber gestern.</li>
+    <li><strong>Canvas</strong> — <code>/users/self</code> und <code>/courses</code>
+    geprüft, beide <code>401 Expired access token</code>
+    (<code>expired_at 2026-07-18</code>). Module, Pages, Assignments und
+    Ankündigungen daher nicht abrufbar.</li>
+    <li><strong>Zeitzone</strong> — Rohfeed liefert UTC, Umrechnung nach
+    Europe/Brussels. Die Ergebnisse decken sich mit den gestern veröffentlichten
+    Zeiten; es wurde nichts stillschweigend korrigiert.</li>
+  </ul>
 </div>
 
 <footer>
-  Aktualisiert: Donnerstag, 20.08.2026 um 09:37 CEST,
-  ergänzt um 09:52 CEST · Lauf für Clara
-  (Seite trägt beide Stundenpläne)<br>
-  Quelle Termine: MyTimetable-iCal-Feeds von Clara und Franz, beide heute
-  abgerufen · Canvas: nicht verfügbar (Token abgelaufen) ·
-  WhatsApp: nicht zugestellt (kein Guthaben) ·
-  ntfy: zugestellt (2 Teile, HTTP 200)
+  Aktualisiert: 21.08.2026, 08:15 CEST · Quelle Termine: persönliche
+  Timetable-Feeds Maastricht University · Quelle Inhalte: Canvas —
+  heute nicht verfügbar
 </footer>
 
 </div>
