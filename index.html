@@ -92,13 +92,17 @@
   unverändert</em> — jeder Termin, der gestern auf dieser Seite stand, steht
   heute noch genauso im Rohfeed. Es ist also kein Tutorial ausgefallen und
   nichts verschoben worden.</p>
-  <p class="meta">Wahrscheinliche Ursache: Der Feed zeigt nur ein rollierendes
-  Zeitfenster in die Vergangenheit — der älteste Eintrag ist heute der
-  29.05., und ein noch älterer Termin aus dem Frühjahr ist hinten
-  herausgefallen. Ganz sicher belegen lässt sich das nicht, weil vom gestrigen
-  Feed keine Rohkopie existiert. Ab heute wird der Rohfeed täglich gesichert
-  (<code>snapshots/</code>, außerhalb dieses Repos), damit die Frage beim
-  nächsten Mal in Sekunden beantwortbar ist.</p>
+  <p class="meta"><strong>Nachtrag 09:52 — jetzt eindeutig geklärt:</strong>
+  Herausgefallen ist <strong>Di 26.05., EBC2158 Tutorial A / Gruppe 18</strong>
+  (Entrepreneurship and Small Business Management, Periode 5 — längst vorbei).
+  Beleg ohne Feed-Rohkopie: Die <em>gestrige</em> Seite führte diesen Termin
+  in der A/B-Belegliste auf (Git-Stand <code>ccdb9c1</code>, Zeile 323); im
+  heutigen Feed ist er nicht mehr enthalten, die drei danebenstehenden
+  Termine (29.05., 02.06., 05.06.) dagegen schon. Der Feed hält also ein
+  rollierendes Fenster von rund <strong>83 Tagen</strong> in die Vergangenheit.
+  Die Git-Historie dieser Seite ersetzt damit die fehlende Feed-Rohkopie.
+  Die A/B-Schlussfolgerung bleibt unberührt — sie wird von den drei noch
+  vorhandenen Terminen weiterhin getragen.</p>
 </div>
 
 <h2>Heute &amp; die nächsten Tage</h2>
@@ -385,8 +389,26 @@
   nur weitere Fehlschläge produzieren. Beide Nummern sind seit dem 13.07.
   ohne Guthaben, das sind heute <strong>38 Tage</strong>.</p>
   <p class="meta">Behebbar nur durch ein Abo/Top-up pro Nummer bei CallMeBot
-  (getrennte Links je Nummer). Bis dahin ist <strong>diese Seite der einzige
-  funktionierende Kanal</strong> — sie enthält immer den vollen Inhalt.</p>
+  (getrennte Links je Nummer).</p>
+</div>
+
+<div class="card accent-green">
+  <div class="ttl green">✅ Zugestellt: Claras Zusammenfassung ging über ntfy raus</div>
+  <p><strong>Korrektur zum Kasten darüber.</strong> Dort stand zunächst, diese
+  Seite sei „der einzige funktionierende Kanal". Das stimmt nicht:
+  <code>ntfy.sh</code> funktioniert und wurde schon am 19.08. genutzt — in der
+  Fassung von 09:37 war der Hinweis nur versehentlich herausgefallen.</p>
+  <p>Claras Tageszusammenfassung wurde deshalb um <strong>09:41 CEST in zwei
+  Teilen</strong> an <code>ntfy.sh/claude-franz-test1</code> gesendet, beide
+  mit <strong>HTTP 200</strong> bestätigt (Message-IDs <code>7YE4WJ4X24bo</code>
+  und <code>vhEzohRMZzTW</code>). CallMeBot wurde <em>nicht</em> erneut
+  versucht — bei Kontingent 0 ändert ein zweiter Versuch nichts.</p>
+  <p class="meta"><strong>Damit die Nachricht auch ankommt:</strong> HTTP 200
+  heißt nur „auf dem ntfy-Server angekommen", nicht „gelesen". Dafür muss die
+  App <strong>ntfy</strong> installiert und das Thema
+  <code>claude-franz-test1</code> abonniert sein — sonst landet die Nachricht
+  im Leeren. Das Thema ist öffentlich und wird von Clara und Franz gemeinsam
+  genutzt; wer es kennt, kann mitlesen. Nachrichten verfallen nach 12 Stunden.</p>
 </div>
 
 <div class="card accent-yellow">
@@ -408,11 +430,13 @@
 </div>
 
 <footer>
-  Aktualisiert: Donnerstag, 20.08.2026 um 09:37 CEST · Lauf für Clara
+  Aktualisiert: Donnerstag, 20.08.2026 um 09:37 CEST,
+  ergänzt um 09:52 CEST · Lauf für Clara
   (Seite trägt beide Stundenpläne)<br>
   Quelle Termine: MyTimetable-iCal-Feeds von Clara und Franz, beide heute
   abgerufen · Canvas: nicht verfügbar (Token abgelaufen) ·
-  WhatsApp: nicht zugestellt (kein Guthaben)
+  WhatsApp: nicht zugestellt (kein Guthaben) ·
+  ntfy: zugestellt (2 Teile, HTTP 200)
 </footer>
 
 </div>
