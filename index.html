@@ -244,8 +244,17 @@
 </div>
 
 <h2>Zustellung</h2>
-<div class="card">
-  <p class="meta">Wird nach dem Versand ergänzt.</p>
+<div class="card red">
+  <p class="ttl red">Clara erreicht heute nur diese Seite</p>
+  <p><strong>WhatsApp: gescheitert.</strong> CallMeBot antwortet auf beide Teile
+     <code>You have 0 messages left · Message not sent</code>. Das Kontingent für
+     Claras Nummer ist aufgebraucht, nicht bloß knapp.</p>
+  <p><strong>ntfy: zugestellt, aber an Franz.</strong> Beide Teile HTTP 200
+     (IDs <code>0JkKwMnW5Bb7</code>, <code>6GzNTAYMFQMU</code>) — das eingerichtete
+     Topic ist <code>claude-franz-test1</code>. Es gibt kein Topic für Clara.</p>
+  <p class="meta">Damit hat Clara aktuell <strong>keinen</strong> funktionierenden
+     Push-Kanal. Zwei Wege zurück: CallMeBot für +49 162 7665193 neu abonnieren,
+     oder ein eigenes ntfy-Topic in <code>users/clara.env</code> anlegen.</p>
 </div>
 
 <h2>Prüfprotokoll</h2>
@@ -263,6 +272,13 @@
         stimmt überein, unverändert übernommen</li>
     <li>Canvas: 1 Aufruf, HTTP 401. Weitere Endpunkte nicht abgefragt — derselbe Token,
         dasselbe Ergebnis</li>
+    <li><strong>Push schlug zuerst fehl (HTTP 403).</strong> Ursache belegt: <code>gh</code>
+        hat zwei Konten, aktiv war <code>successformulanl</code>, das Repo gehört
+        <code>192006-dot</code>. Heute einmalig mit dem richtigen Token gepusht; die
+        Konto-Umschaltung selbst wurde <em>nicht</em> verändert.</li>
+    <li><strong>Nebenbefund:</strong> der Remote stand noch auf Franz' Dienstag-Commit —
+        Claras Mittwochs-Seite vom 26.08. lag ungepusht lokal. Der Fehler bestand also
+        seit mindestens gestern. Beide Commits sind jetzt oben.</li>
   </ul>
 </div>
 
