@@ -280,10 +280,35 @@
         Claras Mittwochs-Seite vom 26.08. lag ungepusht lokal. Der Fehler bestand also
         seit mindestens gestern. Beide Commits sind jetzt oben.</li>
   </ul>
+  <p class="ttl">Zweitprüfung 09:07 CEST — unabhängig, nicht übernommen</p>
+  <ul>
+    <li>Feed <strong>erneut</strong> abgerufen (HTTP 200, 46.072 Bytes, 78 Einträge).
+        Exporter-Stand jetzt „Last synchronised on 2026-08-27 at 09:01 CEST“ statt
+        08:00 — also wirklich frisch, nicht aus dem Zwischenspeicher. Gegen den
+        08:00-Stand: <strong>0 echte Datenänderungen</strong>, nur Exporter-Zeitstempel.</li>
+    <li>„0 Termine 27.–31.08." ein zweites Mal doppelt hergeleitet, diesmal anders
+        gebaut: Python-Blockparser mit <code>zoneinfo</code> gegen perl-Entfaltung mit
+        zeilenweiser UTC→CEST-Umrechnung per <code>date</code>. Abgleich:
+        <code>EINIG</code>.</li>
+    <li>Beide Personen-Abschnitte Feld für Feld gegen den <em>jeweils eigenen</em> Feed
+        geprüft — Gruppen (Clara 03/06/02, Franz 01/03), Räume, Dozenten, alle vier
+        Rhythmus-Ausnahmen und beide Klausurtermine stimmen. <strong>Keine Korrektur
+        nötig.</strong></li>
+    <li><strong>Neuer Befund — warum der Feed täglich schrumpft:</strong> 20.08. → 27.08.
+        82 → 78 Einträge. Alle vier verschwundenen Termine liegen in der
+        <em>Vergangenheit</em> (29.05.–03.06., Periode 5/6); <strong>0 künftige Termine
+        verloren, 0 neue</strong>. Der Feed führt ein rollendes Fenster — der tägliche
+        Rückgang ist kein Warnsignal und muss nicht jeden Tag neu beunruhigen.</li>
+    <li>Push verifiziert: lokal, <code>origin/main</code> und die Live-Seite tragen
+        denselben Commit (HTTP 200).</li>
+    <li><strong>Zustellung bewusst nicht wiederholt.</strong> Die beiden ntfy-Teile von
+        08:09 wurden inhaltlich nachgeprüft und sind richtig. Eine zweite Sendung am
+        selben Tag wäre für Clara nur ein Duplikat — deshalb heute keine weitere.</li>
+  </ul>
 </div>
 
 <footer>
-  Aktualisiert: 27.08.2026 · Clara-Lauf ·
+  Aktualisiert: 27.08.2026 · Clara-Lauf · Zweitprüfung 09:07 ·
   Termine aus dem Stundenplan-Feed, Inhalte aus Canvas (heute nicht verfügbar).
 </footer>
 
