@@ -111,17 +111,17 @@
   <div class="slot">
     <p class="time">Di 01.09. · 10:30–12:00</p>
     <p><strong>EBC2060 — Digitalisation and Organisations</strong><br>
-      <span class="room">Opening Lecture (Gruppe 01) · TAP11 F0.019 · Ohlrogge, F (Fynn)</span></p>
+      <span class="room">Opening Lecture (Plenum) · TAP11 F0.019 · Ohlrogge, F (Fynn)</span></p>
   </div>
   <div class="slot">
     <p class="time">Di 01.09. · 16:00–18:00</p>
     <p><strong>EBC2080 — Behavioural Economics (IB/IBE)</strong><br>
-      <span class="room">Opening Lecture (Gruppe 01) · TS53 H0.01 Aula · Meissner, TGK (Thomas)</span></p>
+      <span class="room">Opening Lecture (Plenum) · TS53 H0.01 Aula · Meissner, TGK (Thomas)</span></p>
   </div>
   <div class="slot">
     <p class="time">Do 03.09. · 13:30–15:30</p>
     <p><strong>EBS2080 — Writing a Bachelor's Thesis</strong><br>
-      <span class="room">Opening Lecture (Gruppe 02) · TS53 A-1.01 Prof. Dr. Franz Palm Lecture Hall · Wibral, M (Matthias)</span></p>
+      <span class="room">Opening Lecture (Plenum) · TS53 A-1.01 Prof. Dr. Franz Palm Lecture Hall · Wibral, M (Matthias)</span></p>
   </div>
   <div class="slot">
     <p class="time">Fr 04.09. · 11:00–13:00</p>
@@ -262,7 +262,20 @@
 
 <h2>Zustellung</h2>
 <div class="card red">
-  <p class="ttl red">Wird nach dem Versand nachgetragen</p>
+  <p class="ttl red">Clara erreicht heute nur diese Seite</p>
+  <p><strong>WhatsApp: gescheitert.</strong> CallMeBot antwortet w&ouml;rtlich
+     <code>You have 0 messages left. Message not sent</code> &mdash; gepr&uuml;ft mit der
+     vollst&auml;ndig protokollierten Serverantwort, nicht aus dem Ged&auml;chtnis. Das
+     Kontingent f&uuml;r <strong>+49 162 7665193</strong> ist aufgebraucht. Es ist
+     <em>keine</em> der drei Nachrichten zugestellt worden.</p>
+  <p><strong>ntfy: zugestellt, aber an Franz.</strong> Zwei Teile um 09:55 CEST, HTTP 200,
+     IDs <code>tnvCu4t6W4OR</code> und <code>mLzi58KDkReD</code>. Verifiziert nicht &uuml;ber
+     die Sende-Antwort, sondern durch erneutes Abfragen des Topics. Das eingerichtete Topic
+     <code>claude-franz-test1</code> geh&ouml;rt Franz; ein Topic f&uuml;r Clara gibt es nicht.</p>
+  <p class="meta">Damit hat Clara weiterhin <strong>keinen eigenen Push-Kanal</strong>.
+     Zwei Wege zur&uuml;ck: CallMeBot f&uuml;r ihre Nummer neu abonnieren, oder ein eigenes
+     ntfy-Topic in <code>users/clara.env</code> eintragen. Beides ist Franz' Entscheidung
+     und wurde hier nicht angefasst.</p>
 </div>
 
 <h2>Prüfprotokoll</h2>
@@ -292,15 +305,25 @@
         gestrigen Seite fortgeschrieben.</li>
     <li>Canvas-Token direkt geprüft: HTTP 401, <code>expired_at
         2026-07-18</code>.</li>
+    <li>Franz' Dienstags-Rhythmus (08:30&ndash;10:30 TS53 G0.03, 11:00&ndash;13:00
+        TS53 A0.24) heute zus&auml;tzlich Zeile f&uuml;r Zeile aus seinem Feed nachgez&auml;hlt
+        &mdash; stimmt.</li>
+    <li><strong>Befund zum Ablauf, nicht zum Stundenplan:</strong> heute liefen
+        <strong>drei</strong> Clara-Durchg&auml;nge gleichzeitig (seit 08:13, 09:06 und
+        09:32). Alle drei schreiben dieselbe <code>index.html</code> &mdash; ein Durchgang
+        hat die Seite eines anderen mitten im Bearbeiten &uuml;berschrieben. Inhaltlich ist
+        nichts falsch geworden (die Daten stimmen zwischen den L&auml;ufen &uuml;berein),
+        aber der Ablauf ist nicht kollisionsfest. Ursache und Abhilfe geh&ouml;ren in
+        <code>daily-check.sh</code> und sind hier <em>nicht</em> ver&auml;ndert worden.</li>
     <li><strong>Nicht geprüft:</strong> Themen, Literatur und Aufgaben —
         die stehen ausschließlich in Canvas.</li>
   </ul>
 </div>
 
 <footer>
-  Aktualisiert: 28.08.2026 · 09:56 · Clara-Lauf ·
-  Quelle Termine: MyTimetable-Feed (Stand 28.08. 08:33 CEST) ·
-  Canvas: nicht erreichbar (401)
+  Aktualisiert: 28.08.2026, 10:00 CEST &middot; Clara-Lauf &middot;
+  Termine aus dem Stundenplan-Feed (zweifach unabh&auml;ngig hergeleitet),
+  Inhalte aus Canvas &mdash; heute nicht verf&uuml;gbar.
 </footer>
 
 </div>
