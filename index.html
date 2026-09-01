@@ -265,9 +265,35 @@
 </div>
 
 <h2>Zustellung</h2>
-<div class="card">
-  <p class="meta">Versand läuft — der Beleg (wörtliche Antworten der
-     Sendekanäle) wird direkt im Anschluss nachgetragen.</p>
+<div class="card yellow">
+  <p class="ttl yellow">Der Vormittagslauf hatte dir nichts geschickt</p>
+  <p class="meta">An dieser Stelle stand bis eben „Versand läuft — der Beleg
+     wird direkt im Anschluss nachgetragen". Das traf nicht zu. Eine Abfrage
+     des Push-Topics ab Mitternacht zeigt für heute <strong>null</strong>
+     Inhaltsnachrichten, nur Meldungen des Systems selbst. Der 08:44-Lauf hat
+     diese Seite live gestellt und ist dann vor dem Versand abgebrochen.
+     Der Versand um 09:10 ist deshalb die <em>erste</em> Zustellung des Tages,
+     keine Wiederholung.</p>
+</div>
+<div class="card red">
+  <p class="ttl red">WhatsApp — nicht zugestellt, Kontingent leer</p>
+  <p class="meta">CallMeBot antwortet auf Teil 1 wörtlich:
+     <code>You have 0 messages left. … Message not sent</code>. Teil 2 wurde
+     daraufhin gar nicht erst gesendet. Derselbe Befund wie am 27. und 28.08. —
+     der Kanal bleibt tot, bis das CallMeBot-Kontingent aufgefüllt wird.
+     Ob der 08:44-Lauf es überhaupt versucht hat, lässt sich nicht
+     feststellen; angekommen wäre es nach diesem Befund ohnehin nicht.</p>
+</div>
+<div class="card green">
+  <p class="ttl green">ntfy — beide Teile zugestellt und nachgeprüft</p>
+  <p class="meta">09:10:30 CEST. Teil 1 <code>SpFTonOv9QRG</code>
+     (824 Zeichen), Teil 2 <code>ESHNXl7znRtc</code> (942 Zeichen). Belegt
+     nicht durch die Antwort des Sendebefehls, sondern durch eine
+     <em>erneute Abfrage des Topics</em> danach — die Lehre vom 28.08.</p>
+  <p class="meta">Einschränkung, damit hier nichts Schöneres steht als wahr
+     ist: das Topic <code>claude-franz-test1</code> gehört Franz, nicht dir.
+     Einen eigenen Push-Kanal hast du nicht. Verlässlich erreichst du diesen
+     Check nur über diese Webseite.</p>
 </div>
 
 <h2>Prüfprotokoll</h2>
@@ -283,6 +309,27 @@
         hergeleitet — Python-VEVENT-Parser und <code>perl</code>-Entfaltung +
         <code>awk</code>-Blockzählung. Ergebnis EINIG:
         31.08. = 0 · 01.09. = 2 · 02.09. = 0 · 03.09. = 1 · 04.09. = 2.</li>
+    <li><strong>Zweitprüfung 09:01 (dieser Lauf):</strong> Feed unabhängig neu
+        geholt (HTTP 200, Server-Stand 09:00:58 CEST) und neu geparst —
+        77 VEVENTs, davon 40 mit Uhrzeit und 37 ganztägig. Zwei getrennt
+        <em>gebaute</em> Herleitungen — Python-<code>zoneinfo</code>-Parser
+        gegen <code>sed</code>-Entfaltung + <code>awk</code>-Blockzählung +
+        <code>date -u</code>-Zeitrechnung — sind EINIG:
+        31.08.&nbsp;=&nbsp;0 · 01.09.&nbsp;=&nbsp;2 · 02.09.&nbsp;=&nbsp;0 ·
+        03.09.&nbsp;=&nbsp;1 · 04.09.&nbsp;=&nbsp;2. Die beiden Entfaltungen
+        lieferten 228&nbsp;Byte Unterschied; nachgerechnet sind das
+        ausschließlich <code>\r</code>-Zeichen an den Faltstellen, kein
+        Inhaltsunterschied (<code>cmp</code> nach CR-Entfernung: identisch).</li>
+    <li><strong>UID-Mengenvergleich 30.→31.08.:</strong> beide Feeds 77
+        Termine — <strong>0</strong> verschwunden, <strong>0</strong> neu,
+        <strong>0</strong> inhaltlich geändert. Der Feed steht heute exakt
+        still. Zeit, Raum und Dozent oben sind damit gegen zwei Feed-Stände
+        belegt, nicht nur gegen einen.</li>
+    <li><strong>Fristen gegengeprüft:</strong> die beiden genannten Termine
+        stammen wörtlich aus dem Feed — <code>Course registration period 2
+        closes TODAY (17:00h)</code> am Fr 11.09. und
+        <code>Exam (de)registration period 1 closes TODAY (17:00h)</code>
+        am Fr 25.09. Für 01.09. und 02.09. enthält der Feed keine Frist.</li>
     <li><strong>Canvas:</strong> HTTP 401, wörtlich
         <code>Expired access token, expired_at 2026-07-18</code>. Schritte 2–4
         des Checks (Kurse, Planner, Module, Pages, Assignments) konnten
@@ -296,16 +343,28 @@
         ausschließlich aus dem heutigen Rohfeed, nicht aus der vorherigen
         Seite. Die vorherige Seite war Franz' Lauf vom 28.08.</li>
     <li><strong>Design:</strong> CSS-Block byte-identisch zur letzten
-        Clara-Seite (<code>ba5e95c</code>) übernommen, keine neuen
-        interaktiven Zustände. Die Zustands-Kontrastprobe konnte nicht laufen —
-        auf diesem Rechner fehlt <code>npx</code>/Playwright.</li>
+        Clara-Seite (<code>ba5e95c</code>); der Zweitlauf hat nichts am CSS
+        geändert — die neuen Karten benutzen Klassen, die oben schon verwendet
+        werden. <em>Korrektur zum Vormittagslauf:</em> dort stand, es fehle
+        <code>npx</code>/Playwright. <code>npx</code> ist vorhanden und die
+        Browser liegen im Cache; es fehlt allein das Playwright-Modul, und das
+        nachzuinstallieren wäre eine Abhängigkeitsänderung ohne Nutzen — die
+        Seite enthält <strong>null</strong> interaktive Elemente
+        (0&nbsp;Links, 0&nbsp;Buttons, 0&nbsp;<code>:hover</code>-,
+        0&nbsp;<code>:focus</code>-Regeln), es gibt also keine Zustände zu
+        messen. Gemessen wurde stattdessen, was hier entscheidbar ist: alle
+        <strong>11</strong> Text-/Hintergrund-Paare der Palette erfüllen
+        WCAG&nbsp;1.4.3&nbsp;AA, schwächstes Paar
+        <code>#8a8a8a</code>&nbsp;auf&nbsp;<code>#1a1a1a</code> mit
+        5,04:1&nbsp;(Soll&nbsp;4,5).</li>
   </ul>
 </div>
 
 <footer>
-  Aktualisiert: Montag, 31.08.2026 · Claras Lauf ·
-  Termine aus dem persönlichen Timetable-Feed, Inhalte aus Canvas —
-  Canvas war heute nicht lesbar.
+  Aktualisiert: Montag, 31.08.2026, 09:10 CEST · Claras Lauf
+  (Zweitlauf: Inhalt gegen einen frischen Feed nachgeprüft, Zustellung
+  nachgeholt) · Termine aus dem persönlichen Timetable-Feed, Inhalte aus
+  Canvas — Canvas war heute nicht lesbar.
 </footer>
 
 </div>
