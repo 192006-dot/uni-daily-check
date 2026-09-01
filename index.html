@@ -3,65 +3,66 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Uni Daily Check — Montag, 31. August 2026</title>
+<title>Uni Daily Check — Dienstag, 1. September 2026</title>
 <style>
-  :root{
-    --bg:#0f0f0f; --fg:#e0e0e0; --card:#1a1a1a; --line:#2a2a2a; --muted:#8a8a8a;
-    --green:#4ade80; --blue:#60a5fa; --yellow:#fbbf24; --red:#f87171;
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 20px 16px 56px;
+    background: #0f0f0f; color: #e0e0e0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 16px; line-height: 1.55;
+    -webkit-text-size-adjust: 100%;
   }
-  *{box-sizing:border-box}
-  body{
-    margin:0; padding:24px 16px 56px; background:var(--bg); color:var(--fg);
-    font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-    font-size:16px; line-height:1.55;
+  .wrap { max-width: 600px; margin: 0 auto; }
+  header { margin-bottom: 26px; }
+  h1 { font-size: 26px; line-height: 1.2; margin: 0 0 6px; letter-spacing: -0.02em; }
+  .date { margin: 0 0 12px; color: #c8c8c8; font-size: 15px; }
+  .badge {
+    display: inline-block; padding: 4px 11px; border-radius: 999px;
+    background: #1a1a1a; border: 1px solid #2a2a2a;
+    font-size: 12px; letter-spacing: 0.09em; text-transform: uppercase; color: #a0a0a0;
   }
-  .wrap{max-width:600px; margin:0 auto}
-  header{margin-bottom:28px}
-  h1{font-size:26px; margin:0 0 4px; letter-spacing:-.01em}
-  .date{margin:0 0 12px; color:var(--muted); font-size:15px}
-  .badges{display:flex; flex-wrap:wrap; gap:7px}
-  .badge{
-    font-size:12px; padding:3px 10px; border-radius:999px;
-    border:1px solid var(--line); color:var(--muted); background:var(--card);
+  h2 {
+    font-size: 13px; letter-spacing: 0.11em; text-transform: uppercase;
+    color: #a0a0a0; font-weight: 600;
+    margin: 32px 0 12px; padding-bottom: 8px; border-bottom: 1px solid #2a2a2a;
   }
-  .badge.on{border-color:var(--green); color:var(--green)}
-  .badge.warn{border-color:var(--red); color:var(--red)}
-  h2{
-    font-size:13px; text-transform:uppercase; letter-spacing:.09em;
-    color:var(--muted); margin:32px 0 10px; font-weight:600;
+  .card {
+    background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px;
+    padding: 16px; margin-bottom: 12px;
   }
-  .card{
-    background:var(--card); border:1px solid var(--line); border-left:3px solid var(--line);
-    border-radius:10px; padding:15px 17px; margin-bottom:12px;
+  .card.green { border-left: 3px solid #4ade80; }
+  .card.blue  { border-left: 3px solid #60a5fa; }
+  .card.yellow{ border-left: 3px solid #fbbf24; }
+  .card.red   { border-left: 3px solid #f87171; }
+  .ttl { font-size: 17px; font-weight: 650; margin: 0 0 3px; line-height: 1.3; }
+  .ttl.green { color: #4ade80; } .ttl.blue { color: #60a5fa; }
+  .ttl.yellow{ color: #fbbf24; } .ttl.red  { color: #f87171; }
+  .sub { margin: 0 0 10px; color: #a0a0a0; font-size: 14px; }
+  .when { font-size: 15px; font-weight: 600; color: #e0e0e0; margin: 0 0 2px; }
+  .room { display: block; color: #a0a0a0; font-size: 14px; margin-bottom: 10px; }
+  p { margin: 0 0 9px; }
+  p:last-child { margin-bottom: 0; }
+  .meta { font-size: 14.5px; color: #c8c8c8; }
+  .lbl {
+    display: inline-block; font-size: 11px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #8a8a8a; margin: 12px 0 3px; font-weight: 600;
   }
-  .card.green{border-left-color:var(--green)}
-  .card.blue{border-left-color:var(--blue)}
-  .card.yellow{border-left-color:var(--yellow)}
-  .card.red{border-left-color:var(--red)}
-  .ttl{font-weight:700; margin:0 0 7px; font-size:16px}
-  .ttl.green{color:var(--green)} .ttl.blue{color:var(--blue)}
-  .ttl.yellow{color:var(--yellow)} .ttl.red{color:var(--red)}
-  p{margin:7px 0}
-  .meta{color:var(--muted); font-size:14px}
-  .big{font-size:19px; font-weight:600; margin:2px 0 6px}
-  ul{margin:8px 0; padding-left:20px} li{margin:5px 0}
-  .who{
-    display:inline-block; font-size:11px; font-weight:700; letter-spacing:.06em;
-    padding:2px 8px; border-radius:5px; margin-right:8px; vertical-align:2px;
+  ul { margin: 6px 0 0; padding-left: 20px; }
+  li { margin-bottom: 7px; color: #c8c8c8; font-size: 14.5px; }
+  li:last-child { margin-bottom: 0; }
+  code {
+    background: #0f0f0f; border: 1px solid #2a2a2a; border-radius: 4px;
+    padding: 1px 5px; font-size: 13px; color: #c8c8c8;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    word-break: break-word;
   }
-  .who.c{background:#2a1f33; color:#c4a5e0}
-  .who.f{background:#1f2a33; color:#8fc4e0}
-  .slot{border-top:1px solid var(--line); padding:10px 0 2px; margin-top:8px}
-  .slot:first-of-type{border-top:0; margin-top:0; padding-top:0}
-  .time{font-variant-numeric:tabular-nums; font-weight:600; margin:0 0 2px}
-  .room{color:var(--muted); font-size:14px; display:block}
-  code{
-    background:#101010; border:1px solid var(--line); border-radius:4px;
-    padding:1px 5px; font-size:13px; font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
-  }
-  footer{
-    margin-top:36px; padding-top:16px; border-top:1px solid var(--line);
-    color:var(--muted); font-size:13px;
+  a { color: #60a5fa; }
+  .gap { color: #fbbf24; font-size: 14px; }
+  footer {
+    margin-top: 36px; padding-top: 16px; border-top: 1px solid #2a2a2a;
+    color: #8a8a8a; font-size: 13px;
   }
 </style>
 </head>
@@ -70,301 +71,179 @@
 
 <header>
   <h1>Uni Daily Check</h1>
-  <p class="date">Montag, 31. August 2026 · Clara</p>
-  <div class="badges">
-    <span class="badge on">Tages-Check</span>
-    <span class="badge">0 Termine heute</span>
-    <span class="badge">Periode 1 startet morgen</span>
-    <span class="badge warn">Canvas offline</span>
-  </div>
+  <p class="date">Dienstag, 1. September 2026 · Clara</p>
+  <span class="badge">Tages-Check</span>
 </header>
 
-<h2>Zuerst — Canvas ist nicht lesbar</h2>
-<div class="card red">
-  <p class="ttl red">Der Canvas-Zugang ist seit dem 18.07.2026 abgelaufen.</p>
-  <p>Jeder Canvas-Abruf antwortet heute wörtlich mit
-     <code>Expired access token · expired_at 2026-07-18</code> (HTTP 401).
-     Das heißt für diesen Check ganz konkret: <strong>ich kann dir keine
-     Lernziele, keine Literatur und keine Aufgabenbeschreibungen nennen</strong>,
-     weil ich keine einzige Kursseite öffnen kann.</p>
-  <p>Bis gestern war das folgenlos — es war Semesterpause, es gab nichts zu
-     lesen. <strong>Ab morgen ist es der Unterschied zwischen einem nützlichen
-     und einem halben Check</strong>: genau dann füllen sich die Kursseiten mit
-     Literatur und Vorbereitungsaufgaben für das erste Tutorial am Freitag.</p>
-  <p>Zu tun: Franz muss in Canvas unter <em>Account → Settings →
-     + New Access Token</em> einen neuen Token erzeugen und ihn im Projekt
-     hinterlegen. Zweiter, davon unabhängiger Punkt: der Check benutzt für
-     alle Personen <strong>denselben</strong> Token (Franz'), liest also auch
-     mit gültigem Token Franz' Canvas statt deinem. Beides gehört zusammen
-     behoben, sonst bleibt der Inhaltsteil leer oder falsch.</p>
-  <p class="meta">Ich schreibe hier bewusst nicht „Vorbereitung: siehe Canvas".
-     Was ich nicht lesen konnte, behaupte ich auch nicht.</p>
-</div>
-
-<h2>Heute — Montag, 31.08.</h2>
 <div class="card green">
-  <p class="ttl green">Kein Termin. Letzter freier Tag.</p>
-  <p>Dein Feed enthält für heute nichts — keine Vorlesung, kein Tutorial,
-     keine Abgabe. Das ist korrekt und kein Fehler: es ist der letzte Tag
-     der Semesterpause. <strong>Morgen früh beginnt Periode 1.</strong></p>
-  <p class="meta">Belegt aus dem Rohfeed von heute (77 Termine, Feed-Stand
-     laut Server 31.08. 08:08 CEST), zweimal unabhängig nachgezählt.</p>
+  <p class="ttl green">Heute startet Periode 1</p>
+  <p class="meta">Nach der Semesterpause ist das dein erster Uni-Tag: zwei
+     Auftaktvorlesungen, eine vormittags, eine spät nachmittags. Beide sind
+     Plenumsveranstaltungen für alle — keine Tutorialgruppe, du musst nichts
+     abgeben und nichts vorbereitet haben.</p>
 </div>
 
-<h2>Morgen — Dienstag, 01.09. · Semesterstart</h2>
+<h2>Heute · Dienstag, 01.09.</h2>
+
+<div class="card green">
+  <p class="ttl green">EBC2060 — Digitalisation and Organisations</p>
+  <p class="sub">Opening Lecture (Plenum)</p>
+  <p class="when">10:30 – 12:00</p>
+  <span class="room">TAP11 F0.019 · Tapijnkazerne 11 · Ohlrogge, F (Fynn)</span>
+  <span class="lbl">Thema</span>
+  <p class="meta">Auftaktvorlesung des Kurses. Was inhaltlich drankommt, steht
+     in Canvas — und Canvas ist gerade nicht abrufbar (siehe unten). Deshalb
+     hier bewusst nur das, was der Stundenplan hergibt, statt einer geratenen
+     Zusammenfassung.</p>
+  <span class="lbl">Vorbereitung</span>
+  <p class="meta">Für eine Opening Lecture typischerweise keine — der Kurs
+     fängt hier erst an. Bestätigen lässt sich das ohne Canvas nicht.</p>
+</div>
+
+<div class="card yellow">
+  <p class="ttl yellow">Dazwischen: 4 Stunden Lücke</p>
+  <p class="meta">12:00 bis 16:00 frei, und die beiden Vorlesungen sind in
+     <strong>verschiedenen Gebäuden</strong>: erst Tapijnkazerne 11, dann
+     Tongersestraat 53. Zwischen beiden liegen rund 10 Gehminuten.</p>
+</div>
+
+<div class="card green">
+  <p class="ttl green">EBC2080 — Behavioural Economics (IB/IBE)</p>
+  <p class="sub">Opening Lecture (Plenum)</p>
+  <p class="when">16:00 – 18:00</p>
+  <span class="room">TS53 H0.01 Aula · Tongersestraat 53 · Meissner, TGK (Thomas)</span>
+  <span class="lbl">Thema</span>
+  <p class="meta">Ebenfalls Kursauftakt, in der Aula. Zwei Stunden, also
+     vermutlich Kursaufbau, Prüfungsform und Gruppeneinteilung — auch das ist
+     ohne Canvas nicht belegbar, deshalb steht es hier als Vermutung und nicht
+     als Tatsache.</p>
+</div>
+
+<h2>Morgen · Mittwoch, 02.09.</h2>
+
 <div class="card blue">
-  <p class="ttl blue">Zwei Opening Lectures, mit vier Stunden Lücke dazwischen.</p>
-  <div class="slot">
-    <p class="time">10:30–12:00</p>
-    <p><strong>EBC2060 — Digitalisation and Organisations</strong><br>
-      <span class="room">Opening Lecture (Plenum) · TAP11 F0.019, Tapijnkazerne 11 · Ohlrogge, F (Fynn)</span></p>
-  </div>
-  <div class="slot">
-    <p class="time">16:00–18:00</p>
-    <p><strong>EBC2080 — Behavioural Economics (IB/IBE)</strong><br>
-      <span class="room">Opening Lecture (Plenum) · TS53 H0.01 Aula, Tongersestraat 53 · Meissner, TGK (Thomas)</span></p>
-  </div>
-  <p><strong>Zwei verschiedene Gebäude.</strong> Vormittags Tapijn, nachmittags
-     Tongersestraat — das sind rund 10 Gehminuten auseinander. Zwischen 12:00
-     und 16:00 hast du vier Stunden frei.</p>
-  <p class="meta">„Opening Lecture/01" im Feed ist die Nummer der Vorlesung,
-     nicht deine Gruppe. Opening Lectures sind Plenum — alle Gruppen zusammen.
-     Deine Tutorialgruppen sind 03 (EBC2060) und 06 (EBC2080), die zählen erst
-     ab Freitag.</p>
-</div>
-
-<h2>Was heute Abend noch sinnvoll ist</h2>
-<div class="card yellow">
-  <p>Für die beiden Opening Lectures morgen musst du <em>nichts</em>
-     vorbereiten — Eröffnungsvorlesungen sind organisatorisch: Kursaufbau,
-     Prüfungsform, Gruppeneinteilung, Erwartungen. Realistisch: 0 Minuten
-     Vorbereitung.</p>
-  <p>Was sich stattdessen lohnt:</p>
+  <p class="ttl blue">Keine Termine</p>
+  <p class="meta">Dein Feed hat für morgen null Einträge. Der nächste Termin
+     ist erst am Donnerstag.</p>
+  <span class="lbl">Sinnvoll für morgen</span>
   <ul>
-    <li><strong>Canvas selbst öffnen</strong> (im Browser, mit deinem eigenen
-        Login) und nachsehen, ob für EBC2060 und EBC2080 schon Kursmaterial
-        online ist. Ich kann das gerade nicht für dich — siehe oben.</li>
-    <li><strong>Notizmaterial für morgen</strong>: In der Opening Lecture
-        fallen die Termine für Abgaben und die Prüfungsform. Das ist die
-        Information, die später am schwersten nachzuholen ist.</li>
-    <li><strong>Weg checken</strong>: TAP11 ist Tapijnkazerne 11, falls du
-        dort noch nicht warst.</li>
+    <li>Beide Canvas-Kurse durchsehen, sobald der Zugang wieder geht — für
+        <strong>Freitag</strong> stehen die ersten echten Tutorials an, und
+        dort wird Vorbereitung erwartet.</li>
+    <li><strong>Kursanmeldung Periode 2</strong> erledigen: Frist ist
+        Freitag 11.09., 17:00 (Details unten).</li>
   </ul>
 </div>
 
-<h2>Der Rest deiner ersten Woche</h2>
-<div class="card">
-  <div class="slot">
-    <p class="time">Mi 02.09.</p>
-    <p><strong>Nichts.</strong><br>
-      <span class="room">Kein Termin im Feed — freier Tag mitten in der ersten Woche.</span></p>
-  </div>
-  <div class="slot">
-    <p class="time">Do 03.09. · 13:30–15:30</p>
-    <p><strong>EBS2080 — Writing a Bachelor's Thesis</strong><br>
-      <span class="room">Opening Lecture · TS53 A-1.01 Prof. Dr. Franz Palm Lecture Hall · Wibral, M (Matthias)</span></p>
-  </div>
-  <div class="slot">
-    <p class="time">Fr 04.09. · 11:00–13:00</p>
-    <p><strong>EBC2060 — Tutorial B, Gruppe 03</strong><br>
-      <span class="room">TS53 A0.24 · Sutton, NA (Nick)</span></p>
-  </div>
-  <div class="slot">
-    <p class="time">Fr 04.09. · 13:30–15:30</p>
-    <p><strong>EBC2080 — Tutorial B, Gruppe 06</strong><br>
-      <span class="room">TS53 G0.03 · Baby Sujatha, K (Karthika)</span></p>
-  </div>
-  <p class="meta"><strong>Freitag ist der Tag, für den du wirklich vorbereiten
-     musst</strong> — in Maastricht kommt man zum ersten Tutorial mit gelesener
-     Literatur. Was genau, steht in Canvas, und genau das kann ich dir bis zum
-     neuen Token nicht sagen.</p>
+<h2>Übermorgen · Donnerstag, 03.09.</h2>
+
+<div class="card blue">
+  <p class="ttl blue">EBS2080 — Writing a Bachelor's Thesis</p>
+  <p class="sub">Opening Lecture (Plenum)</p>
+  <p class="when">13:30 – 15:30</p>
+  <span class="room">TS53 A-1.01 Prof. Dr. Franz Palm Lecture Hall · Wibral, M (Matthias)</span>
+  <p class="meta">Der Auftakt zur Bachelorarbeit. Solche Auftakttermine nennen
+     meist Fristen und Betreuerzuteilung — hingehen lohnt auch dann, wenn die
+     Arbeit selbst noch weit weg wirkt.</p>
 </div>
 
-<h2>Worum es in den Kursen geht</h2>
-<div class="card yellow">
-  <p class="ttl yellow">Quelle: öffentlicher UM-Kurskatalog — nicht Canvas.</p>
-  <p><strong>EBC2080 — Behavioural Economics.</strong> Ausgangspunkt ist der
-     <em>homo oeconomicus</em> der Mikroökonomie: der rationale Nutzenmaximierer
-     mit egoistischen Präferenzen und unbegrenzter Rechenkapazität. Der Kurs
-     fragt zwei Dinge — wann trifft diese Theorie zu, und wann verliert sie
-     ihre Vorhersagekraft? Und wo sie versagt: welche Modelle treten an ihre
-     Stelle? Genannte Themen: Non-Expected-Utility, intertemporale Wahl,
-     soziale Präferenzen, Reziprozität, Denkstufen im strategischen Verhalten,
-     die Rolle von Fehlern, Mental Accounting, Heuristiken, Neuroökonomie.</p>
-  <p><strong>EBC2060 — Digitalisation and Organisations.</strong> Hierzu habe
-     ich <em>keine</em> belastbare Beschreibung gefunden. Die Katalogseite war
-     heute nicht erreichbar (DNS-Fehler auf
-     <code>curriculum.maastrichtuniversity.nl</code>), und ich rate den Inhalt
-     nicht aus dem Kurstitel.</p>
-  <p class="meta">Einordnung, damit du weißt, was das wert ist: dieser Absatz
-     ersetzt den Canvas-Teil <em>nicht</em>. Ich konnte den Jahrgang der
-     Katalogseite nicht prüfen — es kann eine ältere Fassung sein. Nimm es als
-     grobe Richtung, nicht als Vorbereitungsliste. Die verbindliche Fassung
-     steht in Canvas.</p>
-</div>
+<h2>Danach: die ersten Tutorials</h2>
 
-<h2>Dein Rhythmus ab dem 08.09.</h2>
 <div class="card">
-  <p><strong>Dienstags und freitags</strong> — beide Kurse, jede Woche:</p>
+  <p class="ttl">Freitag, 04.09.</p>
   <ul>
-    <li><strong>EBC2060</strong> 11:00–13:00 — dienstags TS53 G0.03,
-        freitags TS53 A0.24 (beide Sutton)</li>
-    <li><strong>EBC2080</strong> 13:30–15:30 — dienstags TAP23 (X) 0.013,
-        freitags TS53 G0.03 (beide Baby Sujatha)</li>
+    <li><strong>11:00 – 13:00</strong> · EBC2060 Tutorial B, Gruppe 03 ·
+        TS53 A0.24 · Sutton, NA (Nick)</li>
+    <li><strong>13:30 – 15:30</strong> · EBC2080 Tutorial B, Gruppe 06 ·
+        TS53 G0.03 · Baby Sujatha, K (Karthika)</li>
   </ul>
-  <p>Zwei Freitage weichen ab: <strong>Fr 18.09.</strong> hat statt des
-     EBC2080-Tutorials eine Lecture 16:00–18:00 in TAP11 F0.019, und
-     <strong>Fr 25.09.</strong> beginnt mit einer Guest Lecture EBC2060
-     08:45–10:45 in TAP11 F0.019 statt des Tutorials.</p>
-  <p>Dazu kommt <strong>EBS2079 Professional Development: Leadership
-     Skills</strong> — Lecture Do 17.09. 12:00–13:00 (TS53 A-1.01) und
-     Tutorial Mi 30.09. 11:00–13:00 (TAP11 F2.018).</p>
+  <p class="meta" style="margin-top:12px">Ab hier zählt Vorbereitung. Das ist
+     auch die Frist, bis zu der der Canvas-Zugang wieder stehen muss — sonst
+     weiß dieser Check am Freitag nicht, was du lesen sollst.</p>
 </div>
 
 <h2>Fristen</h2>
+
 <div class="card yellow">
-  <div class="slot">
-    <p class="time">Fr 11.09., 17:00</p>
-    <p><strong>Course registration Periode 2 schließt</strong><br>
-      <span class="room">Die nächste harte Frist — in 11 Tagen. Der Feed warnt
-      ab dem 07.09. dreimal davor.</span></p>
-  </div>
-  <div class="slot">
-    <p class="time">Fr 25.09., 17:00</p>
-    <p><strong>Exam-(De)registration Periode 1 schließt</strong><br>
-      <span class="room">Anmeldefenster öffnet am 21.09. Betrifft deine beiden
-      Klausuren im Oktober.</span></p>
-  </div>
-  <p class="meta">Beide stammen als Termine vom Typ „Deadline" bzw. „Warning"
-     direkt aus dem Timetable-Feed. Für morgen und übermorgen enthält der Feed
-     <strong>keine</strong> Frist.</p>
+  <p class="ttl yellow">Kursanmeldung Periode 2 — Fr 11.09., 17:00</p>
+  <p class="meta">In 10 Tagen. Eine verpasste Kursanmeldung kostet dich eine
+     ganze Periode, nicht nur einen Termin.</p>
 </div>
 
-<h2>Klausuren — stehen schon fest</h2>
-<div class="card">
-  <div class="slot">
-    <p class="time">Di 20.10. · 15:00–17:00</p>
-    <p><strong>EBC2060 — Digitalisation and Organisations</strong><br>
-      <span class="room">Paul Henri Spaaklaan, MECC Westhal</span></p>
-  </div>
-  <div class="slot">
-    <p class="time">Do 22.10. · 12:00–14:00</p>
-    <p><strong>EBC2080 — Behavioural Economics</strong><br>
-      <span class="room">Paul Henri Spaaklaan, MECC Westhal</span></p>
-  </div>
-  <p class="meta">Beide im MECC, nicht in der Innenstadt. Sieben Wochen hin —
-     hier nur, damit du sie im Kalender hast.</p>
-</div>
-
-<h2>Das eine, was jetzt zählt</h2>
-<div class="card green">
-  <p class="big">Morgen 10:30, TAP11 F0.019.</p>
-  <p>Mehr musst du für heute nicht wissen. Vorbereiten: nichts. Der Tag, an
-     dem Vorbereitung zählt, ist Freitag — und was dafür zu lesen ist, steht
-     in Canvas, sobald der Zugang wieder funktioniert.</p>
-</div>
-
-<h2>Zustellung</h2>
 <div class="card yellow">
-  <p class="ttl yellow">Der Vormittagslauf hatte dir nichts geschickt</p>
-  <p class="meta">An dieser Stelle stand bis eben „Versand läuft — der Beleg
-     wird direkt im Anschluss nachgetragen". Das traf nicht zu. Eine Abfrage
-     des Push-Topics ab Mitternacht zeigt für heute <strong>null</strong>
-     Inhaltsnachrichten, nur Meldungen des Systems selbst. Der 08:44-Lauf hat
-     diese Seite live gestellt und ist dann vor dem Versand abgebrochen.
-     Der Versand um 09:10 ist deshalb die <em>erste</em> Zustellung des Tages,
-     keine Wiederholung.</p>
-</div>
-<div class="card red">
-  <p class="ttl red">WhatsApp — nicht zugestellt, Kontingent leer</p>
-  <p class="meta">CallMeBot antwortet auf Teil 1 wörtlich:
-     <code>You have 0 messages left. … Message not sent</code>. Teil 2 wurde
-     daraufhin gar nicht erst gesendet. Derselbe Befund wie am 27. und 28.08. —
-     der Kanal bleibt tot, bis das CallMeBot-Kontingent aufgefüllt wird.
-     Ob der 08:44-Lauf es überhaupt versucht hat, lässt sich nicht
-     feststellen; angekommen wäre es nach diesem Befund ohnehin nicht.</p>
-</div>
-<div class="card green">
-  <p class="ttl green">ntfy — beide Teile zugestellt und nachgeprüft</p>
-  <p class="meta">09:10:30 CEST. Teil 1 <code>SpFTonOv9QRG</code>
-     (824 Zeichen), Teil 2 <code>ESHNXl7znRtc</code> (942 Zeichen). Belegt
-     nicht durch die Antwort des Sendebefehls, sondern durch eine
-     <em>erneute Abfrage des Topics</em> danach — die Lehre vom 28.08.</p>
-  <p class="meta">Einschränkung, damit hier nichts Schöneres steht als wahr
-     ist: das Topic <code>claude-franz-test1</code> gehört Franz, nicht dir.
-     Einen eigenen Push-Kanal hast du nicht. Verlässlich erreichst du diesen
-     Check nur über diese Webseite.</p>
+  <p class="ttl yellow">Prüfungsanmeldung Periode 1 — 21.09. bis Fr 25.09., 17:00</p>
+  <p class="meta">Das ist die Anmeldung zu genau den beiden Klausuren, die
+     unten stehen. Ohne sie darfst du nicht mitschreiben — und das merkst du
+     sonst erst im Oktober.</p>
 </div>
 
-<h2>Prüfprotokoll</h2>
 <div class="card">
+  <p class="ttl">Klausuren Periode 1</p>
   <ul>
-    <li><strong>Feed:</strong> HTTP 200, 77 VEVENTs, Server-Sync-Stand
-        31.08. 08:08 CEST.</li>
-    <li><strong>Zeitzone:</strong> Alle <code>DTSTART</code> tragen ein
-        <code>Z</code>, sind also UTC. Umgerechnet nach CEST (+2), gültig bis
-        zur Zeitumstellung am 25.10. — auch die Klausuren am 20./22.10. liegen
-        noch davor.</li>
-    <li><strong>Gegenprobe:</strong> Terminzahlen zweimal unabhängig
-        hergeleitet — Python-VEVENT-Parser und <code>perl</code>-Entfaltung +
-        <code>awk</code>-Blockzählung. Ergebnis EINIG:
-        31.08. = 0 · 01.09. = 2 · 02.09. = 0 · 03.09. = 1 · 04.09. = 2.</li>
-    <li><strong>Zweitprüfung 09:01 (dieser Lauf):</strong> Feed unabhängig neu
-        geholt (HTTP 200, Server-Stand 09:00:58 CEST) und neu geparst —
-        77 VEVENTs, davon 40 mit Uhrzeit und 37 ganztägig. Zwei getrennt
-        <em>gebaute</em> Herleitungen — Python-<code>zoneinfo</code>-Parser
-        gegen <code>sed</code>-Entfaltung + <code>awk</code>-Blockzählung +
-        <code>date -u</code>-Zeitrechnung — sind EINIG:
-        31.08.&nbsp;=&nbsp;0 · 01.09.&nbsp;=&nbsp;2 · 02.09.&nbsp;=&nbsp;0 ·
-        03.09.&nbsp;=&nbsp;1 · 04.09.&nbsp;=&nbsp;2. Die beiden Entfaltungen
-        lieferten 228&nbsp;Byte Unterschied; nachgerechnet sind das
-        ausschließlich <code>\r</code>-Zeichen an den Faltstellen, kein
-        Inhaltsunterschied (<code>cmp</code> nach CR-Entfernung: identisch).</li>
-    <li><strong>UID-Mengenvergleich 30.→31.08.:</strong> beide Feeds 77
-        Termine — <strong>0</strong> verschwunden, <strong>0</strong> neu,
-        <strong>0</strong> inhaltlich geändert. Der Feed steht heute exakt
-        still. Zeit, Raum und Dozent oben sind damit gegen zwei Feed-Stände
-        belegt, nicht nur gegen einen.</li>
-    <li><strong>Fristen gegengeprüft:</strong> die beiden genannten Termine
-        stammen wörtlich aus dem Feed — <code>Course registration period 2
-        closes TODAY (17:00h)</code> am Fr 11.09. und
-        <code>Exam (de)registration period 1 closes TODAY (17:00h)</code>
-        am Fr 25.09. Für 01.09. und 02.09. enthält der Feed keine Frist.</li>
-    <li><strong>Canvas:</strong> HTTP 401, wörtlich
-        <code>Expired access token, expired_at 2026-07-18</code>. Schritte 2–4
-        des Checks (Kurse, Planner, Module, Pages, Assignments) konnten
-        deshalb <em>nicht</em> ausgeführt werden.</li>
-    <li><strong>Katalog-Rückfall:</strong> zwei Versuche je Kurs.
-        <code>curriculum.maastrichtuniversity.nl</code> löst von diesem Rechner
-        nicht auf, die <code>www</code>-Variante antwortet 404. Für EBC2080
-        blieb eine Katalogbeschreibung aus dem Suchindex, für EBC2060 nichts —
-        entsprechend steht dort nichts.</li>
-    <li><strong>Keine Fortschreibung:</strong> Zeit, Raum und Dozent stammen
-        ausschließlich aus dem heutigen Rohfeed, nicht aus der vorherigen
-        Seite. Die vorherige Seite war Franz' Lauf vom 28.08.</li>
-    <li><strong>Design:</strong> CSS-Block byte-identisch zur letzten
-        Clara-Seite (<code>ba5e95c</code>); der Zweitlauf hat nichts am CSS
-        geändert — die neuen Karten benutzen Klassen, die oben schon verwendet
-        werden. <em>Korrektur zum Vormittagslauf:</em> dort stand, es fehle
-        <code>npx</code>/Playwright. <code>npx</code> ist vorhanden und die
-        Browser liegen im Cache; es fehlt allein das Playwright-Modul, und das
-        nachzuinstallieren wäre eine Abhängigkeitsänderung ohne Nutzen — die
-        Seite enthält <strong>null</strong> interaktive Elemente
-        (0&nbsp;Links, 0&nbsp;Buttons, 0&nbsp;<code>:hover</code>-,
-        0&nbsp;<code>:focus</code>-Regeln), es gibt also keine Zustände zu
-        messen. Gemessen wurde stattdessen, was hier entscheidbar ist: alle
-        <strong>11</strong> Text-/Hintergrund-Paare der Palette erfüllen
-        WCAG&nbsp;1.4.3&nbsp;AA, schwächstes Paar
-        <code>#8a8a8a</code>&nbsp;auf&nbsp;<code>#1a1a1a</code> mit
-        5,04:1&nbsp;(Soll&nbsp;4,5).</li>
+    <li><strong>Di 20.10., 15:00 – 17:00</strong> · EBC2060 Digitalisation and
+        Organisations · MECC Westhal, Paul-Henri-Spaaklaan</li>
+    <li><strong>Do 22.10., 12:00 – 14:00</strong> · EBC2080 Behavioural
+        Economics · MECC Westhal, Paul-Henri-Spaaklaan</li>
   </ul>
 </div>
 
+<h2>Befund: Der Stundenplan erinnert dich nicht mehr an Fristen</h2>
+
+<div class="card red">
+  <p class="ttl red">37 Fristen-Einträge sind heute aus dem Feed verschwunden</p>
+  <p class="meta">Dein Stundenplan-Feed enthielt gestern noch 77 Einträge, heute
+     nur noch 40. Die Differenz sind exakt die 37 SBE-Verwaltungstermine — also
+     genau die Einträge, die dich an Kurs-, Prüfungs- und Skill-Anmeldungen
+     erinnert haben. Kein einziger Vorlesungs- oder Tutorialtermin fehlt.</p>
+  <p class="meta">Die beiden Fristen oben stammen aus der gestrigen Kopie des
+     Feeds (<code>snapshots/clara-2026-08-31.ics</code>) — deshalb stehen sie
+     hier überhaupt noch.</p>
+  <span class="lbl">Was das heißt</span>
+  <p class="meta">Verschwunden sind auch Einträge bis 2027. Fristen, die zwei
+     Jahre in der Zukunft liegen, sagt niemand alle auf einmal ab — es wurde
+     also die <strong>Kategorie aus dem Feed entfernt</strong>, nicht die
+     Fristen gestrichen. Sicher belegen lässt sich das von hier aus nicht.</p>
+  <span class="lbl">Zu tun</span>
+  <p class="meta">Die beiden Termine (11.09. und 25.09.) einmal im
+     SBE-Portal gegenprüfen und in deinen eigenen Kalender eintragen. Der
+     Stundenplan wird dich daran nicht mehr erinnern.</p>
+</div>
+
+<h2>Warum hier keine Literatur steht</h2>
+
+<div class="card red">
+  <p class="ttl red">Canvas ist seit 45 Tagen ausgesperrt</p>
+  <p class="meta">Jeder Canvas-Aufruf antwortet mit
+     <code>401 Expired access token, expired_at 2026-07-18</code> — heute erneut
+     geprüft für <code>/users/self</code> und <code>/courses</code>. Damit
+     fehlen: Lernziele, Literatur, Aufgaben, Abgaben und Ankündigungen. Was du
+     oben liest, ist alles, was der Stundenplan hergibt.</p>
+  <p class="meta">Bis heute war das ein Schönheitsfehler — es lief ja nichts.
+     Ab heute fehlt der inhaltliche Teil wirklich, und ab Freitag
+     (erste Tutorials) fehlt er dort, wo er gebraucht wird.</p>
+  <span class="lbl">Zu tun — zwei Dinge, nicht eins</span>
+  <ul>
+    <li>Franz erzeugt einen <strong>neuen Token</strong>: Canvas →
+        Account → Settings → Approved Integrations → „+ New Access Token"</li>
+    <li>Und einen <strong>eigenen Token für dich</strong> in
+        <code>users/clara.env</code>. Aktuell benutzen alle denselben Token
+        (Franz'). Ein neuer Franz-Token allein macht deinen Teil nicht richtig
+        — er macht ihn nur wieder unbemerkt falsch, weil dann Franz' Kurse
+        gelesen werden statt deiner.</li>
+  </ul>
+</div>
+
+<h2>Zustellung</h2>
+
+<div class="card">
+  <p class="meta">Versand läuft — der Beleg mit den wörtlichen Antworten der
+     Sendekanäle wird direkt im Anschluss nachgetragen.</p>
+</div>
+
 <footer>
-  Aktualisiert: Montag, 31.08.2026, 09:10 CEST · Claras Lauf
-  (Zweitlauf: Inhalt gegen einen frischen Feed nachgeprüft, Zustellung
-  nachgeholt) · Termine aus dem persönlichen Timetable-Feed, Inhalte aus
-  Canvas — Canvas war heute nicht lesbar.
+  Aktualisiert: Dienstag, 01.09.2026, 09:10 CEST · Claras Lauf<br>
+  Termine, Zeiten, Räume und Dozenten stammen ausschließlich aus dem
+  MyTimetable-Rohfeed (abgerufen 01.09.2026, 09:10 CEST, Zeiten UTC+2).
 </footer>
 
 </div>
