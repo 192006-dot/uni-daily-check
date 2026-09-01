@@ -252,12 +252,34 @@
 </div>
 
 <h2>Zustellung</h2>
-<div class="card">
-  <p class="meta">Versand folgt direkt im Anschluss; der Beleg — die wörtlichen
-     Antworten der Kanäle und eine erneute Abfrage des Push-Topics — wird als
-     eigener Commit nachgetragen. Steht hier später immer noch dieser Satz,
-     dann ist der Lauf vor dem Versand abgebrochen (genau das ist am 31.08.
-     passiert).</p>
+<div class="card red">
+  <p class="ttl red">WhatsApp — nicht zugestellt, Kontingent leer</p>
+  <p class="meta">CallMeBot antwortet auf Teil 1 wörtlich: <code>You have 0
+     messages left. … Message not sent</code>. Ein Versuch, keine Wiederholung
+     — bei Kontingent 0 ändert ein zweiter nichts. Derselbe Befund wie am 27.,
+     28. und 31.08.</p>
+</div>
+<div class="card green">
+  <p class="ttl green">ntfy — zugestellt und per erneuter Abfrage nachgeprüft</p>
+  <p class="meta">10:35:33 CEST Teil 1 <code>XtvB5591uDmg</code> und Teil 2
+     <code>XC3FMCttR139</code>. Belegt nicht durch die Antwort des
+     Sendebefehls, sondern durch eine erneute Abfrage des Topics danach.</p>
+  <p class="meta"><strong>Dabei ein Fehler aufgefallen und behoben:</strong>
+     in beiden Teilen fehlte <em>jeder</em> Zeilenumbruch — 796 bzw. 835
+     Zeichen als eine einzige Textwurst. Ursache ist <code>curl -d @datei</code>,
+     das Zeilenumbrüche beim Einlesen entfernt; richtig ist
+     <code>--data-binary</code>. Beide Teile wurden um 10:36 lesbar
+     nachgeschickt (<code>i8ZsoN0dVQGE</code>, 14 Umbrüche;
+     <code>sHI6YZB8FGIg</code>, 19 Umbrüche) und erneut per Topic-Abfrage
+     bestätigt. Auf dem Topic liegen dadurch vier statt zwei Nachrichten —
+     die mit „lesbar" im Titel sind die gültigen.</p>
+  <p class="meta">Einschränkung, damit hier nichts Schöneres steht als wahr
+     ist: das Topic <code>claude-franz-test1</code> gehört Franz, nicht dir.
+     Einen eigenen Push-Kanal hast du nicht — verlässlich erreichst du diesen
+     Check nur über diese Webseite. Auf demselben Topic lagen in den letzten
+     12 Stunden außerdem 14 technische Meldungen anderer Sitzungen
+     („Task complete", „Claude is waiting"); wenn Franz das Thema deswegen
+     stummschaltet, fällt auch dieser Kanal aus.</p>
 </div>
 
 <h2>Prüfprotokoll</h2>
