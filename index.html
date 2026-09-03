@@ -127,7 +127,7 @@
   <div class="card frist">
     <p class="kurs" style="color:var(--rot)">Fr 11.09., 17:00 Uhr</p>
     <p class="meta">SBE: <strong>Course registration Periode&nbsp;2</strong> schlie&szlig;t. Noch 8&nbsp;Tage.</p>
-    <p class="txt">Der Stundenplan warnt ab Mo 07.09. taeglich. Wer sich f&uuml;r Periode&nbsp;2 noch nicht eingeschrieben hat, macht das vor Freitag n&auml;chster Woche &mdash; nach 17:00 geht es nur noch &uuml;ber die Fachberatung.</p>
+    <p class="txt">Der Feed warnt an genau drei Tagen &mdash; Mo&nbsp;07.09., Do&nbsp;10.09. und am Stichtag Fr&nbsp;11.09. Wer sich f&uuml;r Periode&nbsp;2 noch nicht eingeschrieben hat, macht das vor Freitag n&auml;chster Woche &mdash; nach 17:00 geht es nur noch &uuml;ber die Fachberatung.</p>
   </div>
   <div class="card">
     <p class="meta"><strong>Mo 21.09.</strong> &mdash; Exam (de)registration Periode&nbsp;1 &ouml;ffnet.<br>
@@ -153,10 +153,16 @@
     <p class="meta" style="margin-top:8px">Termine je Tag zweifach unabh&auml;ngig hergeleitet (entfaltender Parser gegen rohes <code>grep</code>): 03.09.&nbsp;=&nbsp;1, 04.09.&nbsp;=&nbsp;2, 05.09.&nbsp;=&nbsp;0 &mdash; dreimal EINIG.</p>
     <p class="meta" style="margin-top:8px">Canvas: HTTP&nbsp;401, <em>&bdquo;Expired access token, expired_at 2026-07-18&ldquo;</em>. Alle Inhaltsfelder daher leer gelassen statt gesch&auml;tzt.</p>
   </div>
+  <div class="card">
+    <p class="meta"><strong>Nachpr&uuml;fung im Durchgang Franz, 09:07:38&nbsp;CEST.</strong> Beide Feeds erneut gezogen (HTTP&nbsp;200): Franz 76&nbsp;VEVENTs, Clara 76&nbsp;VEVENTs &mdash; gleiche Anzahl wie im 09:00-Abzug, und die Tage 03.&ndash;08.09. sind inhaltlich identisch zu dem, was oben steht. Ein UID-Mengenvergleich gegen den 09:00-Abzug ist <em>nicht</em> gefahren, weil diese Datei nicht aufgehoben wurde.</p>
+    <p class="meta" style="margin-top:8px">F&uuml;nf Zahlen zweifach unabh&auml;ngig <em>gebaut</em> (entfaltender Python-Parser gegen <code>awk</code>&nbsp;+&nbsp;<code>date</code>, bei Clara zus&auml;tzlich <code>perl</code>): 03.09.&nbsp;=&nbsp;1, 04.09.&nbsp;=&nbsp;2, 05.09.&nbsp;=&nbsp;0, VEVENTs&nbsp;=&nbsp;76, Clara 04.09.&nbsp;=&nbsp;2 &mdash; <strong>5/5 EINIG</strong>.</p>
+    <p class="meta" style="margin-top:8px">Canvas erneut geprobt statt vorausgesetzt: weiterhin HTTP&nbsp;401, gleiche Fehlermeldung. Korrigiert wurde eine Stelle &mdash; der Feed warnt zur Course&nbsp;Registration an drei Tagen, nicht t&auml;glich.</p>
+  </div>
 </section>
 
 <footer>
   Aktualisiert: Donnerstag, 03.09.2026 um 09:03 Uhr CEST &middot; Claras Durchgang.<br>
+  Nachgepr&uuml;ft und pr&auml;zisiert um 09:12 Uhr CEST &middot; Franz&rsquo; Durchgang &mdash; Termine unver&auml;ndert best&auml;tigt.<br>
   Der 08:0x-Lauf desselben Tages brach vor dem Seitenbau ab &mdash; diese Seite ist der vollst&auml;ndige Ersatz.
 </footer>
 
