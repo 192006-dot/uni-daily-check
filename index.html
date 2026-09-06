@@ -266,10 +266,11 @@
   <h2>Prüfprotokoll</h2>
   <div class="card flat">
     <dl>
-      <div class="kv"><dt>Stundenplan</dt><dd><span class="ok">HTTP 200</span> · 76 VEVENTs · Feed-Sync 06.09.2026, 08:00 CEST</dd></div>
+      <div class="kv"><dt>Stundenplan</dt><dd><span class="ok">HTTP 200</span> · 76 VEVENTs · Feed-Sync 06.09.2026, 09:00 CEST</dd></div>
       <div class="kv"><dt>Identität</dt><dd><span class="ok">geprüft</span> · Kalender <code>I6387262</code> = Claras Feed aus <code>clara.env</code>, nicht Franz’ (<code>I6380276</code>)</dd></div>
       <div class="kv"><dt>Woche</dt><dd>7 Einträge · davon <strong>4 Lehrveranstaltungen</strong>, 3 Anmelde-Hinweise</dd></div>
-      <div class="kv"><dt>Gegenprobe</dt><dd><span class="ok">EINIG</span> · zwei unabhängig gebaute Herleitungen der Zahl 4 (Python-Parser vs. Roh-Grep)</dd></div>
+      <div class="kv"><dt>Gegenprobe</dt><dd><span class="ok">3× EINIG</span> · je zwei unabhängig gebaute Herleitungen (Python-Parser vs. awk/perl) für die Zahlen 4, 7 und 76</dd></div>
+      <div class="kv"><dt>Zweiter Durchgang</dt><dd><span class="ok">09:00 CEST</span> · Feed neu geladen und gegen den 08:00-Abzug geprüft: <strong>0 inhaltliche Abweichungen</strong>, UID-Menge identisch (76/76, 0 verschwunden, 0 neu). Jede Angabe dieser Seite feldweise gegen den frischen Feed gehalten — Zeiten, Räume, Dozenten, Fristen, Klausuren, Vorschau: <strong>0 Korrekturen nötig</strong>.</dd></div>
       <div class="kv"><dt>Canvas</dt><dd><span class="bad">HTTP 401</span> auf 2 Endpunkten · <code>expired_at 2026-07-18</code> · Tag 50</dd></div>
       <div class="kv"><dt>Geraten</dt><dd><span class="ok">nichts</span> · Zeiten, Räume und Dozenten stammen ausschließlich aus dem Rohfeed dieses Laufs</dd></div>
     </dl>
@@ -277,8 +278,8 @@
 </section>
 
 <footer>
-  <p>Aktualisiert: Sonntag, 06.09.2026 &middot; Wochenüberblick für Clara.</p>
-  <p>Inhalt vollständig aus dem Stundenplan-Feed (Sync 08:00 CEST). Canvas-Inhalte fehlen — Token abgelaufen seit 18.07.2026.</p>
+  <p>Aktualisiert: Sonntag, 06.09.2026, 09:06 Uhr (CEST) &middot; Wochenüberblick für Clara &middot; zweiter Durchgang, nachgeprüft.</p>
+  <p>Inhalt vollständig aus dem Stundenplan-Feed (Sync 09:00 CEST). Canvas-Inhalte fehlen — Token abgelaufen seit 18.07.2026.</p>
 </footer>
 
 </div>
