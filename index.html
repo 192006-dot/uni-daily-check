@@ -2,56 +2,100 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Uni Daily Check &middot; Freitag 04.09.2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uni Daily Check · Wochenplan 07.–11.09.2026</title>
 <style>
-  :root{ --bg:#0f0f0f; --card:#1a1a1a; --line:#2a2a2a; --tx:#e0e0e0; --mut:#a1a1a1;
-         --gruen:#4ade80; --blau:#60a5fa; --gelb:#fbbf24; --rot:#f87171; }
+  :root{
+    --bg:#0f0f0f; --card:#1a1a1a; --line:#2a2a2a; --txt:#e0e0e0; --mut:#a8a8a8;
+    --grn:#4ade80; --blu:#60a5fa; --yel:#fbbf24; --red:#f87171;
+    --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px;
+  }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
-  body{margin:0;padding:16px 16px 40px;background:var(--bg);color:var(--tx);
-       font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-       font-size:16px;line-height:1.6}
-  .wrap{max-width:600px;margin:0 auto}
-  header{padding:8px 0 20px}
-  h1{margin:0 0 8px;font-size:26px;line-height:1.25;letter-spacing:-.01em}
-  .datum{margin:0;color:var(--mut);font-size:15px}
-  .badge{display:inline-block;margin-top:12px;padding:4px 12px;border-radius:999px;
-         background:#14261a;color:var(--gruen);border:1px solid #245334;
-         font-size:13px;font-weight:600}
-  section{margin-bottom:24px}
-  h2{margin:0 0 12px;font-size:13px;font-weight:700;letter-spacing:.09em;
-     text-transform:uppercase;color:var(--mut)}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;
-        padding:16px;margin-bottom:12px}
+  body{
+    margin:0; padding:var(--s5) var(--s4) var(--s6);
+    background:var(--bg); color:var(--txt);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    font-size:16px; line-height:1.55;
+  }
+  .wrap{max-width:600px; margin:0 auto}
+
+  header{margin-bottom:var(--s5)}
+  h1{font-size:1.5rem; line-height:1.2; margin:0 0 var(--s2)}
+  .sub{color:var(--mut); font-size:.875rem; margin:0 0 var(--s3)}
+  .badge{
+    display:inline-block; padding:var(--s1) var(--s3);
+    border:1px solid var(--grn); border-radius:999px;
+    color:var(--grn); font-size:.75rem; font-weight:600;
+    letter-spacing:.04em; text-transform:uppercase;
+  }
+
+  section{margin-bottom:var(--s6)}
+  h2{
+    font-size:.8125rem; font-weight:700; letter-spacing:.09em;
+    text-transform:uppercase; color:var(--mut);
+    margin:0 0 var(--s3); padding-bottom:var(--s2);
+    border-bottom:1px solid var(--line);
+  }
+
+  .card{
+    background:var(--card); border:1px solid var(--line);
+    border-radius:10px; padding:var(--s4); margin-bottom:var(--s3);
+  }
   .card:last-child{margin-bottom:0}
-  .card.heute{border-left:3px solid var(--gruen)}
-  .card.morgen{border-left:3px solid var(--blau)}
-  .card.hinweis{border-left:3px solid var(--gelb)}
-  .card.frist{border-left:3px solid var(--rot)}
-  .kurs{margin:0 0 4px;font-size:17px;font-weight:650;line-height:1.35}
-  .kurs .code{color:var(--gruen)}
-  .card.morgen .kurs .code{color:var(--blau)}
-  .meta{margin:0;color:var(--mut);font-size:15px}
-  .meta strong{color:var(--tx);font-weight:600}
-  .row{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
-  .tag{padding:3px 10px;border-radius:6px;background:#232323;border:1px solid var(--line);
-       font-size:13px;color:var(--mut)}
-  .leer{color:var(--mut);font-size:15px;margin:0}
-  .txt{margin:12px 0 0;font-size:15px}
-  .txt.warn{color:var(--gelb)}
-  .txt.rot{color:var(--rot)}
-  ul{margin:10px 0 0;padding-left:20px}
-  li{margin-bottom:7px}
+  .card.red{border-color:var(--red)}
+  .card.yel{border-color:var(--yel)}
+  .card.grn{border-color:var(--grn)}
+  .card.flat{background:transparent}
+
+  .day{
+    display:flex; align-items:baseline; gap:var(--s2);
+    margin:0 0 var(--s3); font-size:1.0625rem; font-weight:700; color:var(--blu);
+  }
+  .day .dt{color:var(--mut); font-size:.8125rem; font-weight:400}
+  .day.free{color:var(--mut)}
+
+  .ev{padding:var(--s3) 0; border-top:1px solid var(--line)}
+  .ev:first-of-type{border-top:0; padding-top:0}
+  .ev .time{font-variant-numeric:tabular-nums; font-weight:700; color:var(--txt)}
+  .ev .code{color:var(--yel); font-weight:700; font-size:.8125rem; letter-spacing:.02em}
+  .ev .name{margin:var(--s1) 0 var(--s2)}
+  .ev .meta{color:var(--mut); font-size:.875rem; margin:0}
+  .ev .meta b{color:var(--txt); font-weight:600}
+
+  .alert-t{font-weight:700; margin:0 0 var(--s2); display:flex; gap:var(--s2); align-items:baseline}
+  .red .alert-t{color:var(--red)}
+  .yel .alert-t{color:var(--yel)}
+  .grn .alert-t{color:var(--grn)}
+  p{margin:0 0 var(--s3)}
+  p:last-child{margin-bottom:0}
+  ul{margin:0 0 var(--s3); padding-left:var(--s5)}
+  ul:last-child{margin-bottom:0}
+  li{margin-bottom:var(--s2)}
   li:last-child{margin-bottom:0}
-  .name{display:inline-block;margin:0 0 10px;padding:3px 12px;border-radius:6px;
-        background:#1f2a37;color:var(--blau);font-size:13px;font-weight:700;
-        letter-spacing:.05em;text-transform:uppercase}
-  .name.c{background:#2a1f37;color:#c084fc}
-  hr{border:0;border-top:1px solid var(--line);margin:20px 0}
-  footer{margin-top:32px;padding-top:16px;border-top:1px solid var(--line);
-         color:var(--mut);font-size:13px;line-height:1.55}
-  code{background:#232323;padding:1px 6px;border-radius:4px;font-size:13px}
+  .mut{color:var(--mut)}
+  .sm{font-size:.875rem}
+  strong{color:#f2f2f2}
+
+  a{
+    color:var(--blu); text-decoration:underline;
+    text-underline-offset:3px; border-radius:4px;
+    display:inline-block; min-height:24px; padding:var(--s1) 2px;
+  }
+  a:hover{color:#a5c9fb; text-decoration-thickness:2px}
+  a:focus-visible{outline:3px solid var(--yel); outline-offset:2px; color:#a5c9fb}
+  a:active{color:#c7dcfd}
+
+  .kv{display:flex; gap:var(--s3); margin-bottom:var(--s2); font-size:.875rem}
+  .kv:last-child{margin-bottom:0}
+  .kv dt{flex:0 0 96px; color:var(--mut); margin:0}
+  .kv dd{margin:0; flex:1}
+  .ok{color:var(--grn)} .bad{color:var(--red)} .warn{color:var(--yel)}
+
+  footer{
+    border-top:1px solid var(--line); padding-top:var(--s4);
+    color:var(--mut); font-size:.8125rem;
+  }
 </style>
 </head>
 <body>
@@ -59,111 +103,182 @@
 
 <header>
   <h1>Uni Daily Check</h1>
-  <p class="datum">Freitag, 04. September 2026</p>
-  <span class="badge">Tages-Check</span>
+  <p class="sub">Sonntag, 06.09.2026 &middot; für Clara &middot; Periode 1, Woche 2</p>
+  <span class="badge">Wochenplan 07.–11.09.</span>
 </header>
 
 <section>
-  <h2>Heute &mdash; Freitag, 04.09. &middot; die ersten Tutorials</h2>
-  <div class="card heute">
-    <span class="name c">Clara</span>
-<p class="kurs"><span class="code">EBC2060</span> &middot; Tutorial B, Gruppe 03</p>
-<p class="meta">Digitalisation and Organisations &mdash; <strong>11:00&ndash;13:00</strong>, TS53 A0.24, Sutton, NA (Nick)</p>
-<hr>
-<p class="kurs"><span class="code">EBC2080</span> &middot; Tutorial B, Gruppe 06</p>
-<p class="meta">Behavioural Economics (IB/IBE) &mdash; <strong>13:30&ndash;15:30</strong>, TS53 G0.03, Baby Sujatha, K (Karthika)</p>
-    <p class="txt">Beides in der Tongersestraat 53 &mdash; zwischen den Sitzungen liegen 30 Minuten, das Geb&auml;ude musst du nicht wechseln.</p>
+  <h2>Zuerst</h2>
+
+  <div class="card red">
+    <p class="alert-t"><span>🔴</span><span>Kursanmeldung Periode 2 — Frist Freitag 11.09., 17:00</span></p>
+    <p>Der Stundenplan trägt diese Frist <strong>dreimal</strong> als eigenen Eintrag: Montag und Donnerstag als Vorwarnung, Freitag als <em>„closes TODAY (17:00h)"</em>. Das ist der einzige harte Termin der Woche.</p>
+    <p><strong>Mach es nicht am Freitag.</strong> Freitag bist du bis 15:30 im Tutorial — danach bleiben 90 Minuten. Ein volles Kursangebot oder ein hakendes Portal sind in 90 Minuten nicht mehr zu reparieren. Montag und Mittwoch/Donnerstag sind komplett frei von Lehrveranstaltungen; erledige es dort.</p>
+    <p class="sm mut">Quelle: iCal-Rohfeed, Einträge vom 07.09. (Type: Warning), 10.09. (Warning) und 11.09. (Type: Deadline).</p>
   </div>
-  <div class="card heute">
-    <span class="name ">Franz</span>
-<p class="kurs"><span class="code">EBC2060</span> &middot; Tutorial B, Gruppe 01</p>
-<p class="meta">Digitalisation and Organisations &mdash; <strong>08:30&ndash;10:30</strong>, TS53 A0.24, Sutton, NA (Nick)</p>
-<hr>
-<p class="kurs"><span class="code">EBC2080</span> &middot; Tutorial B, Gruppe 03</p>
-<p class="meta">Behavioural Economics (IB/IBE) &mdash; <strong>11:00&ndash;13:00</strong>, TS53 H0.04, Triêu, VGA (Anh)</p>
-    <p class="txt">Ebenfalls TS53 in beiden Sitzungen, 30 Minuten Pause dazwischen. Ab 13:00 frei.</p>
-  </div>
-  <div class="card hinweis">
-    <p class="meta"><strong>Das ist bei beiden Kursen die Sitzung&nbsp;1.</strong> Was inhaltlich drankommt, steht in Canvas &mdash; und Canvas ist seit dem 18.07. nicht abrufbar (Token abgelaufen, heute Tag&nbsp;48). <strong>Wir raten den Inhalt nicht.</strong> Diese Seite kann heute Termin, Raum und Dozent belegen, aber kein Thema und keine Literatur.</p>
-    <p class="txt">Clara, bis 11:00 sind es noch gut zwei Stunden. Was in der Zeit wirklich hilft: das Course Manual beider Kurse &uuml;ber das Student Portal oder direkt im Browser in Canvas &ouml;ffnen (die Weboberfl&auml;che funktioniert, nur unser API-Zugang nicht) und nachsehen, welche Aufgabe f&uuml;r Sitzung&nbsp;1 vorgesehen ist.</p>
+
+  <div class="card yel">
+    <p class="alert-t"><span>⚠️</span><span>Canvas ist seit 50 Tagen nicht abrufbar</span></p>
+    <p>Der Zugangs-Token ist am <strong>18.07.2026</strong> abgelaufen. Jeder Canvas-Aufruf antwortet heute mit <code>401 — Expired access token</code>, auf zwei Endpunkten geprüft.</p>
+    <p>Das heißt konkret: <strong>Themen, Literatur, Aufgabenbeschreibungen, Abgabetermine und Ankündigungen fehlen auf dieser Seite vollständig.</strong> Sie sind nicht „keine" — sie sind ungelesen. Was hier steht, stammt ausschließlich aus dem Stundenplan-Feed.</p>
+    <p>Damit die Seite wieder Inhalte zeigt, braucht es einen neuen Canvas-Token (Canvas → Account → Settings → <em>New Access Token</em>), hinterlegt in <code>.env</code> als <code>CANVAS_API_TOKEN</code>.</p>
   </div>
 </section>
 
 <section>
-  <h2>Wochenende</h2>
+  <h2>Die Woche</h2>
+
   <div class="card">
-    <p class="meta"><strong>Sa 05.09. und So 06.09.</strong> &mdash; keine Termine im Stundenplan, bei beiden.</p>
-    <p class="meta" style="margin-top:8px"><strong>Mo 07.09.</strong> &mdash; ebenfalls kein Unterricht. Im Feed steht an dem Tag nur eine Erinnerung an die Anmeldefrist f&uuml;r Periode&nbsp;2.</p>
-    <p class="txt">Das Wochenende ist frei &mdash; der n&auml;chste feste Termin ist Dienstag. Wenn heute in den Tutorials Aufgaben f&uuml;r Sitzung&nbsp;2 verteilt werden, ist Samstag oder Sonntag der ruhigere Zeitpunkt daf&uuml;r als Montagabend.</p>
+    <p class="day free">Montag 07.09. <span class="dt">keine Lehrveranstaltung</span></p>
+    <p class="sm">Frei von Terminen. Der Feed führt für heute nur die Vorwarnung zur Kursanmeldung Periode 2.</p>
+    <p class="sm mut"><strong>Nutze den Tag:</strong> Kursanmeldung Periode 2 erledigen, und in Canvas die Vorbereitung für Dienstag holen.</p>
   </div>
-</section>
 
-<section>
-  <h2>N&auml;chster Termin &mdash; Dienstag, 08.09. &middot; Tutorial A</h2>
-  <div class="card morgen">
-    <span class="name c">Clara</span>
-<p class="kurs"><span class="code">EBC2060</span> &middot; Tutorial A, Gruppe 03</p>
-<p class="meta">Digitalisation and Organisations &mdash; <strong>11:00&ndash;13:00</strong>, TS53 G0.03, Sutton, NA (Nick)</p>
-<hr>
-<p class="kurs"><span class="code">EBC2080</span> &middot; Tutorial A, Gruppe 06</p>
-<p class="meta">Behavioural Economics (IB/IBE) &mdash; <strong>13:30&ndash;15:30</strong>, TAP23 (X)  0.013, Baby Sujatha, K (Karthika)</p>
-    <p class="txt warn">Achtung, beides wechselt gegen&uuml;ber heute: EBC2060 in G0.03 statt A0.24, und EBC2080 liegt in <strong>TAP23 &mdash; Tapijnkazerne</strong>, nicht mehr in der Tongersestraat. Der Feed nennt daf&uuml;r eine eigene Adresse; plane den Weg zwischen 13:00 und 13:30 ein.</p>
-  </div>
-  <div class="card morgen">
-    <span class="name ">Franz</span>
-<p class="kurs"><span class="code">EBC2060</span> &middot; Tutorial A, Gruppe 01</p>
-<p class="meta">Digitalisation and Organisations &mdash; <strong>08:30&ndash;10:30</strong>, TS53 G0.03, Sutton, NA (Nick)</p>
-<hr>
-<p class="kurs"><span class="code">EBC2080</span> &middot; Tutorial A, Gruppe 03</p>
-<p class="meta">Behavioural Economics (IB/IBE) &mdash; <strong>11:00&ndash;13:00</strong>, TS53 A0.24, Triêu, VGA (Anh)</p>
-    <p class="txt">Beide Sitzungen bleiben in der Tongersestraat 53, R&auml;ume wechseln gegen&uuml;ber heute (G0.03 und A0.24).</p>
-  </div>
   <div class="card">
-    <p class="txt">A und B sind keine Alternativen, sondern die zwei w&ouml;chentlichen Sitzungen <em>derselben</em> Gruppe &mdash; Clara EBC2060 Gruppe&nbsp;03 und EBC2080 Gruppe&nbsp;06, Franz Gruppe&nbsp;01 und&nbsp;03. Beide Termine finden statt.</p>
-  </div>
-</section>
+    <p class="day">Dienstag 08.09. <span class="dt">2 Tutorials · 11:00–15:30</span></p>
 
-<section>
-  <h2>Fristen</h2>
-  <div class="card frist">
-    <p class="kurs" style="color:var(--rot)">Fr 11.09., 17:00 Uhr</p>
-    <p class="meta">SBE: <strong>Course registration Periode&nbsp;2</strong> schlie&szlig;t. Noch 7&nbsp;Tage.</p>
-    <p class="txt">Der Feed tr&auml;gt daf&uuml;r drei Eintr&auml;ge: Mo&nbsp;07.09. und Do&nbsp;10.09. als Erinnerung (<em>Type: Warning</em>) und Fr&nbsp;11.09. die Frist selbst (<em>Type: Deadline</em>) &mdash; dort w&ouml;rtlich <em>&bdquo;SBE: Course registration period 2 closes TODAY (17:00h)&ldquo;</em>. Daher die Uhrzeit. Was nach&nbsp;17:00 noch m&ouml;glich ist, sagt der Feed nicht &mdash; das steht hier deshalb auch nicht.</p>
+    <div class="ev">
+      <p class="code">EBC2060 · Tutorial A / Gruppe 03</p>
+      <p class="name"><span class="time">11:00–13:00</span> — Digitalisation and Organisations</p>
+      <p class="meta">Raum <b>TS53 G0.03</b> · <a href="https://www.google.nl/maps/place/Tongersestraat+53+Maastricht" target="_blank" rel="noopener">Tongersestraat 53 ↗</a><br>Dozent: <b>Nick Sutton</b> (Sutton, NA)</p>
+    </div>
+
+    <div class="ev">
+      <p class="code">EBC2080 · Tutorial A / Gruppe 06</p>
+      <p class="name"><span class="time">13:30–15:30</span> — Behavioural Economics (IB/IBE)</p>
+      <p class="meta">Raum <b>TAP23 (X) 0.013</b> · <a href="https://www.google.nl/maps/place/Tapijnkazerne+23+Maastricht" target="_blank" rel="noopener">Tapijnkazerne 23 ↗</a><br>Dozentin: <b>Karthika Baby Sujatha</b> (Baby Sujatha, K)</p>
+    </div>
+
+    <p class="sm warn" style="margin-top:16px">↔ Ortswechsel mit 30 Minuten Puffer: Tongersestraat 53 → Tapijnkazerne 23. Andere Gebäude, nicht nur ein anderer Raum — plane den Weg ein.</p>
   </div>
+
   <div class="card">
-    <p class="meta"><strong>Mo 21.09.</strong> &mdash; Exam (de)registration Periode&nbsp;1 &ouml;ffnet.<br>
-       <strong>Fr 25.09., 17:00</strong> &mdash; Exam (de)registration Periode&nbsp;1 schlie&szlig;t.</p>
+    <p class="day free">Mittwoch 09.09. <span class="dt">kein Eintrag im Feed</span></p>
+    <p class="sm">Vollständig frei — kein Termin, keine Frist, keine Warnung. Der einzige Tag der Woche ohne jeden Eintrag.</p>
+    <p class="sm mut"><strong>Puffertag.</strong> Der beste Platz für alles, was Ruhe braucht.</p>
   </div>
-</section>
 
-<section>
-  <h2>Was diesem Check gerade fehlt</h2>
-  <div class="card hinweis">
-    <p class="meta"><strong>1. Canvas, Tag&nbsp;48.</strong> Der API-Token ist am 18.07.2026 abgelaufen; heute wieder gepr&uuml;ft, wieder HTTP&nbsp;401. Genau heute, am Tag der ersten Tutorials, kostet das den gesamten inhaltlichen Teil: keine Themen, keine Literatur, keine Abgabefristen aus den Kursen.</p>
-    <p class="txt">Neuer Token: Canvas &rarr; Account &rarr; Settings &rarr; <em>+ New Access Token</em>, danach in <code>CANVAS_API_TOKEN</code> eintragen.</p>
-  </div>
-  <div class="card hinweis">
-    <p class="meta"><strong>2. WhatsApp ist aufgebraucht.</strong> CallMeBot meldet f&uuml;r beide Nummern &bdquo;0&nbsp;messages left&ldquo;. Zugestellt wird per Push auf Franz&rsquo; ntfy-Kanal &mdash; <strong>Clara bekommt dort keine eigene Benachrichtigung</strong>, sie erreicht nur diese Seite.</p>
-  </div>
-</section>
-
-<section>
-  <h2>Pr&uuml;fprotokoll</h2>
   <div class="card">
-    <p class="meta">Beide Stundenplan-Feeds heute frisch geladen (HTTP&nbsp;200): Clara 08:17&nbsp;CEST, Franz 08:21&nbsp;CEST, je 76&nbsp;VEVENTs. Claras UID-Menge ist mit dem Abzug vom 03.09. identisch &mdash; 0&nbsp;Abweichungen. iCal vor dem Z&auml;hlen entfaltet, Zeiten aus UTC nach CEST umgerechnet.</p>
-    <p class="meta" style="margin-top:8px">Termine je Tag zweifach unabh&auml;ngig <em>gebaut</em> (entfaltender Python-Parser gegen ein davon getrenntes <code>perl</code>-Skript): 04.09.&nbsp;=&nbsp;2, 05.09.&nbsp;=&nbsp;0, 06.09.&nbsp;=&nbsp;0, 07.09.&nbsp;=&nbsp;1 &mdash; <strong>4/4 EINIG</strong>.</p>
-    <p class="meta" style="margin-top:8px">Alle Zeiten, R&auml;ume, Gruppennummern und Namen oben sind per Skript aus dem Rohfeed eingesetzt, nicht abgetippt und nicht aus der Seite von gestern &uuml;bernommen.</p>
-    <p class="meta" style="margin-top:8px"><strong>Zweiter Durchgang, 09:01&nbsp;CEST:</strong> beide Feeds erneut geladen (HTTP&nbsp;200, Sync 09:01, je 76&nbsp;VEVENTs). Gegen den 08:17/08:21-Abzug <strong>0 inhaltliche Abweichungen</strong> &mdash; die 30 bzw. 68 Zeilen, die ein roher <code>diff</code> zeigt, sind reine Faltungsartefakte des ge&auml;nderten Zeitstempels und verschwinden nach dem Entfalten. UID-Menge identisch zum 03.09. (0&nbsp;verschwunden, 0&nbsp;neu).</p>
-    <p class="meta" style="margin-top:8px">Alle acht Tutorial-Zeilen (04.09. und 08.09., beide Personen) noch einmal aus dem 09:01-Feed gegengelesen &mdash; Uhrzeit, Raum, Gruppe und Dozent stimmen feldweise. Zweite, getrennt gebaute Herleitung (<code>perl</code>) kommt auf dieselben Tageszahlen: 04.09.&nbsp;2&nbsp;/&nbsp;2, 05.09. und 06.09. je&nbsp;0, 07.09. nur eine Frist-Erinnerung, 08.09.&nbsp;2&nbsp;/&nbsp;2. <code>gegenprobe.py</code>: <strong>EINIG</strong>.</p>
-    <p class="meta" style="margin-top:8px"><em>Eine Korrektur:</em> Die Fristen-Karte behauptete, nach&nbsp;17:00 laufe die Anmeldung &uuml;ber die Fachberatung. Das steht nirgends im Feed &mdash; der Satz ist raus, die belegte Formulierung steht daf&uuml;r da. Die &bdquo;drei Tage&ldquo; und die 17:00 selbst haben der Pr&uuml;fung dagegen standgehalten.</p>
-    <p class="meta" style="margin-top:8px">Canvas: <code>GET /api/v1/users/self</code> um 08:29&nbsp;CEST &rarr; HTTP&nbsp;401, <em>&bdquo;Expired access token, expired_at 2026-07-18&ldquo;</em> &mdash; im zweiten Durchgang um 09:01&nbsp;CEST erneut, gleiches Ergebnis. Alle Inhaltsfelder deshalb leer statt gesch&auml;tzt.</p>
+    <p class="day free">Donnerstag 10.09. <span class="dt">keine Lehrveranstaltung</span></p>
+    <p class="sm">Frei von Terminen. Der Feed führt erneut die Vorwarnung: Kursanmeldung Periode 2 schließt morgen.</p>
+    <p class="sm mut"><strong>Letzte ruhige Gelegenheit</strong> vor der Frist — falls Montag etwas dazwischenkam, ist heute der Ersatztermin.</p>
+  </div>
+
+  <div class="card red">
+    <p class="day">Freitag 11.09. <span class="dt">2 Tutorials + Frist 17:00</span></p>
+
+    <div class="ev">
+      <p class="code">EBC2060 · Tutorial B / Gruppe 03</p>
+      <p class="name"><span class="time">11:00–13:00</span> — Digitalisation and Organisations</p>
+      <p class="meta">Raum <b>TS53 A0.24</b> · <a href="https://www.google.nl/maps/place/Tongersestraat+53+Maastricht" target="_blank" rel="noopener">Tongersestraat 53 ↗</a><br>Dozent: <b>Nick Sutton</b></p>
+    </div>
+
+    <div class="ev">
+      <p class="code">EBC2080 · Tutorial B / Gruppe 06</p>
+      <p class="name"><span class="time">13:30–15:30</span> — Behavioural Economics (IB/IBE)</p>
+      <p class="meta">Raum <b>TS53 G0.03</b> · <a href="https://www.google.nl/maps/place/Tongersestraat+53+Maastricht" target="_blank" rel="noopener">Tongersestraat 53 ↗</a><br>Dozentin: <b>Karthika Baby Sujatha</b></p>
+    </div>
+
+    <p class="sm" style="margin-top:16px"><span class="ok">✓</span> Beide Freitagssitzungen im selben Gebäude (TS53) — kein Weg dazwischen.</p>
+    <p class="sm bad"><strong>17:00 — Kursanmeldung Periode 2 schließt.</strong> Nach dem Tutorial bleiben 90 Minuten. Siehe oben: vorziehen.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Vorbereitung &amp; Literatur</h2>
+  <div class="card yel">
+    <p><strong>Diese Seite kann dir für diese Woche keine Literatur nennen</strong> — und sie rät auch keine. Die Themen, Kapitel und Aufgaben der einzelnen Sitzungen liegen in Canvas, und Canvas ist seit dem 18.07. nicht lesbar (siehe oben).</p>
+    <p>Der Weg, den du selbst gehen musst — <a href="https://canvas.maastrichtuniversity.nl" target="_blank" rel="noopener">canvas.maastrichtuniversity.nl ↗</a>, dann vier Klicks je Kurs:</p>
+    <ul class="sm">
+      <li><strong>Für Dienstag 11:00 (EBC2060):</strong><br>Canvas → <em>Digitalisation and Organisations</em> → Modules → Woche 2 bzw. den Eintrag zum 08.09.</li>
+      <li><strong>Für Dienstag 13:30 (EBC2080):</strong><br>Canvas → <em>Behavioural Economics</em> → Modules → Woche 2 bzw. den Eintrag zum 08.09.</li>
+      <li><strong>Für Freitag:</strong> dieselben beiden Kurse, Eintrag zum 11.09.</li>
+    </ul>
+    <p class="sm mut">Prüfe dort zugleich, ob eine Abgabe eingetragen ist. Abgabetermine, die nur in Canvas stehen, tauchen im Stundenplan <em>nie</em> auf — dieser Blindfleck ist das eigentliche Risiko der Woche.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Deadlines</h2>
+
+  <div class="card red">
+    <p class="alert-t"><span>🔴</span><span>Diese Woche</span></p>
+    <p><strong>Freitag 11.09., 17:00 — Kursanmeldung Periode 2 (SBE).</strong></p>
+    <p class="sm">Konkret zu tun: im Student Portal die Kurse für Periode 2 auswählen und die Anmeldung <em>abschließen</em> (bis zur Bestätigung, nicht nur bis zum Warenkorb). Aufwand realistisch 15–30 Minuten, wenn die Kurswahl schon feststeht — sonst plane die Auswahl selbst als eigene Aufgabe ein.</p>
+    <p class="sm mut">Weitere Fristen dieser Woche stehen nicht im Feed. Ob in Canvas eine liegt, kann diese Seite nicht sagen.</p>
+  </div>
+
+  <div class="card grn">
+    <p class="alert-t"><span>🟢</span><span>Feststehend, mit Vorlauf</span></p>
+    <ul class="sm">
+      <li><strong>Di 20.10., 15:00–17:00 — Klausur EBC2060</strong> (Digitalisation and Organisations)<br><span class="mut">Paul Henri Spaaklaan, <a href="https://www.google.co.uk/maps/place/MECC/@50.8387222,5.7095447,17z/data=!3m1!4b1!4m6!3m5!1s0x47c0e984c10bc78d:0x11310fc6c0fade4c!8m2!3d50.8387222!4d5.7121196!16s%2Fg%2F1222zks5?hl=GB" target="_blank" rel="noopener">MECC Westhal ↗</a></span></li>
+      <li><strong>Do 22.10., 12:00–14:00 — Klausur EBC2080</strong> (Behavioural Economics)<br><span class="mut">Paul Henri Spaaklaan, <a href="https://www.google.co.uk/maps/place/MECC/@50.8387222,5.7095447,17z/data=!3m1!4b1!4m6!3m5!1s0x47c0e984c10bc78d:0x11310fc6c0fade4c!8m2!3d50.8387222!4d5.7121196!16s%2Fg%2F1222zks5?hl=GB" target="_blank" rel="noopener">MECC Westhal ↗</a></span></li>
+      <li><strong>Mo 21.09. — Prüfungsanmeldung Periode 1 öffnet</strong>, sie schließt <strong>Fr 25.09. um 17:00</strong>. Ohne Anmeldung keine Klausur — der Termin steht schon jetzt fest.</li>
+    </ul>
+    <p class="sm mut">Beide Klausuren liegen 6 Wochen entfernt. Nichts davon ist diese Woche zu tun — außer zu wissen, dass es kommt.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Ankündigungen</h2>
+  <div class="card flat">
+    <p class="sm mut">Nicht abrufbar. Canvas-Ankündigungen brauchen einen gültigen Token; der ist seit dem 18.07. abgelaufen. Es liegen also keine „null Ankündigungen" vor, sondern ungelesene.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Empfehlung für die Woche</h2>
+  <div class="card">
+    <ul>
+      <li><strong>Heute, Sonntag:</strong> Kurswahl für Periode 2 durchdenken, damit die Anmeldung morgen nur noch Klickarbeit ist. Und einmal in Canvas nachsehen, was für Dienstag ansteht — das kann dir diese Seite gerade nicht abnehmen.</li>
+      <li><strong>Montag (frei):</strong> Kursanmeldung Periode 2 <em>erledigen</em>. Danach die Vorbereitung für Dienstag, beide Kurse.</li>
+      <li><strong>Dienstag:</strong> zwei Tutorials, 11:00 bis 15:30, mit Gebäudewechsel um 13:00. Ab 15:30 ist der Tag frei.</li>
+      <li><strong>Mittwoch (komplett frei):</strong> der einzige Tag ohne jeden Eintrag. Nachlesen, was in den Dienstags-Tutorials offen blieb, und die Freitagssitzungen vorbereiten.</li>
+      <li><strong>Donnerstag (frei):</strong> Rückversicherung — ist die Anmeldung wirklich bestätigt? Falls Montag etwas dazwischenkam, ist heute der letzte ruhige Termin dafür.</li>
+      <li><strong>Freitag:</strong> zwei Tutorials im selben Gebäude, danach nur noch prüfen, dass die Anmeldung durch ist. Nichts Neues an diesem Tag anfangen.</li>
+    </ul>
+  </div>
+
+  <div class="card yel">
+    <p class="alert-t"><span>⚠️</span><span>Risiken — konkret, nicht abstrakt</span></p>
+    <ul class="sm">
+      <li><strong>Die Frist trifft auf einen vollen Tag.</strong> Freitag 15:30 Tutorial-Ende, 17:00 Fristende. Wenn das Portal hakt oder ein Kurs voll ist, bleibt keine Zeit für Plan B. Das ist der Grund, die Anmeldung auf Montag zu ziehen — nicht Ordnungsliebe.</li>
+      <li><strong>Der Canvas-Blindfleck ist keine Randnotiz.</strong> Seit 50 Tagen liest dieser Check keine Abgabetermine. Läge in EBC2060 oder EBC2080 eine Abgabe in dieser Woche, stünde sie nirgends auf dieser Seite. Nur du kannst das nachsehen.</li>
+      <li><strong>EBS2080 „Writing a Bachelor's Thesis" hat genau EINEN Termin im gesamten Stundenplan</strong> — die Opening Lecture am 03.09. Danach nichts, das ganze Studienjahr über. Thesis-Meilensteine laufen also nicht über den Stundenplan, sondern über Canvas und deine Betreuung. Ein Kurs, den kein Kalender an dich erinnert, ist der, den man vergisst.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Vorschau: 14.–18.09.</h2>
+  <div class="card">
+    <ul class="sm">
+      <li><strong>Di 15.09. 11:00–13:00</strong> — EBC2060 Tutorial A/03, <a href="https://www.google.nl/maps/place/Tongersestraat+53+Maastricht" target="_blank" rel="noopener">TS53 G0.03 ↗</a>, Sutton</li>
+      <li><strong>Di 15.09. 13:30–15:30</strong> — EBC2080 Tutorial A/06, <a href="https://www.google.nl/maps/place/Tapijnkazerne+23+Maastricht" target="_blank" rel="noopener">TAP23 (X) 0.013 ↗</a>, Baby Sujatha</li>
+      <li><span class="warn"><strong>Do 17.09. 12:00–13:00</strong> — EBS2079 <em>Professional Development: Leadership Skills</em>, Lecture 01</span><br><a href="https://www.google.nl/maps/place/Tongersestraat+53+Maastricht" target="_blank" rel="noopener">TS53 A-1.01 ↗</a> (Prof. Dr. Franz Palm Lecture Hall), Sonja Zaar<br><span class="mut">Neuer Kurs, erster Termin — bis dahin taucht EBS2079 in keinem Wochenplan auf.</span></li>
+      <li><strong>Fr 18.09. 11:00–13:00</strong> — EBC2060 Tutorial B/03, <a href="https://www.google.nl/maps/place/Tongersestraat+53+Maastricht" target="_blank" rel="noopener">TS53 A0.24 ↗</a>, Sutton</li>
+      <li><span class="warn"><strong>Fr 18.09. 16:00–18:00</strong> — EBC2080 <em>Lecture wk3</em>, <a href="https://www.google.nl/maps/place/Tapijnkazerne+11+Maastricht" target="_blank" rel="noopener">TAP11 F0.019 ↗</a>, Thomas Meissner</span><br><span class="mut">Abweichung von der Gewohnheit: kein Tutorial um 13:30, sondern eine Vorlesung um 16:00 in einem anderen Gebäude. Nicht aus dem Rhythmus der Vorwoche schließen.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Prüfprotokoll</h2>
+  <div class="card flat">
+    <dl>
+      <div class="kv"><dt>Stundenplan</dt><dd><span class="ok">HTTP 200</span> · 76 VEVENTs · Feed-Sync 06.09.2026, 08:00 CEST</dd></div>
+      <div class="kv"><dt>Identität</dt><dd><span class="ok">geprüft</span> · Kalender <code>I6387262</code> = Claras Feed aus <code>clara.env</code>, nicht Franz’ (<code>I6380276</code>)</dd></div>
+      <div class="kv"><dt>Woche</dt><dd>7 Einträge · davon <strong>4 Lehrveranstaltungen</strong>, 3 Anmelde-Hinweise</dd></div>
+      <div class="kv"><dt>Gegenprobe</dt><dd><span class="ok">EINIG</span> · zwei unabhängig gebaute Herleitungen der Zahl 4 (Python-Parser vs. Roh-Grep)</dd></div>
+      <div class="kv"><dt>Canvas</dt><dd><span class="bad">HTTP 401</span> auf 2 Endpunkten · <code>expired_at 2026-07-18</code> · Tag 50</dd></div>
+      <div class="kv"><dt>Geraten</dt><dd><span class="ok">nichts</span> · Zeiten, Räume und Dozenten stammen ausschließlich aus dem Rohfeed dieses Laufs</dd></div>
+    </dl>
   </div>
 </section>
 
 <footer>
-  Aktualisiert: Freitag, 04.09.2026 um 09:05 Uhr CEST &middot; Claras Durchgang (2.&nbsp;Lauf).<br>
-  Der 08:31-Stand wurde nicht neu gebaut, sondern gegen den frischen Feed nachgepr&uuml;ft &mdash; eine Stelle korrigiert.<br>
-  Termindaten aus den iCal-Feeds von MyTimetable; Themen und Literatur fehlen, solange der Canvas-Token abgelaufen ist.
+  <p>Aktualisiert: Sonntag, 06.09.2026 &middot; Wochenüberblick für Clara.</p>
+  <p>Inhalt vollständig aus dem Stundenplan-Feed (Sync 08:00 CEST). Canvas-Inhalte fehlen — Token abgelaufen seit 18.07.2026.</p>
 </footer>
 
 </div>
