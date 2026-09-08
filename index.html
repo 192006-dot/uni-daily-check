@@ -181,12 +181,13 @@
       <li>08:30&ndash;10:30 &middot; EBC2060 B/01 &middot; <span class="raum">TS53 A0.24</span><span class="flag wechsel">heute G0.03</span></li>
       <li>11:00&ndash;13:00 &middot; EBC2080 B/03 &middot; <span class="raum">TS53 H0.04</span><span class="flag wechsel">heute A0.24</span></li>
     </ul>
+    <p class="mut">Franz, eine Falle im Detail: <strong>A0.24</strong> ist Freitag dein <strong>08:30</strong>-Raum &ndash; heute ist es dein <strong>11:00</strong>-Raum. Derselbe Raum, andere Uhrzeit.</p>
     <p class="mut">Donnerstag 10.09.: bei beiden kein Termin, nur die Vorwarnung zur Kursanmeldung.</p>
   </div>
 </section>
 
 <section>
-  <h2>Pr&uuml;fprotokoll &middot; Zweitlauf 09:06</h2>
+  <h2>Pr&uuml;fprotokoll &middot; Zweitlauf 09:06 &middot; Franz-Lauf 09:17</h2>
   <div class="card">
     <h3>Jede Angabe oben gegen einen frisch geladenen Feed nachgepr&uuml;ft</h3>
     <p>Die Seite entstand um 08:18. Dieser zweite Lauf hat sie nicht neu gebaut, sondern <strong>Feld f&uuml;r Feld gegen den um 09:01 neu geladenen Stundenplan gepr&uuml;ft</strong> &ndash; Uhrzeit, Raum, Gruppe und Dozent, bei beiden Personen, f&uuml;r Dienstag und Freitag.</p>
@@ -200,9 +201,16 @@
     <p class="mut">Was hier <em>nicht</em> gepr&uuml;ft werden kann, bleibt ungepr&uuml;ft: Themen, Literatur und Abgaben h&auml;ngen an Canvas, und dieser Zugang ist zu. Der Stundenplan kennt sie nicht.</p>
   </div>
   <div class="card">
-    <h3>Heute bewusst nicht noch einmal gesendet</h3>
-    <p>Die zwei ntfy-Nachrichten von <strong>08:29</strong> tragen bereits Claras Zeiten und sind 12 Stunden g&uuml;ltig. Ein zweiter Versand w&auml;re auf dem Ger&auml;t nur ein Duplikat. Diese Seite wurde daher aktualisiert, die Benachrichtigung nicht wiederholt.</p>
-    <p class="mut">F&uuml;r einen nachfolgenden Franz-Durchgang: die 08:29-Nachrichten sind <strong>nicht namentlich gekennzeichnet</strong> und enthalten ausschlie&szlig;lich Claras Zeiten (11:00 und 13:30). Franz&rsquo; eigene Zeiten (08:30 und 11:00) stehen dort nicht &ndash; ein eigener, gekennzeichneter Versand ist also kein Duplikat.</p>
+    <h3>Dritter Lauf 09:17 &ndash; Franz&rsquo; eigener Durchgang</h3>
+    <p>Dieser Lauf hat die Seite <strong>nicht neu gebaut</strong>, sondern ein drittes Mal gegen frisch geladene Feeds gepr&uuml;ft &ndash; und die Zustellung nachgeholt, die Franz fehlte.</p>
+    <ul>
+      <li>Feeds neu geladen: Franz <strong>09:10</strong> <code>sha1 f3d7a355</code>, Clara <strong>09:14</strong> <code>sha1 0cf1b81e</code> &ndash; <strong>je 76 Termine</strong>.</li>
+      <li>Erneut zwei unabh&auml;ngig gebaute Auswertungen (Python und awk): <strong>6 von 6 Zeilen identisch</strong>, 0 Abweichungen. UID-Vergleich zum Abzug von gestern: <strong>0 weg, 0 neu</strong>.</li>
+      <li>Dabei ein <strong>Fehler in beiden Auswertungen gefunden und behoben</strong>: die <strong>37 Ganztags-Eintr&auml;ge</strong> des Feeds (<code>DTSTART;VALUE=DATE</code>) fielen zun&auml;chst durch das Raster &ndash; und genau in ihnen steckt die Kursanmeldungs-Frist. Die Rechnung geht jetzt auf: 39 Zeit-Termine + 37 Ganztags = 76.</li>
+      <li>Canvas um <strong>09:12</strong> erneut angefragt: <code>HTTP 401 &middot; Expired access token</code>. Heute damit dreimal belegt.</li>
+    </ul>
+    <p><strong>Franz hatte seine eigenen Zeiten bis 09:17 nie bekommen.</strong> Die zwei Nachrichten von 08:29 waren nicht namentlich gekennzeichnet und trugen ausschlie&szlig;lich Claras Zeiten &ndash; sie nannten f&uuml;r <strong>11:00</strong> den Raum <strong>G0.03</strong>. Franz&rsquo; 11:00-Tutorial ist aber in <strong>A0.24</strong>. Deshalb um 09:17 zwei ausdr&uuml;cklich mit &bdquo;FRANZ&ldquo; betitelte ntfy-Nachrichten gesendet: <code>6JCwawSVMKLX</code> und <code>NsdbHH6E0Euz</code>, je <code>HTTP 200</code>.</p>
+    <p class="mut">Claras Nachrichten von 08:29 wurden bewusst <em>nicht</em> wiederholt &ndash; sie sind 12 Stunden g&uuml;ltig und w&auml;ren auf dem Ger&auml;t nur ein Duplikat. CallMeBot erneut live versucht, Antwort w&ouml;rtlich: &bdquo;You have 0 messages left &hellip; Message not sent&ldquo;. Am Aussehen dieser Seite wurde nichts ge&auml;ndert &ndash; der CSS-Block ist unver&auml;ndert.</p>
   </div>
 </section>
 
@@ -215,8 +223,8 @@
 </section>
 
 <footer>
-  <p>Aktualisiert: Dienstag, 08.09.2026, 09:06 Uhr (CEST) &ndash; Zweitlauf, Seite gegen den 09:01-Feed nachgepr&uuml;ft<br>
-  Quelle: MyTimetable-Feed, beide Kalender einzeln geladen (je 76 Termine, Sync 08:18 CEST, nachgeladen 09:01 CEST &ndash; unver&auml;ndert).<br>
+  <p>Aktualisiert: Dienstag, 08.09.2026, 09:17 Uhr (CEST) &ndash; dritter Lauf (Franz), Seite gegen die 09:10/09:14-Feeds nachgepr&uuml;ft<br>
+  Quelle: MyTimetable-Feed, beide Kalender einzeln geladen (je 76 Termine; Sync 08:18, nachgeladen 09:01 und 09:10/09:14 CEST &ndash; unver&auml;ndert).<br>
   Canvas: HTTP 401 seit 18.07.2026 &ndash; keine Themen, keine Literatur, keine Abgaben.</p>
 </footer>
 
