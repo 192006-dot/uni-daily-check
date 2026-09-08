@@ -170,7 +170,7 @@
 <section>
   <h2>Freitag 11.09. &middot; andere R&auml;ume als heute</h2>
   <div class="card gelb">
-    <p class="lead">Dieselben zwei Kurse, dieselben Dozenten &ndash; aber Freitag ist die B-Gruppe dran, und <strong>drei von vier R&auml;umen sind andere als heute</strong>. Das ist die Stelle, an der man in den falschen Raum l&auml;uft.</p>
+    <p class="lead">Dieselben zwei Kurse, dieselben Dozenten &ndash; aber Freitag ist die B-Gruppe dran, und <strong>alle vier R&auml;ume sind andere als heute</strong>. Das ist die Stelle, an der man in den falschen Raum l&auml;uft.</p>
     <p class="who c" style="margin-top:14px">Clara</p>
     <ul>
       <li>11:00&ndash;13:00 &middot; EBC2060 B/03 &middot; <span class="raum">TS53 A0.24</span><span class="flag wechsel">heute G0.03</span></li>
@@ -186,6 +186,27 @@
 </section>
 
 <section>
+  <h2>Pr&uuml;fprotokoll &middot; Zweitlauf 09:06</h2>
+  <div class="card">
+    <h3>Jede Angabe oben gegen einen frisch geladenen Feed nachgepr&uuml;ft</h3>
+    <p>Die Seite entstand um 08:18. Dieser zweite Lauf hat sie nicht neu gebaut, sondern <strong>Feld f&uuml;r Feld gegen den um 09:01 neu geladenen Stundenplan gepr&uuml;ft</strong> &ndash; Uhrzeit, Raum, Gruppe und Dozent, bei beiden Personen, f&uuml;r Dienstag und Freitag.</p>
+    <ul>
+      <li>Beide Kalender um <strong>09:01 CEST</strong> neu geladen: Clara <code>sha1 abfaa047</code>, Franz <code>sha1 61af9ef3</code> &ndash; <strong>je 76 Termine</strong>.</li>
+      <li><strong>Zwei unabh&auml;ngig gebaute Auswertungen</strong> (Python und awk) kamen auf dieselben Zeiten, R&auml;ume und Dozenten &ndash; <strong>4 von 4 einig</strong>, 0 Abweichungen.</li>
+      <li>Vergleich mit dem Abzug von gestern 09:07: <strong>0 Termine verschwunden, 0 neu</strong> &ndash; also keine Absage und keine Verlegung.</li>
+      <li>Canvas um <strong>09:02 erneut angefragt</strong>: weiterhin <code>HTTP 401 &middot; Expired access token</code>, <code>expired_at 2026-07-18</code>. Die Aussage oben ist damit heute zweimal belegt.</li>
+    </ul>
+    <p><strong>Eine Angabe war falsch und ist korrigiert:</strong> im Freitags-Abschnitt stand &bdquo;drei von vier R&auml;umen sind andere als heute&ldquo;. Es sind <strong>alle vier</strong> &ndash; die vier Zeilen darunter zeigten das bereits einzeln, nur die Zusammenfassung dar&uuml;ber z&auml;hlte falsch.</p>
+    <p class="mut">Was hier <em>nicht</em> gepr&uuml;ft werden kann, bleibt ungepr&uuml;ft: Themen, Literatur und Abgaben h&auml;ngen an Canvas, und dieser Zugang ist zu. Der Stundenplan kennt sie nicht.</p>
+  </div>
+  <div class="card">
+    <h3>Heute bewusst nicht noch einmal gesendet</h3>
+    <p>Die zwei ntfy-Nachrichten von <strong>08:29</strong> tragen bereits Claras Zeiten und sind 12 Stunden g&uuml;ltig. Ein zweiter Versand w&auml;re auf dem Ger&auml;t nur ein Duplikat. Diese Seite wurde daher aktualisiert, die Benachrichtigung nicht wiederholt.</p>
+    <p class="mut">F&uuml;r einen nachfolgenden Franz-Durchgang: die 08:29-Nachrichten sind <strong>nicht namentlich gekennzeichnet</strong> und enthalten ausschlie&szlig;lich Claras Zeiten (11:00 und 13:30). Franz&rsquo; eigene Zeiten (08:30 und 11:00) stehen dort nicht &ndash; ein eigener, gekennzeichneter Versand ist also kein Duplikat.</p>
+  </div>
+</section>
+
+<section>
   <h2>Zustellung</h2>
   <div class="card">
     <p class="lead">WhatsApp ist seit dem 13.07. tot &ndash; das CallMeBot-Kontingent steht f&uuml;r beide Nummern auf 0, heute Tag 57.</p>
@@ -194,8 +215,8 @@
 </section>
 
 <footer>
-  <p>Aktualisiert: Dienstag, 08.09.2026, 08:18 Uhr (CEST)<br>
-  Quelle: MyTimetable-Feed, beide Kalender einzeln geladen (je 76 Termine, Sync 08:18 CEST).<br>
+  <p>Aktualisiert: Dienstag, 08.09.2026, 09:06 Uhr (CEST) &ndash; Zweitlauf, Seite gegen den 09:01-Feed nachgepr&uuml;ft<br>
+  Quelle: MyTimetable-Feed, beide Kalender einzeln geladen (je 76 Termine, Sync 08:18 CEST, nachgeladen 09:01 CEST &ndash; unver&auml;ndert).<br>
   Canvas: HTTP 401 seit 18.07.2026 &ndash; keine Themen, keine Literatur, keine Abgaben.</p>
 </footer>
 
