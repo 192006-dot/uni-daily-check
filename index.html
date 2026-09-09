@@ -158,7 +158,7 @@
 </section>
 
 <section>
-  <h2>Pr&uuml;fprotokoll &middot; L&auml;ufe 08:01 (Clara), 08:09 (Franz) und 09:01 (Clara, Zweitlauf)</h2>
+  <h2>Pr&uuml;fprotokoll &middot; L&auml;ufe 08:01 (Clara), 08:09 (Franz), 09:01 (Clara, Zweitlauf) und 09:08 (Franz, Zweitlauf)</h2>
   <div class="card">
     <ul>
       <li>Beide Kalender um <strong>08:01 CEST</strong> geladen: Clara <code>sha1 76b9e0a5</code>, Franz <code>sha1 7ac16412</code> &ndash; je <strong>76 Termine</strong> (39 mit Uhrzeit + 37 Ganztags).</li>
@@ -168,6 +168,7 @@
       <li>Aussehen unver&auml;ndert: CSS-Block byte-identisch zur Vorg&auml;ngerseite (<code>sha1 3a60a994</code>).</li>
       <li><strong>Franz-Lauf 08:09:</strong> Franz-Kalender erneut geladen (<code>sha1 8172b88c</code>, 76 Termine = 39 + 37) &ndash; bis auf Sync-Zeitstempel <strong>byte-identisch</strong> zum 08:01-Abzug, UID-Vergleich 0 weg / 0 neu. Freitagszeiten der Seite gegen den Rohfeed gepr&uuml;ft: 08:30 A0.24 Sutton, 11:00 H0.04 Tri&ecirc;u &ndash; stimmen. Canvas 08:10 erneut <code>HTTP 401</code> (Tag 53). CallMeBot 08:11 w&ouml;rtlich &bdquo;You have 0 messages left &middot; Message not sent&ldquo;. ntfy 08:12: zwei Teile mit Titel FRANZ (<code>edEYL9sjNvRa</code>, <code>ZjxLdmKFVFho</code>), per Topic-Abfrage belegt.</li>
       <li><strong>Zweitlauf Clara 09:01:</strong> Clara-Kalender erneut geladen (<code>sha1 4c963815</code>, 76 Termine = 39 + 37; Feed-Sync 09:01 CEST), UID-Vergleich zum 08:01-Abzug <strong>0 weg / 0 neu</strong>. Zwei unabh&auml;ngig gebaute Z&auml;hlungen (Python entfaltet, grep auf entfalteter Datei): Mi 0 &middot; Do 1 &middot; Fr 3 &ndash; <code>gegenprobe.py</code> 3/3 <strong>EINIG</strong>. Jede Angabe der Seite gegen den Rohfeed gepr&uuml;ft: Freitag 11:00 A0.24 Sutton, 13:30 G0.03 Baby Sujatha, Dienstags-R&auml;ume G0.03 und TAP23 (X) 0.013, Frist 11.09. 17:00, Exam (De)Registration 25.09. &ndash; alles gedeckt. <strong>Eine Korrektur:</strong> die Heute-Karte nannte heute den &bdquo;letzten ganz freien Tag&ldquo; &ndash; Donnerstag ist laut Feed ebenfalls frei (nur die Vorwarnung), jetzt &bdquo;heute und morgen&ldquo;. CSS-Block byte-identisch zu den drei Vorg&auml;nger-Commits (<code>sha1 b6ae3f92</code>, mit Style-Tags gehasht). Canvas 09:01 erneut <code>HTTP 401</code> (Tag 53). CallMeBot 09:0x einmal versucht, w&ouml;rtlich &bdquo;You have 0 messages left &middot; Message not sent&ldquo; (Tag 58). ntfy: Claras zwei Teile von 08:05 liegen vollst&auml;ndig auf dem Topic &ndash; <strong>nicht erneut gesendet</strong>.</li>
+      <li><strong>Zweitlauf Franz 09:08:</strong> Franz-Kalender erneut geladen (<code>sha1 fc473746</code>, 76 Termine = 39 + 37; Feed-Sync 09:08 CEST), UID-Vergleich zum 08:09-Abzug <strong>0 weg / 0 neu</strong>; Zeilen-Diff ohne Sync-Zeitstempel: nur DTSTAMP/CREATED/LAST-MODIFIED, kein Termin ver&auml;ndert. Zwei unabh&auml;ngig gebaute Z&auml;hlungen (grep auf entfalteter Datei, Python je VEVENT): Mi 0 &middot; Do 1 &middot; Fr 3 und Gesamt 76 &ndash; <code>gegenprobe.py</code> 4/4 <strong>EINIG</strong>. Clara-Kalender ebenfalls frisch geladen (<code>sha1 99c26b39</code>, 76 Termine): Freitag 11:00 A0.24 Sutton, 13:30 G0.03 Baby Sujatha, Dienstag G0.03 und TAP23 (X) 0.013 &ndash; Clara-Abschnitt gedeckt. Franz-Abschnitt gegen den Rohfeed: Fr 08:30 A0.24 Sutton (Di G0.03), 11:00 H0.04 Tri&ecirc;u (Di A0.24) &ndash; gedeckt. <strong>Leserdurchgang</strong> aller Mengen- und Einzigkeitsaussagen (&bdquo;keinen einzigen&ldquo;, &bdquo;heute und morgen&ldquo;, &bdquo;beide zwei Tutorials&ldquo;, &bdquo;dieselben Gruppen und Dozenten&ldquo;, vier Raum-Markierungen, &bdquo;kein Geb&auml;udewechsel&ldquo;, &bdquo;n&auml;chste Frist 25.09.&ldquo;, &bdquo;Noch 2 Tage&ldquo;, Tag 53 / Tag 58) gegen Feed und Nachbarkarte: <strong>0 Abweichungen</strong>. Ganztags-Fristen 11.09.&ndash;30.09. in beiden Feeds: nur Kursanmeldung 11.09. und Exam (de)registration 21./24./25.09. &ndash; keine weitere. Canvas 09:08 erneut <code>HTTP 401 &middot; expired_at 2026-07-18</code> (Tag 53). CallMeBot in diesem Lauf nicht versucht (08:11 bereits Quota 0 f&uuml;r Franz&rsquo; Nummer). ntfy: Franz&rsquo; zwei Teile von 08:12 liegen vollst&auml;ndig auf dem Topic (11 bzw. 19 Zeilenumbr&uuml;che, Topic-Abfrage 09:08) &ndash; <strong>nicht erneut gesendet</strong>. CSS-Block unver&auml;ndert (<code>sha1 3a60a994</code>, mit Style-Tags, UTF-8).</li>
     </ul>
   </div>
 </section>
@@ -181,7 +182,7 @@
 </section>
 
 <footer>
-  <p>Aktualisiert: Mittwoch, 09.09.2026, 08:05 Uhr (CEST) &ndash; Lauf Clara &middot; gepr&uuml;ft und erg&auml;nzt 08:13 Uhr &ndash; Lauf Franz &middot; Zweitlauf Clara 09:01 Uhr: eine Korrektur (Heute-Karte)<br>
+  <p>Aktualisiert: Mittwoch, 09.09.2026, 08:05 Uhr (CEST) &ndash; Lauf Clara &middot; gepr&uuml;ft und erg&auml;nzt 08:13 Uhr &ndash; Lauf Franz &middot; Zweitlauf Clara 09:01 Uhr: eine Korrektur (Heute-Karte) &middot; Zweitlauf Franz 09:08 Uhr: gepr&uuml;ft, 0 Abweichungen<br>
   Quelle: MyTimetable-Feed, beide Kalender einzeln geladen (je 76 Termine; Sync 08:01 CEST).<br>
   Canvas: HTTP 401 seit 18.07.2026 &ndash; keine Themen, keine Literatur, keine Abgaben.</p>
 </footer>
