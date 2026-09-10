@@ -169,7 +169,7 @@
 </section>
 
 <section>
-  <h2>Pr&uuml;fprotokoll &middot; L&auml;ufe 08:00 und 09:00 (Clara)</h2>
+  <h2>Pr&uuml;fprotokoll &middot; L&auml;ufe 08:00 und 09:00 (Clara, Franz)</h2>
   <div class="card">
     <ul>
       <li>Beide Kalender um <strong>08:00 CEST</strong> geladen: Clara <code>sha1 e772444b</code>, Franz <code>sha1 4da90b92</code> &ndash; je <strong>76 Eintr&auml;ge</strong> (39 mit Uhrzeit + 37 Ganztags).</li>
@@ -178,6 +178,7 @@
       <li>Canvas um 08:00 angefragt: <code>HTTP 401 &middot; expired_at 2026-07-18</code>.</li>
       <li>Aussehen unver&auml;ndert: CSS-Block byte-identisch zur Vorg&auml;ngerseite (<code>sha1 3a60a994</code>).</li>
       <li><strong>Lauf Clara 09:00:</strong> Der 08:00-Lauf hatte diese Seite um 08:07 fertig gebaut, ist aber vor Commit und Versand am Zug-Limit gestorben (<code>Reached max turns (25)</code>); Franz&rsquo; 08:00-Durchgang lief deshalb gar nicht. Beide Kalender um 09:00/09:01 neu geladen (Clara <code>sha1 216128cc</code>, Franz <code>sha1 c65b110f</code>, je 76 = 39 + 37), UID-Vergleich zum 08:00-Abzug <strong>0 weg / 0 neu / 0 ver&auml;ndert</strong>. Zwei unabh&auml;ngig gebaute Auswertungen (Python, awk auf entfalteter Datei): je Person Do 1 &middot; Fr 3 &middot; Sa 0 Eintr&auml;ge, gesamt 76 &ndash; <strong>einig</strong>. Jede Zeit, jeder Raum, jede Gruppe und jeder Dozent der Seite gegen den Feed gepr&uuml;ft: gedeckt. <strong>Drei Korrekturen im Flie&szlig;text:</strong> &bdquo;teils in anderen R&auml;umen&ldquo; &rarr; alle vier (jede Dienstagszeile tr&auml;gt eine Wechsel-Markierung); &bdquo;wenig Luft&ldquo; gilt nur f&uuml;r Clara (Franz hat vier Stunden); &bdquo;rund 33 Stunden&ldquo; &rarr; 32 (Stand 09:05). EBS2079 erscheint in beiden Feeds erstmals am 17.09. &ndash; &bdquo;erster Termin&ldquo; stimmt. Canvas 09:01 erneut <code>HTTP 401 &middot; expired_at 2026-07-18</code> (Tag 54). CallMeBot 09:05 einmal versucht, w&ouml;rtlich &bdquo;You have 0 messages left &middot; Message not sent&ldquo; (Tag 59). ntfy 09:05: zwei Teile mit Titel CLARA (<code>gCjYln71rWl3</code>, <code>WKtM2PETi6P8</code>) &ndash; die ersten Uni-Nachrichten des Tages. CSS-Block unver&auml;ndert (<code>sha1 3a60a994</code>).</li>
+      <li><strong>Lauf Franz 09:00</strong> (Start 09:08, setzt auf Claras Commit <code>44099b2</code> auf): Franz&rsquo; Kalender um 09:08 neu geladen (<code>sha1 6119664f</code>, 76 Eintr&auml;ge). Gegen den 09:01-Abzug: <strong>0 weg / 0 neu</strong>; die 304 abweichenden Zeilen sind ausschlie&szlig;lich Export-Zeitstempel (<code>CREATED</code>/<code>LAST-MODIFIED</code>, 76 &times; 4). Zwei unabh&auml;ngig gebaute Auswertungen (Python; awk auf entfalteter Datei) f&uuml;r Fr 11. &middot; Di 15. &middot; Do 17.09.: jede Zeit, jeder Raum, jede Gruppe und jeder Dozent im Franz-Teil <strong>gedeckt</strong>, Sa&ndash;Mo leer. Flie&szlig;text als Leser gepr&uuml;ft (&bdquo;32 Stunden&ldquo;, &bdquo;vier Stunden&ldquo;, &bdquo;alle vier Tutorials&ldquo; anderer Raum, &bdquo;beide leer&ldquo;): stimmt. Zu EBS2079: im Feed hei&szlig;t Franz&rsquo; Termin <em>Lecture/02</em>, Claras <em>Lecture/01</em> &ndash; zwei parallele Durchg&auml;nge derselben Vorlesung, keine verpasste erste; &bdquo;erster Termin&ldquo; stimmt f&uuml;r beide. Canvas 09:08 erneut <code>HTTP 401</code>. CallMeBot (Franz&rsquo; Nummer) einmal versucht: &bdquo;You have 0 messages left &middot; Message not sent&ldquo;. ntfy 09:11: zwei eigene Teile mit Titel FRANZ (<code>YfPHdoWmkVHe</code>, <code>QJFxnfVXN65k</code>) &ndash; n&ouml;tig, weil Claras Teile nur ihre Zeiten nennen (Fr 11:00/13:30), nicht Franz&rsquo; 08:30/11:00.</li>
     </ul>
   </div>
 </section>
@@ -191,7 +192,7 @@
 </section>
 
 <footer>
-  <p>Aktualisiert: Donnerstag, 10.09.2026, 09:06 Uhr (CEST) &ndash; Lauf Clara 09:00 (Seite von 08:07 gepr&uuml;ft und korrigiert)<br>
+  <p>Aktualisiert: Donnerstag, 10.09.2026, 09:13 Uhr (CEST) &ndash; Lauf Franz 09:00 (Seite gepr&uuml;ft, Protokoll erg&auml;nzt); davor Lauf Clara 09:00 um 09:06<br>
   Quelle: MyTimetable-Feed, beide Kalender einzeln geladen (je 76 Eintr&auml;ge; Sync 09:00/09:01 CEST).<br>
   Canvas: HTTP 401 seit 18.07.2026 &ndash; keine Themen, keine Literatur, keine Abgaben.</p>
 </footer>
