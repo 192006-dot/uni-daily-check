@@ -171,7 +171,7 @@
 </section>
 
 <section>
-  <h2>Pr&uuml;fprotokoll &middot; L&auml;ufe 08:00 (Clara) und 08:08 (Franz)</h2>
+  <h2>Pr&uuml;fprotokoll &middot; L&auml;ufe 08:00 (Clara), 08:08 (Franz) und 09:00 (Clara, Zweitlauf)</h2>
   <div class="card">
     <ul>
       <li>Beide Kalender um <strong>08:00 CEST</strong> geladen (Sync-Stempel 08:00): Clara <code>sha1 3a97f42e</code>, Franz <code>sha1 5f88e7f8</code> &ndash; je <strong>76 Eintr&auml;ge</strong> (39 mit Uhrzeit + 37 Ganztags).</li>
@@ -183,6 +183,7 @@
       <li><strong>Lauf Franz 08:08:</strong> beide Kalender neu geladen &ndash; Franz Sync 08:07 (<code>sha1 acf1a0c2</code>), Clara Sync 08:08, je 76 Eintr&auml;ge. Gegen den 08:00-Abzug: <strong>0 verschwunden, 0 neu, 0 ver&auml;ndert</strong>.</li>
       <li>Jede Zeit, jeder Raum, jede Gruppe und jeder Dozent dieser Seite erneut gegen beide Feeds abgeglichen, zwei Wege (Python-Parser; grep auf der entfalteten Datei): je Person Fr 2 &middot; Sa/So/Mo 0 &middot; Di 2 &middot; Do 1 &middot; Fr 18.09. 2 Termine &ndash; <strong>einig, 0 Korrekturen</strong>.</li>
       <li>Canvas um 08:08 angefragt (<code>courses</code>, <code>users/self</code>, <code>planner/items</code>): alle drei weiterhin <code>HTTP 401</code>.</li>
+      <li><strong>Zweitlauf Clara 09:00:</strong> Claras Kalender neu geladen (Sync 09:00, <code>sha1 72cb6567</code>, 76 Eintr&auml;ge). UID-Vergleich gegen den 08:08-Abzug: <strong>0 verschwunden, 0 neu, 0 ver&auml;ndert</strong>. Jede Clara-Zeile (Fr 2 &middot; Sa/So/Mo 0 &middot; Di 2 &middot; Do 17.09. 1 &middot; Fr 18.09. 2; Fristen 21./25.09.) gegen den Feed gepr&uuml;ft: <strong>0 Korrekturen</strong>. Nur Claras Feed gepr&uuml;ft &ndash; Franz&rsquo; Feed pr&uuml;ft sein eigener Durchgang. Canvas 09:00: <code>HTTP 401</code>.</li>
     </ul>
   </div>
 </section>
@@ -192,11 +193,12 @@
   <div class="card">
     <p class="lead">WhatsApp ist seit dem 13.07. tot &ndash; das CallMeBot-Kontingent steht f&uuml;r beide Nummern auf 0, heute Tag 60.</p>
     <p class="mut">Der Ersatzkanal ntfy l&auml;uft &uuml;ber ein Topic, das Franz geh&ouml;rt; ob <strong>Clara</strong> es abonniert hat, ist nie best&auml;tigt worden. F&uuml;r sie ist diese Seite deshalb der einzige verl&auml;ssliche Kanal.</p>
+    <p class="mut">09:01 WhatsApp an Clara erneut versucht: <em>&bdquo;You have 0 messages left &hellip; Message not sent&ldquo;</em>, Teil 2 daraufhin nicht gesendet. ntfy bewusst nicht erneut &ndash; Claras zwei Teile von 08:03 liegen dort noch.</p>
   </div>
 </section>
 
 <footer>
-  <p>Aktualisiert: Freitag, 11.09.2026, 08:11 Uhr (CEST) &ndash; Lauf Franz 08:08 (Seite aus Lauf Clara 08:00 gepr&uuml;ft, 0 Korrekturen)<br>
+  <p>Aktualisiert: Freitag, 11.09.2026, 09:02 Uhr (CEST) &ndash; Zweitlauf Clara 09:00 (0 Korrekturen); davor Lauf Franz 08:08 (Seite aus Lauf Clara 08:00 gepr&uuml;ft, 0 Korrekturen)<br>
   Quelle: MyTimetable-Feed, beide Kalender einzeln geladen (je 76 Eintr&auml;ge; Sync Franz 08:07, Clara 08:08 CEST).<br>
   Canvas: HTTP 401 seit 18.07.2026 &ndash; keine Themen, keine Literatur, keine Abgaben.</p>
 </footer>
