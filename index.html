@@ -171,7 +171,7 @@
 </section>
 
 <section>
-  <h2>Pr&uuml;fprotokoll &middot; L&auml;ufe 08:00 (Clara), 08:08 (Franz) und 09:00 (Clara, Zweitlauf)</h2>
+  <h2>Pr&uuml;fprotokoll &middot; L&auml;ufe 08:00 (Clara), 08:08 (Franz), 09:00 (Clara, Zweitlauf) und 09:03 (Franz, Zweitlauf)</h2>
   <div class="card">
     <ul>
       <li>Beide Kalender um <strong>08:00 CEST</strong> geladen (Sync-Stempel 08:00): Clara <code>sha1 3a97f42e</code>, Franz <code>sha1 5f88e7f8</code> &ndash; je <strong>76 Eintr&auml;ge</strong> (39 mit Uhrzeit + 37 Ganztags).</li>
@@ -184,6 +184,7 @@
       <li>Jede Zeit, jeder Raum, jede Gruppe und jeder Dozent dieser Seite erneut gegen beide Feeds abgeglichen, zwei Wege (Python-Parser; grep auf der entfalteten Datei): je Person Fr 2 &middot; Sa/So/Mo 0 &middot; Di 2 &middot; Do 1 &middot; Fr 18.09. 2 Termine &ndash; <strong>einig, 0 Korrekturen</strong>.</li>
       <li>Canvas um 08:08 angefragt (<code>courses</code>, <code>users/self</code>, <code>planner/items</code>): alle drei weiterhin <code>HTTP 401</code>.</li>
       <li><strong>Zweitlauf Clara 09:00:</strong> Claras Kalender neu geladen (Sync 09:00, <code>sha1 72cb6567</code>, 76 Eintr&auml;ge). UID-Vergleich gegen den 08:08-Abzug: <strong>0 verschwunden, 0 neu, 0 ver&auml;ndert</strong>. Jede Clara-Zeile (Fr 2 &middot; Sa/So/Mo 0 &middot; Di 2 &middot; Do 17.09. 1 &middot; Fr 18.09. 2; Fristen 21./25.09.) gegen den Feed gepr&uuml;ft: <strong>0 Korrekturen</strong>. Nur Claras Feed gepr&uuml;ft &ndash; Franz&rsquo; Feed pr&uuml;ft sein eigener Durchgang. Canvas 09:00: <code>HTTP 401</code>.</li>
+      <li><strong>Zweitlauf Franz 09:03:</strong> Franz&rsquo; Kalender neu geladen (Sync 09:04, <code>sha1 a5b150e3</code>, 76 Eintr&auml;ge). UID-Vergleich gegen den 08:07-Abzug (ohne die Export-Stempel <code>DTSTAMP</code>/<code>CREATED</code>/<code>LAST-MODIFIED</code>): <strong>0 verschwunden, 0 neu, 0 ver&auml;ndert</strong>. Jede Franz-Zeile (Fr 2 &middot; Sa/So/Mo 0 &middot; Di 2 &middot; Do 17.09. 1 &middot; Fr 18.09. 2; Fristen 21./25.09.) gegen den Feed gepr&uuml;ft, ein Weg (Python-Parser auf der entfalteten Datei): <strong>0 Korrekturen</strong>. EBS2079 am 17.09. ist der fr&uuml;heste Termin dieses Kurses im Feed (der n&auml;chste erst am 30.09.) &ndash; &bdquo;erster Termin&ldquo; stimmt. Franz&rsquo; zwei ntfy-Teile von 08:11 ebenfalls gegen den Feed gelesen: 0 Abweichungen, 16/17 Zeilenumbr&uuml;che (lesbar). Canvas 09:03: <code>HTTP 401</code>.</li>
     </ul>
   </div>
 </section>
@@ -194,12 +195,13 @@
     <p class="lead">WhatsApp ist seit dem 13.07. tot &ndash; das CallMeBot-Kontingent steht f&uuml;r beide Nummern auf 0, heute Tag 60.</p>
     <p class="mut">Der Ersatzkanal ntfy l&auml;uft &uuml;ber ein Topic, das Franz geh&ouml;rt; ob <strong>Clara</strong> es abonniert hat, ist nie best&auml;tigt worden. F&uuml;r sie ist diese Seite deshalb der einzige verl&auml;ssliche Kanal.</p>
     <p class="mut">09:01 WhatsApp an Clara erneut versucht: <em>&bdquo;You have 0 messages left &hellip; Message not sent&ldquo;</em>, Teil 2 daraufhin nicht gesendet. ntfy bewusst nicht erneut &ndash; Claras zwei Teile von 08:03 liegen dort noch.</p>
+    <p class="mut">09:04 WhatsApp an Franz einmal versucht (eigener Schl&uuml;ssel): ebenfalls <em>&bdquo;You have 0 messages left &hellip; Message not sent&ldquo;</em>, Teil 2 nicht gesendet. ntfy bewusst nicht erneut &ndash; Franz&rsquo; zwei Teile von 08:11 liegen dort noch und stimmen mit dem 09:04-Feed &uuml;berein.</p>
   </div>
 </section>
 
 <footer>
-  <p>Aktualisiert: Freitag, 11.09.2026, 09:02 Uhr (CEST) &ndash; Zweitlauf Clara 09:00 (0 Korrekturen); davor Lauf Franz 08:08 (Seite aus Lauf Clara 08:00 gepr&uuml;ft, 0 Korrekturen)<br>
-  Quelle: MyTimetable-Feed, beide Kalender einzeln geladen (je 76 Eintr&auml;ge; Sync Franz 08:07, Clara 08:08 CEST).<br>
+  <p>Aktualisiert: Freitag, 11.09.2026, 09:08 Uhr (CEST) &ndash; Zweitlauf Franz 09:03 (0 Korrekturen); davor Zweitlauf Clara 09:00 (0 Korrekturen) und Lauf Franz 08:08 (Seite aus Lauf Clara 08:00 gepr&uuml;ft, 0 Korrekturen)<br>
+  Quelle: MyTimetable-Feed, beide Kalender einzeln geladen (je 76 Eintr&auml;ge; Sync Franz 09:04, Clara 08:08 CEST).<br>
   Canvas: HTTP 401 seit 18.07.2026 &ndash; keine Themen, keine Literatur, keine Abgaben.</p>
 </footer>
 
