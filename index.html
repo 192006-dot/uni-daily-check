@@ -171,7 +171,7 @@
 </section>
 
 <section>
-  <h2>Pr&uuml;fprotokoll &middot; Lauf 08:00 (Clara)</h2>
+  <h2>Pr&uuml;fprotokoll &middot; L&auml;ufe 08:00 (Clara) und 08:08 (Franz)</h2>
   <div class="card">
     <ul>
       <li>Beide Kalender um <strong>08:00 CEST</strong> geladen (Sync-Stempel 08:00): Clara <code>sha1 3a97f42e</code>, Franz <code>sha1 5f88e7f8</code> &ndash; je <strong>76 Eintr&auml;ge</strong> (39 mit Uhrzeit + 37 Ganztags).</li>
@@ -180,6 +180,9 @@
       <li>Jede Zeit, jeder Raum, jede Gruppe und jeder Dozent auf dieser Seite stammt aus dem heutigen Feed, UTC &rarr; CEST +2 h.</li>
       <li>Canvas um 08:00 angefragt (<code>users/self</code>, <code>courses</code>, <code>planner/items</code>): alle drei <code>HTTP 401 &middot; expired_at 2026-07-18</code>.</li>
       <li>Aussehen unver&auml;ndert: CSS-Block aus der Vorg&auml;ngerseite &uuml;bernommen.</li>
+      <li><strong>Lauf Franz 08:08:</strong> beide Kalender neu geladen &ndash; Franz Sync 08:07 (<code>sha1 acf1a0c2</code>), Clara Sync 08:08, je 76 Eintr&auml;ge. Gegen den 08:00-Abzug: <strong>0 verschwunden, 0 neu, 0 ver&auml;ndert</strong>.</li>
+      <li>Jede Zeit, jeder Raum, jede Gruppe und jeder Dozent dieser Seite erneut gegen beide Feeds abgeglichen, zwei Wege (Python-Parser; grep auf der entfalteten Datei): je Person Fr 2 &middot; Sa/So/Mo 0 &middot; Di 2 &middot; Do 1 &middot; Fr 18.09. 2 Termine &ndash; <strong>einig, 0 Korrekturen</strong>.</li>
+      <li>Canvas um 08:08 angefragt (<code>courses</code>, <code>users/self</code>, <code>planner/items</code>): alle drei weiterhin <code>HTTP 401</code>.</li>
     </ul>
   </div>
 </section>
@@ -193,8 +196,8 @@
 </section>
 
 <footer>
-  <p>Aktualisiert: Freitag, 11.09.2026, 08:05 Uhr (CEST) &ndash; Lauf Clara 08:00<br>
-  Quelle: MyTimetable-Feed, beide Kalender einzeln geladen (je 76 Eintr&auml;ge; Sync 08:00 CEST).<br>
+  <p>Aktualisiert: Freitag, 11.09.2026, 08:11 Uhr (CEST) &ndash; Lauf Franz 08:08 (Seite aus Lauf Clara 08:00 gepr&uuml;ft, 0 Korrekturen)<br>
+  Quelle: MyTimetable-Feed, beide Kalender einzeln geladen (je 76 Eintr&auml;ge; Sync Franz 08:07, Clara 08:08 CEST).<br>
   Canvas: HTTP 401 seit 18.07.2026 &ndash; keine Themen, keine Literatur, keine Abgaben.</p>
 </footer>
 
