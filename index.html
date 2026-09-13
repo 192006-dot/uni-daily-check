@@ -227,7 +227,7 @@
 </section>
 
 <section>
-  <h2>Pr&uuml;fprotokoll &middot; Lauf Clara 08:00</h2>
+  <h2>Pr&uuml;fprotokoll &middot; L&auml;ufe Clara 08:00 und 09:00</h2>
   <div class="card">
     <ul>
       <li>Beide Kalender heute geladen (Sync-Stempel Clara 08:00, Franz 08:01): Clara <code>sha1 c3ddf7e7</code>, Franz <code>sha1 e3bff031</code> &ndash; je <strong>76 Eintr&auml;ge</strong> (39 mit Uhrzeit + 37 Ganztags). Rohkopien liegen au&szlig;erhalb dieses Repos.</li>
@@ -236,6 +236,7 @@
       <li>Jede Zeit, jeder Raum, jede Gruppe und jeder Dozent stammt aus dem heutigen Feed, UTC &rarr; CEST +2 h. Stra&szlig;ennamen aus den Kartenlinks im Feed.</li>
       <li>Canvas um 08:01 und 08:10 angefragt (<code>users/self</code>, <code>courses</code>, <code>planner/items</code>): alle sechs Abfragen <code>HTTP 401 &middot; expired_at 2026-07-18</code>.</li>
       <li>Aussehen unver&auml;ndert: CSS-Block aus der Vorg&auml;ngerseite &uuml;bernommen.</li>
+      <li><strong>Zweitlauf 09:00:</strong> beide Kalender neu geladen (Sync 09:00, je 76 Eintr&auml;ge), Vergleich mit den Abz&uuml;gen vom Freitag 11.09. 08:08: <strong>0 verschwunden, 0 neu, 0 ver&auml;ndert</strong>. Woche 14.&ndash;18.09. zweifach ausgez&auml;hlt: Clara 5, Franz 5 &ndash; beide Wege einig. Jede Zeit, jeder Raum, jede Gruppe und jeder Dozent dieser Seite und der drei 08:13-Nachrichten erneut gegen den Feed gelesen, dazu jede Mengen- und Reihenfolge-Aussage (&bdquo;erster Termin&ldquo;, &bdquo;letzte beiden Freitage&ldquo;, &bdquo;drei&ldquo; bzw. &bdquo;f&uuml;nfeinhalb Stunden frei&ldquo;, &bdquo;nur 15 Minuten&ldquo;): <strong>0 Korrekturen</strong>. Canvas um 09:00 erneut <code>HTTP 401 &middot; Expired access token</code>. Rohkopien jetzt unter <code>snapshots/*-20260913-0900.ics</code>.</li>
     </ul>
   </div>
 </section>
@@ -245,12 +246,13 @@
   <div class="card">
     <p class="lead">WhatsApp ist seit dem 13.07. tot &ndash; heute Tag 62.</p>
     <p class="mut">08:13 Nachricht 1 an Clara per CallMeBot gesendet, Antwort w&ouml;rtlich <em>&bdquo;You have 0 messages left &hellip; Message not sent&ldquo;</em>. Teil 2 und 3 daraufhin nicht an CallMeBot, sondern alle drei Teile um 08:13 &uuml;ber ntfy (Titel <em>CLARA &middot; Wochenplan</em>), im Topic wiedergefunden: 3 von 3.</p>
+    <p class="mut">09:05 (Zweitlauf): ntfy bewusst <strong>nicht</strong> erneut gesendet &ndash; die drei Teile von 08:13 stehen vollst&auml;ndig und lesbar im Topic. CallMeBot einmal mit Teil 1 versucht, Antwort w&ouml;rtlich <em>&bdquo;You have 0 messages left &hellip; Message not sent&ldquo;</em>.</p>
     <p class="mut">Der Ersatzkanal ntfy l&auml;uft &uuml;ber ein Topic, das Franz geh&ouml;rt; ob <strong>Clara</strong> es abonniert hat, ist nie best&auml;tigt worden. F&uuml;r sie ist diese Seite deshalb der einzige verl&auml;ssliche Kanal.</p>
   </div>
 </section>
 
 <footer>
-  <p>Aktualisiert: Sonntag, 13.09.2026, 08:12 Uhr (CEST) &ndash; Wochenplan, Lauf Clara<br>
+  <p>Aktualisiert: Sonntag, 13.09.2026, 08:12 Uhr (CEST) &ndash; Wochenplan, Lauf Clara &middot; gepr&uuml;ft 09:05 Uhr (Zweitlauf, 0 Korrekturen)<br>
   Quelle: MyTimetable-Feed, beide Kalender einzeln geladen (je 76 Eintr&auml;ge; Sync Clara 08:00, Franz 08:01 CEST).<br>
   Canvas: HTTP 401 seit 18.07.2026 &ndash; keine Themen, keine Literatur, keine Abgaben.</p>
 </footer>
