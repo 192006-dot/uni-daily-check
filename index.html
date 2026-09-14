@@ -172,7 +172,7 @@
   <h2>Literatur &middot; Ank&uuml;ndigungen &middot; Abgaben</h2>
   <div class="card rot">
     <h3 class="rot">Canvas ist seit 58 Tagen nicht abrufbar</h3>
-    <p class="lead">Der Zugang, mit dem dieser Check Themen, Literatur, Abgaben und Ank&uuml;ndigungen liest, ist am <strong>18.07.2026</strong> abgelaufen. Heute um 08:01 erneut gepr&uuml;ft (drei Abfragen: <code>users/self</code>, <code>planner/items</code>, <code>courses</code>): alle <code>HTTP 401 &middot; Expired access token</code>.</p>
+    <p class="lead">Der Zugang, mit dem dieser Check Themen, Literatur, Abgaben und Ank&uuml;ndigungen liest, ist am <strong>18.07.2026</strong> abgelaufen. Heute um 08:01 (Lauf Clara) und um 08:12 (Lauf Franz) erneut gepr&uuml;ft, je drei Abfragen (<code>users/self</code>, <code>planner/items</code>, <code>courses</code>): alle sechs <code>HTTP 401 &middot; Expired access token</code>.</p>
     <p>Deshalb steht auf dieser Seite <strong>kein Buchtitel, kein Kapitel, keine Abgabe und keine Ank&uuml;ndigung</strong>. Nicht weil es nichts g&auml;be &ndash; sondern weil geraten schlimmer w&auml;re als nichts zu sagen.</p>
     <p class="mut">Was ihr in Canvas &ouml;ffnen m&uuml;sst, nach Tag:</p>
     <div class="pfad">
@@ -234,18 +234,32 @@
 </section>
 
 <section>
+  <h2>Pr&uuml;fprotokoll &middot; Lauf Franz 08:12</h2>
+  <div class="card">
+    <ul>
+      <li>Franz&rsquo; Kalender um 08:12 erneut geladen (Sync-Stempel im Feed 08:11): <code>sha1 a89dd07e</code>, <strong>76 Eintr&auml;ge</strong> (39 mit Uhrzeit + 37 Ganztags). Vergleich mit dem 08:01-Abzug (UID, Zeit, Titel): <strong>0 verschwunden, 0 neu, 0 ver&auml;ndert</strong>.</li>
+      <li><strong>Zwei unabh&auml;ngig gebaute Auswertungen</strong> (Python-Parser; Perl-Zustandsautomat), dazu eine dritte Z&auml;hlung per <code>grep</code> auf die Rohzeilen: Mo 0 &middot; Di 2 &middot; Mi 0 &middot; Do 1 &middot; Fr 2 &ndash; alle drei einig; 17 Eintr&auml;ge 13.09.&ndash;04.10. inhaltlich identisch mit dem Parse des Clara-Laufs.</li>
+      <li>Jede Franz-Zeile dieser Seite (Di 15.09., Do 17.09., Fr 18.09. sowie die Vorschau 22.09., 25.09., 30.09.) gegen diesen Feed gepr&uuml;ft: <strong>0 Korrekturen</strong>. Slot-Audit 10 von 10 Zeilen mit Feed-Deckung, Aussehen unver&auml;ndert (CSS <code>3a60a994</code>).</li>
+      <li>Canvas um 08:12 angefragt (<code>users/self</code>, <code>courses</code>, <code>planner/items</code>): alle drei <code>HTTP 401 &middot; expired_at 2026-07-18</code> &ndash; Tag 58.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
   <h2>Zustellung</h2>
   <div class="card">
     <p class="lead">WhatsApp ist seit dem 13.07. tot &ndash; heute Tag 63.</p>
     <p class="mut">08:07 Nachricht 1 an Clara per CallMeBot gesendet, Antwort w&ouml;rtlich <em>&bdquo;Message not sent You have 0 messages left&ldquo;</em>. Teil 2 daraufhin nicht an CallMeBot.</p>
     <p class="mut">08:07 beide Teile &uuml;ber ntfy (Titel <em>CLARA &middot; Tages-Check</em>, Kennungen <code>5Als04KAd3AV</code>, <code>e7rESwwZX8r2</code>), im Topic wiedergefunden: 2 von 2.</p>
+    <p class="mut" style="margin-top:12px"><strong>Franz:</strong> 08:14 Nachricht 1 per CallMeBot an +49&nbsp;160&nbsp;&hellip;&nbsp;844 gesendet, Antwort w&ouml;rtlich <em>&bdquo;You have 0 messages left &hellip; Message not sent&ldquo;</em>. Teil 2 daraufhin nicht an CallMeBot.</p>
+    <p class="mut">08:14 beide Teile &uuml;ber ntfy (Titel <em>FRANZ &middot; Tages-Check</em>, Kennungen <code>maX5sa55bOWM</code>, <code>YvlGR78AS6j7</code>), im Topic wiedergefunden: 2 von 2.</p>
     <p class="mut">Der Ersatzkanal ntfy l&auml;uft &uuml;ber ein Topic, das Franz geh&ouml;rt; ob <strong>Clara</strong> es abonniert hat, ist nie best&auml;tigt worden. F&uuml;r sie ist diese Seite deshalb der einzige verl&auml;ssliche Kanal.</p>
   </div>
 </section>
 
 <footer>
-  <p>Aktualisiert: Montag, 14.09.2026, 08:06 Uhr (CEST) &ndash; Tages-Check, Lauf Clara<br>
-  Quelle: MyTimetable-Feed, beide Kalender einzeln geladen (je 76 Eintr&auml;ge; Sync 08:01 CEST).<br>
+  <p>Aktualisiert: Montag, 14.09.2026, 08:15 Uhr (CEST) &ndash; Tages-Check, Lauf Clara 08:06 + Lauf Franz<br>
+  Quelle: MyTimetable-Feed, beide Kalender einzeln geladen (je 76 Eintr&auml;ge; Sync 08:01 CEST, Franz erneut 08:11 CEST).<br>
   Canvas: HTTP 401 seit 18.07.2026 &ndash; keine Themen, keine Literatur, keine Abgaben.</p>
 </footer>
 
