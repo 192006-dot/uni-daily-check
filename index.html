@@ -169,7 +169,7 @@
   <h2>Literatur &middot; Ank&uuml;ndigungen &middot; Abgaben</h2>
   <div class="card rot">
     <h3 class="rot">Canvas ist seit 59 Tagen nicht abrufbar</h3>
-    <p class="lead">Der Zugang, mit dem dieser Check Themen, Literatur, Abgaben und Ank&uuml;ndigungen liest, ist am <strong>18.07.2026</strong> abgelaufen. Heute um 08:00, 08:12 und 09:00 erneut gepr&uuml;ft (je drei Abfragen: <code>users/self</code>, <code>courses</code>, <code>planner/items</code>): alle <code>HTTP 401 &middot; Expired access token</code>.</p>
+    <p class="lead">Der Zugang, mit dem dieser Check Themen, Literatur, Abgaben und Ank&uuml;ndigungen liest, ist am <strong>18.07.2026</strong> abgelaufen. Heute um 08:00, 08:12, 09:00 und 09:06 erneut gepr&uuml;ft (je drei Abfragen: <code>users/self</code>, <code>courses</code>, <code>planner/items</code>): alle <code>HTTP 401 &middot; Expired access token</code>.</p>
     <p>Deshalb steht auf dieser Seite <strong>kein Buchtitel, kein Kapitel, keine Abgabe und keine Ank&uuml;ndigung</strong>. Nicht weil es nichts g&auml;be &ndash; sondern weil geraten schlimmer w&auml;re als nichts zu sagen.</p>
     <p class="mut">Was ihr in Canvas &ouml;ffnen m&uuml;sst, nach Tag:</p>
     <div class="pfad">
@@ -189,10 +189,12 @@
   <div class="card gelb">
     <h3 class="gelb">Diese Woche &middot; 15.&ndash;18.09.</h3>
     <p class="lead"><strong>Keine Frist im Stundenplan.</strong> Das hei&szlig;t nur, dass die Uni hier nichts eingetragen hat &ndash; Abgaben in Canvas tauchen im Stundenplan nie auf und sind oben nicht gepr&uuml;ft.</p>
+    <p class="mut">F&uuml;r Franz gilt das seit 09:06 doppelt: sein Stundenplan liefert gerade <strong>gar keine</strong> Fristeintr&auml;ge mehr (siehe Pr&uuml;fprotokoll). In Claras vollst&auml;ndigem Kalender steht f&uuml;r diese Woche ebenfalls keine.</p>
   </div>
   <div class="card gruen">
     <h3>N&auml;chste Woche &middot; Exam-(De)Registration Periode 1</h3>
     <p class="lead">Laut Stundenplan <strong>offen ab Montag 21.09.</strong>, schlie&szlig;t <strong>Freitag 25.09. um 17:00</strong>.</p>
+    <p class="mut">Quelle: Claras Stundenplan (09:08) und Franz&rsquo; eigener bis 08:12. In Franz&rsquo; Stundenplan fehlt diese Frist seit 09:06 &ndash; zusammen mit allen anderen SBE-Eintr&auml;gen. Im Student Portal kurz gegenpr&uuml;fen.</p>
     <p>Konkret: im Student Portal pr&uuml;fen, f&uuml;r welche Pr&uuml;fungen der Periode 1 ihr angemeldet seid, und bei Bedarf an- oder abmelden. <strong>Am Montag oder Dienstag erledigen</strong>, nicht erst am Freitag.</p>
   </div>
   <div class="card">
@@ -212,12 +214,13 @@
       <li><strong>Unsichtbare Abgabe.</strong> Steht in Canvas eine Abgabe f&uuml;r diese Woche, erscheint sie hier nicht. Nur der eigene Blick schlie&szlig;t das aus.</li>
       <li><strong>Claras Dienstag (heute):</strong> 30 Minuten f&uuml;r den Geb&auml;udewechsel TS53 G0.03 &rarr; TAP23 (X) 0.013.</li>
       <li><strong>Freitag endet erst um 18:00.</strong> Behavioural Economics ist am 18.09. keine Tutorial-Sitzung, sondern eine Vorlesung 16:00&ndash;18:00 in TAP11 F0.019 bei Thomas Meissner. Wer nach Gewohnheit plant, verpasst sie.</li>
+      <li><strong>Franz&rsquo; Fristen-Quelle ist seit 09:06 leer.</strong> Sein Stundenplan liefert keine SBE-Anmeldefristen mehr; dieser Check sieht sie f&uuml;r ihn nur noch &uuml;ber Claras Kalender. Falls in MyTimetable etwas am Abo ge&auml;ndert wurde, dort nachsehen.</li>
     </ul>
   </div>
 </section>
 
 <section>
-  <h2>Pr&uuml;fprotokoll &middot; Lauf Clara 08:00 &middot; Lauf Franz 08:12 &middot; Lauf Clara 09:00</h2>
+  <h2>Pr&uuml;fprotokoll &middot; Lauf Clara 08:00 &middot; Lauf Franz 08:12 &middot; Lauf Clara 09:00 &middot; Lauf Franz 09:06</h2>
   <div class="card">
     <ul>
       <li>Beide Kalender heute geladen (Sync-Stempel je 08:00): Clara <code>sha1 d270dac8</code>, Franz <code>sha1 a0869da5</code> &ndash; je <strong>75 Eintr&auml;ge</strong> (38 mit Uhrzeit + 37 Ganztags). Rohkopien liegen au&szlig;erhalb dieses Repos.</li>
@@ -229,6 +232,10 @@
       <li>Canvas um 08:12 erneut angefragt (dieselben drei Abfragen): wieder alle <code>HTTP 401 &middot; expired_at 2026-07-18</code>.</li>
       <li><strong>Lauf Clara 09:00:</strong> Claras Kalender neu geladen (Sync-Stempel 09:00, <code>sha1 03aba5c9</code>, 75 Eintr&auml;ge). Gegen den 08:00-Abzug nach dem Entfalten <strong>0 inhaltliche Unterschiede</strong> (nur Sync-, DTSTAMP-, CREATED- und LAST-MODIFIED-Stempel), UID-Mengen identisch. Beide Auswertungen (Python, Perl) je 17 Eintr&auml;ge 15.09.&ndash;04.10., identisch &ndash; erst nach Korrektur zweier Parser-Fehler, nicht der Daten (Perl verlor die Start-Minuten, Python k&uuml;rzte den Dozentennamen &bdquo;Palma, R, di&ldquo;). Alle Clara-Zeilen 15.&ndash;18.09. (5 von 5) und die Clara-Aussagen im Flie&szlig;text (21.09., 22.09., 25.09., 30.09.) nachgepr&uuml;ft: <strong>0 Korrekturen</strong>.</li>
       <li>Canvas um 09:00 erneut angefragt (dieselben drei Abfragen): wieder alle <code>HTTP 401 &middot; expired_at 2026-07-18</code>.</li>
+      <li><strong>Lauf Franz 09:06:</strong> Franz&rsquo; Kalender zweimal neu geladen (Sync 09:06 <code>sha1 91c2b6c0</code>, Sync 09:08 <code>sha1 1ded823f</code>, je 26&nbsp;231 Byte, beide vollst&auml;ndig bis <code>END:VCALENDAR</code>): je nur noch <strong>38 Eintr&auml;ge statt 75</strong>. UID-Vergleich gegen Franz&rsquo; Abzug von gestern 09:06: <strong>38 weg, 0 neu, 0 ver&auml;ndert</strong>. Weg sind der vergangene Termin vom 22.06. und <strong>alle 37 SBE-Eintr&auml;ge</strong> (Anmelde-Hinweise und -Fristen bis Juni 2027). Keine Lehrveranstaltung und keine Pr&uuml;fung ist verschwunden (30 Tutorials, 6 Vorlesungen, 2 Pr&uuml;fungen).</li>
+      <li>Gegenprobe mit Claras Kalender (Sync 09:08): <strong>75 Eintr&auml;ge, alle 37 SBE-Eintr&auml;ge vorhanden</strong>, darunter Exam-(De)Registration Periode 1 am 21.09. (offen), 24.09. (Hinweis) und 25.09. (<em>closes TODAY (17:00h)</em>); zwischen 15. und 18.09. keiner. Der Fristen-Kanal ist damit wieder personenabh&auml;ngig &ndash; wie am 01.09., nur diesmal bei Franz. Ob Franz&rsquo; Abo ge&auml;ndert wurde oder der Export aussetzt, zeigt der Feed nicht.</li>
+      <li>Alle Franz-Zeilen 15.&ndash;18.09. (5 von 5) und die Franz-Aussagen im Flie&szlig;text (erster Leadership-Termin 17.09., f&uuml;nfeinhalb freie Stunden am 18.09., Vorschau 22.09., 25.09. mit 15 Minuten Wegzeit, 30.09.) gegen den 09:06-Abzug nachgepr&uuml;ft: <strong>0 Korrekturen</strong>. Erg&auml;nzt wurden nur die Quellenangaben der Fristen.</li>
+      <li>Canvas um 09:06 erneut angefragt (dieselben drei Abfragen): wieder alle <code>HTTP 401 &middot; expired_at 2026-07-18</code>.</li>
       <li>Aussehen unver&auml;ndert: CSS-Block aus der Vorg&auml;ngerseite &uuml;bernommen.</li>
     </ul>
   </div>
@@ -243,13 +250,14 @@
     <p class="mut">08:15 Nachricht 1 an Franz per CallMeBot gesendet, Antwort w&ouml;rtlich <em>&bdquo;You have 0 messages left &hellip; Message not sent&ldquo;</em>. Teil 2 daraufhin nicht an CallMeBot.</p>
     <p class="mut">08:15 beide Teile &uuml;ber ntfy (Titel <em>FRANZ &middot; Di 15.09.</em>, Kennungen <code>k2j3kTQrwUIj</code>, <code>U3Hp943gHyY4</code>), im Topic wiedergefunden: 2 von 2, Wortlaut identisch.</p>
     <p class="mut">09:02 Nachricht 1 an Clara erneut per CallMeBot gesendet, Antwort enth&auml;lt <em>&bdquo;messages left&ldquo;</em> und <em>&bdquo;Message not sent&ldquo;</em>. Teil 2 daraufhin nicht an CallMeBot. ntfy nicht erneut &ndash; Claras beide Teile von 08:07 stehen noch im Topic.</p>
+    <p class="mut">09:09 Nachricht 1 an Franz erneut per CallMeBot gesendet, Antwort w&ouml;rtlich <em>&bdquo;You have 0 messages left &hellip; Message not sent&ldquo;</em>. Teil 2 daraufhin nicht an CallMeBot. ntfy nicht erneut &ndash; Franz&rsquo; beide Teile von 08:15 stehen noch im Topic; Termine und die Frist 21.&ndash;25.09. darin sind weiter gedeckt (die Frist jetzt &uuml;ber Claras Kalender).</p>
     <p class="mut">Der Ersatzkanal ntfy l&auml;uft &uuml;ber ein Topic, das Franz geh&ouml;rt; ob <strong>Clara</strong> es abonniert hat, ist nie best&auml;tigt worden. F&uuml;r sie ist diese Seite deshalb der einzige verl&auml;ssliche Kanal.</p>
   </div>
 </section>
 
 <footer>
-  <p>Aktualisiert: Dienstag, 15.09.2026, 09:03 Uhr (CEST) &ndash; Tages-Check, Lauf Clara 08:08, Lauf Franz und Lauf Clara 09:00<br>
-  Quelle: MyTimetable-Feed, beide Kalender einzeln geladen (je 75 Eintr&auml;ge; Sync 08:00 CEST, Franz erneut 08:12 CEST, Clara erneut 09:00 CEST).<br>
+  <p>Aktualisiert: Dienstag, 15.09.2026, 09:13 Uhr (CEST) &ndash; Tages-Check, Lauf Clara 08:08, Lauf Franz 08:12, Lauf Clara 09:00, Lauf Franz 09:06<br>
+  Quelle: MyTimetable-Feed, beide Kalender einzeln geladen (je 75 Eintr&auml;ge; Sync 08:00 CEST, Franz erneut 08:12 CEST, Clara erneut 09:00 und 09:08 CEST; Franz erneut 09:06 und 09:08 CEST nur noch 38 &ndash; ohne SBE-Fristen).<br>
   Canvas: HTTP 401 seit 18.07.2026 &ndash; keine Themen, keine Literatur, keine Abgaben.</p>
 </footer>
 
