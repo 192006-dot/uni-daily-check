@@ -169,7 +169,7 @@
   <h2>Literatur &middot; Ank&uuml;ndigungen &middot; Abgaben</h2>
   <div class="card rot">
     <h3 class="rot">Canvas ist seit 59 Tagen nicht abrufbar</h3>
-    <p class="lead">Der Zugang, mit dem dieser Check Themen, Literatur, Abgaben und Ank&uuml;ndigungen liest, ist am <strong>18.07.2026</strong> abgelaufen. Heute um 08:00 erneut gepr&uuml;ft (drei Abfragen: <code>users/self</code>, <code>courses</code>, <code>planner/items</code>): alle <code>HTTP 401 &middot; Expired access token</code>.</p>
+    <p class="lead">Der Zugang, mit dem dieser Check Themen, Literatur, Abgaben und Ank&uuml;ndigungen liest, ist am <strong>18.07.2026</strong> abgelaufen. Heute um 08:00 und 08:12 erneut gepr&uuml;ft (je drei Abfragen: <code>users/self</code>, <code>courses</code>, <code>planner/items</code>): alle <code>HTTP 401 &middot; Expired access token</code>.</p>
     <p>Deshalb steht auf dieser Seite <strong>kein Buchtitel, kein Kapitel, keine Abgabe und keine Ank&uuml;ndigung</strong>. Nicht weil es nichts g&auml;be &ndash; sondern weil geraten schlimmer w&auml;re als nichts zu sagen.</p>
     <p class="mut">Was ihr in Canvas &ouml;ffnen m&uuml;sst, nach Tag:</p>
     <div class="pfad">
@@ -217,7 +217,7 @@
 </section>
 
 <section>
-  <h2>Pr&uuml;fprotokoll &middot; Lauf Clara 08:00</h2>
+  <h2>Pr&uuml;fprotokoll &middot; Lauf Clara 08:00 &middot; Lauf Franz 08:12</h2>
   <div class="card">
     <ul>
       <li>Beide Kalender heute geladen (Sync-Stempel je 08:00): Clara <code>sha1 d270dac8</code>, Franz <code>sha1 a0869da5</code> &ndash; je <strong>75 Eintr&auml;ge</strong> (38 mit Uhrzeit + 37 Ganztags). Rohkopien liegen au&szlig;erhalb dieses Repos.</li>
@@ -225,6 +225,8 @@
       <li>Vergleich mit den Abz&uuml;gen von gestern (Mo 14.09.): je Person <strong>1 Eintrag weniger</strong> &ndash; ein vergangener Termin vom 22.06. (Communication and Leadership Skills) ist hinten aus dem Feed gefallen, der &auml;lteste Eintrag ist jetzt vom 24.06. Sonst <strong>0 neu, 0 ver&auml;ndert</strong> (UID, Zeit, Titel, Raum, Dozent) &ndash; keine Absage, keine Verlegung.</li>
       <li>Jede Zeit, jeder Raum, jede Gruppe und jeder Dozent stammt aus dem heutigen Feed, UTC &rarr; CEST +2 h; jede Aussage im Flie&szlig;text (Wegzeiten, freie Stunden, Vorschau 22.09., 25.09., 30.09.) wurde beim Bau gegen den Feed gepr&uuml;ft &ndash; fehlt eine Deckung, bricht der Bau ab. Stra&szlig;ennamen aus den Kartenlinks im Feed.</li>
       <li>Canvas um 08:00 angefragt (<code>users/self</code>, <code>courses</code>, <code>planner/items</code>): alle drei <code>HTTP 401 &middot; expired_at 2026-07-18</code>.</li>
+      <li><strong>Lauf Franz 08:12:</strong> Franz&rsquo; Kalender neu geladen (Sync-Stempel 08:12, <code>sha1 3ebb9a30</code>, 75 Eintr&auml;ge). Gegen den 08:00-Abzug nach dem Entfalten der Zeilen <strong>0 Unterschiede</strong> au&szlig;er dem Sync-Stempel; beide Auswertungen (Python, Perl) erneut je 17 Eintr&auml;ge 15.09.&ndash;04.10., identisch. Alle Termin-Zeilen 15.&ndash;18.09. (10 von 10) und die Franz-Aussagen im Flie&szlig;text (Vorschau 22.09., 25.09., 30.09.) nachgepr&uuml;ft: <strong>0 Korrekturen</strong>.</li>
+      <li>Canvas um 08:12 erneut angefragt (dieselben drei Abfragen): wieder alle <code>HTTP 401 &middot; expired_at 2026-07-18</code>.</li>
       <li>Aussehen unver&auml;ndert: CSS-Block aus der Vorg&auml;ngerseite &uuml;bernommen.</li>
     </ul>
   </div>
@@ -236,13 +238,15 @@
     <p class="lead">WhatsApp ist seit dem 13.07. tot &ndash; heute Tag 64.</p>
     <p class="mut">08:07 Nachricht 1 an Clara per CallMeBot gesendet, Antwort w&ouml;rtlich <em>&bdquo;You have 0 messages left &hellip; Message not sent&ldquo;</em>. Teil 2 daraufhin nicht an CallMeBot.</p>
     <p class="mut">08:07 beide Teile &uuml;ber ntfy (Titel <em>CLARA &middot; Di 15.09.</em>, Kennungen <code>5A7pafmMUVFL</code>, <code>3w21Kp5dWHCc</code>), im Topic wiedergefunden: 2 von 2.</p>
+    <p class="mut">08:15 Nachricht 1 an Franz per CallMeBot gesendet, Antwort w&ouml;rtlich <em>&bdquo;You have 0 messages left &hellip; Message not sent&ldquo;</em>. Teil 2 daraufhin nicht an CallMeBot.</p>
+    <p class="mut">08:15 beide Teile &uuml;ber ntfy (Titel <em>FRANZ &middot; Di 15.09.</em>, Kennungen <code>k2j3kTQrwUIj</code>, <code>U3Hp943gHyY4</code>), im Topic wiedergefunden: 2 von 2, Wortlaut identisch.</p>
     <p class="mut">Der Ersatzkanal ntfy l&auml;uft &uuml;ber ein Topic, das Franz geh&ouml;rt; ob <strong>Clara</strong> es abonniert hat, ist nie best&auml;tigt worden. F&uuml;r sie ist diese Seite deshalb der einzige verl&auml;ssliche Kanal.</p>
   </div>
 </section>
 
 <footer>
-  <p>Aktualisiert: Dienstag, 15.09.2026, 08:08 Uhr (CEST) &ndash; Tages-Check, Lauf Clara<br>
-  Quelle: MyTimetable-Feed, beide Kalender einzeln geladen (je 75 Eintr&auml;ge; Sync 08:00 CEST).<br>
+  <p>Aktualisiert: Dienstag, 15.09.2026, 08:17 Uhr (CEST) &ndash; Tages-Check, Lauf Clara 08:08 und Lauf Franz<br>
+  Quelle: MyTimetable-Feed, beide Kalender einzeln geladen (je 75 Eintr&auml;ge; Sync 08:00 CEST, Franz erneut 08:12 CEST).<br>
   Canvas: HTTP 401 seit 18.07.2026 &ndash; keine Themen, keine Literatur, keine Abgaben.</p>
 </footer>
 
