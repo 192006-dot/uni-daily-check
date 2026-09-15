@@ -169,7 +169,7 @@
   <h2>Literatur &middot; Ank&uuml;ndigungen &middot; Abgaben</h2>
   <div class="card rot">
     <h3 class="rot">Canvas ist seit 59 Tagen nicht abrufbar</h3>
-    <p class="lead">Der Zugang, mit dem dieser Check Themen, Literatur, Abgaben und Ank&uuml;ndigungen liest, ist am <strong>18.07.2026</strong> abgelaufen. Heute um 08:00 und 08:12 erneut gepr&uuml;ft (je drei Abfragen: <code>users/self</code>, <code>courses</code>, <code>planner/items</code>): alle <code>HTTP 401 &middot; Expired access token</code>.</p>
+    <p class="lead">Der Zugang, mit dem dieser Check Themen, Literatur, Abgaben und Ank&uuml;ndigungen liest, ist am <strong>18.07.2026</strong> abgelaufen. Heute um 08:00, 08:12 und 09:00 erneut gepr&uuml;ft (je drei Abfragen: <code>users/self</code>, <code>courses</code>, <code>planner/items</code>): alle <code>HTTP 401 &middot; Expired access token</code>.</p>
     <p>Deshalb steht auf dieser Seite <strong>kein Buchtitel, kein Kapitel, keine Abgabe und keine Ank&uuml;ndigung</strong>. Nicht weil es nichts g&auml;be &ndash; sondern weil geraten schlimmer w&auml;re als nichts zu sagen.</p>
     <p class="mut">Was ihr in Canvas &ouml;ffnen m&uuml;sst, nach Tag:</p>
     <div class="pfad">
@@ -217,7 +217,7 @@
 </section>
 
 <section>
-  <h2>Pr&uuml;fprotokoll &middot; Lauf Clara 08:00 &middot; Lauf Franz 08:12</h2>
+  <h2>Pr&uuml;fprotokoll &middot; Lauf Clara 08:00 &middot; Lauf Franz 08:12 &middot; Lauf Clara 09:00</h2>
   <div class="card">
     <ul>
       <li>Beide Kalender heute geladen (Sync-Stempel je 08:00): Clara <code>sha1 d270dac8</code>, Franz <code>sha1 a0869da5</code> &ndash; je <strong>75 Eintr&auml;ge</strong> (38 mit Uhrzeit + 37 Ganztags). Rohkopien liegen au&szlig;erhalb dieses Repos.</li>
@@ -227,6 +227,8 @@
       <li>Canvas um 08:00 angefragt (<code>users/self</code>, <code>courses</code>, <code>planner/items</code>): alle drei <code>HTTP 401 &middot; expired_at 2026-07-18</code>.</li>
       <li><strong>Lauf Franz 08:12:</strong> Franz&rsquo; Kalender neu geladen (Sync-Stempel 08:12, <code>sha1 3ebb9a30</code>, 75 Eintr&auml;ge). Gegen den 08:00-Abzug nach dem Entfalten der Zeilen <strong>0 Unterschiede</strong> au&szlig;er dem Sync-Stempel; beide Auswertungen (Python, Perl) erneut je 17 Eintr&auml;ge 15.09.&ndash;04.10., identisch. Alle Termin-Zeilen 15.&ndash;18.09. (10 von 10) und die Franz-Aussagen im Flie&szlig;text (Vorschau 22.09., 25.09., 30.09.) nachgepr&uuml;ft: <strong>0 Korrekturen</strong>.</li>
       <li>Canvas um 08:12 erneut angefragt (dieselben drei Abfragen): wieder alle <code>HTTP 401 &middot; expired_at 2026-07-18</code>.</li>
+      <li><strong>Lauf Clara 09:00:</strong> Claras Kalender neu geladen (Sync-Stempel 09:00, <code>sha1 03aba5c9</code>, 75 Eintr&auml;ge). Gegen den 08:00-Abzug nach dem Entfalten <strong>0 inhaltliche Unterschiede</strong> (nur Sync-, DTSTAMP-, CREATED- und LAST-MODIFIED-Stempel), UID-Mengen identisch. Beide Auswertungen (Python, Perl) je 17 Eintr&auml;ge 15.09.&ndash;04.10., identisch &ndash; erst nach Korrektur zweier Parser-Fehler, nicht der Daten (Perl verlor die Start-Minuten, Python k&uuml;rzte den Dozentennamen &bdquo;Palma, R, di&ldquo;). Alle Clara-Zeilen 15.&ndash;18.09. (5 von 5) und die Clara-Aussagen im Flie&szlig;text (21.09., 22.09., 25.09., 30.09.) nachgepr&uuml;ft: <strong>0 Korrekturen</strong>.</li>
+      <li>Canvas um 09:00 erneut angefragt (dieselben drei Abfragen): wieder alle <code>HTTP 401 &middot; expired_at 2026-07-18</code>.</li>
       <li>Aussehen unver&auml;ndert: CSS-Block aus der Vorg&auml;ngerseite &uuml;bernommen.</li>
     </ul>
   </div>
@@ -240,13 +242,14 @@
     <p class="mut">08:07 beide Teile &uuml;ber ntfy (Titel <em>CLARA &middot; Di 15.09.</em>, Kennungen <code>5A7pafmMUVFL</code>, <code>3w21Kp5dWHCc</code>), im Topic wiedergefunden: 2 von 2.</p>
     <p class="mut">08:15 Nachricht 1 an Franz per CallMeBot gesendet, Antwort w&ouml;rtlich <em>&bdquo;You have 0 messages left &hellip; Message not sent&ldquo;</em>. Teil 2 daraufhin nicht an CallMeBot.</p>
     <p class="mut">08:15 beide Teile &uuml;ber ntfy (Titel <em>FRANZ &middot; Di 15.09.</em>, Kennungen <code>k2j3kTQrwUIj</code>, <code>U3Hp943gHyY4</code>), im Topic wiedergefunden: 2 von 2, Wortlaut identisch.</p>
+    <p class="mut">09:02 Nachricht 1 an Clara erneut per CallMeBot gesendet, Antwort enth&auml;lt <em>&bdquo;messages left&ldquo;</em> und <em>&bdquo;Message not sent&ldquo;</em>. Teil 2 daraufhin nicht an CallMeBot. ntfy nicht erneut &ndash; Claras beide Teile von 08:07 stehen noch im Topic.</p>
     <p class="mut">Der Ersatzkanal ntfy l&auml;uft &uuml;ber ein Topic, das Franz geh&ouml;rt; ob <strong>Clara</strong> es abonniert hat, ist nie best&auml;tigt worden. F&uuml;r sie ist diese Seite deshalb der einzige verl&auml;ssliche Kanal.</p>
   </div>
 </section>
 
 <footer>
-  <p>Aktualisiert: Dienstag, 15.09.2026, 08:17 Uhr (CEST) &ndash; Tages-Check, Lauf Clara 08:08 und Lauf Franz<br>
-  Quelle: MyTimetable-Feed, beide Kalender einzeln geladen (je 75 Eintr&auml;ge; Sync 08:00 CEST, Franz erneut 08:12 CEST).<br>
+  <p>Aktualisiert: Dienstag, 15.09.2026, 09:03 Uhr (CEST) &ndash; Tages-Check, Lauf Clara 08:08, Lauf Franz und Lauf Clara 09:00<br>
+  Quelle: MyTimetable-Feed, beide Kalender einzeln geladen (je 75 Eintr&auml;ge; Sync 08:00 CEST, Franz erneut 08:12 CEST, Clara erneut 09:00 CEST).<br>
   Canvas: HTTP 401 seit 18.07.2026 &ndash; keine Themen, keine Literatur, keine Abgaben.</p>
 </footer>
 
