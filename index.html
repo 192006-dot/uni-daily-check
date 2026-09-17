@@ -143,7 +143,7 @@
       <li><strong>Mo 21.09.:</strong> die Exam-(De)Registration Periode 1 &ouml;ffnet (siehe Fristen).</li>
       <li><strong>Di 22.09.</strong> Clara 11:00 TS53 G0.03 und 13:30 TAP23 (X) 0.013 &ndash; 30 Minuten f&uuml;r den Weg Tongersestraat &rarr; Tapijnkazerne. Franz 08:30 TS53 G0.03 und 11:00 TS53 A0.24.</li>
       <li><strong>Fr 25.09.</strong> Digitalisation and Organisations hat kein Tutorial, sondern eine <em>Guest Lecture</em> 08:45&ndash;10:45 in TAP11 F0.019 (beide). Danach Behavioural Economics: Clara 13:30 TS53 G0.03, Franz 11:00 TS53 H0.04 &ndash; f&uuml;r Franz nur 15 Minuten f&uuml;r den Wechsel. Um 17:00 schlie&szlig;t die Exam-Anmeldung.</li>
-      <li><strong>Klausuren Periode 1</strong> (laut Claras Stundenplan): 20.10. 15:00&ndash;17:00 Digitalisation and Organisations, Paul Henri Spaaklaan MECC Westhal &middot; 22.10. 12:00&ndash;14:00 Behavioural Economics (IB/IBE), Paul Henri Spaaklaan MECC Westhal. Daf&uuml;r gilt die Anmeldefrist n&auml;chste Woche.</li>
+      <li><strong>Klausuren Periode 1</strong> (in beiden Stundenpl&auml;nen &ndash; bei Franz um 08:08 erneut gepr&uuml;ft): 20.10. 15:00&ndash;17:00 Digitalisation and Organisations, Paul Henri Spaaklaan MECC Westhal &middot; 22.10. 12:00&ndash;14:00 Behavioural Economics (IB/IBE), Paul Henri Spaaklaan MECC Westhal. Daf&uuml;r gilt die Anmeldefrist n&auml;chste Woche.</li>
     </ul>
   </div>
 </section>
@@ -152,7 +152,7 @@
   <h2>Literatur &middot; Ank&uuml;ndigungen &middot; Abgaben</h2>
   <div class="card rot">
     <h3 class="rot">Canvas ist seit 61 Tagen nicht abrufbar</h3>
-    <p class="lead">Der Zugang, mit dem dieser Check Themen, Literatur, Abgaben und Ank&uuml;ndigungen liest, ist am <strong>18.07.2026</strong> abgelaufen. Heute um 08:00 an drei Stellen gepr&uuml;ft (<code>users/self</code>, <code>courses</code>, <code>planner/items</code>): jedes Mal <code>HTTP 401 &middot; Expired access token &middot; expired_at 2026-07-18</code>.</p>
+    <p class="lead">Der Zugang, mit dem dieser Check Themen, Literatur, Abgaben und Ank&uuml;ndigungen liest, ist am <strong>18.07.2026</strong> abgelaufen. Heute um 08:00 an drei Stellen gepr&uuml;ft (<code>users/self</code>, <code>courses</code>, <code>planner/items</code>): jedes Mal <code>HTTP 401 &middot; Expired access token &middot; expired_at 2026-07-18</code>. Lauf Franz um 08:08: dieselben drei Stellen, wieder <code>HTTP 401</code>.</p>
     <p>Deshalb steht auf dieser Seite <strong>kein Buchtitel, kein Kapitel, keine Abgabe und keine Ank&uuml;ndigung</strong> &ndash; nicht weil es nichts g&auml;be, sondern weil geraten schlimmer w&auml;re.</p>
     <p class="mut">Was ihr in Canvas selbst &ouml;ffnen m&uuml;sst:</p>
     <div class="pfad">
@@ -204,6 +204,19 @@
 </section>
 
 <section>
+  <h2>Pr&uuml;fprotokoll &middot; Lauf Franz 08:08</h2>
+  <div class="card">
+    <ul>
+      <li><strong>Franz-Kalender</strong> um 08:08 neu geladen (Sync-Stempel 08:08 CEST): <code>HTTP 200</code>, <strong>74 Eintr&auml;ge</strong> (37 mit Uhrzeit + 37 SBE-Ganztags).</li>
+      <li><strong>UID-Vergleich</strong> gegen den Abzug von 08:00: <strong>0 weg, 0 neu, 0 ge&auml;ndert</strong> (Beschreibung ohne Sync-Stempel verglichen).</li>
+      <li><strong>Zwei unabh&auml;ngig gebaute Auswertungen</strong> (Python-Parser; Perl mit timegm-Arithmetik) f&uuml;r 17.&ndash;30.09.: je <strong>13 Eintr&auml;ge, zeilengleich</strong>; Gegenprobe <code>EINIG</code>.</li>
+      <li><strong>Franz-Angaben dieser Seite</strong> gegen diesen Abzug gepr&uuml;ft: 3 Termin-Kacheln (mit Raum und Dozent) und 11 Aussagen im Flie&szlig;text &ndash; <strong>0 Korrekturen</strong>. Die Klausurtermine stehen auch in Franz&rsquo; Kalender.</li>
+      <li>Canvas 08:08: <code>users/self</code>, <code>courses</code>, <code>planner/items</code> &rarr; alle <code>HTTP 401</code>, <code>expired_at 2026-07-18</code> &ndash; Tag 61.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
   <h2>Zustellung</h2>
   <div class="card">
     <!--ZUSTELLUNG-->
@@ -211,13 +224,15 @@
     <p class="mut">08:04 Nachricht 1 an Clara per CallMeBot gesendet. Antwort w&ouml;rtlich <em>&bdquo;You have 0 messages left&ldquo;</em> und <em>&bdquo;Message not sent&ldquo;</em> &ndash; Teil 2 daraufhin <strong>nicht</strong> an CallMeBot geschickt.</p>
     <p class="mut">08:04 beide Teile &uuml;ber ntfy gesendet (Titel <em>CLARA &middot; Do 17.09.</em>), Kennungen <code>Ih5v4WS4awwk</code> und <code>65kykzcURa2A</code>, je HTTP 200 und per Abfrage des Topics wortgleich wiedergefunden.</p>
     <p class="mut">Das ntfy-Topic geh&ouml;rt Franz; ob <strong>Clara</strong> es abonniert hat, ist nie best&auml;tigt worden. F&uuml;r sie bleibt diese Seite der einzige verl&auml;ssliche Kanal.</p>
+    <p class="mut">08:12 Nachricht 1 an Franz per CallMeBot gesendet. Antwort w&ouml;rtlich <em>&bdquo;You have 0 messages left&ldquo;</em> und <em>&bdquo;Message not sent&ldquo;</em> &ndash; Teil 2 daraufhin <strong>nicht</strong> an CallMeBot geschickt.</p>
+    <p class="mut">08:12 beide Teile f&uuml;r Franz &uuml;ber ntfy gesendet (Titel <em>FRANZ &middot; Do 17.09.</em>), Kennungen <code>mOFcV5L704Xx</code> und <code>7FTeejcVTd4Y</code>, HTTP 200 und 200; Abfrage des Topics: 2/2 gefunden, 2/2 wortgleich.</p>
     <!--/ZUSTELLUNG-->
   </div>
 </section>
 
 <footer>
-  <p>Aktualisiert: Donnerstag, 17.09.2026, 08:03 Uhr (CEST) &ndash; Tages-Check, Lauf Clara<br>
-  Quelle: MyTimetable-Feed, beide Kalender (je 74 Eintr&auml;ge, Sync 08:00 CEST).<br>
+  <p>Aktualisiert: Donnerstag, 17.09.2026, 08:14 Uhr (CEST) &ndash; Tages-Check, Lauf Clara 08:03 und Lauf Franz 08:14<br>
+  Quelle: MyTimetable-Feed, beide Kalender (je 74 Eintr&auml;ge, Sync 08:00 CEST; Franz um 08:08 erneut geladen, unver&auml;ndert).<br>
   Canvas: HTTP 401 seit 18.07.2026 &ndash; keine Themen, keine Literatur, keine Abgaben.</p>
 </footer>
 
