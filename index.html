@@ -230,6 +230,19 @@
 </section>
 
 <section>
+  <h2>Pr&uuml;fprotokoll &middot; Lauf Franz 09:05</h2>
+  <div class="card">
+    <ul>
+      <li><strong>Franz-Kalender</strong> um 09:05 neu geladen: vollst&auml;ndig bis <code>END:VCALENDAR</code>, <strong>74 Eintr&auml;ge</strong> (37 mit Uhrzeit + 37 SBE-Ganztags).</li>
+      <li><strong>UID-Vergleich</strong> gegen den Abzug von 08:08: <strong>0 weg, 0 neu, 0 ge&auml;ndert</strong> (ohne DTSTAMP, CREATED, LAST-MODIFIED und Sync-Stempel verglichen).</li>
+      <li><strong>Zwei unabh&auml;ngig gebaute Auswertungen</strong> (Python-Parser; Perl mit timegm und Zeitzone Europe/Amsterdam) f&uuml;r 17.&ndash;30.09.: je <strong>13 Eintr&auml;ge, zeilengleich</strong>, und zeilengleich zum Stand von 08:08; Gegenprobe <code>EINIG</code>.</li>
+      <li><strong>Franz-Angaben dieser Seite</strong> gegen diesen Abzug gepr&uuml;ft: 3 Termin-Kacheln (Tag, Uhrzeit, Gruppe, Raum) &ndash; <strong>0 Korrekturen</strong>.</li>
+      <li>Canvas 09:05: <code>users/self</code>, <code>courses</code>, <code>planner/items</code> &rarr; alle <code>HTTP 401</code>, <code>expired_at 2026-07-18</code> &ndash; Tag 61.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
   <h2>Zustellung</h2>
   <div class="card">
     <!--ZUSTELLUNG-->
@@ -240,13 +253,14 @@
     <p class="mut">08:12 Nachricht 1 an Franz per CallMeBot gesendet. Antwort w&ouml;rtlich <em>&bdquo;You have 0 messages left&ldquo;</em> und <em>&bdquo;Message not sent&ldquo;</em> &ndash; Teil 2 daraufhin <strong>nicht</strong> an CallMeBot geschickt.</p>
     <p class="mut">08:12 beide Teile f&uuml;r Franz &uuml;ber ntfy gesendet (Titel <em>FRANZ &middot; Do 17.09.</em>), Kennungen <code>mOFcV5L704Xx</code> und <code>7FTeejcVTd4Y</code>, HTTP 200 und 200; Abfrage des Topics: 2/2 gefunden, 2/2 wortgleich.</p>
     <p class="mut">09:01 (Lauf Clara 09:00) Nachricht 1 an Clara noch einmal per CallMeBot versucht &ndash; f&uuml;r Clara w&auml;re es der erste eigene Kanal. Antwort w&ouml;rtlich <em>&bdquo;You have 0 messages left&ldquo;</em> und <em>&bdquo;Message not sent&ldquo;</em> &ndash; Teil 2 nicht versucht. ntfy <strong>bewusst nicht erneut</strong> gesendet: CLARA 1/2 und 2/2 von 08:04 liegen unver&auml;ndert auf dem Topic, der Stundenplan hat sich seitdem nicht ge&auml;ndert.</p>
+    <p class="mut">09:05 (Lauf Franz 09:05) <strong>nichts erneut gesendet</strong>: FRANZ 1/2 und 2/2 von 08:12 liegen unver&auml;ndert auf dem Topic, der Stundenplan hat sich seitdem nicht ge&auml;ndert. CallMeBot nicht erneut versucht &ndash; heute schon zweimal <em>&bdquo;Message not sent&ldquo;</em> (08:12 Franz, 09:01 Clara).</p>
     <!--/ZUSTELLUNG-->
   </div>
 </section>
 
 <footer>
-  <p>Aktualisiert: Donnerstag, 17.09.2026, 09:02 Uhr (CEST) &ndash; Tages-Check, Lauf Clara 08:03, Lauf Franz 08:14 und Lauf Clara 09:02<br>
-  Quelle: MyTimetable-Feed, beide Kalender (je 74 Eintr&auml;ge, Sync 08:00 CEST; Franz um 08:08 und Clara um 09:00 erneut geladen, jeweils unver&auml;ndert).<br>
+  <p>Aktualisiert: Donnerstag, 17.09.2026, 09:08 Uhr (CEST) &ndash; Tages-Check, Lauf Clara 08:03, Lauf Franz 08:14, Lauf Clara 09:02 und Lauf Franz 09:08<br>
+  Quelle: MyTimetable-Feed, beide Kalender (je 74 Eintr&auml;ge, Sync 08:00 CEST; Franz um 08:08 und 09:05 und Clara um 09:00 erneut geladen, jeweils unver&auml;ndert).<br>
   Canvas: HTTP 401 seit 18.07.2026 &ndash; keine Themen, keine Literatur, keine Abgaben.</p>
 </footer>
 
