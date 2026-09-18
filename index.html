@@ -194,7 +194,7 @@
 </section>
 
 <section>
-  <h2>Pr&uuml;fprotokoll &middot; Lauf Clara 09:00</h2>
+  <h2>Pr&uuml;fprotokoll &middot; Lauf Clara 09:00 &middot; Lauf Franz 09:19</h2>
   <div class="card">
     <ul>
       <li><strong>Der Lauf um 08:00 hat heute nichts ver&ouml;ffentlicht:</strong> beide Kalender wurden um 08:00 geladen (Abz&uuml;ge liegen vor), danach kein Commit und keine Nachricht auf ntfy; die Seite stand bis jetzt auf Donnerstag 17.09., 09:08. Das Laufprotokoll endet um 08:04 mit <code>Reached max turns (25)</code>. Ein Franz-Durchgang um 08:00 ist nicht belegt.</li>
@@ -203,6 +203,7 @@
       <li><strong>Zwei unabh&auml;ngig gebaute Auswertungen</strong> (Python mit Zeitzonen-Datenbank; Perl mit timegm und +2 h) f&uuml;r 18.&ndash;30.09.: je Person <strong>12 Eintr&auml;ge, zeilengleich</strong>; Gegenprobe <code>EINIG</code> f&uuml;r beide.</li>
       <li>Canvas 09:11: <code>users/self</code>, <code>courses</code>, <code>planner/items</code> &rarr; alle <code>HTTP 401</code>, <code>expired_at 2026-07-18</code> &ndash; Tag 62.</li>
       <li>Aussehen unver&auml;ndert: CSS-Block der Vorg&auml;ngerseite wortgleich &uuml;bernommen.</li>
+      <li><strong>Lauf Franz 09:19</strong> (zweiter Durchgang des 09:00-Laufs &ndash; gepr&uuml;ft, nichts neu gebaut): Franz&rsquo; Kalender um 09:20 erneut geladen &ndash; vollst&auml;ndig bis <code>END:VCALENDAR</code>, <strong>73 Eintr&auml;ge</strong> (36 mit Uhrzeit + 37 SBE-Ganztags). UID-Vergleich gegen 09:03 und 08:00: je <strong>0 weg, 0 neu, 0 ge&auml;ndert</strong>; gegen gestern 09:05: 1 weg, 0 neu, 0 ge&auml;ndert &ndash; weg ist ein Tutorial vom 25.06. (R&uuml;ckw&auml;rtsfenster des Feeds). Zwei unabh&auml;ngig gebaute Auswertungen (Python mit Zeitzonen-Datenbank; Perl mit timegm und +2 h) f&uuml;r 18.09.&ndash;24.10.: <strong>24 Eintr&auml;ge, zeilengleich</strong>, Gegenprobe <code>EINIG</code>. Alle <strong>4 Franz-Kacheln</strong> dieser Seite (Fr 18.09. und Di 22.09.) stimmen Feld f&uuml;r Feld mit dem Kalender von 09:20 &uuml;berein &ndash; Uhrzeit, Kurs, Gruppe, Raum, Dozent; ebenso die Franz-Angaben im Flie&szlig;text (5,5 Stunden frei, Fr 25.09. Guest Lecture &rarr; 11:00 TS53 H0.04 mit 15 Minuten Wechsel, Klausuren 20.10. und 22.10., Exam-Anmeldung 21.&ndash;25.09. bis 17:00). <strong>0 Korrekturen.</strong> Ein Franz-Durchgang um 08:00 hat nicht stattgefunden: kein Commit, und bis 09:26 keine FRANZ-Nachricht auf ntfy. Canvas 09:20: <code>HTTP 401</code>, <code>expired_at 2026-07-18</code> &ndash; Tag 62.</li>
     </ul>
   </div>
 </section>
@@ -216,13 +217,15 @@
     <p class="mut">09:14 Nachricht 1 an Clara per CallMeBot gesendet. Antwort (Auszug, w&ouml;rtlich): <em>&bdquo;You have 0 messages left&ldquo; &middot; &bdquo;Message not sent&ldquo;</em> &ndash; Teil 2 daraufhin <strong>nicht</strong> an CallMeBot geschickt.</p>
     <p class="mut">09:14 beide Teile &uuml;ber ntfy gesendet (Titel <em>CLARA &middot; Fr 18.09.</em>), Kennungen <code>Mtyvv7AgE2up</code> und <code>2Ykl2g4EAgeH</code>, HTTP 200 und 200; erste Abfrage des Topics in derselben Sekunde: 0/2; zweite Abfrage um 09:15: 2/2 gefunden, 2/2 wortgleich (15 und 15 Zeilenumbr&uuml;che, also lesbar formatiert).</p>
     <p class="mut">Das ntfy-Topic geh&ouml;rt Franz; ob <strong>Clara</strong> es abonniert hat, ist nie best&auml;tigt worden. F&uuml;r sie bleibt diese Seite der einzige verl&auml;ssliche Kanal.</p>
+    <p class="mut"><strong>Franz:</strong> 09:26 beide Teile &uuml;ber ntfy gesendet (Titel <em>FRANZ &middot; Fr 18.09.</em>), Kennungen <code>eenHCGGKXMnQ</code> und <code>5MdBLsmZp5MO</code>, HTTP 200 und 200; Abfrage des Topics um 09:28: 2/2 gefunden, 2/2 wortgleich (16 und 18 Zeilenumbr&uuml;che, also lesbar formatiert). Eine eigene Fassung, weil Claras Teile Franz&rsquo; Zeiten (heute 08:30, Dienstag 08:30 und 11:00) nicht enthalten.</p>
+    <p class="mut">09:26 Nachricht 1 an Franz per CallMeBot gesendet. Antwort (Auszug, w&ouml;rtlich): <em>&bdquo;0 messages left&ldquo; &middot; &bdquo;Message not sent&ldquo;</em> &ndash; Teil 2 daraufhin <strong>nicht</strong> an CallMeBot geschickt.</p>
     <!--/ZUSTELLUNG-->
   </div>
 </section>
 
 <footer>
-  <p>Aktualisiert: Freitag, 18.09.2026, 09:11 Uhr (CEST) &ndash; Tages-Check, Lauf Clara 09:00<br>
-  Quelle: MyTimetable-Feed, beide Kalender (je 73 Eintr&auml;ge; Clara 09:01, Franz 09:03 CEST geladen, unver&auml;ndert gegen&uuml;ber den Abz&uuml;gen von 08:00).<br>
+  <p>Aktualisiert: Freitag, 18.09.2026, 09:28 Uhr (CEST) &ndash; Tages-Check, Lauf Clara 09:00 (Seitenbau 09:11) &middot; Lauf Franz 09:19 (gepr&uuml;ft, 0 Korrekturen)<br>
+  Quelle: MyTimetable-Feed, beide Kalender (je 73 Eintr&auml;ge; Clara 09:01, Franz 09:03 CEST geladen, unver&auml;ndert gegen&uuml;ber den Abz&uuml;gen von 08:00; Franz erneut 09:20 geladen, unver&auml;ndert).<br>
   Canvas: HTTP 401 seit 18.07.2026 &ndash; keine Themen, keine Literatur, keine Abgaben.</p>
 </footer>
 
