@@ -200,7 +200,7 @@
     <h3 class="gelb">Freitag hat kein EBC2060-Tutorial &mdash; sondern eine Gastvorlesung</h3>
     <p>An den drei Freitagen davor (04.09., 11.09., 18.09.) stand EBC2060 als <em>Tutorial B</em> im Plan. Diesen Freitag steht dort <strong>nichts</strong>. Stattdessen bei beiden: <strong>Gastvorlesung 08:45&ndash;10:45 in TAP11 F0.019</strong>. Was das bedeutet, ist bei Clara und Franz aber <strong>nicht dasselbe</strong>.</p>
     <p class="sm"><strong>Clara &mdash; 2&frac14; Stunden fr&uuml;her, anderes Geb&auml;ude.</strong> Ihre drei Freitage davor begannen um <strong>11:00 in TS53 A0.24</strong>. Jetzt 08:45 in TAP11. Wer &bdquo;wie immer um 11 in TS53&ldquo; rechnet, steht zur falschen Zeit im falschen Geb&auml;ude.</p>
-    <p class="sm"><strong>Franz &mdash; nur 15 Minuten fr&uuml;her, aber ein Sprint um 10:45.</strong> Seine Freitage begannen um <strong>08:30 in TS53 A0.24</strong>; 08:45 in TAP11 ist zeitlich fast gleich. Das Problem liegt danach: die Gastvorlesung endet <strong>10:45 in TAP11</strong>, sein EBC2080-Tutorial beginnt <strong>11:00 in TS53 H0.04</strong>. Das sind <strong>15 Minuten f&uuml;r den Weg Tapijnkazerne &rarr; Tongersestraat</strong> &mdash; sonst liegen dort immer 30 Minuten dazwischen, und die beiden Termine waren bisher im selben Haus.</p>
+    <p class="sm"><strong>Franz &mdash; nur 15 Minuten fr&uuml;her, aber ein Sprint um 10:45.</strong> Seine Freitage begannen um <strong>08:30 in TS53 A0.24</strong>; 08:45 in TAP11 ist zeitlich fast gleich. Das Problem liegt danach: die Gastvorlesung endet <strong>10:45 in TAP11</strong>, sein EBC2080-Tutorial beginnt <strong>11:00 in TS53 H0.04</strong>. Das sind <strong>15 Minuten f&uuml;r den Weg Tapijnkazerne &rarr; Tongersestraat</strong> &mdash; am 04.09. und 11.09. lagen dort 30 Minuten dazwischen, und beide Termine waren im selben Haus (TS53). Am 18.09. gab es den Wechsel gar nicht: statt des Tutorials stand bei Franz eine EBC2080-Vorlesung um 16:00 im Plan.</p>
     <p class="sm mut">Eine Gastvorlesung wird &uuml;blicherweise nicht wiederholt &mdash; verpasst hei&szlig;t hier wahrscheinlich weg.</p>
   </div>
 </section>
@@ -302,6 +302,7 @@
       <li><strong>Canvas:</strong> <code>GET /api/v1/courses</code> &rarr; <code>HTTP 401 &bdquo;Expired access token&ldquo;, expired_at 2026-07-18</code>. Tag 64. Module, Seiten, Assignments und Ank&uuml;ndigungen darum <strong>nicht gelesen</strong> &mdash; nicht &bdquo;leer&ldquo;, sondern unerreichbar.</li>
       <li><strong>Nachkontrolle 09:00:</strong> Feed ein zweites Mal abgerufen (Stand <em>&bdquo;09:00 CEST&ldquo;</em>) und Eintrag f&uuml;r Eintrag gegen den 08:04-Abzug gestellt: 72 zu 72, <strong>0 neu, 0 entfallen, 0 ge&auml;ndert</strong>. Keine Zeit und kein Raum dieser Woche hat sich seit dem Bau der Seite bewegt. Franz&rsquo; Freitags-Angaben zus&auml;tzlich gegen seinen eigenen Feed gepr&uuml;ft.</li>
       <li><strong>Nicht fortgeschrieben:</strong> keine Zeit, kein Raum und kein Dozent stammt aus der Seite von gestern. Alles oben kommt aus dem heutigen Feed.</li>
+      <li><strong>Franz-Lauf 09:22:</strong> Franz&rsquo; Feed erneut abgerufen (Stand <em>&bdquo;09:10 CEST&ldquo;</em>): 72 Eintr&auml;ge = 36 Termine + 36 SBE-Hinweise, gegen die Abz&uuml;ge von 08:13 und 09:07 <strong>0 neu, 0 entfallen, 0 ge&auml;ndert</strong>; Claras Feed zur selben Zeit (Stand 09:12) ebenfalls 72 und 0/0/0. Zwei unabh&auml;ngig gebaute Auswertungen (Python und Perl) stimmen in 72 von 72 Zeilen &uuml;berein. Franz&rsquo; 4 Kacheln und seine 5 Vorschau-Angaben Feld f&uuml;r Feld gegen den Feed gepr&uuml;ft: alle gleich. <strong>Eine Korrektur im Flie&szlig;text:</strong> bei der Freitags-Abweichung stand, zwischen Franz&rsquo; beiden Freitagsterminen l&auml;gen &bdquo;sonst immer&ldquo; 30 Minuten im selben Haus. Der Feed belegt das f&uuml;r den 04.09. und 11.09.; am 18.09. hatte Franz stattdessen eine Vorlesung um 16:00 in TAP11. Der Satz ist berichtigt. Canvas erneut <code>401</code>, Tag 64.</li>
     </ul>
   </div>
 </section>
@@ -311,12 +312,13 @@
   <div class="card" id="zustellung">
     <p class="sm mut"><strong>WhatsApp: nicht zugestellt.</strong> Alle drei Teile wurden heute an CallMeBot &uuml;bergeben, alle drei kamen w&ouml;rtlich zur&uuml;ck mit <em>&bdquo;You have 0 messages left. &hellip; Message not sent&ldquo;</em>. Das Freikontingent ist seit dem 13.07. bei beiden auf null. <code>Message Sent</code> stand in keiner der drei Antworten.</p>
     <p class="sm mut"><strong>ntfy: zugestellt und nachgepr&uuml;ft.</strong> Drei Teile gesendet (HTTP 200), danach vom Server zur&uuml;ckgelesen: 3 von 3 wiedergefunden, 3 von 3 w&ouml;rtlich identisch. Ob Claras Ger&auml;t dieses Thema <em>abonniert</em> hat, kann von hier aus niemand sehen &mdash; nachgewiesen ist, dass die Nachricht auf dem Server liegt, nicht dass sie ein Telefon erreicht hat.</p>
+    <p class="sm mut"><strong>Franz (09:22): eigene Nachrichten.</strong> Die drei ntfy-Nachrichten von 08:09 tragen keinen Namen im Titel und zeigen <em>Claras</em> Zeiten (Dienstag ab 11:00). F&uuml;r Franz gingen deshalb um 09:21 drei eigene Teile hinaus, Titel &bdquo;Uni Wochenplan Franz (1/3)&ldquo; bis &bdquo;(3/3)&ldquo; (HTTP 200), danach vom Server zur&uuml;ckgelesen: 3 von 3 wiedergefunden, 3 von 3 w&ouml;rtlich identisch. WhatsApp: ein Versuch mit Teil 1, Antwort wieder <em>&bdquo;0 messages left &hellip; Message not sent&ldquo;</em> &mdash; Teile 2 und 3 darum nicht mehr versucht.</p>
     <p class="sm mut">Im Zweifel ist <strong>diese Seite</strong> der Kanal, der ankommt.</p>
   </div>
 </section>
 
 <footer>
-  <p>Aktualisiert: Sonntag, 20.09.2026, 09:05 Uhr &middot; nachgepr&uuml;ft, Termine unver&auml;ndert seit 08:13 &middot; Quelle Termine: pers&ouml;nlicher Stundenplan (Feed-Stand 09:00 CEST) &middot; Quelle Inhalte: Canvas &mdash; <strong>nicht verf&uuml;gbar</strong></p>
+  <p>Aktualisiert: Sonntag, 20.09.2026, 09:22 Uhr &middot; nachgepr&uuml;ft, Termine unver&auml;ndert seit 08:13 &middot; Quelle Termine: pers&ouml;nlicher Stundenplan (Feed-Stand Franz 09:10, Clara 09:12 CEST) &middot; Quelle Inhalte: Canvas &mdash; <strong>nicht verf&uuml;gbar</strong></p>
 </footer>
 
 </div>
