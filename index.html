@@ -200,7 +200,7 @@
 </section>
 
 <section>
-  <h2>Prüfprotokoll &middot; Lauf Clara 08:00 + Nachlauf Franz 08:27</h2>
+  <h2>Prüfprotokoll &middot; Lauf Clara 08:00 + Nachlauf Franz 08:27 + Zweitlauf Clara 09:00</h2>
   <div class="card">
     <ul>
       <li><strong>Beide Kalender</strong> heute Morgen frisch geladen (Clara um 08:00): je <code>HTTP 200</code>, <strong>72 Einträge</strong> (36 mit Uhrzeit + 36 SBE-Ganztags) bei Clara, 72 (36 + 36) bei Franz. Keine Zeile dieser Seite stammt aus einer älteren Seite.</li>
@@ -211,6 +211,7 @@
       <li>Aussehen unverändert: CSS-Block der letzten Tagesseite (18.09.) wortgleich übernommen.</li>
       <li><strong>Nachlauf Franz 08:27:</strong> Feed erneut geladen (<code>HTTP 200</code>, 72 Einträge) und Franz&rsquo; Termine für den 21.&ndash;25.09. <strong>unabhängig neu hergeleitet</strong> &ndash; Uhrzeit, Gruppe, Raum und Dozent stimmen mit den oben stehenden Franz-Kacheln <strong>feldgleich</strong> überein; 0 Korrekturen. Canvas erneut <code>HTTP 401</code> (<code>expired_at 2026-07-18</code>). Clara&rsquo;s Kacheln wurden nicht angefasst.</li>
       <li><strong>Sitzungszuordnung belegt:</strong> EBC2060 Meeting&nbsp;7 trägt im Handbuch das Datum &bdquo;Dienstag 22. September 2026&ldquo; &ndash; hart belegt. Das EBC2080-Handbuch nennt <strong>keine Daten</strong>; Meeting&nbsp;7 folgt dort aus der Reihenfolge Di/Fr, die sich mit den zwei Vorlesungen (M1 Di 01.09., M6 Fr 18.09.) exakt gegen den Feed deckt.</li>
+      <li><strong>Zweitlauf Clara 09:00 (geprüft, nichts neu gebaut):</strong> beide Kalender um 09:00/09:01 erneut geladen (<code>HTTP 200</code>, Clara 72 = 36 + 36, Franz 72 = 36 + 36). UID-Vergleich gegen die Abzüge von 08:00, ohne Sync-Stempel: je Person <strong>0 weg, 0 neu, 0 geändert</strong>. Alle <strong>8 von 8 Kacheln</strong> (Di 22.09. und Fr 25.09., beide Personen) stimmen Feld für Feld mit den 09:00-Kalendern überein &ndash; Uhrzeit, Kurs, Gruppe, Raum, Dozent. Zusätzlich liefen <strong>32 Aussagen aus dem Fließtext</strong> einzeln als Prüfung gegen beide Kalender, alle bestanden: heute, Mittwoch und Donnerstag ohne Termin &middot; der 22.09. ist in beiden Kursen der siebte Termin &middot; Vorlesungen am 01.09. und 18.09. &middot; Meeting 8 am Fr 25.09., Meeting 12 und 13 am Fr 09.10. und Di 13.10. &middot; Klausuren Di 20.10. 15:00–17:00 und Do 22.10. 12:00–14:00 im MECC &middot; Gastvorlesung am 25.09. statt Tutorial, Beginn 08:45 &middot; nächstes Digitalisation-Tutorial Di 29.09. &middot; Exam-Registration offen seit 21.09., Frist Fr 25.09. 17:00 &middot; 30 Minuten zwischen den beiden Dienstags-Tutorials. Anzahl Termine für Clara heute 0, morgen 2, übermorgen 0 &ndash; auf zwei Wegen hergeleitet (Python mit Zeitzonen-Datenbank; Perl mit Stunden-Arithmetik), Gegenprobe dreimal <code>EINIG</code>. Stichprobe gegen den Handbuchtext: <strong>29 von 29</strong> Angaben wörtlich gefunden (Sitzungstitel mit Datum, drei Artikel mit Band und Seiten, 23:59-Regel, Post-Office-Fall, Gastrednerin mit Funktion, Pflicht und nicht klausurrelevant, Problems 19–21, Leseausnahmen bei Fehr und Schmidt, Beste-sieben-Regel, 08:00-Abgabe). <strong>0 Korrekturen.</strong> Canvas um 09:00 erneut <code>HTTP 401</code> (<code>expired_at 2026-07-18</code>) &ndash; Tag 65.</li>
     </ul>
   </div>
 </section>
@@ -225,13 +226,14 @@
       <li class="mut">Ob Clara dieses ntfy-Topic abonniert hat, ist weiterhin nicht belegt. Verlässlich ist nur diese Seite.</li>
       <li><strong>WhatsApp an Franz: nicht zugestellt.</strong> Alle drei Teile wurden um 08:28 echt an CallMeBot geschickt, die Antwort lautete jedes Mal wörtlich <code>You have 0 messages left</code> und <code>Message not sent</code>. Das Kontingent ist seit dem 13.07. leer.</li>
       <li><strong>Ersatz über ntfy an Franz:</strong> drei Teile mit dem Titel FRANZ, je <code>HTTP 200</code> (<code>5mv3UD1Lufkg</code>, <code>scl6qYNoCpHb</code>, <code>wFfuOAI4VfqH</code>). Rückabfrage des Topics: <strong>3 von 3 gefunden, 3 von 3 wortgleich</strong> zur Quelle.</li>
+      <li><strong>Zweitlauf Clara 09:00 &ndash; WhatsApp an Clara erneut versucht: nicht zugestellt.</strong> Teil 1 um 09:10 echt an CallMeBot gesendet, Antwort wörtlich <code>You have 0 messages left</code> und <code>Message not sent</code>; die Teile 2 und 3 gingen deshalb nicht mehr raus. Über ntfy wurde <strong>nicht</strong> noch einmal gesendet: die drei CLARA-Teile von 08:16 liegen unverändert auf dem Topic (um 09:01 nachgelesen: 3 von 3 gefunden, 3 von 3 wortgleich zur Quelle) und gelten zwölf Stunden &ndash; ein zweiter Versand wäre nur eine Dublette.</li>
     </ul>
     <!--/ZUSTELLUNG-->
   </div>
 </section>
 
 <footer>
-  <p>Aktualisiert: Montag, 21.09.2026, 08:27 Uhr (CEST) &ndash; Tages-Check, Nachlauf Franz (Seite 08:15 von Clara gebaut)<br>
+  <p>Aktualisiert: Montag, 21.09.2026, 09:10 Uhr (CEST) &ndash; Tages-Check, Zweitlauf Clara ohne Korrektur (Seite 08:15 von Clara gebaut, Nachlauf Franz 08:27)<br>
   Termine: MyTimetable-Feed, beide Kalender (je 72 Einträge). Inhalte: Kurshandbücher EBC2060 und EBC2080, 2026/27.<br>
   Canvas: HTTP 401 seit 18.07.2026 &ndash; Ankündigungen und Abgaben ungeprüft.</p>
 </footer>
