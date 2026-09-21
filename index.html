@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Uni Daily Check &middot; Wochenplan 21.&ndash;25.09.2026</title>
+<title>Uni Daily Check &middot; Clara &amp; Franz &middot; Freitag 18.09.2026</title>
 <style>
   :root{
     --bg:#0f0f0f; --card:#1a1a1a; --line:#2a2a2a; --txt:#e0e0e0; --mut:#a3a3a3;
@@ -14,59 +14,74 @@
   body{
     margin:0; background:var(--bg); color:var(--txt);
     font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-    font-size:16px; line-height:1.6; padding:20px 16px 48px;
+    font-size:16px; line-height:1.6;
+    padding:20px 14px 48px;
   }
   .wrap{max-width:600px;margin:0 auto}
   a{color:var(--blau)}
-  a:hover{color:#93c5fd}
-  a:focus-visible,summary:focus-visible{outline:2px solid var(--gelb);outline-offset:4px;border-radius:4px}
-  header{margin-bottom:24px}
-  h1{font-size:26px;line-height:1.25;margin:0 0 8px;letter-spacing:-.02em}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--gelb);outline-offset:3px;border-radius:4px}
+  header{margin-bottom:26px}
+  h1{font-size:26px;line-height:1.25;margin:0 0 6px;letter-spacing:-.02em}
   .sub{color:var(--mut);font-size:14px;margin:0}
   .badge{
-    display:inline-block;margin-top:12px;padding:8px 12px;min-height:28px;
+    display:inline-block;margin-top:12px;padding:5px 12px;min-height:24px;
     border:1px solid var(--line);border-radius:999px;
     font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--mut);
   }
-  section{margin-bottom:32px}
+  section{margin-bottom:30px}
   h2{
     font-size:12px;letter-spacing:.13em;text-transform:uppercase;
     margin:0 0 12px;color:var(--mut);font-weight:600;
   }
-  h2 .who{text-transform:none;letter-spacing:0;font-size:14px}
-  h2 .who.c{color:var(--gelb)} h2 .who.f{color:var(--gruen)}
   .card{
     background:var(--card);border:1px solid var(--line);border-radius:12px;
-    padding:16px;margin-bottom:12px;
+    padding:16px 16px;margin-bottom:12px;
   }
   .card.gruen{border-left:3px solid var(--gruen)}
   .card.blau{border-left:3px solid var(--blau)}
   .card.gelb{border-left:3px solid var(--gelb)}
   .card.rot{border-left:3px solid var(--rot)}
-  .tag{
+  .who{
     font-size:11px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;
-    margin:0 0 12px;color:var(--blau);
+    margin:0 0 10px;
   }
-  .tag.frei{color:var(--mut)}
-  .tag.rot{color:var(--rot)}
-  .slot{padding:12px 0;border-top:1px solid var(--line)}
-  .slot:first-of-type{border-top:none;padding-top:0}
+  .who.f{color:var(--gruen)} .who.c{color:var(--gelb)}
+  .slot{padding:11px 0;border-top:1px solid var(--line)}
+  .slot:first-of-type{border-top:none;padding-top:2px}
   .zeit{font-variant-numeric:tabular-nums;font-weight:700;font-size:17px;color:#fff}
-  .kurs{margin:4px 0 0;font-weight:600}
-  .meta{margin:4px 0 0;color:var(--mut);font-size:14px}
+  .kurs{margin:2px 0 0;font-weight:600}
+  .meta{margin:3px 0 0;color:var(--mut);font-size:14px}
   .raum{color:var(--txt);font-weight:600}
   h3{font-size:17px;margin:0 0 8px;font-weight:600}
-  h3.rot{color:var(--rot)} h3.gelb{color:var(--gelb)} h3.blau{color:var(--blau)} h3.gruen{color:var(--gruen)}
-  p{margin:0 0 12px}
+  h3.rot{color:var(--rot)} h3.gelb{color:var(--gelb)} h3.blau{color:var(--blau)}
+  p{margin:0 0 10px}
   p:last-child{margin-bottom:0}
-  .sm{font-size:14px}
-  .mut{color:var(--mut)}
-  ul{margin:0 0 12px;padding-left:20px}
-  li{margin-bottom:8px}
-  li:last-child{margin-bottom:0}
-  .alert-t{display:flex;gap:8px;align-items:baseline;font-weight:700;margin:0 0 8px}
-  code{background:#111;border:1px solid var(--line);border-radius:4px;padding:0 4px;font-size:13px}
-  footer{border-top:1px solid var(--line);padding-top:16px;color:var(--mut);font-size:13px}
+  .lead{font-size:15px}
+  .mut{color:var(--mut);font-size:14px}
+  ul{margin:0 0 10px;padding-left:20px}
+  li{margin-bottom:6px}
+  code{
+    background:#000;border:1px solid var(--line);border-radius:4px;
+    padding:1px 6px;font-size:13px;color:var(--txt);
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  .pfad{
+    background:#000;border:1px solid var(--line);border-radius:8px;
+    padding:12px 14px;font-size:13px;line-height:1.8;color:var(--txt);
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+    overflow-wrap:anywhere;margin:10px 0;
+  }
+  .flag{
+    display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;padding:2px 8px;border-radius:5px;margin-left:6px;
+    vertical-align:2px;
+  }
+  .flag.wechsel{background:#3a2a00;color:var(--gelb);border:1px solid #5a4200}
+  footer{
+    margin-top:38px;padding-top:18px;border-top:1px solid var(--line);
+    color:var(--mut);font-size:13px;
+  }
+  @media (max-width:380px){ h1{font-size:22px} body{padding:16px 12px 40px} }
 </style>
 </head>
 <body>
@@ -74,251 +89,143 @@
 
 <header>
   <h1>Uni Daily Check</h1>
-  <p class="sub">Sonntag, 20.09.2026 &middot; Blick auf die Woche</p>
-  <span class="badge">Wochenplan 21.&ndash;25.09.</span>
+  <p class="sub">Montag, 21.09.2026 &middot; für Clara und Franz &middot; Periode 1, Woche 4</p>
+  <span class="badge">Tages-Check</span>
 </header>
 
 <section>
-  <h2>Zuerst</h2>
-  <div class="card rot">
-    <h3 class="rot">Pr&uuml;fungsanmeldung Periode 1 &mdash; das Fenster ist diese Woche offen</h3>
-    <p>Der Stundenplan meldet es dreimal: <strong>Montag 21.09.</strong> &bdquo;Exam (de)registration period&nbsp;1 <em>is open</em>&ldquo;, <strong>Donnerstag 24.09.</strong> die Vorwarnung, <strong>Freitag 25.09.</strong> &bdquo;closes TODAY (17:00h)&ldquo;.</p>
-    <p class="sm">Dahinter stehen zwei konkrete Klausuren: <strong>Di 20.10., 15:00&ndash;17:00 EBC2060</strong> und <strong>Do 22.10., 12:00&ndash;14:00 EBC2080</strong>, beide MECC Westhal. Ohne Anmeldung keine Klausur &mdash; und das Fenster schlie&szlig;t am Freitag um 17:00, nicht um Mitternacht.</p>
-    <p class="sm mut">Gilt f&uuml;r Clara und Franz gleicherma&szlig;en. Aufwand: 10&ndash;15 Minuten im Student Portal. <strong>Am besten Montag</strong> &mdash; Montag ist bei beiden terminfrei, und dann sind Donnerstag und Freitag Reserve statt Risiko.</p>
-  </div>
-</section>
-
-<section>
-  <h2>Was diese Seite diese Woche nicht wei&szlig;</h2>
-  <div class="card gelb">
-    <p><strong>Canvas ist seit dem 18.07. nicht lesbar</strong> &mdash; heute Tag 64. Der hinterlegte Zugangsschl&uuml;ssel ist abgelaufen; jeder Abruf antwortet <code>401 Expired access token</code>.</p>
-    <p class="sm">Konkret fehlen dadurch: <strong>Themen der einzelnen Sitzungen, Literatur, Aufgaben, Abgaben und Ank&uuml;ndigungen</strong>. Diese Seite r&auml;t sie nicht. Was unten steht, kommt aus dem Stundenplan &mdash; der liefert Termine, R&auml;ume und Dozenten, aber keinen Inhalt.</p>
-    <p class="sm mut">Wichtig f&uuml;r Clara: der hinterlegte Schl&uuml;ssel ist <em>Franz&rsquo;</em> Schl&uuml;ssel. Ein neuer Schl&uuml;ssel von Franz &ouml;ffnet Franz&rsquo; Canvas &mdash; Clara braucht einen eigenen, sonst zeigt ihr Check weiter fremde Kurse oder gar nichts.</p>
-  </div>
-</section>
-
-<section>
-  <h2>Die Woche &middot; <span class="who c">Clara</span></h2>
-
-  <div class="card">
-    <p class="tag frei">Montag 21.09. &middot; keine Veranstaltung</p>
-    <p class="sm">Kein Eintrag im Stundenplan. Der freie Tag, an dem die Pr&uuml;fungsanmeldung hingeh&ouml;rt &mdash; sie &ouml;ffnet heute.</p>
-  </div>
-
-  <div class="card blau">
-    <p class="tag">Dienstag 22.09. &middot; 11:00&ndash;15:30</p>
-    <div class="slot">
-      <p class="zeit">11:00 &ndash; 13:00</p>
-      <p class="kurs">EBC2060 &middot; Digitalisation and Organisations</p>
-      <p class="meta">Tutorial A/03 &middot; <span class="raum">TS53 G0.03</span> &middot; Nick Sutton</p>
-    </div>
-    <div class="slot">
-      <p class="zeit">13:30 &ndash; 15:30</p>
-      <p class="kurs">EBC2080 &middot; Behavioural Economics</p>
-      <p class="meta">Tutorial A/06 &middot; <span class="raum">TAP23 (X) 0.013</span> &middot; Karthika Baby Sujatha</p>
-    </div>
-    <p class="sm mut" style="margin-top:12px">30 Minuten zwischen beiden &mdash; und dabei ein Geb&auml;udewechsel von der Tongersestraat zur Tapijnkazerne. Das ist zu Fu&szlig; machbar, aber keine Mittagspause.</p>
-  </div>
-
-  <div class="card">
-    <p class="tag frei">Mittwoch 23.09. &middot; keine Veranstaltung</p>
-    <p class="sm">Kein Eintrag. Der gr&ouml;&szlig;te zusammenh&auml;ngende Block der Woche.</p>
-  </div>
-
-  <div class="card">
-    <p class="tag frei">Donnerstag 24.09. &middot; keine Veranstaltung</p>
-    <p class="sm">Kein Termin, aber der Stundenplan zeigt an diesem Tag die Vorwarnung zur Pr&uuml;fungsanmeldung: <em>&bdquo;closes FRIDAY 25 September&ldquo;</em>.</p>
-  </div>
-
-  <div class="card blau">
-    <p class="tag">Freitag 25.09. &middot; 08:45&ndash;15:30</p>
-    <div class="slot">
-      <p class="zeit">08:45 &ndash; 10:45</p>
-      <p class="kurs">EBC2060 &middot; Digitalisation and Organisations</p>
-      <p class="meta">Gastvorlesung &middot; <span class="raum">TAP11 F0.019</span> &middot; Fynn Ohlrogge</p>
-    </div>
-    <div class="slot">
-      <p class="zeit">13:30 &ndash; 15:30</p>
-      <p class="kurs">EBC2080 &middot; Behavioural Economics</p>
-      <p class="meta">Tutorial B/06 &middot; <span class="raum">TS53 G0.03</span> &middot; Karthika Baby Sujatha</p>
-    </div>
-    <p class="sm mut" style="margin-top:12px">Dazwischen fast drei Stunden frei.</p>
-  </div>
-</section>
-
-<section>
-  <h2>Die Woche &middot; <span class="who f">Franz</span></h2>
-
-  <div class="card">
-    <p class="tag frei">Montag 21.09. &middot; keine Veranstaltung</p>
-    <p class="sm">Kein Eintrag. Gleicher freier Tag wie bei Clara &mdash; gleicher Platz f&uuml;r die Pr&uuml;fungsanmeldung.</p>
-  </div>
-
-  <div class="card blau">
-    <p class="tag">Dienstag 22.09. &middot; 08:30&ndash;13:00</p>
-    <div class="slot">
-      <p class="zeit">08:30 &ndash; 10:30</p>
-      <p class="kurs">EBC2060 &middot; Digitalisation and Organisations</p>
-      <p class="meta">Tutorial A/01 &middot; <span class="raum">TS53 G0.03</span> &middot; Nick Sutton</p>
-    </div>
-    <div class="slot">
-      <p class="zeit">11:00 &ndash; 13:00</p>
-      <p class="kurs">EBC2080 &middot; Behavioural Economics</p>
-      <p class="meta">Tutorial A/03 &middot; <span class="raum">TS53 A0.24</span> &middot; Tri&ecirc;u</p>
-    </div>
-    <p class="sm mut" style="margin-top:12px">Beides im selben Geb&auml;ude, ab 13:00 frei.</p>
-  </div>
-
-  <div class="card">
-    <p class="tag frei">Mittwoch 23.09. &middot; keine Veranstaltung</p>
-    <p class="sm">Kein Eintrag.</p>
-  </div>
-
-  <div class="card">
-    <p class="tag frei">Donnerstag 24.09. &middot; keine Veranstaltung</p>
-    <p class="sm">Kein Termin, nur die Vorwarnung zur Pr&uuml;fungsanmeldung.</p>
-  </div>
-
-  <div class="card blau">
-    <p class="tag">Freitag 25.09. &middot; 08:45&ndash;13:00</p>
-    <div class="slot">
-      <p class="zeit">08:45 &ndash; 10:45</p>
-      <p class="kurs">EBC2060 &middot; Digitalisation and Organisations</p>
-      <p class="meta">Gastvorlesung &middot; <span class="raum">TAP11 F0.019</span> &middot; Fynn Ohlrogge</p>
-    </div>
-    <div class="slot">
-      <p class="zeit">11:00 &ndash; 13:00</p>
-      <p class="kurs">EBC2080 &middot; Behavioural Economics</p>
-      <p class="meta">Tutorial B/03 &middot; <span class="raum">TS53 H0.04</span> &middot; Tri&ecirc;u</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Die Abweichung der Woche</h2>
-  <div class="card gelb">
-    <h3 class="gelb">Freitag hat kein EBC2060-Tutorial &mdash; sondern eine Gastvorlesung</h3>
-    <p>An den drei Freitagen davor (04.09., 11.09., 18.09.) stand EBC2060 als <em>Tutorial B</em> im Plan. Diesen Freitag steht dort <strong>nichts</strong>. Stattdessen bei beiden: <strong>Gastvorlesung 08:45&ndash;10:45 in TAP11 F0.019</strong>. Was das bedeutet, ist bei Clara und Franz aber <strong>nicht dasselbe</strong>.</p>
-    <p class="sm"><strong>Clara &mdash; 2&frac14; Stunden fr&uuml;her, anderes Geb&auml;ude.</strong> Ihre drei Freitage davor begannen um <strong>11:00 in TS53 A0.24</strong>. Jetzt 08:45 in TAP11. Wer &bdquo;wie immer um 11 in TS53&ldquo; rechnet, steht zur falschen Zeit im falschen Geb&auml;ude.</p>
-    <p class="sm"><strong>Franz &mdash; nur 15 Minuten fr&uuml;her, aber ein Sprint um 10:45.</strong> Seine Freitage begannen um <strong>08:30 in TS53 A0.24</strong>; 08:45 in TAP11 ist zeitlich fast gleich. Das Problem liegt danach: die Gastvorlesung endet <strong>10:45 in TAP11</strong>, sein EBC2080-Tutorial beginnt <strong>11:00 in TS53 H0.04</strong>. Das sind <strong>15 Minuten f&uuml;r den Weg Tapijnkazerne &rarr; Tongersestraat</strong> &mdash; am 04.09. und 11.09. lagen dort 30 Minuten dazwischen, und beide Termine waren im selben Haus (TS53). Am 18.09. gab es den Wechsel gar nicht: statt des Tutorials stand bei Franz eine EBC2080-Vorlesung um 16:00 im Plan.</p>
-    <p class="sm mut">Eine Gastvorlesung wird &uuml;blicherweise nicht wiederholt &mdash; verpasst hei&szlig;t hier wahrscheinlich weg.</p>
-  </div>
-</section>
-
-<section>
-  <h2>Vorbereitung &amp; Literatur</h2>
-  <div class="card gelb">
-    <p><strong>Diese Seite kann f&uuml;r diese Woche keine Literatur nennen &mdash; und sie r&auml;t auch keine.</strong> Kapitel, Aufgaben und Sitzungsthemen liegen in Canvas, und Canvas ist gesperrt (oben).</p>
-    <p class="sm">Der Weg, den ihr selbst gehen m&uuml;sst &mdash; <a href="https://canvas.maastrichtuniversity.nl" target="_blank" rel="noopener">canvas.maastrichtuniversity.nl &nearr;</a>, je Kurs vier Klicks:</p>
-    <ul class="sm">
-      <li><strong>F&uuml;r Dienstag 22.09.:</strong><br>Canvas &rarr; <em>Digitalisation and Organisations</em> &rarr; Modules &rarr; Eintrag zum 22.09.<br>Canvas &rarr; <em>Behavioural Economics</em> &rarr; Modules &rarr; Eintrag zum 22.09.</li>
-      <li><strong>F&uuml;r Freitag 25.09.:</strong><br><em>Digitalisation and Organisations</em> &rarr; der Eintrag zur <strong>Gastvorlesung</strong> &mdash; bei Gastvorlesungen steht die Vorbereitung oft als eigener Text oder Artikel dort, nicht im normalen Tutorial-Modul.<br><em>Behavioural Economics</em> &rarr; Eintrag zum 25.09.</li>
+  <h2>Heute &middot; Montag 21.09.</h2>
+  <div class="card gruen">
+    <h3>Kein Termin heute &ndash; bei beiden</h3>
+    <p class="lead">Im Stundenplan steht für heute nur der Hinweis, dass die Exam-(De)Registration für Periode 1 jetzt offen ist. Der Tag gehört der Vorbereitung auf morgen: zwei Tutorials, beide mit Lesestoff.</p>
+    <ul>
+      <li><strong>Behavioural Economics zuerst</strong> (der größere Brocken): Fehr und Schmidt (1999) lesen und die Problems 19–21 vorbereiten. Vorbereitete Aufgaben vorzustellen zählt zur Participation-Note.</li>
+      <li><strong>Digitalisation and Organisations:</strong> drei Pflichtartikel, zusammen 35 Seiten, dazu eine kurze Notiz zu einer Organisation, die ihr von innen kennt.</li>
+      <li><strong>Exam-(De)Registration</strong> im Student Portal prüfen &ndash; offen seit heute, schließt Freitag um 17:00.</li>
+      <li><strong>Nur falls euer Team morgen die Sitzung S06 hostet:</strong> die Slides müssen heute bis 23:59 über Canvas abgegeben sein.</li>
     </ul>
-    <p class="sm mut">Pr&uuml;ft dabei zugleich, ob eine <strong>Abgabe</strong> eingetragen ist. Abgabetermine, die nur in Canvas stehen, tauchen im Stundenplan <em>nie</em> auf &mdash; dieser blinde Fleck ist das eigentliche Risiko der Woche.</p>
-    <p class="sm mut">Zur Systematik: <strong>&bdquo;Tutorial A&ldquo; und &bdquo;Tutorial B&ldquo; sind keine Alternativen</strong>, sondern die zwei w&ouml;chentlichen Sitzungen derselben Gruppe (Clara Gruppe 03 bzw. 06, Franz Gruppe 01 bzw. 03 &mdash; die Nummern bleiben &uuml;ber alle Termine gleich). Ihr geht zu beiden.</p>
+    <p class="mut" style="margin-top:10px">Zeitbedarf grob 5&ndash;6 Stunden &ndash; das ist eine eigene Schätzung aus den Seitenzahlen, sie steht in keinem Handbuch.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Morgen &middot; Dienstag 22.09.</h2>
+  <div class="card blau">
+    <h3 class="blau">Zwei Tutorials, in beiden Kursen Meeting 7</h3>
+    <p class="who c">Clara</p>
+    <div>
+      <div class="slot" data-tag="20260922" data-who="clara"><div class="zeit">11:00&ndash;13:00</div><p class="kurs">Digitalisation and Organisations</p><p class="meta">EBC2060 &middot; Tutorial A/03 &middot; <span class="raum">TS53 G0.03</span> &middot; Nick Sutton</p></div>
+      <div class="slot" data-tag="20260922" data-who="clara"><div class="zeit">13:30&ndash;15:30</div><p class="kurs">Behavioural Economics (IB/IBE)</p><p class="meta">EBC2080 &middot; Tutorial A/06 &middot; <span class="raum">TAP23 (X) 0.013</span> &middot; Karthika Baby Sujatha</p></div>
+    </div>
+    <p class="mut" style="margin-top:10px">30 Minuten für den Weg von TS53 (Tongersestraat) nach TAP23 (Tapijnkazerne).</p>
+    <p class="who f" style="margin-top:16px">Franz</p>
+    <div>
+      <div class="slot" data-tag="20260922" data-who="franz"><div class="zeit">08:30&ndash;10:30</div><p class="kurs">Digitalisation and Organisations</p><p class="meta">EBC2060 &middot; Tutorial A/01 &middot; <span class="raum">TS53 G0.03</span> &middot; Nick Sutton</p></div>
+      <div class="slot" data-tag="20260922" data-who="franz"><div class="zeit">11:00&ndash;13:00</div><p class="kurs">Behavioural Economics (IB/IBE)</p><p class="meta">EBC2080 &middot; Tutorial A/03 &middot; <span class="raum">TS53 A0.24</span> &middot; Anh Triêu</p></div>
+    </div>
+    <p class="mut" style="margin-top:10px">30 Minuten Pause, beide Räume in TS53.</p>
+  </div>
+  <div class="card">
+    <h3 class="blau">Digitalisation and Organisations &middot; S06 Digital governance</h3>
+    <p class="lead">Wer hält in einer digitalen Organisation die Entscheidungsrechte &ndash; und wer ist verantwortlich, wenn die Entscheidung falsch war? Ausgangsfall ist der Horizon-Skandal der britischen Post: rund tausend Filialbetreiber wurden wegen Fehlbeträgen verfolgt, die in Wahrheit Softwarefehler waren, und über Jahrzehnte gehörte niemandem die Entscheidung, dem System zu glauben. Die Sitzung überträgt dieselbe Frage von IT auf Daten und dann auf KI.</p>
+    <p><strong>Danach könnt ihr:</strong> erklären, was Governance bedeutet (Entscheidungsrechte plus Rechenschaft) und warum sie gestaltet werden muss; ein Governance-Modell für IT und Daten entwerfen und verteidigen (Entscheidungsdomänen, Archetypen, Rollen); ein Verantwortungsversagen an den Entscheidungen festmachen, die niemandem gehörten; beurteilen, wie weit diese Logik bei lernenden KI-Systemen trägt.</p>
+    <p><strong>Pflichtlektüre</strong> (alle drei):</p>
+    <ul>
+      <li>Weill, P., &amp; Ross, J. W. (2005). <em>A Matrixed Approach to Designing IT Governance.</em> MIT Sloan Management Review, 46(2), S. 26&ndash;34.</li>
+      <li>Khatri, V., &amp; Brown, C. V. (2010). <em>Designing Data Governance.</em> Communications of the ACM, 53(1), S. 148&ndash;152.</li>
+      <li>Schneider, J., Abraham, R., Meske, C., &amp; vom Brocke, J. (2023). <em>Artificial Intelligence Governance for Businesses.</em> Information Systems Management, 40(3), S. 229&ndash;249. Fokus auf das Framework: die Dimensionen who / what / how über Daten, Modelle und KI-Systeme, die neuen KI-Governance-Rollen, das Messen von Datenwert. Literatursynthese und Herleitungstabellen nur überfliegen.</li>
+    </ul>
+    <p><strong>Vor der Sitzung:</strong> eine Organisation wählen, die ihr von innen kennt (Verein, Familienbetrieb, Nebenjob, die Uni), und notieren, wer über die eingesetzte Technik entschied und wer welche Daten sehen durfte. Das wird gleich in der ersten Diskussion gebraucht &ndash; die Notiz mitbringen.</p>
+    <p class="mut"><strong>Die vier Leitfragen in Kurzform:</strong> die eigene Organisation in die Begriffe von Weill und Ross übersetzen &middot; die folgenreichsten Post-Office-Entscheidungen einer Domäne und einem Verantwortlichen zuordnen &middot; prüfen, was vom Ansatz beim Schritt IT &rarr; Daten &rarr; KI übrig bleibt &middot; für einen KI-Kundenagenten festlegen, wer was entscheidet (Anlass: der Chatbot-Fall von Air Canada).</p>
+    <p class="mut">Format: Die Tutorials werden von Studierenden-Teams gehostet. Quelle: Kurshandbuch EBC2060, S. 18&ndash;20 von 38.</p>
+  </div>
+  <div class="card">
+    <h3 class="blau">Behavioural Economics &middot; Tutorial 7: Inequality Aversion</h3>
+    <p class="lead">Bis Meeting 5 ging es um Entscheidungen einer einzelnen Person, die Vorlesung am Freitag hat die Spieltheorie eingeführt. Die Standardannahme dort &ndash; alle sind eigennützig und rational &ndash; passt in vielen Experimenten nicht zu den Daten. Das erste alternative Modell ist die Ungleichheitsaversion von Fehr und Schmidt: eine erweiterte Nutzenfunktion, die neben dem eigenen Ertrag auch Neid und Großzügigkeit abbildet und damit Ergebnisse aus Verhandlungsexperimenten wie dem Ultimatum- und dem Diktatorspiel erklärt.</p>
+    <p><strong>Literatur:</strong></p>
+    <ul>
+      <li>Fehr und Schmidt (1999) &ndash; <strong>ohne</strong> die Abschnitte III C, V und VI; der Rest hat laut Handbuch unter 30 Seiten.</li>
+      <li>Cooper und Kagel (2015) als Überblick über neuere Studien.</li>
+      <li>Optional: Bolton und Ockenfels (2000).</li>
+    </ul>
+    <p class="mut">Das Handbuch nennt hier nur Autoren und Jahr, keine Titel &ndash; deshalb steht auch hier keiner. Die Artikel liegen laut Handbuch auf Canvas, soweit das Urheberrecht es erlaubt.</p>
+    <p><strong>Vorbereiten:</strong> Problems 19 (Inequality Aversion), 20 (Ultimatum and Dictator Games), 21 (Mini-games). Dazu die zwei Fragen unter <em>Concepts and Definitions</em>: inwiefern das Modell ein Abwägen zwischen Eigennutz, Neid und Großzügigkeit ist, und die Diskussion eines Zitats aus Cooper und Kagel (2015, S. 6 des zugewiesenen PDFs).</p>
+    <p><strong>Warum sich das lohnt:</strong> Participation wird in den neun Tutorials (Meetings 2&ndash;5 und 7&ndash;11) benotet &ndash; Anwesenheit, Beiträge und das Vorstellen vorbereiteter Aufgaben. Es zählen die besten sieben, ein verpasstes Tutorial zählt als 0. Am Ende jedes Tutorials läuft ein Experiment, über das Bonuspunkte möglich sind.</p>
+    <p class="mut">Quelle: Course Manual EBC2080, S. 29&ndash;32 von 58.</p>
   </div>
 </section>
 
 <section>
   <h2>Deadlines</h2>
-
   <div class="card rot">
-    <p class="alert-t"><span>&#128308;</span><span>Diese Woche</span></p>
-    <p><strong>Freitag 25.09., 17:00 &mdash; Pr&uuml;fungsanmeldung Periode 1 (SBE).</strong> Gilt f&uuml;r beide.</p>
-    <p class="sm">Konkret: im Student Portal beide Klausuren (EBC2060 und EBC2080) anmelden und bis zur <em>Best&auml;tigung</em> durchgehen, nicht nur bis zur Auswahl. 10&ndash;15 Minuten. Fenster offen ab Montag 21.09.</p>
-    <p class="sm mut">Weitere Fristen dieser Woche stehen nicht im Stundenplan. Ob in Canvas eine liegt, kann diese Seite nicht sagen.</p>
+    <h3 class="rot">Heute 23:59 &middot; nur für das Hosting-Team von S06</h3>
+    <p class="lead">In Digitalisation and Organisations sind die Slides der Hosting-Teams laut Handbuch die <strong>einzige</strong> Abgabe des Kurses: fällig über Canvas um 23:59 am Tag vor der Sitzung. Für S06 ist das heute.</p>
+    <p class="mut">Ob Claras oder Franz&rsquo; Team morgen hostet, kann dieser Check nicht sehen &ndash; die Einteilung steht nur in Canvas. Nächster Termin derselben Art: Montag 28.09., 23:59, für S07 (Work in the age of AI) am Dienstag 29.09.</p>
   </div>
-
   <div class="card gelb">
-    <p class="alert-t"><span>&#128993;</span><span>N&auml;chste Woche</span></p>
-    <p class="sm"><strong>Keine Frist im Stundenplan</strong> f&uuml;r 28.09.&ndash;02.10.</p>
-    <p class="sm">Was n&auml;chste Woche neu dazukommt, ist ein Termin: <strong>Mittwoch 30.09. &mdash; EBS2079 Professional Development: Leadership Skills</strong>, erstes Tutorial. Clara 11:00&ndash;13:00 in TAP11 F2.018 (Palma), Franz 13:30&ndash;15:30 in TS53 E0.08 (Zondag). Der Kurs lief seit der Vorlesung am 17.09. nicht mehr &mdash; ein Skills-Tutorial verlangt fast immer eine <em>vorbereitete Abgabe oder Selbsteinsch&auml;tzung</em>. Was genau, steht in Canvas.</p>
-    <p class="sm mut">Das ist die Sache, die man <strong>jetzt schon</strong> anfangen kann: nachsehen, was EBS2079 f&uuml;r den 30.09. verlangt. Wenn dort etwas Vorbereitetes erwartet wird, ist der Mittwoch dieser Woche der richtige Platz daf&uuml;r &mdash; nicht der Dienstag danach.</p>
+    <h3 class="gelb">Freitag 25.09., 17:00 &middot; Exam-(De)Registration Periode 1</h3>
+    <p class="lead">Seit heute offen, in beiden Stundenplänen eingetragen. Im Student Portal prüfen, für welche Klausuren ihr angemeldet seid, und bei Bedarf an- oder abmelden &ndash; am besten heute oder morgen, der Freitag ist voll.</p>
+    <p>Klausuren laut Stundenplan (bei beiden gleich): <strong>Di 20.10. 15:00–17:00 Digitalisation · Do 22.10. 12:00–14:00 Behavioural Economics</strong>, Paul Henri Spaaklaan MECC Westhal.</p>
   </div>
-
-  <div class="card gruen">
-    <p class="alert-t"><span>&#128994;</span><span>Feststehend, mit Vorlauf</span></p>
-    <ul class="sm">
-      <li><strong>Di 20.10., 15:00&ndash;17:00 &mdash; Klausur EBC2060</strong> (Digitalisation and Organisations)<br><span class="mut">Paul Henri Spaaklaan, MECC Westhal &middot; bei beiden identisch</span></li>
-      <li><strong>Do 22.10., 12:00&ndash;14:00 &mdash; Klausur EBC2080</strong> (Behavioural Economics)<br><span class="mut">Paul Henri Spaaklaan, MECC Westhal &middot; bei beiden identisch</span></li>
-    </ul>
-    <p class="sm mut">Vier Wochen entfernt. Diese Woche ist davon nur eines zu tun: <strong>sich daf&uuml;r anmelden</strong>.</p>
-  </div>
-</section>
-
-<section>
-  <h2>Ank&uuml;ndigungen</h2>
   <div class="card">
-    <p class="sm mut">Nicht abrufbar. Canvas-Ank&uuml;ndigungen brauchen einen g&uuml;ltigen Zugang; der ist seit dem 18.07. abgelaufen. Es liegen also nicht &bdquo;null Ank&uuml;ndigungen&ldquo; vor &mdash; sondern ungelesene.</p>
+    <h3 class="blau">Diese Woche außerdem</h3>
+    <ul>
+      <li><strong>Mi 23. und Do 24.09.:</strong> keine Termine, bei beiden.</li>
+      <li><strong>Fr 25.09. Gastvorlesung</strong> statt Tutorial in Digitalisation and Organisations: Annemiek Moraal (HEINEKEN, Head of Global Cyber Defense and Operations). <strong>Pflichttermin</strong>, zählt zur Anwesenheit, Inhalt nicht klausurrelevant &ndash; mindestens eine Frage an die Sprecherin mitbringen. Das Handbuch nennt 09:00 als Beginn, der Stundenplan 08:45; maßgeblich ist der Stundenplan.</li>
+    </ul>
+    <p class="who c">Clara &middot; Freitag</p>
+    <div>
+      <div class="slot" data-tag="20260925" data-who="clara"><div class="zeit">08:45&ndash;10:45</div><p class="kurs">Digitalisation and Organisations</p><p class="meta">EBC2060 &middot; Guest Lecture/01 &middot; <span class="raum">TAP11 F0.019</span> &middot; Fynn Ohlrogge</p></div>
+      <div class="slot" data-tag="20260925" data-who="clara"><div class="zeit">13:30&ndash;15:30</div><p class="kurs">Behavioural Economics (IB/IBE)</p><p class="meta">EBC2080 &middot; Tutorial B/06 &middot; <span class="raum">TS53 G0.03</span> &middot; Karthika Baby Sujatha</p></div>
+    </div>
+    <p class="who f" style="margin-top:16px">Franz &middot; Freitag</p>
+    <div>
+      <div class="slot" data-tag="20260925" data-who="franz"><div class="zeit">08:45&ndash;10:45</div><p class="kurs">Digitalisation and Organisations</p><p class="meta">EBC2060 &middot; Guest Lecture/01 &middot; <span class="raum">TAP11 F0.019</span> &middot; Fynn Ohlrogge</p></div>
+      <div class="slot" data-tag="20260925" data-who="franz"><div class="zeit">11:00&ndash;13:00</div><p class="kurs">Behavioural Economics (IB/IBE)</p><p class="meta">EBC2080 &middot; Tutorial B/03 &middot; <span class="raum">TS53 H0.04</span> &middot; Anh Triêu</p></div>
+    </div>
+    <p class="mut" style="margin-top:10px">Behavioural Economics am Freitag ist Meeting 8: Distributional Preferences.</p>
+    <p class="mut"><strong>Mit Vorlauf:</strong> Das Teamprojekt in Behavioural Economics wird in Meeting 12 oder 13 präsentiert; die schriftliche Abgabe ist am Morgen der eigenen Präsentation um 08:00 fällig. Laut beiden Stundenplänen sind das Fr 09.10. und Di 13.10.</p>
   </div>
 </section>
 
 <section>
-  <h2>Empfehlung f&uuml;r die Woche</h2>
+  <h2>Ankündigungen &middot; Canvas</h2>
+  <div class="card rot">
+    <h3 class="rot">Canvas ist seit 65 Tagen nicht abrufbar</h3>
+    <p class="lead">Der Zugang des Checks ist am <strong>18.07.2026</strong> abgelaufen. Heute um 08:00 an drei Stellen geprüft (<code>users/self</code>, <code>courses</code>, <code>planner/items</code>): jedes Mal <code>HTTP 401 &middot; Expired access token</code>.</p>
+    <p><strong>Neu seit heute:</strong> Themen, Literatur und Aufgaben auf dieser Seite stammen aus den offiziellen Kurshandbüchern 2026/27 (PDF, Stand Semesterbeginn). Die Zuordnung ist doppelt belegt &ndash; das Handbuch nennt für S06 den 22.09., und in beiden Stundenplänen ist der 22.09. in beiden Kursen der siebte Termin.</p>
+    <p><strong>Weiter ungeprüft</strong>, weil nur in Canvas sichtbar: Ankündigungen, kurzfristige Änderungen an Thema oder Literatur, die Einteilung der Hosting-Teams und jede dort gepostete Abgabe. Für Leadership Skills (EBS2079) liegt kein Handbuch vor.</p>
+    <p class="mut">Behebbar nur von Franz: Canvas &rarr; Account &rarr; Settings &rarr; Approved Integrations &rarr; <em>+ New Access Token</em>, danach in die <code>.env</code> des Checks. Ein neuer Token zeigt Franz&rsquo; Canvas &ndash; für Clara braucht es einen eigenen.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Prüfprotokoll &middot; Lauf Clara 08:00</h2>
   <div class="card">
     <ul>
-      <li><strong>Heute, Sonntag:</strong> zwei Dinge, zusammen unter einer halben Stunde. <strong>(1)</strong> Canvas &ouml;ffnen und f&uuml;r Dienstag nachsehen, was EBC2060 und EBC2080 verlangen &mdash; das kann diese Seite gerade nicht abnehmen. <strong>(2)</strong> Den Canvas-Zugang erneuern; danach liefert der Check wieder Inhalte statt L&uuml;cken. F&uuml;r Clara hei&szlig;t das: einen <em>eigenen</em> Zugang, nicht Franz&rsquo; erneuerten.</li>
-      <li><strong>Montag (bei beiden frei):</strong> Pr&uuml;fungsanmeldung <em>erledigen</em>, nicht anfangen. Danach die Vorbereitung f&uuml;r Dienstag, beide Kurse. Der Tag hat sonst nichts &mdash; er tr&auml;gt das leicht.</li>
-      <li><strong>Dienstag:</strong> Clara 11:00&ndash;15:30 mit Geb&auml;udewechsel um 13:00, Franz 08:30&ndash;13:00 am St&uuml;ck. Franz&rsquo; freier Nachmittag ist der beste Platz f&uuml;r die Freitagsvorbereitung.</li>
-      <li><strong>Mittwoch (bei beiden komplett frei):</strong> der Puffertag der Woche. Hierhin geh&ouml;rt das, was Vorlauf braucht: nachlesen, was in den Dienstags-Tutorials offen blieb &mdash; und <strong>EBS2079 f&uuml;r den 30.09. vorbereiten</strong>, solange noch eine Woche Zeit ist.</li>
-      <li><strong>Donnerstag (frei):</strong> R&uuml;ckversicherung. Ist die Pr&uuml;fungsanmeldung wirklich best&auml;tigt? Falls Montag etwas dazwischenkam, ist heute der letzte ruhige Termin daf&uuml;r &mdash; morgen l&auml;uft sie um 17:00 aus.</li>
-      <li><strong>Freitag:</strong> beide <strong>08:45 in TAP11</strong>. Clara: nicht wie sonst 11:00 in TS53 &mdash; danach knapp drei Stunden L&uuml;cke, genug um die Gastvorlesung nachzuarbeiten, solange sie frisch ist. Franz: um 10:45 direkt los, das Tutorial um 11:00 ist in TS53 H0.04. Und bei beiden vor 17:00 der letzte Blick auf die Anmeldung.</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <h2>Risiken &mdash; konkret</h2>
-  <div class="card rot">
-    <ul class="sm">
-      <li><strong>Freitagmorgen &mdash; bei Clara und Franz aus verschiedenen Gr&uuml;nden.</strong> <em>Clara:</em> drei Freitage lang begann der Tag um 11:00 in TS53, dieser um 08:45 in TAP11 &mdash; eine Gew&ouml;hnung, die genau einmal falsch ist. <em>Franz:</em> die Uhrzeit &auml;ndert sich kaum (08:30&rarr;08:45), aber zwischen Ende in TAP11 (10:45) und Beginn in TS53 H0.04 (11:00) bleiben nur <strong>15 Minuten Geb&auml;udewechsel</strong>. Wer dort noch Fragen stellt, kommt zu sp&auml;t ins Tutorial.</li>
-      <li><strong>Die Anmeldefrist verstreicht unbemerkt.</strong> Sie endet <em>Freitag um 17:00</em>, nicht um Mitternacht. Am Freitag ist Clara bis 15:30 in Veranstaltungen &mdash; bleiben 90 Minuten. Wer es auf den letzten Tag legt, hat kaum Spielraum, falls das Portal klemmt.</li>
-      <li><strong>Der blinde Fleck Canvas.</strong> Abgaben, die nur in Canvas stehen, sieht diese Seite nicht. Seit 64 Tagen. Wenn diese Woche eine Abgabe f&auml;llig ist, erf&auml;hrt ihr es <em>nur</em>, indem ihr selbst nachseht. Das ist kein theoretisches Risiko &mdash; es ist der Normalzustand seit Juli.</li>
-      <li><strong>EBS2079 startet n&auml;chste Woche aus dem Stand.</strong> Seit der Vorlesung am 17.09. war nichts; am 30.09. ist Tutorial. Wenn dort etwas Vorbereitetes verlangt wird, merkt man das am 29.09. zu sp&auml;t.</li>
-      <li><strong>Clara liest Franz&rsquo; Canvas.</strong> Beide Checks nutzen denselben hinterlegten Zugang, und der geh&ouml;rt Franz. Sobald er erneuert wird, zeigt Claras Check wieder <em>Franz&rsquo;</em> Kurse &mdash; was gef&auml;hrlicher ist als die jetzige L&uuml;cke, weil es richtig aussieht.</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <h2>Vorschau &middot; 28.09.&ndash;02.10.</h2>
-  <div class="card">
-    <ul class="sm">
-      <li><strong>Mo 28.09.</strong> &mdash; frei bei beiden.</li>
-      <li><strong>Di 29.09.</strong> &mdash; Clara: EBC2060 11:00&ndash;13:00 (TS53 G0.03), EBC2080 13:30&ndash;15:30 (TAP23 (X) 0.013). Franz: EBC2060 08:30&ndash;10:30 (TS53 G0.03), EBC2080 11:00&ndash;13:00 (TS53 A0.24).</li>
-      <li><strong>Mi 30.09.</strong> &mdash; <strong>neu: EBS2079 Leadership Skills.</strong> Clara 11:00&ndash;13:00 (TAP11 F2.018, Palma), Franz 13:30&ndash;15:30 (TS53 E0.08, Zondag).</li>
-      <li><strong>Do 01.10.</strong> &mdash; frei bei beiden.</li>
-      <li><strong>Fr 02.10.</strong> &mdash; Clara: EBC2060 11:00&ndash;13:00 (TS53 A0.24), EBC2080 13:30&ndash;15:30 (TS53 G0.03). Franz: EBC2060 08:30&ndash;10:30 (TS53 A0.24), EBC2080 11:00&ndash;13:00 (TS53 H0.04). Das EBC2060-Freitagstutorial ist zur&uuml;ck.</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <h2>Pr&uuml;fprotokoll &middot; Sonntagslauf 20.09.</h2>
-  <div class="card">
-    <ul class="sm mut">
-      <li><strong>Stundenplan:</strong> Claras Feed abgerufen 20.09., Stand des Feeds <em>&bdquo;Last synchronised 2026-09-20 08:00 CEST&ldquo;</em>. 72 Eintr&auml;ge gesamt, davon 7 in der Woche 21.&ndash;25.09. Franz&rsquo; Feed separat abgerufen, ebenfalls 72 Eintr&auml;ge, 7 in der Woche.</li>
-      <li><strong>Doppelt hergeleitet:</strong> derselbe Feed zweimal unabh&auml;ngig ausgewertet (Python-Parser und awk-Parser). Ergebnis <em>EINIG</em> &mdash; 4 Veranstaltungen f&uuml;r Clara in der Woche, bei beiden Wegen gleich. Zeiten, R&auml;ume und Dozenten zus&auml;tzlich gegen den Rohtext des Feeds gepr&uuml;ft.</li>
-      <li><strong>Canvas:</strong> <code>GET /api/v1/courses</code> &rarr; <code>HTTP 401 &bdquo;Expired access token&ldquo;, expired_at 2026-07-18</code>. Tag 64. Module, Seiten, Assignments und Ank&uuml;ndigungen darum <strong>nicht gelesen</strong> &mdash; nicht &bdquo;leer&ldquo;, sondern unerreichbar.</li>
-      <li><strong>Nachkontrolle 09:00:</strong> Feed ein zweites Mal abgerufen (Stand <em>&bdquo;09:00 CEST&ldquo;</em>) und Eintrag f&uuml;r Eintrag gegen den 08:04-Abzug gestellt: 72 zu 72, <strong>0 neu, 0 entfallen, 0 ge&auml;ndert</strong>. Keine Zeit und kein Raum dieser Woche hat sich seit dem Bau der Seite bewegt. Franz&rsquo; Freitags-Angaben zus&auml;tzlich gegen seinen eigenen Feed gepr&uuml;ft.</li>
-      <li><strong>Nicht fortgeschrieben:</strong> keine Zeit, kein Raum und kein Dozent stammt aus der Seite von gestern. Alles oben kommt aus dem heutigen Feed.</li>
-      <li><strong>Franz-Lauf 09:22:</strong> Franz&rsquo; Feed erneut abgerufen (Stand <em>&bdquo;09:10 CEST&ldquo;</em>): 72 Eintr&auml;ge = 36 Termine + 36 SBE-Hinweise, gegen die Abz&uuml;ge von 08:13 und 09:07 <strong>0 neu, 0 entfallen, 0 ge&auml;ndert</strong>; Claras Feed zur selben Zeit (Stand 09:12) ebenfalls 72 und 0/0/0. Zwei unabh&auml;ngig gebaute Auswertungen (Python und Perl) stimmen in 72 von 72 Zeilen &uuml;berein. Franz&rsquo; 4 Kacheln und seine 5 Vorschau-Angaben Feld f&uuml;r Feld gegen den Feed gepr&uuml;ft: alle gleich. <strong>Eine Korrektur im Flie&szlig;text:</strong> bei der Freitags-Abweichung stand, zwischen Franz&rsquo; beiden Freitagsterminen l&auml;gen &bdquo;sonst immer&ldquo; 30 Minuten im selben Haus. Der Feed belegt das f&uuml;r den 04.09. und 11.09.; am 18.09. hatte Franz stattdessen eine Vorlesung um 16:00 in TAP11. Der Satz ist berichtigt. Canvas erneut <code>401</code>, Tag 64.</li>
+      <li><strong>Beide Kalender</strong> heute Morgen frisch geladen (Clara um 08:00): je <code>HTTP 200</code>, <strong>72 Einträge</strong> (36 mit Uhrzeit + 36 SBE-Ganztags) bei Clara, 72 (36 + 36) bei Franz. Keine Zeile dieser Seite stammt aus einer älteren Seite.</li>
+      <li><strong>UID-Vergleich</strong> gegen die Abzüge von gestern: je Person <strong>0 weg, 0 neu, 0 geändert</strong> (Beschreibung ohne Sync-Stempel verglichen).</li>
+      <li><strong>Zwei unabhängig gebaute Auswertungen</strong> (Python-Parser; Perl-Zustandsautomat mit Stunden-Arithmetik) für 21.&ndash;30.09.: je Person <strong>10 Einträge, Tag, Uhrzeit, Gruppe und Raum identisch</strong>. Zeiten UTC &rarr; CEST (+2&nbsp;h).</li>
+      <li><strong>Handbuch-Angaben</strong> laufen beim Bau als Prüfung gegen den Handbuchtext: Sitzungstitel und Datum, alle drei Artikel mit Seiten, Abgaberegel, Problem-Nummern (Problems 19–21), Participation-Regel. Schlägt eine fehl, entsteht keine Seite.</li>
+      <li>Canvas 08:00: drei Endpunkte &rarr; alle <code>HTTP 401</code>, <code>expired_at 2026-07-18</code> &ndash; Tag 65.</li>
+      <li>Aussehen unverändert: CSS-Block der letzten Tagesseite (18.09.) wortgleich übernommen.</li>
     </ul>
   </div>
 </section>
 
 <section>
   <h2>Zustellung</h2>
-  <div class="card" id="zustellung">
-    <p class="sm mut"><strong>WhatsApp: nicht zugestellt.</strong> Alle drei Teile wurden heute an CallMeBot &uuml;bergeben, alle drei kamen w&ouml;rtlich zur&uuml;ck mit <em>&bdquo;You have 0 messages left. &hellip; Message not sent&ldquo;</em>. Das Freikontingent ist seit dem 13.07. bei beiden auf null. <code>Message Sent</code> stand in keiner der drei Antworten.</p>
-    <p class="sm mut"><strong>ntfy: zugestellt und nachgepr&uuml;ft.</strong> Drei Teile gesendet (HTTP 200), danach vom Server zur&uuml;ckgelesen: 3 von 3 wiedergefunden, 3 von 3 w&ouml;rtlich identisch. Ob Claras Ger&auml;t dieses Thema <em>abonniert</em> hat, kann von hier aus niemand sehen &mdash; nachgewiesen ist, dass die Nachricht auf dem Server liegt, nicht dass sie ein Telefon erreicht hat.</p>
-    <p class="sm mut"><strong>Franz (09:22): eigene Nachrichten.</strong> Die drei ntfy-Nachrichten von 08:09 tragen keinen Namen im Titel und zeigen <em>Claras</em> Zeiten (Dienstag ab 11:00). F&uuml;r Franz gingen deshalb um 09:21 drei eigene Teile hinaus, Titel &bdquo;Uni Wochenplan Franz (1/3)&ldquo; bis &bdquo;(3/3)&ldquo; (HTTP 200), danach vom Server zur&uuml;ckgelesen: 3 von 3 wiedergefunden, 3 von 3 w&ouml;rtlich identisch. WhatsApp: ein Versuch mit Teil 1, Antwort wieder <em>&bdquo;0 messages left &hellip; Message not sent&ldquo;</em> &mdash; Teile 2 und 3 darum nicht mehr versucht.</p>
-    <p class="sm mut">Im Zweifel ist <strong>diese Seite</strong> der Kanal, der ankommt.</p>
+  <div class="card">
+    <!--ZUSTELLUNG-->
+    <p class="mut">Der Versand an Clara läuft direkt nach dieser Veröffentlichung; das Ergebnis wird hier nachgetragen.</p>
+    <!--/ZUSTELLUNG-->
   </div>
 </section>
 
 <footer>
-  <p>Aktualisiert: Sonntag, 20.09.2026, 09:22 Uhr &middot; nachgepr&uuml;ft, Termine unver&auml;ndert seit 08:13 &middot; Quelle Termine: pers&ouml;nlicher Stundenplan (Feed-Stand Franz 09:10, Clara 09:12 CEST) &middot; Quelle Inhalte: Canvas &mdash; <strong>nicht verf&uuml;gbar</strong></p>
+  <p>Aktualisiert: Montag, 21.09.2026, 08:15 Uhr (CEST) &ndash; Tages-Check, Lauf Clara<br>
+  Termine: MyTimetable-Feed, beide Kalender (je 72 Einträge). Inhalte: Kurshandbücher EBC2060 und EBC2080, 2026/27.<br>
+  Canvas: HTTP 401 seit 18.07.2026 &ndash; Ankündigungen und Abgaben ungeprüft.</p>
 </footer>
 
 </div>
